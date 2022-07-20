@@ -1,0 +1,1802 @@
+
+#=======================================
+#  Field PIN_FLD_PAYMENT
+#=======================================
+
+SUBSTRUCT PIN_FLD_PAYMENT {
+
+	ID = 899;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACH
+#=======================================
+
+INT PIN_FLD_ACH {
+
+	ID = 7851;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT_ORIGINAL_PAYMENT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT_ORIGINAL_PAYMENT {
+
+	ID = 946;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_NO
+#=======================================
+
+STRING PIN_FLD_BILL_NO {
+
+	ID = 793;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHANNEL_ID
+#=======================================
+
+INT PIN_FLD_CHANNEL_ID {
+
+	ID = 944;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMMAND
+#=======================================
+
+ENUM PIN_FLD_COMMAND {
+
+	ID = 188;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MERCHANT
+#=======================================
+
+STRING PIN_FLD_MERCHANT {
+
+	ID = 90;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPE
+#=======================================
+
+ENUM PIN_FLD_PAY_TYPE {
+
+	ID = 7852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUB_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_SUB_TRANS_ID {
+
+	ID = 3042;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_TRANS_ID {
+
+	ID = 189;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CASH_INFO
+#=======================================
+
+ARRAY PIN_FLD_CASH_INFO {
+
+	ID = 928;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECEIPT_NO
+#=======================================
+
+STRING PIN_FLD_RECEIPT_NO {
+
+	ID = 929;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CC_INFO
+#=======================================
+
+ARRAY PIN_FLD_CC_INFO {
+
+	ID = 142;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AUTH_CODE
+#=======================================
+
+STRING PIN_FLD_AUTH_CODE {
+
+	ID = 190;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AUTH_DATE
+#=======================================
+
+STRING PIN_FLD_AUTH_DATE {
+
+	ID = 191;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESULT
+#=======================================
+
+ENUM PIN_FLD_RESULT {
+
+	ID = 50;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VENDOR_RESULTS
+#=======================================
+
+STRING PIN_FLD_VENDOR_RESULTS {
+
+	ID = 184;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHECK_INFO
+#=======================================
+
+ARRAY PIN_FLD_CHECK_INFO {
+
+	ID = 927;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+	ID = 932;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_CODE
+#=======================================
+
+STRING PIN_FLD_BANK_CODE {
+
+	ID = 930;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BRANCH_NO
+#=======================================
+
+STRING PIN_FLD_BRANCH_NO {
+
+	ID = 1055;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHECK_NO
+#=======================================
+
+STRING PIN_FLD_CHECK_NO {
+
+	ID = 931;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DD_INFO
+#=======================================
+
+ARRAY PIN_FLD_DD_INFO {
+
+	ID = 143;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_FAILED_INFO
+#=======================================
+
+ARRAY PIN_FLD_PAYMENT_FAILED_INFO {
+
+	ID = 947;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+	ID = 846;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_ORDER_INFO
+#=======================================
+
+ARRAY PIN_FLD_PAY_ORDER_INFO {
+
+	ID = 940;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_ID
+#=======================================
+
+STRING PIN_FLD_ORDER_ID {
+
+	ID = 943;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POSTAL_ORDER_INFO
+#=======================================
+
+ARRAY PIN_FLD_POSTAL_ORDER_INFO {
+
+	ID = 941;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VOUCHERS_INFO
+#=======================================
+
+ARRAY PIN_FLD_VOUCHERS_INFO {
+
+	ID = 7617;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CARD_EXPIRATION
+#=======================================
+
+INT PIN_FLD_CARD_EXPIRATION {
+
+	ID = 7613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_ID
+#=======================================
+
+STRING PIN_FLD_DEVICE_ID {
+
+	ID = 5551;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_FROM {
+
+	ID = 6429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_TO {
+
+	ID = 6430;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VOUCHER_PIN
+#=======================================
+
+STRING PIN_FLD_VOUCHER_PIN {
+
+	ID = 7608;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WIRE_TRANSFER_INFO
+#=======================================
+
+ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+	ID = 939;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WIRE_TRANSFER_ID
+#=======================================
+
+STRING PIN_FLD_WIRE_TRANSFER_ID {
+
+	ID = 942;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment
+#=======================================
+
+STORABLE CLASS /event/billing/payment {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These events are created by the system when a payment is made. See also /event/billing/charge. For real-time payments, payment events are created immediately after a successful charge. Payment events belong to payment items (/item/payment). See also Modular Payment Interface documentation.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PAYMENT {
+
+		DESCR = "Payment substruct.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			DESCR = "Identifies the original account number for  which payment is guided to suspended status";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ACH {
+
+			DESCR = "Pointer to the Automatic Clearing House that handled this charge event.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Payment amount.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_AMOUNT_ORIGINAL_PAYMENT {
+
+			DESCR = "This is Original Payment Amount of failed  Payment";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			DESCR = "Bill Number on the original payment which  is guided to suspense account ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			DESCR = "Identifies the channel from which payment is  received. Value must match with payment  channel id configured in /strings object so  that channel id can be translated to a  specific channel name ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_COMMAND {
+
+			DESCR = "Same as PIN_FLD_COMMAND in the PIN_FLD_CHARGE of /event/billing/charge. Will be set to None (0) if a charge is not done.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Currency in which the payment is made.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MERCHANT {
+
+			DESCR = "Same as PIN_FLD_MERCHANT in the PIN_FLD_CHARGE of /event/billing/charge for real-time payments.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			DESCR = "Payment type.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUB_TRANS_ID {
+
+			DESCR = "Transaction Id of original suspended payment ";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			DESCR = "Same as PIN_FLD_TRANS_ID in the PIN_FLD_CHARGE of /event/billing/charge for real-time payments. For non-real-time payments, the transaction id can be different from the one used for the charge.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cash
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a cash payment is made by the user.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CASH_INFO {
+
+		DESCR = "Cash information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BILL_NO {
+
+			DESCR = "Bill number.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Date when the cash payment was received.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECEIPT_NO {
+
+			DESCR = "Receipt Number.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash/sp_autopay {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "SP LCO Autopay Type";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash/tds {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a tds cash payment is made by the user.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cc
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cc {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a credit card payment is completed.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		DESCR = "Credit card payment specific information. Array element id is not significant. Only one array element will be present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AUTH_CODE {
+
+			DESCR = "Credit card authorization code received from the external payment system.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_AUTH_DATE {
+
+			DESCR = "Date on which the authorization was issued. Format is YYMMDD.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			DESCR = "Portal-defined result code. Valid values are Pass (0), Bad Card (5), Soft Decline (7), Hard Decline (8) and Service Unavailable (6).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VENDOR_RESULTS {
+
+			DESCR = "The various results from the payment system like the vendor code, avs code and cvv result code are stored in this field.  The data format for this field will be VC=<vendor-code>&SR=<security-result>&AVS=<avs-result>.";
+			ORDER = 0;
+			LENGTH = 512;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/check
+#=======================================
+
+STORABLE CLASS /event/billing/payment/check {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a check payment is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHECK_INFO {
+
+		DESCR = "Check information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			DESCR = "Bank account number.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			DESCR = "Bank code.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			DESCR = "Bill number.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BRANCH_NO {
+
+			DESCR = "branch_name";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CHECK_NO {
+
+			DESCR = "Check number.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Date for which the check is issued.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/dd
+#=======================================
+
+STORABLE CLASS /event/billing/payment/dd {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a direct debit payment is completed.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DD_INFO {
+
+		DESCR = "Direct Debit payment specific information. Array element id is not significant. Only one array element will be present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AUTH_CODE {
+
+			DESCR = "Direct Debit authorization code received from the external payment system.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_AUTH_DATE {
+
+			DESCR = "Date on which the authorization was issued. Format is YYMMDD.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			DESCR = "Portal-defined result code. Valid values are Pass (0), Bad Card (5), Soft Decline (7), Hard Decline (8) and Service Unavailable (6).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VENDOR_RESULTS {
+
+			DESCR = "This field contains the different results returned by the clearing houses.  The data in this field will be of the format: VC=<vendor-code>&SR=<security-result>& AVS=<avs-result>.";
+			ORDER = 0;
+			LENGTH = 512;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/failed
+#=======================================
+
+STORABLE CLASS /event/billing/payment/failed {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event Created when there is a failed payment.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAYMENT_FAILED_INFO {
+
+		DESCR = "The object provides information that payment processed according to optimistic approach failedactually.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+			DESCR = "Same as PIN_FLD_TRANS_ID in the PIN_FLD_PAYMENT of /event/billing/payment/xxx for successful payments posted according to the optimistic approach.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/payorder
+#=======================================
+
+STORABLE CLASS /event/billing/payment/payorder {
+
+	LABEL = "Inter bank payment order";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a payment is made by payment order.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAY_ORDER_INFO {
+
+		DESCR = "Payment order information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			DESCR = "Bank account number.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			DESCR = "Bank code.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Date for which the payment order is issued.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORDER_ID {
+
+			DESCR = "Payment order id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/postalorder
+#=======================================
+
+STORABLE CLASS /event/billing/payment/postalorder {
+
+	LABEL = "Postal order";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a payment is made by postal order.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_POSTAL_ORDER_INFO {
+
+		DESCR = "Postal order information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Date for which the postal order is issued.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORDER_ID {
+
+			DESCR = "Postal order id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/voucher
+#=======================================
+
+STORABLE CLASS /event/billing/payment/voucher {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a voucher payment is completed. It records the currency balance_impact and also the balance_impacts due to any non-currency resource(s) available in the voucher.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHERS_INFO {
+
+		DESCR = "Voucher payment specific information. Array element id is not significant. Only one array element will be present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CARD_EXPIRATION {
+
+			DESCR = " Expiration Date of the voucher card. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			DESCR = "Serial Number of the Voucher. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			DESCR = "Validity start date of the voucher. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			DESCR = "Validity end date of the voucher. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VOUCHER_PIN {
+
+			DESCR = "Password/Pin of the Voucher. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/wtransfer
+#=======================================
+
+STORABLE CLASS /event/billing/payment/wtransfer {
+
+	LABEL = "Wire transfer";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a payment is made by wire transfer.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+		DESCR = "Wire transfer information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			DESCR = "Bank account number.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			DESCR = "Bank code.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Date for which the wire transfer is effective.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_WIRE_TRANSFER_ID {
+
+			DESCR = "Wire transfer id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment
+#=======================================
+
+STORABLE CLASS /event/billing/payment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PAYMENT {
+
+		SQL_TABLE = "event_billing_payment_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		INT PIN_FLD_ACH {
+
+			SQL_COLUMN = "ach";
+		}
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		DECIMAL PIN_FLD_AMOUNT_ORIGINAL_PAYMENT {
+
+			SQL_COLUMN = "amount_original_payment";
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			SQL_COLUMN = "bill_no";
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			SQL_COLUMN = "channel_id";
+		}
+
+		ENUM PIN_FLD_COMMAND {
+
+			SQL_COLUMN = "command";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		STRING PIN_FLD_MERCHANT {
+
+			SQL_COLUMN = "merchant";
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			SQL_COLUMN = "pay_type";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		STRING PIN_FLD_SUB_TRANS_ID {
+
+			SQL_COLUMN = "sub_trans_id";
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			SQL_COLUMN = "trans_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cash
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CASH_INFO {
+
+		SQL_TABLE = "event_billing_payment_cash_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BILL_NO {
+
+			SQL_COLUMN = "bill_no";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_RECEIPT_NO {
+
+			SQL_COLUMN = "receipt_no";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash/sp_autopay IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash/tds IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cc
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		SQL_TABLE = "event_billing_payment_cc_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AUTH_CODE {
+
+			SQL_COLUMN = "auth_code";
+		}
+
+		STRING PIN_FLD_AUTH_DATE {
+
+			SQL_COLUMN = "auth_date";
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			SQL_COLUMN = "result";
+		}
+
+		STRING PIN_FLD_VENDOR_RESULTS {
+
+			SQL_COLUMN = "vendor_results";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/check
+#=======================================
+
+STORABLE CLASS /event/billing/payment/check IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHECK_INFO {
+
+		SQL_TABLE = "event_billing_payment_check_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			SQL_COLUMN = "bank_account_no";
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			SQL_COLUMN = "bank_code";
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			SQL_COLUMN = "bill_no";
+		}
+
+		STRING PIN_FLD_BRANCH_NO {
+
+			SQL_COLUMN = "branch_name";
+		}
+
+		STRING PIN_FLD_CHECK_NO {
+
+			SQL_COLUMN = "check_no";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/dd
+#=======================================
+
+STORABLE CLASS /event/billing/payment/dd IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DD_INFO {
+
+		SQL_TABLE = "event_billing_payment_dd_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AUTH_CODE {
+
+			SQL_COLUMN = "auth_code";
+		}
+
+		STRING PIN_FLD_AUTH_DATE {
+
+			SQL_COLUMN = "auth_date";
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			SQL_COLUMN = "result";
+		}
+
+		STRING PIN_FLD_VENDOR_RESULTS {
+
+			SQL_COLUMN = "vendor_results";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/failed
+#=======================================
+
+STORABLE CLASS /event/billing/payment/failed IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAYMENT_FAILED_INFO {
+
+		SQL_TABLE = "event_billing_payment_failed_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+			SQL_COLUMN = "payment_trans_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/payorder
+#=======================================
+
+STORABLE CLASS /event/billing/payment/payorder IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAY_ORDER_INFO {
+
+		SQL_TABLE = "event_billing_payment_payord_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			SQL_COLUMN = "bank_account_no";
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			SQL_COLUMN = "bank_code";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_ORDER_ID {
+
+			SQL_COLUMN = "order_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/postalorder
+#=======================================
+
+STORABLE CLASS /event/billing/payment/postalorder IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_POSTAL_ORDER_INFO {
+
+		SQL_TABLE = "event_billing_payment_post_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_ORDER_ID {
+
+			SQL_COLUMN = "order_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/voucher
+#=======================================
+
+STORABLE CLASS /event/billing/payment/voucher IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHERS_INFO {
+
+		SQL_TABLE = "event_bill_pymt_voucher_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CARD_EXPIRATION {
+
+			SQL_COLUMN = "card_expiration";
+		}
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			SQL_COLUMN = "device_id";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			SQL_COLUMN = "valid_from";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			SQL_COLUMN = "valid_to";
+		}
+
+		STRING PIN_FLD_VOUCHER_PIN {
+
+			SQL_COLUMN = "voucher_pin";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/wtransfer
+#=======================================
+
+STORABLE CLASS /event/billing/payment/wtransfer IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+		SQL_TABLE = "event_billing_payment_wtran_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			SQL_COLUMN = "bank_account_no";
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			SQL_COLUMN = "bank_code";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_WIRE_TRANSFER_ID {
+
+			SQL_COLUMN = "wtransfer_id";
+		}
+
+	}
+
+}
+

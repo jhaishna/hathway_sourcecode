@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/bundle/create
+#=======================================
+
+STORABLE CLASS /event/billing/bundle/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event to track creation of purchased_bundle object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/bundle/create
+#=======================================
+
+STORABLE CLASS /event/billing/bundle/create IMPLEMENTATION ORACLE7 {
+
+}
+

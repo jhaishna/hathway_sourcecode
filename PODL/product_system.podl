@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /product/system
+#=======================================
+
+STORABLE CLASS /product/system {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "Product of this type is considered as system product. ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /product/system
+#=======================================
+
+STORABLE CLASS /product/system IMPLEMENTATION ORACLE7 {
+
+}
+

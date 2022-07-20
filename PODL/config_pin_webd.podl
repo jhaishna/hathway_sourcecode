@@ -1,0 +1,146 @@
+
+#=======================================
+#  Field PIN_FLD_PERMITTEDS
+#=======================================
+
+ARRAY PIN_FLD_PERMITTEDS {
+
+	ID = 241;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Storable Class /config/pin_webd
+#=======================================
+
+STORABLE CLASS /config/pin_webd {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to limit the list of opcodes that can be invoked via pin_webd, the Web Manager. This object is set up using the load_pin_webd command line utility. A sample file pin_webd_opcodes is supplied along with Infranet.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		DESCR = "Array of permitted opcodes. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "This is actually a status field with values allowed (1) or not allowed (0). The  opcode will be permitted by pin_webd only if this field has a value 1.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Opcode Name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "Opcode Number.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/pin_webd
+#=======================================
+
+STORABLE CLASS /config/pin_webd IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		SQL_TABLE = "config_webd_permitteds_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+	}
+
+}
+

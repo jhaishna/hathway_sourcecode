@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/order_state/voucher
+#=======================================
+
+STORABLE CLASS /config/order_state/voucher {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Storable class to store order state of voucher";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/order_state/voucher
+#=======================================
+
+STORABLE CLASS /config/order_state/voucher IMPLEMENTATION ORACLE7 {
+
+}
+

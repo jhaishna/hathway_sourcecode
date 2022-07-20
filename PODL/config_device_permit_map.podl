@@ -1,0 +1,156 @@
+
+#=======================================
+#  Field PIN_FLD_DEVICES
+#=======================================
+
+ARRAY PIN_FLD_DEVICES {
+
+	ID = 5558;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_DEVICE_TYPE {
+
+	ID = 5553;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTEDS
+#=======================================
+
+ARRAY PIN_FLD_PERMITTEDS {
+
+	ID = 241;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTED
+#=======================================
+
+STRING PIN_FLD_PERMITTED {
+
+	ID = 249;
+}
+
+
+#=======================================
+#  Storable Class /config/device_permit_map
+#=======================================
+
+STORABLE CLASS /config/device_permit_map {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Config object that stores the mapping relationship between device types and service types. They will be used for validation when associate devices with services. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DEVICES {
+
+		DESCR = "Array of device types. Each element in the array contains mapping relationships between one device type to multiple service types.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEVICE_TYPE {
+
+			DESCR = "The type of device.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PERMITTEDS {
+
+			DESCR = "Array of permitted service types the device type can be mapped to.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PERMITTED {
+
+				DESCR = "The type of permitted service. ";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_permit_map
+#=======================================
+
+STORABLE CLASS /config/device_permit_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DEVICES {
+
+		SQL_TABLE = "config_device_permit_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEVICE_TYPE {
+
+			SQL_COLUMN = "device_type";
+		}
+
+		ARRAY PIN_FLD_PERMITTEDS {
+
+			SQL_TABLE = "config_device_permitteds_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PERMITTED {
+
+				SQL_COLUMN = "permitted";
+			}
+
+		}
+
+	}
+
+}
+

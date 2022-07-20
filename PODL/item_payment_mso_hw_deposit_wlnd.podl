@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/wlnd
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/wlnd
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+

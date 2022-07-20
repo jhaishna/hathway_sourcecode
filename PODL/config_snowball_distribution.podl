@@ -1,0 +1,145 @@
+
+#=======================================
+#  Field PIN_FLD_DISTRIBUTION
+#=======================================
+
+ARRAY PIN_FLD_DISTRIBUTION {
+
+	ID = 2307;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_DISCOUNT_OBJ {
+
+	ID = 7780;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Storable Class /config/snowball_distribution
+#=======================================
+
+STORABLE CLASS /config/snowball_distribution {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to specify the distribution rules for snowball discounting.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISTRIBUTION {
+
+		DESCR = "Each array element specifies the configuration for one snowball discount object.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			DESCR = "Link to the snowball discount object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Snowball discount object name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "Resource id, which is used to distribute based on the contribution for this resource; 0 means this discount object will be distributed evenly, not based on contribution";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/snowball_distribution
+#=======================================
+
+STORABLE CLASS /config/snowball_distribution IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISTRIBUTION {
+
+		SQL_TABLE = "cfg_snowball_distrib_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			SQL_COLUMN = "discount_obj";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "NAME";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "res_id";
+		}
+
+	}
+
+}
+

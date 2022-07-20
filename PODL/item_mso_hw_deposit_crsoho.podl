@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+

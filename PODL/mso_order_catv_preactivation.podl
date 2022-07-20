@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_order/catv_preactivation
+#=======================================
+
+STORABLE CLASS /mso_order/catv_preactivation {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/catv_preactivation
+#=======================================
+
+STORABLE CLASS /mso_order/catv_preactivation IMPLEMENTATION ORACLE7 {
+
+}
+

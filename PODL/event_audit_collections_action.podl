@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/collections/action
+#=======================================
+
+STORABLE CLASS /event/audit/collections/action {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to collections action. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/collections/action
+#=======================================
+
+STORABLE CLASS /event/audit/collections/action IMPLEMENTATION ORACLE7 {
+
+}
+

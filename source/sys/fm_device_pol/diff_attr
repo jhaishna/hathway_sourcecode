@@ -1,0 +1,39 @@
+95c95
+< 	if (PIN_ERR_IS_ERR(ebufp))
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp))
+97c97
+< 	PIN_ERR_CLEAR_ERR(ebufp);
+---
+> 	PIN_ERRBUF_CLEAR(ebufp);
+131c131
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+159c159
+< 	//char		*source = NULL;
+---
+> 	char		*source = NULL;
+161,162c161,162
+< 
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+165c165
+< 	PIN_ERR_CLEAR_ERR(ebufp);
+---
+> 	PIN_ERRBUF_CLEAR(ebufp);
+171c171
+< 	//source = (char *)PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_SOURCE, 1, ebufp);
+---
+> 	source = (char *)PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_SOURCE, 1, ebufp);
+245,246c245
+< 
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+364a364,366
+>     PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_RECEIPT_NO, set_lifecycle_flistp, PIN_FLD_RECEIPT_NO, ebufp);
+>     PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_ORDER_ID, set_lifecycle_flistp, PIN_FLD_ORDER_ID, ebufp);
+>     PIN_FLIST_FLD_COPY(i_flistp, MSO_FLD_ORDER_TYPE, set_lifecycle_flistp, MSO_FLD_ORDER_TYPE, ebufp);

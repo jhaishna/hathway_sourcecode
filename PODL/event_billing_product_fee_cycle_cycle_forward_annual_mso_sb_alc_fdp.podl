@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso_sb_alc_fdp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp IMPLEMENTATION ORACLE7 {
+
+}
+

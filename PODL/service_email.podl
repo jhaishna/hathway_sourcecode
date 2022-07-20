@@ -1,0 +1,340 @@
+
+#=======================================
+#  Field PIN_FLD_ALIASES
+#=======================================
+
+ARRAY PIN_FLD_ALIASES {
+
+	ID = 1880;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ATTRIBUTES
+#=======================================
+
+ARRAY PIN_FLD_ATTRIBUTES {
+
+	ID = 1881;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_EMAIL
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_EMAIL {
+
+	ID = 801;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAIL_SERVER_ID
+#=======================================
+
+BINSTR PIN_FLD_MAIL_SERVER_ID {
+
+	ID = 802;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_MBOX_SIZE
+#=======================================
+
+INT PIN_FLD_MAX_MBOX_SIZE {
+
+	ID = 803;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_MSG_CNT
+#=======================================
+
+INT PIN_FLD_MAX_MSG_CNT {
+
+	ID = 805;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_MSG_SIZE
+#=======================================
+
+INT PIN_FLD_MAX_MSG_SIZE {
+
+	ID = 804;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PATH
+#=======================================
+
+STRING PIN_FLD_PATH {
+
+	ID = 806;
+}
+
+
+#=======================================
+#  Storable Class /service/email
+#=======================================
+
+STORABLE CLASS /service/email {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Email service information for an email identity.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ALIASES {
+
+		DESCR = "SMTP aliases set up for this e-mail account.";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Associated alias name.";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_ATTRIBUTES {
+
+		DESCR = "Associated attributes that are specific to the mail transport agent.";
+		ORDER = 2;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Attribute name.";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Attribute value.";
+			ORDER = 1;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_EMAIL {
+
+		DESCR = "Substruct that holds the email specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		BINSTR PIN_FLD_MAIL_SERVER_ID {
+
+			DESCR = "Mail server ID.";
+			ORDER = 0;
+			LENGTH = 160;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_MBOX_SIZE {
+
+			DESCR = "Mailbox size (in bytes). 0 implies no limit.";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_MSG_CNT {
+
+			DESCR = "Maximum number of messages in the mailbox. 0 implies no limit.";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_MSG_SIZE {
+
+			DESCR = "Maximum size of a single message in bytes. 0 implies no limit.";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PATH {
+
+			DESCR = "Mailbox pathname.";
+			ORDER = 4;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/email
+#=======================================
+
+STORABLE CLASS /service/email IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ALIASES {
+
+		SQL_TABLE = "service_email_aliases_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+	}
+
+	ARRAY PIN_FLD_ATTRIBUTES {
+
+		SQL_TABLE = "service_email_attributes_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_EMAIL {
+
+		SQL_TABLE = "service_email_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		BINSTR PIN_FLD_MAIL_SERVER_ID {
+
+			SQL_COLUMN = "mail_server_id";
+		}
+
+		INT PIN_FLD_MAX_MBOX_SIZE {
+
+			SQL_COLUMN = "max_mbox_size";
+		}
+
+		INT PIN_FLD_MAX_MSG_CNT {
+
+			SQL_COLUMN = "max_msg_cnt";
+		}
+
+		INT PIN_FLD_MAX_MSG_SIZE {
+
+			SQL_COLUMN = "max_msg_size";
+		}
+
+		STRING PIN_FLD_PATH {
+
+			SQL_COLUMN = "path";
+		}
+
+	}
+
+}
+

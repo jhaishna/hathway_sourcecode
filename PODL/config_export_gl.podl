@@ -1,0 +1,604 @@
+
+#=======================================
+#  Field PIN_FLD_CONFIG_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CONFIG_INFO {
+
+	ID = 7440;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DIRECTORY
+#=======================================
+
+STRING PIN_FLD_DIRECTORY {
+
+	ID = 501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILENAME_PREFIX
+#=======================================
+
+STRING PIN_FLD_FILENAME_PREFIX {
+
+	ID = 976;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SOURCE
+#=======================================
+
+STRING PIN_FLD_SOURCE {
+
+	ID = 5562;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENTS
+#=======================================
+
+ARRAY PIN_FLD_GL_SEGMENTS {
+
+	ID = 1828;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALENDAR_DATE
+#=======================================
+
+ARRAY PIN_FLD_CALENDAR_DATE {
+
+	ID = 1326;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALENDAR_DOM
+#=======================================
+
+INT PIN_FLD_CALENDAR_DOM {
+
+	ID = 1327;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALENDAR_MOY
+#=======================================
+
+INT PIN_FLD_CALENDAR_MOY {
+
+	ID = 1328;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DAY
+#=======================================
+
+ENUM PIN_FLD_DAY {
+
+	ID = 9031;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_NON_MONETARY_FLAG
+#=======================================
+
+ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+	ID = 9805;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_FREQUENCY_TYPE
+#=======================================
+
+ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+	ID = 9803;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_TYPE
+#=======================================
+
+INT PIN_FLD_GL_REPORT_TYPE {
+
+	ID = 516;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_RESOURCE_CATEGORY
+#=======================================
+
+ENUM PIN_FLD_GL_RESOURCE_CATEGORY {
+
+	ID = 9804;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENT
+#=======================================
+
+STRING PIN_FLD_GL_SEGMENT {
+
+	ID = 517;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID_LIST
+#=======================================
+
+STRING PIN_FLD_RESOURCE_ID_LIST {
+
+	ID = 975;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REVENUES
+#=======================================
+
+ARRAY PIN_FLD_REVENUES {
+
+	ID = 8229;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_DATES
+#=======================================
+
+ARRAY PIN_FLD_START_DATES {
+
+	ID = 977;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_START_T {
+
+	ID = 867;
+}
+
+
+#=======================================
+#  Storable Class /config/export_gl
+#=======================================
+
+STORABLE CLASS /config/export_gl {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This object contains schedule information for the application that generates GL reports and exports them as XML files ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CONFIG_INFO {
+
+		DESCR = "Contains basic information common to all segment entries in configuration.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DIRECTORY {
+
+			DESCR = "Pathname of directory under which the exported GL report data files will be created.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FILENAME_PREFIX {
+
+			DESCR = "String to prefix the internally-generated GL report file name. This can be blank in which case the basic file name will be used.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SOURCE {
+
+			DESCR = "A user-defined identifier for the source system from which GL reports are exported. When there are multiple systems generating XML export files, this field will uniquely indentify the source system. This field is not used within the billing system but simply copied in the header of the output XML file for use by the external consumer of the exported data.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_GL_SEGMENTS {
+
+		DESCR = "Contains the list of GL segments for which to produce the GL reports. It is possible to have multiple array elements for the same GL segment but with different revenue types to report.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CALENDAR_DATE {
+
+			DESCR = "Valid for frequency type of 'yearly' or 'specified dates'.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_CALENDAR_DOM {
+
+				DESCR = "Day of month. Possible values are 1 through 31.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_CALENDAR_MOY {
+
+				DESCR = "Month of year. Possible values are 1 through 12.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_CALENDAR_DOM {
+
+			DESCR = "Day of month. Valid for frequency type of 'monthly'. Possible values are 1 through 31.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DAY {
+
+			DESCR = "Day of week. Valid for frequency type of 'weekly'. Possible values are 0 through 6 (Sunday through Saturday).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+			DESCR = "Indicates if the list of non-monetary resource IDs provided in PIN_FLD_RESOURCE_ID_LIST are to be included in or excluded from the report. Possible values are 1 (include - PIN_GL_INCLUDE_NON_MONETARY_RESOURCE) and 0 (exclude - PIN_GL_EXCLUDE_NON_MONETARY_RESOURCE). This field will be unused if PIN_FLD_GL_RESOURCE_CATEGORY indicates currency-only.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+			DESCR = "Indicates the frequency of running ledger reports. Possible types are 1 (daily - PIN_GL_REPORT_FREQUENCY_DAILY), 2 (weekly - PIN_GL_REPORT_FREQUENCY_WEEKLY), 3 (monthly - PIN_GL_REPORT_FREQUENCY_MONTHLY), 4 (yearly - PIN_GL_REPORT_FREQUENCY_YEARLY), 5 (specified dates - PIN_GL_REPORT_FREQUENCY_SPECIFIED_DATES).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_GL_REPORT_TYPE {
+
+			DESCR = "Indicates whether the GL report should be a summary one (0 - PIN_GL_REPORT_TYPE_SUMMARY) or a detailed one (1 - PIN_GL_REPORT_TYPE_DETAIL).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GL_RESOURCE_CATEGORY {
+
+			DESCR = "Indicates if the report should include only currency resources, only non-currency resources or both types of resources. Possible types are 0 (non-currency only - PIN_GL_RESOURCE_NON_CURRENCY_TYPE), 1 (currency only - PIN_GL_RESOURCE_CURRENCY_TYPE) and 2 (both - PIN_GL_RESOURCE_BOTH_TYPES).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			DESCR = "Name of GL segment for which to produce the GL reports";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RESOURCE_ID_LIST {
+
+			DESCR = "Contains a blank-separated list of non-monetary resource IDs that are to be included in or excluded from the report. This field is used in conjunction with PIN_FLD_GL_NON_MONETARY_FLAG and will be unused if report is to only include currency resources.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_REVENUES {
+
+			DESCR = "Contains the list of revenue types for which to produce the GL reports.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Indicates the type of revenue to report. Possible types are 0x01 (Unbilled - PIN_GL_TYPE_UNBILLED), 0x02 (Billed - PIN_GL_TYPE_BILLED), 0x04 (Unbilled earned - PIN_GL_TYPE_UNBILLED_EARNED), 0x08 (Billed earned - PIN_GL_TYPE_BILLED_EARNED), 0x10 (Unbilled unearned - PIN_GL_TYPE_UNBILLED_UNEARNED), 0x20 (Billed unearned - PIN_GL_TYPE_BILLED_UNEARNED), 0x40 (Previously billed earned - PIN_GL_TYPE_PREV_BILLED_EARNED).";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+	ARRAY PIN_FLD_START_DATES {
+
+		DESCR = "The start date for each GL report is the end date for the previous GL report. This date is normally determined by examining the process audit table. The date specified in this array will be used when there are no entries in the process audit table for the associated segment (like when the application is run for the first ever time or it is a new segment configured since the last run of the application). A value of '.' (dot) indicates any segment. If there is one element with '.' as segment name and another with a specific segment name, the start date in latter will apply for that segment.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_START_T {
+
+			DESCR = "The start date for the first-ever report for this segment.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			DESCR = "Name of GL segment for which start date is specified.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/export_gl
+#=======================================
+
+STORABLE CLASS /config/export_gl IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CONFIG_INFO {
+
+		SQL_TABLE = "config_export_gl_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DIRECTORY {
+
+			SQL_COLUMN = "directory";
+		}
+
+		STRING PIN_FLD_FILENAME_PREFIX {
+
+			SQL_COLUMN = "filename_prefix";
+		}
+
+		STRING PIN_FLD_SOURCE {
+
+			SQL_COLUMN = "source";
+		}
+
+	}
+
+	ARRAY PIN_FLD_GL_SEGMENTS {
+
+		SQL_TABLE = "config_export_gl_segments_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CALENDAR_DATE {
+
+			SQL_TABLE = "config_export_gl_dates_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_CALENDAR_DOM {
+
+				SQL_COLUMN = "calendar_dom";
+			}
+
+			INT PIN_FLD_CALENDAR_MOY {
+
+				SQL_COLUMN = "calendar_month";
+			}
+
+		}
+
+		INT PIN_FLD_CALENDAR_DOM {
+
+			SQL_COLUMN = "calendar_dom";
+		}
+
+		ENUM PIN_FLD_DAY {
+
+			SQL_COLUMN = "day_of_week";
+		}
+
+		ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+			SQL_COLUMN = "non_monetary_flag";
+		}
+
+		ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+			SQL_COLUMN = "report_frequency_type";
+		}
+
+		INT PIN_FLD_GL_REPORT_TYPE {
+
+			SQL_COLUMN = "report_type";
+		}
+
+		ENUM PIN_FLD_GL_RESOURCE_CATEGORY {
+
+			SQL_COLUMN = "resource_category";
+		}
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			SQL_COLUMN = "segment";
+		}
+
+		STRING PIN_FLD_RESOURCE_ID_LIST {
+
+			SQL_COLUMN = "resource_id_list";
+		}
+
+		ARRAY PIN_FLD_REVENUES {
+
+			SQL_TABLE = "config_export_gl_revenues_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "revenue_type";
+			}
+
+		}
+
+	}
+
+	ARRAY PIN_FLD_START_DATES {
+
+		SQL_TABLE = "config_export_gl_start_dates_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_START_T {
+
+			SQL_COLUMN = "effective_start_t";
+		}
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			SQL_COLUMN = "segment";
+		}
+
+	}
+
+}
+

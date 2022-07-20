@@ -1,0 +1,194 @@
+
+#=======================================
+#  Field MSO_FLD_ADD_IP
+#=======================================
+
+ARRAY MSO_FLD_ADD_IP {
+
+	ID = 41221;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_ID
+#=======================================
+
+STRING PIN_FLD_DEVICE_ID {
+
+	ID = 5551;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_OBJ
+#=======================================
+
+POID PIN_FLD_DEVICE_OBJ {
+
+	ID = 5559;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/add_ip
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/add_ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_ADD_IP {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_DEVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/add_ip
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/add_ip IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_ADD_IP {
+
+		SQL_TABLE = "mso_evt_lc_add_ip_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			SQL_COLUMN = "device_ip";
+		}
+
+		POID PIN_FLD_DEVICE_OBJ {
+
+			SQL_COLUMN = "device_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,166 @@
+
+#=======================================
+#  Field PIN_FLD_CASH_INFO
+#=======================================
+
+ARRAY PIN_FLD_CASH_INFO {
+
+	ID = 928;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REASON_CODE
+#=======================================
+
+STRING PIN_FLD_REASON_CODE {
+
+	ID = 938;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash {
+
+	LABEL = "Cash Payment Reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a cash payment reversal is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CASH_INFO {
+
+		DESCR = "Array detailing the reversal information. Onlyone array element will be present. Arrayelement id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Reversal date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/sp_autopay {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/tds {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CASH_INFO {
+
+		SQL_TABLE = "event_billing_reversal_cash_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/sp_autopay IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/tds IMPLEMENTATION ORACLE7 {
+
+}
+

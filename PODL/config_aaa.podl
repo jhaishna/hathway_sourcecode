@@ -1,0 +1,421 @@
+
+#=======================================
+#  Field PIN_FLD_DROPPED_CALL_TERMINATE_CAUSE_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_DROPPED_CALL_TERMINATE_CAUSE_ARRAY {
+
+	ID = 8019;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DROPPED_CALL_TERMINATE_CAUSE
+#=======================================
+
+ENUM PIN_FLD_DROPPED_CALL_TERMINATE_CAUSE {
+
+	ID = 8020;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCALED_DELAY_INFO
+#=======================================
+
+ARRAY PIN_FLD_SCALED_DELAY_INFO {
+
+	ID = 8035;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_DELAY_TIME
+#=======================================
+
+INT PIN_FLD_MAX_DELAY_TIME {
+
+	ID = 9544;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TELCO_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+	ID = 8002;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELETED_FLAG
+#=======================================
+
+INT PIN_FLD_DELETED_FLAG {
+
+	ID = 960;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUPLICATE_CHECK_TYPE
+#=======================================
+
+ENUM PIN_FLD_DUPLICATE_CHECK_TYPE {
+
+	ID = 8013;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+	ID = 5601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBSESSION_MODE
+#=======================================
+
+ENUM PIN_FLD_SUBSESSION_MODE {
+
+	ID = 3041;
+}
+
+
+#=======================================
+#  Storable Class /config/aaa
+#=======================================
+
+STORABLE CLASS /config/aaa {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " Extensions of this class store parameters that configure  the rating and session handling mode for service-specific AAA, such as GSM AAA";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DROPPED_CALL_TERMINATE_CAUSE_ARRAY {
+
+		DESCR = "Stores Array of Terminate causes indicating the Drop Calls ";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DROPPED_CALL_TERMINATE_CAUSE {
+
+			DESCR = "Indicates the Terminate cause for the Drop Call.The values vary and hence can be configured in /config/aaa.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SCALED_DELAY_INFO {
+
+		DESCR = "Stores information about max value for scaled delay";
+		ORDER = 2;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_MAX_DELAY_TIME {
+
+			DESCR = "Stores the maximum value permitted for a SCALED_DELAY";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		DESCR = "Structure of telco aaa configurable parameters";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_DELETED_FLAG {
+
+			DESCR = "Flag to delete the transient objects. Values are: (0) Dont delete, (1) Reservation only, (2) Active session only, (3) Both Active session and Reservation.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DUPLICATE_CHECK_TYPE {
+
+			DESCR = "Flag to configure the duplicate check type.  Values are: (1) Duplicate check done on ASO only, (2) Duplicate check done on Event.";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			DESCR = "Expiration time interval for the transient objects (ASO), to live in Timos memory after deletion. Values are: (0) Transient Object pool is disabled, or Any other valid Timestamp for the expiration time interval in seconds.";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_SUBSESSION_MODE {
+
+			DESCR = "Controls sub-session creation and close.  Values are: (1) Aggregate mode, (2) Rate immediately mode, (3) Deferred Rate mode.";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/broadband
+#=======================================
+
+STORABLE CLASS /config/aaa/broadband {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A singleton configuration object of this class is used to have the GSM specific AAA configuration.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm/data
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm/data {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A singleton configuration object of this class is used to have the GSM DATA specific AAA configuration.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm/fax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A singleton configuration object of this class is used to have the GSM FAX specific AAA configuration.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm/sms {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A singleton configuration object of this class is used to have the GSM SMS specific AAA configuration.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm/telephony {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A singleton configuration object of this class is used to have the GSM TELEPHONY specific AAA configuration.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/aaa
+#=======================================
+
+STORABLE CLASS /config/aaa IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DROPPED_CALL_TERMINATE_CAUSE_ARRAY {
+
+		SQL_TABLE = "config_aaa_drop_call_cause_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DROPPED_CALL_TERMINATE_CAUSE {
+
+			SQL_COLUMN = "dropped_call_terminate_cause";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SCALED_DELAY_INFO {
+
+		SQL_TABLE = "config_aaa_scaled_delay_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_MAX_DELAY_TIME {
+
+			SQL_COLUMN = "max_scaled_delay_time";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		SQL_TABLE = "config_aaa_telco_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_DELETED_FLAG {
+
+			SQL_COLUMN = "deleted_flag";
+		}
+
+		ENUM PIN_FLD_DUPLICATE_CHECK_TYPE {
+
+			SQL_COLUMN = "duplicate_check_type";
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			SQL_COLUMN = "expiration_t";
+		}
+
+		ENUM PIN_FLD_SUBSESSION_MODE {
+
+			SQL_COLUMN = "subsession_mode";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/broadband
+#=======================================
+
+STORABLE CLASS /config/aaa/broadband IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm/data
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/aaa/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/aaa/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

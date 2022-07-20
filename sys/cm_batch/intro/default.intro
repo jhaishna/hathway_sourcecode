@@ -1,0 +1,14 @@
+<h1 align=center>
+INTRO Message
+</h1>
+<pre>
+This is an intro message for to be displayed in the confirmation<br>
+message.  You are requesting to purchase the ${price_plan} plan via<br>
+the ${promo_code} promo code.<br><br>
+
+XXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXx XXXXXXXXXXXXXXXXXXXXXXXXx<br>
+XXXXXXX XXXXXX XXXXXX XXXXXXXXXXx XXX X XXXXXXX XXX XXXXX
+</pre>
+
+<b> This is some text</b><br><br>
+

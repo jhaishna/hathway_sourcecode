@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+

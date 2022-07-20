@@ -1,0 +1,286 @@
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE
+#=======================================
+
+STRING PIN_FLD_TEMPLATE {
+
+	ID = 68;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /search
+#=======================================
+
+STORABLE CLASS /search {
+
+	SEQ_START = "0";
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Search objects to hold pre-created search templates to be used with PCM_OP_SEARCH opcode. The alternative is to define the search templates at run-time when calling the opcode. But the pre-created templates allow reuse of search templates across many searches. Also, these search objects are cached in the dm (oracle or odbc). The other benefit is that documented search object illustrate the kinds of searches done on different classes of objects.  These search objects can also be used to do step searches (retrieving partial results) using the PCM_OP_STEP_SEARCH opcode.  A pre-defined set of search objects are loaded into the system during installation from the init_objects.source file.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "SRCH_DISTINCT (256) - Preferred to avoid duplicates, since semantics are: 'select poids of matching objects, then do a READ_{OBJ,FLDS} on those'. SRCH_CALC_ONLY_1 (1) - Returns value in PIN_FLD_AMOUNT in RESULTS array. Use 0 if 'distinct' is not desired.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Search name";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TEMPLATE {
+
+		DESCR = "Search template string. The usual form of the template is: select X from /<object>/ where F1 <op> V1 and F2 <op> V2 ";
+		ORDER = 0;
+		LENGTH = 2000;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /search/pin
+#=======================================
+
+STORABLE CLASS /search/pin {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Pin search objects to hold pre-created search templates to be used with PCM_OP_SEARCH opcode. A pre-defined set of search objects are loaded into the system during installation from the init_objects.source file.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /search/who
+#=======================================
+
+STORABLE CLASS /search/who {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "WHO DM search objects to hold pre-created search templates to be used with PCM_OP_SEARCH opcode. A pre-defined set of search objects are loaded into the system during installation from the init_objects.source file.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /search
+#=======================================
+
+STORABLE CLASS /search IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "search_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "flags";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_TEMPLATE {
+
+		SQL_COLUMN = "template";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /search/pin
+#=======================================
+
+STORABLE CLASS /search/pin IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /search/who
+#=======================================
+
+STORABLE CLASS /search/who IMPLEMENTATION ORACLE7 {
+
+}
+

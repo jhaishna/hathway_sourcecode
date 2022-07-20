@@ -1,0 +1,237 @@
+
+#=======================================
+#  Field MSO_FLD_CHANGE_ACCESS
+#=======================================
+
+ARRAY MSO_FLD_CHANGE_ACCESS {
+
+	ID = 41204;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DATA_ACCESS_LEVEL
+#=======================================
+
+ENUM MSO_FLD_DATA_ACCESS_LEVEL {
+
+	ID = 41114;
+	DESCR = "0-Global, 1-State, 2-City, 3-Area, 4-Location";
+}
+
+
+#=======================================
+#  Field MSO_FLD_DATA_ACCESS_LIST
+#=======================================
+
+ARRAY MSO_FLD_DATA_ACCESS_LIST {
+
+	ID = 41115;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DATA_ACCESS
+#=======================================
+
+STRING MSO_FLD_DATA_ACCESS {
+
+	ID = 40072;
+	DESCR = "It is concatenation of Access level and its value. “STATE|WB”";
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORG_ACCESS_LEVEL
+#=======================================
+
+ENUM MSO_FLD_ORG_ACCESS_LEVEL {
+
+	ID = 41111;
+	DESCR = "0-All, 1-SP/JV, 2-DT, 3-STD, 4-LCO";
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORG_ACCESS_LIST
+#=======================================
+
+ARRAY MSO_FLD_ORG_ACCESS_LIST {
+
+	ID = 41112;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORG_OBJ
+#=======================================
+
+POID MSO_FLD_ORG_OBJ {
+
+	ID = 41113;
+	DESCR = "JV/DT/SDT/LCO Object poid";
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/change_access
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/change_access {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CHANGE_ACCESS {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_DATA_ACCESS_LEVEL {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY MSO_FLD_DATA_ACCESS_LIST {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING MSO_FLD_DATA_ACCESS {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM MSO_FLD_ORG_ACCESS_LEVEL {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY MSO_FLD_ORG_ACCESS_LIST {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID MSO_FLD_ORG_OBJ {
+
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/change_access
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/change_access IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CHANGE_ACCESS {
+
+		SQL_TABLE = "mso_evt_lc_change_access_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_DATA_ACCESS_LEVEL {
+
+			SQL_COLUMN = "data_access_level";
+		}
+
+		ARRAY MSO_FLD_DATA_ACCESS_LIST {
+
+			SQL_TABLE = "mso_evt_lc_data_access_list_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING MSO_FLD_DATA_ACCESS {
+
+				SQL_COLUMN = "data_access";
+			}
+
+		}
+
+		ENUM MSO_FLD_ORG_ACCESS_LEVEL {
+
+			SQL_COLUMN = "org_access_level";
+		}
+
+		ARRAY MSO_FLD_ORG_ACCESS_LIST {
+
+			SQL_TABLE = "mso_evt_lc_org_access_list_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID MSO_FLD_ORG_OBJ {
+
+				SQL_COLUMN = "org_obj";
+			}
+
+		}
+
+	}
+
+}
+

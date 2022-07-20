@@ -1,0 +1,318 @@
+
+#=======================================
+#  Field MSO_FLD_PP_TYPE
+#=======================================
+
+ENUM MSO_FLD_PP_TYPE {
+
+	ID = 40053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALIDITY_IN_DAYS
+#=======================================
+
+INT PIN_FLD_VALIDITY_IN_DAYS {
+
+	ID = 1630;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO_DETAILS
+#=======================================
+
+INT PIN_FLD_VALID_TO_DETAILS {
+
+	ID = 9628;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_grace_period_ntf
+#=======================================
+
+STORABLE CLASS /mso_cfg_grace_period_ntf {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Grace Period & Notification Config Object for Base FDP Plans";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_PP_TYPE {
+
+		DESCR = "Customer Type (0 - PP, 1 - SP)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CITY {
+
+		DESCR = "Customer City";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "Notification Flag (0 - Disabled, 1 - Enabled)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_VALIDITY_IN_DAYS {
+
+		DESCR = "Add-on Validity Days";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_VALID_TO_DETAILS {
+
+		DESCR = "Grace Period in days";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_grace_period_ntf
+#=======================================
+
+STORABLE CLASS /mso_cfg_grace_period_ntf IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_grace_period_ntf_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_PP_TYPE {
+
+		SQL_COLUMN = "pp_type";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_CITY {
+
+		SQL_COLUMN = "city";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "ntf_flag";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	INT PIN_FLD_VALIDITY_IN_DAYS {
+
+		SQL_COLUMN = "add_on_days";
+	}
+
+	INT PIN_FLD_VALID_TO_DETAILS {
+
+		SQL_COLUMN = "grace_period";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

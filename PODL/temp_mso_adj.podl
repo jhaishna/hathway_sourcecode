@@ -1,0 +1,131 @@
+#=======================================
+#  Field PIN_FLD_PARENT
+#=======================================
+
+POID PIN_FLD_PARENT {
+
+	ID = 22;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_NO
+#=======================================
+
+STRING PIN_FLD_BILL_NO {
+
+	ID = 793;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_BILL_OBJ {
+
+	ID = 44;
+}
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+        ID = 146;
+}
+
+#=======================================
+#  Storable Class /temp_mso_adj
+#=======================================
+
+STORABLE CLASS /temp_mso_adj {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Temparory MSO ADJUSTMENTS";
+	IS_PARTITIONED = "0";
+
+
+	POID PIN_FLD_PARENT {
+
+                DESCR = "Adjustment obj id";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BILL_NO {
+
+		DESCR = "Reference Bill Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILL_OBJ {
+
+		DESCR = "reference bill objet";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+	INT PIN_FLD_STATUS_FLAGS {
+
+                DESCR = "0-pending;1-Success;2-Failure";
+                ORDER = 0;
+                CREATE = Prohibited;
+                MODIFY = Writeable;
+                AUDITABLE = 0;
+                ENCRYPTABLE = 0;
+                SERIALIZABLE = 0;
+        }
+
+}
+
+
+#=======================================
+#  Storable Class /temp_mso_adj
+#=======================================
+
+STORABLE CLASS /temp_mso_adj IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "temp_mso_adj_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_PARENT {
+
+		SQL_COLUMN = "mso_adj_obj";
+	}
+
+	STRING PIN_FLD_BILL_NO {
+
+		SQL_COLUMN = "bill_no";
+	}
+
+	POID PIN_FLD_BILL_OBJ {
+
+		SQL_COLUMN = "bill_obj";
+	}
+	INT PIN_FLD_STATUS_FLAGS {
+
+                SQL_COLUMN = "status";
+        }
+
+}
+

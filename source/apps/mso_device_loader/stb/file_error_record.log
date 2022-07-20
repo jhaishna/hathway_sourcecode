@@ -1,0 +1,154 @@
+
+			Processing Input file = ./stb/file_error_record
+			Template file is      = ./stb/stb_template
+			Flist file is         = ./stb/stb_flist
+------------------------
+Input file template is:
+------------------------
+device_id,serial_no,warranty
+
+-------------------
+Flist template is: 
+-------------------
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_DESCR                      STR [0] "STB device"
+0 PIN_FLD_DEVICE_ID                  STR [0] "device_id"
+0 MSO_FLD_SERIAL_NO       	     STR [0] "serial_no"
+0 PIN_FLD_PROGRAM_NAME               STR [0] "Developer Center"
+0 PIN_FLD_MANUFACTURER               STR [0] "ABC"
+0 PIN_FLD_MODEL                      STR [0] "Hathway_CATV_1.1"
+0 PIN_FLD_SOURCE                     STR [0] "Manufacturer"
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 MSO_FLD_ORDER_OBJ		     POID [0] order_obj
+0 MSO_FLD_STB_DATA              ARRAY [0]
+1 MSO_FLD_STB_TYPE              INT [0] 1
+1 MSO_FLD_WARRANTY_END_OFFSET   INT [0] warranty
+1 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+
+----------------------------------------------------
+Processing Header : Header,stack_point_code,supplier_code,inovice_no,invoice_date,stb,1.12121,1st_load,
+----------------------------------------------------
+flist for Device Order creation opcode call:
+0 PIN_FLD_POID          	POID [0]  0.0.0.1 /mso_device_order -1
+0 MSO_FLD_STOCK_POINT_CODE 	STR [0] "stack_point_code" 
+0 MSO_FLD_SUPPLIER_CODE		STR [0] "supplier_code" 
+0 MSO_FLD_INVOICE_NO		STR [0] "inovice_no" 
+0 MSO_FLD_INVOICE_DATE		STR [0] "invoice_date" 
+0 MSO_FLD_ORDER_TYPE		STR [0] "stb"
+0 PIN_FLD_ORDER_ID		STR [0] "1.12121" 
+0 PIN_FLD_DESCR			STR [0] "1st_load"
+
+
+Order Object Poid is
+ # number of field entries allocated 20, used 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /mso_device_order 155578 0
+
+
+---------------------------------------
+Device flist after enriching Order_obj:
+---------------------------------------
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_DESCR                      STR [0] "STB device"
+0 PIN_FLD_DEVICE_ID                  STR [0] "device_id"
+0 MSO_FLD_SERIAL_NO       	     STR [0] "serial_no"
+0 PIN_FLD_PROGRAM_NAME               STR [0] "Developer Center"
+0 PIN_FLD_MANUFACTURER               STR [0] "ABC"
+0 PIN_FLD_MODEL                      STR [0] "Hathway_CATV_1.1"
+0 PIN_FLD_SOURCE                     STR [0] "Manufacturer"
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 MSO_FLD_ORDER_OBJ		     POID [0]  0.0.0.1 /mso_device_order 155578 0
+
+0 MSO_FLD_STB_DATA              ARRAY [0]
+1 MSO_FLD_STB_TYPE              INT [0] 1
+1 MSO_FLD_WARRANTY_END_OFFSET   INT [0] warranty
+1 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+
+----------------------------------------------------
+Processing record : 1809201300000110,serial_00110,12
+----------------------------------------------------
+Flist for opcode call:
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_DESCR                      STR [0] "STB device"
+0 PIN_FLD_DEVICE_ID                  STR [0] "1809201300000110"
+0 MSO_FLD_SERIAL_NO       	     STR [0] "serial_00110"
+0 PIN_FLD_PROGRAM_NAME               STR [0] "Developer Center"
+0 PIN_FLD_MANUFACTURER               STR [0] "ABC"
+0 PIN_FLD_MODEL                      STR [0] "Hathway_CATV_1.1"
+0 PIN_FLD_SOURCE                     STR [0] "Manufacturer"
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 MSO_FLD_ORDER_OBJ		     POID [0]  0.0.0.1 /mso_device_order 155578 0
+
+0 MSO_FLD_STB_DATA              ARRAY [0]
+1 MSO_FLD_STB_TYPE              INT [0] 1
+1 MSO_FLD_WARRANTY_END_OFFSET   INT [0] 12
+1 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+
+
+Object created successfully : 
+ # number of field entries allocated 20, used 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /mso_device/stb 151674 0
+
+
+----------------------------------------------------
+Processing record : 
+----------------------------------------------------
+Flist for opcode call:
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_DESCR                      STR [0] "STB device"
+0 PIN_FLD_DEVICE_ID                  STR [0] "
+"
+0 MSO_FLD_SERIAL_NO       	     STR [0] ""
+0 PIN_FLD_PROGRAM_NAME               STR [0] "Developer Center"
+0 PIN_FLD_MANUFACTURER               STR [0] "ABC"
+0 PIN_FLD_MODEL                      STR [0] "Hathway_CATV_1.1"
+0 PIN_FLD_SOURCE                     STR [0] "Manufacturer"
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 MSO_FLD_ORDER_OBJ		     POID [0]  0.0.0.1 /mso_device_order 155578 0
+
+0 MSO_FLD_STB_DATA              ARRAY [0]
+1 MSO_FLD_STB_TYPE              INT [0] 1
+1 MSO_FLD_WARRANTY_END_OFFSET   INT [0] 1 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+
+Error: Flist conversion failed for Detail record:
+
+Pushing header in reject file
+Writting error record in reject file
+
+----------------------------------------------------
+Processing record : 1809201300000111,serial_00111,12
+----------------------------------------------------
+Flist for opcode call:
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_DESCR                      STR [0] "STB device"
+0 PIN_FLD_DEVICE_ID                  STR [0] "1809201300000111"
+0 MSO_FLD_SERIAL_NO       	     STR [0] "serial_00111"
+0 PIN_FLD_PROGRAM_NAME               STR [0] "Developer Center"
+0 PIN_FLD_MANUFACTURER               STR [0] "ABC"
+0 PIN_FLD_MODEL                      STR [0] "Hathway_CATV_1.1"
+0 PIN_FLD_SOURCE                     STR [0] "Manufacturer"
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 MSO_FLD_ORDER_OBJ		     POID [0]  0.0.0.1 /mso_device_order 155578 0
+
+0 MSO_FLD_STB_DATA              ARRAY [0]
+1 MSO_FLD_STB_TYPE              INT [0] 1
+1 MSO_FLD_WARRANTY_END_OFFSET   INT [0] 12
+1 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+
+
+Object created successfully : 
+ # number of field entries allocated 20, used 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /mso_device/stb 153722 0
+
+----------------------------------------------------
+Process Completed successfully
+	Doing cleanup

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/MSO_Tax
+#=======================================
+
+STORABLE CLASS /item/MSO_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/MSO_Tax
+#=======================================
+
+STORABLE CLASS /item/MSO_Tax IMPLEMENTATION ORACLE7 {
+
+}
+

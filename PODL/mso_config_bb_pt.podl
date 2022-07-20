@@ -1,0 +1,621 @@
+
+#=======================================
+#  Field MSO_FLD_BB_TECHNOLOGY
+#=======================================
+
+ENUM MSO_FLD_BB_TECHNOLOGY {
+
+	ID = 40042;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_DL_SPEED {
+
+	ID = 42098;
+}
+
+
+#=======================================
+#  Field MSO_FLD_FUP_DL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_FUP_DL_SPEED {
+
+	ID = 42240;
+}
+
+
+#=======================================
+#  Field MSO_FLD_FUP_UL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_FUP_UL_SPEED {
+
+	ID = 42241;
+}
+
+
+#=======================================
+#  Field MSO_FLD_INITIAL_AMOUNT
+#=======================================
+
+DECIMAL MSO_FLD_INITIAL_AMOUNT {
+
+	ID = 42123;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ISQUOTA_FLAG
+#=======================================
+
+ENUM MSO_FLD_ISQUOTA_FLAG {
+
+	ID = 42100;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LIMIT
+#=======================================
+
+DECIMAL MSO_FLD_LIMIT {
+
+	ID = 40040;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PEER_DL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_PEER_DL_SPEED {
+
+	ID = 42242;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PEER_UL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_PEER_UL_SPEED {
+
+	ID = 42243;
+}
+
+
+#=======================================
+#  Field MSO_FLD_QUOTA_CODE
+#=======================================
+
+STRING MSO_FLD_QUOTA_CODE {
+
+	ID = 42122;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RATIO
+#=======================================
+
+STRING MSO_FLD_RATIO {
+
+	ID = 40041;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TYPE
+#=======================================
+
+ENUM MSO_FLD_TYPE {
+
+	ID = 42244;
+}
+
+
+#=======================================
+#  Field MSO_FLD_UL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_UL_SPEED {
+
+	ID = 42099;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INDICATOR
+#=======================================
+
+INT PIN_FLD_INDICATOR {
+
+	ID = 958;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVISIONING_TAG
+#=======================================
+
+STRING PIN_FLD_PROVISIONING_TAG {
+
+	ID = 272;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CODE
+#=======================================
+
+STRING PIN_FLD_SERVICE_CODE {
+
+	ID = 8169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_config_bb_pt
+#=======================================
+
+STORABLE CLASS /mso_config_bb_pt {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "for storing provisioning tag information";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_BB_TECHNOLOGY {
+
+		DESCR = "0-DOCSIS,1-ETHERNET,2-Fiber";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_DL_SPEED {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_FUP_DL_SPEED {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_FUP_UL_SPEED {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_INITIAL_AMOUNT {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_ISQUOTA_FLAG {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_LIMIT {
+
+		DESCR = "Limit in MB";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_PEER_DL_SPEED {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_PEER_UL_SPEED {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_QUOTA_CODE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_RATIO {
+
+		DESCR = "UL/DL Speed ratio";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_TYPE {
+
+		DESCR = "Unlimited = 0 Limited = 1 Unlimited FUP = 2";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_UL_SPEED {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_INDICATOR {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		DESCR = "Loader program name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROVISIONING_TAG {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_SERVICE_CODE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_config_bb_pt
+#=======================================
+
+STORABLE CLASS /mso_config_bb_pt IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_config_bb_pt_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_BB_TECHNOLOGY {
+
+		SQL_COLUMN = "bb_technology";
+	}
+
+	DECIMAL MSO_FLD_DL_SPEED {
+
+		SQL_COLUMN = "dl_speed";
+	}
+
+	DECIMAL MSO_FLD_FUP_DL_SPEED {
+
+		SQL_COLUMN = "fup_dl_speed";
+	}
+
+	DECIMAL MSO_FLD_FUP_UL_SPEED {
+
+		SQL_COLUMN = "fup_ul_speed";
+	}
+
+	DECIMAL MSO_FLD_INITIAL_AMOUNT {
+
+		SQL_COLUMN = "initial_amount";
+	}
+
+	ENUM MSO_FLD_ISQUOTA_FLAG {
+
+		SQL_COLUMN = "isquota_flag";
+	}
+
+	DECIMAL MSO_FLD_LIMIT {
+
+		SQL_COLUMN = "limit";
+	}
+
+	DECIMAL MSO_FLD_PEER_DL_SPEED {
+
+		SQL_COLUMN = "peer_dl_speed";
+	}
+
+	DECIMAL MSO_FLD_PEER_UL_SPEED {
+
+		SQL_COLUMN = "peer_ul_speed";
+	}
+
+	STRING MSO_FLD_QUOTA_CODE {
+
+		SQL_COLUMN = "quota_code";
+	}
+
+	STRING MSO_FLD_RATIO {
+
+		SQL_COLUMN = "ratio";
+	}
+
+	ENUM MSO_FLD_TYPE {
+
+		SQL_COLUMN = "type";
+	}
+
+	DECIMAL MSO_FLD_UL_SPEED {
+
+		SQL_COLUMN = "ul_speed";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_INDICATOR {
+
+		SQL_COLUMN = "indicator";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_PROVISIONING_TAG {
+
+		SQL_COLUMN = "provisioning_tag";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_SERVICE_CODE {
+
+		SQL_COLUMN = "service_code";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_refund_debit
+#=======================================
+
+STORABLE CLASS /item/mso_refund_debit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item storing refund debit amount";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_refund_debit
+#=======================================
+
+STORABLE CLASS /item/mso_refund_debit IMPLEMENTATION ORACLE7 {
+
+}
+

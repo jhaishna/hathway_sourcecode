@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/hathway/!svn/ver/291/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_allocation
+END
+mso_allocation
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/hathway/!svn/ver/291/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_allocation/mso_allocation
+END
+mso_allocation.c
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/hathway/!svn/ver/291/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_allocation/mso_allocation.c
+END
+pin.conf
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/hathway/!svn/ver/291/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_allocation/pin.conf
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/hathway/!svn/ver/291/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_allocation/Makefile
+END

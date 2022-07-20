@@ -1,0 +1,434 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ALIAS_LIST
+#=======================================
+
+ARRAY PIN_FLD_ALIAS_LIST {
+
+	ID = 527;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN
+#=======================================
+
+STRING PIN_FLD_LOGIN {
+
+	ID = 92;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_CACHE_TYPE
+#=======================================
+
+ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+	ID = 567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /uniqueness
+#=======================================
+
+STORABLE CLASS /uniqueness {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Generic class to enforce uniquness of Subscriber Logins across different databases in a multidB environment This is also used by the authentication opcodes to locate the database with the full service object";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		DESCR = "AccountNo associated with this login";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the account object to which this LOGIN information relates to.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_ALIAS_LIST {
+
+		DESCR = "Alias List. List of aliases that also identifythis user/service. Examples are: Caller ID, or MAC address. Element id not significant. The name must be globally uniqueper service-type";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Associated alias name.";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Effective time of modification of this service on an external system.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LOGIN {
+
+		DESCR = "Login name";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		DESCR = "Stores the cache residency distinction value for an object instance. Possible values are DEFAULT(0), REALTIME(1) and BATCH(2).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Login - Whose Uniqueness needs to be enforced ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of this Account  Confirmed Or Unconfirmed";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "The type value is a unique enum value associated to a service type.  The value is obtained from the data dictionary by reading the '/service/*' entries and recording the PIN_FLD_OBJ_DESC array index for the given service.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /uniqueness
+#=======================================
+
+STORABLE CLASS /uniqueness IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "uniqueness_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		SQL_COLUMN = "account_no";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ARRAY PIN_FLD_ALIAS_LIST {
+
+		SQL_TABLE = "uniqueness_alias_list_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	STRING PIN_FLD_LOGIN {
+
+		SQL_COLUMN = "login";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		SQL_COLUMN = "object_cache_type";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "type";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

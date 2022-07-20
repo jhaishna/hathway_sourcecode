@@ -1,0 +1,362 @@
+
+#=======================================
+#  Field PIN_FLD_SERVICE_ORDER_STATES
+#=======================================
+
+ARRAY PIN_FLD_SERVICE_ORDER_STATES {
+
+	ID = 7456;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_STATES
+#=======================================
+
+ARRAY PIN_FLD_NEXT_STATES {
+
+	ID = 5556;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_ID
+#=======================================
+
+INT PIN_FLD_STATE_ID {
+
+	ID = 5552;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_TYPE
+#=======================================
+
+ENUM PIN_FLD_STATE_TYPE {
+
+	ID = 5555;
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Base class for specifying the valid state transitions and the policy opcodes to call for different state transition.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_ORDER_STATES {
+
+		DESCR = "Array of service order states. Each element describe the one state and all the states can be transited to. Opcode can be defined with each transition. That opcode will be called as a policy during the transition. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "State policy opcode flag. 0 by default.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_NEXT_STATES {
+
+			DESCR = "Array of next states can be transited from this state, including the opcode definition. There could be multiple array elements with the same next state ID to support calling multiple opcodes for the same transition. ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_FLAGS {
+
+				DESCR = "Transition policy opcode flag. 0 by default.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_OPCODE {
+
+				DESCR = "Transition policy opcode number. This opcode is called before the state transition is done. ";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_STATE_ID {
+
+				DESCR = "The id of the end state of the transition. ";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "State policy opcode number. This policy will be executed after the transition is done.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			DESCR = "The id of the state. Out of the box values can be NEW(1), READY(2), PROCESSING(3), COMPLETED(4), FAILED(5). ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATE_TYPE {
+
+			DESCR = "The type of this state. All types are defined in pin_service_order.h file. Values can be RAW(0), INIT(1), NORMAL(2), END(3). ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/data {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/data.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/fax {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/fax.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/sms {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/sms.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/telephony {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/telephony.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_ORDER_STATES {
+
+		SQL_TABLE = "cfg_tlc_svc_order_stts_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		ARRAY PIN_FLD_NEXT_STATES {
+
+			SQL_TABLE = "cfg_tlc_svc_order_nxt_stts_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_FLAGS {
+
+				SQL_COLUMN = "flags";
+			}
+
+			INT PIN_FLD_OPCODE {
+
+				SQL_COLUMN = "opcode";
+			}
+
+			INT PIN_FLD_STATE_ID {
+
+				SQL_COLUMN = "state_id";
+			}
+
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			SQL_COLUMN = "state_id";
+		}
+
+		ENUM PIN_FLD_STATE_TYPE {
+
+			SQL_COLUMN = "state_type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

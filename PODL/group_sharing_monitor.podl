@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /group/sharing/monitor
+#=======================================
+
+STORABLE CLASS /group/sharing/monitor {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "A sharing group to hold the members of a balance monitor.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/monitor
+#=======================================
+
+STORABLE CLASS /group/sharing/monitor IMPLEMENTATION ORACLE7 {
+
+}
+

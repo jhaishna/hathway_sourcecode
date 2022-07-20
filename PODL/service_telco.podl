@@ -1,0 +1,1054 @@
+
+#=======================================
+#  Field PIN_FLD_TELCO_FEATURES
+#=======================================
+
+ARRAY PIN_FLD_TELCO_FEATURES {
+
+	ID = 8001;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TELCO_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+	ID = 8002;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRIMARY_NUMBER
+#=======================================
+
+INT PIN_FLD_PRIMARY_NUMBER {
+
+	ID = 7444;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BB_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_BB_INFO {
+
+	ID = 41104;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISION_MODEL
+#=======================================
+
+ENUM MSO_FLD_COMMISION_MODEL {
+
+	ID = 41135;
+	DESCR = "Commission Model";
+}
+
+
+#=======================================
+#  Field MSO_FLD_FUP_STATUS
+#=======================================
+
+INT MSO_FLD_FUP_STATUS {
+
+	ID = 46012;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ID
+#=======================================
+
+STRING MSO_FLD_ID {
+
+	ID = 42160;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IDLE_TIMEOUT
+#=======================================
+
+INT MSO_FLD_IDLE_TIMEOUT {
+
+	ID = 41145;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IS1CLICK_FLAG
+#=======================================
+
+ENUM MSO_FLD_IS1CLICK_FLAG {
+
+	ID = 41110;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ISTAL_FLAG
+#=======================================
+
+ENUM MSO_FLD_ISTAL_FLAG {
+
+	ID = 41109;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LEGACY_AGR_NO
+#=======================================
+
+STRING MSO_FLD_LEGACY_AGR_NO {
+
+	ID = 40066;
+}
+
+
+#=======================================
+#  Field MSO_FLD_MAC_ID
+#=======================================
+
+STRING MSO_FLD_MAC_ID {
+
+	ID = 42167;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_AMPLIFIER
+#=======================================
+
+STRING MSO_FLD_NETWORK_AMPLIFIER {
+
+	ID = 41108;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_ELEMENT
+#=======================================
+
+STRING MSO_FLD_NETWORK_ELEMENT {
+
+	ID = 41106;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_IP
+#=======================================
+
+STRING MSO_FLD_NETWORK_IP {
+
+	ID = 41107;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_NODE
+#=======================================
+
+STRING MSO_FLD_NETWORK_NODE {
+
+	ID = 40000;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NTF_STATUS
+#=======================================
+
+INT MSO_FLD_NTF_STATUS {
+
+	ID = 42630;
+	DESCR = "Threshold notification status";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PASSWORD
+#=======================================
+
+STRING MSO_FLD_PASSWORD {
+
+	ID = 41146;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RENEW_T
+#=======================================
+
+TIMESTAMP MSO_FLD_RENEW_T {
+
+	ID = 42633;
+	DESCR = "Updating the activation,renew,change_plan dates";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SALESMAN_OBJ
+#=======================================
+
+POID MSO_FLD_SALESMAN_OBJ {
+
+	ID = 40002;
+	DESCR = "Sales man account poid to be stored in system for reference";
+}
+
+
+#=======================================
+#  Field MSO_FLD_TECHNOLOGY
+#=======================================
+
+ENUM MSO_FLD_TECHNOLOGY {
+
+	ID = 41105;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_WHEN
+#=======================================
+
+INT PIN_FLD_BILL_WHEN {
+
+	ID = 131;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INDICATOR
+#=======================================
+
+INT PIN_FLD_INDICATOR {
+
+	ID = 958;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GSM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_GSM_INFO {
+
+	ID = 6412;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BEARER_SERVICE
+#=======================================
+
+STRING PIN_FLD_BEARER_SERVICE {
+
+	ID = 6400;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMEI
+#=======================================
+
+STRING PIN_FLD_IMEI {
+
+	ID = 3012;
+}
+
+
+#=======================================
+#  Storable Class /service/telco
+#=======================================
+
+STORABLE CLASS /service/telco {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Contains generalized telco information.Information about a specific service is contained in substructs or arrays in subclasses of this class, such as /service/telco/gsm.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TELCO_FEATURES {
+
+		DESCR = "Array containing all features associated with this service object. A feature represents a  supplementary service.  Egs: Call Forwarding, Call Waiting.";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Feature name as described thru the provisioning tag mechanism.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Feature Provisioning Status. Values are: Processing, Failed, Complete";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		DESCR = "Substruct to hold telco service-specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_PRIMARY_NUMBER {
+
+			DESCR = "An indicator used to identify if this service contains the primary number.";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/broadband
+#=======================================
+
+STORABLE CLASS /service/telco/broadband {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_BB_INFO {
+
+		DESCR = "Broadband Provisioning information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			DESCR = "Agreemnt no";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_COMMISION_MODEL {
+
+			DESCR = "Commission Model.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_FUP_STATUS {
+
+			DESCR = "FUP Status. 0 - N/A, 1 - Within FUP Limit, 2 - Over FUP Limit";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_ID {
+
+			DESCR = "Network ID";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_IDLE_TIMEOUT {
+
+			DESCR = "Idle timeout.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_IS1CLICK_FLAG {
+
+			DESCR = "0-False, 1-True";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_ISTAL_FLAG {
+
+			DESCR = "0-Non TAL, 1-TAL\n";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_LEGACY_AGR_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_MAC_ID {
+
+			DESCR = "PC MAC address";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_AMPLIFIER {
+
+			DESCR = "Only For DOCSIS: amplifier";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_ELEMENT {
+
+			DESCR = "Network Element.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_IP {
+
+			DESCR = "Network IP.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			DESCR = "The network node under which the BB device is getting connected. MUM24Online:ANDHERIEAST1:Area1:street1";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_NTF_STATUS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PASSWORD {
+
+			DESCR = "Password";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_RENEW_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			DESCR = "Sales man account poid to be stored in system for reference";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_TECHNOLOGY {
+
+			DESCR = "1-DOCSIS 2.0, 2- DOCSIS 3.0, 3-ETHERNET, 4- FIBER, 5-WIRELESS";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_INDICATOR {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm
+#=======================================
+
+STORABLE CLASS /service/telco/gsm {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Base class for GSM services. This class includes fields for all GSM service configuration information, such as the MSISDN, and information about GSM supplementary services.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GSM_INFO {
+
+		DESCR = "Substruct to hold GSM service-specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BEARER_SERVICE {
+
+			DESCR = "This field holds the bearer service information.";
+			ORDER = 2;
+			LENGTH = 64;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMEI {
+
+			DESCR = "IMEI associated with user.";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/data {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Data Service Object. Contains information necessary to be able to provide GSM Data service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/fax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Fax Service Object. Contains information necessary to be able to provide GSM Fax service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service telco gsm Roaming Object. Use to track the roaming gsm service for roaming subscribers";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/sms {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Sms Service Object. Contains information necessary to be able to provide GSM Sms service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/telephony {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Telephony Service Object. Contains information necessary to be able to provide GSM Telephony service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco
+#=======================================
+
+STORABLE CLASS /service/telco IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TELCO_FEATURES {
+
+		SQL_TABLE = "service_telco_features_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		SQL_TABLE = "service_telco_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_PRIMARY_NUMBER {
+
+			SQL_COLUMN = "primary_number";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/broadband
+#=======================================
+
+STORABLE CLASS /service/telco/broadband IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_BB_INFO {
+
+		SQL_TABLE = "service_bb_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		ENUM MSO_FLD_COMMISION_MODEL {
+
+			SQL_COLUMN = "commission_model";
+		}
+
+		INT MSO_FLD_FUP_STATUS {
+
+			SQL_COLUMN = "fup_status";
+		}
+
+		STRING MSO_FLD_ID {
+
+			SQL_COLUMN = "NETWORK_ID";
+		}
+
+		INT MSO_FLD_IDLE_TIMEOUT {
+
+			SQL_COLUMN = "idle_timeout";
+		}
+
+		ENUM MSO_FLD_IS1CLICK_FLAG {
+
+			SQL_COLUMN = "is1click_flag";
+		}
+
+		ENUM MSO_FLD_ISTAL_FLAG {
+
+			SQL_COLUMN = "tal_flag";
+		}
+
+		STRING MSO_FLD_LEGACY_AGR_NO {
+
+			SQL_COLUMN = "legacy_agr_no";
+		}
+
+		STRING MSO_FLD_MAC_ID {
+
+			SQL_COLUMN = "MAC_ID";
+		}
+
+		STRING MSO_FLD_NETWORK_AMPLIFIER {
+
+			SQL_COLUMN = "network_amplifier";
+		}
+
+		STRING MSO_FLD_NETWORK_ELEMENT {
+
+			SQL_COLUMN = "network_element";
+		}
+
+		STRING MSO_FLD_NETWORK_IP {
+
+			SQL_COLUMN = "network_ip";
+		}
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			SQL_COLUMN = "network_node";
+		}
+
+		INT MSO_FLD_NTF_STATUS {
+
+			SQL_COLUMN = "ntf_status";
+		}
+
+		STRING MSO_FLD_PASSWORD {
+
+			SQL_COLUMN = "password";
+		}
+
+		TIMESTAMP MSO_FLD_RENEW_T {
+
+			SQL_COLUMN = "renew_t";
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			SQL_COLUMN = "salesman_obj";
+		}
+
+		ENUM MSO_FLD_TECHNOLOGY {
+
+			SQL_COLUMN = "technology";
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			SQL_COLUMN = "bill_when";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		INT PIN_FLD_INDICATOR {
+
+			SQL_COLUMN = "indicator";
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			SQL_COLUMN = "start_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm
+#=======================================
+
+STORABLE CLASS /service/telco/gsm IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GSM_INFO {
+
+		SQL_TABLE = "service_telco_gsm_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BEARER_SERVICE {
+
+			SQL_COLUMN = "bearer_service";
+		}
+
+		STRING PIN_FLD_IMEI {
+
+			SQL_COLUMN = "imei";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/roaming IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

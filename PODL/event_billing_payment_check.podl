@@ -1,0 +1,229 @@
+
+#=======================================
+#  Field PIN_FLD_CHECK_INFO
+#=======================================
+
+ARRAY PIN_FLD_CHECK_INFO {
+
+	ID = 927;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+	ID = 932;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_CODE
+#=======================================
+
+STRING PIN_FLD_BANK_CODE {
+
+	ID = 930;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_NO
+#=======================================
+
+STRING PIN_FLD_BILL_NO {
+
+	ID = 793;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BRANCH_NO
+#=======================================
+
+STRING PIN_FLD_BRANCH_NO {
+
+	ID = 1055;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHECK_NO
+#=======================================
+
+STRING PIN_FLD_CHECK_NO {
+
+	ID = 931;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/check
+#=======================================
+
+STORABLE CLASS /event/billing/payment/check {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a check payment is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHECK_INFO {
+
+		DESCR = "Check information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			DESCR = "Bank account number.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			DESCR = "Bank code.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			DESCR = "Bill number.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BRANCH_NO {
+
+			DESCR = "branch_name";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CHECK_NO {
+
+			DESCR = "Check number.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Date for which the check is issued.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/check
+#=======================================
+
+STORABLE CLASS /event/billing/payment/check IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHECK_INFO {
+
+		SQL_TABLE = "event_billing_payment_check_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			SQL_COLUMN = "bank_account_no";
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			SQL_COLUMN = "bank_code";
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			SQL_COLUMN = "bill_no";
+		}
+
+		STRING PIN_FLD_BRANCH_NO {
+
+			SQL_COLUMN = "branch_name";
+		}
+
+		STRING PIN_FLD_CHECK_NO {
+
+			SQL_COLUMN = "check_no";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+	}
+
+}
+

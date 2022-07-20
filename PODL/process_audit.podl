@@ -1,0 +1,6717 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_RECORDS
+#=======================================
+
+INT PIN_FLD_FAILED_RECORDS {
+
+	ID = 8203;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HOSTNAME
+#=======================================
+
+STRING PIN_FLD_HOSTNAME {
+
+	ID = 337;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+	ID = 8205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_NAME
+#=======================================
+
+STRING PIN_FLD_PROCESS_NAME {
+
+	ID = 8201;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+	ID = 8204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUCCESSFUL_RECORDS
+#=======================================
+
+INT PIN_FLD_SUCCESSFUL_RECORDS {
+
+	ID = 8202;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_RECORDS
+#=======================================
+
+INT PIN_FLD_TOTAL_RECORDS {
+
+	ID = 1703;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VERSION_ID
+#=======================================
+
+INT PIN_FLD_VERSION_ID {
+
+	ID = 9033;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BACKWARD_LINKS
+#=======================================
+
+ARRAY PIN_FLD_BACKWARD_LINKS {
+
+	ID = 9002;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_ID
+#=======================================
+
+STRING PIN_FLD_BATCH_ID {
+
+	ID = 933;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_TYPE
+#=======================================
+
+INT PIN_FLD_BATCH_TYPE {
+
+	ID = 1354;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONTROL_POINT
+#=======================================
+
+STRING PIN_FLD_CONTROL_POINT {
+
+	ID = 9021;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LINK_OBJ
+#=======================================
+
+POID PIN_FLD_LINK_OBJ {
+
+	ID = 9006;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_STAT
+#=======================================
+
+SUBSTRUCT PIN_FLD_BATCH_STAT {
+
+	ID = 9005;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FORWARD_LINKS
+#=======================================
+
+ARRAY PIN_FLD_FORWARD_LINKS {
+
+	ID = 9001;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_DETAILS
+#=======================================
+
+ARRAY PIN_FLD_GROUP_DETAILS {
+
+	ID = 9003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_VALUE
+#=======================================
+
+DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+	ID = 9013;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_COUNT
+#=======================================
+
+INT PIN_FLD_EVENT_COUNT {
+
+	ID = 9007;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_DURATION
+#=======================================
+
+DECIMAL PIN_FLD_EVENT_DURATION {
+
+	ID = 9008;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_DISCOUNT_VALUE
+#=======================================
+
+DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+	ID = 9026;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_RETAIL_VALUE
+#=======================================
+
+DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+	ID = 9025;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORIGINAL_BATCH_ID
+#=======================================
+
+STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+	ID = 9018;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OUTPUT_STREAM
+#=======================================
+
+STRING PIN_FLD_OUTPUT_STREAM {
+
+	ID = 9017;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RETAIL_VALUE
+#=======================================
+
+DECIMAL PIN_FLD_RETAIL_VALUE {
+
+	ID = 9011;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENDED_FROM_BATCH_ID
+#=======================================
+
+STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+	ID = 9027;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_USAGE_END_T {
+
+	ID = 270;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_USAGE_START_T {
+
+	ID = 269;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VOLUME_RECEIVED
+#=======================================
+
+DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+	ID = 9010;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VOLUME_SENT
+#=======================================
+
+DECIMAL PIN_FLD_VOLUME_SENT {
+
+	ID = 9009;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WHOLESALE_VALUE
+#=======================================
+
+DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+	ID = 9012;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_POID_ID0
+#=======================================
+
+DECIMAL PIN_FLD_END_POID_ID0 {
+
+	ID = 5963;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_POID_ID0
+#=======================================
+
+DECIMAL PIN_FLD_START_POID_ID0 {
+
+	ID = 5962;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_VALUE
+#=======================================
+
+DECIMAL PIN_FLD_TOTAL_VALUE {
+
+	ID = 9014;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REVENUE_STREAM
+#=======================================
+
+STRING PIN_FLD_REVENUE_STREAM {
+
+	ID = 9016;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EDR_STATUS
+#=======================================
+
+STRING PIN_FLD_EDR_STATUS {
+
+	ID = 9015;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_REASON
+#=======================================
+
+ENUM PIN_FLD_SUSPENSE_REASON {
+
+	ID = 8162;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLING_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_BILLING_INFO {
+
+	ID = 8217;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_STATUS
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_STATUS {
+
+	ID = 1412;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_CYCLE_DOM
+#=======================================
+
+INT PIN_FLD_ACTG_CYCLE_DOM {
+
+	ID = 752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_TYPE
+#=======================================
+
+ENUM PIN_FLD_BILL_TYPE {
+
+	ID = 127;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REVENUE_COLLECTED
+#=======================================
+
+DECIMAL PIN_FLD_REVENUE_COLLECTED {
+
+	ID = 8220;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REVENUE_TO_BE_COLLECTED
+#=======================================
+
+DECIMAL PIN_FLD_REVENUE_TO_BE_COLLECTED {
+
+	ID = 8219;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_REVENUE_BILLED
+#=======================================
+
+DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+	ID = 8218;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLING_SEGMENTS
+#=======================================
+
+ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+	ID = 8307;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLING_SEGMENT
+#=======================================
+
+ENUM PIN_FLD_BILLING_SEGMENT {
+
+	ID = 8301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_SUPPRESSION
+#=======================================
+
+ARRAY PIN_FLD_BILL_SUPPRESSION {
+
+	ID = 8230;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REASON
+#=======================================
+
+ENUM PIN_FLD_REASON {
+
+	ID = 5506;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_ACCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_FAILED_ACCOUNTS {
+
+	ID = 8221;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_FAILED_ACCOUNT_OBJ {
+
+	ID = 8222;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_FAILED_BILL_OBJ {
+
+	ID = 8223;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_ERROR_CODE
+#=======================================
+
+STRING PIN_FLD_FAILED_ERROR_CODE {
+
+	ID = 8224;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REVENUES
+#=======================================
+
+ARRAY PIN_FLD_REVENUES {
+
+	ID = 8229;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_TYPE
+#=======================================
+
+STRING PIN_FLD_ITEM_TYPE {
+
+	ID = 2008;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_CONNECTIONS
+#=======================================
+
+INT PIN_FLD_TOTAL_CONNECTIONS {
+
+	ID = 8228;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXPORT_GL_AUDIT_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_EXPORT_GL_AUDIT_INFO {
+
+	ID = 9806;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_AUDIT_OBJ
+#=======================================
+
+POID PIN_FLD_PROCESS_AUDIT_OBJ {
+
+	ID = 8233;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SESSION_OBJ
+#=======================================
+
+POID PIN_FLD_SESSION_OBJ {
+
+	ID = 43;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_STR
+#=======================================
+
+STRING PIN_FLD_STATUS_STR {
+
+	ID = 9664;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_INFO
+#=======================================
+
+ARRAY PIN_FLD_GL_REPORT_INFO {
+
+	ID = 9801;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_NON_MONETARY_FLAG
+#=======================================
+
+ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+	ID = 9805;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_FREQUENCY_TYPE
+#=======================================
+
+ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+	ID = 9803;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_POID_LIST
+#=======================================
+
+STRING PIN_FLD_GL_REPORT_POID_LIST {
+
+	ID = 9802;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENT
+#=======================================
+
+STRING PIN_FLD_GL_SEGMENT {
+
+	ID = 517;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID_LIST
+#=======================================
+
+STRING PIN_FLD_RESOURCE_ID_LIST {
+
+	ID = 975;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_CDRS
+#=======================================
+
+ARRAY PIN_FLD_FAILED_CDRS {
+
+	ID = 8214;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_CDR_ID
+#=======================================
+
+STRING PIN_FLD_FAILED_CDR_ID {
+
+	ID = 8215;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_CDR_REASON
+#=======================================
+
+STRING PIN_FLD_FAILED_CDR_REASON {
+
+	ID = 8216;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PIPE_LINE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_PIPE_LINE_INFO {
+
+	ID = 8206;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CDR_BATCH_ID
+#=======================================
+
+INT PIN_FLD_CDR_BATCH_ID {
+
+	ID = 8210;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CDR_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_CDR_FILE_NAME {
+
+	ID = 8207;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CDR_FILE_TIME_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CDR_FILE_TIME_T {
+
+	ID = 8208;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CDR_REVENUE
+#=======================================
+
+DECIMAL PIN_FLD_CDR_REVENUE {
+
+	ID = 8209;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCARD_CDRS
+#=======================================
+
+INT PIN_FLD_DISCARD_CDRS {
+
+	ID = 8212;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUP_CDRS
+#=======================================
+
+INT PIN_FLD_DUP_CDRS {
+
+	ID = 8211;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_STATUS
+#=======================================
+
+ENUM PIN_FLD_PROCESS_STATUS {
+
+	ID = 8213;
+}
+
+
+#=======================================
+#  Storable Class /process_audit
+#=======================================
+
+STORABLE CLASS /process_audit {
+
+	SEQ_START = "5000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Defines an instance of base audit info class. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Poid of the Account object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FAILED_RECORDS {
+
+		DESCR = "Number of Failed records";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_HOSTNAME {
+
+		DESCR = "Process Host Id";
+		ORDER = 0;
+		LENGTH = 30;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+		DESCR = "The process end time. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROCESS_NAME {
+
+		DESCR = "Name of the Process from which the audit info is recorded";
+		ORDER = 0;
+		LENGTH = 30;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+		DESCR = "The process start time. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		DESCR = "Name of the Program which is creating the audit info is generated";
+		ORDER = 0;
+		LENGTH = 30;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_SUCCESSFUL_RECORDS {
+
+		DESCR = "Number of successsful records";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_TOTAL_RECORDS {
+
+		DESCR = "Number of input records";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_VERSION_ID {
+
+		DESCR = "Version Number of Object ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores the linking information between different objects";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BACKWARD_LINKS {
+
+		DESCR = "Array for storing the backward linking object details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_ID {
+
+			DESCR = "Batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BATCH_TYPE {
+
+			DESCR = "Batch Type";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CONTROL_POINT {
+
+			DESCR = "Control Point Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_LINK_OBJ {
+
+			DESCR = "Link object poid";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_BATCH_STAT {
+
+		DESCR = "Substruct containing EDR Batch Id and Type";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_ID {
+
+			DESCR = "Batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BATCH_TYPE {
+
+			DESCR = "Batch Type";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_FORWARD_LINKS {
+
+		DESCR = "Array for storing the forward linking object details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_ID {
+
+			DESCR = "Batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BATCH_TYPE {
+
+			DESCR = "Batch Type";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CONTROL_POINT {
+
+			DESCR = "Control Point Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_LINK_OBJ {
+
+			DESCR = "Link object poid";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/outputstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/outputstream {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Output Stream";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OUTPUT_STREAM {
+
+			DESCR = "Output Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time ";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time ";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/rel
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/rel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores REL audit informatiom";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_END_POID_ID0 {
+
+			DESCR = "End Poid";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_START_POID_ID0 {
+
+			DESCR = "Start Poid";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOTAL_VALUE {
+
+			DESCR = "Total Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/revstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/revstream {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Revenue Stream";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			DESCR = "Revenue Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/revstream_status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/revstream_status {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Revenue Stream and Status";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			DESCR = "EDR Status Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			DESCR = "Revenue Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/revstream_svctype
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/revstream_svctype {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Revenue Stream and Service Type";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			DESCR = "Revenue Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/revstream_svctype_status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/revstream_svctype_status {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Revenue Stream, Service Type and Status";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			DESCR = "EDR Status Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			DESCR = "Revenue Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/simple
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/simple {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time ";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time ";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/status {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on EDR Status";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			DESCR = "EDR Status Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time ";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/suspense
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/suspense {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Suspense Code";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_SUSPENSE_REASON {
+
+			DESCR = "Suspense Code Identifier";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time ";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time ";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Service Type";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_revstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_revstream {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Service Type and Revenue Stream";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			DESCR = "Revenue Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_revstream_outputstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_revstream_outputstream {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Service Type, Revenue Stream and Output Stream";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OUTPUT_STREAM {
+
+			DESCR = "Output Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			DESCR = "Revenue Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_revstream_status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_revstream_status {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Service Type, Revenue Stream and Status";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			DESCR = "EDR Status Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			DESCR = "Revenue Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_revstream_status_outputstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_revstream_status_outputstream {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Service Type, Revenue Stream, Status and Output Stream";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			DESCR = "EDR Status Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OUTPUT_STREAM {
+
+			DESCR = "Output Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			DESCR = "Revenue Stream Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_status {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores revenue summary of an EDR Batch based on Service Type and Status";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			DESCR = "Total Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			DESCR = "EDR Status Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			DESCR = "Total Duration";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			DESCR = "Old Discount Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			DESCR = "Old Retail Amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			DESCR = "Original batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			DESCR = "Total Retail charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type Identifier";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			DESCR = "Suspended From batch Id";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Last Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Earliest Call Time";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			DESCR = "Total volume of data received";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			DESCR = "Total volume of data sent";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			DESCR = "Total wholesale charge amount";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/billing
+#=======================================
+
+STORABLE CLASS /process_audit/billing {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Defines an instance of billing audit info class. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BILLING_INFO {
+
+		DESCR = "Substruct for revenue info for different apps";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_STATUS {
+
+			DESCR = "Accounts status (0) Active (1)inactive (2) Canceled";
+			ORDER = 0;
+			LENGTH = 126;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			DESCR = "DOM Number";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_BILL_TYPE {
+
+			DESCR = "Bill Type (0) Regular (1) Bill Now (2) Bill On Demand (64) Auto Triggered";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_REVENUE_COLLECTED {
+
+			DESCR = "Total revenue collected (pin_collect process)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_REVENUE_TO_BE_COLLECTED {
+
+			DESCR = "Total to be revenue collected (pin_collect process)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+			DESCR = "Total revenue billed ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+		DESCR = " Array for storing the Billing Segment wise audit Information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_BILLING_SEGMENT {
+
+			DESCR = " Name of bill segment";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_BILL_SUPPRESSION {
+
+			DESCR = "Array for suppressed bill details";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_ACCOUNT_OBJ {
+
+				DESCR = "Suppressed bill's Account poid";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				DESCR = "Amount of the bill's suppressed";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_BILLINFO_OBJ {
+
+				DESCR = "Suppressed bill's billinfo poid";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_REASON {
+
+				DESCR = "Stores reason for Bill Suppression (1) Threshold Suppression (Automatic)(2) Bill Supressed manually(3) Account Suppressed manually";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ARRAY PIN_FLD_FAILED_ACCOUNTS {
+
+			DESCR = "Array for storing the failed accounts";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_FAILED_ACCOUNT_OBJ {
+
+				DESCR = "Account Obj poid";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_FAILED_BILL_OBJ {
+
+				DESCR = "Bill Obj poid";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_FAILED_ERROR_CODE {
+
+				DESCR = "Error code";
+				ORDER = 0;
+				LENGTH = 124;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_FAILED_RECORDS {
+
+			DESCR = "Number of Failed records";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_REVENUES {
+
+			DESCR = " This array used to store the Audit revenueadditional summaries such as Usage charges,One time, recurring etc.by service type";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				DESCR = " Revenue Billed for each item type like usage,one-time etc";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_ITEM_TYPE {
+
+				DESCR = "Item types  like 'Usage',  'Recurring','Onetime', 'Discounts', 'Adjustments','Disputes','Refunds', 'Settlements',' Writeoff', 'Writeoff Reversals','Payments','Payment-Reversal'";
+				ORDER = 0;
+				LENGTH = 126;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_SERVICE_TYPE {
+
+				DESCR = "Service types";
+				ORDER = 0;
+				LENGTH = 126;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_SUCCESSFUL_RECORDS {
+
+			DESCR = "Number of successful records";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TOTAL_CONNECTIONS {
+
+			DESCR = "Number of connections";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TOTAL_RECORDS {
+
+			DESCR = "Number of input records";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+			DESCR = "Total revenue billed for the segment";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/export_gl
+#=======================================
+
+STORABLE CLASS /process_audit/export_gl {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This object contains audit information about each run of the application pin_ledger_report in export mode. While this information is used internally by the application, the end-user can also use this audit in order to regenerate (and export) reports for earlier periods. There will be one instance of this object for each run of the application (including when the application is run with any of the optional switches). There will be an array element for each individual ledger report generated within the run.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_EXPORT_GL_AUDIT_INFO {
+
+		DESCR = "Contains audit information for a single exported report";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROCESS_AUDIT_OBJ {
+
+			DESCR = "If the application was invoked with the option to resend or regenerate a previously generated report or reports, this field will contain the POID of the audit object appropriate to the relevant previous run of the application. This will be a NULL POID (POID ID 0) otherwise.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PROGRAM_NAME {
+
+			DESCR = "Command-line string that was used to invoke pin_ledger_report. The primary purpose of this string is to record the switches used to invoke the application.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SESSION_OBJ {
+
+			DESCR = "Link to the object that represents the session within which the application ran. It thus captures the login information for the CM connection session.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATUS_STR {
+
+			DESCR = "This field is used primarily for allowing parallel runs of the export application. This status string acts as a locking mechanism such that only one instance of the application can process a given GL segment in the configuration. It has the secondary purpose of flagging the case when the export application terminates abnormally (that is, crashes) without resetting this field to indicate the run has completed. After abnormal termination, the value of this field will remain as '<segment_name>_IN_PROGRESS' where <segment_name> is the name of the segment against which the application was run. If all segments were being processed, <segment_name> will be 'All'. When the application is run again with switch -restart, this field is set to '<segment_name>_INCOMPLETE'. When application exits normally (with or without any processing error), this field is set to '<segment_name>_COMPLETED'.";
+			ORDER = 0;
+			LENGTH = 127;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_GL_REPORT_INFO {
+
+		DESCR = "Contains audit information for a single exported report";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			DESCR = "End time of the ledger reporting period";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+			DESCR = "Indicates if the list of non-monetary resource IDs provided in PIN_FLD_RESOURCE_ID_LIST were included in or excluded from the report. Possible values are 1 (include - PIN_GL_INCLUDE_NON_MONETARY_RESOURCE) and 0 (exclude - PIN_GL_EXCLUDE_NON_MONETARY_RESOURCE). This field will be unused if PIN_FLD_RESOURCE_ID_LIST is blank.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+			DESCR = "Indicates the frequency of running ledger reports. Possible types are 1 (daily - PIN_GL_REPORT_FREQUENCY_DAILY), 2 (weekly - PIN_GL_REPORT_FREQUENCY_WEEKLY), 3 (monthly - PIN_GL_REPORT_FREQUENCY_MONTHLY), 4 (yearly - PIN_GL_REPORT_FREQUENCY_YEARLY), 5 (specified dates - PIN_GL_REPORT_FREQUENCY_SPECIFIED_DATES).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_GL_REPORT_POID_LIST {
+
+			DESCR = "Contains a list of 1, 2 or 3 /ledger_report POIDs. The first one represents the basic report generated using ledger report opcode. If there are 2 POIDs, the second one is either the custom report generated after execution of PCM_OP_GL_POL_EXPORT_GL policy opcode (in the case of report types Billed, Billed earned and Previously billed earned) or the incremental report created using ledger report for previous period (in the case of report types Unbilled, Unbilled earned, Unbilled unearned and Billed unearned). If there are 3 POIDs, the second one is the custom report and the third one is the incremental report.";
+			ORDER = 0;
+			LENGTH = 4000;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			DESCR = "GL segment for which the ledger report was run";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RESOURCE_ID_LIST {
+
+			DESCR = "Contains a blank-separated list of non-monetary resource IDs that were included in or excluded from the report. This field is used in conjunction with PIN_FLD_GL_NON_MONETARY_FLAG and could be empty to indicate that no filtering of non-monetary resources was done.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Indicates the type of revenue reported. Possible types are 0x01 (Unbilled - PIN_GL_TYPE_UNBILLED), 0x02 (Billed - PIN_GL_TYPE_BILLED), 0x04 (Unbilled earned - PIN_GL_TYPE_UNBILLED_EARNED), 0x08 (Billed earned - PIN_GL_TYPE_BILLED_EARNED), 0x10 (Unbilled unearned - PIN_GL_TYPE_UNBILLED_UNEARNED), 0x20 (Billed unearned - PIN_GL_TYPE_BILLED_UNEARNED), 0x40 (Previously billed earned - PIN_GL_TYPE_PREV_BILLED_EARNED).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/pipeline
+#=======================================
+
+STORABLE CLASS /process_audit/pipeline {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Defines an instance of pipe-line audit info class. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_FAILED_CDRS {
+
+		DESCR = "Array for storing the failed CDRS Id";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FAILED_CDR_ID {
+
+			DESCR = "CDR Id";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FAILED_CDR_REASON {
+
+			DESCR = "CDR Error Code";
+			ORDER = 0;
+			LENGTH = 124;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_PIPE_LINE_INFO {
+
+		DESCR = "Structure for pipe-line process audit info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CDR_BATCH_ID {
+
+			DESCR = "CDR file Batch Id";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CDR_FILE_NAME {
+
+			DESCR = "Inputfile name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CDR_FILE_TIME_T {
+
+			DESCR = "The file time stamp. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CDR_REVENUE {
+
+			DESCR = "Revenue for CDR file";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DISCARD_CDRS {
+
+			DESCR = "Count of discarded CDRs";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DUP_CDRS {
+
+			DESCR = "Count of duplicate CDRs";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PROCESS_STATUS {
+
+			DESCR = "Process status (0) Process Failed (1) completion of process";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit
+#=======================================
+
+STORABLE CLASS /process_audit IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "proc_aud_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "Account_Obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_FAILED_RECORDS {
+
+		SQL_COLUMN = "FailRecords";
+	}
+
+	STRING PIN_FLD_HOSTNAME {
+
+		SQL_COLUMN = "ProcesHostId";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+		SQL_COLUMN = "Process_End";
+	}
+
+	STRING PIN_FLD_PROCESS_NAME {
+
+		SQL_COLUMN = "process_name";
+	}
+
+	TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+		SQL_COLUMN = "Process_Start";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	INT PIN_FLD_SUCCESSFUL_RECORDS {
+
+		SQL_COLUMN = "SuccessRecords";
+	}
+
+	INT PIN_FLD_TOTAL_RECORDS {
+
+		SQL_COLUMN = "InputRecords";
+	}
+
+	INT PIN_FLD_VERSION_ID {
+
+		SQL_COLUMN = "version_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BACKWARD_LINKS {
+
+		SQL_TABLE = "proc_aud_sce_blink_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_ID {
+
+			SQL_COLUMN = "Batch_id";
+		}
+
+		INT PIN_FLD_BATCH_TYPE {
+
+			SQL_COLUMN = "Batch_type";
+		}
+
+		STRING PIN_FLD_CONTROL_POINT {
+
+			SQL_COLUMN = "Control_Point_id";
+		}
+
+		POID PIN_FLD_LINK_OBJ {
+
+			SQL_COLUMN = "LINK_OBJ";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_BATCH_STAT {
+
+		SQL_TABLE = "proc_aud_bstat_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_ID {
+
+			SQL_COLUMN = "Batch_id";
+		}
+
+		INT PIN_FLD_BATCH_TYPE {
+
+			SQL_COLUMN = "Batch_type";
+		}
+
+	}
+
+	ARRAY PIN_FLD_FORWARD_LINKS {
+
+		SQL_TABLE = "proc_aud_sce_flink_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_ID {
+
+			SQL_COLUMN = "Batch_id";
+		}
+
+		INT PIN_FLD_BATCH_TYPE {
+
+			SQL_COLUMN = "Batch_type";
+		}
+
+		STRING PIN_FLD_CONTROL_POINT {
+
+			SQL_COLUMN = "Control_Point_id";
+		}
+
+		POID PIN_FLD_LINK_OBJ {
+
+			SQL_COLUMN = "LINK_OBJ";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/outputstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/outputstream IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_ostrm_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		STRING PIN_FLD_OUTPUT_STREAM {
+
+			SQL_COLUMN = "Output_stream";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/rel
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/rel IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_rel_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_END_POID_ID0 {
+
+			SQL_COLUMN = "End_poid";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Event_Count";
+		}
+
+		DECIMAL PIN_FLD_START_POID_ID0 {
+
+			SQL_COLUMN = "Start_poid";
+		}
+
+		DECIMAL PIN_FLD_TOTAL_VALUE {
+
+			SQL_COLUMN = "Total_Value";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/revstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/revstream IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_rstrm_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			SQL_COLUMN = "Revenue_stream";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/revstream_status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/revstream_status IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_rstrm_sts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			SQL_COLUMN = "Edr_status";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			SQL_COLUMN = "Revenue_stream";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/revstream_svctype
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/revstream_svctype IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_rstrm_stype_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			SQL_COLUMN = "Revenue_stream";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "Service_Type";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/revstream_svctype_status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/revstream_svctype_status IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_rstrm_stype_sts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			SQL_COLUMN = "Edr_status";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			SQL_COLUMN = "Revenue_stream";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "Service_Type";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/simple
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/simple IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/status IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_sts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			SQL_COLUMN = "Edr_status";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/suspense
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/suspense IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_suspense_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		ENUM PIN_FLD_SUSPENSE_REASON {
+
+			SQL_COLUMN = "Suspense_Code";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_stype_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "Service_Type";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_revstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_revstream IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_stype_rstrm_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			SQL_COLUMN = "Revenue_stream";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "Service_Type";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_revstream_outputstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_revstream_outputstream IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_stype_rstrm_ostrm_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		STRING PIN_FLD_OUTPUT_STREAM {
+
+			SQL_COLUMN = "Output_stream";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			SQL_COLUMN = "Revenue_stream";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "Service_Type";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_revstream_status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_revstream_status IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_stype_rstrm_sts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			SQL_COLUMN = "Edr_status";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			SQL_COLUMN = "Revenue_stream";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "Service_Type";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_revstream_status_outputstream
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_revstream_status_outputstream IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_stype_rstrm_sts_ostrm_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			SQL_COLUMN = "Edr_Status";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		STRING PIN_FLD_OUTPUT_STREAM {
+
+			SQL_COLUMN = "Output_stream";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_REVENUE_STREAM {
+
+			SQL_COLUMN = "Revenue_stream";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "Service_Type";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/svctype_status
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/svctype_status IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_stype_sts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Total_Discount_Value";
+		}
+
+		STRING PIN_FLD_EDR_STATUS {
+
+			SQL_COLUMN = "Edr_status";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Total_Count";
+		}
+
+		DECIMAL PIN_FLD_EVENT_DURATION {
+
+			SQL_COLUMN = "Total_Duration";
+		}
+
+		DECIMAL PIN_FLD_OLD_DISCOUNT_VALUE {
+
+			SQL_COLUMN = "Old_Discount_Value";
+		}
+
+		DECIMAL PIN_FLD_OLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Old_Retail_Amount";
+		}
+
+		STRING PIN_FLD_ORIGINAL_BATCH_ID {
+
+			SQL_COLUMN = "Original_Batch_id";
+		}
+
+		DECIMAL PIN_FLD_RETAIL_VALUE {
+
+			SQL_COLUMN = "Total_Retail_Amount";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "Service_Type";
+		}
+
+		STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+			SQL_COLUMN = "Suspended_From_Batch_Id";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "Usage_End_t";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "Usage_Start_t";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_RECEIVED {
+
+			SQL_COLUMN = "Total_Volume_Received";
+		}
+
+		DECIMAL PIN_FLD_VOLUME_SENT {
+
+			SQL_COLUMN = "Total_Volume_Sent";
+		}
+
+		DECIMAL PIN_FLD_WHOLESALE_VALUE {
+
+			SQL_COLUMN = "Total_Wholesale_Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/billing
+#=======================================
+
+STORABLE CLASS /process_audit/billing IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BILLING_INFO {
+
+		SQL_TABLE = "proc_aud_bill_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_STATUS {
+
+			SQL_COLUMN = "accountsstatus";
+		}
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			SQL_COLUMN = "atcg_dom";
+		}
+
+		ENUM PIN_FLD_BILL_TYPE {
+
+			SQL_COLUMN = "bill_type";
+		}
+
+		DECIMAL PIN_FLD_REVENUE_COLLECTED {
+
+			SQL_COLUMN = "revenue_collected";
+		}
+
+		DECIMAL PIN_FLD_REVENUE_TO_BE_COLLECTED {
+
+			SQL_COLUMN = "revenue_to_be_collected";
+		}
+
+		DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+			SQL_COLUMN = "total_revenue";
+		}
+
+	}
+
+	ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+		SQL_TABLE = "proc_aud_bill_segments_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_BILLING_SEGMENT {
+
+			SQL_COLUMN = "bill_seg_name";
+		}
+
+		ARRAY PIN_FLD_BILL_SUPPRESSION {
+
+			SQL_TABLE = "proc_aud_bill_suppress_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_ACCOUNT_OBJ {
+
+				SQL_COLUMN = "account_obj";
+			}
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				SQL_COLUMN = "revenue_anticipated";
+			}
+
+			POID PIN_FLD_BILLINFO_OBJ {
+
+				SQL_COLUMN = "billinfo_obj";
+			}
+
+			ENUM PIN_FLD_REASON {
+
+				SQL_COLUMN = "bill_sup_reason";
+			}
+
+		}
+
+		ARRAY PIN_FLD_FAILED_ACCOUNTS {
+
+			SQL_TABLE = "proc_aud_bill_err_acct_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_FAILED_ACCOUNT_OBJ {
+
+				SQL_COLUMN = "account_obj";
+			}
+
+			POID PIN_FLD_FAILED_BILL_OBJ {
+
+				SQL_COLUMN = "bill_obj";
+			}
+
+			STRING PIN_FLD_FAILED_ERROR_CODE {
+
+				SQL_COLUMN = "account_fail_status";
+			}
+
+		}
+
+		INT PIN_FLD_FAILED_RECORDS {
+
+			SQL_COLUMN = "failrecords";
+		}
+
+		ARRAY PIN_FLD_REVENUES {
+
+			SQL_TABLE = "proc_aud_bill_revenues_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				SQL_COLUMN = "item_total";
+			}
+
+			STRING PIN_FLD_ITEM_TYPE {
+
+				SQL_COLUMN = "item_type";
+			}
+
+			STRING PIN_FLD_SERVICE_TYPE {
+
+				SQL_COLUMN = "service_type";
+			}
+
+		}
+
+		INT PIN_FLD_SUCCESSFUL_RECORDS {
+
+			SQL_COLUMN = "successrecords";
+		}
+
+		INT PIN_FLD_TOTAL_CONNECTIONS {
+
+			SQL_COLUMN = "total_connections";
+		}
+
+		INT PIN_FLD_TOTAL_RECORDS {
+
+			SQL_COLUMN = "inputrecords";
+		}
+
+		DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+			SQL_COLUMN = "revenue_billed";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/export_gl
+#=======================================
+
+STORABLE CLASS /process_audit/export_gl IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_EXPORT_GL_AUDIT_INFO {
+
+		SQL_TABLE = "proc_aud_export_gl_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROCESS_AUDIT_OBJ {
+
+			SQL_COLUMN = "process_audit_obj";
+		}
+
+		STRING PIN_FLD_PROGRAM_NAME {
+
+			SQL_COLUMN = "program_command";
+		}
+
+		POID PIN_FLD_SESSION_OBJ {
+
+			SQL_COLUMN = "session_obj";
+		}
+
+		STRING PIN_FLD_STATUS_STR {
+
+			SQL_COLUMN = "status_str";
+		}
+
+	}
+
+	ARRAY PIN_FLD_GL_REPORT_INFO {
+
+		SQL_TABLE = "proc_aud_export_gl_report_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			SQL_COLUMN = "end_t";
+		}
+
+		ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+			SQL_COLUMN = "non_monetary_flag";
+		}
+
+		ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+			SQL_COLUMN = "gl_report_frequency_type";
+		}
+
+		STRING PIN_FLD_GL_REPORT_POID_LIST {
+
+			SQL_COLUMN = "ledger_report_poid_list";
+		}
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			SQL_COLUMN = "gl_segment";
+		}
+
+		STRING PIN_FLD_RESOURCE_ID_LIST {
+
+			SQL_COLUMN = "resource_id_list";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/pipeline
+#=======================================
+
+STORABLE CLASS /process_audit/pipeline IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_FAILED_CDRS {
+
+		SQL_TABLE = "proc_aud_pipeline_err_cdr_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FAILED_CDR_ID {
+
+			SQL_COLUMN = "CDR_ID";
+		}
+
+		STRING PIN_FLD_FAILED_CDR_REASON {
+
+			SQL_COLUMN = "CDR_ERROR_CODE";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_PIPE_LINE_INFO {
+
+		SQL_TABLE = "proc_aud_pipe_line_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CDR_BATCH_ID {
+
+			SQL_COLUMN = "BatchId";
+		}
+
+		STRING PIN_FLD_CDR_FILE_NAME {
+
+			SQL_COLUMN = "FileName";
+		}
+
+		TIMESTAMP PIN_FLD_CDR_FILE_TIME_T {
+
+			SQL_COLUMN = "filetime_t";
+		}
+
+		DECIMAL PIN_FLD_CDR_REVENUE {
+
+			SQL_COLUMN = "Revenue";
+		}
+
+		INT PIN_FLD_DISCARD_CDRS {
+
+			SQL_COLUMN = "DiscardCdr";
+		}
+
+		INT PIN_FLD_DUP_CDRS {
+
+			SQL_COLUMN = "DupCdr";
+		}
+
+		ENUM PIN_FLD_PROCESS_STATUS {
+
+			SQL_COLUMN = "ProcessStatus";
+		}
+
+	}
+
+}
+

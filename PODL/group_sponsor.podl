@@ -1,0 +1,209 @@
+
+#=======================================
+#  Field PIN_FLD_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_MEMBERS {
+
+	ID = 119;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSOR
+#=======================================
+
+ARRAY PIN_FLD_SPONSOR {
+
+	ID = 1201;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_TYPE
+#=======================================
+
+STRING PIN_FLD_RATE_TYPE {
+
+	ID = 1203;
+}
+
+
+#=======================================
+#  Storable Class /group/sponsor
+#=======================================
+
+STORABLE CLASS /group/sponsor {
+
+	LABEL = "Sponsorship group object";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Sponsored billing allows one customer to pay for part of one or more other customers' bills. Sponsored billing also allows one customer to pay another customer directly.  Sponsored billing is managed by setting up sponsored groups. A sponsored group consists of one sponsoring account, and one or more accounts that the sponsor pays for. An account can sponsor more than one group, and an account can be sponsored by more than one account group.  The sponsorer is referred to by the PIN_FLD_PARENT field in the base /group object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of sponsored accounts. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Link to one sponsoree account object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SPONSOR {
+
+		DESCR = "Array of products being sponsored by the sponsorer for all the sponsorees. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Possible values are: Sponsor all rates in this product (0x1) Guaratee sponsorship (0x2, i.e., the sponsorer guantees to pay the bill even if the charges exceed the sponsored account's credit limit. Sponsor folds in this product (0x4)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name of the product being sponsored.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_TYPE {
+
+			DESCR = "Rate category within the product being sponsored. Ignored if all rate categories are being sponsored.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sponsor
+#=======================================
+
+STORABLE CLASS /group/sponsor IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "group_sponsor_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SPONSOR {
+
+		SQL_TABLE = "group_sponsor_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_RATE_TYPE {
+
+			SQL_COLUMN = "rate_type";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,283 @@
+
+#=======================================
+#  Field PIN_FLD_AUTH_REAUTH_INFO
+#=======================================
+
+ARRAY PIN_FLD_AUTH_REAUTH_INFO {
+
+	ID = 9542;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ALLOW_QUICK_REJECT
+#=======================================
+
+ENUM PIN_FLD_ALLOW_QUICK_REJECT {
+
+	ID = 9546;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_DELAY_TIME
+#=======================================
+
+INT PIN_FLD_MAX_DELAY_TIME {
+
+	ID = 9544;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REAUTH_FLAG
+#=======================================
+
+ENUM PIN_FLD_REAUTH_FLAG {
+
+	ID = 9545;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_INFO
+#=======================================
+
+ARRAY PIN_FLD_RESOURCE_INFO {
+
+	ID = 9543;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_THRESHOLD_LOWER
+#=======================================
+
+DECIMAL PIN_FLD_THRESHOLD_LOWER {
+
+	ID = 9548;
+}
+
+
+#=======================================
+#  Field PIN_FLD_THRESHOLD_UPPER
+#=======================================
+
+DECIMAL PIN_FLD_THRESHOLD_UPPER {
+
+	ID = 9547;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Storable Class /config/auth_reauth_info
+#=======================================
+
+STORABLE CLASS /config/auth_reauth_info {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The object defined by this class determines the resource upper and lower thresholds, reservation amount and delay period based on each resource for prepaid services.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_AUTH_REAUTH_INFO {
+
+		DESCR = "Array of resource thresholds, amounts and delay for service types.  Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_ALLOW_QUICK_REJECT {
+
+			DESCR = "Setting this field to 0 will disable the quick rejection and the rating engine will be called for authorization.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_DELAY_TIME {
+
+			DESCR = "The maximum time delay can be added to valid_to.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_REAUTH_FLAG {
+
+			DESCR = "Flag for enabling feature for reauth.1 for re-authorization request,0 for no re-authorization.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_RESOURCE_INFO {
+
+			DESCR = "Array of resource thresholds and reservation amount for the service type.  Array element id is the resource ID and is significant.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				DESCR = "Amount to be reserved for GREEN auth.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_THRESHOLD_LOWER {
+
+				DESCR = "Lower threshold amount.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_THRESHOLD_UPPER {
+
+				DESCR = "Upper threshold amount.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/auth_reauth_info
+#=======================================
+
+STORABLE CLASS /config/auth_reauth_info IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_AUTH_REAUTH_INFO {
+
+		SQL_TABLE = "config_auth_reauth_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_ALLOW_QUICK_REJECT {
+
+			SQL_COLUMN = "allow_quick_reject";
+		}
+
+		INT PIN_FLD_MAX_DELAY_TIME {
+
+			SQL_COLUMN = "max_delay_time";
+		}
+
+		ENUM PIN_FLD_REAUTH_FLAG {
+
+			SQL_COLUMN = "reauth_flag";
+		}
+
+		ARRAY PIN_FLD_RESOURCE_INFO {
+
+			SQL_TABLE = "config_auth_reauth_res_info_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				SQL_COLUMN = "amount";
+			}
+
+			DECIMAL PIN_FLD_THRESHOLD_LOWER {
+
+				SQL_COLUMN = "threshold_lower";
+			}
+
+			DECIMAL PIN_FLD_THRESHOLD_UPPER {
+
+				SQL_COLUMN = "threshold_upper";
+			}
+
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "service_type";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,252 @@
+
+#=======================================
+#  Field PIN_FLD_EVENT_CORRECTIVE_BILL
+#=======================================
+
+SUBSTRUCT PIN_FLD_EVENT_CORRECTIVE_BILL {
+
+	ID = 919;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT_ORIG
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+	ID = 1621;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_AR_BILL_OBJ {
+
+	ID = 796;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_NO
+#=======================================
+
+STRING PIN_FLD_BILL_NO {
+
+	ID = 793;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_TYPE
+#=======================================
+
+ENUM PIN_FLD_INV_TYPE {
+
+	ID = 918;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_BILL_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+	ID = 140;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORIG_NUM
+#=======================================
+
+STRING PIN_FLD_ORIG_NUM {
+
+	ID = 1595;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/corrective_bill
+#=======================================
+
+STORABLE CLASS /event/billing/corrective_bill {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " This event is created during generaton of the corrective bill.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_EVENT_CORRECTIVE_BILL {
+
+		DESCR = "Substruct containing information about corrective bill.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+			DESCR = "Due from the previous bill.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_AR_BILL_OBJ {
+
+			DESCR = "Link to the original bill object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			DESCR = "Bill number for a Corrective BIll.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Indicates whether AR charges have been made since the previous bill. Values are 0 (no charges) or 1";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_INV_TYPE {
+
+			DESCR = "Detailed/Summary and Replacement/Delta invoice.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+			DESCR = "Time when the previous bill (with the same poid) is created.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIG_NUM {
+
+			DESCR = "Bill number from the previous bill";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/corrective_bill
+#=======================================
+
+STORABLE CLASS /event/billing/corrective_bill IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_EVENT_CORRECTIVE_BILL {
+
+		SQL_TABLE = "event_corrective_bill_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+			SQL_COLUMN = "amount_orig";
+		}
+
+		POID PIN_FLD_AR_BILL_OBJ {
+
+			SQL_COLUMN = "ar_bill_obj";
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			SQL_COLUMN = "bill_no";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		ENUM PIN_FLD_INV_TYPE {
+
+			SQL_COLUMN = "inv_type";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+			SQL_COLUMN = "last_bill_t";
+		}
+
+		STRING PIN_FLD_ORIG_NUM {
+
+			SQL_COLUMN = "orig_bill_no";
+		}
+
+	}
+
+}
+

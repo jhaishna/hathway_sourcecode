@@ -1,0 +1,195 @@
+
+#=======================================
+#  Field MSO_FLD_REFUND
+#=======================================
+
+ARRAY MSO_FLD_REFUND {
+
+	ID = 43071;
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_AMOUNT
+#=======================================
+
+DECIMAL MSO_FLD_REFUND_AMOUNT {
+
+	ID = 43200;
+	DESCR = "REFUND_AMOUNT";
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_NO
+#=======================================
+
+STRING MSO_FLD_REFUND_NO {
+
+	ID = 43202;
+	DESCR = "Refund No";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/refund
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/refund {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_REFUND {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_REFUND_AMOUNT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_REFUND_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/refund
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/refund IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_REFUND {
+
+		SQL_TABLE = "mso_event_lifecycle_refund_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_REFUND_AMOUNT {
+
+			SQL_COLUMN = "refund_amount";
+		}
+
+		STRING MSO_FLD_REFUND_NO {
+
+			SQL_COLUMN = "refund_ref_no";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+

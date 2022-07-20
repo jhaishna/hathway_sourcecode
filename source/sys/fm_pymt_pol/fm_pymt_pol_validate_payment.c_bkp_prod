@@ -1,0 +1,2594 @@
+/*
+ *
+* Copyright (c) 2004, 2013, Oracle and/or its affiliates. All rights reserved. 
+ *
+ *	This material is the confidential property of Oracle Corporation or its
+ *	licensors and may be used, reproduced, stored or transmitted only in
+ *	accordance with a valid Oracle license or sublicense agreement.
+ *
+ */
+
+#ifndef lint
+static char Sccs_id[] = "@(#)$Id: fm_pymt_pol_validate_payment.c /cgbubrm_7.5.0.rwsmod/2 2013/02/01 03:29:48 kpramod Exp $";
+#endif
+
+/*******************************************************************
+ * Contains the PCM_OP_PYMT_POL_VALIDATE_PAYMENT operation. 
+ *******************************************************************/
+
+
+#include <stdio.h> 
+#include <string.h> 
+ 
+#include "pcm.h"
+#include "ops/pymt.h"
+#include "pin_rate.h"
+#include "pin_pymt.h"
+#include "pin_bill.h"
+#include "pin_cust.h"
+#include "cm_fm.h"
+#include "pin_errs.h"
+#include "pinlog.h"
+#include "pin_ar.h"
+#include "psiu_business_params.h"
+#include "fm_bill_utils.h"
+
+
+/*******************************************************************
+ * Globals retrieved from elsewhere.
+ *******************************************************************/
+
+/*******************************************************************
+ * Routines contained within.
+ *******************************************************************/
+EXPORT_OP void
+op_pymt_pol_validate_payment(
+        cm_nap_connection_t	*connp,
+	int			opcode,
+        int			flags,
+        pin_flist_t		*i_flistp,
+        pin_flist_t		**o_flistpp,
+        pin_errbuf_t		*ebufp);
+
+static void 
+fm_pymt_pol_validate_payment(
+	pcm_context_t   	*ctxp,
+	int 			flags,
+	pin_flist_t		*i_flistp,
+	pin_flist_t		**r_flistpp,
+	pin_errbuf_t		*ebufp);
+
+static void
+fm_pymt_pol_validate_payment_failed_payment(
+	pcm_context_t		*ctxp, 
+	int			flags,
+	pin_flist_t		*charge_flistp,
+	pin_flist_t		*billinfo_flistp,
+	int64			db,
+	pin_errbuf_t		*ebufp);
+
+static void
+fm_pymt_pol_validate_payment_search_payment(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t		*billinfo_flistp,
+	pin_flist_t		**result_flistpp,
+	pin_pay_type_t          *pay_typep,
+	int64			db,
+	pin_errbuf_t            *ebufp);
+
+static void
+fm_pymt_pol_validate_pymt_set_ex_info(
+        pcm_context_t           *ctxp,
+        pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	pin_flist_t		*res_flistp,
+	pin_pay_type_t		*pay_typep,
+	pin_errbuf_t		*ebufp);
+
+static void 
+fm_pymt_pol_check_account_for_writeoff(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	int			flags,
+	pin_errbuf_t            *ebufp);
+
+static void
+fm_pymt_pol_validate_payment_for_suspense(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t		*billinfo_flistp,
+	int                     flags,
+	int			*is_suspense_enablep,
+	int64			database,
+	pin_errbuf_t            *ebufp);
+
+static void
+fm_pymt_pol_validate_payment_account_info(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	int                     flags,
+	int32                   *result,
+	int64			database,
+	pin_errbuf_t            *ebufp);
+
+static void
+fm_pymt_pol_validate_payment_get_account_by_bill(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	int                     flags,
+	int                     *result,
+	int64			database,
+	pin_errbuf_t            *ebufp);
+
+static void
+fm_pymt_pol_validate_payment_billinfo(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	pin_flist_t             *billobj_flistp,
+	int                     flags,
+	pin_errbuf_t            *ebufp);
+
+static void
+fm_pymt_pol_validate_payment_bill(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	int                     flags,
+	int32                   *result,
+	int64                   database,
+	pin_errbuf_t            *ebufp);
+
+static void
+fm_pymt_pol_validate_find_bill_by_amount(
+        pcm_context_t           *ctxp,
+        pin_flist_t             *i_flistp,
+        pin_flist_t             *billinfo_flistp,
+        int                     flags,
+        pin_errbuf_t            *ebufp);
+static void 
+fm_pymt_pol_validate_payment_get_account(
+	pcm_context_t		*ctxp,
+	pin_flist_t		*i_flistp,
+	poid_t			*dummy_pdp,
+	poid_t			**accnt_pdpp,
+	pin_errbuf_t		*ebufp);
+/*******************************************************************
+ * Routines needed from elsewhere.
+ *******************************************************************/
+
+/*******************************************************************
+ * Main routine for the PCM_OP_PYMT_POL_VALIDATE_PAYMENT operation.
+ *******************************************************************/
+void
+op_pymt_pol_validate_payment(
+        cm_nap_connection_t	*connp,
+	int			opcode,
+        int			flags,
+        pin_flist_t		*i_flistp,
+        pin_flist_t		**o_flistpp,
+        pin_errbuf_t		*ebufp)
+{
+	pin_flist_t		*r_flistp = NULL;
+	pcm_context_t		*ctxp = connp->dm_ctx;
+
+	if (PIN_ERRBUF_IS_ERR(ebufp))
+	{
+		return ;
+	}
+	PIN_ERRBUF_CLEAR(ebufp);
+	/***********************************************************
+	 * Insanity check.
+	 ***********************************************************/
+	if (opcode != PCM_OP_PYMT_POL_VALIDATE_PAYMENT) {
+		pin_set_err(ebufp, PIN_ERRLOC_FM,
+			PIN_ERRCLASS_SYSTEM_DETERMINATE,
+			PIN_ERR_BAD_OPCODE, 0, 0, opcode);
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"op_pymt_pol_validate_payment opcode error", ebufp);
+		return;
+	}
+
+	/***********************************************************
+	 * Debug: The input Flist
+	 ***********************************************************/
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+		"op_pymt_pol_validate_payment input flist", i_flistp);
+	/**********************************************************
+	 * Copy the input flist to r_flsitp as. Do not change the 
+	 * Input Flist
+	 *********************************************************/
+
+	fm_pymt_pol_validate_payment(ctxp, flags, i_flistp, &r_flistp,ebufp);
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		/***************************************************
+		 * Log something and return nothing.
+		 **************************************************/
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"op_pymt_pol_validate_payment error", ebufp);
+		PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+		*o_flistpp = NULL;
+
+	} 
+	else
+	{
+
+		/***************************************************
+		 * Point the real return flist to the right thing.
+		 ***************************************************/
+		PIN_ERRBUF_CLEAR(ebufp);
+		*o_flistpp = r_flistp;
+
+		/***************************************************
+		 * Debug: What we're sending back.
+		 ***************************************************/
+		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+			"op_pymt_pol_validate_payment return flist", r_flistp);
+	}
+
+	return;
+}
+
+/*******************************************************************
+ * fm_pymt_pol_validate_payment()
+ *******************************************************************/
+static void 
+fm_pymt_pol_validate_payment(
+	pcm_context_t           *ctxp,
+	int			flags,
+	pin_flist_t             *i_flistp,
+	pin_flist_t		**r_flistpp,
+	pin_errbuf_t            *ebufp)
+{
+	pin_flist_t		*charge_flistp 	= NULL;
+	pin_flist_t		*billinfo_flistp = NULL;
+	pin_flist_t		*bill_flistp = NULL;
+	pin_flist_t		*item_flistp = NULL;
+	pin_flist_t		*srch_flistp = NULL;
+	pin_flist_t		*arg_flistp = NULL;
+	pin_flist_t		*srch_res_flistp = NULL;
+	pin_flist_t		*temp_flistp = NULL;
+	poid_t			*dummy_pdp = NULL;
+	poid_t			*srch_pdp = NULL;
+	poid_t			*accnt_pdp = NULL;
+	poid_t			*billinfo_pdp = NULL;
+	poid_t			*poidp = NULL;
+	int32			is_billinfo_exist = PIN_BOOLEAN_TRUE;
+	int32			billinfo_count = 0;
+	int64			database = 0;
+	char			template[256] = {0};
+	pin_cookie_t		temp_cookie = NULL;
+	int32			*reason_idp = NULL;
+	int32			reason_id = 0;
+	int32			domain_id = 0;
+	pin_decimal_t		*amountp = NULL;
+	pin_pymt_result_t	*resultp	= NULL;
+	pin_cookie_t		cookie 		= NULL;
+	pin_charge_cmd_t	*cmdp 		= NULL;
+	int32 			elem_id		= 0;
+	int32 			*is_suspense_enablep = NULL;
+	int32			writeoff_rev_flag = 0;
+	int32           	business_param_ar_bill_amount_search = 0;
+	int32			is_refund = PIN_BOOLEAN_FALSE;
+
+	if (PIN_ERRBUF_IS_ERR(ebufp))
+	{
+		return ;
+	}
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	poidp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_POID, 0, ebufp);
+
+        if (PIN_POID_IS_NULL(poidp)) {
+                PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_ERROR,
+                "fm_pymt_pol_validate_payment: poid is NULL");
+                return;
+        }
+
+        database = PIN_POID_GET_DB(poidp);
+
+	*r_flistpp = PIN_FLIST_COPY(i_flistp, ebufp);
+
+        business_param_ar_bill_amount_search = psiu_bparams_get_int(ctxp,
+                PSIU_BPARAMS_AR_PARAMS, PSIU_BPARAMS_AR_BILL_SEARCH_ENABLE, ebufp);
+
+        if ((business_param_ar_bill_amount_search != 
+				PSIU_BPARAMS_AR_BILL_SEARCH_ENABLED)&&
+         (business_param_ar_bill_amount_search != 
+				PSIU_BPARAMS_AR_BILL_SEARCH_DISABLED)) {
+                pin_set_err(ebufp, PIN_ERRLOC_FM, PIN_ERRCLASS_SYSTEM_DETERMINATE,
+                        PIN_ERR_INVALID_CONF, 0, 0, 0);
+                PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+                        "bad search_bill_amount_enable param in op_pymt_pol_validate_payment",
+                                ebufp);
+        }
+
+	while ((charge_flistp = PIN_FLIST_ELEM_GET_NEXT(*r_flistpp,
+				PIN_FLD_CHARGES,
+				&elem_id, 1, &cookie, ebufp)) != NULL){
+		cmdp = (pin_charge_cmd_t *) PIN_FLIST_FLD_GET(charge_flistp,
+				PIN_FLD_COMMAND, 0, ebufp);
+		/*********************************************
+		 * Check if BILLINFO array is present in the 
+		 * charges array. If yes then billinfo_flistp
+		 * should point to BILLINFO Array else 
+		 * it should  point to charges array
+		 *********************************************/
+		billinfo_flistp = PIN_FLIST_ELEM_GET(charge_flistp,
+					PIN_FLD_BILLINFO, PIN_ELEMID_ANY,
+					1, ebufp);
+		if(!billinfo_flistp){
+			billinfo_flistp = charge_flistp;
+			/******************************************************
+			 * Check for the billinfo object under charge array.
+			 * If 'is_billinfos_exist' is false it means that
+			 * neither billinfo array nor the billinfo object is 
+			 * present under charges array
+			*******************************************************/
+			billinfo_pdp = PIN_FLIST_FLD_GET(charge_flistp,
+					PIN_FLD_BILLINFO_OBJ, 1, ebufp);
+			if (!billinfo_pdp) {
+				is_billinfo_exist = PIN_BOOLEAN_FALSE;
+			}
+		}
+		/********************************************************
+		 * Get the status of the payment.
+		 *********************************************************/
+		resultp = (pin_pymt_result_t *) PIN_FLIST_FLD_GET(charge_flistp,
+					PIN_FLD_STATUS, 1, ebufp);
+
+		/********************************************************
+		 * Check if payment is failed
+		 * This function is called before checking for suspense as
+		 * function enhances the input flist
+		 ********************************************************/
+		if (resultp && 
+			(IS_PYMT_FAILED(*resultp)) &&
+			    cmdp && *cmdp == PIN_CHARGE_CMD_NONE){
+
+			fm_pymt_pol_validate_payment_failed_payment(ctxp,
+							flags,
+							charge_flistp,
+							billinfo_flistp,
+							database, ebufp);
+								
+		}
+		/*******************************************************
+		 * Before using the value in resultp refresh the value
+		 * from charges array as the above function call can
+		 * change the value in PIN_FLD_STATUS.
+		 *******************************************************/
+
+		/****************************************************************
+                 * Validate the payments against Suspense management criteria
+		 * and change the status of the payment to Suspense if necessary
+                 ****************************************************************/
+		is_suspense_enablep = (int32*)pin_malloc(sizeof(int32));
+		if (is_suspense_enablep == NULL) {
+			pin_set_err(ebufp, PIN_ERRLOC_FM,
+				PIN_ERRCLASS_SYSTEM_DETERMINATE,
+				PIN_ERR_NO_MEM, 0,0,0);
+			PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+				"fm_pymt_pol_validate_payment no memory"
+				" error", ebufp);
+		}
+		fm_pymt_pol_validate_payment_for_suspense(ctxp, charge_flistp, 
+			billinfo_flistp, flags, is_suspense_enablep, database, ebufp);
+
+		/********************************************************
+		 * Get the status of the payment.
+		*********************************************************/
+		resultp = (pin_pymt_result_t *) PIN_FLIST_FLD_GET(charge_flistp,
+					PIN_FLD_STATUS, 1, ebufp);
+
+		/**********************************************************
+         	 * fm_pymt_pol_validate_find_bill_by_amount() is called  
+         	 * to find Bill poid which amount matched with payments amount
+         	 *********************************************************/
+
+		if (business_param_ar_bill_amount_search == 
+					PSIU_BPARAMS_AR_BILL_SEARCH_ENABLED) {
+			if ( resultp &&
+				(IS_PYMT_SUCCESS(*resultp))) {
+        			fm_pymt_pol_validate_find_bill_by_amount(ctxp, 
+						charge_flistp,
+						billinfo_flistp,
+						flags, ebufp);
+			}
+		}
+
+		/*************************************************************
+		 * Writeoff reversal	 
+		 *************************************************************/
+		if ( resultp &&  (IS_PYMT_SUCCESS(*resultp))) {
+			writeoff_rev_flag = psiu_bparams_get_int(ctxp, PSIU_BPARAMS_AR_PARAMS,
+				PSIU_BPARAMS_AR_AUTO_WO_REV_ENABLE, ebufp);
+			/*************************************************************
+			* Check for the writeoff reveral enabled Flag
+			*************************************************************/
+			if ( writeoff_rev_flag == PIN_WRITEOFF_REV_ENABLE ) {
+				
+					fm_pymt_pol_check_account_for_writeoff(ctxp, charge_flistp, 
+						flags, ebufp);
+			}
+		}
+
+		/**************************************************************
+		 * Check for the refund condition.In the case of Refund
+		 * from Payment tool the command will be 0 so we can only
+		 * recognise the refund using the sign of the amount i.e
+		 * amount will be negative.
+		 **************************************************************/
+		amountp = (pin_decimal_t *)PIN_FLIST_FLD_GET(charge_flistp, 
+				PIN_FLD_AMOUNT, 1, ebufp);
+		if (!pin_decimal_is_NULL(amountp, ebufp)) {
+			if (pin_decimal_signum( amountp, ebufp) < 0) {
+				is_refund = PIN_BOOLEAN_TRUE;
+			}
+		}
+
+		/**************************************************************
+		 * Check if the payment is submitted as account level payment
+		 * to the multiple billinfos then add the payment reason array
+		 * with reason id as PIN_REASON_ID_MBI_DISTRIBUTION_REQD and 
+		 * domain id as PIN_PYMT_SUSPENSE_REASON_DOMAIN_ID. This
+		 * reason id and domain id will be used in the later payment 
+		 * processing to recognise the account level payment to multiple 
+		 * billinfos.(If Payment suspense is not enable or payment is
+		 * is refund payment or result is not success i.e. neither
+		 * neither suspended nor failed then do not add the payment
+		 * reason array).
+		 **************************************************************/
+		if (((resultp && (IS_PYMT_SUCCESS(*resultp))) || !resultp) && 
+			!is_refund && (is_suspense_enablep && *is_suspense_enablep)) {
+
+			temp_flistp = PIN_FLIST_ELEM_GET(charge_flistp,
+					PIN_FLD_PAYMENT_REASONS,
+					PIN_PYMT_GLID_REASON_ID_INDEX, 
+					1, ebufp);
+			if (temp_flistp) {
+				reason_idp = PIN_FLIST_FLD_GET(temp_flistp, 
+					PIN_FLD_REASON_ID, 1, ebufp);
+			}
+			bill_flistp = PIN_FLIST_ELEM_GET(charge_flistp, 
+					PIN_FLD_BILLS, PIN_ELEMID_ANY, 1, ebufp);
+			item_flistp = PIN_FLIST_ELEM_GET(charge_flistp, 
+					PIN_FLD_ITEMS, PIN_ELEMID_ANY, 1, ebufp);
+			/******************************************************
+			 * Is the payment submitted at account level? i.e bills
+			 * array, items array, billinfo array and the billinfo
+			 * object are not passed in charges array.
+			 ******************************************************/
+			if ((!bill_flistp && !item_flistp && !is_billinfo_exist)
+				&& ((reason_idp && *reason_idp != 
+				PIN_REASON_ID_MBI_DISTRIBUTION_REQD) 
+				|| !reason_idp)) {
+
+				/**********************************************
+				 * Prepare search flist to get the number of
+				 * billinfos associated to the account
+				 **********************************************/
+				srch_flistp = PIN_FLIST_CREATE(ebufp);
+
+				dummy_pdp = PIN_FLIST_FLD_GET(i_flistp, 
+						PIN_FLD_POID, 0, ebufp);
+				srch_pdp = PIN_POID_CREATE(PIN_POID_GET_DB
+						(dummy_pdp),"/search", -1, ebufp);
+				PIN_FLIST_FLD_PUT (srch_flistp, PIN_FLD_POID, 
+					(void *)srch_pdp, ebufp);
+				PIN_FLIST_FLD_SET(srch_flistp, 
+					PIN_FLD_FLAGS, 0, ebufp);
+				strcpy(template, " select  X  from /billinfo "
+					" where F1 = V1 ");
+				PIN_FLIST_FLD_SET(srch_flistp, PIN_FLD_TEMPLATE, 
+					(void *)template, ebufp);
+
+				arg_flistp = PIN_FLIST_ELEM_ADD(srch_flistp, 
+						PIN_FLD_ARGS, 1, ebufp);
+				accnt_pdp = PIN_FLIST_FLD_GET(billinfo_flistp,
+						PIN_FLD_ACCOUNT_OBJ, 1, ebufp);
+				if (accnt_pdp) {
+					PIN_FLIST_FLD_SET(arg_flistp, 
+						PIN_FLD_ACCOUNT_OBJ, accnt_pdp,
+						ebufp);
+				} else {
+					fm_pymt_pol_validate_payment_get_account(
+						ctxp, billinfo_flistp,dummy_pdp,
+						&accnt_pdp, ebufp);
+					PIN_FLIST_FLD_PUT(arg_flistp, 
+						PIN_FLD_ACCOUNT_OBJ, accnt_pdp,
+						ebufp);
+				}
+
+				PIN_FLIST_ELEM_SET(srch_flistp, NULL, 
+					PIN_FLD_RESULTS, 0, ebufp);
+
+				/**********************************************
+				 * Do search with count only flag
+				 **********************************************/		
+				PCM_OP(ctxp, PCM_OP_SEARCH, PCM_OPFLG_COUNT_ONLY, 
+					srch_flistp, &srch_res_flistp, ebufp);
+
+				if (PIN_ERRBUF_IS_ERR(ebufp)) {
+					pin_set_err(ebufp, PIN_ERRLOC_FM,
+						PIN_ERRCLASS_SYSTEM_DETERMINATE,
+						PIN_ERR_BAD_SEARCH_ARG, 0, 0, 0);
+					PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+						"fm_pymt_pol_validate_payment "
+						"count-only search error", ebufp);
+					PIN_FLIST_DESTROY_EX(&srch_flistp, NULL);
+					PIN_FLIST_DESTROY_EX(&srch_res_flistp, NULL);
+					return;
+				}
+				PIN_FLIST_DESTROY_EX(&srch_flistp, NULL);
+
+				PIN_FLIST_ELEM_GET_NEXT(srch_res_flistp,
+					PIN_FLD_RESULTS, &billinfo_count,
+					1, &temp_cookie, ebufp);
+
+				/**********************************************
+				 * If count is greater than 1 (i.e. MBI case)
+				 * then change the reason id and domain id.
+				 **********************************************/
+				if (billinfo_count > 1) {
+					reason_id = 
+						PIN_REASON_ID_MBI_DISTRIBUTION_REQD;
+					domain_id = 
+						PIN_PYMT_SUSPENSE_REASON_DOMAIN_ID;
+					temp_flistp = PIN_FLIST_ELEM_GET(
+							charge_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+							PIN_PYMT_GLID_REASON_ID_INDEX, 
+							1, ebufp);
+					if (temp_flistp) {
+						PIN_FLIST_ELEM_SET(charge_flistp,
+							temp_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+							PIN_PYMT_ORIG_REASON_ID_INDEX, 
+							ebufp);
+					}
+					temp_flistp = PIN_FLIST_ELEM_ADD(charge_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+							PIN_PYMT_GLID_REASON_ID_INDEX,
+							ebufp);
+					PIN_FLIST_FLD_SET(temp_flistp, 
+						PIN_FLD_REASON_ID, 
+						(void *)&reason_id, ebufp);
+					PIN_FLIST_FLD_SET(temp_flistp, 
+						PIN_FLD_REASON_DOMAIN_ID,
+						(void *)&domain_id, ebufp);
+					/**************************************
+					 * If the default billinfo is added in 
+					 * this policy opcode then drop that 
+					 * billinfo in the case of account level 
+					 * payment submitted to multiple billinfos.
+					 * This billinfo object is dropped here
+					 * instead of stop adding this object so
+					 * that it should not impact other
+					 * functionality other than the account
+					 * level payment to multiple billlinfos
+					 **************************************/
+					if(PIN_FLIST_FLD_GET (charge_flistp, 
+							PIN_FLD_BILLINFO_OBJ, 
+							1, ebufp)) {
+						PIN_FLIST_FLD_DROP(charge_flistp, 
+							PIN_FLD_BILLINFO_OBJ, 
+							ebufp);
+					}
+				}
+				PIN_FLIST_DESTROY_EX(&srch_res_flistp, NULL);
+			}
+		}
+		pin_free(is_suspense_enablep);
+		is_suspense_enablep = NULL;
+	}
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment", ebufp);
+	}	
+	return ;
+}
+
+
+/******************************************************************
+ * fm_pymt_pol_validate_payment_failed_payment()
+ ******************************************************************/
+static void
+fm_pymt_pol_validate_payment_failed_payment(
+        pcm_context_t           *ctxp,
+        int                     flags,
+        pin_flist_t             *charge_flistp,
+	pin_flist_t		*billinfo_flistp,
+	int64			db,
+        pin_errbuf_t            *ebufp)
+{
+	pin_flist_t             *e_flistp       = NULL;
+	pin_flist_t             *temp_flistp    = NULL;
+	pin_flist_t             *res_flistp     = NULL;
+	pin_flist_t		*r_flistp	= NULL;
+	pin_flist_t		*a_flistp	= NULL;
+	pin_flist_t		*src_flistp	= NULL;
+	pin_flist_t		*tmp_flistp	= NULL;
+	pin_flist_t		*src_res_flistp	= NULL;
+	pin_flist_t		*r_id_flistp	= NULL;
+	pin_pay_type_t          *pay_typep      = NULL;
+	int32                   pymt_result     = PIN_PAYMENT_RES_FAIL;
+	void                    *vp             = NULL;
+	poid_t			*s_pdp		= NULL;
+	int32			pymt_suspense_flag = 0;
+	int32			reason_id	= 0;
+	int32			domain_id	= 0;
+	int32			flag		= 0;
+	int32			id		= -1;
+	char			template[256]	= {0};
+	char			*pymt_trans_id	= NULL;
+	int32			*reason_idp	= NULL;
+	int32			*domain_idp	= NULL;
+	pin_pymt_result_t       *resultp 	= NULL;
+	
+        if (PIN_ERRBUF_IS_ERR(ebufp))
+	{
+		return ;
+	}
+	
+	/********************************************************
+	 * Get the Result of the payment.
+	 * If PIN_FLD_RESULT is Fail, return
+	 *********************************************************/
+	resultp = (pin_pymt_result_t *) PIN_FLIST_FLD_GET(charge_flistp,
+			PIN_FLD_RESULT, 1, ebufp);
+	if (resultp &&  (*resultp == PIN_PAYMENT_RES_FAIL)) {
+		return;
+	}
+
+	pymt_suspense_flag = psiu_bparams_get_int(ctxp, PSIU_BPARAMS_AR_PARAMS,
+			PSIU_BPARAMS_AR_PYMT_SUSPENSE_ENABLE, ebufp);			
+	/*******************************
+	 * Get Pay type
+	 *******************************/
+	pay_typep = (pin_pay_type_t *)PIN_FLIST_FLD_GET(
+			   charge_flistp,
+			   PIN_FLD_PAY_TYPE,
+			   0, ebufp);
+	if(pay_typep && (*pay_typep == PIN_PAY_TYPE_FAILED)){
+		/********************************************
+		 * Check if the Extendinfo substruct has
+		 * Item obj. The existance of item object
+		 * indicates that a serach has already
+		 * been made for the transaction ID
+		 ********************************************/
+		temp_flistp = PIN_FLIST_SUBSTR_GET(charge_flistp,
+					PIN_FLD_EXTENDED_INFO, 1, ebufp);
+		if(temp_flistp){
+			vp = PIN_FLIST_FLD_GET(temp_flistp, PIN_FLD_ITEM_OBJ,
+					1, ebufp);
+			if(!vp){
+				if (PIN_ERRBUF_IS_ERR(ebufp)) {
+					PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+					"fm_pymt_pol_validate_payment_failed_payment",
+					ebufp);
+				}
+			return;
+			}
+		}
+		fm_pymt_pol_validate_payment_search_payment(ctxp,
+			    charge_flistp,
+			    billinfo_flistp,
+			    &res_flistp,
+			    pay_typep, db,
+			    ebufp);
+		temp_flistp = NULL;
+		if(res_flistp){
+			temp_flistp = PIN_FLIST_ELEM_GET(
+						res_flistp,
+						PIN_FLD_RESULTS, 
+						PIN_ELEMID_ANY,
+						1, ebufp);
+			/**************************************
+			 * Check if Search returned a result
+			 **************************************/		
+			if(temp_flistp){
+				/******************************
+				 * Set PIN_FLD_RESULT to
+				 * PIN_PAYMENT_RES_PASS.
+				 ******************************/
+				pymt_result = PIN_PAYMENT_RES_PASS;
+				PIN_FLIST_FLD_SET(charge_flistp,
+						PIN_FLD_RESULT,
+						(void *) &pymt_result,
+						ebufp);
+				/************************************
+				 * Get the reason_id and Domain_id
+				 ************************************/
+				r_id_flistp = PIN_FLIST_ELEM_GET(temp_flistp,
+					PIN_FLD_EVENT_MISC_DETAILS, 
+					0, 0, ebufp);
+				reason_idp = (int32 *)PIN_FLIST_FLD_GET(
+					r_id_flistp, PIN_FLD_REASON_ID, 
+					0, ebufp);
+				domain_idp = (int32 *)PIN_FLIST_FLD_GET(
+					r_id_flistp, PIN_FLD_REASON_DOMAIN_ID,
+					0, ebufp);
+
+				/************************************
+				 * If the original payment was payment
+				 * to MBI account i.e. reason id is 
+				 * PIN_REASON_ID_MBI_DISTRIBUTION_REQD,
+				 * then set the appropriate account obj
+				 * to which payment was allocated finally
+				 * else set the account poid returned
+				 * from the Search Payment function.
+				 ************************************/
+				if (reason_idp && *reason_idp !=
+					PIN_REASON_ID_MBI_DISTRIBUTION_REQD) {
+
+					/************************************
+					 * Set the  account poid returned
+					 * from the Search Payment function
+					 ************************************/
+					vp = PIN_FLIST_FLD_GET(temp_flistp,
+						PIN_FLD_ACCOUNT_OBJ,
+						0, ebufp);
+					PIN_FLIST_FLD_SET(charge_flistp,
+						PIN_FLD_ACCOUNT_OBJ,
+						vp, ebufp);
+				} else {
+					/************************************
+					 * Search for the account to which
+					 * the payment is distributed as 
+					 * the result of MBI distribution
+					 ************************************/
+                			src_flistp = PIN_FLIST_CREATE(ebufp);
+					/*************************************
+					 * Create Search POID
+					 *************************************/
+			                s_pdp = PIN_POID_CREATE(db, 
+							"/search", id, ebufp);
+
+			                PIN_FLIST_FLD_PUT(src_flistp, PIN_FLD_POID,
+						(void *)s_pdp, ebufp);
+			                strcpy(template, " select  X  from "
+						"/event/billing/payment ");
+					strcat(template, " where F1 = V1 ");
+					PIN_FLIST_FLD_SET(src_flistp, 
+						PIN_FLD_TEMPLATE, 
+						(void *)template, ebufp);
+					flag = SRCH_EXACT;
+			                PIN_FLIST_FLD_SET(src_flistp, PIN_FLD_FLAGS,
+						(void *)&flag, ebufp);
+			                a_flistp = PIN_FLIST_ELEM_ADD(src_flistp, 
+							PIN_FLD_ARGS, 1, ebufp);
+					tmp_flistp = PIN_FLIST_SUBSTR_GET(temp_flistp,
+							PIN_FLD_PAYMENT, 
+							PIN_ELEMID_ANY, ebufp);
+					pymt_trans_id = PIN_FLIST_FLD_GET(tmp_flistp,
+								PIN_FLD_TRANS_ID,
+								0, ebufp);
+			                tmp_flistp = PIN_FLIST_SUBSTR_ADD(a_flistp,
+							PIN_FLD_PAYMENT, ebufp);
+			                PIN_FLIST_FLD_SET(tmp_flistp, 
+						PIN_FLD_SUB_TRANS_ID, 
+						(void *)pymt_trans_id, ebufp);
+
+			                r_flistp = PIN_FLIST_ELEM_ADD(src_flistp, 
+							PIN_FLD_RESULTS, 0, ebufp);
+					PIN_FLIST_FLD_SET(r_flistp, 
+						PIN_FLD_ACCOUNT_OBJ, NULL, ebufp);
+
+			                PCM_OP(ctxp, PCM_OP_SEARCH, 0,
+	                                        src_flistp, &src_res_flistp, ebufp);
+
+					PIN_FLIST_DESTROY_EX(&src_flistp, NULL);	
+
+					tmp_flistp = PIN_FLIST_ELEM_GET(src_res_flistp,
+							PIN_FLD_RESULTS, 
+							PIN_ELEMID_ANY, 0, ebufp);
+					vp = PIN_FLIST_FLD_GET(tmp_flistp,
+						PIN_FLD_ACCOUNT_OBJ, 0, ebufp);
+					PIN_FLIST_FLD_SET(charge_flistp,
+						PIN_FLD_ACCOUNT_OBJ, vp, ebufp);
+
+					PIN_FLIST_DESTROY_EX(&src_res_flistp, NULL);	
+					
+					/**************************************
+					 * Add the reason id to the flist to
+					 * distinguish that the unconfirmed
+					 * payment was distributed to the
+					 * multiple billinfos of the account
+					 **************************************/
+					tmp_flistp = PIN_FLIST_ELEM_GET(
+							charge_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+						 	PIN_PYMT_GLID_REASON_ID_INDEX, 
+							1, ebufp);
+					if(tmp_flistp){
+						PIN_FLIST_ELEM_SET(charge_flistp,
+							tmp_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+							PIN_PYMT_ORIG_REASON_ID_INDEX, 
+							ebufp);
+					}
+					tmp_flistp = PIN_FLIST_ELEM_ADD(charge_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+							PIN_PYMT_GLID_REASON_ID_INDEX,
+							ebufp);
+					PIN_FLIST_FLD_SET(tmp_flistp, 
+						PIN_FLD_REASON_ID, 
+						(void *)reason_idp, ebufp);
+					PIN_FLIST_FLD_SET(tmp_flistp, 
+						PIN_FLD_REASON_DOMAIN_ID,
+						(void *)domain_idp, ebufp);
+				}
+				
+				fm_pymt_pol_validate_pymt_set_ex_info(ctxp,
+					charge_flistp, billinfo_flistp,
+					temp_flistp, pay_typep, ebufp);
+			}
+			else{
+			/****************************************************
+			 * No Payment matched for the Transaction ID
+			 *
+			 * If Payment Suspense Management feature is enabled
+			 * 	Set PIN_FLD_STATUS to PIN_PYMT_FAILED_SUSPENSE.
+			 * Else 
+			 * 	Set PIN_FLD_RESULT to PIN_PAYMENT_RES_FAIL.
+			 ******************************************************/
+				if(pymt_suspense_flag != PSIU_BPARAMS_AR_PYMT_SUSPENSE_ENABLED){
+					pymt_result = PIN_PAYMENT_RES_FAIL;
+					PIN_FLIST_FLD_SET(charge_flistp,
+						PIN_FLD_RESULT,
+						(void *) &pymt_result,
+						ebufp);
+				}
+				else
+				{
+					pymt_result = PIN_PYMT_FAILED_SUSPENSE;	
+					PIN_FLIST_FLD_SET(charge_flistp,
+						PIN_FLD_STATUS,
+						(void *) &pymt_result,
+						ebufp);
+					/***********************************
+					 * Set the Suspense reason id
+					 ***********************************/
+					domain_id = PIN_PYMT_SUSPENSE_REASON_DOMAIN_ID;
+					reason_id = PIN_REASON_ID_INVALID_TRANS_ID;
+					temp_flistp = PIN_FLIST_ELEM_GET(charge_flistp,
+								PIN_FLD_PAYMENT_REASONS,
+							 	PIN_PYMT_GLID_REASON_ID_INDEX, 
+								1, ebufp);
+					if(temp_flistp){
+						PIN_FLIST_ELEM_SET(charge_flistp,
+								temp_flistp,
+								PIN_FLD_PAYMENT_REASONS,
+								PIN_PYMT_ORIG_REASON_ID_INDEX, 
+								ebufp);
+					}
+					temp_flistp = PIN_FLIST_ELEM_ADD(charge_flistp,
+								PIN_FLD_PAYMENT_REASONS,
+								PIN_PYMT_GLID_REASON_ID_INDEX,
+								ebufp);
+					PIN_FLIST_FLD_SET(temp_flistp, PIN_FLD_REASON_ID, 
+								(void *) &reason_id, 
+								ebufp);
+					PIN_FLIST_FLD_SET(temp_flistp, PIN_FLD_REASON_DOMAIN_ID,
+								(void *) &domain_id,
+								ebufp);
+				}
+			}
+		}
+		else{
+			
+			/****************************************************
+			 * No Transaction ID to find the payment
+			 *
+			 * If Payment Suspense Management feature is enabled
+			 * 	Set PIN_FLD_STATUS to PIN_PYMT_FAILED_SUSPENSE.
+			 * Else 
+			 * 	Set PIN_FLD_RESULT to PIN_PAYMENT_RES_FAIL.
+			 *****************************************************/
+			if(pymt_suspense_flag != PSIU_BPARAMS_AR_PYMT_SUSPENSE_ENABLED){
+				pymt_result = PIN_PAYMENT_RES_FAIL;
+				PIN_FLIST_FLD_SET(charge_flistp,
+						PIN_FLD_RESULT,
+						(void *) &pymt_result,
+						ebufp);
+			}
+			else
+			{
+				pymt_result = PIN_PYMT_FAILED_SUSPENSE;	
+				PIN_FLIST_FLD_SET(charge_flistp,
+					PIN_FLD_STATUS,
+					(void *) &pymt_result,
+					ebufp);
+				/***********************************
+				 * Set the Suspense reason id
+				 ***********************************/
+				domain_id = PIN_PYMT_SUSPENSE_REASON_DOMAIN_ID;
+				reason_id = PIN_REASON_ID_MISSING_TRANS_ID;
+				temp_flistp = PIN_FLIST_ELEM_GET(charge_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+							PIN_PYMT_GLID_REASON_ID_INDEX,
+							1, ebufp);
+				if(temp_flistp){
+					PIN_FLIST_ELEM_SET(charge_flistp,
+							temp_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+							PIN_PYMT_ORIG_REASON_ID_INDEX,
+							ebufp);
+				}
+				temp_flistp = PIN_FLIST_ELEM_ADD(charge_flistp,
+							PIN_FLD_PAYMENT_REASONS,
+							PIN_PYMT_GLID_REASON_ID_INDEX,
+							ebufp);
+				PIN_FLIST_FLD_SET(temp_flistp, PIN_FLD_REASON_ID, 
+							(void *) &reason_id, 
+							ebufp);
+				PIN_FLIST_FLD_SET(temp_flistp, PIN_FLD_REASON_DOMAIN_ID,
+							(void *) &domain_id,
+							ebufp);
+			}
+		}
+		PIN_FLIST_DESTROY_EX(&res_flistp, NULL);
+	}
+	else{
+		fm_pymt_pol_validate_pymt_set_ex_info(ctxp,
+					charge_flistp,
+					billinfo_flistp,
+					(pin_flist_t *) NULL,
+					pay_typep, ebufp);
+	}
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment_failed_payment", ebufp);
+	}
+	return ;		
+}
+
+
+/***************************************************************
+ * fm_pymt_pol_validate_pymt_set_ex_info()
+ * Set the extended info susbstruct for the failed payments
+ ***************************************************************/
+static void 
+fm_pymt_pol_validate_pymt_set_ex_info(
+	pcm_context_t		*ctxp,
+	pin_flist_t		*i_flistp,
+	pin_flist_t		*billinfo_flistp,
+	pin_flist_t		*res_flistp,
+	pin_pay_type_t		*pay_typep,
+	pin_errbuf_t		*ebufp)
+{
+	pin_flist_t		*flistp		= NULL;
+	pin_flist_t		*e_flistp 	= NULL;
+	pin_flist_t		*s_flistp 	= NULL;
+	pin_flist_t		*r_flistp 	= NULL;
+	pin_flist_t		*p_flistp 	= NULL;
+	poid_t			*item_pdp	= NULL;
+	void			*vp 		= NULL;
+
+        if (PIN_ERRBUF_IS_ERR(ebufp))
+	{
+		return ;
+	}
+        PIN_ERRBUF_CLEAR(ebufp);
+	/********************************************
+	 * Check if Pay type is PIN_PYMT_FAILED
+	 * as to poulate the billinfo for PIN_PYMT_FAILED 
+	 * the data would be inside the res_flistp
+	 * which is a result of search on /event/billin/payment
+	 * where as of other pay type the data would be
+	 * fetched from the charges array
+	 *********************************************/	
+	if(pay_typep && *pay_typep != PIN_PAY_TYPE_FAILED){
+		/*******************************************************
+		 * Create the extended info Flist
+		 *******************************************************/
+		e_flistp = PIN_FLIST_SUBSTR_ADD(i_flistp, PIN_FLD_EXTENDED_INFO,
+						ebufp);
+		/*******************************************************
+		 * Add PIN_FLD_FAILED_PAYMENT_FEE Substruct to 
+		 * Extended Info.
+		 *******************************************************/
+		p_flistp = PIN_FLIST_SUBSTR_ADD(e_flistp, 
+					PIN_FLD_FAILED_PAYMENT_FEE, ebufp);	
+		
+		/*******************************************************
+		 * Get Channel ID
+		 *******************************************************/
+		vp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_CHANNEL_ID, 1, ebufp);
+		if(vp){
+			PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_CHANNEL_ID,
+								vp, ebufp);
+		}
+		/*******************************************************
+		 * Get Pay type
+		 *******************************************************/
+		vp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_PAY_TYPE, 0, ebufp);
+		PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_PAY_TYPE, vp, ebufp);
+
+		/*******************************************************
+                 * Get Transaction ID
+                 *******************************************************/
+                vp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_TRANS_ID, 1, ebufp);
+                if(vp){
+                        PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_TRANS_ID,
+                                        vp, ebufp);
+                }
+		
+	
+		/********************************************************
+		 * Get Amount
+		 ********************************************************/
+		vp = PIN_FLIST_FLD_GET(billinfo_flistp, PIN_FLD_AMOUNT, 1,
+					ebufp);	
+		if(vp){
+			PIN_FLIST_FLD_SET(p_flistp,
+					PIN_FLD_AMOUNT_ORIGINAL_PAYMENT,
+						vp, ebufp);
+		}
+
+	}
+	else{
+		/*****************************************************
+		 * Check to make sure that there is no attempt to 
+		 * add extended info for pay type PIN_PAY_TYPE_FAILED
+		 * if res_flistp is NULL.
+		 *****************************************************/
+		if(res_flistp){
+			
+			/*********************************************
+			 * Get item/payment poid  from the search result
+			 **********************************************/
+			item_pdp = (poid_t *) PIN_FLIST_FLD_GET(
+						res_flistp,
+						PIN_FLD_ITEM_OBJ, 0,
+						ebufp);
+			/*************************************
+			 * Get the Orignal payment amount
+			 * Pay type of Sucessul payment
+			 * Channel ID of the Orignal payment
+			 *************************************/
+			e_flistp = PIN_FLIST_SUBSTR_ADD(i_flistp,
+						PIN_FLD_EXTENDED_INFO,
+						ebufp);
+			/**********************************************
+			 * Set /item/payment poid in Extended info 
+			 * substruct
+			 **********************************************/
+			PIN_FLIST_FLD_SET(e_flistp, PIN_FLD_ITEM_OBJ,
+						(void *) item_pdp, ebufp);
+			/*********************************************
+			 * Add PIN_FLD_FAILED_PAYMENT_FEE Substruct
+			 *********************************************/
+			p_flistp = PIN_FLIST_SUBSTR_ADD(e_flistp,
+					    PIN_FLD_FAILED_PAYMENT_FEE,
+						ebufp);
+			/*********************************
+			 * Get the payments substruct form the
+			 * serach result.
+			 *********************************/
+			res_flistp = PIN_FLIST_ELEM_GET(res_flistp,
+						PIN_FLD_PAYMENT, PIN_ELEMID_ANY,
+						1, ebufp);
+			/**********************************
+			 * Get the Amount
+			 ***********************************/
+			vp = PIN_FLIST_FLD_GET(res_flistp, PIN_FLD_AMOUNT,0,
+						ebufp);
+			PIN_FLIST_FLD_SET(p_flistp,
+					PIN_FLD_AMOUNT_ORIGINAL_PAYMENT,
+					vp, ebufp);
+			/***********************************
+			 * Get Channel ID
+			 ***********************************/
+			vp = PIN_FLIST_FLD_GET(res_flistp, PIN_FLD_CHANNEL_ID,
+					1, ebufp);
+			if(vp){
+				PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_CHANNEL_ID,
+					vp, ebufp);
+			}
+			/***********************************
+			 * Get Pay type
+			 ***********************************/
+			vp = PIN_FLIST_FLD_GET(res_flistp, PIN_FLD_PAY_TYPE,
+					0, ebufp);
+			PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_PAY_TYPE,
+					vp, ebufp);
+			/***********************************
+			 * Get TRANS_ID
+			 ***********************************/
+			vp = PIN_FLIST_FLD_GET(res_flistp, PIN_FLD_TRANS_ID,
+					0, ebufp);
+			PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_TRANS_ID,
+					vp, ebufp);
+		}
+	}
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+                PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+                        "fm_pymt_pol_validate_pymt_set_ex_info", ebufp);
+        }
+	return ;
+}
+
+/*********************************************************************
+ * fm_pymt_pol_validate_payment_search_payment()
+ * This function searches for the optinistic succesfull payment for 
+ * which a failed  payment recorde is recieved.
+ *********************************************************************/
+static void 
+fm_pymt_pol_validate_payment_search_payment(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t		*billinfo_flistp,
+	pin_flist_t		**result_flistpp,
+	pin_pay_type_t		*pay_typep,
+	int64			db,
+	pin_errbuf_t            *ebufp)
+{
+	pin_flist_t		*flistp 	= NULL;	
+	pin_flist_t		*s_flistp 	= NULL;
+	pin_flist_t		*a_flistp 	= NULL;
+	pin_flist_t		*temp_flistp 	= NULL;
+	pin_flist_t		*p_flistp 	= NULL;
+	pin_flist_t		*r_flistp 	= NULL;
+	pin_flist_t             *e_flistp 	= NULL;
+	pin_flist_t		*r_id_flistp 	= NULL;
+	pin_cookie_t            cookie 		= NULL;
+	poid_t			*s_pdp 		= NULL;
+	int64           	id 		= -1;
+	int32                   flag 		= 0;
+	int32                   args 		= 1;
+	int32                   rec_id 		= 0;
+	char            	template[256]	= "";
+	char			*pay_trans_idp 	= NULL;
+	void			*vp 		= NULL;
+        
+	if (PIN_ERRBUF_IS_ERR(ebufp))
+	{
+		return ;
+	}
+        PIN_ERRBUF_CLEAR(ebufp);
+
+	flistp = PIN_FLIST_SUBSTR_GET(billinfo_flistp, PIN_FLD_PAYMENT,
+				1, ebufp);
+	if (flistp){
+		flistp = PIN_FLIST_SUBSTR_GET(flistp,
+				PIN_FLD_INHERITED_INFO, 1, ebufp);
+		
+		if (flistp) {
+			flistp = PIN_FLIST_ELEM_GET(flistp,
+					PIN_FLD_PAYMENT_FAILED_INFO,
+					PIN_ELEMID_ANY,
+					0, ebufp);
+			if(flistp){
+				vp = PIN_FLIST_FLD_GET(flistp,
+						PIN_FLD_PAYMENT_TRANS_ID,
+						1, ebufp);
+				pay_trans_idp = (char *)vp;
+			}
+		}
+	}
+ 	
+
+	/***************************************************
+	 * Get the /item/payment object poid of the 
+	 * payment that needs to be reversed
+	 ***************************************************/
+	if (pay_trans_idp){
+                /***************************************************
+                 * Prepare search flist to get the /item/payment poid from
+                 * from events object.
+                 **************************************************/
+                s_flistp = PIN_FLIST_CREATE(ebufp);
+		/***************************************************
+		 * Create Search POID
+		 ***************************************************/
+                s_pdp = PIN_POID_CREATE(db, "/search", id, ebufp);
+
+                PIN_FLIST_FLD_PUT(s_flistp, PIN_FLD_POID,
+					(void *)s_pdp, ebufp);
+                strcpy(template, " select  X  from /event/billing/payment ");
+		strcat(template, " where F1 = V1 ");
+		PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_TEMPLATE, (void *) template,
+					ebufp);
+		flag = SRCH_EXACT;
+                PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_FLAGS,
+					(void *) &flag, ebufp);
+                a_flistp = PIN_FLIST_ELEM_ADD(s_flistp, PIN_FLD_ARGS,
+					args, ebufp);
+                temp_flistp = PIN_FLIST_SUBSTR_ADD(a_flistp,
+					PIN_FLD_PAYMENT, ebufp);
+                vp = (void *) pay_trans_idp;
+                PIN_FLIST_FLD_SET(temp_flistp, PIN_FLD_TRANS_ID, vp, ebufp);
+                a_flistp = (pin_flist_t *) NULL;
+                a_flistp = PIN_FLIST_ELEM_ADD(s_flistp, PIN_FLD_RESULTS,
+                                        0, ebufp);
+                vp = NULL;
+		PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_ACCOUNT_OBJ, vp, ebufp);
+		PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_ITEM_OBJ, vp, ebufp);
+		PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_POID, vp, ebufp);
+		p_flistp = PIN_FLIST_SUBSTR_ADD(a_flistp,
+						PIN_FLD_PAYMENT, ebufp);
+		PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_PAY_TYPE, vp, ebufp);
+		PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_TRANS_ID, vp, ebufp);
+		PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_AMOUNT, vp,ebufp);
+		PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_CHANNEL_ID, vp,ebufp);
+		
+		r_id_flistp = PIN_FLIST_ELEM_ADD(a_flistp,
+					PIN_FLD_EVENT_MISC_DETAILS, 0, ebufp);
+		PIN_FLIST_FLD_SET(r_id_flistp, PIN_FLD_REASON_ID, vp, ebufp);
+		PIN_FLIST_FLD_SET(r_id_flistp, 
+					PIN_FLD_REASON_DOMAIN_ID, vp, ebufp);
+                PCM_OP(ctxp, PCM_OP_SEARCH, 0,
+                                        s_flistp, result_flistpp, ebufp);
+		PIN_FLIST_DESTROY_EX(&s_flistp, NULL);	
+	}
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+                PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+                        "fm_pymt_pol_validate_payment_search_payment", ebufp);
+        }
+	return ;
+}
+	
+/*************************************************************
+ * This function checks for account status(writeoff or other)
+ *************************************************************/
+static void 
+fm_pymt_pol_check_account_for_writeoff(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	int			flags,
+	pin_errbuf_t            *ebufp)
+{
+	pin_cookie_t	cookie = NULL;
+	pin_flist_t		*flistp = NULL;
+	pin_flist_t		*p_flistp = NULL;
+	pin_flist_t		*w_flistp = NULL;
+	pin_flist_t		*r_flistp = NULL;
+	poid_t			*a_pdp = NULL;
+	poid_t			*p_pdp = NULL;
+	int64			db = 0;
+	int32			writtenoff_flag = 0;
+	int32			rec_id = 0;
+	void			*vp = NULL;
+	pin_pymt_result_t       *resultp = NULL;
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		return ;
+	}
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	/********************************************************
+	 * Get the Result of the payment.
+	 * If PIN_FLD_RESULT is Fail, return
+	 *********************************************************/
+	resultp = (pin_pymt_result_t *) PIN_FLIST_FLD_GET(i_flistp,
+			PIN_FLD_RESULT, 1, ebufp);
+	if (resultp &&  (*resultp == PIN_PAYMENT_RES_FAIL)) {
+		return;
+	}       
+
+	a_pdp = (poid_t *)PIN_FLIST_FLD_GET(i_flistp, 
+				PIN_FLD_ACCOUNT_OBJ, 0, ebufp);
+	/**************************************************************
+	 * Fetch the /profile/writeoff onject and 
+	 * check the PIN_FLD_FLAGS field if it is in writeoff state
+	 * then set the PIN_FLD_STATUS field in the input flist of this
+	 * opcode
+	 **************************************************************/
+	/***********************************************************
+	 * Allocate the flist for /profile/writeoff search.
+	 ***********************************************************/
+	p_flistp = PIN_FLIST_CREATE(ebufp);
+	db = PIN_POID_GET_DB(a_pdp);
+	p_pdp = PIN_POID_CREATE(db, "/profile", -1, ebufp);
+	PIN_FLIST_FLD_PUT(p_flistp, PIN_FLD_POID, p_pdp, ebufp);
+	PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_ACCOUNT_OBJ, a_pdp, ebufp);
+	PIN_FLIST_FLD_SET(p_flistp, PIN_FLD_TYPE_STR,
+		PIN_WRITEOFF_REV_PROFILE_TYPE, ebufp);
+	flistp = PIN_FLIST_ELEM_ADD(p_flistp, PIN_FLD_RESULTS,
+		0, ebufp);
+	w_flistp = PIN_FLIST_ELEM_ADD(flistp, PIN_FLD_WRITEOFF_INFO,
+		0, ebufp);
+	PIN_FLIST_FLD_SET(w_flistp, PIN_FLD_FLAGS, NULL, ebufp);
+	/**************************************************************
+	 * Call the PCM_OP_CUST_FIND_PROFILE opcode to do the actual search.
+	 **************************************************************/
+	PCM_OP(ctxp, PCM_OP_CUST_FIND_PROFILE, flags, p_flistp, 
+		&r_flistp, ebufp);
+	PIN_FLIST_DESTROY_EX(&p_flistp, NULL);
+	
+	cookie = NULL;
+	flistp = PIN_FLIST_ELEM_GET_NEXT(r_flistp, PIN_FLD_RESULTS,
+		&rec_id, 1, &cookie, ebufp);
+
+	if (flistp){
+		cookie = NULL;
+		w_flistp = PIN_FLIST_ELEM_GET_NEXT(flistp, PIN_FLD_WRITEOFF_INFO,
+			&rec_id, 1, &cookie, ebufp);
+		
+		vp = PIN_FLIST_FLD_GET(w_flistp, PIN_FLD_FLAGS, 0, ebufp);
+		if (vp != NULL) {
+		
+			if ((*(int *)vp) == PIN_WRITENOFF ) {
+	
+				writtenoff_flag = PIN_PYMT_WRITEOFF_SUCCESS;
+				PIN_FLIST_FLD_SET(i_flistp, PIN_FLD_STATUS, 
+						&writtenoff_flag, ebufp);
+			}
+			
+		}
+	}		
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+				"fm_pymt_check_account_for_writeoff: ERROR", 
+				ebufp);
+	}
+	PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+	return;
+}
+/******************************************************************
+ * fm_pymt_pol_validate_payment_for_suspense()
+ * This function validates payments and sets the payments to
+ * Suspense state if necessary
+ ******************************************************************/
+static void
+fm_pymt_pol_validate_payment_for_suspense(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	int                     flags,
+	int			*is_suspense_enablep,
+	int64			database,
+	pin_errbuf_t            *ebufp)
+{
+	int32                   pymt_suspense_flag 	= 0;
+	int32                   reason_id            	= 0;
+	int32                   domain_id            	= 0;
+	int32                   validation_result 	= 0;
+	pin_flist_t             *temp_flistp 		= NULL;
+	pin_flist_t             *reason_flistp 		= NULL;
+	pin_pymt_result_t       *resultp        	= NULL;
+	pin_pymt_result_t       res           		= 0;
+	pin_pymt_result_t       status        		= 0;
+	pin_pymt_result_t       init_status    		= PIN_PYMT_SUCCESS;
+
+	/*************************************************************
+	 * Check if Payment Suspense Management feature is enabled
+	 *************************************************************/
+
+	pymt_suspense_flag = psiu_bparams_get_int(ctxp, PSIU_BPARAMS_AR_PARAMS,
+		PSIU_BPARAMS_AR_PYMT_SUSPENSE_ENABLE, ebufp);
+	if ((pymt_suspense_flag != PSIU_BPARAMS_AR_PYMT_SUSPENSE_ENABLED)&&
+		(pymt_suspense_flag != PSIU_BPARAMS_AR_PYMT_SUSPENSE_DISABLED)) {
+		pin_set_err(ebufp, PIN_ERRLOC_FM,
+			PIN_ERRCLASS_SYSTEM_DETERMINATE,
+			PIN_ERR_INVALID_CONF, 0, 0, 0);
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+		"bad param value for \"payment_suspense_enable\" in /config/business_params",
+			ebufp);
+	}
+	*is_suspense_enablep = pymt_suspense_flag;
+
+	/********************************************************
+	 * Get the status of the payment.
+	 * If PIN_FLD_STATUS is not present, assume this is a
+	 * successful payment.
+	 ********************************************************/
+	resultp = (pin_pymt_result_t *) PIN_FLIST_FLD_GET(i_flistp,
+				PIN_FLD_STATUS, 1, ebufp);
+	if (!resultp) {
+		resultp = (pin_pymt_result_t *) &init_status ;
+	}	
+	/*************************************************************
+	 * If Payment Suspense Management feature is disabled and the
+	 * Payment is already marked as Suspense, Set Result to FAIL
+	 *************************************************************/
+	if (( pymt_suspense_flag == PSIU_BPARAMS_AR_PYMT_SUSPENSE_DISABLED ) &&
+			( resultp && IS_PYMT_SUSPENSE(*resultp))){
+		pin_set_err(ebufp, PIN_ERRLOC_FM,
+			PIN_ERRCLASS_SYSTEM_DETERMINATE,
+                        PIN_ERR_INVALID_CONF, 0, 0, 0);
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+		"Payment cannot be in Suspense as Payment Suspense Management feature is disabled",
+			ebufp);
+	}
+	/***************************************************************
+	 * If the Payment is already marked as Suspense, skip validation
+	 ***************************************************************/
+	if ( resultp &&
+		!( IS_PYMT_SUSPENSE(*resultp))){
+		/************************************
+		 * Perform Account level validation
+		 ************************************/
+		fm_pymt_pol_validate_payment_account_info( ctxp, i_flistp,
+					billinfo_flistp, flags,
+					&validation_result, database, ebufp);
+		/*******************************************************
+		* 	Predefined Range of values for PIN_FLD_STATUS
+		*	---------------------------------------------
+		* Succesful Payment: - 0 to 14
+		* Suspense Payment: -  15 to 29 ( 16 --> FAILED_SUSPENSE )
+		* Failed Payment:-     30 to 44
+		*
+		* The following table depicts the possible values of
+		* RESULT and STATUS for different scenarios
+		* +----------+---------+---------+---------+---------+
+		* | PSM      | Valida  |   i/p   |  o/p    |  o/p    |
+		* | Config   |  tion   |  Status | Result  | Status  |
+		* +----------+---------+---------+---------+---------+
+		* | Enabled  |  Pass   | Not Susp|No Change|No Change|
+		* +----------+---------+---------+---------+---------+
+		* | Enabled  |  Fail   | Fail    |No Change|  16     |
+		* +----------+---------+---------+---------+---------+
+		* | Enabled  |  Fail   | Not Fail|No Change|  15     |
+		* +----------+---------+---------+---------+---------+
+		* | Disabled |  Pass   | Not Susp|   Pass  |No Change|
+		* +----------+---------+---------+---------+---------+
+		* | Disabled |  Fail   | Fail    |   Fail  |No Change|
+		* +----------+---------+---------+---------+---------+
+		* | Disabled |  Fail   | Not Fail|   Fail  |No Change|
+		* +----------+---------+---------+---------+---------+
+		********************************************************/
+
+		if( ( pymt_suspense_flag == PSIU_BPARAMS_AR_PYMT_SUSPENSE_ENABLED ) &&
+			((validation_result == PIN_RESULT_FAIL) || 
+			(validation_result == PIN_STATUS_CLOSED ))){
+			if (IS_PYMT_FAILED(*resultp)){
+				status = PIN_PYMT_FAILED_SUSPENSE;
+			} else {
+				status = PIN_PYMT_SUSPENSE;
+			}
+			domain_id = PIN_PYMT_SUSPENSE_REASON_DOMAIN_ID;
+			if (validation_result == PIN_STATUS_CLOSED ){
+				reason_id = PIN_REASON_ID_ACCT_STATUS_CLOSED;
+			} else {
+				reason_id = PIN_REASON_ID_ACCT_NOT_FOUND;
+			}
+			PIN_FLIST_FLD_SET(i_flistp, PIN_FLD_STATUS,
+						(void *) &status, ebufp);
+			temp_flistp = PIN_FLIST_ELEM_GET(i_flistp, 
+						PIN_FLD_PAYMENT_REASONS, 
+						PIN_PYMT_GLID_REASON_ID_INDEX, 
+						1, ebufp);
+			if (temp_flistp){
+  				PIN_FLIST_ELEM_SET(i_flistp, temp_flistp, 
+						PIN_FLD_PAYMENT_REASONS, 
+						PIN_PYMT_ORIG_REASON_ID_INDEX , ebufp);
+			}
+
+			reason_flistp = PIN_FLIST_ELEM_ADD(i_flistp,
+						PIN_FLD_PAYMENT_REASONS, 
+						PIN_PYMT_GLID_REASON_ID_INDEX, ebufp);
+			PIN_FLIST_FLD_SET(reason_flistp,PIN_FLD_REASON_DOMAIN_ID,
+					(void *) &domain_id, ebufp);
+			PIN_FLIST_FLD_SET(reason_flistp,PIN_FLD_REASON_ID,
+					(void *) &reason_id, ebufp);
+		} else if( ( pymt_suspense_flag == PSIU_BPARAMS_AR_PYMT_SUSPENSE_DISABLED ) &&
+			((validation_result == PIN_RESULT_FAIL) )) { 
+				res = PIN_PAYMENT_RES_FAIL;
+				PIN_FLIST_FLD_SET(i_flistp, PIN_FLD_RESULT,
+							(void *)&res, ebufp);
+		} else if ((validation_result == PIN_RESULT_PASS)||
+			(validation_result == PIN_STATUS_CLOSED )){ 
+			if ( pymt_suspense_flag == PSIU_BPARAMS_AR_PYMT_SUSPENSE_DISABLED ){
+				res = PIN_PAYMENT_RES_PASS;
+				PIN_FLIST_FLD_SET(i_flistp, PIN_FLD_RESULT,
+							(void *) &res, ebufp);
+			}
+
+			/****************************************
+			 * Perform Bill level validation
+			 ****************************************/
+			fm_pymt_pol_validate_payment_bill( ctxp, 
+						i_flistp, billinfo_flistp,
+						flags, &validation_result, database, ebufp);
+
+		}
+
+	}
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment_for_suspense: error",
+			ebufp);
+	}
+	return;
+}
+/***********************************************************
+ * fm_pymt_pol_validate_payment_account_info()
+ * This function validates Account Object , Account number
+ * and verifies the account status if account is present
+ ***********************************************************/
+static void
+fm_pymt_pol_validate_payment_account_info(
+	pcm_context_t           *i_ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	int                     flags,
+	int32                   *resultp,
+	int64			database,
+	pin_errbuf_t            *ebufp)
+{
+	pin_flist_t     *s_flistp = NULL;
+	pin_flist_t     *a_flistp = NULL;
+	pin_flist_t     *rs_flistp = NULL;
+	pin_flist_t     *res_flistp = NULL;
+	pin_flist_t     *r_flistp = NULL;
+	char            *a_no = NULL;
+	char            *acct_no =  NULL;
+	int64           id = 0;
+	pin_status_t    *statusp = NULL;
+	poid_t          *a_pdp = NULL;
+	poid_t          *acct_pdp = NULL;
+	poid_t          *s_pdp = NULL;
+	int32		temp_result = 0;
+	pcm_context_t   *ctxp = NULL;
+
+	/***************************
+	 * Check the error buffer.
+	 ***************************/
+	if (PIN_ERRBUF_IS_ERR(ebufp)){
+		return ;
+	}
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	/****************************************
+	 * Open a new context to do global search 
+	 *****************************************/
+        PCM_CONTEXT_OPEN(&ctxp, (pin_flist_t *) 0, ebufp);
+        if (PIN_ERRBUF_IS_ERR(ebufp)) {
+                PIN_FLIST_LOG_ERR("fm_pymt_pol_validate_payment_account_info "
+                                "context open error", ebufp);
+                PCM_CONTEXT_CLOSE(ctxp, 0, NULL);
+                return;
+        }
+
+	/***********************
+	 * Get Account Poid
+	 ***********************/
+	a_pdp = (poid_t *)PIN_FLIST_FLD_GET(i_flistp,
+				PIN_FLD_ACCOUNT_OBJ, 1, ebufp);
+
+	/***********************
+	 * Get Account Number
+	 ***********************/
+	a_no  = ( char *)PIN_FLIST_FLD_GET(i_flistp,
+				PIN_FLD_ACCOUNT_NO, 1, ebufp);
+	/********************************************************
+	 * If Neither Account poid nor Account Number is present
+	 * Search Account object by bill
+	 *********************************************************/
+	if (!(a_pdp || a_no)){
+		fm_pymt_pol_validate_payment_get_account_by_bill( ctxp,
+				i_flistp, billinfo_flistp,
+				flags, &temp_result, database, ebufp);
+		if (PIN_ERRBUF_IS_ERR(ebufp)) {
+			PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment_account_info: error",
+			ebufp);
+		}
+		if ( temp_result == PIN_RESULT_FAIL ) {
+			*resultp =  temp_result;
+			PCM_CONTEXT_CLOSE(ctxp, 0, NULL);
+			return ;
+                }
+		a_pdp = (poid_t *)PIN_FLIST_FLD_GET(i_flistp,
+			PIN_FLD_ACCOUNT_OBJ, 1, ebufp);
+	}
+
+	/***********************************************************
+	 * Allocate the search flist
+	 ***********************************************************/
+	s_flistp = PIN_FLIST_CREATE(ebufp);
+
+	/***********************************************************
+	 * Set the search poid
+	 ***********************************************************/
+	id = (int64)201;
+
+	s_pdp = PIN_POID_CREATE(database, "/search", id, ebufp);
+	PIN_FLIST_FLD_PUT(s_flistp, PIN_FLD_POID, (void *)s_pdp, ebufp);
+
+	/***********************************************************
+	 * Add a search arguments array.
+	 ***********************************************************/
+	a_flistp = PIN_FLIST_ELEM_ADD(s_flistp, PIN_FLD_ARGS, 1, ebufp);
+
+	/***********************************************************
+	 * Add search arguments
+	 *
+	 * Search by Account Object or Account Number based on
+	 *       which ever is available
+	 * If both Account Object and Account Number is present
+	 *       search by Account Object
+	 ***********************************************************/
+	if(a_pdp){
+		PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_POID,
+					 (void *)a_pdp, ebufp);
+	} else if(a_no){
+		PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_ACCOUNT_NO, 
+					(void *)a_no, ebufp);
+	}
+
+	/***********************************************************
+	 * Add results array
+	 ***********************************************************/
+	rs_flistp = PIN_FLIST_ELEM_ADD(s_flistp,
+				PIN_FLD_RESULTS, 0, ebufp);
+	PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_POID,
+					(void *)NULL, ebufp);
+	PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_ACCOUNT_NO,
+					(void *)NULL, ebufp);
+	PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_STATUS,
+					(void *)NULL, ebufp);
+
+	PCM_OP(ctxp, PCM_OP_GLOBAL_SEARCH, 0, s_flistp, &r_flistp, 
+							ebufp);
+
+	/***********************************************************
+	 * Get the results & Set Correct Account Number.
+	 ***********************************************************/
+	res_flistp = PIN_FLIST_ELEM_GET(r_flistp, PIN_FLD_RESULTS, 
+					PIN_ELEMID_ANY, 1, ebufp);
+	if (res_flistp) {
+		acct_pdp = (poid_t *) PIN_FLIST_FLD_GET(res_flistp,
+						PIN_FLD_POID, 0, ebufp);
+		acct_no = (char *) PIN_FLIST_FLD_GET(res_flistp,
+					PIN_FLD_ACCOUNT_NO, 1, ebufp);
+		if (acct_no && ( !a_no || 
+			(a_no && strcmp(a_no,acct_no)))) {
+			PIN_FLIST_FLD_SET(i_flistp,PIN_FLD_ACCOUNT_NO,
+				(void *)acct_no, ebufp);
+		}
+		statusp = (pin_status_t *) PIN_FLIST_FLD_GET(res_flistp,
+					PIN_FLD_STATUS, 0, ebufp);
+	}
+
+	/**************************************************************
+	 * If the Account is valid and the Account status is not closed
+	 * Return PASS
+	 * Set Correct Account POID if 
+	 * not already present in the Charge flist
+	 **************************************************************/
+	if (( a_pdp || a_no) && !acct_pdp){
+		*resultp =  PIN_RESULT_FAIL;
+	} else if(( !a_pdp && acct_pdp ) &&
+		( statusp && (*statusp != PIN_STATUS_CLOSED))) {
+		PIN_FLIST_FLD_SET(i_flistp,
+			PIN_FLD_ACCOUNT_OBJ, (void *)acct_pdp, ebufp);
+		*resultp =  PIN_RESULT_PASS;
+	} else if (( !a_pdp && acct_pdp ) &&
+		( statusp && (*statusp == PIN_STATUS_CLOSED)))  {
+		PIN_FLIST_FLD_SET(i_flistp, PIN_FLD_ACCOUNT_OBJ,
+			 (void *)acct_pdp, ebufp);
+		*resultp =  PIN_STATUS_CLOSED;
+	} else if ( a_pdp && acct_pdp 
+		&& ( statusp && (*statusp != PIN_STATUS_CLOSED))){
+                *resultp =  PIN_RESULT_PASS;
+	} else if ( a_pdp && acct_pdp
+		&& ( statusp && (*statusp == PIN_STATUS_CLOSED))){
+                *resultp =  PIN_STATUS_CLOSED;
+	} 
+
+	if (((resultp) && ( *resultp == PIN_RESULT_PASS )) ||
+		(!a_pdp && a_no && !acct_no))	{
+		fm_pymt_pol_validate_payment_get_account_by_bill( ctxp,
+				i_flistp, billinfo_flistp,
+				flags, &temp_result, database, ebufp);
+		*resultp =  temp_result;
+	}
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment_account_info: error",
+			ebufp);
+	}
+	/***********************************************************
+	 * Clean up.
+	 ***********************************************************/
+	PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+	PIN_FLIST_DESTROY_EX(&s_flistp, NULL);
+
+	/* Close the context */
+	PCM_CONTEXT_CLOSE(ctxp, 0, NULL);
+
+	return ;
+}
+/**********************************************************************
+ * fm_pymt_pol_validate_payment_billinfo()
+ * Validates billinfo level information
+ **********************************************************************/
+static void
+fm_pymt_pol_validate_payment_billinfo(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	pin_flist_t		*billobj_flistp,
+	int                     flags,
+	pin_errbuf_t            *ebufp)
+{
+	pin_flist_t     *bill_flistp = NULL;
+	char            *b_no = NULL;
+	poid_t          *b_pdp = NULL;
+	poid_t          *bill_pdp = NULL;
+	poid_t          *bi_pdp = NULL;
+	poid_t          *binfo_pdp = NULL;
+	void		*vp = NULL;
+
+	/***********************************************************
+	 * Check the error buffer.
+	 ***********************************************************/
+	if (PIN_ERRBUF_IS_ERR(ebufp)){
+		return;
+	}
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	/********************************************************
+	 * Get Billinfo Poid
+	 *********************************************************/
+	binfo_pdp = (poid_t *)PIN_FLIST_FLD_GET(billinfo_flistp,
+				PIN_FLD_BILLINFO_OBJ, 1, ebufp);
+	/********************************************************
+	 * Get Any element from BILLS Array
+	 *********************************************************/
+	bill_flistp = PIN_FLIST_ELEM_GET(billinfo_flistp, PIN_FLD_BILLS,
+					PIN_ELEMID_ANY, 1, ebufp);
+	/********************************************************
+	 * If BILLINFO_OBJ is not present
+	 * Get BILLINFO_OBJ from BILL_NO in BILLS array
+	 *       If BILLS array is also not present
+	 *       Get default BILLINFO_OBJ
+	 *********************************************************/
+	if (!binfo_pdp && bill_flistp) {
+		/******************************************************
+		 * Get Bill Number
+		 ******************************************************/
+		b_no = (char *)PIN_FLIST_FLD_GET(bill_flistp,
+				PIN_FLD_BILL_NO, 1, ebufp);
+		/******************************************************
+		 * Get Bill Poid
+		 ******************************************************/
+		bill_pdp = (poid_t *)PIN_FLIST_FLD_GET(bill_flistp,
+				PIN_FLD_BILL_OBJ, 1, ebufp);
+
+		/*******************************************************
+		 * If Neither Bill Poid nor Bill Number is present
+		 * Get default Billinfo
+		 *******************************************************/
+		if (!(bill_pdp || b_no)){
+			fm_bill_utils_set_def_billinfo(ctxp, flags, i_flistp, 
+				PIN_FLD_ACCOUNT_OBJ, PIN_FLD_BILLINFO_OBJ, ebufp);
+			if(i_flistp != billinfo_flistp){
+				vp = PIN_FLIST_FLD_TAKE(i_flistp, 
+					PIN_FLD_BILLINFO_OBJ, 0,
+							ebufp);
+				PIN_FLIST_FLD_PUT(billinfo_flistp,
+					PIN_FLD_BILLINFO_OBJ,
+							vp, ebufp);
+			}
+			if (PIN_ERRBUF_IS_ERR(ebufp)) {
+				PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+				"fm_pymt_pol_validate_payment_billinfo: error",
+				ebufp);
+			}
+			return;
+		}
+
+	       /********************************************************
+		* Get the results.
+		*******************************************************/
+		if (billobj_flistp) {
+			b_pdp = (poid_t *)PIN_FLIST_FLD_GET(billobj_flistp,
+						PIN_FLD_POID, 1, ebufp);
+			bi_pdp = (poid_t *)PIN_FLIST_FLD_GET(billobj_flistp,
+					PIN_FLD_AR_BILLINFO_OBJ, 1, ebufp);
+		}
+		/*******************************************************
+		 * Validate the results
+		 ******************************************************/
+		if( b_pdp && bi_pdp ) {
+			PIN_FLIST_FLD_SET(i_flistp,
+				PIN_FLD_BILLINFO_OBJ, (void *)bi_pdp, ebufp);
+		} else if (b_pdp && !bi_pdp) {
+			fm_bill_utils_set_def_billinfo(ctxp, flags, i_flistp, 
+				PIN_FLD_ACCOUNT_OBJ,
+				PIN_FLD_BILLINFO_OBJ, ebufp);
+			if(i_flistp != billinfo_flistp){
+				vp = PIN_FLIST_FLD_TAKE(i_flistp, PIN_FLD_BILLINFO_OBJ,
+							0, ebufp);
+				PIN_FLIST_FLD_PUT(billinfo_flistp, PIN_FLD_BILLINFO_OBJ,
+							vp, ebufp);
+			}
+		} else if (!b_pdp && !bi_pdp) {
+			fm_bill_utils_set_def_billinfo(ctxp, flags, i_flistp,
+				PIN_FLD_ACCOUNT_OBJ,
+				PIN_FLD_BILLINFO_OBJ, ebufp);
+			if(i_flistp != billinfo_flistp){
+				vp = PIN_FLIST_FLD_TAKE(i_flistp, PIN_FLD_BILLINFO_OBJ,
+							0, ebufp);
+				PIN_FLIST_FLD_PUT(billinfo_flistp, PIN_FLD_BILLINFO_OBJ,
+							vp, ebufp);
+			}
+		}
+	} else if (!binfo_pdp && !bill_flistp){
+			fm_bill_utils_set_def_billinfo(ctxp, flags, i_flistp, PIN_FLD_ACCOUNT_OBJ,
+					PIN_FLD_BILLINFO_OBJ, ebufp);
+			if(i_flistp != billinfo_flistp){
+				vp = PIN_FLIST_FLD_TAKE(i_flistp, PIN_FLD_BILLINFO_OBJ,
+							0, ebufp);
+				PIN_FLIST_FLD_PUT(billinfo_flistp, PIN_FLD_BILLINFO_OBJ,
+							vp, ebufp);
+			}
+	}
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment_billinfo: error",
+				ebufp);
+	}
+
+	return;
+}
+/**********************************************************************
+ * fm_pymt_pol_validate_payment_get_account_by_bill()
+ * Retrieves and validates Account information from bill
+ **********************************************************************/
+static void
+fm_pymt_pol_validate_payment_get_account_by_bill(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	int                     flags,
+	int                     *resultp,
+	int64			database,
+	pin_errbuf_t            *ebufp)
+{
+	pin_flist_t     *s_flistp = NULL;
+	pin_flist_t     *a_flistp = NULL;
+	pin_flist_t     *rs_flistp = NULL;
+	pin_flist_t     *r_flistp = NULL;
+	pin_flist_t     *bill_flistp = NULL;
+	pin_flist_t	*res_flistp = NULL;
+	char            *b_no = NULL;
+	int64           id = 0;
+	poid_t          *b_pdp = NULL;
+	poid_t          *bill_pdp = NULL;
+	poid_t          *a_pdp = NULL;
+	poid_t          *acct_pdp = NULL;
+	poid_t          *s_pdp = NULL;
+	poid_t          *bi_pdp = NULL;
+	poid_t          *ar_bi_pdp = NULL;
+	pin_cookie_t    cookie = NULL;
+	int32		elem_id = 0; 
+        int32           bparam_reject_prev_bill = 0;
+        char            template[1024];
+        int32           s_flags = SRCH_DISTINCT;
+	char		*bill_poid_typep = NULL;
+
+	/***********************************************************
+	 * Check the error buffer.
+	 ***********************************************************/
+	if (PIN_ERRBUF_IS_ERR(ebufp)){
+		return;
+	}
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	/********************************************************
+	 * Get Account Poid
+	 *********************************************************/
+	a_pdp = (poid_t *)PIN_FLIST_FLD_GET(i_flistp,
+				PIN_FLD_ACCOUNT_OBJ, 1, ebufp);
+	/********************************************************
+	 * Get Any element from BILLS Array
+	 *********************************************************/
+	bill_flistp = PIN_FLIST_ELEM_GET(billinfo_flistp, PIN_FLD_BILLS,
+					PIN_ELEMID_ANY, 1, ebufp);
+	/********************************************************
+	 * Get ACCOUNT_OBJ from BILL_OBJ/BILL_NO in BILLS array
+	 * If ACCOUNT_OBJ & BILLS array is not present return FAIL 
+	 *********************************************************/
+	if ( bill_flistp) {
+		/******************************************************
+		 * Get Bill Number
+		 ******************************************************/
+		b_no = (char *)PIN_FLIST_FLD_GET(bill_flistp,
+				PIN_FLD_BILL_NO, 1, ebufp);
+		/******************************************************
+		 * Get Bill Poid
+		 ******************************************************/
+		bill_pdp = (poid_t *)PIN_FLIST_FLD_GET(bill_flistp,
+				PIN_FLD_BILL_OBJ, 1, ebufp);
+
+		/*******************************************************
+		 * If Neither Bill Poid nor Bill Number is present
+		 * return PASS if Account Obj is already present
+		 * Else if Account object is not present return FAIL
+		 *******************************************************/
+		if (!(bill_pdp || b_no)){
+			if( !a_pdp){
+			*resultp = PIN_RESULT_FAIL;
+			} else {
+			*resultp = PIN_RESULT_PASS;
+			}
+			if (PIN_ERRBUF_IS_ERR(ebufp)) {
+				PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+				"fm_pymt_pol_validate_payment_get_account_by_bill: error",
+				ebufp);
+			}
+			return;
+		}
+		/******************************************************
+		 * Allocate the search flist
+		 ******************************************************/
+		s_flistp = PIN_FLIST_CREATE(ebufp);
+
+		/******************************************************
+		 * Set the search poid
+		 ******************************************************/
+		id = (int64)234;
+
+		s_pdp = PIN_POID_CREATE(database, "/search", id, ebufp);
+		PIN_FLIST_FLD_PUT(s_flistp, PIN_FLD_POID, 
+						(void *)s_pdp, ebufp);
+
+		/******************************************************
+		 * Add search arguments
+		 * Search by Bill Object or Bill Number based on
+		 *       which ever is available
+		 * If both Bill Object and Bill Number is present
+		 *       search by Bill Object
+		 ******************************************************/
+		a_flistp = PIN_FLIST_ELEM_ADD(s_flistp, PIN_FLD_ARGS,
+							 1, ebufp);
+		if (bill_pdp) {
+			PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_POID, 
+					(void *)bill_pdp, ebufp);
+		} else if (b_no){
+			PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_BILL_NO,
+						 (void *)b_no, ebufp);
+		}
+		/******************************************************
+		 * Add results array
+		 ******************************************************/
+		rs_flistp = PIN_FLIST_ELEM_ADD(s_flistp,
+						PIN_FLD_RESULTS, 0, ebufp);
+		PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_POID,
+						(void *)NULL, ebufp);
+		PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_ACCOUNT_OBJ,
+						(void *)NULL, ebufp);
+		PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_BILLINFO_OBJ,
+						(void *)NULL, ebufp);
+		PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_AR_BILLINFO_OBJ,
+						(void *)NULL, ebufp);
+
+		PCM_OP(ctxp, PCM_OP_GLOBAL_SEARCH, 0, s_flistp,
+						 &r_flistp, ebufp);
+
+		res_flistp = PIN_FLIST_ELEM_GET(r_flistp, PIN_FLD_RESULTS,
+                                                PIN_ELEMID_ANY, 1, ebufp);
+
+		/********************************************************
+                 * Payment could be made against previous bill in case of
+                 * corrective billing. If "RejectPaymentsForPreviousBill" 
+                 * is disabled, then payment to previous bills is allowed.
+                 ********************************************************/
+                if (!res_flistp) {
+                        bparam_reject_prev_bill = psiu_bparams_get_int(ctxp,
+                                PSIU_BPARAMS_BILLING_PARAMS,
+                                PSIU_BPARAMS_BILLING_PYMT_REJECT_DUE_TO_BILL_NO, ebufp);
+
+                        if (!bparam_reject_prev_bill) {
+                                PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+
+                                s_pdp = PIN_POID_CREATE(database, "/search", -1, ebufp);
+                                PIN_FLIST_FLD_PUT(s_flistp, PIN_FLD_POID, (void *)s_pdp, ebufp);
+
+                                strcpy(template, "select X from /history_bills where F1 = V1 and ar_billinfo_obj_id0 = billinfo_obj_id0 ");
+
+                                PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_FLAGS, (void *)&s_flags, ebufp);
+                                PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_TEMPLATE, (void *)template, ebufp);
+
+				PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_BILL_OBJ, (void *)NULL, ebufp);
+
+                                PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+                                        "fm_pymt_pol_validate_payment_get_account_by_bill: search from history bill input flist", s_flistp);
+
+                                PCM_OP(ctxp, PCM_OP_GLOBAL_SEARCH, 0, s_flistp, &r_flistp, ebufp);
+
+                                if (PIN_ERRBUF_IS_ERR(ebufp)) {
+                                        PIN_FLIST_LOG_ERR("Search bill from history_bills error", ebufp);
+                                        PIN_FLIST_DESTROY_EX(&s_flistp, NULL);
+                                        PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+                                        return;
+                                }
+
+                                PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+                                        "fm_pymt_pol_validate_payment_get_account_by_bill: search from history bill output flist", r_flistp);
+                        }
+                }
+
+		/********************************************************
+		 * Get the results.
+		 *******************************************************/
+		while ((res_flistp = PIN_FLIST_ELEM_GET_NEXT(r_flistp,
+				PIN_FLD_RESULTS,
+				&elem_id, 1, &cookie, ebufp)) != NULL) {
+			b_pdp = (poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+							PIN_FLD_POID, 1, ebufp);
+
+			/*************************************************
+			 * If bill poid is history_bills then we need to
+			 * get the original bill poid.
+			 *************************************************/
+			bill_poid_typep = (char *)PIN_POID_GET_TYPE(b_pdp);
+                        if (strncmp(bill_poid_typep, "/history_bills", strlen(bill_poid_typep)) == 0) {
+                                b_pdp = ( poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+                                                PIN_FLD_BILL_OBJ, 1, ebufp);
+                        }
+
+			acct_pdp = (poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+						PIN_FLD_ACCOUNT_OBJ, 1, ebufp);
+			bi_pdp = (poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+						PIN_FLD_BILLINFO_OBJ, 1, ebufp);
+			ar_bi_pdp = (poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+						PIN_FLD_AR_BILLINFO_OBJ, 1, ebufp);
+
+			/*******************************************************
+			 * Validate the results
+			 ******************************************************/
+			if( b_pdp && acct_pdp && !a_pdp ) {
+
+				/***********************************************
+				 * Check if this bill is of parent account or
+				 * suborodinate account. Fill only the parent
+				 * account in the account obj if only bill no
+				 * is mentioned.
+				 ***********************************************/
+				if (bill_pdp) {
+					PIN_FLIST_FLD_SET(i_flistp,
+						PIN_FLD_ACCOUNT_OBJ, (void *)acct_pdp, ebufp);
+					*resultp = PIN_RESULT_PASS;
+					break;
+				} else {
+					if (!PIN_POID_COMPARE(bi_pdp, ar_bi_pdp, 0, ebufp)) {
+						PIN_FLIST_FLD_SET(i_flistp, PIN_FLD_ACCOUNT_OBJ, 
+							(void *)acct_pdp, ebufp);
+						*resultp = PIN_RESULT_PASS;
+						break;
+					}
+				}
+			} else if (b_pdp && a_pdp && acct_pdp && 
+				!(PIN_POID_COMPARE(a_pdp, acct_pdp, 0, ebufp))) {
+				*resultp = PIN_RESULT_PASS;
+				break;
+			} else if (b_pdp && a_pdp && acct_pdp && 
+				(PIN_POID_COMPARE(a_pdp, acct_pdp, 0, ebufp))) {
+				*resultp = PIN_RESULT_FAIL;
+			} else if (a_pdp && !b_pdp){
+				*resultp = PIN_RESULT_PASS;
+				break;
+			}	 
+		}
+	}
+	else{
+		if (!a_pdp ) {
+			*resultp = PIN_RESULT_FAIL;
+		} else {
+			*resultp = PIN_RESULT_PASS;
+		}
+	} 
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment_get_account_by_bill: error",
+				ebufp);
+	}
+	/***********************************************************
+	 * Clean up.
+	 ***********************************************************/
+	PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+	PIN_FLIST_DESTROY_EX(&s_flistp, NULL);
+
+	return;
+}
+/**********************************************************************
+ * fm_pymt_pol_validate_payment_bill()
+ * This function validates bill level information & corrects if necessary
+ * This function validation is good candidate for removal if there is 
+ * perfomance hit due to global search being called in loop
+ **********************************************************************/
+static void
+fm_pymt_pol_validate_payment_bill(
+	pcm_context_t           *ctxp,
+	pin_flist_t             *i_flistp,
+	pin_flist_t             *billinfo_flistp,
+	int                     flags,
+	int32                   *resultp,
+	int64			database,
+	pin_errbuf_t            *ebufp)        
+{
+	pin_flist_t     *s_flistp = NULL;
+	pin_flist_t     *a_flistp = NULL;
+	pin_flist_t     *rs_flistp = NULL;
+	pin_flist_t     *r_flistp = NULL;
+	pin_flist_t     *bill_flistp = NULL;
+	pin_flist_t     *res_flistp = NULL;
+	pin_flist_t     *billobj_flistp = NULL;
+	pin_cookie_t    cookie = NULL;
+	int32           rec_id = 0;	
+	char            *b_no = NULL;
+	char            *bill_no = NULL;
+	int64           id = 0;
+	poid_t          *b_pdp = NULL;
+	poid_t          *bill_pdp = NULL;
+	poid_t          *s_pdp = NULL;
+	poid_t		*bi_pdp = NULL;
+	poid_t		*ar_bi_pdp = NULL;
+	pin_cookie_t    temp_cookie = NULL;
+        int32           elem_id = 0;
+        int32           bparam_reject_prev_bill = 0;
+        char            template[1024];
+        int32           s_flags = SRCH_DISTINCT;
+	char		*bill_poid_typep = NULL;
+	pin_flist_t     *read_flistp = NULL;
+	pin_flist_t     *read_res_flistp = NULL;
+
+
+	/***********************************************************
+	 * Check the error buffer.
+	 ***********************************************************/
+	if (PIN_ERRBUF_IS_ERR(ebufp)){
+		return ;
+	}
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	/********************************************************
+	 * Validate BILL_NO in BILLS array
+	 *********************************************************/
+	while ((bill_flistp = PIN_FLIST_ELEM_GET_NEXT(billinfo_flistp, PIN_FLD_BILLS,
+		&rec_id, 1, &cookie, ebufp)) != (pin_flist_t *)NULL) {
+		/******************************************************
+		 * Get Bill Number
+		 ******************************************************/
+		b_no =  (char *)PIN_FLIST_FLD_GET(bill_flistp,
+					PIN_FLD_BILL_NO, 1, ebufp);
+		/******************************************************
+		 * Get Bill Poid
+		 ******************************************************/
+		bill_pdp = ( poid_t *)PIN_FLIST_FLD_GET(bill_flistp,
+					PIN_FLD_BILL_OBJ, 1, ebufp);
+		/*****************************************************
+		 * If Neither Bill Poid nor Bill Number is present
+		 * Skip this element
+		 ******************************************************/
+		if (!(bill_pdp || b_no)){
+			continue;
+		}
+		/******************************************************
+		 * Allocate the search flist
+		 ******************************************************/
+		s_flistp = PIN_FLIST_CREATE(ebufp);
+
+		/******************************************************
+		 * Set the search poid
+		 ******************************************************/
+		id = (int64)234;
+
+		s_pdp = PIN_POID_CREATE(database, "/search", id, ebufp);
+		PIN_FLIST_FLD_PUT(s_flistp, PIN_FLD_POID, (void *)s_pdp, ebufp);
+
+		/*******************************************************
+		 * Add search arguments
+		 * Search by Bill Object or Bill Number based on
+		 *       which ever is available
+		 * If both Bill Object and Bill Number is present
+		 *       search by Bill Object
+		 ******************************************************/
+		a_flistp = PIN_FLIST_ELEM_ADD(s_flistp, PIN_FLD_ARGS, 
+							1, ebufp);
+		if ( bill_pdp) {
+			PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_POID,
+					 (void *)bill_pdp, ebufp);
+		} else if ( b_no) {
+			PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_BILL_NO, 
+						(void *)b_no, ebufp);
+		}
+
+		/******************************************************
+		 * Add results array
+		 ******************************************************/
+		rs_flistp = PIN_FLIST_ELEM_ADD(s_flistp,
+					PIN_FLD_RESULTS, 0, ebufp);
+		PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_POID,
+					(void *)NULL, ebufp);
+		PIN_FLIST_FLD_SET(rs_flistp,PIN_FLD_BILL_NO,
+					(void *)NULL, ebufp);
+		PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_BILLINFO_OBJ,
+					(void *)NULL, ebufp);
+		PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_AR_BILLINFO_OBJ,
+						(void *)NULL, ebufp);
+
+		PCM_OP(ctxp, PCM_OP_GLOBAL_SEARCH, 0, s_flistp, 
+						&r_flistp, ebufp);
+
+                res_flistp = PIN_FLIST_ELEM_GET(r_flistp, PIN_FLD_RESULTS,
+                                                PIN_ELEMID_ANY, 1, ebufp);
+
+                /********************************************************
+                 * Payment could be made against previous bill in case of
+                 * corrective billing. If "RejectPaymentsForPreviousBill"
+                 * is disabled, then payment to previous bills is allowed.
+                 ********************************************************/
+                if (!res_flistp) {
+                        bparam_reject_prev_bill = psiu_bparams_get_int(ctxp,
+                                PSIU_BPARAMS_BILLING_PARAMS,
+                                PSIU_BPARAMS_BILLING_PYMT_REJECT_DUE_TO_BILL_NO, ebufp);
+
+                        if (!bparam_reject_prev_bill) {
+                                PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+
+                                s_pdp = PIN_POID_CREATE(database, "/search", -1, ebufp);
+                                PIN_FLIST_FLD_PUT(s_flistp, PIN_FLD_POID, (void *)s_pdp, ebufp);
+
+                                strcpy(template, "select X from /history_bills where F1 = V1 and ar_billinfo_obj_id0 = billinfo_obj_id0 ");
+
+                                PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_FLAGS, (void *)&s_flags, ebufp);
+                                PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_TEMPLATE, (void *)template, ebufp);
+
+				PIN_FLIST_FLD_SET(rs_flistp, PIN_FLD_BILL_OBJ, (void *)NULL, ebufp);
+
+                                PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+                                        "fm_pymt_pol_validate_payment_bill: search from history bill input flist", s_flistp);
+
+                                PCM_OP(ctxp, PCM_OP_GLOBAL_SEARCH, 0, s_flistp, &r_flistp, ebufp);
+
+                                if (PIN_ERRBUF_IS_ERR(ebufp)) {
+                                        PIN_FLIST_LOG_ERR("Search bill from history_bills error", ebufp);
+                                        PIN_FLIST_DESTROY_EX(&s_flistp, NULL);
+                                        PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+                                        return;
+                                }
+
+                                PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+                                        "fm_pymt_pol_validate_payment_bill: search from history bill output flist", r_flistp);
+                        }
+                }
+
+		/******************************************************
+		 * Get the results.
+		 ******************************************************/
+		temp_cookie = NULL;
+		while ((res_flistp = PIN_FLIST_ELEM_GET_NEXT(r_flistp,
+			PIN_FLD_RESULTS,
+			&elem_id, 1, &temp_cookie, ebufp)) != NULL){
+			b_pdp =  ( poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+						PIN_FLD_POID, 1, ebufp);
+
+                        /*************************************************
+                         * If bill poid is history_bills then we need to
+                         * get the original bill poid.
+                         *************************************************/
+                        bill_poid_typep = (char *)PIN_POID_GET_TYPE(b_pdp);
+                        if (strncmp(bill_poid_typep, "/history_bills", strlen(bill_poid_typep)) == 0) {
+                                b_pdp = ( poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+                                                PIN_FLD_BILL_OBJ, 1, ebufp);
+
+                                read_flistp = PIN_FLIST_CREATE(ebufp);
+                                PIN_FLIST_FLD_SET(read_flistp, PIN_FLD_POID, (void *)b_pdp, ebufp);
+                                PIN_FLIST_FLD_SET(read_flistp, PIN_FLD_BILL_NO, (void *)NULL, ebufp);
+
+                                PCM_OP(ctxp, PCM_OP_READ_FLDS, 0, read_flistp, &read_res_flistp, ebufp);
+                                PIN_FLIST_DESTROY_EX(&read_flistp, NULL);
+
+                                bill_no = ( char *)PIN_FLIST_FLD_GET(read_res_flistp, PIN_FLD_BILL_NO, 1, ebufp);
+                        }
+                        else {
+                                bill_no = ( char *)PIN_FLIST_FLD_GET(res_flistp,
+                                                        PIN_FLD_BILL_NO, 1, ebufp);
+                        }
+
+			bi_pdp = (poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+						PIN_FLD_BILLINFO_OBJ, 1, ebufp);
+			ar_bi_pdp = (poid_t *)PIN_FLIST_FLD_GET(res_flistp,
+						PIN_FLD_AR_BILLINFO_OBJ, 1, ebufp);
+			billobj_flistp = PIN_FLIST_COPY(res_flistp, ebufp);
+		
+			/***************************************************************
+			 * Validate the results
+			 *
+			 * If BILL_OBJ is not passed and a valid BILL_OBJ is found for 
+			 * the given BILL_NO, set the correct BILL_OBJ in the BILLS array
+			 *
+			 * If BILL_NO is not passed and a valid BILL_NO is found for the
+			 * given BILL_OBJ, set the correct BILL_NO in the BILLS array
+			 *
+			 * If BILL_NO is passed and a valid BILL_NO is found for the
+			 * given BILL_OBJ, correct BILL_NO in the BILLS array 
+			 * if not matching
+			 ***************************************************************/
+			if( b_pdp ) {
+				if ( b_no && !bill_pdp ) {
+					/***********************************************
+					 * Check if this bill is of parent account or
+					 * suborodinate account. Fill only the parent
+					 * bill in the bill obj if only bill number is
+					 * is mentioned.
+					 ***********************************************/
+					if (!PIN_POID_COMPARE(bi_pdp, ar_bi_pdp, 0, ebufp)) {
+						PIN_FLIST_FLD_SET(bill_flistp, 
+							PIN_FLD_BILL_OBJ, (void *)b_pdp, ebufp);
+					} else {
+						continue;
+					}
+				}
+				if ( bill_no && (( b_no && strcmp(b_no, bill_no)) || 
+							(!b_no && bill_pdp)) ) {
+					PIN_FLIST_FLD_SET(bill_flistp, PIN_FLD_BILL_NO,
+							(void *)bill_no, ebufp);
+				}
+				*resultp = PIN_RESULT_PASS;
+				break;
+			} else if (!b_pdp) {
+				*resultp = PIN_RESULT_FAIL;
+			}
+			/*********************
+	                 * Reset the values
+	                 **********************/
+	                bill_no = NULL;
+	                b_pdp = NULL;
+		}
+
+		/*********************
+		 * Reset the values
+		 **********************/
+		b_no = NULL;
+		bill_no = NULL;
+		b_pdp = NULL;
+		bill_pdp = NULL;
+
+		PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+		PIN_FLIST_DESTROY_EX(&s_flistp, NULL);
+	}
+	/***********************************************************
+	 *  Perform Billinfo level validation & correct BILLINFO_OBJ 
+	 *  if necessary.
+	 ***********************************************************/
+	fm_pymt_pol_validate_payment_billinfo( ctxp,
+				i_flistp, billinfo_flistp,
+				billobj_flistp, flags, ebufp);
+	PIN_FLIST_DESTROY_EX(&billobj_flistp, NULL);
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment_bill: error",
+				ebufp);
+	}
+	/***********************************************************
+	 * Clean up.
+	 ***********************************************************/
+	PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+	PIN_FLIST_DESTROY_EX(&s_flistp, NULL);
+	PIN_FLIST_DESTROY_EX(&read_res_flistp, NULL);
+
+	return;
+}
+/*************************************************************************
+ * fm_pymt_pol_validate_find_bill_by_amount():
+ * this function effectively finds and populates PIN_FLD_BILLS
+ * array with bill Number whose bill amount 
+ * matched with payment amount from PIN_FLD_CHARGES Element
+ *************************************************************************/
+
+static void
+fm_pymt_pol_validate_find_bill_by_amount(
+        pcm_context_t           *ctxp,
+        pin_flist_t             *i_flistp,
+        pin_flist_t             *billinfo_flistp,
+	int                     flags,
+        pin_errbuf_t            *ebufp)
+{
+        pin_flist_t             *t_flistp = NULL;
+        pin_flist_t             *s_flistp = NULL;
+        pin_flist_t             *a_flistp = NULL;
+        pin_flist_t             *bills_flistp = NULL;
+        pin_flist_t             *temp_flistp = NULL;
+
+	poid_t			*account_pdp = NULL;
+	poid_t          	*s_pdp = NULL;
+        pin_decimal_t           *charges_amtp = NULL;
+        int64           	id = -1;
+	char                    template[256]   = "";
+	int32           	search_flags = SRCH_EXACT ; 
+	int64           	db = 0;
+	void            	*vp = NULL;
+	pin_pymt_result_t       *resultp = NULL;
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) 
+		return;
+        PIN_ERRBUF_CLEAR(ebufp);
+	
+	/********************************************************
+	 * Get the Result of the payment.
+	 * If PIN_FLD_RESULT is Fail, return
+	 *********************************************************/
+	resultp = (pin_pymt_result_t *) PIN_FLIST_FLD_GET(i_flistp,
+			PIN_FLD_RESULT, 1, ebufp);
+	if (resultp &&  (*resultp == PIN_PAYMENT_RES_FAIL)) {
+		return;
+	}       
+
+	
+	/********************************************************
+	 * get the account num, amount passed and bill num passed
+	 ********************************************************/
+
+	account_pdp = (poid_t *) PIN_FLIST_FLD_GET(i_flistp, 
+				PIN_FLD_ACCOUNT_OBJ,1, ebufp);
+	charges_amtp = (pin_decimal_t *) PIN_FLIST_FLD_GET(billinfo_flistp, 
+					PIN_FLD_AMOUNT,1, ebufp);
+	
+	if((!account_pdp) ||(!charges_amtp)) {
+        	return;
+	}
+	
+	/********************************************************
+         * check in PIN_FLD_BILLS ARRAY is present under            
+         * PIN_FLD_CHARGES - if it is present nothing to be done    
+         * - if not present find /bill object with matching         
+         * charges_amtp and populates PIN_FLD_BILLS array           
+         ********************************************************/
+
+
+	t_flistp = PIN_FLIST_ELEM_GET(billinfo_flistp,
+                           PIN_FLD_BILLS, PIN_ELEMID_ANY, 1, ebufp);
+	if (!t_flistp) {
+
+        	/****************************************
+        	 * now create search flist 
+        	 * to browse through all the bills for
+        	 * this account where the amount matches
+        	 *****************************************/
+
+		s_flistp = PIN_FLIST_CREATE(ebufp);
+
+		vp = PIN_FLIST_FLD_GET (i_flistp, PIN_FLD_ACCOUNT_OBJ, 0, ebufp);
+                db = PIN_POID_GET_DB ((poid_t*)vp);
+
+        	id = (int64) -1;
+		s_pdp = PIN_POID_CREATE(db, "/search", id, ebufp);
+		PIN_FLIST_FLD_PUT(s_flistp, PIN_FLD_POID, (void *)s_pdp, ebufp);
+
+		strcpy(template, " select X  from /bill  where ");
+        	strcat(template, " ( F1 = V1 ) and " );
+        	strcat(template, " ( F2 = V2 ) " );
+        	PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_TEMPLATE, 
+					(void *) template, ebufp);
+
+        	PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_FLAGS, 
+					(void *) &search_flags, ebufp);
+
+		a_flistp = PIN_FLIST_ELEM_ADD(s_flistp, PIN_FLD_ARGS, 1, ebufp);
+        	PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_ACCOUNT_OBJ, 
+					(void *)account_pdp, ebufp);
+		a_flistp = PIN_FLIST_ELEM_ADD(s_flistp, PIN_FLD_ARGS, 2, ebufp);
+        	PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_DUE, 
+					(void *)charges_amtp, ebufp);
+
+		a_flistp = (pin_flist_t *)NULL;
+        	a_flistp = PIN_FLIST_ELEM_ADD(s_flistp, PIN_FLD_RESULTS,0,ebufp);
+        	PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_POID, (void *)NULL,ebufp);
+        	PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_BILL_NO, (void *)NULL,ebufp);
+        	PIN_FLIST_FLD_SET(a_flistp, PIN_FLD_DUE, (void *)NULL, ebufp);
+
+		PCM_OP(ctxp, PCM_OP_SEARCH, 0, s_flistp, &bills_flistp,ebufp);
+
+        	/********************************************
+        	 * If the result returns any bill(s)
+        	 * pick up the /bill from 0th element 
+        	 * this will be the oldest with mathing amount
+        	 *********************************************/
+
+		temp_flistp = PIN_FLIST_ELEM_GET(bills_flistp, 
+						PIN_FLD_RESULTS, 0, 1, ebufp);
+
+		if (temp_flistp) {
+			a_flistp = (pin_flist_t *)NULL;
+			a_flistp = PIN_FLIST_ELEM_ADD(billinfo_flistp, 
+						PIN_FLD_BILLS, 0, ebufp);	
+
+			vp = PIN_FLIST_FLD_TAKE(temp_flistp, 
+						PIN_FLD_BILL_NO, 0, ebufp);
+                	PIN_FLIST_FLD_PUT(a_flistp,PIN_FLD_BILL_NO,vp,ebufp);
+
+			vp = PIN_FLIST_FLD_TAKE(temp_flistp, 
+						PIN_FLD_POID, 0, ebufp);
+                	PIN_FLIST_FLD_PUT(a_flistp,PIN_FLD_BILL_OBJ,vp,ebufp);
+
+			vp = PIN_FLIST_FLD_TAKE(temp_flistp, 
+						PIN_FLD_DUE, 0, ebufp);
+			PIN_FLIST_FLD_PUT(a_flistp,PIN_FLD_AMOUNT, vp,ebufp);
+		}
+
+		/********************************************
+         	 * Clean up.
+         	 ********************************************/
+
+        	PIN_FLIST_DESTROY_EX(&s_flistp, NULL);
+        	PIN_FLIST_DESTROY_EX(&bills_flistp, NULL);
+
+	}
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+                PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+                        "fm_pymt_pol_validate_find_bill_by_amount: error",
+                                ebufp);
+        }
+	return;
+}
+/*******************************************************************
+ * fm_pymt_pol_validate_payment_get_account()
+ * If account poid is not present then account number
+ * should be present. So get the account poid from the
+ * account number.
+ *******************************************************************/
+static void 
+fm_pymt_pol_validate_payment_get_account(
+	pcm_context_t		*ctxp,
+	pin_flist_t		*i_flistp,
+	poid_t			*dummy_pdp,
+	poid_t			**accnt_pdpp,
+	pin_errbuf_t		*ebufp)
+{
+	poid_t			*srch_pdp = NULL;
+	void			*vp = NULL;
+	pin_flist_t		*srch_flistp = NULL;
+	pin_flist_t		*arg_flistp = NULL;
+	pin_flist_t		*srch_res_flistp = NULL;
+	char			template[256] = {0};
+
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) 
+		return;
+	PIN_ERRBUF_CLEAR(ebufp);
+
+
+	/***********************************************
+	 * Create a search flist to get account poid
+	 ***********************************************/
+	srch_flistp = PIN_FLIST_CREATE(ebufp);
+	srch_pdp = PIN_POID_CREATE(PIN_POID_GET_DB(dummy_pdp), "/search", -1, ebufp);
+
+	PIN_FLIST_FLD_PUT(srch_flistp, PIN_FLD_POID, srch_pdp, ebufp);
+	PIN_FLIST_FLD_SET(srch_flistp, PIN_FLD_FLAGS, 0, ebufp);
+	strcpy(template, " select x from /account where F1 = V1 ");
+	PIN_FLIST_FLD_SET(srch_flistp, PIN_FLD_TEMPLATE, (void *)template, ebufp);
+
+	vp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_ACCOUNT_NO, 0, ebufp);
+	/***********************************************
+	 * 1st Arg :: Account Number
+	 ***********************************************/
+	arg_flistp = PIN_FLIST_ELEM_ADD(srch_flistp, PIN_FLD_ARGS, 1, ebufp);
+	PIN_FLIST_FLD_SET(arg_flistp, PIN_FLD_ACCOUNT_NO, vp, ebufp);
+
+	/***********************************************
+	 * Result :: Account Poid
+	 ***********************************************/
+	arg_flistp = PIN_FLIST_ELEM_ADD(srch_flistp, PIN_FLD_RESULTS,0,ebufp);
+	PIN_FLIST_FLD_SET(arg_flistp, PIN_FLD_POID, (void *)NULL,ebufp);
+
+	PCM_OP(ctxp, PCM_OP_SEARCH, 0, srch_flistp, &srch_res_flistp, ebufp);
+
+	*accnt_pdpp = PIN_FLIST_FLD_TAKE(srch_res_flistp, PIN_FLD_POID, 0, ebufp);
+
+	PIN_FLIST_DESTROY_EX(&srch_flistp, NULL);
+	PIN_FLIST_DESTROY_EX(&srch_res_flistp, NULL);
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_pymt_pol_validate_payment_get_account: error",
+		ebufp);
+	}
+	return;
+}

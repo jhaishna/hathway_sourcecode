@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/session/pcm_client
+#=======================================
+
+STORABLE CLASS /event/session/pcm_client {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event session object used to record a PCM client session. PCM client service logins are typically used by the various non-administrative applications that connect to Infranet.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/session/pcm_client
+#=======================================
+
+STORABLE CLASS /event/session/pcm_client IMPLEMENTATION ORACLE7 {
+
+}
+

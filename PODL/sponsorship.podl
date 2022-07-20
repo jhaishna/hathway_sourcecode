@@ -1,0 +1,436 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_MAP
+#=======================================
+
+ARRAY PIN_FLD_USAGE_MAP {
+
+	ID = 2210;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_MODEL
+#=======================================
+
+STRING PIN_FLD_DISCOUNT_MODEL {
+
+	ID = 7791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /sponsorship
+#=======================================
+
+STORABLE CLASS /sponsorship {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This object describes a sponsorship relationship. The new name for sponsorship is Charge Sharing, They are used here interchangably. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Account object for which this object was created. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CODE {
+
+		DESCR = "Unique code of the sponsorship object.Relevant if PDC is enabled";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Sponsorship description.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "Non-inclusive end time of the validity period for the object. If the value is 0, means this is always valid.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Unique name of the sponsorship object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "Inclusive absolute start time";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_USAGE_MAP {
+
+		DESCR = "Array of entries defining how sponsorship should be performed for different events.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DISCOUNT_MODEL {
+
+			DESCR = "Name of Discount Model implementing the sponsorship. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "Type of event that this entry specifies sponsorship for. Unique within usage map. Subtypes are implicitly included.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Specify if this usage map is valid if the sponsorship instance is at certain status. Currently we have two flags: Inactivated flag PIN_PRICE_INACTIVATED(0x01); Cancelled flag PIN_PRICE_CANCELLED(0x02). By default, the two flags should not be set, which means that this usage map is not valid when the object  status is inactivated or cancelled";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /sponsorship
+#=======================================
+
+STORABLE CLASS /sponsorship IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "sponsorship_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_CODE {
+
+		SQL_COLUMN = "code";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "end_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "start_t";
+	}
+
+	ARRAY PIN_FLD_USAGE_MAP {
+
+		SQL_TABLE = "sponsorship_usage_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DISCOUNT_MODEL {
+
+			SQL_COLUMN = "discount_model";
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

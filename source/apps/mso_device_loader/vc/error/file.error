@@ -1,0 +1,4 @@
+Header,SP code 1,sup code 2,1-32232377,po_code 1,20131031,
+serial_00016,NDS,10000C,1120130000000016,Std,STB device,12,Incorrect number of field for the record
+0.0.0.1-121266,serial_00011,NDS,10000C,112013000011,P1,VC device,a, Field 8 warranty does not meet field validation requirement
+0.0.0.1-121266,serial_00011,NDS,10000C,11201300001,P1,VC device,12, Field 5 device_id does not meet field validation requirement

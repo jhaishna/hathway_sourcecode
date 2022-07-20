@@ -1,0 +1,477 @@
+--
+--	create_md_snapshots.source 2.1.11
+--	
+-- Copyright (c) 2003, 2008, Oracle and/or its affiliates.All rights reserved. 
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--	sql file to CREATE SNAPSHOTS AND INDEXES
+set serveroutput on;
+
+--------------------------------------------------------------------------
+-- CREATE THE  PROCEDURE TO CREATE INDEXES 
+--------------------------------------------------------------------------
+
+create or replace PROCEDURE create_index 
+	(tab_name IN VARCHAR2 ) AS
+        -----------------------------------------
+        -- cursor for index
+        -----------------------------------------
+        cursor c_index is
+		select
+			ui.index_name, ui.table_name, 
+			ui.tablespace_name, ui.uniqueness,
+			ui.initial_extent, ui.next_extent,
+			ui.pct_increase, ui.freelists, 
+			ui.ini_trans,
+			uic.column_name, uic.column_position 
+			from
+			user_indexes@md_primary ui, 
+			user_ind_columns@md_primary uic
+			where ui.table_name like UPPER(tab_name)
+			and ui.table_name = uic.table_name
+			and ui.index_name = uic.index_name
+			order by ui.index_name
+			;
+        -----------------------------------------
+        -- Other variables
+        -----------------------------------------
+		index_str		varchar2(1024)	:= ' ';
+		col_name		varchar2(60)	:= ' ';
+		tablespace_str	varchar2(60)	:= ' ';
+		const_part		boolean			:= TRUE;
+		curr_index		varchar2(60)	:= ' ';
+		col_str		varchar2(60)		:= ' ';
+		real_table_name	varchar2(40)	:=	' ';
+		table_count		int	:= 0;		
+		index_count		int	:= 0;		
+		fl			int	:=0;
+		pcti			int	:=0;
+		initial_e		int	:=0;
+		next_e			int	:=0;
+		initr			int	:=0;
+		storage_str	varchar2(255)	:= ' ';
+		cid			int	:=0;
+		columns_already_indexed	EXCEPTION;
+		PRAGMA EXCEPTION_INIT(columns_already_indexed, -1408);
+BEGIN
+
+	dbms_output.enable(200000);
+	for  ind in c_index
+	LOOP
+		if  curr_index not like ind.index_name then
+			-- Dealing with a new index. 
+			-- Do we have a previous index to create?
+			if index_str not like ' ' then
+			-- storage_string calculations
+                        --In case of Locally Managed Tablespaces 
+                        --(EXTENT MANAGEMENT LOCAL) which is default 
+                        --with Oracle9i, storage_str should be blank
+				index_str := index_str || col_name || '  )  ' || 
+						' TABLESPACE ' || 
+						tablespace_str || storage_str;
+			--	See if we have a similar index on this 
+			-- 	table/snapshot. It's possible to have an index 
+			-- 	already if we created a primary key snapshot.
+	
+				select count(*) into index_count 
+				from user_indexes
+				where index_name = curr_index AND
+				table_name = UPPER(real_table_name);
+				
+		 		if index_count = 0 then	
+					dbms_output.put_line(index_str);
+					-- create the index
+					BEGIN
+					cid := DBMS_SQL.OPEN_CURSOR;
+					DBMS_SQL.PARSE (cid,
+						index_str,
+						dbms_sql.v7);
+					DBMS_SQL.CLOSE_CURSOR(cid);
+					EXCEPTION
+						WHEN columns_already_indexed
+						then
+--						dbms_output.put_line ('Index ' 
+--						|| curr_index || ' on table ' ||
+--						tab_name || ' already exists');
+						DBMS_SQL.CLOSE_CURSOR(cid);
+					END;
+--				else
+--					dbms_output.put_line ('Index ' || 
+--						curr_index || ' on table ' || 
+--						tab_name || ' already exists');
+				end if;
+			end if;
+			const_part := TRUE;
+		else
+			-- We are continuing building the same index. 
+			index_str := index_str || col_str;
+			const_part := FALSE;
+		end if;
+		if const_part = TRUE then
+			curr_index := ind.index_name;
+			if ind.uniqueness = 'UNIQUE' then
+				index_str := 'CREATE UNIQUE INDEX  ';
+			else
+				index_str := 'CREATE  INDEX  ';
+			end if;
+
+			select count(table_name) 
+			into table_count 
+			from user_snapshots
+			where
+				master = ind.table_name;
+
+			if table_count > 0 then
+				select table_name into real_table_name 
+				from user_snapshots 
+				where
+					master = ind.table_name;
+			else
+				real_table_name := ind.table_name;
+			end if;
+
+			if curr_index not like 'SYS_C%' then
+				index_str := index_str || curr_index  || ' ON '
+					|| real_table_name || ' ( '	;
+			else -- to avoid the name collision.
+				index_str := index_str || curr_index  || '_MD' 
+					|| ' ON ' || real_table_name || ' ( ';
+			end if;
+				
+			dbms_output.put_line(index_str);
+			tablespace_str := ind.tablespace_name;
+			fl := ind.freelists;
+			pcti := ind.pct_increase;
+			initial_e	:= ind.initial_extent;
+			next_e := ind.next_extent;
+			initr := ind.ini_trans;
+			if initr IS NULL then
+				initr := 0;
+			end if;
+			const_part := FALSE;
+			storage_str := ' ';
+		end if;
+		col_name := ind.column_name;
+		col_str  :=	col_name || ' , ';		
+--		dbms_output.enable(200000);
+--		dbms_output.put_line(col_name);
+	END LOOP;
+        --In case of Locally Managed Tablespaces 
+        --(EXTENT MANAGEMENT LOCAL) which is default 
+        --with Oracle9i, storage_str should be blank
+	if index_str not like  ' ' then
+		index_str := index_str || col_name || '  )  ' || 
+		' TABLESPACE ' || tablespace_str || storage_str;
+		-- create the index
+		--	See if we have a similar index on this table/snapshot.
+		--	It's possible to have an index already if we created
+		--	a primary key snapshot.
+	
+		select count(*) into index_count from user_indexes
+		where index_name = curr_index AND
+		table_name = UPPER(real_table_name);
+		
+ 		if index_count = 0 then	
+			dbms_output.put_line(index_str);
+--			dbms_output.put_line(curr_index);
+--			dbms_output.put_line(real_table_name);
+			-- create the index
+			BEGIN
+			cid := DBMS_SQL.OPEN_CURSOR;
+			DBMS_SQL.PARSE (cid,
+				index_str,
+				dbms_sql.v7);
+			DBMS_SQL.CLOSE_CURSOR(cid);
+			EXCEPTION
+				WHEN columns_already_indexed
+				then
+				DBMS_SQL.CLOSE_CURSOR(cid);
+				dbms_output.put_line ('Index on table' 
+				|| tab_name || ' already exists');
+			END;
+--		else
+--			dbms_output.put_line ('Index ' || curr_index ||
+--			' on table ' || tab_name || ' already exists');
+		end if;
+	end if;
+EXCEPTION
+	WHEN NO_DATA_FOUND THEN
+		RAISE_APPLICATION_ERROR (-20963,
+		'FATAL ERROR - Please Contact Customer Support!!!');
+END;
+/
+-- CREATE THE  PROCEDURE TO CREATE SNAPSHOTS 
+--------------------------------------------------------------------------
+
+CREATE or REPLACE PROCEDURE create_snapshots (
+                tname  IN VARCHAR2,
+                ref_group  IN VARCHAR2,
+		sm_info	IN VARCHAR2,
+		sm_index_info IN VARCHAR2, 
+		ind_initial_e IN INT, 
+		ind_next_e	IN INT,
+		ind_pct_i IN INT, 
+		ind_fl IN INT,
+		initial_e IN INT, 
+		next_e IN INT,
+		pct_i IN INT, 
+		fl IN INT
+	) AS 
+	version varchar2(40);
+--	with_rowid_flag varchar2(40) := 'WITH ROWID';
+	snapshot_count int;
+	cid int;
+        -----------------------------------------
+        -- cursor for user_tables
+        -----------------------------------------
+        cursor c1 is
+	select
+		column_name, table_name
+        from
+        user_tab_columns@md_primary
+		where table_name = UPPER(tname)
+        ;
+        -----------------------------------------
+        -- Other variables
+        -----------------------------------------
+        t_name            c1%ROWTYPE;
+	select_string		varchar2(1024);
+	snapshot_str		varchar2(4096);
+	col_name		varchar2(1024);
+	col_str			varchar2(1024);
+	t_space_str		varchar2(42); -- 30 + 'TABLESPACE '
+	i_space_str		varchar2(54); -- 30 + 'TABLESPACE '
+	i_index_str		varchar2(54); -- 'USING INDEX '
+	storage_str		varchar2(255);
+	i_storage_str		varchar2(255);
+	pctfree_str		varchar2(127);
+	i_pctfree_str		varchar2(127);
+	curr_db_no		varchar2(10);
+
+BEGIN
+--------------------------------------------------------------------------
+-- CREATE  SNAPSHOT
+--------------------------------------------------------------------------
+
+	select TO_CHAR(POID_DB) into curr_db_no 	from account_t 
+		where poid_id0 = 1;
+--	dbms_output.put_line(curr_db_no);
+	select count(name) into snapshot_count 	from user_snapshots 
+		where name = UPPER(tname);
+
+	if snapshot_count > 0 then
+		-- PARSE AND IMMEDIATELY EXECUTE DDL STATEMENT
+		cid := DBMS_SQL.OPEN_CURSOR;
+		DBMS_SQL.PARSE (cid,
+			'DROP SNAPSHOT ' || tname,
+			dbms_sql.v7);
+		DBMS_SQL.CLOSE_CURSOR(cid);
+	end if;
+
+	select_string := 'SELECT ';
+	col_str := '';
+	FOR t_name IN c1
+	LOOP
+		select_string := select_string || col_str ;	
+		col_name := t_name.column_name ;
+		col_str := col_name || ',';
+	END LOOP;
+	select_string := select_string || col_name || 
+		' FROM ' || tname || '@md_primary';	
+	select count(*) into snapshot_count 	from user_tables 
+		where table_name = UPPER(tname);
+
+	if snapshot_count > 0 then
+		cid := DBMS_SQL.OPEN_CURSOR;
+		DBMS_SQL.PARSE (cid,
+			'DROP TABLE ' || tname ,
+			dbms_sql.v7);
+		DBMS_SQL.CLOSE_CURSOR(cid);
+	end if; 
+	if sm_index_info IS NULL then
+		i_space_str := '';
+	else 
+		i_space_str := ' TABLESPACE ' || sm_index_info;
+	end if;
+	if sm_info IS NULL then
+		t_space_str := '';
+	else 
+		t_space_str := ' TABLESPACE ' || sm_info;
+	end if;
+	if fl IS NULL then
+		pctfree_str := '';
+	else 
+		pctfree_str := ' PCTFREE ' || TO_CHAR(fl);
+	end if;
+        --In case of Locally Managed Tablespaces 
+        --(EXTENT MANAGEMENT LOCAL) which is default 
+        --with Oracle9i, storage_str should be blank
+		storage_str := '';
+	if ind_fl IS NULL then
+		i_pctfree_str := '';
+	else 
+		i_pctfree_str := ' PCTFREE ' || TO_CHAR(ind_fl);
+	end if;
+
+	if ind_fl IS NULL and sm_index_info IS NULL then
+		i_index_str := '';
+	else 
+		i_index_str := ' USING INDEX '; 
+	end if;
+        --In case of Locally Managed Tablespaces 
+        --(EXTENT MANAGEMENT LOCAL) which is default 
+        --with Oracle9i, i_storage_str should be blank
+		i_storage_str := '';
+--	dbms_output.put_line(snapshot_str);
+	snapshot_str := 
+		'CREATE SNAPSHOT ' ||  tname  || 
+		pctfree_str ||
+		t_space_str ||
+		storage_str ||
+		i_index_str ||
+		i_space_str ||
+		i_pctfree_str ||
+		i_storage_str ||
+		' REFRESH FORCE ' || 
+--		with_rowid_flag ||
+		' AS ' ||
+		select_string;
+	cid := DBMS_SQL.OPEN_CURSOR;
+	DBMS_SQL.PARSE (cid,
+		snapshot_str,
+		dbms_sql.v7);
+	DBMS_SQL.CLOSE_CURSOR(cid);
+	create_index(tname);
+EXCEPTION
+	WHEN NO_DATA_FOUND THEN
+		RAISE_APPLICATION_ERROR (-20963,
+		'FATAL ERROR - Please Contact Customer Support!!!');
+END;
+/
+--------------------------------------------------------------------------
+-- CREATE THE SNAPSHOTS, BUILD THE REFRESH LIST FOR THE SPECIFIED GROUP
+--------------------------------------------------------------------------
+
+CREATE or REPLACE PROCEDURE create_refresh (
+                ref_group  		IN VARCHAR2,
+		refresh_unit		IN VARCHAR2 DEFAULT 'MINUTES',
+		refresh_interval 	IN number DEFAULT 5)
+
+AS
+	cursor c2 is 
+	SELECT table_name, sm_info, sm_index_info, 
+	ind_initial_ext, ind_next_ext, ind_pct_inc, ind_freelists,
+	initial_ext, next_ext, pct_inc, freelists 
+	FROM MD_STATIC_OBJECTS_T@md_primary
+	WHERE refresh_group = ref_group;
+
+	tname 	c2%ROWTYPE;
+	t_name 	varchar2(255);
+	refresh_list	varchar2(8192);
+	refresh_str	varchar2(1024);
+	ref_interval	varchar2(40);
+	ref_group_count	number(38) := 0;
+	invalid_refresh_group 	EXCEPTION;
+	invalid_refresh_args 	EXCEPTION;
+	PRAGMA EXCEPTION_INIT(invalid_refresh_group, -20001);
+	PRAGMA EXCEPTION_INIT(invalid_refresh_args, -20002);
+	table_count 	number	:= 0;
+	ref_days int := 0;
+	ref_hours int := 0;
+	ref_minutes int := 0;
+BEGIN
+	refresh_list	:= '';
+	refresh_str	:= '';
+
+	FOR tname in c2
+	LOOP
+		table_count := table_count + 1;
+--		dbms_output.put_line(tname.table_name || ' ' || tname.sm_info 
+--				|| ' ' || tname.sm_index_info);
+		refresh_list := refresh_list || refresh_str;
+		t_name := tname.table_name;
+		create_snapshots(tname.table_name, 
+				ref_group, 
+				tname.sm_info, 
+				tname.sm_index_info,
+				tname.ind_initial_ext,
+				tname.ind_next_ext, 
+				tname.ind_pct_inc,
+				tname.ind_freelists, 
+				tname.initial_ext,
+				tname.next_ext, 
+				tname.pct_inc,
+				tname.freelists 
+				);
+		refresh_str := t_name  || ', ';
+	END LOOP;
+		if table_count = 0 then
+			raise invalid_refresh_group;
+		end if;
+		refresh_list := refresh_list || t_name;
+
+--------------------------------------------------------------------------
+-- CREATE THE REFRESH GROUPS
+--------------------------------------------------------------------------
+
+	if UPPER(refresh_unit) = 'DAYS' then
+		ref_days := refresh_interval;
+	else if  UPPER(refresh_unit) = 'HOURS' then
+		ref_hours := refresh_interval;
+	else if  UPPER(refresh_unit) = 'MINUTES' then
+		ref_minutes := refresh_interval;
+	else
+		raise invalid_refresh_args;
+	end if;
+	end if;
+	end if;
+
+	if ref_days > 0 then
+		ref_interval := 'SYSDATE + ' || TO_CHAR(ref_days);
+	else
+		if ref_hours > 0 then
+			ref_interval := 'SYSDATE + ' ||
+				TO_CHAR(ref_hours) || '/24';
+		else
+			if ref_minutes > 0 then
+				ref_interval := 'SYSDATE + ' ||
+					TO_CHAR(ref_minutes) || '/1440';
+			else
+				RAISE invalid_refresh_args;
+			end if;
+		end if;
+	end if;
+
+	select count(*) into ref_group_count  from user_refresh where 
+			rname = ref_group;
+	if ref_group_count = 1 then
+		Dbms_output.put_line('Dropping refresh group ' || 
+				ref_group);
+		dbms_refresh.destroy (name 	=>
+				ref_group);
+	else
+		dbms_output.put_line('Refresh group '|| ref_group   
+						|| ' does not exist');
+	end if;
+	
+	dbms_output.put_line('Creating Refresh Group for replication Objects ' || 'at the secondary site');
+	dbms_refresh.make (name	=>	ref_group,
+			list	=>	refresh_list,
+			next_date	=>	SYSDATE,
+			interval	=>	ref_interval);
+
+EXCEPTION
+
+	WHEN invalid_refresh_group THEN
+		raise_application_error(-20001, 
+				'INVALID REFRESH GROUP SPECIFIED');	
+	
+	WHEN invalid_refresh_args THEN
+		raise_application_error(-20002, 
+				'INVALID REFRESH TIME SPECIFIED');	
+	
+END;
+/

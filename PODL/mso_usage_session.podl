@@ -1,0 +1,724 @@
+
+#=======================================
+#  Field MSO_FLD_BYTES_DOWNLINK_BEF_FUP
+#=======================================
+
+DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+	ID = 46016;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BYTES_UPLINK_BEF_FUP
+#=======================================
+
+DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+	ID = 46015;
+}
+
+
+#=======================================
+#  Field MSO_FLD_FRAMED_IP_ADDRESS
+#=======================================
+
+STRING MSO_FLD_FRAMED_IP_ADDRESS {
+
+	ID = 46001;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LOG_TIMESTAMP
+#=======================================
+
+STRING MSO_FLD_LOG_TIMESTAMP {
+
+	ID = 46006;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NE_ID
+#=======================================
+
+STRING MSO_FLD_NE_ID {
+
+	ID = 42223;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NE_IP_ADDRESS
+#=======================================
+
+STRING MSO_FLD_NE_IP_ADDRESS {
+
+	ID = 42224;
+}
+
+
+#=======================================
+#  Field MSO_FLD_REMOTE_ID
+#=======================================
+
+STRING MSO_FLD_REMOTE_ID {
+
+	ID = 46005;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTIVE_SESSION_ID
+#=======================================
+
+STRING PIN_FLD_ACTIVE_SESSION_ID {
+
+	ID = 7460;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_DOWNLINK
+#=======================================
+
+DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+	ID = 428;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_UPLINK
+#=======================================
+
+DECIMAL PIN_FLD_BYTES_UPLINK {
+
+	ID = 429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DURATION_SECONDS
+#=======================================
+
+INT PIN_FLD_DURATION_SECONDS {
+
+	ID = 5249;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CODE
+#=======================================
+
+STRING PIN_FLD_SERVICE_CODE {
+
+	ID = 8169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMINATE_CAUSE
+#=======================================
+
+ENUM PIN_FLD_TERMINATE_CAUSE {
+
+	ID = 427;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USER_NAME
+#=======================================
+
+STRING PIN_FLD_USER_NAME {
+
+	ID = 9164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_usage_session
+#=======================================
+
+STORABLE CLASS /mso_usage_session {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "class to store bb sessions";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_FRAMED_IP_ADDRESS {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_LOG_TIMESTAMP {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_NE_ID {
+
+		DESCR = "Network Element ID For Docsis, Ethernet, 24online, ekite AAA &";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_NE_IP_ADDRESS {
+
+		DESCR = "IP address or hostname of Network Element";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_REMOTE_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACTIVE_SESSION_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_BYTES_UPLINK {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_DURATION_SECONDS {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_QUANTITY {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_SERVICE_CODE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Processes cdr request mode.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TERMINATE_CAUSE {
+
+		DESCR = "Indicates whether a call was correctly completed or not.";
+		ORDER = 10;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_USER_NAME {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_usage_session
+#=======================================
+
+STORABLE CLASS /mso_usage_session IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_usage_session_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+		SQL_COLUMN = "rated_bytes_downlink";
+	}
+
+	DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+		SQL_COLUMN = "rated_bytes_uplink";
+	}
+
+	STRING MSO_FLD_FRAMED_IP_ADDRESS {
+
+		SQL_COLUMN = "framed_ip_addr";
+	}
+
+	STRING MSO_FLD_LOG_TIMESTAMP {
+
+		SQL_COLUMN = "start_time";
+	}
+
+	STRING MSO_FLD_NE_ID {
+
+		SQL_COLUMN = "ne_id";
+	}
+
+	STRING MSO_FLD_NE_IP_ADDRESS {
+
+		SQL_COLUMN = "ne_ip_addr";
+	}
+
+	STRING MSO_FLD_REMOTE_ID {
+
+		SQL_COLUMN = "remote_id";
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		SQL_COLUMN = "account_no";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_ACTIVE_SESSION_ID {
+
+		SQL_COLUMN = "active_session_id";
+	}
+
+	DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+		SQL_COLUMN = "bytes_downlink";
+	}
+
+	DECIMAL PIN_FLD_BYTES_UPLINK {
+
+		SQL_COLUMN = "bytes_uplink";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_DURATION_SECONDS {
+
+		SQL_COLUMN = "duration";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "end_t";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "is_splitted";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	DECIMAL PIN_FLD_QUANTITY {
+
+		SQL_COLUMN = "quantity";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_SERVICE_CODE {
+
+		SQL_COLUMN = "service_code";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "start_t";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "STATUS";
+	}
+
+	ENUM PIN_FLD_TERMINATE_CAUSE {
+
+		SQL_COLUMN = "terminate_cause";
+	}
+
+	STRING PIN_FLD_USER_NAME {
+
+		SQL_COLUMN = "user_name";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

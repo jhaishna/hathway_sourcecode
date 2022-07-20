@@ -1,0 +1,19 @@
+##################################################
+# Rule for the Flist file:
+#	1. Comment should start with hash (#) 
+#	2. Empty line doesn't bother
+#
+####################################################
+
+0 PIN_FLD_POID            POID [0] 0.0.0.1 /catv_preactivation -1 0
+0 PIN_FLD_ACCOUNT_OBJ     POID [0] LCO_obj
+0 MSO_FLD_STB_ID          STR [0] "stb_id"
+0 MSO_FLD_VC_ID           STR [0] "vc_id"
+0 MSO_FLD_NETWORK_NODE    STR [0] "network_node"
+0 PIN_FLD_DEVICE_TYPE     STR [0] "stb_type"
+0 MSO_FLD_CA_ID           STR [0] "ca_id"
+0 MSO_FLD_REGION_KEY      STR [0] "region_key"
+0 MSO_FLD_BOUQUET_ID      STR [0] "bouquet_id"
+
+
+

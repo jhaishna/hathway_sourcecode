@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/adjustment
+#=======================================
+
+STORABLE CLASS /item/adjustment {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent adjustment items.  These items created when adustments are made to an account or item or event.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/adjustment
+#=======================================
+
+STORABLE CLASS /item/adjustment IMPLEMENTATION ORACLE7 {
+
+}
+

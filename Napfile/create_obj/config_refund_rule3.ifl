@@ -1,0 +1,160 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_refund_rule 332424 0
+0 PIN_FLD_CREATED_T               TSTAMP [0] (1386666150) 10/12/2013 14:32:30:000 PM
+0 PIN_FLD_MOD_T                   TSTAMP [0] (1386666150) 10/12/2013 14:32:30:000 PM
+0 PIN_FLD_READ_ACCESS                STR [0] "S"
+0 PIN_FLD_WRITE_ACCESS               STR [0] "S"
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 MSO_FLD_RULE_NAME                  STR [0] "HardwarePlan_STP_OPTION_3"
+0 MSO_FLD_PLAN_NAME                  STR [0] "HardwarePlan_STP_OPTION_3"
+0 MSO_FLD_RULE_TYPE                 ENUM [0] 1
+0 MSO_FLD_RULE_STEPS                ARRAY [0] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 0
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 391.13
+0 MSO_FLD_RULE_STEPS                ARRAY [1] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 1
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 391.13
+0 MSO_FLD_RULE_STEPS                ARRAY [2] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 2
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 382.16
+0 MSO_FLD_RULE_STEPS                ARRAY [3] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 3
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 373.07
+0 MSO_FLD_RULE_STEPS                ARRAY [4] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 4
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 363.86
+0 MSO_FLD_RULE_STEPS                ARRAY [5] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 5
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 354.55
+0 MSO_FLD_RULE_STEPS                ARRAY [6] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 6
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 345.11
+0 MSO_FLD_RULE_STEPS                ARRAY [7] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 7
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 335.56
+0 MSO_FLD_RULE_STEPS                ARRAY [8] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 8
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 325.89
+0 MSO_FLD_RULE_STEPS                ARRAY [9] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 9
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 316.1
+0 MSO_FLD_RULE_STEPS                ARRAY [10] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 10
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 306.18
+0 MSO_FLD_RULE_STEPS                ARRAY [11] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 11
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 296.14
+0 MSO_FLD_RULE_STEPS                ARRAY [12] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 12
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 285.98
+0 MSO_FLD_RULE_STEPS                ARRAY [13] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 13
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 275.69
+0 MSO_FLD_RULE_STEPS                ARRAY [14] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 14
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 265.27
+0 MSO_FLD_RULE_STEPS                ARRAY [15] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 15
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 254.72
+0 MSO_FLD_RULE_STEPS                ARRAY [16] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 16
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 244.03
+0 MSO_FLD_RULE_STEPS                ARRAY [17] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 17
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 233.22
+0 MSO_FLD_RULE_STEPS                ARRAY [18] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 18
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 222.27
+0 MSO_FLD_RULE_STEPS                ARRAY [19] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 19
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 211.18
+0 MSO_FLD_RULE_STEPS                ARRAY [20] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 20
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 199.95
+0 MSO_FLD_RULE_STEPS                ARRAY [21] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 21
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 188.59
+0 MSO_FLD_RULE_STEPS                ARRAY [22] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 22
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 177.08
+0 MSO_FLD_RULE_STEPS                ARRAY [23] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 23
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 165.43
+0 MSO_FLD_RULE_STEPS                ARRAY [24] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 24
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 153.63
+0 MSO_FLD_RULE_STEPS                ARRAY [25] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 25
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 141.68
+0 MSO_FLD_RULE_STEPS                ARRAY [26] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 26
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 129.59
+0 MSO_FLD_RULE_STEPS                ARRAY [27] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 27
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 117.34
+0 MSO_FLD_RULE_STEPS                ARRAY [28] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 28
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 104.94
+0 MSO_FLD_RULE_STEPS                ARRAY [29] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 29
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 92.39
+0 MSO_FLD_RULE_STEPS                ARRAY [30] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 30
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 79.67
+0 MSO_FLD_RULE_STEPS                ARRAY [31] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 31
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 66.8
+0 MSO_FLD_RULE_STEPS                ARRAY [32] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 32
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 53.77
+0 MSO_FLD_RULE_STEPS                ARRAY [33] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 33
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 40.58
+0 MSO_FLD_RULE_STEPS                ARRAY [34] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 34
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 27.22
+0 MSO_FLD_RULE_STEPS                ARRAY [35] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 35
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 13.69
+0 MSO_FLD_RULE_STEPS                ARRAY [36] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 36
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 0
+XX
+xop 1 0 1

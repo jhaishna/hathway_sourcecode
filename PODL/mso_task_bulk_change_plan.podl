@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_task/bulk_change_plan
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_change_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_change_plan
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_change_plan IMPLEMENTATION ORACLE7 {
+
+}
+

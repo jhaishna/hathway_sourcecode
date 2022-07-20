@@ -1,0 +1,395 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_TOPPED_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+	ID = 7857;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_INDEX
+#=======================================
+
+INT PIN_FLD_GROUP_INDEX {
+
+	ID = 7862;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_OBJ
+#=======================================
+
+POID PIN_FLD_GROUP_OBJ {
+
+	ID = 45;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_TOPUP_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+	ID = 7858;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PAYINFO_OBJ {
+
+	ID = 901;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPUP_AMT
+#=======================================
+
+DECIMAL PIN_FLD_TOPUP_AMT {
+
+	ID = 7854;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPUP_CAP
+#=======================================
+
+DECIMAL PIN_FLD_TOPUP_CAP {
+
+	ID = 7855;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /topup
+#=======================================
+
+STORABLE CLASS /topup {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Object to hold the topup rules.When an event reduces the balances to go below a threshold, the TOPUP is invoked. The /topup object contains information as to when the last topup happened, how much has been topped up in this cycle, the topup cap and auto topup amounts.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Account poid to which the /topup belongs.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		DESCR = "Billinfo poid of the account to which the rule belongs.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+		DESCR = "Sum of all topups during the current cycle. This will be populated only when topup cap is set.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_GROUP_INDEX {
+
+		DESCR = "Optimization for the /gropup/topup to know where in the group array it falls.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_GROUP_OBJ {
+
+		DESCR = "The  group POID refers to the /group/topup to which this topup object belongs.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+		DESCR = "Time when the last topup happened. This will be populated only when topup cap is set.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PAYINFO_OBJ {
+
+		DESCR = "Payment method that needs to be used for topup.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_TOPUP_AMT {
+
+		DESCR = "Amount to topup with incase of automatic (or threshold) topups. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_TOPUP_CAP {
+
+		DESCR = "Total topup amount per cycle. If 0 then it is assumed that the cap is not specified.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /topup
+#=======================================
+
+STORABLE CLASS /topup IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "topup_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		SQL_COLUMN = "billinfo_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+		SQL_COLUMN = "cycle_topped_amt";
+	}
+
+	INT PIN_FLD_GROUP_INDEX {
+
+		SQL_COLUMN = "group_index";
+	}
+
+	POID PIN_FLD_GROUP_OBJ {
+
+		SQL_COLUMN = "group_obj";
+	}
+
+	TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+		SQL_COLUMN = "last_topup_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_PAYINFO_OBJ {
+
+		SQL_COLUMN = "payinfo_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	DECIMAL PIN_FLD_TOPUP_AMT {
+
+		SQL_COLUMN = "topup_amt";
+	}
+
+	DECIMAL PIN_FLD_TOPUP_CAP {
+
+		SQL_COLUMN = "topup_cap";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

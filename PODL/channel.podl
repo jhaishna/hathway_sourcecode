@@ -1,0 +1,493 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHANNEL_ORDER
+#=======================================
+
+INT PIN_FLD_CHANNEL_ORDER {
+
+	ID = 1427;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONSUMERS
+#=======================================
+
+ARRAY PIN_FLD_CONSUMERS {
+
+	ID = 1401;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONSUMER_OBJ
+#=======================================
+
+POID PIN_FLD_CONSUMER_OBJ {
+
+	ID = 1402;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOKE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_INVOKE_T {
+
+	ID = 1403;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PUSH_OPCODE
+#=======================================
+
+INT PIN_FLD_PUSH_OPCODE {
+
+	ID = 1404;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAMILY_ID
+#=======================================
+
+INT PIN_FLD_FAMILY_ID {
+
+	ID = 1425;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MULTI_THREADED
+#=======================================
+
+INT PIN_FLD_MULTI_THREADED {
+
+	ID = 1426;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUPPLIERS
+#=======================================
+
+ARRAY PIN_FLD_SUPPLIERS {
+
+	ID = 1405;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUPPLIER_OBJ
+#=======================================
+
+POID PIN_FLD_SUPPLIER_OBJ {
+
+	ID = 1406;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUPPLIER_STATUS
+#=======================================
+
+INT PIN_FLD_SUPPLIER_STATUS {
+
+	ID = 1407;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /channel
+#=======================================
+
+STORABLE CLASS /channel {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Global";
+	DESCR = "To work with directory servers which lack transactional semantics, and also to avoid compromising performance of a normal Infranet system operation, Infranet propagates changes to the directory server asynchronously using channel objects. The channels are used to track changes to various classes grouped together functionally. A pre-defined set of channel objects are loaded from the init_objects.source file and are used by the PCM_OP_CHANNEL_PUSH and PCM_OP_CHANNEL_SYNC opcodes in the LDAP manager";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CHANNEL_ORDER {
+
+		DESCR = "This field specifies the priority of the channel with in a family. Channels are published in the increasing order of their priority.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_CONSUMERS {
+
+		DESCR = "Array of consumers interested in receiving updates to this channel object. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_CONSUMER_OBJ {
+
+			DESCR = "The type-only poid of the consumer object. The PCM_OP_CHANNEL_SYNC opcode invokes the opcode specified in the PIN_FLD_PUSH_OPCODE field on this consumer object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_INVOKE_T {
+
+			DESCR = "The last time information was pushed to the consumer. This field is not used anymore";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PUSH_OPCODE {
+
+			DESCR = "The opcode number of the opcode that is used to propagate information to the consumer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FAMILY_ID {
+
+		DESCR = "Family Id is used to group channelsgrouping is made based on the destinationchannel is going to be published. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_MULTI_THREADED {
+
+		DESCR = "Boolean value, non zero indicates truethis field indicates whether the channel is published in a serial or multithread.Non zero value indicates multithread.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Name of the channel. The following four channels are pre-defined: Account Creation, Account Modification, Service Creation, Service Modification.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_SUPPLIERS {
+
+		DESCR = "Array of suppliers who potentially have information that is interesting to the consumers. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SUPPLIER_OBJ {
+
+			DESCR = "The poid of the supplier object. Currently it is a type only poid (class poid).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SUPPLIER_STATUS {
+
+			DESCR = "Current status of the supplier. This is effectively a data-ready indicator. Currently, the only possible values are 0 (no change) or 1 (an object of the supplier class has changed). Not used anymore";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /channel
+#=======================================
+
+STORABLE CLASS /channel IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "channel_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	INT PIN_FLD_CHANNEL_ORDER {
+
+		SQL_COLUMN = "channel_order";
+	}
+
+	ARRAY PIN_FLD_CONSUMERS {
+
+		SQL_TABLE = "channel_consumers_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_CONSUMER_OBJ {
+
+			SQL_COLUMN = "consumer";
+		}
+
+		TIMESTAMP PIN_FLD_INVOKE_T {
+
+			SQL_COLUMN = "invoke_t";
+		}
+
+		INT PIN_FLD_PUSH_OPCODE {
+
+			SQL_COLUMN = "push_opcode";
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_FAMILY_ID {
+
+		SQL_COLUMN = "family_id";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	INT PIN_FLD_MULTI_THREADED {
+
+		SQL_COLUMN = "multi_threaded";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ARRAY PIN_FLD_SUPPLIERS {
+
+		SQL_TABLE = "channel_suppliers_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SUPPLIER_OBJ {
+
+			SQL_COLUMN = "supplier";
+		}
+
+		INT PIN_FLD_SUPPLIER_STATUS {
+
+			SQL_COLUMN = "supplier_status";
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

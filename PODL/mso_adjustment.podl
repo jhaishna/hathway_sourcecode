@@ -1,0 +1,894 @@
+
+#=======================================
+#  Field MSO_FLD_CGST_RATE
+#=======================================
+
+DECIMAL MSO_FLD_CGST_RATE {
+
+	ID = 42643;
+	DESCR = "CGST Tax Rate";
+}
+
+
+#=======================================
+#  Field MSO_FLD_IGST_RATE
+#=======================================
+
+DECIMAL MSO_FLD_IGST_RATE {
+
+	ID = 42642;
+	DESCR = "IGST Tax Rate";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SERVICE_TYPE
+#=======================================
+
+ENUM MSO_FLD_SERVICE_TYPE {
+
+	ID = 43058;
+	DESCR = "Service Type (0-BB, 1-CATV)";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SGST_RATE
+#=======================================
+
+DECIMAL MSO_FLD_SGST_RATE {
+
+	ID = 42644;
+	DESCR = "SGST Tax Rate";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADJUSTED
+#=======================================
+
+DECIMAL PIN_FLD_ADJUSTED {
+
+	ID = 788;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_DATE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_BILL_DATE_T {
+
+	ID = 1058;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_NO
+#=======================================
+
+STRING PIN_FLD_BILL_NO {
+
+	ID = 793;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_BILL_OBJ {
+
+	ID = 44;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHARGE_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CHARGE_AMT {
+
+	ID = 9697;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHARGING_ID
+#=======================================
+
+STRING PIN_FLD_CHARGING_ID {
+
+	ID = 6404;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENT_BAL
+#=======================================
+
+DECIMAL PIN_FLD_CURRENT_BAL {
+
+	ID = 199;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECEIPT_NO
+#=======================================
+
+STRING PIN_FLD_RECEIPT_NO {
+
+	ID = 929;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CODE
+#=======================================
+
+STRING PIN_FLD_TAX_CODE {
+
+	ID = 536;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_FLAGS
+#=======================================
+
+INT PIN_FLD_TAX_FLAGS {
+
+	ID = 1516;
+}
+
+#=======================================
+#  Field PIN_FLD_REASON_ID
+#=======================================
+
+INT PIN_FLD_REASON_ID {
+
+        ID = 7432;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_adjustment
+#=======================================
+
+STORABLE CLASS /mso_adjustment {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO ADJUSTMENTS";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_CGST_RATE {
+
+		DESCR = "CGST Tax";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_IGST_RATE {
+
+		DESCR = "IGST Tax";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_SERVICE_TYPE {
+
+		DESCR = "Service Type (0-BB, 1-CATV)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_SGST_RATE {
+
+		DESCR = "SGST Tax";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		DESCR = "account_no";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_ADJUSTED {
+
+		DESCR = "Adjusted against invoice";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		DESCR = "Amount Paid";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_BILL_DATE_T {
+
+		DESCR = "bill date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BILL_NO {
+
+		DESCR = "Reference Bill Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILL_OBJ {
+
+		DESCR = "reference bill objet";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CHARGE_AMT {
+
+		DESCR = "base adjusted amount";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CHARGING_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CURRENT_BAL {
+
+		DESCR = "remaining invoice balance for future adjustments";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Description";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "To Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "(0 - Bill Level, 1 - Item Level, 2 - Event Level, 3 - Account Level)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		DESCR = "Program Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_RECEIPT_NO {
+
+		DESCR = "Adjustment Receipt Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "From Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status(0-Unprocessed, 1 - Processed)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TAX_CODE {
+
+		DESCR = "HSN Code";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_TAX_FLAGS {
+
+		DESCR = "(2 - Tax Applied, 1 - Not Applied)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+        INT PIN_FLD_REASON_ID {
+
+                DESCR = "(0 - GSTIN Not Present in Invoice, 1 - GSTIN present in Invoice )";
+                ORDER = 0;
+                CREATE = Optional;
+                MODIFY = Writeable;
+                AUDITABLE = 0;
+                ENCRYPTABLE = 0;
+                SERIALIZABLE = 0;
+        }
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "User, who posted the payments";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_adjustment
+#=======================================
+
+STORABLE CLASS /mso_adjustment IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_adjustment_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_CGST_RATE {
+
+		SQL_COLUMN = "cgst";
+	}
+
+	DECIMAL MSO_FLD_IGST_RATE {
+
+		SQL_COLUMN = "igst";
+	}
+
+	ENUM MSO_FLD_SERVICE_TYPE {
+
+		SQL_COLUMN = "srvc_type";
+	}
+
+	DECIMAL MSO_FLD_SGST_RATE {
+
+		SQL_COLUMN = "sgst";
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		SQL_COLUMN = "acct_no";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	DECIMAL PIN_FLD_ADJUSTED {
+
+		SQL_COLUMN = "Adjusted";
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		SQL_COLUMN = "amount";
+	}
+
+	TIMESTAMP PIN_FLD_BILL_DATE_T {
+
+		SQL_COLUMN = "bill_date";
+	}
+
+	STRING PIN_FLD_BILL_NO {
+
+		SQL_COLUMN = "bill_no";
+	}
+
+	POID PIN_FLD_BILL_OBJ {
+
+		SQL_COLUMN = "bill_obj";
+	}
+
+	DECIMAL PIN_FLD_CHARGE_AMT {
+
+		SQL_COLUMN = "base_amount";
+	}
+
+	STRING PIN_FLD_CHARGING_ID {
+
+		SQL_COLUMN = "charging_id";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	DECIMAL PIN_FLD_CURRENT_BAL {
+
+		SQL_COLUMN = "remaining_bal";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "adj_applied_t";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "to_date";
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		SQL_COLUMN = "event_obj";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "adjustment_type";
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		SQL_COLUMN = "item_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_RECEIPT_NO {
+
+		SQL_COLUMN = "receipt_no";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "from_date";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	STRING PIN_FLD_TAX_CODE {
+
+		SQL_COLUMN = "hsn_code";
+	}
+
+	INT PIN_FLD_TAX_FLAGS {
+
+		SQL_COLUMN = "tax_flags";
+	}
+
+        INT PIN_FLD_REASON_ID {
+
+                SQL_COLUMN = "gst_reason_id";
+        }
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "user_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

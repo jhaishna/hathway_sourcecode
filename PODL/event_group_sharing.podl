@@ -1,0 +1,727 @@
+
+#=======================================
+#  Field PIN_FLD_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_MEMBERS {
+
+	ID = 119;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSORS
+#=======================================
+
+ARRAY PIN_FLD_SPONSORS {
+
+	ID = 2340;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSOR_OBJ
+#=======================================
+
+POID PIN_FLD_SPONSOR_OBJ {
+
+	ID = 1204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_DISCOUNTS {
+
+	ID = 2341;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_DISCOUNT_OBJ {
+
+	ID = 7780;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFFERING_OBJ
+#=======================================
+
+POID PIN_FLD_OFFERING_OBJ {
+
+	ID = 9056;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILES
+#=======================================
+
+ARRAY PIN_FLD_PROFILES {
+
+	ID = 110;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_PROFILE_OBJ {
+
+	ID = 111;
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing
+#=======================================
+
+STORABLE CLASS /event/group/sharing {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to indicate group sharing object related events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of members for the group sharing object. Array element-id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "Account object reference. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "Service object reference. If type-only,  all qualifying services are members. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Sub-class to indicate Charges group sharing object related events. (New style sponsorship). ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SPONSORS {
+
+		DESCR = "Array of /sponsorship object. Refer the pricing object for more details. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SPONSOR_OBJ {
+
+			DESCR = "/sponsorship object reference. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/charges object for an account/service is created. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/charges object for an account/service is deleted or if some/all of the members or sponsors are deleted from the group. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/charges object for an account/service is modified. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Sub-class to indicate Discounts group sharing object related events. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISCOUNTS {
+
+		DESCR = "Array of /account.DISCOUNTS element from the parent of the group. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			DESCR = "/discount object reference. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			DESCR = "Owner's purchased_discount poid.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/discounts object for an account/service is created. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/discounts object for an account/service is deleted or if some/all of the members or discounts are deleted from the group. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/discounts object for an account/service is modified. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/monitor
+#=======================================
+
+STORABLE CLASS /event/group/sharing/monitor {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "An abstract subclass to hold create/modify/delete events for monitors";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/monitor/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/monitor/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/monitor object for an account/service is created. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/monitor/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/monitor/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/monitor object for an account/service is deleted. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/monitor/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/monitor/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/monitor object for an account/service is modified. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Sub-class to indicate Profile group sharing object related events (create/modify/delete events).";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROFILES {
+
+		DESCR = "Array of /profile objects. Refer to pricing object for more details.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			DESCR = "/profile object reference. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/profiles object for an account/service is created. The details are in the base class. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/profiles object for an account/service is deleted or if some/all of the members or sponsors are deleted from the group. The details are in the base class. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/profiles object for an account/service is modified. The details are in the base class. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing
+#=======================================
+
+STORABLE CLASS /event/group/sharing IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "event_group_share_members_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SPONSORS {
+
+		SQL_TABLE = "event_group_share_charges_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SPONSOR_OBJ {
+
+			SQL_COLUMN = "sponsor_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/modify IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISCOUNTS {
+
+		SQL_TABLE = "event_group_share_discounts_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			SQL_COLUMN = "discount_obj";
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			SQL_COLUMN = "offering_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/modify IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/monitor
+#=======================================
+
+STORABLE CLASS /event/group/sharing/monitor IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/monitor/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/monitor/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/monitor/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/monitor/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/monitor/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/monitor/modify IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROFILES {
+
+		SQL_TABLE = "event_group_share_profiles_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			SQL_COLUMN = "profile_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/modify IMPLEMENTATION ORACLE7 {
+
+}
+

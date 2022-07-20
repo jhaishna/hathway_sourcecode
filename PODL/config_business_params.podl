@@ -1,0 +1,174 @@
+
+#=======================================
+#  Field PIN_FLD_PARAMS
+#=======================================
+
+ARRAY PIN_FLD_PARAMS {
+
+	ID = 5775;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_NAME
+#=======================================
+
+STRING PIN_FLD_PARAM_NAME {
+
+	ID = 5776;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_TYPE
+#=======================================
+
+INT PIN_FLD_PARAM_TYPE {
+
+	ID = 5777;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_VALUE
+#=======================================
+
+STRING PIN_FLD_PARAM_VALUE {
+
+	ID = 5778;
+}
+
+
+#=======================================
+#  Storable Class /config/business_params
+#=======================================
+
+STORABLE CLASS /config/business_params {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "An configuration object used to contain Business logic configuration parameters. The parameters are scalar values (integer, string, decimal, etc.) and are referenced by name.  The PIN_FLD_NAME field contained in the base class is used to specify the name of the parameter group (billing, rating, vse_ipt, etc.) for the parameters. There can be multiple instances of this object and the PIN_FLD_NAME field is used to identify an instance.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PARAMS {
+
+		DESCR = "Configuration information for an individual paramteter.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "A decription that indicates what the parameter is to be used for and any other pertinent details.";
+			ORDER = 0;
+			LENGTH = 1024;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			DESCR = "The name of the parameter. The name for each parameter must be unique.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PARAM_TYPE {
+
+			DESCR = "The type of data for the parameter (integer, string, decimal, etc.)";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARAM_VALUE {
+
+			DESCR = "The data for the parameter represented as a string.";
+			ORDER = 0;
+			LENGTH = 1024;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/business_params
+#=======================================
+
+STORABLE CLASS /config/business_params IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PARAMS {
+
+		SQL_TABLE = "config_business_params_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "param_description";
+		}
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			SQL_COLUMN = "param_name";
+		}
+
+		INT PIN_FLD_PARAM_TYPE {
+
+			SQL_COLUMN = "param_type";
+		}
+
+		STRING PIN_FLD_PARAM_VALUE {
+
+			SQL_COLUMN = "param_value";
+		}
+
+	}
+
+}
+

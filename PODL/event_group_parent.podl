@@ -1,0 +1,94 @@
+
+#=======================================
+#  Field PIN_FLD_PARENTS
+#=======================================
+
+ARRAY PIN_FLD_PARENTS {
+
+	ID = 121;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT
+#=======================================
+
+POID PIN_FLD_PARENT {
+
+	ID = 22;
+}
+
+
+#=======================================
+#  Storable Class /event/group/parent
+#=======================================
+
+STORABLE CLASS /event/group/parent {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event generated when the PIN_FLD_PARENT field of the group object is modified using the PCM_OP_GROUP_SET_PARENT opcode. The PIN_FLD_GROUP_OBJ of the base /event class identifies the group being operated on.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PARENTS {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PARENT {
+
+			DESCR = "The object id (POID) of the parent.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/parent
+#=======================================
+
+STORABLE CLASS /event/group/parent IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PARENTS {
+
+		SQL_TABLE = "event_group_parent_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PARENT {
+
+			SQL_COLUMN = "parent";
+		}
+
+	}
+
+}
+

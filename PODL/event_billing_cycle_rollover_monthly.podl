@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover/monthly
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover/monthly {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when  a monthly rollover is applied. The details are recorded in the base classes. Other types will have to be defined, if needed. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover/monthly
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover/monthly IMPLEMENTATION ORACLE7 {
+
+}
+

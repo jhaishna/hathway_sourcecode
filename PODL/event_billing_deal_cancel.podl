@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/deal/cancel
+#=======================================
+
+STORABLE CLASS /event/billing/deal/cancel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture information when a deal is  cancelled. The details of the cancellation are in the PIN_FLD_DEAL_INFO array of the base /event/billing/deal class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/deal/cancel
+#=======================================
+
+STORABLE CLASS /event/billing/deal/cancel IMPLEMENTATION ORACLE7 {
+
+}
+

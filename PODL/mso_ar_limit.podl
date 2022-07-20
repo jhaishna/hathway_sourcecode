@@ -1,0 +1,290 @@
+
+#=======================================
+#  Field MSO_FLD_ADJ_CURRENT_VALUE
+#=======================================
+
+DECIMAL MSO_FLD_ADJ_CURRENT_VALUE {
+
+	ID = 43065;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ADJ_LIMIT
+#=======================================
+
+DECIMAL MSO_FLD_ADJ_LIMIT {
+
+	ID = 43063;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CURRENT_MONTH
+#=======================================
+
+TIMESTAMP MSO_FLD_CURRENT_MONTH {
+
+	ID = 43066;
+}
+
+
+#=======================================
+#  Field MSO_FLD_MONTHLY_ADJ_LIMIT
+#=======================================
+
+DECIMAL MSO_FLD_MONTHLY_ADJ_LIMIT {
+
+	ID = 43064;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_ar_limit
+#=======================================
+
+STORABLE CLASS /mso_ar_limit {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "This is the cusotm class to store the adjustment limit and daily adjustment amount for each CSR, collection agent etc.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_ADJ_CURRENT_VALUE {
+
+		DESCR = "Aggregated Adjustment amount for a month";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_ADJ_LIMIT {
+
+		DESCR = "Adjustment Limit set per CSR User per transaction";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_CURRENT_MONTH {
+
+		DESCR = "Date of first transaction of the month.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_MONTHLY_ADJ_LIMIT {
+
+		DESCR = "Adjustment Limit set per CSR for a month";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_ar_limit
+#=======================================
+
+STORABLE CLASS /mso_ar_limit IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_ar_limit_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_ADJ_CURRENT_VALUE {
+
+		SQL_COLUMN = "adj_current_value";
+	}
+
+	DECIMAL MSO_FLD_ADJ_LIMIT {
+
+		SQL_COLUMN = "adj_limit";
+	}
+
+	TIMESTAMP MSO_FLD_CURRENT_MONTH {
+
+		SQL_COLUMN = "current_month";
+	}
+
+	DECIMAL MSO_FLD_MONTHLY_ADJ_LIMIT {
+
+		SQL_COLUMN = "monthly_adj_limit";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

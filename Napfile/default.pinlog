@@ -1,0 +1,2 @@
+E Fri Nov 27 23:04:39 2015  prod-brm.hathway.com  <no name>:27027  dm_main.c(67):2940 1:<machine>:<program>:0:0:0:0:0
+	DM master dm_die: "bad parse of config file: for dm_n_fe", errno 0

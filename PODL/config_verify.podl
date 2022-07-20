@@ -1,0 +1,146 @@
+
+#=======================================
+#  Field PIN_FLD_CHECKS
+#=======================================
+
+ARRAY PIN_FLD_CHECKS {
+
+	ID = 84;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /config/verify
+#=======================================
+
+STORABLE CLASS /config/verify {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to specify the types of failures that you want recorded for verification purposes. When a user attempts to log in, the activity manager consults this object to determine whether or not to log an event. The following types of checks are pre-defined. Success (0),  Account Type Failure (1), Account Status Failure (2), Account Password Failure (3), Service Type Failure (4), Service Status Error (5), Service Password Failure (6), Credit Limit Failure (7), Duplicate Session Failure (8). In addition, you can define your own application-specific failure checks. The activity manager can be instructed to perform a combination of the pre-defined checks by the policy PCM_OP_ACT_POL_SPEC_VERIFY. This configuration object is loaded using the load_pin_verify command line utility. A sample file pin_verify is supplied with Infranet.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHECKS {
+
+		DESCR = "Array of configuration for each type of check to be performed. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Failure description.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Log a verification event if the value is 1. Event not logged if the value is 0. Though you can configure this to log events on successful verifications, it can impact performance.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Failure type. Customer defined failure types should be beyond 10000.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/verify
+#=======================================
+
+STORABLE CLASS /config/verify IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHECKS {
+
+		SQL_TABLE = "config_verify_checks_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

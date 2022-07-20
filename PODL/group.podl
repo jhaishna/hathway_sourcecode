@@ -1,0 +1,1890 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_CACHE_TYPE
+#=======================================
+
+ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+	ID = 567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT
+#=======================================
+
+POID PIN_FLD_PARENT {
+
+	ID = 22;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTEDS
+#=======================================
+
+ARRAY PIN_FLD_PERMITTEDS {
+
+	ID = 241;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJ_TYPE
+#=======================================
+
+STRING PIN_FLD_OBJ_TYPE {
+
+	ID = 242;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_MEMBERS {
+
+	ID = 119;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_TAG
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_TAG {
+
+	ID = 113;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+	ID = 7909;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_LIST_CODE
+#=======================================
+
+SUBSTRUCT PIN_FLD_PLAN_LIST_CODE {
+
+	ID = 280;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSORS
+#=======================================
+
+ARRAY PIN_FLD_SPONSORS {
+
+	ID = 2340;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSOR_OBJ
+#=======================================
+
+POID PIN_FLD_SPONSOR_OBJ {
+
+	ID = 1204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_DISCOUNTS {
+
+	ID = 2341;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_DISCOUNT_OBJ {
+
+	ID = 7780;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFFERING_OBJ
+#=======================================
+
+POID PIN_FLD_OFFERING_OBJ {
+
+	ID = 9056;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILES
+#=======================================
+
+ARRAY PIN_FLD_PROFILES {
+
+	ID = 110;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_PROFILE_OBJ {
+
+	ID = 111;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSOR
+#=======================================
+
+ARRAY PIN_FLD_SPONSOR {
+
+	ID = 1201;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_TYPE
+#=======================================
+
+STRING PIN_FLD_RATE_TYPE {
+
+	ID = 1203;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_TOPUP_LIMITS
+#=======================================
+
+ARRAY PIN_FLD_GROUP_TOPUP_LIMITS {
+
+	ID = 7864;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_TOPPED_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+	ID = 7857;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_TOPUP_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+	ID = 7858;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPUP_AMT
+#=======================================
+
+DECIMAL PIN_FLD_TOPUP_AMT {
+
+	ID = 7854;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPUP_CAP
+#=======================================
+
+DECIMAL PIN_FLD_TOPUP_CAP {
+
+	ID = 7855;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_TOPUP_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_GROUP_TOPUP_MEMBERS {
+
+	ID = 7863;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_TOPUP_T
+#=======================================
+
+TIMESTAMP PIN_FLD_NEXT_TOPUP_T {
+
+	ID = 7861;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PIN
+#=======================================
+
+STRING PIN_FLD_PIN {
+
+	ID = 6307;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPUP_INTERVAL
+#=======================================
+
+INT PIN_FLD_TOPUP_INTERVAL {
+
+	ID = 7860;
+}
+
+
+#=======================================
+#  Storable Class /group
+#=======================================
+
+STORABLE CLASS /group {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Generic group object to hold arbitrary collections of objects. Subtypes add specific semantics.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		DESCR = "Link to Balance group object. This will makesense only for the new /group/sharing/... objects.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_COUNT {
+
+		DESCR = "Count of the number of members in the members array.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Group description.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Effective time of modification of this group on an external system.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Name of the group object. ";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		DESCR = "Stores the cache residency distinction value for an object instance. Possible values are DEFAULT(0), REALTIME(1) and BATCH(2).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PARENT {
+
+		DESCR = "Link to the object owning this group. Meaning assigned by subtypes.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		DESCR = "Array of permitted types - contains the list of object type strings for object types that are allowed to be members of this group. No entries implies any object type is permitted membership. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_OBJ_TYPE {
+
+			DESCR = "A permitted object type.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of the group - active,  inactive etc. Meaning assigned by subtypes.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TYPE_STR {
+
+		DESCR = "An arbitrary string. Meaning assigned by subtypes.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/acl
+#=======================================
+
+STORABLE CLASS /group/acl {
+
+	LABEL = "Access Control Group Object";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of acl group members. Array element is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Object ID of the member service account. Note that this must be of base class /service";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/billing
+#=======================================
+
+STORABLE CLASS /group/billing {
+
+	LABEL = "Billing group object";
+	READ_ACCESS = "AncestralLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Group object used to hold information about the billing hierarchy of accounts.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of billing group members. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_TAG {
+
+			DESCR = "OBSOLETE FIELD. NOT USED ANYMORE. DO NOT POPULATE VALUE FOR THIS FIELD.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Object id of the member account object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/collections_targets
+#=======================================
+
+STORABLE CLASS /group/collections_targets {
+
+	LABEL = "Collections group object";
+	READ_ACCESS = "AncestralLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Group object used to hold several accounts and billinfos under single group for the purpose of entry/exit into collections and processing of collections actions.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of Collections group members.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "Object id of the Collections Group member account object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			DESCR = "Object id of the Collections Group member billinfo object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+			DESCR = "Object id of billinfo object of the Collections Group's Parent.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/plan_list
+#=======================================
+
+STORABLE CLASS /group/plan_list {
+
+	LABEL = "Group object for Plan lists";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "A plan list is a set of plans that you offer your customers when they register for an account. A plan list is set up using /group/plan_list objects. A plan isn't available to your customers until you add it to your plan list.  The plan list doesn't have to include all of your plans. You can create plans and not include them in a plan list until you need them. Or, you can offer one set of plans to one group of potential customers, and another group of plans to another group.  When you create a plan list, you designate which plans are available at customer registration, and which plans can be purchased only after registration.  PIN_FLD_NAME is used to name the plan lists. Also, PIN_FLD_TYPE_STR can be 'new' or 'addon'.   Plan lists are created using the Pricing Tool or the load_plan_lists command line utility. The policy opcode PCM_OP_CUST_POL_GET_PLANS uses the plan lists. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of plans in this plan list. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Link to the plan object, that is part of this plan list.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_PLAN_LIST_CODE {
+
+		DESCR = "This will hold the plan list code";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CODE {
+
+			DESCR = "Code that is used to identify the object";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing
+#=======================================
+
+STORABLE CLASS /group/sharing {
+
+	LABEL = "Sharing group object";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Group sharing allows one user (account/service) to share the resource-pool of another account/service, or to share a discount instance of other account/service, or to sponsor portion/all charges/discounts/counters of other account/ service. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of shared accounts/services. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "Link to the account object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "Link to one member service object. It can be type-only, in which case all service instances matching the service-type qualify. If NULL, member is account.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/charges
+#=======================================
+
+STORABLE CLASS /group/sharing/charges {
+
+	LABEL = "Group Charges Sharing object";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This sub-class is for group sharing charges object. It supports the new style of sponsorship. It contains a set of SPONSOR objects from the pricing model. The events for the member accounts/services can be sponsored using the new sponsor object and discount model configuration. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SPONSORS {
+
+		DESCR = "Subset of sponsor object('s) defined. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SPONSOR_OBJ {
+
+			DESCR = "Link to one sponsorship object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/discounts
+#=======================================
+
+STORABLE CLASS /group/sharing/discounts {
+
+	LABEL = "Group Discount Sharing object";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This sub-class is for group sharing discount object. It can contain a full or subset of DISCOUNTS from the owner of the discount sharing group. The events for the member accounts/services can use the discount instances of the owner by virtue of this configuration. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISCOUNTS {
+
+		DESCR = "Array of discount instances from the owner of a group object. All Discount instances of the parent qualify, if the two references below are NULL. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			DESCR = "Link to one discount object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			DESCR = "Owners purchased_discount poid.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/monitor
+#=======================================
+
+STORABLE CLASS /group/sharing/monitor {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "A sharing group to hold the members of a balance monitor.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/profiles
+#=======================================
+
+STORABLE CLASS /group/sharing/profiles {
+
+	LABEL = "Profile sharing group object";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This sub-class is for profile sharing group object. It contains a set of account level or service level ERA profile objects. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROFILES {
+
+		DESCR = "List of profile objects";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			DESCR = "Link to one profile object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sponsor
+#=======================================
+
+STORABLE CLASS /group/sponsor {
+
+	LABEL = "Sponsorship group object";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Sponsored billing allows one customer to pay for part of one or more other customers' bills. Sponsored billing also allows one customer to pay another customer directly.  Sponsored billing is managed by setting up sponsored groups. A sponsored group consists of one sponsoring account, and one or more accounts that the sponsor pays for. An account can sponsor more than one group, and an account can be sponsored by more than one account group.  The sponsorer is referred to by the PIN_FLD_PARENT field in the base /group object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of sponsored accounts. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Link to one sponsoree account object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SPONSOR {
+
+		DESCR = "Array of products being sponsored by the sponsorer for all the sponsorees. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Possible values are: Sponsor all rates in this product (0x1) Guaratee sponsorship (0x2, i.e., the sponsorer guantees to pay the bill even if the charges exceed the sponsored account's credit limit. Sponsor folds in this product (0x4)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name of the product being sponsored.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_TYPE {
+
+			DESCR = "Rate category within the product being sponsored. Ignored if all rate categories are being sponsored.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/topup
+#=======================================
+
+STORABLE CLASS /group/topup {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores the buddy members and Buddy limits for a particular payer.One instance of the storable class for each limit group/payer.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_TOPUP_LIMITS {
+
+		DESCR = "This array stores the limits enforced on a topup group.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+			DESCR = "the amount that has been topped up inthe current topup cycle for the group.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+			DESCR = "The timestamp will be used to recognize and validate the current topup cycle";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "the resource that is being topped up";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOPUP_AMT {
+
+			DESCR = "will be used as the recurring topup amount";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOPUP_CAP {
+
+			DESCR = "will be used as topup cycle limit of the group";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_GROUP_TOPUP_MEMBERS {
+
+		DESCR = "This table stores the list of members that belong to this groupalso it stores the PIN, interval for topup, next topup date, status of association of the buddy etc information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Recipient balance group poid.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_TOPUP_T {
+
+			DESCR = "the date on which the next auto topup is due.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PIN {
+
+			DESCR = "Recipient PIN. for validation of ad-hoc topup.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "stores the status of member association;possible values: active, inactive";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TOPUP_INTERVAL {
+
+			DESCR = "the interval that is scheduled between each auto topup";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group
+#=======================================
+
+STORABLE CLASS /group IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "group_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		SQL_COLUMN = "bal_grp_obj";
+	}
+
+	INT PIN_FLD_COUNT {
+
+		SQL_COLUMN = "count";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		SQL_COLUMN = "object_cache_type";
+	}
+
+	POID PIN_FLD_PARENT {
+
+		SQL_COLUMN = "parent";
+	}
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		SQL_TABLE = "group_permitteds_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_OBJ_TYPE {
+
+			SQL_COLUMN = "obj_type";
+		}
+
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	STRING PIN_FLD_TYPE_STR {
+
+		SQL_COLUMN = "type_str";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/acl
+#=======================================
+
+STORABLE CLASS /group/acl IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "group_acl_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/billing
+#=======================================
+
+STORABLE CLASS /group/billing IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "group_billing_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_TAG {
+
+			SQL_COLUMN = "account_tag";
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/collections_targets
+#=======================================
+
+STORABLE CLASS /group/collections_targets IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "group_collections_targets_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			SQL_COLUMN = "billinfo_obj";
+		}
+
+		POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+			SQL_COLUMN = "parent_billinfo_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/plan_list
+#=======================================
+
+STORABLE CLASS /group/plan_list IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "group_planlist_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_PLAN_LIST_CODE {
+
+		SQL_TABLE = "group_planlist_code_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CODE {
+
+			SQL_COLUMN = "code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing
+#=======================================
+
+STORABLE CLASS /group/sharing IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "group_sharing_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/charges
+#=======================================
+
+STORABLE CLASS /group/sharing/charges IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SPONSORS {
+
+		SQL_TABLE = "group_sharing_charges_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SPONSOR_OBJ {
+
+			SQL_COLUMN = "sponsor_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/discounts
+#=======================================
+
+STORABLE CLASS /group/sharing/discounts IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISCOUNTS {
+
+		SQL_TABLE = "group_sharing_discounts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			SQL_COLUMN = "discount_obj";
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			SQL_COLUMN = "offering_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/monitor
+#=======================================
+
+STORABLE CLASS /group/sharing/monitor IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/profiles
+#=======================================
+
+STORABLE CLASS /group/sharing/profiles IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROFILES {
+
+		SQL_TABLE = "group_sharing_profiles_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			SQL_COLUMN = "profile_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sponsor
+#=======================================
+
+STORABLE CLASS /group/sponsor IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "group_sponsor_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SPONSOR {
+
+		SQL_TABLE = "group_sponsor_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_RATE_TYPE {
+
+			SQL_COLUMN = "rate_type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/topup
+#=======================================
+
+STORABLE CLASS /group/topup IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_TOPUP_LIMITS {
+
+		SQL_TABLE = "group_topup_limits_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+			SQL_COLUMN = "cycle_topped_amt";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+			SQL_COLUMN = "last_topup_t";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+		DECIMAL PIN_FLD_TOPUP_AMT {
+
+			SQL_COLUMN = "topup_amt";
+		}
+
+		DECIMAL PIN_FLD_TOPUP_CAP {
+
+			SQL_COLUMN = "topup_cap";
+		}
+
+	}
+
+	ARRAY PIN_FLD_GROUP_TOPUP_MEMBERS {
+
+		SQL_TABLE = "group_topup_members_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_TOPUP_T {
+
+			SQL_COLUMN = "next_topup_t";
+		}
+
+		STRING PIN_FLD_PIN {
+
+			SQL_COLUMN = "pin";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		INT PIN_FLD_TOPUP_INTERVAL {
+
+			SQL_COLUMN = "topup_interval";
+		}
+
+	}
+
+}
+

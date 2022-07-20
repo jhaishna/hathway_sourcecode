@@ -1,0 +1,244 @@
+
+#=======================================
+#  Field MSO_FLD_FDP_RENEW
+#=======================================
+
+ARRAY MSO_FLD_FDP_RENEW {
+
+	ID = 41172;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field MSO_FLD_FROM_DATE
+#=======================================
+
+TIMESTAMP MSO_FLD_FROM_DATE {
+
+	ID = 43408;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TO_DATE
+#=======================================
+
+TIMESTAMP MSO_FLD_TO_DATE {
+
+	ID = 43409;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/fdp_renew
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/fdp_renew {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_FDP_RENEW {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_FROM_DATE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_TO_DATE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CODE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/fdp_renew
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/fdp_renew IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_FDP_RENEW {
+
+		SQL_TABLE = "mso_evt_lc_fdp_renew_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		TIMESTAMP MSO_FLD_FROM_DATE {
+
+			SQL_COLUMN = "old_end_t";
+		}
+
+		TIMESTAMP MSO_FLD_TO_DATE {
+
+			SQL_COLUMN = "new_end_t";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		STRING PIN_FLD_CODE {
+
+			SQL_COLUMN = "code";
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			SQL_COLUMN = "plan_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "old_plan_obj";
+		}
+
+	}
+
+}
+

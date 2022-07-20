@@ -1,0 +1,310 @@
+
+#=======================================
+#  Field MSO_FLD_GST_INFO
+#=======================================
+
+ARRAY MSO_FLD_GST_INFO {
+
+	ID = 42632;
+	DESCR = "GST information";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_CODE
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_CODE {
+
+	ID = 1837;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILENAME
+#=======================================
+
+STRING PIN_FLD_FILENAME {
+
+	ID = 500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMAGE_REF_NO
+#=======================================
+
+STRING PIN_FLD_IMAGE_REF_NO {
+
+	ID = 1066;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Storable Class /profile/gst_info
+#=======================================
+
+STORABLE CLASS /profile/gst_info {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Profile to Store Cutomer GST information";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_GST_INFO {
+
+		DESCR = "GST Details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_CODE {
+
+			DESCR = "Abbreviation Code for Company or LCO short code.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			DESCR = "Goods and Service Taxpayer Identification Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Address";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FILENAME {
+
+			DESCR = "Name of the document";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMAGE_REF_NO {
+
+			DESCR = "Path of the GST document uploaded.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "PIN code";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/gst_info
+#=======================================
+
+STORABLE CLASS /profile/gst_info IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_GST_INFO {
+
+		SQL_TABLE = "mso_profile_gst_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_CODE {
+
+			SQL_COLUMN = "bu_code";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "gstin";
+		}
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_FILENAME {
+
+			SQL_COLUMN = "document_name";
+		}
+
+		STRING PIN_FLD_IMAGE_REF_NO {
+
+			SQL_COLUMN = "doc_path";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+

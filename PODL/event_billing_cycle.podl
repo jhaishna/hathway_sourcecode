@@ -1,0 +1,1164 @@
+
+#=======================================
+#  Field PIN_FLD_CYCLE
+#=======================================
+
+ARRAY PIN_FLD_CYCLE {
+
+	ID = 957;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+	ID = 267;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+	ID = 266;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOST_CALLED_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+	ID = 7461;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOST_CALLED_LIST
+#=======================================
+
+STRING PIN_FLD_MOST_CALLED_LIST {
+
+	ID = 7462;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FOLD
+#=======================================
+
+SUBSTRUCT PIN_FLD_FOLD {
+
+	ID = 705;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLLOVERS
+#=======================================
+
+ARRAY PIN_FLD_ROLLOVERS {
+
+	ID = 7803;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT_ORIG
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+	ID = 1621;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT
+#=======================================
+
+POID PIN_FLD_PARENT {
+
+	ID = 22;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAXES
+#=======================================
+
+ARRAY PIN_FLD_TAXES {
+
+	ID = 528;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GEOCODE
+#=======================================
+
+STRING PIN_FLD_GEOCODE {
+
+	ID = 1510;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAXPKG_TYPE
+#=======================================
+
+ENUM PIN_FLD_TAXPKG_TYPE {
+
+	ID = 1515;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CODE
+#=======================================
+
+STRING PIN_FLD_TAX_CODE {
+
+	ID = 536;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_FLAGS
+#=======================================
+
+INT PIN_FLD_TAX_FLAGS {
+
+	ID = 1516;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_LOCALES
+#=======================================
+
+STRING PIN_FLD_TAX_LOCALES {
+
+	ID = 541;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CYCLES
+#=======================================
+
+ARRAY PIN_FLD_TAX_CYCLES {
+
+	ID = 540;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_BILL_OBJ {
+
+	ID = 44;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_VAT
+#=======================================
+
+INT PIN_FLD_BILL_VAT {
+
+	ID = 956;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle
+#=======================================
+
+STORABLE CLASS /event/billing/cycle {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Billing event to log the various subscription charges assessed for a period. The PIN_FLD_END_T of the base /event object indicates when the charges are applied. An event is recorded for every product owned by the account that requires cycle charges.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CYCLE {
+
+		DESCR = "Array describing the cycle period. Only one array element will be present. The array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+			DESCR = "Exclusive end time of the cycle.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+			DESCR = "Inclusive start time of the cycle.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/discount
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/discount {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a billing time discount is applied. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/discount/mostcalled
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/discount/mostcalled {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a billing time discount is applied. This event holds the most called numbers based on the configuration of the provisioning tag. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+		DESCR = "Substruct to hold the info about the most called numbers in the current cycle.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			LABEL = "Most Called Cost";
+			DESCR = "Total charges of the events of  the most called numbers.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_COUNT {
+
+			LABEL = "Most Called Occurrences";
+			DESCR = "Total number of events of the most called numbers.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MOST_CALLED_LIST {
+
+			LABEL = "Most Called List";
+			DESCR = "semicolon seperated list of most called numbers.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			LABEL = "Most Called Duration";
+			DESCR = "Total duration used by the most called numbers.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/fold
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/fold {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "An event of this class is created whenever a fold is applied. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FOLD {
+
+		DESCR = "Substruct contains information on what to fold.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			DESCR = "Quantity of the resource that is folded.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "Numeric value of the resource that is folded.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when  a rollover is applied. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover/monthly
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover/monthly {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when  a monthly rollover is applied. The details are recorded in the base classes. Other types will have to be defined, if needed. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover_correction
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover_correction {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event that gets generated when the rollover amount computed during final billing is not the same as the amount tenatively rolled over during initial billing at the start of the delayed billing period. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ROLLOVERS {
+
+		DESCR = "Array of rollover correction info.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "The corrected rollover amount.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+			DESCR = "The original rollover amount.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PARENT {
+
+			DESCR = "The original rollover event poid.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "The resource ID.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover_transfer
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover_transfer {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when  a rollover is transferred. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "An event of this type is created to record the cyclical deferred taxes applied to a billinfo at the end of billing cycle or through on demand/bill now bill request.  A single event is recorded per bill object for a given billinfo. This tax event could be recorded at either billinfo or the A/R billinfo level.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TAXES {
+
+		DESCR = "Deferred taxes array. Each element corresponds to a tax-code/tax locales pair. Array element IDs start with 0 and are sequential. In addition, each element maps to a corresponding element (with the same element ID) in array PIN_FLD_BAL_IMPACTS that contains the computed tax.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Amount to be taxed. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_GEOCODE {
+
+			DESCR = "A geographic code that uniquely identifies a tax-collecting jurisdiction from all others. Geocode formats will differ from one tax-compliance system to another.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "Currency code. Currency in which taxes are applied. Same as the account currency.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TAXPKG_TYPE {
+
+			DESCR = "The tax-compliance system that was used to calculate the tax. Values are: Custom (0), Taxware (1), WorldTax (2), Quantum (3), CommTax21 (4), BillSoft (5).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TAX_CODE {
+
+			DESCR = "Tax code as specified in the rate category.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TAX_FLAGS {
+
+			DESCR = "Flag that contains masked values for the following flags: residence (0x01), incorporated (0x02), regulated (0x04). ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TAX_LOCALES {
+
+			DESCR = "See PIN_FLD_TAX_LOCALES in the base /event object.";
+			ORDER = 0;
+			LENGTH = 1024;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_TAX_CYCLES {
+
+		DESCR = "Array with information about the deferred tax cycle. Array element id is not significant. Only one array element per bill object is present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILL_OBJ {
+
+			DESCR = "Link to bill object that owns this element.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_VAT {
+
+			DESCR = "When non-zero (1) tax is applied and the account has a billing group (i.e. account hierarchy), deferred taxes can be calculated for the entire group. See CM pin.conf entry cycle_tax_interval.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Account currency expressed as the ISO currency code.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			DESCR = "Exclusive end time of the cycle.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			DESCR = "Inclusive start time of the cycle.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Education_Cess";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Entertainment_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Entertainment_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/MSO_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/MSO_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Secondary_Higher_Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Secondary_Higher_Education_Cess";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Service_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Service_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Service_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle
+#=======================================
+
+STORABLE CLASS /event/billing/cycle IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CYCLE {
+
+		SQL_TABLE = "event_billing_cycle_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+			SQL_COLUMN = "cycle_end_t";
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+			SQL_COLUMN = "cycle_start_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/discount
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/discount IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/discount/mostcalled
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/discount/mostcalled IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+		SQL_TABLE = "event_billing_cdisc_mostcall_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "cost";
+		}
+
+		INT PIN_FLD_COUNT {
+
+			SQL_COLUMN = "occurrences";
+		}
+
+		STRING PIN_FLD_MOST_CALLED_LIST {
+
+			SQL_COLUMN = "mostcalled_list";
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			SQL_COLUMN = "duration";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/fold
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/fold IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FOLD {
+
+		SQL_TABLE = "event_billing_cycle_fold_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			SQL_COLUMN = "quantity";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover/monthly
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover_correction
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover_correction IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ROLLOVERS {
+
+		SQL_TABLE = "event_rollover_correction_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+			SQL_COLUMN = "amount_orig";
+		}
+
+		POID PIN_FLD_PARENT {
+
+			SQL_COLUMN = "parent";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover_transfer
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover_transfer IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TAXES {
+
+		SQL_TABLE = "event_billing_taxes_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		STRING PIN_FLD_GEOCODE {
+
+			SQL_COLUMN = "geocode";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+		ENUM PIN_FLD_TAXPKG_TYPE {
+
+			SQL_COLUMN = "tax_pkg_type";
+		}
+
+		STRING PIN_FLD_TAX_CODE {
+
+			SQL_COLUMN = "tax_code";
+		}
+
+		INT PIN_FLD_TAX_FLAGS {
+
+			SQL_COLUMN = "tax_flags";
+		}
+
+		STRING PIN_FLD_TAX_LOCALES {
+
+			SQL_COLUMN = "tax_locales";
+		}
+
+	}
+
+	ARRAY PIN_FLD_TAX_CYCLES {
+
+		SQL_TABLE = "event_billing_tax_cycles_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILL_OBJ {
+
+			SQL_COLUMN = "bill_obj";
+		}
+
+		INT PIN_FLD_BILL_VAT {
+
+			SQL_COLUMN = "bill_vat";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			SQL_COLUMN = "end_t";
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			SQL_COLUMN = "start_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Entertainment_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/MSO_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/MSO_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Secondary_Higher_Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Service_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Service_Tax IMPLEMENTATION ORACLE7 {
+
+}
+

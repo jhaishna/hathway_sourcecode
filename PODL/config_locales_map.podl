@@ -1,0 +1,343 @@
+
+#=======================================
+#  Field PIN_FLD_LOCALES_MAP
+#=======================================
+
+ARRAY PIN_FLD_LOCALES_MAP {
+
+	ID = 2392;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODESETS
+#=======================================
+
+ARRAY PIN_FLD_CODESETS {
+
+	ID = 2390;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLATFORM
+#=======================================
+
+INT PIN_FLD_PLATFORM {
+
+	ID = 2388;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SRC_CODESET
+#=======================================
+
+STRING PIN_FLD_SRC_CODESET {
+
+	ID = 2386;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TARGET_CODESET
+#=======================================
+
+STRING PIN_FLD_TARGET_CODESET {
+
+	ID = 2387;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HP_LOCALE
+#=======================================
+
+STRING PIN_FLD_HP_LOCALE {
+
+	ID = 2383;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INFRANET_LOCALE
+#=======================================
+
+STRING PIN_FLD_INFRANET_LOCALE {
+
+	ID = 2381;
+}
+
+
+#=======================================
+#  Field PIN_FLD_JAVA_LOCALE
+#=======================================
+
+STRING PIN_FLD_JAVA_LOCALE {
+
+	ID = 2385;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE_DESC_ID
+#=======================================
+
+INT PIN_FLD_LOCALE_DESC_ID {
+
+	ID = 2391;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SOLARIS_LOCALE
+#=======================================
+
+STRING PIN_FLD_SOLARIS_LOCALE {
+
+	ID = 2382;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WINDOWS_LOCALE
+#=======================================
+
+STRING PIN_FLD_WINDOWS_LOCALE {
+
+	ID = 2384;
+}
+
+
+#=======================================
+#  Storable Class /config/locales_map
+#=======================================
+
+STORABLE CLASS /config/locales_map {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton object of this type is used to configure the locales for supported platforms.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOCALES_MAP {
+
+		DESCR = "Array that holds the locales map.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CODESETS {
+
+			DESCR = "Array that holds the codeset information.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_PLATFORM {
+
+				DESCR = "The locale platform.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_SRC_CODESET {
+
+				DESCR = "The source codeset.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_TARGET_CODESET {
+
+				DESCR = "The target codeset.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_HP_LOCALE {
+
+			DESCR = "The UNIX locale. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_INFRANET_LOCALE {
+
+			DESCR = "The INFRANET locale.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_JAVA_LOCALE {
+
+			DESCR = "The UNIX locale. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_LOCALE_DESC_ID {
+
+			DESCR = "Locale description.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SOLARIS_LOCALE {
+
+			DESCR = "The UNIX locale. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_WINDOWS_LOCALE {
+
+			DESCR = "The UNIX locale. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/locales_map
+#=======================================
+
+STORABLE CLASS /config/locales_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOCALES_MAP {
+
+		SQL_TABLE = "config_locales_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CODESETS {
+
+			SQL_TABLE = "config_locales_codeset_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_PLATFORM {
+
+				SQL_COLUMN = "platform";
+			}
+
+			STRING PIN_FLD_SRC_CODESET {
+
+				SQL_COLUMN = "src_codeset";
+			}
+
+			STRING PIN_FLD_TARGET_CODESET {
+
+				SQL_COLUMN = "target_codeset";
+			}
+
+		}
+
+		STRING PIN_FLD_HP_LOCALE {
+
+			SQL_COLUMN = "hp_locale";
+		}
+
+		STRING PIN_FLD_INFRANET_LOCALE {
+
+			SQL_COLUMN = "infranet_locale";
+		}
+
+		STRING PIN_FLD_JAVA_LOCALE {
+
+			SQL_COLUMN = "java_locale";
+		}
+
+		INT PIN_FLD_LOCALE_DESC_ID {
+
+			SQL_COLUMN = "descr_id";
+		}
+
+		STRING PIN_FLD_SOLARIS_LOCALE {
+
+			SQL_COLUMN = "solaris_locale";
+		}
+
+		STRING PIN_FLD_WINDOWS_LOCALE {
+
+			SQL_COLUMN = "windows_locale";
+		}
+
+	}
+
+}
+

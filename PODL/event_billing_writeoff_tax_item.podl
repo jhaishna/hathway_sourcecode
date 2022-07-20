@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/writeoff/tax_item
+#=======================================
+
+STORABLE CLASS /event/billing/writeoff/tax_item {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture writeoff item for the item level writeoff.  This events belong to the writeoff items.  This event is created in writeoff with taxes mode in addition to the event for the net amount and has tax amount in it.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/writeoff/tax_item
+#=======================================
+
+STORABLE CLASS /event/billing/writeoff/tax_item IMPLEMENTATION ORACLE7 {
+
+}
+

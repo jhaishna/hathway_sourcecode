@@ -1,0 +1,110 @@
+
+#=======================================
+#  Storable Class /config/telco/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/gsm {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/data {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/data storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/fax {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/fax storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/sms {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/sms storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/telephony {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/telephony storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/gsm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

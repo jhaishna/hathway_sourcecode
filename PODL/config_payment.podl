@@ -1,0 +1,289 @@
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPES
+#=======================================
+
+ARRAY PIN_FLD_PAY_TYPES {
+
+	ID = 7859;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODES
+#=======================================
+
+ARRAY PIN_FLD_OPCODES {
+
+	ID = 886;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYINFO_TYPE
+#=======================================
+
+STRING PIN_FLD_PAYINFO_TYPE {
+
+	ID = 903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_PAYMENT_EVENT_TYPE {
+
+	ID = 906;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REFUND_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_REFUND_EVENT_TYPE {
+
+	ID = 910;
+}
+
+
+#=======================================
+#  Storable Class /config/payment
+#=======================================
+
+STORABLE CLASS /config/payment {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to configure modular payment interface. The Modular Payment Interface is a consistent API exposed by the billing manager to request and receive payments giving you the flexibility to offer other payment methods.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAY_TYPES {
+
+		DESCR = "Array of modular payment configuration for each payment type. The payment type is used as the array element id. The payment types are currently defined as billing types in pin_cust.h. See Modular Payment documentation.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_OPCODES {
+
+			DESCR = "Array describing the opcode information for the various opcodes that be called on different types of payment operations. Array element is set to the following: VALIDATION (0), CHARGE (1), RECOVER (2).";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				DESCR = "Type of the event to be created when this operation occurs. Typically, these are subtypes of /event/billing/{validate,charge} class.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_FLAGS {
+
+				DESCR = "The opcode flags to be passed to the opcode set up in PIN_FLD_OPCODE. 0 recommended.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Name of the opcode. This is mainly for readability.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_OPCODE {
+
+				DESCR = "Number of the opcode to be invoked.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_PAYINFO_TYPE {
+
+			DESCR = "The type of the payment object that describes per-account payment information specific to this payment type.. For ex, /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PAYMENT_EVENT_TYPE {
+
+			DESCR = "Type of event to be created when payment is received.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REFUND_EVENT_TYPE {
+
+			DESCR = "Type of event to be created when refund is made.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/payment
+#=======================================
+
+STORABLE CLASS /config/payment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAY_TYPES {
+
+		SQL_TABLE = "config_payment_pay_types_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_OPCODES {
+
+			SQL_TABLE = "config_payment_opcodes_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				SQL_COLUMN = "event_type";
+			}
+
+			INT PIN_FLD_FLAGS {
+
+				SQL_COLUMN = "flags";
+			}
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+			INT PIN_FLD_OPCODE {
+
+				SQL_COLUMN = "opcode";
+			}
+
+		}
+
+		STRING PIN_FLD_PAYINFO_TYPE {
+
+			SQL_COLUMN = "payinfo_type";
+		}
+
+		STRING PIN_FLD_PAYMENT_EVENT_TYPE {
+
+			SQL_COLUMN = "payment_event_type";
+		}
+
+		STRING PIN_FLD_REFUND_EVENT_TYPE {
+
+			SQL_COLUMN = "refund_event_type";
+		}
+
+	}
+
+}
+

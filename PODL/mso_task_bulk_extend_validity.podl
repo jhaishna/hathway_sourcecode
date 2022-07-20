@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_task/bulk_extend_validity
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_extend_validity {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_extend_validity
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_extend_validity IMPLEMENTATION ORACLE7 {
+
+}
+

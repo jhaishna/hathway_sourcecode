@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+

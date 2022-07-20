@@ -1,0 +1,189 @@
+
+#=======================================
+#  Field PIN_FLD_DISCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_DISCOUNTS {
+
+	ID = 2341;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_DISCOUNT_OBJ {
+
+	ID = 7780;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFFERING_OBJ
+#=======================================
+
+POID PIN_FLD_OFFERING_OBJ {
+
+	ID = 9056;
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Sub-class to indicate Discounts group sharing object related events. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISCOUNTS {
+
+		DESCR = "Array of /account.DISCOUNTS element from the parent of the group. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			DESCR = "/discount object reference. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			DESCR = "Owner's purchased_discount poid.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/discounts object for an account/service is created. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/discounts object for an account/service is deleted or if some/all of the members or discounts are deleted from the group. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/discounts object for an account/service is modified. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISCOUNTS {
+
+		SQL_TABLE = "event_group_share_discounts_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			SQL_COLUMN = "discount_obj";
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			SQL_COLUMN = "offering_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/modify IMPLEMENTATION ORACLE7 {
+
+}
+

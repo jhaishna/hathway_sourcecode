@@ -1,0 +1,176 @@
+
+#=======================================
+#  Field PIN_FLD_ATTRIBUTE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_ATTRIBUTE_INFO {
+
+	ID = 5567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_ID
+#=======================================
+
+STRING PIN_FLD_DEVICE_ID {
+
+	ID = 5551;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MANUFACTURER
+#=======================================
+
+STRING PIN_FLD_MANUFACTURER {
+
+	ID = 5563;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODEL
+#=======================================
+
+STRING PIN_FLD_MODEL {
+
+	ID = 5564;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SOURCE
+#=======================================
+
+STRING PIN_FLD_SOURCE {
+
+	ID = 5562;
+}
+
+
+#=======================================
+#  Storable Class /event/device/attribute
+#=======================================
+
+STORABLE CLASS /event/device/attribute {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to indicate changing device attribute event.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ATTRIBUTE_INFO {
+
+		DESCR = "Substruct to hold the device attributes when they are set.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			DESCR = "The physical idenfication of the device object.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MANUFACTURER {
+
+			DESCR = "Device object manufacturer name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MODEL {
+
+			DESCR = "Device object model name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SOURCE {
+
+			DESCR = "The ownership of the device.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/device/attribute
+#=======================================
+
+STORABLE CLASS /event/device/attribute IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ATTRIBUTE_INFO {
+
+		SQL_TABLE = "event_device_attr_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			SQL_COLUMN = "device_id";
+		}
+
+		STRING PIN_FLD_MANUFACTURER {
+
+			SQL_COLUMN = "manufacturer";
+		}
+
+		STRING PIN_FLD_MODEL {
+
+			SQL_COLUMN = "model";
+		}
+
+		STRING PIN_FLD_SOURCE {
+
+			SQL_COLUMN = "source";
+		}
+
+	}
+
+}
+

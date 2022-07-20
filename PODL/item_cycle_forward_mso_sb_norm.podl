@@ -1,0 +1,161 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Normal Prepaid Subscription for various duration mode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Subscrription for Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bimonthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Normal Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half yearly Subscription for Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+

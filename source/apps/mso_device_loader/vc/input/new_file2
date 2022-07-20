@@ -1,0 +1,23 @@
+##########################################################
+#	comment should start with a hash
+#	device loading must have header record
+#	header record must start with "Header,"
+#	Empty lines doesn't bother
+############################################################
+Header,SP code 1,sup code 2,1-32232377,po_code 1,20131031,
+
+#device_type,serial_no,price,warranty,vc_id,Network_node,model,vc_type,category,purpose
+serial_00016,NDS,10000C,1120130000000016,Std,STB device,12
+VC,serial_00030,,12,112013000030,NDS,10000C,P1,New,VC device
+VC,serial_00031,0,12,112013000031,NDS,10000C,P1,New,VC device
+VC,serial_00032,0,12,112013000032,NDS,10000C,P1,New,VC device
+VC,serial_00033,0,12,112013000033,NDS,10000C,P1,New,VC device
+VC,serial_00034,0,12,112013000034,NDS,10000C,P1,New,VC device
+VC,serial_00035,0,12,112013000035,NDS,10000C,P1,New,VC device
+VC,serial_00036,0,12,112013000036,NDS,10000C,P1,New,VC device
+VC,serial_00037,0,12,112013000037,NDS,10000C,P1,New,VC device
+VC,serial_00038,0,12,112013000038,NDS,10000C,P1,New,VC device
+VC,serial_00039,0,12,112013000039,NDS,10000C,P1,New,VC device
+VC,serial_00031,0,12,112013000011,NDS,10000C,P1,New,VC device
+
+

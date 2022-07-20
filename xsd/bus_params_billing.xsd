@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="http://www.portal.com/schemas/BusinessConfig" xmlns:businessConfig="http://www.portal.com/schemas/BusinessConfig" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+ Copyright (c) 2004, 2013, Oracle and/or its affiliates. All rights reserved. 
+			This material is the confidential property of Oracle Corporation or its
+			licensors and may be used, reproduced, stored or transmitted only in
+			accordance with a valid Oracle license or sublicense agreement.
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:complexType name="BusParamsBillingType">
+		<xs:all>
+			<xs:element name="BillingCycleOffset" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					The offset from the start of the day for the billing cycle.  This value is in hours and the default is 0 (12 AM). Max 23.
+               	 			</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+          				<xs:restriction base="xs:nonNegativeInteger">
+						<xs:maxInclusive value="23"/>
+						<xs:whiteSpace value="collapse"/>
+	               			</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="MoveDayForward" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					The direction to apply billing when a BDOM is not contained in the month.  The default is to use the first day of the next month.
+					</xs:documentation>
+				</xs:annotation>
+
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="collapse"/>
+						<xs:enumeration value="firstDay"/>
+						<xs:enumeration value="lastDay"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="RemoveSponsoree" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate whether sponsoree account must be removed from sponsor group upon closure of sponsoree account.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="ProdEndOffsetPlanTransition" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					The delay (in days) for cancellation of a 2g service when going to a 3g service or vice-versa during plan transition.
+					</xs:documentation>
+				</xs:annotation>
+				
+				<xs:simpleType>
+					<xs:restriction base="xs:nonNegativeInteger">
+						<xs:maxInclusive value="31"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="GenerateJournalEpsilon" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate whether to generate epsilon journal and delta for item
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="ApplyCycleFeeForBillNow" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate whether to apply cycle fees during bill now.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+ 
+
+			<xs:element name="RerateDuringBilling" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					If delayed CDRs borrow against the free resources already consumed by the new cycle CDRs in the delay period, then the new cycle CDRs need to rerated. This parameter indicates whether during billing, the rerating criteria should be evaluated and rerating triggered. By default, this feature is disabled (0)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="AutoTriggeringLimit" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					This parameter indicates a count of days before the next billing time when disabling of auto-triggering of billing is allowed. Value 0 indicates to enable auto-triggering.
+					</xs:documentation>
+				</xs:annotation>
+				
+				<xs:simpleType>
+					<xs:restriction base="xs:nonNegativeInteger">
+						<xs:maxInclusive value="31"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="ValidateDiscountDependency" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to enable exclusion validation for discounts. Default is 0 (disabled).	
+					</xs:documentation>
+				</xs:annotation>
+
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="collapse"/>
+						<xs:enumeration value="disabled"/>
+						<xs:enumeration value="discToDiscExcl"/>
+						<xs:enumeration value="discToPlanExcl"/>
+						<xs:enumeration value="enableBothExcl"/>
+						<xs:enumeration value="disableDiscToPlanExclAndNoPurTimeValidation"/>
+						<xs:enumeration value="enableBothExclAndNoPurTimeValidation"/>
+						<xs:enumeration value="returnOnFirstExcl"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="RolloverCorrectionDuringBilling" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					If delayed CDRs consume free resources in the delay period, then the rollover that happened at the beginning of the delay period might need to be corrected. This parameter indicates whether during billing, the need for rollover correction should be evaluated and the correction recorded. By default, this feature is disabled (0).
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="EnableARA" type="switch" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                        This parameter indicates whether ara is enabled for out of cycle billing
+                                        </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+			
+			<xs:element name="CreateTwoBillNowBillsInDelay" type="switch" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                        This parameter indicates whether to create two Bill Now bills when Bill_Now is invoked  for the account within the delay period.
+                                        </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+			
+			<xs:element name="SubBalValidity" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                        Parameter to define the expiration of sub balance bucket for products products during line transfer. The parameter values can be 0 (Cut),1 (Maintain), 2 (Align). Default is 0 (disabled).
+                                        </xs:documentation>
+                                </xs:annotation>
+
+                                <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                                <xs:whiteSpace value="collapse"/>
+                                                <xs:enumeration value="Cut"/>
+                                                <xs:enumeration value="Maintain"/>
+                                                <xs:enumeration value="Align"/>
+                                        </xs:restriction>
+                                </xs:simpleType>
+                        </xs:element>
+
+			<xs:element name="SequentialCycleDiscounting" type="switch" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                        This parameter specifies whether sequential cycle discounting feature is enabled to apply the cycle fee discounts sequentially
+					</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+
+			<xs:element name="CacheResidencyDistinction" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to enable/disable object cache residency distinction feature. Default is 0 (disabled)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="DefaultBusinessProfile" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+                                        This parameter indicates the default value of business profile 
+                                        </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="AcctCycleDelayPeriod" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+                                        This parameter indicates the accounting delay period. This is used by REL to identify items during delay period of accounting cycle
+                                        </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:maxInclusive value="28"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="GeneralLedgerReporting" type="switch" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                        Enable/Disable General Ledger Reporting . The parameter values can be 0 (disabled
+), 1 (enabled). Default is 1 (enabled).
+                                        </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+
+			<xs:element name="BackdatingPastGlPostedDate" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate whether backdating past GL posted date is allowed or not. Value can be 0 (disabled) or 1 (enabled). Default is 0.
+                                        </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="CustomJournalUpdate" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Enable/disable customization of general ledger journal entries before they are updated in database. Value can be 0 (disabled) or 1 (enabled). Default is 0.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="PerfAdvancedTuningSettings" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					This single parameter determines turning on / off billing specific queries in the database for performance reasons . Values can be 0, 1 , 2 , 3.  Currently bits 0 and 1 are used for functionalities of updating  transfer events  and item Number respectively. Default is 0 , which indicates the updates in these functionalities happen as before.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:nonNegativeInteger">
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>			
+
+                        <xs:element name="GenerateBillForChildBillNow" type="switch">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                                This single parameter determines turning on / off of creating bill objects for non paying childs during bill now. Values can be 0(disabled), 1 (enabled)
+                                        </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+
+			<xs:element name="EnableCorrectiveInvoices" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate that the Corrective Invoicing feature is on. The parameter has two values: 0 - Corrective Invoicing feature is not used (Default), and 1 - Corrective Invoicing feature is used.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="AllowCorrectivePaidBills" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate whether Corrective Bills can be generated for paid bills. The parameter has two values: 0 - do not allow to generate Corrective Bills for paid bills (default), 1 - allow to generate Corrective Bills paid bills.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="RejectPaymentsForPreviousBill" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate whether to reject a payment if the passing bill_no does not coincide with the bill_no from the last bill. The parameter has two values: 0 - accept payment (default), 1 - reject payment.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="CorrectiveBillThreshold" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate the minimum correction amount for which a Corrective bills is allowed. The parameter value is an decimal number. Value 0 (default) means that validation for minimum correction amount is not provided.
+					</xs:documentation>
+				</xs:annotation>
+                                <xs:simpleType>
+                                   <xs:restriction base="xs:decimal">
+                                      <xs:minInclusive value="0"/>
+                                      <xs:whiteSpace value="collapse"/>
+                                   </xs:restriction>
+                                 </xs:simpleType>
+			</xs:element>
+
+			<xs:element name="GenerateCorrectiveBillNo" type="switch" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					Parameter to indicate which pin_sequence to use in order to generate a bill number for a corrective bill. Values are 0 (use pin_sequence for the regular bill) or 1 (use pin_sequence for the corrective bill, this is default).
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>		
+			<xs:element name="ExchangeRateRefreshInterval" minOccurs="0" maxOccurs="1">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                        This parameter indicates the interval at which the exchange rates from the BRM database is refreshed during billing.
+                                        </xs:documentation>
+                                </xs:annotation>
+                        <xs:simpleType>
+                                        <xs:restriction base="xs:nonNegativeInteger">
+                                                <xs:maxInclusive value="86400"/>
+                                                <xs:whiteSpace value="collapse"/>
+                                        </xs:restriction>
+                        </xs:simpleType>
+                        </xs:element>
+
+                        <xs:element name="ApplyARParentCycleFeeFirst" type="switch">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                        Enable/Disable the applcation of cycle fee for parent first, prior to applying for the subordinate. The parameter values can be 0 (disabled), 1 (enabled). Default is 0 (disabled).
+                                        </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+			<xs:element name="SplitSponsorItemByMember">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+					This parameter enables flexible sponsorship item creation. By default it is disabled(0) and only /item/sponsor will be created at account level.When enabled(3) subtype of /item/sponsor may be created and these items will point to member services. Additionally this parameter may only be switched on for onlyRealTime(1) or onlyBatch(2).
+                                        </xs:documentation>
+                                </xs:annotation>
+                        <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                                <xs:whiteSpace value="collapse"/>
+						<xs:enumeration value="disabled"/>
+						<xs:enumeration value="enabled"/>
+						<xs:enumeration value="onlyRealTime"/>
+						<xs:enumeration value="onlyBatch"/>
+                                      </xs:restriction>
+                        </xs:simpleType>
+                        </xs:element>
+			<xs:element name="SkipCheckForSubordinatesBilled">
+                                <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+						Parameter allows to enable/disable the check, whether billing parent should be billed or not provided Subordinate is billed successfully. If disabled(0) then parent billing will fail if subordinate billing has issues. If enabled(1) then skip the above check.
+                                        </xs:documentation>
+                                </xs:annotation>
+                        <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                                <xs:whiteSpace value="collapse"/>
+						<xs:enumeration value="disabled"/>
+						<xs:enumeration value="enabled"/>
+                                      </xs:restriction>
+                        </xs:simpleType>
+                        </xs:element>
+			<xs:element name="StagedBillingFeeProcessing">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This parameter enables cycle fee processing in parallel by service. Valid values: 0 - Disabled (Default), 1 - Parallel by service, 2 - Parallel by service with enforcement of fee processing before billing, 3 - Parallel by service with fees aggregated to account level item, 4 - Parallel by service with enforcement of fee processing before billing and fees aggregated to account level item.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4"/>
+							<xs:whiteSpace value="collapse"/>
+						</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NonCurrencyResourceJournaling">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Creation of journal for the event with non-currency resource id will be decided based on this parameter value. i.e  All or None or +:XXX,YYY or -:XXX,YYY. where XXX and YYY are resource ids. The default value is : All.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>	
+			
+			<xs:element name="ApplyReactivationFee" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+					This parameter is for applying the reactivation fee if the reactivation period is more than 90 days in a single year.
+               	 			</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+          				<xs:restriction base="xs:nonNegativeInteger">
+						<xs:maxInclusive value="2"/>
+						<xs:whiteSpace value="collapse"/>
+	               			</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

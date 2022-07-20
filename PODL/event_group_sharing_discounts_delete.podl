@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/discounts object for an account/service is deleted or if some/all of the members or discounts are deleted from the group. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/delete IMPLEMENTATION ORACLE7 {
+
+}
+

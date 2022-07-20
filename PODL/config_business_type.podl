@@ -1,0 +1,93 @@
+
+#=======================================
+#  Field PIN_FLD_BUSINESS_TYPE_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_BUSINESS_TYPE_ARRAY {
+
+	ID = 284;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Storable Class /config/business_type
+#=======================================
+
+STORABLE CLASS /config/business_type {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This config object points to the business types available in the system. Accounts created in the system will belong to one of the business types defined in the config object here. Application load_pin_config_business_type loads the values into this config object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BUSINESS_TYPE_ARRAY {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description of the domain.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/business_type
+#=======================================
+
+STORABLE CLASS /config/business_type IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BUSINESS_TYPE_ARRAY {
+
+		SQL_TABLE = "config_business_type_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "config_business_type";
+		}
+
+	}
+
+}
+

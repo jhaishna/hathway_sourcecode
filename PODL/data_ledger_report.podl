@@ -1,0 +1,146 @@
+
+#=======================================
+#  Field PIN_FLD_LEDGER_REPORT
+#=======================================
+
+SUBSTRUCT PIN_FLD_LEDGER_REPORT {
+
+	ID = 193;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENT
+#=======================================
+
+STRING PIN_FLD_GL_SEGMENT {
+
+	ID = 517;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_POSTED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_POSTED_T {
+
+	ID = 2407;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POSTED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_POSTED_T {
+
+	ID = 518;
+}
+
+
+#=======================================
+#  Storable Class /data/ledger_report
+#=======================================
+
+STORABLE CLASS /data/ledger_report {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This object is created or updated for a given GL segment when the ledger is posted for that segment within the Portal system. The posting date is maintained in this object. The effective time of A/R transactions are checked against this date to prevent any backdating before this date. The posting is done in any of the following scenarios - 1) pin_ledger_report is invoked with the -post option in run_report mode, 2) pin_ledger_report is invoked with the -posted option in post_only mode and 3) pin_ledger_report is invoked in export mode. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LEDGER_REPORT {
+
+		DESCR = "Place holder for storing the timestamp of the last official GL run for this GL segment.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			DESCR = "GL segment this report was posted for.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_POSTED_T {
+
+			DESCR = "the last time when the official ledger report was run for this GL segment. Used to let the user to un-post. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_POSTED_T {
+
+			DESCR = "Time when the official ledger report was run for this GL segment. Used to control the transaction backdating. (can't post a transaction before this date)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /data/ledger_report
+#=======================================
+
+STORABLE CLASS /data/ledger_report IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LEDGER_REPORT {
+
+		SQL_TABLE = "data_ledger_report_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			SQL_COLUMN = "gl_segment";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_POSTED_T {
+
+			SQL_COLUMN = "last_posted_t";
+		}
+
+		TIMESTAMP PIN_FLD_POSTED_T {
+
+			SQL_COLUMN = "posted_t";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/dispute/item
+#=======================================
+
+STORABLE CLASS /event/billing/dispute/item {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture item level disputes.  The disputed charges are stored in the base /event class fields.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/dispute/item
+#=======================================
+
+STORABLE CLASS /event/billing/dispute/item IMPLEMENTATION ORACLE7 {
+
+}
+

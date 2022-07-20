@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/fax {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/fax storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+

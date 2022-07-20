@@ -1,0 +1,235 @@
+
+#=======================================
+#  Field PIN_FLD_ARGS
+#=======================================
+
+ARRAY PIN_FLD_ARGS {
+
+	ID = 49;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_IP
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_IP {
+
+	ID = 300;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMPRESSION
+#=======================================
+
+ENUM PIN_FLD_COMPRESSION {
+
+	ID = 301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IPADDR
+#=======================================
+
+BINSTR PIN_FLD_IPADDR {
+
+	ID = 75;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROTOCOL
+#=======================================
+
+ENUM PIN_FLD_PROTOCOL {
+
+	ID = 306;
+}
+
+
+#=======================================
+#  Storable Class /service/ip
+#=======================================
+
+STORABLE CLASS /service/ip {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Provides dialup Internet access. Includes connection information, such as IP address and connection protocol.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		DESCR = "Terminal Server Protocol Extensions Array. List of (name, value) pairs which are used to set the IP session characteristics. Element id not significant.  Multiple entries with same name may be used if appropriate. See PCM_OP_TERM_POL_AUTHORIZE.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Extension name. For RADIUS, this name must match a name from the dictionary. e.g. Framed-IP-Netmask, Framed-MTU.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Extension value. Stringified version of the value for the corresponding extension name. e.g. for IP addrs this is in dotted decimal notation. For enumerated values, either enumerated name or decimal value may be used (e.g. PPP or 1 for Framed-Protocol)";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_IP {
+
+		DESCR = "Substruct to hold IP service specific information. Note that these entries are obsoleted by the PIN_FLD_ARGS array and are supported only for backward compatibility.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_COMPRESSION {
+
+			DESCR = "Compression option (for protocol). (Framed-Compression)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BINSTR PIN_FLD_IPADDR {
+
+			DESCR = "IP addres. Zero length means dynamically assigned.  (Framed-IP-Address)";
+			ORDER = 0;
+			LENGTH = 160;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PROTOCOL {
+
+			DESCR = "SLIP, PPP etc. (Framed-Protocol)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/ip
+#=======================================
+
+STORABLE CLASS /service/ip IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		SQL_TABLE = "service_ip_args_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_IP {
+
+		SQL_TABLE = "service_ip_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_COMPRESSION {
+
+			SQL_COLUMN = "compression";
+		}
+
+		BINSTR PIN_FLD_IPADDR {
+
+			SQL_COLUMN = "ipaddr";
+		}
+
+		ENUM PIN_FLD_PROTOCOL {
+
+			SQL_COLUMN = "protocol";
+		}
+
+	}
+
+}
+

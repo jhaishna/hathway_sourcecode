@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Secondary_Higher_Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Secondary_Higher_Education_Cess";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Secondary_Higher_Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+

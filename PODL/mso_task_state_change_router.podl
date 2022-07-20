@@ -1,0 +1,63 @@
+
+#=======================================
+#  Storable Class /mso_task/state_change/router
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+

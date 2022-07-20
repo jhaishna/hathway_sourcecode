@@ -1,0 +1,85 @@
+
+#=================================================================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_twoseventy_days
+#=================================================================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_twoseventy_days {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Two Hundred and Seventy Days Cycle Forward Event";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#===================================================================================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_adn_fdp
+#===================================================================================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_adn_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Two Hundred and Seventy Days Cycle Forward Addon fixed duration";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#===================================================================================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_alc_fdp
+#===================================================================================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_alc_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Two Hundred and Seventy Days Cycle Forward Ala-Carte fixed duration";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#===================================================================================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_pkg_fdp
+#===================================================================================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_pkg_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Two Hundred and Seventy Days Cycle Forward Base Package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#================================================================================================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_twoseventy_days
+#================================================================================================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_twoseventy_days IMPLEMENTATION ORACLE7 {
+
+}
+
+#===================================================================================================================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_adn_fdp
+#===================================================================================================================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_adn_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+#===================================================================================================================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_alc_fdp
+#===================================================================================================================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_alc_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+#===================================================================================================================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_pkg_fdp
+#===================================================================================================================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_pkg_fdp IMPLEMENTATION ORACLE7 {
+
+}
+

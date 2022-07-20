@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Entertainment_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Entertainment_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Entertainment_Tax IMPLEMENTATION ORACLE7 {
+
+}
+

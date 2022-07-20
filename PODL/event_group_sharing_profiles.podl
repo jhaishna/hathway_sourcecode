@@ -1,0 +1,163 @@
+
+#=======================================
+#  Field PIN_FLD_PROFILES
+#=======================================
+
+ARRAY PIN_FLD_PROFILES {
+
+	ID = 110;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_PROFILE_OBJ {
+
+	ID = 111;
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Sub-class to indicate Profile group sharing object related events (create/modify/delete events).";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROFILES {
+
+		DESCR = "Array of /profile objects. Refer to pricing object for more details.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			DESCR = "/profile object reference. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/profiles object for an account/service is created. The details are in the base class. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/profiles object for an account/service is deleted or if some/all of the members or sponsors are deleted from the group. The details are in the base class. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/profiles object for an account/service is modified. The details are in the base class. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROFILES {
+
+		SQL_TABLE = "event_group_share_profiles_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			SQL_COLUMN = "profile_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/profiles/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/profiles/modify IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,144 @@
+
+#=======================================
+#  Field PIN_FLD_PROMISE_TO_PAY_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+	ID = 7740;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PAYINFO_OBJ {
+
+	ID = 901;
+}
+
+
+#=======================================
+#  Storable Class /collections_action/promise_to_pay
+#=======================================
+
+STORABLE CLASS /collections_action/promise_to_pay {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store additional information for promise_to_pay action. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+		DESCR = "Substructure to hold promise to pay action info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Amount to be paid in this milestone. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			DESCR = "Link to collections activity event object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			DESCR = "Link to the /payinfo/cc or /payinfo/dd object. If NULL only validation is done, otherwise the promised amount is auto-collected. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/promise_to_pay
+#=======================================
+
+STORABLE CLASS /collections_action/promise_to_pay IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+		SQL_TABLE = "collections_promise_to_pay_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			SQL_COLUMN = "event_obj";
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			SQL_COLUMN = "payinfo_obj";
+		}
+
+	}
+
+}
+

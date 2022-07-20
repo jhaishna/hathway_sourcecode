@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco1_bmail
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco1_bmail {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco1_bmail
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco1_bmail IMPLEMENTATION ORACLE7 {
+
+}
+

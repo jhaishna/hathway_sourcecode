@@ -1,0 +1,572 @@
+
+#=======================================
+#  Field PIN_FLD_BASE_DEALINFO
+#=======================================
+
+ARRAY PIN_FLD_BASE_DEALINFO {
+
+	ID = 9579;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_IMPACTS
+#=======================================
+
+ARRAY PIN_FLD_BAL_IMPACTS {
+
+	ID = 256;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ID
+#=======================================
+
+INT PIN_FLD_GL_ID {
+
+	ID = 840;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CODE
+#=======================================
+
+STRING PIN_FLD_TAX_CODE {
+
+	ID = 536;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BEST_DEALINFO
+#=======================================
+
+ARRAY PIN_FLD_BEST_DEALINFO {
+
+	ID = 9580;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INHERITED_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_INHERITED_INFO {
+
+	ID = 66;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODE
+#=======================================
+
+ENUM PIN_FLD_MODE {
+
+	ID = 1576;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+	ID = 8205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+	ID = 8204;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/best_pricing
+#=======================================
+
+STORABLE CLASS /event/billing/best_pricing {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "An event object used to store information resulting fromBest Pricing calculations. The same event is used to applythe delta balances in the case of 'One time Adjustment'";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BASE_DEALINFO {
+
+		DESCR = "Array to store Base Deal information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_BAL_IMPACTS {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				DESCR = "The impact to the account balance";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_BAL_GRP_OBJ {
+
+				DESCR = "Link to the balance_group object whose Balance is impacted as specified by AMOUNT field";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_GL_ID {
+
+				DESCR = "GLID associated with this balance impact. ";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_RESOURCE_ID {
+
+				DESCR = "Numeric value of the resource that is impacted.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_TAX_CODE {
+
+				DESCR = "Tax code for the rate that was used.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Reference to Base Deal.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Base Deal";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_BEST_DEALINFO {
+
+		DESCR = "Array to store Best Deal information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_BAL_IMPACTS {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				DESCR = "The impact to the account balance";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_BAL_GRP_OBJ {
+
+				DESCR = "Link to the balance_group object whose Balance is impacted as specified by AMOUNT field";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_GL_ID {
+
+				DESCR = "GLID associated with this balance impact. ";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_RESOURCE_ID {
+
+				DESCR = "Numeric value of the resource that is impacted.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_TAX_CODE {
+
+				DESCR = "Tax code for the rate that was used.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Reference to Best Deal.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Best Deal";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_INHERITED_INFO {
+
+		DESCR = "This substruct contains best pricing calculation operation information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_MODE {
+
+			DESCR = "Indicates application mode.0-Full Rerate, 1-One time adjustment";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+			DESCR = "End time of Best Pricing calculations.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+			DESCR = "Start time of Best Pricing calculations.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/best_pricing
+#=======================================
+
+STORABLE CLASS /event/billing/best_pricing IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BASE_DEALINFO {
+
+		SQL_TABLE = "event_bill_bp_base_dealinfo_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_BAL_IMPACTS {
+
+			SQL_TABLE = "event_bill_bp_base_bal_imp_t";
+			SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				SQL_COLUMN = "amount";
+			}
+
+			POID PIN_FLD_BAL_GRP_OBJ {
+
+				SQL_COLUMN = "bal_grp_obj";
+			}
+
+			INT PIN_FLD_GL_ID {
+
+				SQL_COLUMN = "gl_id";
+			}
+
+			INT PIN_FLD_RESOURCE_ID {
+
+				SQL_COLUMN = "resource_id";
+			}
+
+			STRING PIN_FLD_TAX_CODE {
+
+				SQL_COLUMN = "tax_code";
+			}
+
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+	}
+
+	ARRAY PIN_FLD_BEST_DEALINFO {
+
+		SQL_TABLE = "event_bill_bp_best_dealinfo_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_BAL_IMPACTS {
+
+			SQL_TABLE = "event_bill_bp_best_bal_imp_t";
+			SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				SQL_COLUMN = "amount";
+			}
+
+			POID PIN_FLD_BAL_GRP_OBJ {
+
+				SQL_COLUMN = "bal_grp_obj";
+			}
+
+			INT PIN_FLD_GL_ID {
+
+				SQL_COLUMN = "gl_id";
+			}
+
+			INT PIN_FLD_RESOURCE_ID {
+
+				SQL_COLUMN = "resource_id";
+			}
+
+			STRING PIN_FLD_TAX_CODE {
+
+				SQL_COLUMN = "tax_code";
+			}
+
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_INHERITED_INFO {
+
+		SQL_TABLE = "event_bill_bp_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_MODE {
+
+			SQL_COLUMN = "best_pricing_mode";
+		}
+
+		TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+			SQL_COLUMN = "best_pricing_end_t";
+		}
+
+		TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+			SQL_COLUMN = "best_pricing_start_t";
+		}
+
+	}
+
+}
+

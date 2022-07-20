@@ -1,0 +1,375 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DOMAIN
+#=======================================
+
+STRING PIN_FLD_DOMAIN {
+
+	ID = 1890;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HELP_STRING
+#=======================================
+
+STRING PIN_FLD_HELP_STRING {
+
+	ID = 1894;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE
+#=======================================
+
+STRING PIN_FLD_LOCALE {
+
+	ID = 109;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING
+#=======================================
+
+STRING PIN_FLD_STRING {
+
+	ID = 1893;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VERSION
+#=======================================
+
+INT PIN_FLD_STR_VERSION {
+
+	ID = 1892;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /strings
+#=======================================
+
+STORABLE CLASS /strings {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Generic class for localized strings.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Description of the domain.";
+		ORDER = 0;
+		LENGTH = 1023;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DOMAIN {
+
+		DESCR = "Domain of the localized string, such as error, reason, etc.";
+		ORDER = 0;
+		LENGTH = 1023;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_HELP_STRING {
+
+		DESCR = "Associated help text for the localized string.";
+		ORDER = 0;
+		LENGTH = 1023;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LOCALE {
+
+		DESCR = "The Portal locale ( language+country ) of the localized string.";
+		ORDER = 0;
+		LENGTH = 1023;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_STRING {
+
+		DESCR = "A localized string.";
+		ORDER = 0;
+		LENGTH = 1023;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STRING_ID {
+
+		DESCR = "A string ID unique within this domain.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STR_VERSION {
+
+		DESCR = "The version of the localized string.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /strings
+#=======================================
+
+STORABLE CLASS /strings IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "strings_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	STRING PIN_FLD_DOMAIN {
+
+		SQL_COLUMN = "domain";
+	}
+
+	STRING PIN_FLD_HELP_STRING {
+
+		SQL_COLUMN = "help_string";
+	}
+
+	STRING PIN_FLD_LOCALE {
+
+		SQL_COLUMN = "locale";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_STRING {
+
+		SQL_COLUMN = "string";
+	}
+
+	INT PIN_FLD_STRING_ID {
+
+		SQL_COLUMN = "string_id";
+	}
+
+	INT PIN_FLD_STR_VERSION {
+
+		SQL_COLUMN = "version";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

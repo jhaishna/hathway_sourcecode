@@ -1,0 +1,6 @@
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 11030499105 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Moving Corporate Child as Subordinates"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 11030496417 0
+1 PIN_FLD_AR_BILLINFO_OBJ           POID [0] 0.0.0.1 /billinfo 9632920562       0
+1 PIN_FLD_PARENT_BILLINFO_OBJ           POID [0] 0.0.0.1 /billinfo 9632920562 0

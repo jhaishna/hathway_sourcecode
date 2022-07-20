@@ -1,0 +1,100 @@
+
+			DEFAULT db:  0.0.0.1 
+			Processing Input file = ./stb/file
+			Template file is      = ./stb/stb_template
+			Flist file is         = ./stb/stb_flist
+------------------------
+Input file template is:
+------------------------
+account_no,serial_no,manufacturer,model,device_id,device_type,purpose,warranty
+
+-------------------
+Flist template is: 
+-------------------
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_ACCOUNT_OBJ 		    POID [0] 0.0.0.1 /account 1
+0 PIN_FLD_SOURCE                     STR [0] "account_no"
+0 MSO_FLD_SERIAL_NO       	     STR [0] "serial_no"
+0 PIN_FLD_MANUFACTURER               STR [0] "manufacturer"
+0 PIN_FLD_MODEL                      STR [0] "model"
+0 PIN_FLD_DEVICE_ID                  STR [0] "device_id"
+0 PIN_FLD_DEVICE_TYPE                STR [0] "device_type"
+0 PIN_FLD_DESCR                      STR [0] "purpose"
+0 MSO_FLD_WARRANTY_END_OFFSET   INT [0] warranty
+0 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+0 MSO_FLD_ORDER_OBJ		     POID [0] order_obj
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 PIN_FLD_PROGRAM_NAME               STR [0] "mso_parse_create.pl"
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+
+----------------------------------------------------
+Processing Header : Header,stack_point_code,supplier_code,inovice_no,invoice_date,stb,1.12121,1st_load,
+----------------------------------------------------
+flist for Device Order creation opcode call:
+0 PIN_FLD_POID          	POID [0]  0.0.0.1 /mso_device_order -1
+0 MSO_FLD_STOCK_POINT_CODE 	STR [0] "stack_point_code" 
+0 MSO_FLD_SUPPLIER_CODE		STR [0] "supplier_code" 
+0 MSO_FLD_INVOICE_NO		STR [0] "inovice_no" 
+0 MSO_FLD_INVOICE_DATE		STR [0] "invoice_date" 
+0 MSO_FLD_ORDER_TYPE		STR [0] "stb"
+0 PIN_FLD_ORDER_ID		STR [0] "1.12121" 
+0 PIN_FLD_DESCR			STR [0] "1st_load"
+
+
+Order Object Poid is
+ # number of field entries allocated 20, used 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /mso_device_order 276710 0
+
+
+---------------------------------------
+Device flist after enriching Order_obj:
+---------------------------------------
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_ACCOUNT_OBJ 		    POID [0] 0.0.0.1 /account 1
+0 PIN_FLD_SOURCE                     STR [0] "account_no"
+0 MSO_FLD_SERIAL_NO       	     STR [0] "serial_no"
+0 PIN_FLD_MANUFACTURER               STR [0] "manufacturer"
+0 PIN_FLD_MODEL                      STR [0] "model"
+0 PIN_FLD_DEVICE_ID                  STR [0] "device_id"
+0 PIN_FLD_DEVICE_TYPE                STR [0] "device_type"
+0 PIN_FLD_DESCR                      STR [0] "purpose"
+0 MSO_FLD_WARRANTY_END_OFFSET   INT [0] warranty
+0 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+0 MSO_FLD_ORDER_OBJ		     POID [0]  0.0.0.1 /mso_device_order 276710 0
+
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 PIN_FLD_PROGRAM_NAME               STR [0] "mso_parse_create.pl"
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+
+----------------------------------------------------
+Processing record : 12122122,serial_28106,NDS,10000C,2810201300028106,Std,STB device,12
+----------------------------------------------------
+Flist for opcode call:
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_ACCOUNT_OBJ 		    POID [0] 0.0.0.1 /account 1
+0 PIN_FLD_SOURCE                     STR [0] "12122122"
+0 MSO_FLD_SERIAL_NO       	     STR [0] "serial_28106"
+0 PIN_FLD_MANUFACTURER               STR [0] "NDS"
+0 PIN_FLD_MODEL                      STR [0] "10000C"
+0 PIN_FLD_DEVICE_ID                  STR [0] "2810201300028106"
+0 PIN_FLD_DEVICE_TYPE                STR [0] "Std"
+0 PIN_FLD_DESCR                      STR [0] "STB device"
+0 MSO_FLD_WARRANTY_END_OFFSET   INT [0] 12
+0 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+0 MSO_FLD_ORDER_OBJ		     POID [0]  0.0.0.1 /mso_device_order 276710 0
+
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 PIN_FLD_PROGRAM_NAME               STR [0] "mso_parse_create.pl"
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+
+
+Object created successfully : 
+ # number of field entries allocated 20, used 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /mso_device/stb 275686 0
+
+----------------------------------------------------
+Process Completed successfully
+	Doing cleanup

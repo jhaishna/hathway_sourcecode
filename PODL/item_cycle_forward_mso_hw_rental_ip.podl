@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward item for Additional IP.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/ip IMPLEMENTATION ORACLE7 {
+
+}
+

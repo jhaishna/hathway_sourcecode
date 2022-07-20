@@ -1,0 +1,621 @@
+
+#=======================================
+#  Field PIN_FLD_DEVICE_STATES
+#=======================================
+
+ARRAY PIN_FLD_DEVICE_STATES {
+
+	ID = 5554;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_STATES
+#=======================================
+
+ARRAY PIN_FLD_NEXT_STATES {
+
+	ID = 5556;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_ID
+#=======================================
+
+INT PIN_FLD_STATE_ID {
+
+	ID = 5552;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_TYPE
+#=======================================
+
+ENUM PIN_FLD_STATE_TYPE {
+
+	ID = 5555;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VERSION
+#=======================================
+
+INT PIN_FLD_STR_VERSION {
+
+	ID = 1892;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_TYPE_INFO {
+
+	ID = 5569;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_DEVICE_TYPE {
+
+	ID = 5553;
+}
+
+
+#=======================================
+#  Storable Class /config/device_state
+#=======================================
+
+STORABLE CLASS /config/device_state {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the device state transitions.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DEVICE_STATES {
+
+		DESCR = "Array of device states. Each element describe the one state and all the states can be transited to.Opcode can be defined with each transition. That opcode will be called as a policy during the transition. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "State policy opcode flag. 0 recommended.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_NEXT_STATES {
+
+			DESCR = "Array of next states can be transited from this state, including the opcode definition.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_FLAGS {
+
+				DESCR = "Transition policy opcode flag. 0 recommended.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_OPCODE {
+
+				DESCR = "Transition policy opcode number. This opcode is called before the state transition is done. ";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_STATE_ID {
+
+				DESCR = "The id of the end state of the transition. ";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "State policy opcode number. This policy will be executed after the transition is done.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			DESCR = "The id of the state.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATE_TYPE {
+
+			DESCR = "The type of this state. All types are defined in pin_device.h file. Value can be RAW(0), INIT(1), NORMAL(2), END(3). ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "The string ID within the String Version. It identifies the label of device state. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			DESCR = "The version of the localized string.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TYPE_INFO {
+
+		DESCR = "A substruct to hold the device type.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEVICE_TYPE {
+
+			DESCR = "A string to store the device type, like /device/sim.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/ip
+#=======================================
+
+STORABLE CLASS /config/device_state/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/ip/framed
+#=======================================
+
+STORABLE CLASS /config/device_state/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/ip/static
+#=======================================
+
+STORABLE CLASS /config/device_state/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/mc
+#=======================================
+
+STORABLE CLASS /config/device_state/mc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/modem
+#=======================================
+
+STORABLE CLASS /config/device_state/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/nat
+#=======================================
+
+STORABLE CLASS /config/device_state/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/router
+#=======================================
+
+STORABLE CLASS /config/device_state/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/router/cable
+#=======================================
+
+STORABLE CLASS /config/device_state/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/router/wifi
+#=======================================
+
+STORABLE CLASS /config/device_state/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/stb
+#=======================================
+
+STORABLE CLASS /config/device_state/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/vc
+#=======================================
+
+STORABLE CLASS /config/device_state/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/voucher
+#=======================================
+
+STORABLE CLASS /config/device_state/voucher {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Storable class to store device state of voucher";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state
+#=======================================
+
+STORABLE CLASS /config/device_state IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DEVICE_STATES {
+
+		SQL_TABLE = "config_device_states_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		ARRAY PIN_FLD_NEXT_STATES {
+
+			SQL_TABLE = "config_device_next_states_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_FLAGS {
+
+				SQL_COLUMN = "flags";
+			}
+
+			INT PIN_FLD_OPCODE {
+
+				SQL_COLUMN = "opcode";
+			}
+
+			INT PIN_FLD_STATE_ID {
+
+				SQL_COLUMN = "state_id";
+			}
+
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			SQL_COLUMN = "state_id";
+		}
+
+		ENUM PIN_FLD_STATE_TYPE {
+
+			SQL_COLUMN = "state_type";
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "string_id";
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			SQL_COLUMN = "str_version";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TYPE_INFO {
+
+		SQL_TABLE = "config_device_type_info_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEVICE_TYPE {
+
+			SQL_COLUMN = "device_type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/ip
+#=======================================
+
+STORABLE CLASS /config/device_state/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/ip/framed
+#=======================================
+
+STORABLE CLASS /config/device_state/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/ip/static
+#=======================================
+
+STORABLE CLASS /config/device_state/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/mc
+#=======================================
+
+STORABLE CLASS /config/device_state/mc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/modem
+#=======================================
+
+STORABLE CLASS /config/device_state/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/nat
+#=======================================
+
+STORABLE CLASS /config/device_state/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/router
+#=======================================
+
+STORABLE CLASS /config/device_state/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/router/cable
+#=======================================
+
+STORABLE CLASS /config/device_state/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/router/wifi
+#=======================================
+
+STORABLE CLASS /config/device_state/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/stb
+#=======================================
+
+STORABLE CLASS /config/device_state/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/vc
+#=======================================
+
+STORABLE CLASS /config/device_state/vc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/voucher
+#=======================================
+
+STORABLE CLASS /config/device_state/voucher IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,430 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTION_T {
+
+	ID = 8151;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SESSION_OBJ
+#=======================================
+
+POID PIN_FLD_SESSION_OBJ {
+
+	ID = 43;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECYCLE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_RECYCLE_INFO {
+
+	ID = 8155;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODE
+#=======================================
+
+ENUM PIN_FLD_MODE {
+
+	ID = 1576;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDE_REASONS
+#=======================================
+
+STRING PIN_FLD_OVERRIDE_REASONS {
+
+	ID = 8177;
+}
+
+
+#=======================================
+#  Storable Class /admin_action
+#=======================================
+
+STORABLE CLASS /admin_action {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Audit data for an administrator's action.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Account of administrator performing action.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_ACTION_T {
+
+		DESCR = "Date and time action was performed.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Login service for administrator performing action.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SESSION_OBJ {
+
+		DESCR = "Login session in which action was performed.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Administrator action related to suspense handling.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage/recycle
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage/recycle {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Audit information for recycling suspended EDRs.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_RECYCLE_INFO {
+
+		DESCR = "Attributes of recycling";
+		ORDER = 2;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_MODE {
+
+			DESCR = "Recycle mode: normal or test recycle.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OVERRIDE_REASONS {
+
+			DESCR = "Override suspense reasons.";
+			ORDER = 2;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage/writeoff
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage/writeoff {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Audit information for writing off suspended EDRs.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /admin_action
+#=======================================
+
+STORABLE CLASS /admin_action IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "admin_action_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_ACTION_T {
+
+		SQL_COLUMN = "action_t";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	POID PIN_FLD_SESSION_OBJ {
+
+		SQL_COLUMN = "session_obj";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage/recycle
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage/recycle IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_RECYCLE_INFO {
+
+		SQL_TABLE = "susp_usage_recycle_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_MODE {
+
+			SQL_COLUMN = "recycle_mode";
+		}
+
+		STRING PIN_FLD_OVERRIDE_REASONS {
+
+			SQL_COLUMN = "override_reasons";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage/writeoff
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage/writeoff IMPLEMENTATION ORACLE7 {
+
+}
+

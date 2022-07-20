@@ -1,0 +1,1392 @@
+
+#=======================================
+#  Field PIN_FLD_CHARGE
+#=======================================
+
+SUBSTRUCT PIN_FLD_CHARGE {
+
+	ID = 187;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACH
+#=======================================
+
+INT PIN_FLD_ACH {
+
+	ID = 7851;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_BILL_OBJ {
+
+	ID = 44;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHANNEL_ID
+#=======================================
+
+INT PIN_FLD_CHANNEL_ID {
+
+	ID = 944;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMMAND
+#=======================================
+
+ENUM PIN_FLD_COMMAND {
+
+	ID = 188;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MERCHANT
+#=======================================
+
+STRING PIN_FLD_MERCHANT {
+
+	ID = 90;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPE
+#=======================================
+
+ENUM PIN_FLD_PAY_TYPE {
+
+	ID = 7852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESULT
+#=======================================
+
+ENUM PIN_FLD_RESULT {
+
+	ID = 50;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_TRANS_ID {
+
+	ID = 189;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CC_INFO
+#=======================================
+
+ARRAY PIN_FLD_CC_INFO {
+
+	ID = 142;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_EXP
+#=======================================
+
+STRING PIN_FLD_DEBIT_EXP {
+
+	ID = 130;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_NUM
+#=======================================
+
+STRING PIN_FLD_DEBIT_NUM {
+
+	ID = 129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DD_INFO
+#=======================================
+
+ARRAY PIN_FLD_DD_INFO {
+
+	ID = 143;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_NO
+#=======================================
+
+STRING PIN_FLD_BANK_NO {
+
+	ID = 1054;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DD_ACTIVATION_DATE
+#=======================================
+
+TIMESTAMP PIN_FLD_DD_ACTIVATION_DATE {
+
+	ID = 911;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIAS_ID
+#=======================================
+
+STRING PIN_FLD_FIAS_ID {
+
+	ID = 912;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MANDATE_STATUS
+#=======================================
+
+INT PIN_FLD_MANDATE_STATUS {
+
+	ID = 913;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAN_RECEIVED_DATE
+#=======================================
+
+TIMESTAMP PIN_FLD_MAN_RECEIVED_DATE {
+
+	ID = 914;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_INFO
+#=======================================
+
+ARRAY PIN_FLD_INV_INFO {
+
+	ID = 898;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_DESCR
+#=======================================
+
+STRING PIN_FLD_DELIVERY_DESCR {
+
+	ID = 885;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_PREFER
+#=======================================
+
+ENUM PIN_FLD_DELIVERY_PREFER {
+
+	ID = 884;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_INSTR
+#=======================================
+
+STRING PIN_FLD_INV_INSTR {
+
+	ID = 136;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_TERMS
+#=======================================
+
+ENUM PIN_FLD_INV_TERMS {
+
+	ID = 138;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUSES
+#=======================================
+
+ARRAY PIN_FLD_STATUSES {
+
+	ID = 144;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILENAME
+#=======================================
+
+STRING PIN_FLD_FILENAME {
+
+	ID = 500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SENT
+#=======================================
+
+STRING PIN_FLD_SENT {
+
+	ID = 849;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge
+#=======================================
+
+STORABLE CLASS /event/billing/charge {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Events recorded when a charge operation is initiated. See also /event/billing/payment. The charge event does not indicate if the operation was successful. It merely indicates a successful payment request.  Refer also the Modular Payment Interface documentation.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CHARGE {
+
+		DESCR = "Substruct detailing the charge specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACH {
+
+			DESCR = "Pointer to the Automatic Clearing House that handled this charge event.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "The actual amount of the charge.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			DESCR = "Link to the billinfo object to which the charge applies.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BILL_OBJ {
+
+			DESCR = "Link to the bill object to which the charge applies.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			DESCR = "Identifies the channel from which payment is received.Value must match with payment channel id configured in /strings object so that channel id can be translated to a specific channel name";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_COMMAND {
+
+			DESCR = "The charge operation being performed. For example, Conditional Deposit (4), authorize (2), refund (6).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Currency code. Currency of the charge amount. Same as the account currency.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MERCHANT {
+
+			DESCR = "Merchant id to be used with the charge when passing the charge to external payment systems.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			DESCR = "The payment type associated with the charge. Usually this is the same as the bill type of the account.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			DESCR = "Portal-defined charge result. Valid values are Pass (0), Checkpoint (999), Fail_No_Answer (1) and Offset (1000). 'Offset' is a transient state of the charge event before the payment is applied is applied to the account after a successful charge.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			DESCR = "Transaction id of the charge. Used for tracking and correlating with external payment systems. See /config/sequence. This is the same as the PIN_FLD_TRANS_ID in the corresponding /event/billing/payment object.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge/cc
+#=======================================
+
+STORABLE CLASS /event/billing/charge/cc {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event specific to credit card charges.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		DESCR = "Array detailing the credit card charge related information. Array element id is not significant. Only one array element may be present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Same as PIN_FLD_ADDRESS in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "Same as PIN_FLD_CITY in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Same as PIN_FLD_COUNTRY in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_EXP {
+
+			DESCR = "Same as PIN_FLD_DEBIT_EXP in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			DESCR = "Same as PIN_FLD_DEBIT_NUM in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Same as PIN_FLD_NAME in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "Same as PIN_FLD_STATE in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Same as PIN_FLD_ZIP in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge/dd
+#=======================================
+
+STORABLE CLASS /event/billing/charge/dd {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Direct Debit payment information class.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DD_INFO {
+
+		DESCR = "Array to hold the direct debit specific information. There can be only one array element. Array element id not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Street address. Typically the same as the billing contact address in account. But this is not necessarily true always if the contact person is not the one responsible for payment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BANK_NO {
+
+			DESCR = "RDFI/Bank ID used for routing transactions";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_DD_ACTIVATION_DATE {
+
+			DESCR = "DD payment info submitted/activation date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			DESCR = "Customer's bank account number.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIAS_ID {
+
+			DESCR = "FIAS ID.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MANDATE_STATUS {
+
+			DESCR = "Current mandate status.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_MAN_RECEIVED_DATE {
+
+			DESCR = "Mandate received date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name on the account.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State or Province. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Bank account type (Checking, Savings, or Corporate.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Zipcode. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge/invoice
+#=======================================
+
+STORABLE CLASS /event/billing/charge/invoice {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when an invoice is generated for accounts that have the invoice billing type.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_INV_INFO {
+
+		DESCR = "Array detailing the invoice related information. Array element id is not significant. Only one array element may be present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Same as PIN_FLD_ADDRESS in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "Same as PIN_FLD_CITY in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Same as PIN_FLD_COUNTRY in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DELIVERY_DESCR {
+
+			DESCR = "Same as PIN_FLD_DELIVERY_DESCR in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DELIVERY_PREFER {
+
+			DESCR = "Same as PIN_FLD_DELIVERY_PREFER in /payinfo/invoice.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_INV_INSTR {
+
+			DESCR = "Same as PIN_FLD_INV_INSTR in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_INV_TERMS {
+
+			DESCR = "Same as PIN_FLD_INV_TERMS in /payinfo/invoice.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Same as PIN_FLD_NAME in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "Same as PIN_FLD_STATE in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_STATUSES {
+
+			DESCR = "Status information related to the invoice. Array element id is not significant. Only one array element will be present.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FILENAME {
+
+				DESCR = "Full name of the file (including the path) which holds the formatted invoice. This is used by the PCM_OP_BILL_VIEW_INVOICE opcode to locate the invoice.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_SENT {
+
+				DESCR = "Reserved for future use.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_STATUS {
+
+				DESCR = "Reserved for future use.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Type of the invoice. Currently the only valid value is Real (1) as opposed to Virtual invoices (statements) generated for non-invoice accounts.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Same as PIN_FLD_ZIP in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge
+#=======================================
+
+STORABLE CLASS /event/billing/charge IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CHARGE {
+
+		SQL_TABLE = "event_billing_charge_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACH {
+
+			SQL_COLUMN = "ach";
+		}
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			SQL_COLUMN = "billinfo_obj";
+		}
+
+		POID PIN_FLD_BILL_OBJ {
+
+			SQL_COLUMN = "bill_obj";
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			SQL_COLUMN = "channel_id";
+		}
+
+		ENUM PIN_FLD_COMMAND {
+
+			SQL_COLUMN = "command";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		STRING PIN_FLD_MERCHANT {
+
+			SQL_COLUMN = "merchant";
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			SQL_COLUMN = "pay_type";
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			SQL_COLUMN = "result";
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			SQL_COLUMN = "trans_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge/cc
+#=======================================
+
+STORABLE CLASS /event/billing/charge/cc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		SQL_TABLE = "event_billing_charge_cc_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_DEBIT_EXP {
+
+			SQL_COLUMN = "debit_exp";
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge/dd
+#=======================================
+
+STORABLE CLASS /event/billing/charge/dd IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DD_INFO {
+
+		SQL_TABLE = "event_billing_charge_dd_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_BANK_NO {
+
+			SQL_COLUMN = "bank_no";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		TIMESTAMP PIN_FLD_DD_ACTIVATION_DATE {
+
+			SQL_COLUMN = "dd_activation_date";
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		STRING PIN_FLD_FIAS_ID {
+
+			SQL_COLUMN = "fias_id";
+		}
+
+		INT PIN_FLD_MANDATE_STATUS {
+
+			SQL_COLUMN = "mandate_status";
+		}
+
+		TIMESTAMP PIN_FLD_MAN_RECEIVED_DATE {
+
+			SQL_COLUMN = "man_received_date";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge/invoice
+#=======================================
+
+STORABLE CLASS /event/billing/charge/invoice IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_INV_INFO {
+
+		SQL_TABLE = "event_billing_charge_inv_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_DELIVERY_DESCR {
+
+			SQL_COLUMN = "delivery_descr";
+		}
+
+		ENUM PIN_FLD_DELIVERY_PREFER {
+
+			SQL_COLUMN = "delivery_prefer";
+		}
+
+		STRING PIN_FLD_INV_INSTR {
+
+			SQL_COLUMN = "inv_instr";
+		}
+
+		ENUM PIN_FLD_INV_TERMS {
+
+			SQL_COLUMN = "inv_terms";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		ARRAY PIN_FLD_STATUSES {
+
+			SQL_TABLE = "event_billing_chrg_inv_stats_t";
+			SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FILENAME {
+
+				SQL_COLUMN = "filename";
+			}
+
+			STRING PIN_FLD_SENT {
+
+				SQL_COLUMN = "sent";
+			}
+
+			ENUM PIN_FLD_STATUS {
+
+				SQL_COLUMN = "status";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+

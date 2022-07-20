@@ -1,0 +1,233 @@
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_MAP
+#=======================================
+
+ARRAY PIN_FLD_EVENT_MAP {
+
+	ID = 2248;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BRAND_OBJ
+#=======================================
+
+POID PIN_FLD_BRAND_OBJ {
+
+	ID = 1905;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_FROM {
+
+	ID = 6429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_TO {
+
+	ID = 6430;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Storable Class /config/suspense_edr_fld_map
+#=======================================
+
+STORABLE CLASS /config/suspense_edr_fld_map {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to set up the list of the edr name and edr field value to brand poid mapping.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		DESCR = "Array of edr field name and edr field value to brand poid mapping. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENT_MAP {
+
+			DESCR = "Array of edr field value to brand poid mapping. ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_BRAND_OBJ {
+
+				DESCR = "User defined brand obj.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			TIMESTAMP PIN_FLD_VALID_FROM {
+
+				DESCR = "The valid date range";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			TIMESTAMP PIN_FLD_VALID_TO {
+
+				DESCR = "The valid date range";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				DESCR = "User defined edr field value.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "User defined edr field name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/suspense_edr_fld_map
+#=======================================
+
+STORABLE CLASS /config/suspense_edr_fld_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		SQL_TABLE = "cfg_susp_edr_nme_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENT_MAP {
+
+			SQL_TABLE = "cfg_susp_edr_fld_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_BRAND_OBJ {
+
+				SQL_COLUMN = "brand_obj";
+			}
+
+			TIMESTAMP PIN_FLD_VALID_FROM {
+
+				SQL_COLUMN = "valid_from";
+			}
+
+			TIMESTAMP PIN_FLD_VALID_TO {
+
+				SQL_COLUMN = "valid_to";
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "fld_value";
+			}
+
+		}
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "fld_name";
+		}
+
+	}
+
+}
+

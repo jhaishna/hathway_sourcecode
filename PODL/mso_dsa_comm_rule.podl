@@ -1,0 +1,468 @@
+
+#=======================================
+#  Field MSO_FLD_COMM_CRITERIA_ID
+#=======================================
+
+INT MSO_FLD_COMM_CRITERIA_ID {
+
+	ID = 40626;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DISCONNECT_FLAG
+#=======================================
+
+STRING MSO_FLD_DISCONNECT_FLAG {
+
+	ID = 46025;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RULE_ID
+#=======================================
+
+INT MSO_FLD_RULE_ID {
+
+	ID = 46022;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TAX_EXEMPT
+#=======================================
+
+STRING MSO_FLD_TAX_EXEMPT {
+
+	ID = 46024;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TECHNOLOGY
+#=======================================
+
+ENUM MSO_FLD_TECHNOLOGY {
+
+	ID = 41105;
+}
+
+
+#=======================================
+#  Field MSO_FLD_UNIT
+#=======================================
+
+STRING MSO_FLD_UNIT {
+
+	ID = 42623;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_WHEN
+#=======================================
+
+INT PIN_FLD_BILL_WHEN {
+
+	ID = 131;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_SEGMENT_LIST
+#=======================================
+
+STRING PIN_FLD_CUSTOMER_SEGMENT_LIST {
+
+	ID = 760;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_TYPE
+#=======================================
+
+STRING PIN_FLD_RATE_TYPE {
+
+	ID = 1203;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CODE
+#=======================================
+
+STRING PIN_FLD_TAX_CODE {
+
+	ID = 536;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_dsa_comm_rule
+#=======================================
+
+STORABLE CLASS /mso_dsa_comm_rule {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "DSA commission rule connfig table";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	INT MSO_FLD_COMM_CRITERIA_ID {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_DISCONNECT_FLAG {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT MSO_FLD_RULE_ID {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_TAX_EXEMPT {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_TECHNOLOGY {
+
+		DESCR = "1-DOCSIS 2.0, 2- DOCSIS 3.0, 3-ETHERNET, 4- FIBER, 5-WIRELESS";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_UNIT {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_BILL_WHEN {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CUSTOMER_SEGMENT_LIST {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_RATE_TYPE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TAX_CODE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_dsa_comm_rule
+#=======================================
+
+STORABLE CLASS /mso_dsa_comm_rule IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_dsa_comm_rule_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	INT MSO_FLD_COMM_CRITERIA_ID {
+
+		SQL_COLUMN = "Comm_criteria_id";
+	}
+
+	STRING MSO_FLD_DISCONNECT_FLAG {
+
+		SQL_COLUMN = "disconnect_flag";
+	}
+
+	INT MSO_FLD_RULE_ID {
+
+		SQL_COLUMN = "RULE_ID";
+	}
+
+	STRING MSO_FLD_TAX_EXEMPT {
+
+		SQL_COLUMN = "tax_exempt";
+	}
+
+	ENUM MSO_FLD_TECHNOLOGY {
+
+		SQL_COLUMN = "technology";
+	}
+
+	STRING MSO_FLD_UNIT {
+
+		SQL_COLUMN = "unit";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		SQL_COLUMN = "rate";
+	}
+
+	INT PIN_FLD_BILL_WHEN {
+
+		SQL_COLUMN = "bill_when";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_CUSTOMER_SEGMENT_LIST {
+
+		SQL_COLUMN = "customer_type";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_RATE_TYPE {
+
+		SQL_COLUMN = "rate_type";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_TAX_CODE {
+
+		SQL_COLUMN = "tax_code";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

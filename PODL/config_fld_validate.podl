@@ -1,0 +1,548 @@
+
+#=======================================
+#  Field PIN_FLD_DOMAINS
+#=======================================
+
+ARRAY PIN_FLD_DOMAINS {
+
+	ID = 1120;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BINSTR_VAL
+#=======================================
+
+BINSTR PIN_FLD_BINSTR_VAL {
+
+	ID = 1121;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENUM_VAL
+#=======================================
+
+ENUM PIN_FLD_ENUM_VAL {
+
+	ID = 1122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INT_VAL
+#=======================================
+
+INT PIN_FLD_INT_VAL {
+
+	ID = 1123;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_VAL
+#=======================================
+
+DECIMAL PIN_FLD_NUM_VAL {
+
+	ID = 1124;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID_VAL
+#=======================================
+
+POID PIN_FLD_POID_VAL {
+
+	ID = 1125;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VAL
+#=======================================
+
+STRING PIN_FLD_STR_VAL {
+
+	ID = 1126;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TSTAMP_VAL
+#=======================================
+
+TIMESTAMP PIN_FLD_TSTAMP_VAL {
+
+	ID = 1127;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UINT_VAL
+#=======================================
+
+INT PIN_FLD_UINT_VAL {
+
+	ID = 1128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FORMATS
+#=======================================
+
+ARRAY PIN_FLD_FORMATS {
+
+	ID = 1129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FORMAT_STR
+#=======================================
+
+STRING PIN_FLD_FORMAT_STR {
+
+	ID = 1130;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALIDATION
+#=======================================
+
+SUBSTRUCT PIN_FLD_VALIDATION {
+
+	ID = 902;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_TYPE
+#=======================================
+
+INT PIN_FLD_FIELD_TYPE {
+
+	ID = 509;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAXIMUM
+#=======================================
+
+DECIMAL PIN_FLD_MAXIMUM {
+
+	ID = 87;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_LENGTH
+#=======================================
+
+INT PIN_FLD_MAX_LENGTH {
+
+	ID = 1132;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MINIMUM
+#=======================================
+
+DECIMAL PIN_FLD_MINIMUM {
+
+	ID = 86;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIN_LENGTH
+#=======================================
+
+INT PIN_FLD_MIN_LENGTH {
+
+	ID = 1133;
+}
+
+
+#=======================================
+#  Storable Class /config/fld_validate
+#=======================================
+
+STORABLE CLASS /config/fld_validate {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Configuration objects of this type are used to specify the set of valid values for a given category. These objects are used in the customer management policies and PCM_OP_CUST_VALID_FLD opcode to perform input validation on various fields. You can enumerate values, or list regular expressions, in addition to setting limits depending on the type of the field. Also, you can control whether you are looking for a match or excluding invalid values, and control case sensitivity. A logical AND is used when different validation types are specified (like regexps and list of values, etc.). The PIN_FLD_NAME field in the base /config class is used to identify the category for which this object is listing the validation rules. A set of pre-defined objects are loaded from init_objects.source during installation. \tSee also /config/locales_validate. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DOMAINS {
+
+		LABEL = "Field Validation Domain Array";
+		DESCR = "An array of possible values enumerated one per array element. The array element id is not significant. Only one of the fields contained in the array element is filled depending on the type of the field as specified in the PIN_FLD_VALIDATION substruct.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		BINSTR PIN_FLD_BINSTR_VAL {
+
+			LABEL = "BINSTR value";
+			DESCR = "Byte array if the field type is PIN_FLDT_BINSTR.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_ENUM_VAL {
+
+			LABEL = "ENUM value";
+			DESCR = "Value if the field type is PIN_FLDT_ENUM.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_INT_VAL {
+
+			LABEL = "INT value";
+			DESCR = "Value if the field type is PIN_FLDT_INT.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_NUM_VAL {
+
+			LABEL = "NUM value";
+			DESCR = "Value if the field type is PIN_FLDT_NUM.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_POID_VAL {
+
+			LABEL = "POID value";
+			DESCR = "Value if the field type is PIN_FLDT_POID.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STR_VAL {
+
+			LABEL = "String value";
+			DESCR = "Value if the field type is PIN_FLDT_STR.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_TSTAMP_VAL {
+
+			LABEL = "TSTAMP value";
+			DESCR = "Value if the field type is PIN_FLDT_TSTAMP.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_UINT_VAL {
+
+			LABEL = "UINT value";
+			DESCR = "Value if the field type is PIN_FLDT_UINT.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_FORMATS {
+
+		LABEL = "Field Validation Formats";
+		DESCR = "An array of regexps. The array element id is not significant. Not used for POID and BINSTR type fields.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FORMAT_STR {
+
+			LABEL = "Format Mask";
+			DESCR = "Actual regular expression.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_VALIDATION {
+
+		LABEL = "Validation Substruct";
+		DESCR = "A substruct controlling the validation.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FIELD_TYPE {
+
+			LABEL = "Field Validation Pin Type";
+			DESCR = "The type of the data being validated. Can be only the numeric equivalents of PIN_FLDT_BINSTR, ENUM, INT, NUM, POID, STR, TSTAMP, and INT as specified in the pcm.h header file.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			LABEL = "Field Flags";
+			DESCR = "Bitwise-OR'ed flags controlling the validation. Can be Required(0x1), Inclusive(0x2) and Case-sensitive(0x4).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MAXIMUM {
+
+			LABEL = "Maximum Numeric Field Value";
+			DESCR = "Inclusive upper-bound for numeric fields including TSTAMP.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_LENGTH {
+
+			LABEL = "Maximum Field Length";
+			DESCR = "Inclusive upper-bound on length for STR and BINSTR fields.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MINIMUM {
+
+			LABEL = "Minimum Numeric Field Value";
+			DESCR = "Inclusive lower-bound for numeric fields including TSTAMP.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MIN_LENGTH {
+
+			LABEL = "Minimum Field Length";
+			DESCR = "Inclusive lower-bound on length for STR and BINSTR fields.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/fld_validate
+#=======================================
+
+STORABLE CLASS /config/fld_validate IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DOMAINS {
+
+		SQL_TABLE = "config_fld_validate_domains_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		BINSTR PIN_FLD_BINSTR_VAL {
+
+			SQL_COLUMN = "binstr_val";
+		}
+
+		ENUM PIN_FLD_ENUM_VAL {
+
+			SQL_COLUMN = "enum_val";
+		}
+
+		INT PIN_FLD_INT_VAL {
+
+			SQL_COLUMN = "int_val";
+		}
+
+		DECIMAL PIN_FLD_NUM_VAL {
+
+			SQL_COLUMN = "num_val";
+		}
+
+		POID PIN_FLD_POID_VAL {
+
+			SQL_COLUMN = "poid_val";
+		}
+
+		STRING PIN_FLD_STR_VAL {
+
+			SQL_COLUMN = "str_val";
+		}
+
+		TIMESTAMP PIN_FLD_TSTAMP_VAL {
+
+			SQL_COLUMN = "tstamp_val";
+		}
+
+		INT PIN_FLD_UINT_VAL {
+
+			SQL_COLUMN = "uint_val";
+		}
+
+	}
+
+	ARRAY PIN_FLD_FORMATS {
+
+		SQL_TABLE = "config_fld_validate_formats_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FORMAT_STR {
+
+			SQL_COLUMN = "format_str";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_VALIDATION {
+
+		SQL_TABLE = "config_fld_validate_val_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FIELD_TYPE {
+
+			SQL_COLUMN = "field_type";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		DECIMAL PIN_FLD_MAXIMUM {
+
+			SQL_COLUMN = "maximum";
+		}
+
+		INT PIN_FLD_MAX_LENGTH {
+
+			SQL_COLUMN = "max_length";
+		}
+
+		DECIMAL PIN_FLD_MINIMUM {
+
+			SQL_COLUMN = "minimum";
+		}
+
+		INT PIN_FLD_MIN_LENGTH {
+
+			SQL_COLUMN = "min_length";
+		}
+
+	}
+
+}
+

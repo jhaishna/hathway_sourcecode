@@ -1,0 +1,17 @@
+# *******************************************************************
+# *
+# * @(#)%full_filespec: tax_supplier_map~2:ascii:1 % 
+# *
+# *  Copyright (c) 2000 - 2006 Oracle. All rights reserved.
+# *
+# *  This material is the confidential property of Oracle Corporation or its
+# *  licensors and may be used, reproduced, stored or transmitted only in
+# *  accordance with a valid Oracle license or sublicense agreement.
+# *
+# *******************************************************************
+#
+# Product   ShipTo    Company Id   Bus Loc    Ship From              Regulated
+# -------   ------    ----------   -------    ---------              ---------
+# user_code : ;;;US   : Tax Sup 1  :  loc_1   : Cupertino;CA;95014;US :  1
+# usage     : ;;;US   : Tax Sup 1  :  loc_1   : Cupertino;CA;95014;US :  1
+# usage     : ;;;FR   : Tax Sup 1  :  loc_2   : Paris;;;US            :  0

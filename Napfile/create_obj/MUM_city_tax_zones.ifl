@@ -1,0 +1,15 @@
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_city_tax_zones -1  2
+0 MSO_FLD_CITY_TYPE                 ENUM [0] 0
+0 MSO_FLD_TAX_PAYER_TYPE            ENUM [0] 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                       STR [0] "MH-D366-C1725"
+0 PIN_FLD_PROGRAM_NAME               STR [0] "config_loader"
+0 PIN_FLD_STATE                      STR [0] "MH"
+0 MSO_FLD_ET_ZONES                 ARRAY [0] allocated 1, used 1
+1     MSO_FLD_ET_ZONE_CODE           STR [0] "MH-D366-C1725_M_PP_RES"
+0 MSO_FLD_ET_ZONES                 ARRAY [1] allocated 1, used 1
+1     MSO_FLD_ET_ZONE_CODE           STR [0] "MH-D366-C1725_M_PP_COM"
+0 MSO_FLD_ET_ZONES                 ARRAY [10] allocated 1, used 1
+1     MSO_FLD_ET_ZONE_CODE           STR [0] "MH-D366-C1725_M_SP_RES"
+0 MSO_FLD_ET_ZONES                 ARRAY [11] allocated 1, used 1
+1     MSO_FLD_ET_ZONE_CODE           STR [0] "MH-D366-C1725_M_SP_COM"

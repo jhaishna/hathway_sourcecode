@@ -1,0 +1,92 @@
+# *******************************************************************
+# *
+# * @(#)%full_filespec: taxcodes_map~3:ascii:2 %      
+# *
+# *      Copyright 2000 - 2009  Oracle Corporation. All rights reserved.
+# *
+# *      This material is the exclusive property and trade secret of
+# *      Oracle Corporation. No part may be reproduced,
+# *      disclosed, stored in a retrieval system, or otherwise
+# *      transmitted in any form or by any means, electronic,
+# *      mechanical, photocopying, optical, magnetic, chemical,
+# *      biological, or otherwise, without prior written permission
+# *      of Oracle Corporation.
+# *
+# *******************************************************************/
+#
+#  This config file maps Infranet taxcodes to the product codes of 
+#  your tax package(s). The columns of the table are described below.
+#  You need to create the table entries suitable for your business
+#  requirements.
+#
+#  Note: Restart the DM and the CM to make any changes in this
+#        file to take effect.
+#
+#  Col Name         Description
+#  ---------------- -------------------------------------------------------
+#   Taxcode .... Infranet Taxcode: a unique alphanumeric value.
+#
+#   Pkg ........ Enter the code for your tax package(s):
+#                   T    Taxware (Sales/Use and WorldTax)
+#                   Q    Vertex Quantum (sales and use tax)
+#                   C    Vertex CommTax21 (telco tax)
+#                   B    BillSoft EZTax (telco tax)
+#                   U    Custom (user defined) tax tables
+#                Default is T.
+#
+#   Code1 ...... For package T, this is the InStateProdCode field, which
+#                   refers to transactions within state lines. These values
+#                   are generally 19000 and 19010 for internet service.
+#                For package Q, this is the TransactionType field. See 
+#                   the Quantum reference manual for a list of transaction 
+#                   types to enter.
+#                For packages C and B, this is the CategoryCode field. See
+#                   the CommTax21 and BillSoft reference manuals for a list
+#                   of category codes to enter.
+#                For package U, this is redefined as the tax rate specified
+#                    in cust_pol_tax_calc policy. See the Infranet 
+#                    documentation for this policy.
+#
+#   Code2 ...... For package T, this is the OutStateProdCode field, which
+#                   refers to transactions outside of state lines. These 
+#                   values are generally 19000 and 19010 for internet service.
+#                For package Q, this is the TransactionSubType field. See  
+#                   the Quantum reference manual for a list of transaction 
+#                   subtypes to enter.
+#                For packages C and B, this is the ServiceCode field. See 
+#                   the CommTax21 and BillSoft reference manuals for a list
+#                   of service codes to enter.
+#
+#   Si ......... For package T, this is the Service Indicator field (S) or (R).
+#                   The  default, a blank, means "Nonservice" product.
+#                For packages Q, C, and B, this is the Resale Flag field, which 
+#                   indicates if the product is for sale (S), or resale (R). If 
+#                   left blank, this means sale (S). 
+#
+#   Wt_code .... WorldTax code. Applies only to package T. See the WorldTax
+#                   documentation for a list of entries.
+#
+#   Cmdty_code . Commodity code. Applies only to package T. See the WorlTax
+#                   documentation for a list of entries.
+# 
+# Example taxcode_map table:
+#
+# Taxcode           Pkg   Code1   Code2   Si   Wt_code   Cmdty_code
+# ---------------   ---   -----   -----   --   -------   ----------
+  tw_usage        :  T  : 85000 : 85000 :  S :         :
+  tw_cycle        :  T  : 61000 : 61000 :  S :         :
+  tw_purchase     :  T  : 85000 : 85000 :  S :         :
+  wt_usage        :  T  :       :       :  2 :      23 : 99809902
+  wt_cycle        :  T  :       :       :  2 :      23 : 99809902
+  wt_purchase     :  T  :       :       :  2 :      23 : 99809902
+  qt_usage        :  Q  :    01 :    01 :  S 
+  qt_cycle        :  Q  :    01 :    01 :  S 
+  qt_purchase     :  Q  :    01 :    01 :  S 
+  ct_direct       :  C  :    01 :    01 :  S 
+  ct_toll         :  C  :    04 :    02 :  S 
+  ct_internet     :  C  :    12 :    01 :  S 
+  bs_direct       :  B  :    01 :    04 :  S 
+  bs_toll         :  B  :    01 :    01 :  S 
+  bs_internet     :  B  :    05 :    06 :  S 
+  vat_10          :  U  :  10.0
+  vat_20          :  U  :  20.0

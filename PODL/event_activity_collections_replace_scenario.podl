@@ -1,0 +1,224 @@
+
+#=======================================
+#  Field PIN_FLD_REPLACE_SCENARIO_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_REPLACE_SCENARIO_INFO {
+
+	ID = 7746;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FROM_OBJ
+#=======================================
+
+POID PIN_FLD_FROM_OBJ {
+
+	ID = 8253;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCHEDULE_MODE
+#=======================================
+
+ENUM PIN_FLD_SCHEDULE_MODE {
+
+	ID = 7747;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCHEDULE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_SCHEDULE_T {
+
+	ID = 7748;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_OBJ
+#=======================================
+
+POID PIN_FLD_TO_OBJ {
+
+	ID = 8254;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/collections/replace_scenario
+#=======================================
+
+STORABLE CLASS /event/activity/collections/replace_scenario {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /event/activity/collections object to represent scenario replacement activity. It holds all the parameter information provided while replacing the existing the scenario for a billinfo with a new one. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_REPLACE_SCENARIO_INFO {
+
+		DESCR = "Contains the scenario replacement information. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			DESCR = "Link to the /billinfo object for which scenario replacement is triggered. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Specifies whether to consider scenario entry dates also while calculating due date for replacement scenario actions. Value: 0 - Ignore replacement scenario's entry days (default)\t1 - Consider replacement scenario's entry days ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_FROM_OBJ {
+
+			DESCR = "Link to the /config/collections/scenario object which needs to be replaced. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_SCHEDULE_MODE {
+
+			DESCR = "Collections action scheduling mode during scenario replacement. Could be one of the following values: PIN_ACTION_SCHEDULE_BILL_DUE_DATE (0), PIN_ACTION_SCHEDULE_USER_DATE (1). ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_SCHEDULE_T {
+
+			DESCR = "Date with reference to which the new scenario actions are to be scheduled. If mode is PIN_ACTION_SCHEDULE_USER_DATE and no date is specified, current date will be considered. Else specified date is considered. If no date is specified, current date is taken. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_OBJ {
+
+			DESCR = "Link to the new /config/collections/scenario object which will replace the existing scenario. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/collections/replace_scenario
+#=======================================
+
+STORABLE CLASS /event/activity/collections/replace_scenario IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_REPLACE_SCENARIO_INFO {
+
+		SQL_TABLE = "event_act_coll_repl_scen_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			SQL_COLUMN = "billinfo_obj";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		POID PIN_FLD_FROM_OBJ {
+
+			SQL_COLUMN = "from_obj";
+		}
+
+		ENUM PIN_FLD_SCHEDULE_MODE {
+
+			SQL_COLUMN = "schedule_mode";
+		}
+
+		TIMESTAMP PIN_FLD_SCHEDULE_T {
+
+			SQL_COLUMN = "schedule_date";
+		}
+
+		POID PIN_FLD_TO_OBJ {
+
+			SQL_COLUMN = "to_obj";
+		}
+
+	}
+
+}
+

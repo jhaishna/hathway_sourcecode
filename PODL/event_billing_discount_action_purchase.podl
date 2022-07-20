@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/discount/action/purchase
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/purchase {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a discount is purchased. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/purchase
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/purchase IMPLEMENTATION ORACLE7 {
+
+}
+

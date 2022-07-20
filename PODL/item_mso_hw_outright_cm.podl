@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cm IMPLEMENTATION ORACLE7 {
+
+}
+

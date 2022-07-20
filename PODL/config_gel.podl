@@ -1,0 +1,117 @@
+
+#=======================================
+#  Field PIN_FLD_GEL_TEMPLATE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_GEL_TEMPLATE_INFO {
+
+	ID = 2350;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GEL_TEMPLATE
+#=======================================
+
+BUF PIN_FLD_GEL_TEMPLATE {
+
+	ID = 2351;
+}
+
+
+#=======================================
+#  Storable Class /config/gel
+#=======================================
+
+STORABLE CLASS /config/gel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class which specifies that an object will be used by the Generic Event Loader (GEL) application or the GEL Template Editor";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/gel/template
+#=======================================
+
+STORABLE CLASS /config/gel/template {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores an XML object containing parameters which specify how an import file should be parsed by the Generic Event Loader.  Options include how the file is delimited (by record and field), which opcode to use for loading events, which columns in the import file map to the input flist of the opcode used for loading the events, which opcode to use for associating events to accounts, filter criteria by which to include/exclude records from being imported, etc. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GEL_TEMPLATE_INFO {
+
+		DESCR = "Substruct containing the XML object.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_GEL_TEMPLATE {
+
+			DESCR = "The XML object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/gel
+#=======================================
+
+STORABLE CLASS /config/gel IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/gel/template
+#=======================================
+
+STORABLE CLASS /config/gel/template IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GEL_TEMPLATE_INFO {
+
+		SQL_TABLE = "config_gel_template_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_GEL_TEMPLATE {
+
+			SQL_TABLE = "config_gel_template_buf_t";
+			SQL_COLUMN = "gel_template";
+			SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,451 @@
+
+#=======================================
+#  Field MSO_FLD_CITY
+#=======================================
+
+STRING MSO_FLD_CITY {
+
+	ID = 40085;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DAS_TYPE
+#=======================================
+
+STRING MSO_FLD_DAS_TYPE {
+
+	ID = 40090;
+	DESCR = "DAS Type";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PP_TYPE
+#=======================================
+
+ENUM MSO_FLD_PP_TYPE {
+
+	ID = 40053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CATEGORY
+#=======================================
+
+STRING PIN_FLD_CATEGORY {
+
+	ID = 1202;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONN_TYPE
+#=======================================
+
+ENUM PIN_FLD_CONN_TYPE {
+
+	ID = 2915;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT
+#=======================================
+
+DECIMAL PIN_FLD_DISCOUNT {
+
+	ID = 841;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_FLAGS
+#=======================================
+
+ENUM PIN_FLD_DISCOUNT_FLAGS {
+
+	ID = 478;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_disc_plan
+#=======================================
+
+STORABLE CLASS /mso_cfg_disc_plan {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Product Based Discount  Configuration Object";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CITY {
+
+		DESCR = "Customer City";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_DAS_TYPE {
+
+		DESCR = "DAS Type";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_PP_TYPE {
+
+		DESCR = "Customer PP Type (0 - PP, 1 - SP)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CATEGORY {
+
+		DESCR = "Customer Category";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_CONN_TYPE {
+
+		DESCR = "Connection Type (0-Main TV, 1- Additional TV)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DISCOUNT {
+
+		DESCR = "Discount. For Percentage Based discount, the value should be between 0 - 1. For Flat Discount, the value can be any positive number.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_DISCOUNT_FLAGS {
+
+		DESCR = "Discount Type (0 - Percentage Discount, 1 - Flat Discount). Currently only Percentage Based Discount is applicable. Provision give for Future Enhancement.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "Discount Validity End Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Plan Name having Discount Configuraion";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		DESCR = "Plan POID having Discount Configuration";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_disc_plan
+#=======================================
+
+STORABLE CLASS /mso_cfg_disc_plan IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_disc_plan_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CITY {
+
+		SQL_COLUMN = "cust_city";
+	}
+
+	STRING MSO_FLD_DAS_TYPE {
+
+		SQL_COLUMN = "das_type";
+	}
+
+	ENUM MSO_FLD_PP_TYPE {
+
+		SQL_COLUMN = "pp_type";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_CATEGORY {
+
+		SQL_COLUMN = "cust_category";
+	}
+
+	ENUM PIN_FLD_CONN_TYPE {
+
+		SQL_COLUMN = "conn_type";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	DECIMAL PIN_FLD_DISCOUNT {
+
+		SQL_COLUMN = "discount";
+	}
+
+	ENUM PIN_FLD_DISCOUNT_FLAGS {
+
+		SQL_COLUMN = "disc_type";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "disc_end_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "plan_name";
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		SQL_COLUMN = "plan_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

@@ -1,0 +1,206 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half yearly cycle forward for FDP.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_dc2
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_dc2 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly grant for FDP DOCSIS 2.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_dc3
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_dc3 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly grant for FDP DOCSIS 3.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_norm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_norm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly grant for FDP Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_grant
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_grant {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc2
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc2 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly subscription for FDP DOCSIS 2.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc3 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly subscription for FDP DOCSIS 3.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_fib {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Prepaid Half Yearly Subscription for FIBER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_norm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly subscription for FDP Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_dc2
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_dc2 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_dc3
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_dc3 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_norm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_gr_norm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_grant
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_grant IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc2
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc2 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc3 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_fib IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_norm IMPLEMENTATION ORACLE7 {
+
+}
+

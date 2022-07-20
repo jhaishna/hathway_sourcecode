@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/debit
+#=======================================
+
+STORABLE CLASS /event/billing/debit {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a debit or credit on some resource is issued against an account using the PCM_OP_BILL_DEBIT opcode. The actual balance impacts are available in the PIN_FLD_BAL_IMPACTS array in the base /event object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/debit
+#=======================================
+
+STORABLE CLASS /event/billing/debit IMPLEMENTATION ORACLE7 {
+
+}
+

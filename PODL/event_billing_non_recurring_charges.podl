@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/non_recurring_charges
+#=======================================
+
+STORABLE CLASS /event/billing/non_recurring_charges {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Non Recuring Charges";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/non_recurring_charges
+#=======================================
+
+STORABLE CLASS /event/billing/non_recurring_charges IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/suppression/account/on
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/account/on {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture the event while a bill is suppressed as account unsuppress ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/account/on
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/account/on IMPLEMENTATION ORACLE7 {
+
+}
+

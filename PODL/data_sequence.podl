@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /data/sequence
+#=======================================
+
+STORABLE CLASS /data/sequence {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Global";
+	DESCR = "A singleton configuration object of this class is used to maintain various sequence number generators used by the system to stamp bills, items etc. with unique and usually monotonically increasing identifiers. This is also used to generate transaction ids for correlating information with external system like payment engines. A predefined instance is loaded from init_objects.source during installation. It is recommended that you configure the various sequence number formats only once. You may define additional sequences for your use by using element ids greater than 1000000 or  you may define other sequence objects with poid id.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /data/sequence
+#=======================================
+
+STORABLE CLASS /data/sequence IMPLEMENTATION ORACLE7 {
+
+}
+

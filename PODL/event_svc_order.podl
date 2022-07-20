@@ -1,0 +1,237 @@
+
+#=======================================
+#  Field PIN_FLD_SVC_ORDER
+#=======================================
+
+SUBSTRUCT PIN_FLD_SVC_ORDER {
+
+	ID = 5651;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_STATE_INFO {
+
+	ID = 5568;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEW_STATE
+#=======================================
+
+INT PIN_FLD_NEW_STATE {
+
+	ID = 5561;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_STATE
+#=======================================
+
+INT PIN_FLD_OLD_STATE {
+
+	ID = 5560;
+}
+
+
+#=======================================
+#  Storable Class /event/svc_order
+#=======================================
+
+STORABLE CLASS /event/svc_order {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Base class for storing service order data.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SVC_ORDER {
+
+		DESCR = "Substruct to hold the service order related fields.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "The poid of the service order instance.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/svc_order/attribute
+#=======================================
+
+STORABLE CLASS /event/svc_order/attribute {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Used to record attribute changes to a service order.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/svc_order/state
+#=======================================
+
+STORABLE CLASS /event/svc_order/state {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Used to record state transition for a service order.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_STATE_INFO {
+
+		DESCR = "Substruct holds the related state details.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_NEW_STATE {
+
+			DESCR = "The new state after the transition.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OLD_STATE {
+
+			DESCR = "The old state before the transition.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/svc_order
+#=======================================
+
+STORABLE CLASS /event/svc_order IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SVC_ORDER {
+
+		SQL_TABLE = "event_svc_order_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "svc_order_object";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/svc_order/attribute
+#=======================================
+
+STORABLE CLASS /event/svc_order/attribute IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/svc_order/state
+#=======================================
+
+STORABLE CLASS /event/svc_order/state IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_STATE_INFO {
+
+		SQL_TABLE = "event_svc_order_state_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_NEW_STATE {
+
+			SQL_COLUMN = "new_state";
+		}
+
+		INT PIN_FLD_OLD_STATE {
+
+			SQL_COLUMN = "old_state";
+		}
+
+	}
+
+}
+

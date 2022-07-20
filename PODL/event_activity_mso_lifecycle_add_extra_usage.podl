@@ -1,0 +1,194 @@
+
+#=======================================
+#  Field MSO_FLD_ADD_EXTRA_USAGE
+#=======================================
+
+ARRAY MSO_FLD_ADD_EXTRA_USAGE {
+
+	ID = 41210;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/add_extra_usage
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/add_extra_usage {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_ADD_EXTRA_USAGE {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CODE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/add_extra_usage
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/add_extra_usage IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_ADD_EXTRA_USAGE {
+
+		SQL_TABLE = "mso_evt_lc_add_extra_usage_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		STRING PIN_FLD_CODE {
+
+			SQL_COLUMN = "code";
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			SQL_COLUMN = "plan_obj";
+		}
+
+	}
+
+}
+

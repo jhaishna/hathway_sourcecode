@@ -1,0 +1,540 @@
+#
+# @(#)pin_event_map 2.1 04/05/03 
+#
+#############################################################################
+#
+#  Copyright (c) 1999 - 2006 Oracle. All rights reserved.
+#
+#  This material is the confidential property of Oracle Corporation
+#  or its subsidiaries or licensors and may be used, reproduced, stored
+#  or transmitted only in accordance with a valid Oracle license or
+#  sublicense agreement.
+#
+#
+#############################################################################
+#
+#
+#======================================================================
+# Use this file to specify the event types available for each 
+# service or account when creating products.  
+# 
+#======================================================================
+#
+#======================================================================
+# After editing the file, run the load_event_map program to load 
+# the contents of the file into the Portal database and create the 
+# /config/event_map object. 
+#======================================================================
+#
+#======================================================================
+# Syntax:
+# <purchase_level> : <event_type> : <event_description> : <count> : <unit> : <use start_t or end_t>
+#
+# Parameters:
+#
+#    <purchase_level>
+#      Indicates whether an account or a specific service is 
+#      associated with the event types. 
+#
+#      Valid values are:
+#          account - Specifies that all services associated with the
+#                    account purchasing the product will be associated
+#                    with the set of event types.
+#          <service_name> - Specifies that only the service with this
+#                           service_name will be associated with the
+#                           set of event types.
+#    <event_type>
+#      Indicates the event type to associate with a particular 
+#      purchase level.  You can specify more than one event type
+#      per purchase level.
+#
+#    <event_description>
+#      A short description of the event type.  This description is 
+#      displayed in the Pricing Tool.
+#
+#    <count>
+#      Optional parameter. It indicates frequency of the event. 
+#      Must be positive numbers
+#      If left blank, it defaults to 0.
+#
+#    <unit>
+#      Optional parameter. It indicates the unit of the frequency of the cycle event. 
+#      Must be these values (month, day, week, year)
+#      If left blank, it defaults to month.
+#
+#    <use start_t or end_t>
+#      Optional parameter. This parameter is for session event whose's start_t and end_t are
+#	   different typically; since in Apollo we have the validity-based sub-balances, so we need 
+#      to know which time point (start_t or end_t) to be used when determining which 
+#	   sub-balances are valid for this event.  By default, start_t will be used, you can
+#      specify end_t also. If left blank, it defaults to start_t.
+#	   This setting is per event type, so for one event type only one value can be specified, 
+#	   even though it's possible that the same event type can appear in different purchase
+#      levels.
+#
+#	Count of cycle events must be greater than 0
+#	When cache is loaded, count for pre-defined cycle-events like
+#	cycle_forward_monthly, cycle_forward_bimonthly,
+#	cycle_forward_quarterly, cycle_forward_semiannual and
+#	cycle_forward_annual are forced to 1, 2, 3, 6 and 12 respectively.
+#======================================================================
+#
+#======================================================================
+/account	: /event/billing/product/fee/cycle/cycle_forward_monthly	: Monthly Cycle Forward Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_adn_fdp	: Monthly Cycle Forward Addon fixed duration : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_arrear	:  Cycle Forward Arrear Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_bimonthly	: Bimonthly Cycle Forward Event : 2 : month
+		: /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_sb_adn_fdp	: Bimonthly Cycle Forward Addon fixed duration : 2 : month
+		: /event/billing/product/fee/cycle/cycle_forward_quarterly	: Quarterly Cycle Forward Event : 3 : month
+		: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_sb_adn_fdp	: Quarterly Cycle Forward Addon fixed duration : 3 : month
+		: /event/billing/product/fee/cycle/cycle_forward_semiannual	: Semiannual Cycle Forward Event : 6 : month
+		: /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_sb_adn_fdp	: Semiannual Cycle Forward Addon fixed duration : 6 : month
+		: /event/billing/product/fee/cycle/cycle_forward_annual		: Annual Cycle Forward Event : 12 : month
+		: /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc : Annual Cycle Forward Hardware Annual Maintenance : 12 : month
+		: /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_fdp : Annual Cycle Forward Addon fixed duration : 12 : month
+		: /event/billing/product/fee/cycle/cycle_arrear			: Monthly Cycle Arrear Event : 1 : month
+		: /event/billing/cycle/rollover/monthly				: Monthly Cycle Rollover Event : 1 : month
+		: /event/billing/product/fee/purchase				: Product Purchase Fee Event
+		: /event/billing/product/fee/cancel				: Product Cancel Fee Event
+		: /event/billing/cycle/fold					: Cycle Fold Event : 1
+		: /event/billing/cycle/discount					: Billing Time Discount Event : 1
+		: /event/billing/cycle/discount/mostcalled			: MostCalled Billing Time Discount Event : 1
+		: /event/billing/incentive					: Payment Incentive Event : 1
+		: /event/billing/fee/failed_payment				: Failed Payment Fee Event : 1
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_hw_rental  : Monthly Cycle Arrear Hardware Rental Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental  : Monthly Cycle Forward Hardware Rental Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_pkg_bst : Monthly Cycle Arrear Package Basic Service Tier Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_bst : Monthly Cycle Forward Package Basic Service Tier Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_pkg_dstp : Monthly Cycle Arrear Package Digital Starter Package Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_dstp : Monthly Cycle Forward Package Digital Starter Package Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_pkg_dpop : Monthly Cycle Arrear Package Digital Popular Package Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_dpop : Monthly Cycle Forward Package Digital Popular Package Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_pkg_dprp : Monthly Cycle Arrear Package Digital Premium Package Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_dprp : Monthly Cycle Forward Package Digital Premium Package Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_alc_paid : Monthly Cycle Arrear Ala-Carte Paid Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_alc_paid : Monthly Cycle Forward Ala-Carte Paid Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_adn_normal : Monthly Cycle Arrear Addon Normal Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_adn_normal : Monthly Cycle Forward Addon Normal Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_bimonthly/mso_sb_adn_normal : Bimonthly Cycle Arrear Addon Normal Event : 2 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_quarterly/mso_sb_adn_normal : Quarterly Cycle Arrear Addon Normal Event : 3 : month
+		: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_sb_adn_normal : Quarterly Cycle Forward Addon Normal Event : 3 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_semiannual/mso_sb_adn_normal : Semiannual Cycle Arrear Addon Normal Event : 6 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_annual/mso_sb_adn_normal : Annual Cycle Arrear Addon Normal Event : 12 : month
+		: /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_normal : Annual Cycle Forward Addon Normal Event : 12 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_alc_fta	   : Monthly Cycle Arrear Ala-Carte Free to Air Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_alc_fta	   : Monthly Cycle Forward Ala-Carte Free to Air Event : 1 : month
+		: /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_et	   : Monthly Cycle Arrear Entertainment tax : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_et	   : Monthly Cycle Forward Entertainment tax : 1 : month
+		: /event/billing/product/fee/cycle/cycle_forward_weekly/mso_sb_adn_fdp : Seven Days Cycle Forward Addon fixed duration : 7 : day
+                : /event/billing/product/fee/cycle/cycle_forward_weekly/mso_sb_alc_fdp : Seven Days Cycle Forward Ala-Carte fixed duration : 7 : day
+                : /event/billing/product/fee/cycle/cycle_forward_weekly/mso_sb_pkg_fdp : Seven Days Cycle Forward Base Package: 7 : day
+#New HD Packages
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_fdp    : Monthly Cycle Forward Package fixed duration    : 1: month
+#		: /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_sb_pkg_fdp  : Bimonthly Cycle Forward Package fixed duration  : 2: month
+		: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_sb_pkg_fdp  : Quarterly Cycle Forward Package fixed duration  : 3: month
+		: /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_sb_pkg_fdp : Semiannual Cycle Forward Package fixed duration : 6: month
+		: /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_pkg_fdp     : Annual Cycle Forward Package fixed duration     :12: month
+		
+		: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_alc_fdp    : Monthly Cycle Forward Ala-Carte fixed duration    : 1: month
+#		: /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_sb_alc_fdp  : Bimonthly Cycle Forward Ala-Carte fixed duration  : 2: month
+		: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_sb_alc_fdp  : Quarterly Cycle Forward Ala-Carte fixed duration  : 3: month
+		: /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_sb_alc_fdp : Semiannual Cycle Forward Ala-Carte fixed duration : 6: month
+		: /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp     : Annual Cycle Forward Ala-Carte fixed duration     :12: month
+#======================================================================
+
+# you could specify "/service/ip	: /event/session	: Session Event : : : end_t" also
+
+/service/ip	: /event/session	: Session Event : : : start_t
+		: /event/session/dialup	: IP Dialup Event
+#======================================================================
+/service/telephony	: /event/session		: Session Event
+			: /event/session/ipt/call	: IPT Call Session Event
+			: /event/session/call/telephony	: Telephony Call Session Event 
+#======================================================================
+/service/broadband	: /event/netflow/usage	: NetFlow Usage Event
+			: /event/netflow/categorization : NetFlow Categorization Event
+			: /event/netflow/identification : NetFlow Identification Event
+#added for Remittance
+/account	: /event/billing/remittance : Remittance Event
+
+#======================================================================
+# Narus events
+#======================================================================
+/service/ip        : /event/session/dialup/narus         : NARUS Dialup Event
+/service/telephony : /event/session/ipt/call/narus       : NARUS VoIP Event
+/service/stream    : /event/broadband/usage              : NARUS Stream Event
+/service/broadband : /event/broadband/usage              : NARUS Flow Event
+
+#======================================================================
+# Wireless events
+#======================================================================
+/service/ip/gprs : /event/session/gprs/master     : GPRS master session
+		 : /event/session/gprs/subsession : GPRS subsession session
+
+/service/wap/interactive : /event/activity/wap/interactive : WAP Activity
+#======================================================================
+/service/sms            : /event/activity/sms                   : SMS activity
+
+#======================================================================
+/service/content            : /event/activity/content                   : CONTENT activity
+
+#======================================================================
+/service/gsm            : /event/session/gsm       : Real time GSM session 
+
+#======================================================================
+# Wireless DELAYED events
+#======================================================================
+/service/ip/gprs : /event/delayed/session/gprs : Delayed GPRS session
+
+/service/wap/interactive : /event/delayed/activity/wap/interactive : Delayed WAP Activity
+#======================================================================
+/service/gsm            : /event/delayed/session/gsm       : Delayed GSM session 
+#======================================================================
+/service/settlement/roaming/outcollect   : /event/delayed/session/telco/roaming   :Roaming Settlement Event
+/service/settlement/roaming/incollect    : /event/delayed/session/telco/roaming   :Roaming Settlement Event
+/service/settlement/ws		: /event/billing/settlement/ws 	:Wholesale Settlement Event
+
+# Broadband Service Event Mapping
+#======================================================================
+/service/telco/broadband        : /event/session/telco/broadband                : Broadband Session
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cm	   : Monthly Hardware Rental for Cable Modem : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/cm	   : Quarterly Hardware Rental for Cable Modem  : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/cm	   : Half Yearly Hardware Rental for Cable Modem  : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cm	   : Yearly Hardware Rental for Cable Modem  : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/cm      : Bi-Monthly Hardware Rental for Cable Modem : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/cm    : Quad-Monthly Hardware Rental for Cable Modem : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cr	   : Monthly Hardware Rental for Cable Router  : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/cr	   : Quarterly Hardware Rental for Cable Router : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/cr	   : Half Yearly Hardware Rental for Cable Router : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cr	   : Yearly Hardware Rental for Cable Router : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/cr      : Bi-Monthly Hardware Rental for Cable Router : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/cr    : Quad-Monthly Hardware Rental for Cable Router : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/huwr	   : Monthly Hardware Rental for Huawei Router  : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/huwr	   : Quarterly Hardware Rental for Huawei Router : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/huwr	   : Half Yearly Hardware Rental for Huawei Router : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr	   : Yearly Hardware Rental for Huawei Router : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/huwr    : Bi-Monthly Hardware Rental for Huawei Router : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/huwr          : Quad-Monthly Hardware Rental for Huawei Router : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd	   : Monthly Hardware Rental for Nat Device  : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/nd	   : Quarterly Hardware Rental for Nat Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/nd	   : Half Yearly Hardware Rental for Nat Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nd	   : Yearly Hardware Rental for Nat Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/nd      : Bi-Monthly Hardware Rental for Nat Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/nd    : Quad-Monthly Hardware Rental for Nat Device : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/wlnd	   : Monthly Hardware Rental for Wireless Nat Device  : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/wlnd	   : Quarterly Hardware Rental for Wireless Nat Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/wlnd	   : Half Yearly Hardware Rental for Wireless Nat Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/wlnd	   : Yearly Hardware Rental for Wireless Nat Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/wlnd    : Bi-Monthly Hardware Rental for Wireless Nat Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/wlnd          : Quad-Monthly Hardware Rental for Wireless Nat Device : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/dcm	   : Monthly Hardware Rental for DOCSIS 3.0 Cable Modem : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/dcm	   : Quarterly Hardware Rental for DOCSIS 3.0 Cable Modem : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/dcm	   : Half Yearly Hardware Rental for DOCSIS 3.0 Cable Modem : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/dcm	   : Yearly Hardware Rental for DOCSIS 3.0 Cable Modem : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/dcm     : Bi-Monthly Hardware Rental for DOCSIS 3.0 Cable Modem : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/dcm           : Quad-Monthly Hardware Rental for DOCSIS 3.0 Cable Modem : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nwifi	   : Monthly Hardware Rental for New Wifi Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/nwifi	   : Quarterly Hardware Rental for New Wifi Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/nwifi	   : Half Yearly Hardware Rental for New Wifi Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi	   : Yearly Hardware Rental for New Wifi Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/nwifi           : Bi-Monthly Hardware Rental for New Wifi Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/nwifi   : Quad-Monthly Hardware Rental for New Wifi Device : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/crsoho	   : Monthly Hardware Rental for Cisco Soho Router  : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/crsoho	   : Quarterly Hardware Rental for Cisco Soho Router : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/crsoho   : Half Yearly Hardware Rental for Cisco Soho Router : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/crsoho	   : Yearly Hardware Rental for Cisco Soho Router : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/crsoho          : Bi-Monthly Hardware Rental for Cisco Soho Router : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/crsoho   : Quad-Monthly Hardware Rental for Cisco Soho Router : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/cm/post	   : Monthly AMC for Cable Modem : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/cm/pre	   : Prepaid Monthly AMC for Cable Modem : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_amc/cm/pre	   : Prepaid Quarterly AMC for Cable Modem  : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_amc/cm/pre	   : Prepaid Half AMC Rental for Cable Modem  : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm/pre	   : Prepaid Yearly AMC for Cable Modem  : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_amc/cm/pre       : Prepaid Bi-Monthly AMC for Cable Modem : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_amc/cm/pre     : Prepaid Quad-Monthly AMC for Cable Modem : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/cr/post	   : Monthly AMC for Cable Router  : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/cr/pre	   : Prepaid Monthly AMC for Cable Router : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_amc/cr/pre	   : Prepaid Quarterly AMC for Cable Router : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_amc/cr/pre	   : Prepaid Half Yearly AMC for Cable Router : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr/pre	   : Prepaid Yearly AMC for Cable Router : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_amc/cr/pre       : Prepaid Bi-Monthly AMC for Cable Router : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_amc/cr/pre	   : Prepaid Quad-Monthly AMC for Cable Router : 4 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/huwr/post	   : Monthly AMC for Huawei Router  : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/huwr/pre	   : Prepaid Monthly AMC for Huawei Router  : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_amc/huwr/pre	   : Prepaid Quarterly AMC for Huawei Router  : 3 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_amc/huwr/pre	   : Prepaid Half Yearly AMC for Huawei Router  : 6 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr/pre	   : Prepaid Yearly AMC for Huawei Router  : 1 : year
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_amc/huwr/pre	   : Prepaid Bi-Monthly AMC for Huawei Router  : 2 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_amc/huwr/pre   : Prepaid Quad-Monthly AMC for Huawei Router  : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/nd/post	   : Monthly AMC for Nat Device  : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/nd/pre	   : Prepaid Monthly AMC for Nat Device  : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_amc/nd/pre	   : Prepaid Quarterly AMC for Nat Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_amc/nd/pre	   : Prepaid Half Yearly AMC for Nat Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd/pre	   : Prepaid Yearly AMC for Nat Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_amc/nd/pre       : Prepaid Bi-Monthly AMC for Nat Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_amc/nd/pre     : Prepaid Quad-Monthly AMC for Nat Device : 4 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/wlnd/post	   : Monthly AMC for Wireless Nat Device  : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/wlnd/pre	   : Prepaid Monthly AMC for Wireless Nat Device  : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_amc/wlnd/pre	   : Prepaid Quarterly AMC for Wireless Nat Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_amc/wlnd/pre	   : Prepaid Half Yearly AMC for Wireless Nat Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd/pre	   : Prepaid Yearly AMC for Wireless Nat Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_amc/wlnd/pre     : Prepaid Bi-Monthly AMC for Wireless Nat Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_amc/wlnd/pre   : Prepaid Quad-Monthly AMC for Wireless Nat Device : 4 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/nwifi/post	   : Monthly AMC for New Wifi Device : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/nwifi/pre	   : Prepaid Monthly AMC for New Wifi Device : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_amc/nwifi/pre	   : Prepaid Quarterly AMC for New Wifi Device : 3 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_amc/nwifi/pre   : Prepaid Half Yearly AMC for New Wifi Device : 6 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi/pre	   : Prepaid Yearly AMC for New Wifi Device : 1 : Year
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_amc/nwifi/pre	   : Prepaid Bi-Monthly AMC for New Wifi Device : 2 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_amc/nwifi/pre  : Prepaid Quad-Monthly AMC for New Wifi Device : 4 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/crsoho/post	   : Monthly AMC for Cisco Soho Router  : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/crsoho/pre	   : Prepaid Monthly AMC for Cisco Soho Router  : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_amc/crsoho/pre   : Prepaid Quarterly AMC for Cisco Soho Router  : 3 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_amc/crsoho/pre  : Prepaid Half Yearly AMC for Cisco Soho Router  : 6 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho/pre	   : Prepaid Yearly AMC for Cisco Soho Router  : 1 : year
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_amc/crsoho/pre   : Prepaid Bi-Monthly AMC for Cisco Soho Router  : 2 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_amc/crsoho/pre : Prepaid Quad-Monthly AMC for Cisco Soho Router  : 4 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/dcm/post	   : Monthly AMC for DOCSIS 3.0 Cable Modem : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_amc/dcm/pre	   : Prepaid Monthly AMC for DOCSIS 3.0 Cable Modem : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_amc/dcm/pre	   : Prepaid Quarterly AMC for DOCSIS 3.0 Cable Modem : 3 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_amc/dcm/pre	   : Prepaid Half Yearly AMC for DOCSIS 3.0 Cable Modem : 6 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm/pre	   : Prepaid Yearly AMC for DOCSIS 3.0 Cable Modem : 1 : year
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_amc/dcm/pre	   : Prepaid Bi-Monthly AMC for DOCSIS 3.0 Cable Modem : 2 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_amc/dcm/pre	   : Prepaid Quad-Monthly AMC for DOCSIS 3.0 Cable Modem : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_grant	   		   : Grant of Free Units : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_grant                     : Thirty Days Grant of Free Units : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_sb_norm	   : Prepaid Monthly Subscription for Normal Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_norm	   : Prepaid Quarterly Subscription for Normal Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_norm	   : Prepaid Half yearly Subscription for Normal Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_norm		   : Prepaid Yearly Subscription for Normal Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly_fdp/mso_sb_norm       : Prepaid Bi-Monthly Subscription for Normal Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly_fdp/mso_sb_norm     : Prepaid Quad-Monthly Subscription for Normal Device : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_sb_dc2		   : Prepaid Monthly Subscription for DOCSIS 2.0 Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_dc2		   : Prepaid Thirty Days Subscription for DOCSIS 2.0 Device : 30 : day 
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_dc2	   : Prepaid Quarterly Subscription for DOCSIS 2.0 Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc2	   : Prepaid Half yearly Subscription for DOCSIS 2.0 Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_dc2		   : Prepaid Yearly Subscription for DOCSIS 2.0 Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly_fdp/mso_sb_dc2        : Prepaid Bi-Monthly Subscription for DOCSIS 2.0 Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly_fdp/mso_sb_dc2      : Prepaid Quad-Monthly Subscription for DOCSIS 2.0 Device : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_sb_dc3		   : Prepaid Monthly Subscription for DOCSIS 3.0 Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_dc3            : Prepaid Thirty Days Subscription for DOCSIS 3.0 Device : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_dc3	   : Prepaid Quarterly Subscription for DOCSIS 3.0 Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_dc3	   : Prepaid Half yearly Subscription for DOCSIS 3.0 Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_dc3		   : Prepaid Yearly Subscription for DOCSIS 3.0 Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly_fdp/mso_sb_dc3        : Prepaid Bi-Monthly Subscription for DOCSIS 3.0 Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly_fdp/mso_sb_dc3      : Prepaid Quad-Monthly Subscription for DOCSIS 3.0 Device : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_sb_fib		   : Prepaid Monthly Subscription for Fiber Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_fib		   : Prepaid Thirty Days Subscription for Fiber Device : 30 : day 
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_fib	   : Prepaid Quarterly Subscription for Fiber Device : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_fib	   : Prepaid Half yearly Subscription for Fiber Device : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_fib		   : Prepaid Yearly Subscription for Fiber Device : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly_fdp/mso_sb_fib        : Prepaid Bi-Monthly Subscription for Fiber Device : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly_fdp/mso_sb_fib      : Prepaid Quad-Monthly Subscription for Fiber Device : 4 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_sb_tod		   : Prepaid Monthly Subscription for TOD Plan : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_tod	   : Prepaid Quarterly Subscription for TOD Plan : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_tod	   : Prepaid Half yearly Subscription for TOD Plan : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_tod		   : Prepaid Yearly Subscription for TOD Plan : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_norm		   : Monthly Subscription for Normal Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_dc2		   : Monthly Subscription for DOCSIS 2.0 Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_dc3		   : Monthly Subscription for DOCSIS 3.0 Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_fib		   : Monthly Subscription for FIBER Device : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/purchase/mso_hw			: Broadband hardware Product 
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_grant                   : Prepaid Monthly Grant : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_grant         : Prepaid Quarterly Grant : 3 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_grant        : Prepaid Half yearly Grant : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_grant            : Prepaid Yearly Grant : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_bimonthly_fdp/mso_grant         : Prepaid Bi-Monthly grant : 2 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_quadmonthly_fdp/mso_grant       : Prepaid Quad-Monthly Grant : 4 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/ip	 : Monthly Rental for Additional IP : 1 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_hw_rental/ip	 : Bi-Monthly Rental for Additional IP : 2 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quarterly/mso_hw_rental/ip	 : Quarterly Rental for Additional IP : 3 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/ip	 : Quad-Montly Rental for Additional IP : 4 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/ip	 : Half Yearly Rental for Additional IP : 6 : month
+/service/telco/broadband	: /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/ip	 : Yearly Rental for Additional IP : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_sb_norm/trial	   : Prepaid Monthly Subscription for Normal Device Trial : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_semiannual_fdp/mso_sb_norm/trial  : Prepaid Half yearly Subscription for Normal Device Trial : 6 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_norm/trial      : Prepaid Yearly Subscription for Normal Device Trial: 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_sb_dc2/trial	   : Prepaid Monthly Subscription for DOCSIS 2.0 Device Trial : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly_fdp/mso_sb_dc3/trial	   : Prepaid Monthly Subscription for DOCSIS 3.0 Device Trial : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_dc3/trial   	   : Prepaid Yearly Subscription for DOCSIS 3.0 Device Trial : 1 : year
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_norm/trial	   : Monthly Subscription for Normal Device Trial : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_dc2/trial          : Monthly Subscription for DOCSIS 2.0 Device Trial : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_dc3/trial	   : Monthly Subscription for DOCSIS 3.0 Device Trial : 1 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_fib/trial          : Monthly Subscription for FIBER Device Trial : 1 : month
+
+#======================================================================
+# MSO ET event for /service/netflix
+#======================================================================
+/service/netflix                : /event/billing/product/fee/cycle/cycle_forward_monthly/mso_netflix		 : Monthly Subscription Charges for Netflix : 1 : month
+
+#======================================================================
+# MSO ET event for /service/catv
+#======================================================================
+/service/catv                   : /event/mso_et :MSO ET Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_quadmonthly                       : QuadMonthly Cycle Forward Event : 4 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_sb_adn_fdp        : QuadMonthly Cycle Forward Addon fixed duration : 4 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_sb_pkg_fdp        : QuadMonthly Cycle Forward Base Package : 4 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_sb_alc_fdp        : QuadMonthly Cycle Forward Ala-Carte fixed duration : 4 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_elevenmonthly                     : ElevenMonthly Cycle Forward Event : 11 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_elevenmonthly/mso_sb_adn_fdp      : ElevenMonthly Cycle Forward Addon fixed duration : 11 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_elevenmonthly/mso_sb_pkg_fdp      : ElevenMonthly Cycle Forward Base Package : 11 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_elevenmonthly/mso_sb_alc_fdp      : ElevenMonthly Cycle Forward Ala-Carte fixed duration : 11 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_fivemonthly                       : FiveMonthly Cycle Forward Event : 5 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_fivemonthly/mso_sb_adn_fdp        : FiveMonthly Cycle Forward Addon fixed duration : 5 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_fivemonthly/mso_sb_pkg_fdp        : FiveMonthly Cycle Forward Base Package : 5 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_fivemonthly/mso_sb_alc_fdp        : FiveMonthly Cycle Forward Ala-Carte fixed duration : 5 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_sevenmonthly                      : SevenMonthly Cycle Forward Event : 7 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_sevenmonthly/mso_sb_adn_fdp       : SevenMonthly Cycle Forward Addon fixed duration : 7 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_sevenmonthly/mso_sb_pkg_fdp       : SevenMonthly Cycle Forward Base Package : 7 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_sevenmonthly/mso_sb_alc_fdp       : SevenMonthly Cycle Forward Ala-Carte fixed duration : 7 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_eightmonthly                      : EightMonthly Cycle Forward Event : 8 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_eightmonthly/mso_sb_adn_fdp       : EightMonthly Cycle Forward Addon fixed duration : 8 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_eightmonthly/mso_sb_pkg_fdp       : EightMonthly Cycle Forward Base Package : 8 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_eightmonthly/mso_sb_alc_fdp       : EightMonthly Cycle Forward Ala-Carte fixed duration : 8 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_sb_alc_fdp		: Bimonthly Cycle Forward Ala-Carte fixed duration : 2 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_bimonthly/mso_sb_pkg_fdp		: Bimonthly Cycle Forward Base Package : 2 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_ninemonthly                       : NineMonthly Cycle Forward Event : 9 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_ninemonthly/mso_sb_adn_fdp        : NineMonthly Cycle Forward Addon fixed duration : 9 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_ninemonthly/mso_sb_pkg_fdp        : NineMonthly Cycle Forward Base Package : 9 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_ninemonthly/mso_sb_alc_fdp        : NineMonthly Cycle Forward Ala-Carte fixed duration : 9 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_tenmonthly                        : TenMonthly Cycle Forward Event : 10 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_tenmonthly/mso_sb_adn_fdp         : TenMonthly Cycle Forward Addon fixed duration : 10 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_tenmonthly/mso_sb_pkg_fdp         : TenMonthly Cycle Forward Base Package : 10 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_tenmonthly/mso_sb_alc_fdp         : TenMonthly Cycle Forward Ala-Carte fixed duration : 10 : month
+/account       : /event/billing/product/fee/cycle/cycle_forward_ten_day                       	: Ten Day Cycle Forward Event : 10 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_ten_day/mso_sb_adn_fdp            : Ten Day Cycle Forward Addon fixed duration : 10 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_ten_day/mso_sb_pkg_fdp            : Ten Day Cycle Forward Base Package : 10 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_ten_day/mso_sb_alc_fdp            : Ten Day Cycle Forward Ala-Carte fixed duration : 10 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_daily                       	: Daily Cycle Forward Event : 1 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_daily/mso_sb_adn_fdp              : Daily Cycle Forward Addon fixed duration : 1 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_daily/mso_sb_pkg_fdp              : Daily Cycle Forward Base Package : 1 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_daily/mso_sb_alc_fdp              : Daily Cycle Forward Ala-Carte fixed duration : 1 : day
+#Fifteen Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_fifteen_days                             : Fifteen Days Cycle Forward Event : 15 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_fifteen_days/mso_sb_adn_fdp              : Fifteen Days Cycle Forward Addon fixed duration : 15 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_fifteen_days/mso_sb_pkg_fdp              : Fifteen Days Cycle Forward Base fixed duration : 15 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_fifteen_days/mso_sb_alc_fdp              : Fifteen Days Cycle Forward Ala-Carte fixed duration : 15 : day
+#Thrity days cycle forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_thirty_days                           : Thirty Days Cycle Forward Event : 30 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_adn_fdp              : Thirty Days Cycle Forward Addon fixed duration : 30 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_pkg_fdp              : Thirty Days Cycle Forward Base fixed duration : 30 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_alc_fdp              : Thirty Days Cycle Forward Ala-Carte fixed duration : 30 : day
+#Sixty days cycle forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_sixty_days                           : Sixty Days Cycle Forward Event : 60 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_sixty_days/mso_sb_adn_fdp              : Sixty Days Cycle Forward Addon fixed duration : 60 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_sixty_days/mso_sb_pkg_fdp              : Sixty Days Cycle Forward Base fixed duration : 60 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_sixty_days/mso_sb_alc_fdp              : Sixty Days Cycle Forward Ala-Carte fixed duration : 60 : day
+#Ninety days cycle forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_ninety_days                           : Ninety Days Cycle Forward Event : 90 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_ninety_days/mso_sb_adn_fdp              : Ninety Days Cycle Forward Addon fixed duration : 90 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_ninety_days/mso_sb_pkg_fdp              : Ninety Days Cycle Forward Base fixed duration : 90 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_ninety_days/mso_sb_alc_fdp              : Ninety Days Cycle Forward Ala-Carte fixed duration : 90 : day
+#One Eighty Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_oneeighty_days                             : One Eighty Days Cycle Forward Event : 180 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_oneeighty_days/mso_sb_adn_fdp              : One Eighty Days Cycle Forward Addon fixed duration : 180 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_oneeighty_days/mso_sb_pkg_fdp              : One Eighty Days Cycle Forward Base fixed duration : 180 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_oneeighty_days/mso_sb_alc_fdp              : One Eighty Days Cycle Forward Ala-Carte fixed duration : 180 : day
+#One Twenty Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_onetwenty_days                             : One Twenty Days Cycle Forward Event : 120 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_onetwenty_days/mso_sb_adn_fdp              : One Twenty Days Cycle Forward Addon fixed duration : 120 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_onetwenty_days/mso_sb_pkg_fdp              : One Twenty Days Cycle Forward Base fixed duration : 120 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_onetwenty_days/mso_sb_alc_fdp              : One Twenty Days Cycle Forward Ala-Carte fixed duration : 120 : day
+#One Fifty Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_onefifty_days                             : One Fifty Days Cycle Forward Event : 150 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_onefifty_days/mso_sb_adn_fdp              : One Fifty Days Cycle Forward Addon fixed duration : 150 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_onefifty_days/mso_sb_pkg_fdp              : One Fifty Days Cycle Forward Base fixed duration : 150 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_onefifty_days/mso_sb_alc_fdp              : One Fifty Days Cycle Forward Ala-Carte fixed duration : 150 : day
+#Two Hundred and Ten Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoten_days                             : Two Hundred Ten Days Cycle Forward Event : 210 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoten_days/mso_sb_adn_fdp              : Two Hundred Ten Days Cycle Forward Addon fixed duration : 210 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoten_days/mso_sb_pkg_fdp              : Two Hundred Ten Days Cycle Forward Base fixed duration : 210 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoten_days/mso_sb_alc_fdp              : Two Hundred Ten Days Cycle Forward Ala-Carte fixed duration : 210 : day
+#Two Hundred and Forty Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoforty_days                             : Two Hundred Forty Days Cycle Forward Event : 240 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoforty_days/mso_sb_adn_fdp              : Two Hundred Forty Days Cycle Forward Addon fixed duration : 240 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoforty_days/mso_sb_pkg_fdp              : Two Hundred Forty Days Cycle Forward Base fixed duration : 240 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoforty_days/mso_sb_alc_fdp              : Two Hundred Forty Days Cycle Forward Ala-Carte fixed duration : 240 : day
+#Two Hundred and Seventy Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoseventy_days                             : Two Hundred Seventy Days Cycle Forward Event : 270 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_adn_fdp              : Two Hundred Seventy Days Cycle Forward Addon fixed duration : 270 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_pkg_fdp              : Two Hundred Seventy Days Cycle Forward Base fixed duration : 270 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_twoseventy_days/mso_sb_alc_fdp              : Two Hundred Seventy Days Cycle Forward Ala-Carte fixed duration : 270 : day
+#Three Hundred Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_threehundred_days                             : Three Hundred Days Cycle Forward Event : 300 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threehundred_days/mso_sb_adn_fdp              : Three Hundred Days Cycle Forward Addon fixed duration : 300 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threehundred_days/mso_sb_pkg_fdp              : Three Hundred Days Cycle Forward Base fixed duration : 300 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threehundred_days/mso_sb_alc_fdp              : Three Hundred Days Cycle Forward Ala-Carte fixed duration : 300 : day
+#Three Hundred and Thirty Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_threethirty_days                             : Three Hundred and Thirty Days Cycle Forward Event : 330 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threethirty_days/mso_sb_adn_fdp              : Three Hundred and Thirty Days Cycle Forward Addon fixed duration : 330 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threethirty_days/mso_sb_pkg_fdp              : Three Hundred and Thirty Days Cycle Forward Base fixed duration : 330 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threethirty_days/mso_sb_alc_fdp              : Three Hundred and Thirty Days Cycle Forward Ala-Carte fixed duration : 330 : day
+#Three Hundred and Sixty Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_threesixty_days                             : Three Hundred and Sixty Days Cycle Forward Event : 360 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threesixty_days/mso_sb_adn_fdp              : Three Hundred and Sixty Days Cycle Forward Addon fixed duration : 360 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threesixty_days/mso_sb_pkg_fdp              : Three Hundred and Sixty Days Cycle Forward Base fixed duration : 360 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_threesixty_days/mso_sb_alc_fdp              : Three Hundred and Sixty Days Cycle Forward Ala-Carte fixed duration : 360 : day
+#Three Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_three_days                             : Three Days Cycle Forward Event : 3 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_three_days/mso_sb_adn_fdp              : Three Days Cycle Forward Addon fixed duration : 3 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_three_days/mso_sb_pkg_fdp              : Three Days Cycle Forward Base fixed duration : 3 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_three_days/mso_sb_alc_fdp              : Three Days Cycle Forward Ala-Carte fixed duration : 3 : day
+#Fourteen Days Cycle Forward Event
+/account       : /event/billing/product/fee/cycle/cycle_forward_fourteen_days                             : Fourteen Days Cycle Forward Event : 14 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_fourteen_days/mso_sb_adn_fdp              : Fourteen Days Cycle Forward Addon fixed duration : 14 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_fourteen_days/mso_sb_pkg_fdp              : Fourteen Days Cycle Forward Base fixed duration : 14 : day
+/account       : /event/billing/product/fee/cycle/cycle_forward_fourteen_days/mso_sb_alc_fdp              : Fourteen Days Cycle Forward Ala-Carte fixed duration : 14 : day
+#======================================================================
+#Wholesale Settlement Events
+#======================================================================
+/service/settlement/ws/incollect        : /event/billing/settlement/ws/incollect/charge_head_based      :Wholesale Incollect Charge Head Based Commission Event
+/service/settlement/ws/outcollect       : /event/billing/settlement/ws/outcollect/charge_head_based     :Wholesale Outcollect Charge Head Based Commission Event
+/service/settlement/ws/outcollect        : /event/billing/settlement/ws/outcollect/active_cust_count_based      :Wholesale Outcollect Active Customer Count Based Commission Event
+
+#============================================================
+#Adding 9 months event
+#===========================================================
+#/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months_fdp/mso_sb_tod         : Prepaid Nine Months Subscription for TOD Plan : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months_fdp/mso_sb_dc3         : Prepaid Nine Months Subscription for DOCSIS 3.0 Device: 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months_fdp/mso_sb_dc2         : Prepaid Nine Months Subscription for DOCSIS 2.0 Device: 9 : month
+#/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months_fdp/mso_sb_norm         : Prepaid Nine Months Subscription for Normal Device : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months_fdp/mso_sb_fib         : Prepaid Nine Months Subscription for FIBER Device : 9 : month
+#Adding AMC 9 months plan
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_amc/cm/pre       : Prepaid Nine Months AMC for Cable Modem  : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_amc/dcm/pre        : Prepaid Nine Months AMC for DOCSIS 3.0 Cable Modem : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_amc/huwr/pre       : Prepaid Nine Months AMC for Huawei Router  : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_amc/nd/pre         : Prepaid Nine Months AMC for Nat Device  : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_amc/wlnd/pre       : Prepaid Nine Months AMC for Wireless Nat Device  : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_amc/nwifi/pre    : Prepaid Nine Months AMC for New Wifi Device : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_amc/crsoho/pre     : Prepaid Nine Months AMC for Cisco Soho Router  : 9 : month
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_amc/cr/pre         : Prepaid Nine Months AMC for Cable Router : 9 : month
+
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm/pre         : Prepaid Thirty Days AMC for Cable Modem  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm/pre        : Prepaid Thirty Days AMC for DOCSIS 3.0 Cable Modem : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr/pre       : Prepaid Thirty Days AMC for Huawei Router  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd/pre         : Prepaid Thirty Days AMC for Nat Device  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd/pre       : Prepaid Thirty Days AMC for Wireless Nat Device  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi/pre      : Prepaid Thirty Days AMC for New Wifi Device : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho/pre     : Prepaid Thirty Days AMC for Cisco Soho Router  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr/pre         : Prepaid Thirty Days AMC for Cable Router : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/ip          : Thirty Days Rental for Additional IP : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cm          : Prepaid Thirty Days Hardware Rental for Cable Modem : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/dcm         : Prepaid Thirty Days Hardware Rental for DOCSIS 3.0 Cable Modem : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/huwr        : Prepaid Thirty Days Hardware Rental for Huawei Router  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nd          : Prepaid Thirty Days Hardware Rental for Nat Device  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/wlnd        : Prepaid Thirty Days Hardware Rental for Wireless Nat Device  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nwifi       : Prepaid Thirty Days Hardware Rental for New Wifi Device : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/crsoho      : Prepaid Thirty Days Hardware Rental for Cisco Soho Router  : 30 : day
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cr          : Prepaid Thirty Days Hardware Rental for Cable Router : 30 : day
+
+#9 months hardware ip event
+/service/telco/broadband        : /event/billing/product/fee/cycle/cycle_forward_nine_months/mso_hw_rental/ip         : Nine months Rental for Additional IP : 9 : month
+
+#======================================================================
+# Netflix events
+#======================================================================
+/service/netflix        : /event/netflix/payment         : Netflix Payment Event
+/service/netflix        : /event/netflix/sessions         : Netflix Session Event
+/service/netflix        : /event/netflix/reversal         : Netflix Reversal Event
+
+

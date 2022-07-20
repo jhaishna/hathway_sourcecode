@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/dispute
+#=======================================
+
+STORABLE CLASS /item/dispute {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent dispute items.  These items created when disputes are opened.  See also /event/billing/dispute/item class.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/dispute
+#=======================================
+
+STORABLE CLASS /item/dispute IMPLEMENTATION ORACLE7 {
+
+}
+

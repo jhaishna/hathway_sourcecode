@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/order/process
+#=======================================
+
+STORABLE CLASS /event/order/process {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order is processedThis object is created by PCM_OP_ORDER_PROCESS opcode";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/order/process
+#=======================================
+
+STORABLE CLASS /event/order/process IMPLEMENTATION ORACLE7 {
+
+}
+

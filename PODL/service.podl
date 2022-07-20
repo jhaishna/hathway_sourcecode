@@ -1,0 +1,5214 @@
+
+#=======================================
+#  Field PIN_FLD_AAC_ACCESS
+#=======================================
+
+STRING PIN_FLD_AAC_ACCESS {
+
+	ID = 98;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_PACKAGE
+#=======================================
+
+STRING PIN_FLD_AAC_PACKAGE {
+
+	ID = 101;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_PROMO_CODE
+#=======================================
+
+STRING PIN_FLD_AAC_PROMO_CODE {
+
+	ID = 102;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_SERIAL_NUM
+#=======================================
+
+STRING PIN_FLD_AAC_SERIAL_NUM {
+
+	ID = 103;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_SOURCE
+#=======================================
+
+STRING PIN_FLD_AAC_SOURCE {
+
+	ID = 99;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_VENDOR
+#=======================================
+
+STRING PIN_FLD_AAC_VENDOR {
+
+	ID = 100;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ALIAS_LIST
+#=======================================
+
+ARRAY PIN_FLD_ALIAS_LIST {
+
+	ID = 527;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLOSE_WHEN_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+	ID = 149;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_POID_LIST
+#=======================================
+
+STRING PIN_FLD_ITEM_POID_LIST {
+
+	ID = 964;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LASTSTAT_CMNT
+#=======================================
+
+STRING PIN_FLD_LASTSTAT_CMNT {
+
+	ID = 148;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_STATUS_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_STATUS_T {
+
+	ID = 147;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LIFECYCLE_STATE
+#=======================================
+
+INT PIN_FLD_LIFECYCLE_STATE {
+
+	ID = 8052;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN
+#=======================================
+
+STRING PIN_FLD_LOGIN {
+
+	ID = 92;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_ITEM_POID_LIST
+#=======================================
+
+STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+	ID = 155;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_CACHE_TYPE
+#=======================================
+
+ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+	ID = 567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PASSWD
+#=======================================
+
+STRING PIN_FLD_PASSWD {
+
+	ID = 93;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PASSWD_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PASSWD_EXPIRATION_T {
+
+	ID = 1424;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PASSWD_STATUS
+#=======================================
+
+ENUM PIN_FLD_PASSWD_STATUS {
+
+	ID = 1423;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_PROFILE_OBJ {
+
+	ID = 111;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_ID
+#=======================================
+
+STRING PIN_FLD_SERVICE_ID {
+
+	ID = 8256;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_STATE_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+	ID = 8053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBSCRIPTION_OBJ
+#=======================================
+
+POID PIN_FLD_SUBSCRIPTION_OBJ {
+
+	ID = 474;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANSFER_LIST
+#=======================================
+
+ARRAY PIN_FLD_TRANSFER_LIST {
+
+	ID = 475;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCK_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+	ID = 24;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCK_STATUS
+#=======================================
+
+ENUM PIN_FLD_LOCK_STATUS {
+
+	ID = 9882;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN_ATTEMPTS
+#=======================================
+
+INT PIN_FLD_LOGIN_ATTEMPTS {
+
+	ID = 9881;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTEDS
+#=======================================
+
+ARRAY PIN_FLD_PERMITTEDS {
+
+	ID = 241;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION
+#=======================================
+
+STRING PIN_FLD_ACTION {
+
+	ID = 83;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAXIMUM
+#=======================================
+
+DECIMAL PIN_FLD_MAXIMUM {
+
+	ID = 87;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MINIMUM
+#=======================================
+
+DECIMAL PIN_FLD_MINIMUM {
+
+	ID = 86;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLE
+#=======================================
+
+ARRAY PIN_FLD_ROLE {
+
+	ID = 334;
+}
+
+
+#=======================================
+#  Field PIN_FLD_APPLICATION
+#=======================================
+
+STRING PIN_FLD_APPLICATION {
+
+	ID = 333;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_ADMINCLIENT
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_ADMINCLIENT {
+
+	ID = 331;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE
+#=======================================
+
+INT PIN_FLD_PROFILE {
+
+	ID = 96;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USER_PREFS
+#=======================================
+
+BUF PIN_FLD_USER_PREFS {
+
+	ID = 332;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IP_ADDRESSES
+#=======================================
+
+ARRAY PIN_FLD_IP_ADDRESSES {
+
+	ID = 1652;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IP_ADDRESS
+#=======================================
+
+STRING PIN_FLD_IP_ADDRESS {
+
+	ID = 1653;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_BROADBAND
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_BROADBAND {
+
+	ID = 1651;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CATV_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_CATV_INFO {
+
+	ID = 40009;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID {
+
+	ID = 40011;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CARF_RECEIVED
+#=======================================
+
+ENUM MSO_FLD_CARF_RECEIVED {
+
+	ID = 40065;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CAS_SUBSCRIBER_ID
+#=======================================
+
+STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+	ID = 40070;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LEGACY_AGR_NO
+#=======================================
+
+STRING MSO_FLD_LEGACY_AGR_NO {
+
+	ID = 40066;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_NODE
+#=======================================
+
+STRING MSO_FLD_NETWORK_NODE {
+
+	ID = 40000;
+}
+
+
+#=======================================
+#  Field MSO_FLD_REGION_KEY
+#=======================================
+
+STRING MSO_FLD_REGION_KEY {
+
+	ID = 40069;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SALESMAN_OBJ
+#=======================================
+
+POID MSO_FLD_SALESMAN_OBJ {
+
+	ID = 40002;
+	DESCR = "Sales man account poid to be stored in system for reference";
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONN_TYPE
+#=======================================
+
+ENUM PIN_FLD_CONN_TYPE {
+
+	ID = 2915;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PERSONAL_BIT_INFO
+#=======================================
+
+ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+	ID = 40067;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_NAME
+#=======================================
+
+STRING PIN_FLD_PARAM_NAME {
+
+	ID = 5776;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_VALUE
+#=======================================
+
+STRING PIN_FLD_PARAM_VALUE {
+
+	ID = 5778;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ALIASES
+#=======================================
+
+ARRAY PIN_FLD_ALIASES {
+
+	ID = 1880;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ATTRIBUTES
+#=======================================
+
+ARRAY PIN_FLD_ATTRIBUTES {
+
+	ID = 1881;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_EMAIL
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_EMAIL {
+
+	ID = 801;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAIL_SERVER_ID
+#=======================================
+
+BINSTR PIN_FLD_MAIL_SERVER_ID {
+
+	ID = 802;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_MBOX_SIZE
+#=======================================
+
+INT PIN_FLD_MAX_MBOX_SIZE {
+
+	ID = 803;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_MSG_CNT
+#=======================================
+
+INT PIN_FLD_MAX_MSG_CNT {
+
+	ID = 805;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_MSG_SIZE
+#=======================================
+
+INT PIN_FLD_MAX_MSG_SIZE {
+
+	ID = 804;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PATH
+#=======================================
+
+STRING PIN_FLD_PATH {
+
+	ID = 806;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARGS
+#=======================================
+
+ARRAY PIN_FLD_ARGS {
+
+	ID = 49;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_IP
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_IP {
+
+	ID = 300;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMPRESSION
+#=======================================
+
+ENUM PIN_FLD_COMPRESSION {
+
+	ID = 301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IPADDR
+#=======================================
+
+BINSTR PIN_FLD_IPADDR {
+
+	ID = 75;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROTOCOL
+#=======================================
+
+ENUM PIN_FLD_PROTOCOL {
+
+	ID = 306;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVIDER_TOPICS
+#=======================================
+
+ARRAY PIN_FLD_PROVIDER_TOPICS {
+
+	ID = 1002;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_AMOUNT
+#=======================================
+
+STRING PIN_FLD_RATE_PER_AMOUNT {
+
+	ID = 1004;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_EVENT
+#=======================================
+
+STRING PIN_FLD_RATE_PER_EVENT {
+
+	ID = 1003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPIC_NAME
+#=======================================
+
+STRING PIN_FLD_TOPIC_NAME {
+
+	ID = 1001;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVIDER_PRODUCTS
+#=======================================
+
+ARRAY PIN_FLD_PROVIDER_PRODUCTS {
+
+	ID = 1005;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROD_NAME
+#=======================================
+
+STRING PIN_FLD_PROD_NAME {
+
+	ID = 253;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_AMOUNT_CYCLE
+#=======================================
+
+STRING PIN_FLD_RATE_PER_AMOUNT_CYCLE {
+
+	ID = 1007;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_EVENT_CYCLE
+#=======================================
+
+STRING PIN_FLD_RATE_PER_EVENT_CYCLE {
+
+	ID = 1006;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICES
+#=======================================
+
+ARRAY PIN_FLD_SERVICES {
+
+	ID = 122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TELCO_FEATURES
+#=======================================
+
+ARRAY PIN_FLD_TELCO_FEATURES {
+
+	ID = 8001;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TELCO_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+	ID = 8002;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRIMARY_NUMBER
+#=======================================
+
+INT PIN_FLD_PRIMARY_NUMBER {
+
+	ID = 7444;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BB_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_BB_INFO {
+
+	ID = 41104;
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISION_MODEL
+#=======================================
+
+ENUM MSO_FLD_COMMISION_MODEL {
+
+	ID = 41135;
+	DESCR = "Commission Model";
+}
+
+
+#=======================================
+#  Field MSO_FLD_FUP_STATUS
+#=======================================
+
+INT MSO_FLD_FUP_STATUS {
+
+	ID = 46012;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ID
+#=======================================
+
+STRING MSO_FLD_ID {
+
+	ID = 42160;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IDLE_TIMEOUT
+#=======================================
+
+INT MSO_FLD_IDLE_TIMEOUT {
+
+	ID = 41145;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IS1CLICK_FLAG
+#=======================================
+
+ENUM MSO_FLD_IS1CLICK_FLAG {
+
+	ID = 41110;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ISTAL_FLAG
+#=======================================
+
+ENUM MSO_FLD_ISTAL_FLAG {
+
+	ID = 41109;
+}
+
+
+#=======================================
+#  Field MSO_FLD_MAC_ID
+#=======================================
+
+STRING MSO_FLD_MAC_ID {
+
+	ID = 42167;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_AMPLIFIER
+#=======================================
+
+STRING MSO_FLD_NETWORK_AMPLIFIER {
+
+	ID = 41108;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_ELEMENT
+#=======================================
+
+STRING MSO_FLD_NETWORK_ELEMENT {
+
+	ID = 41106;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_IP
+#=======================================
+
+STRING MSO_FLD_NETWORK_IP {
+
+	ID = 41107;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NTF_STATUS
+#=======================================
+
+INT MSO_FLD_NTF_STATUS {
+
+	ID = 42630;
+	DESCR = "Threshold notification status";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PASSWORD
+#=======================================
+
+STRING MSO_FLD_PASSWORD {
+
+	ID = 41146;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RENEW_T
+#=======================================
+
+TIMESTAMP MSO_FLD_RENEW_T {
+
+	ID = 42633;
+	DESCR = "Updating the activation,renew,change_plan dates";
+}
+
+
+#=======================================
+#  Field MSO_FLD_TECHNOLOGY
+#=======================================
+
+ENUM MSO_FLD_TECHNOLOGY {
+
+	ID = 41105;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_WHEN
+#=======================================
+
+INT PIN_FLD_BILL_WHEN {
+
+	ID = 131;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INDICATOR
+#=======================================
+
+INT PIN_FLD_INDICATOR {
+
+	ID = 958;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GSM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_GSM_INFO {
+
+	ID = 6412;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BEARER_SERVICE
+#=======================================
+
+STRING PIN_FLD_BEARER_SERVICE {
+
+	ID = 6400;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMEI
+#=======================================
+
+STRING PIN_FLD_IMEI {
+
+	ID = 3012;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILTER_DETAILS
+#=======================================
+
+ARRAY PIN_FLD_FILTER_DETAILS {
+
+	ID = 1577;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILTER_LIST
+#=======================================
+
+ARRAY PIN_FLD_FILTER_LIST {
+
+	ID = 1570;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUMBER
+#=======================================
+
+STRING PIN_FLD_NUMBER {
+
+	ID = 1573;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODE
+#=======================================
+
+ENUM PIN_FLD_MODE {
+
+	ID = 1576;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REDIRECT_LIST
+#=======================================
+
+ARRAY PIN_FLD_REDIRECT_LIST {
+
+	ID = 1571;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUMBER_IN
+#=======================================
+
+STRING PIN_FLD_NUMBER_IN {
+
+	ID = 1574;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUMBER_OUT
+#=======================================
+
+STRING PIN_FLD_NUMBER_OUT {
+
+	ID = 1575;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TELEPHONY
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_TELEPHONY {
+
+	ID = 1580;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COS
+#=======================================
+
+INT PIN_FLD_COS {
+
+	ID = 1579;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_ACTIVE_CALLS
+#=======================================
+
+ENUM PIN_FLD_MAX_ACTIVE_CALLS {
+
+	ID = 1578;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK
+#=======================================
+
+STRING PIN_FLD_NETWORK {
+
+	ID = 74;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QOS
+#=======================================
+
+ENUM PIN_FLD_QOS {
+
+	ID = 1564;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPEED_DIAL_LIST
+#=======================================
+
+ARRAY PIN_FLD_SPEED_DIAL_LIST {
+
+	ID = 1569;
+}
+
+
+#=======================================
+#  Storable Class /service
+#=======================================
+
+STORABLE CLASS /service {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Generic Service Object. A service object creates an identity for the account object to which it belongs. This identity can perform actions and use resources. There can be multiple service objects associated with an account. The billing is tracked to the service level. The service object can be extended to add additional service-specific information.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING PIN_FLD_AAC_ACCESS {
+
+		DESCR = "Automatic account creation field that indicates the access level specified when this service was created. This is a user-defined field to be used for marketing purposes.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_PACKAGE {
+
+		DESCR = "See PIN_FLD_AAC_PACKAGE in /account.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_PROMO_CODE {
+
+		DESCR = "See PIN_FLD_AAC_PROMO_CODE in /account.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_SERIAL_NUM {
+
+		DESCR = "See PIN_FLD_AAC_SERIAL_NUM in /account.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_SOURCE {
+
+		DESCR = "See PIN_FLD_AAC_SOURCE in /account.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_VENDOR {
+
+		DESCR = "See PIN_FLD_AAC_VENDOR in /account.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the account object to which this service belongs.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_ALIAS_LIST {
+
+		DESCR = "Alias List. List of aliases that also identify this user/service. The examples are Caller ID, or MAC address. The element-id is not significant. The name must be globally unique per service-type.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Associated alias name. This must be globally unique per service type.";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		DESCR = "Link to the balance_group for this service.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+		DESCR = "Date this service should be automatically closed. This field is used to schedule service closure in advance. A value of 0 means that this service is not designated to be closed automatically.";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Effective time of modification of this service on an external system.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ITEM_POID_LIST {
+
+		DESCR = "List of cumulative item poids - all currently active items for the account/service.";
+		ORDER = 0;
+		LENGTH = 4000;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LASTSTAT_CMNT {
+
+		DESCR = "Descriptive reason for the last status change to this service. This provides CSR a snapshot of why the status was changed.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_LAST_STATUS_T {
+
+		DESCR = "Timestamp of when the status of this service was last changed.";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_LIFECYCLE_STATE {
+
+		DESCR = "Lifecycle state of a service  See pin_cust.h for possible values.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LOGIN {
+
+		DESCR = "Login name associated with this service object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Name of this service object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+		DESCR = "If you have delayed batch events coming into Billing system  and you have configured the system to have a delay for the billing run, so that all the events for the current billing cycle are received, before the billing is actually run, in that case, this field will store the list of item poids for next cycle (given that the billing for the current cycle is not yet run). ";
+		ORDER = 0;
+		LENGTH = 4000;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		DESCR = "Stores the cache residency distinction value for an object instance. Possible values are DEFAULT(0), REALTIME(1) and BATCH(2).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PASSWD {
+
+		DESCR = "Password associated with this service object in encrypted or clear format. Typically, the encryption method is encoded as a prefix by the password encryption policies in the customer manager.";
+		ORDER = 0;
+		LENGTH = 1024;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 1;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_PASSWD_EXPIRATION_T {
+
+		DESCR = "The expiration time of the service password.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_PASSWD_STATUS {
+
+		DESCR = "Used to specify password states. The possible states are NORMAL (0), TEMPORARY (1), EXPIRES (2) and INVALID(3).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PROFILE_OBJ {
+
+		DESCR = "Link to another service object of the same type which contains common attributes that one or more services may use.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_SERVICE_ID {
+
+		DESCR = "User defined name for the service. The Pricing Tool relies on this name being unique across all services defined in the plan.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+		DESCR = "Expiration time of the service state.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of the service. Values are active (10100), inactive (10102) and closed (10103). Typically user access to services is blocked unless active (policy controlled).";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STATUS_FLAGS {
+
+		DESCR = "System and user-defined modifier flags to track the reasons for the service being inactive. See pin_cust.h for possible values.";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SUBSCRIPTION_OBJ {
+
+		DESCR = "Link to the subscription service object for this service.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_TRANSFER_LIST {
+
+		DESCR = "Optional Transfer list array. One array element is added every time a line/subscription is transferred from one account to a different account or when service is transferred from one bal_grpto another or when a balance_group is repointed fromone billinfo to another. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "Account object from which the Line/ Subscription/service/balance_group is transferred. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Balance_group object from which the / Service/balance_group is transferred. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			DESCR = "Billinfo from which bal_grp or service/  balance_group is transferred.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Timestamp of when the line/subscription/service/bal_grp was transferred.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ITEM_POID_LIST {
+
+			DESCR = "List of cumulative item poids for current cycle, moved from the transferred line/subscription. This is the Item Poid list moved from /service.ITEM_POID_LIST to Transfer List array each time a line/subscription/service/bal_grp is transferred.";
+			ORDER = 0;
+			LENGTH = 4000;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+			DESCR = "List of cumulative item poids for next cycle, moved from the transferred line/subscription/service/bal_grp. This is the Next Item Poid list moved from /service.NEXT_ITEM_POID_LIST to Transfer List array each time a line/subscription is transferred.";
+			ORDER = 0;
+			LENGTH = 4000;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "This field specifies whether this service is an optional (0) service or required (1) basic service.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/admin_client
+#=======================================
+
+STORABLE CLASS /service/admin_client {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Admin Client Service information. Used to authenticate various Infranet administration tool users connecting to the system. This class also lets you limit CSRs to certain types of activities by creating individual service objects for every CSR with different permissions. For example, you might want to allow only some of your CSRs to handle refunds. Permissions are currently enforced only by the Infranet Administrator application. Note: Some tasks can't be controlled by permissions. For example, any CSR account can change any account login. See the Administrator Help for a list of the tasks that can be assigned permissions.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+		DESCR = "Substruct containing login attempts and lock status info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_LOCK_STATUS {
+
+			LABEL = "LOCK_STATUS";
+			DESCR = "The status of the login service. If value is 1 Service locked, 0 - normal";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_LOGIN_ATTEMPTS {
+
+			LABEL = "LOGIN_ATTEMPTS";
+			DESCR = "The number of incorrect login attempts";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		DESCR = "Array of permissions (ACL like) information. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			DESCR = "Name of the action being restricted. Note that the Infranet Administrator GUI comes pre-built with the types of activities on which you set permissions. See the Infrant Administrator document.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MAXIMUM {
+
+			DESCR = "Upper bound for numeric values associated with the action. Applicable only for certain types of activities. For example, you can set the maximum amount of refund a CSR can give.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MINIMUM {
+
+			DESCR = "Lower  bound for numeric values associated with the action. Applicable only for certain types of activities. For example, you can set the minimum amount of refund a CSR can give.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Type/level of permission being granted. Possible values are NONE (0), READONLY (1), READWRITE (2), WRITEONLY (3).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_ROLE {
+
+		DESCR = "Array of application roles.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_APPLICATION {
+
+			DESCR = "The name of the application thepermissioning strings apply to. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			DESCR = "POID of the Role objectcontaining permissioning strings. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_ADMINCLIENT {
+
+		DESCR = "Substruct to hold data specific to the admin_client service.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "A short description about the role";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PROFILE {
+
+			DESCR = "This field is used to identify the /service/admin_client objects representing role. The default value for this should be set to NULL during account creation The value is set to 1 for /service/admin_client objects representing role.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BUF PIN_FLD_USER_PREFS {
+
+			DESCR = "User preference information for applications. Data is stored as ascii key-value pairs, seperated by equals symbols and terminated by a newline.  The data is significant only to the client application.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/broadband
+#=======================================
+
+STORABLE CLASS /service/broadband {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This service object provides a identity to a broadband user. Events associated with this service are typically aggregated to perform rating on cumulative usage. See /event/aggregation.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_IP_ADDRESSES {
+
+		DESCR = "Array of IP addresses associated with this service. Array element id is not significant. An IP address with host id equal to 0 refers to the whole network.  For example, 156.151.0.0 refers to the B class network with network id 156.151.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_IP_ADDRESS {
+
+			DESCR = "IP address string with a header which indicates the type of the IP address: header|address. For example, 'ip|156.151.10.10' or 'ipv6|FEDC:BA98:7654:3210:FEDC:BA98:7654:3210'.";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_BROADBAND {
+
+		DESCR = "Substruct holding miscellaneous information related to this service.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			DESCR = "Link to the event that holds the usage of the leaseline service for current billing period.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/catv
+#=======================================
+
+STORABLE CLASS /service/catv {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO Cable Service";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CATV_INFO {
+
+		DESCR = "Table to hold custom catv service provisioning information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			DESCR = "Agreemnt no";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_BOUQUET_ID {
+
+			DESCR = "Bearer technology for BB service";
+			ORDER = 0;
+			LENGTH = 200;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_CARF_RECEIVED {
+
+			DESCR = "Customer Requisition/Acquisition Form received\n0: not received\n1: received";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+			DESCR = "Unique CAS subscriber id received from provisioning system";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_LEGACY_AGR_NO {
+
+			DESCR = "Legacy agreement no";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			DESCR = "The network node under which the BB device is getting connected. MUM24Online:ANDHERIEAST1:Area1:street1";
+			ORDER = 0;
+			LENGTH = 200;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_REGION_KEY {
+
+			DESCR = "ZIP code to be populated in this";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			DESCR = "Sales man account poid to be stored in system for reference";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CONN_TYPE {
+
+			DESCR = "0-Main TV, 1- Additional TV";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+		DESCR = "For storing personal bit of  a customer";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			DESCR = "Personal bit parameter name like bit no";
+			ORDER = 0;
+			LENGTH = 200;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARAM_VALUE {
+
+			DESCR = "Bit value to set";
+			ORDER = 0;
+			LENGTH = 300;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/email
+#=======================================
+
+STORABLE CLASS /service/email {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Email service information for an email identity.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ALIASES {
+
+		DESCR = "SMTP aliases set up for this e-mail account.";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Associated alias name.";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_ATTRIBUTES {
+
+		DESCR = "Associated attributes that are specific to the mail transport agent.";
+		ORDER = 2;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Attribute name.";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Attribute value.";
+			ORDER = 1;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_EMAIL {
+
+		DESCR = "Substruct that holds the email specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		BINSTR PIN_FLD_MAIL_SERVER_ID {
+
+			DESCR = "Mail server ID.";
+			ORDER = 0;
+			LENGTH = 160;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_MBOX_SIZE {
+
+			DESCR = "Mailbox size (in bytes). 0 implies no limit.";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_MSG_CNT {
+
+			DESCR = "Maximum number of messages in the mailbox. 0 implies no limit.";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_MSG_SIZE {
+
+			DESCR = "Maximum size of a single message in bytes. 0 implies no limit.";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PATH {
+
+			DESCR = "Mailbox pathname.";
+			ORDER = 4;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/fax
+#=======================================
+
+STORABLE CLASS /service/fax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This service object provides an identity to a fax user. ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/ip
+#=======================================
+
+STORABLE CLASS /service/ip {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Provides dialup Internet access. Includes connection information, such as IP address and connection protocol.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		DESCR = "Terminal Server Protocol Extensions Array. List of (name, value) pairs which are used to set the IP session characteristics. Element id not significant.  Multiple entries with same name may be used if appropriate. See PCM_OP_TERM_POL_AUTHORIZE.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Extension name. For RADIUS, this name must match a name from the dictionary. e.g. Framed-IP-Netmask, Framed-MTU.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Extension value. Stringified version of the value for the corresponding extension name. e.g. for IP addrs this is in dotted decimal notation. For enumerated values, either enumerated name or decimal value may be used (e.g. PPP or 1 for Framed-Protocol)";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_IP {
+
+		DESCR = "Substruct to hold IP service specific information. Note that these entries are obsoleted by the PIN_FLD_ARGS array and are supported only for backward compatibility.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_COMPRESSION {
+
+			DESCR = "Compression option (for protocol). (Framed-Compression)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BINSTR PIN_FLD_IPADDR {
+
+			DESCR = "IP addres. Zero length means dynamically assigned.  (Framed-IP-Address)";
+			ORDER = 0;
+			LENGTH = 160;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PROTOCOL {
+
+			DESCR = "SLIP, PPP etc. (Framed-Protocol)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/ldap
+#=======================================
+
+STORABLE CLASS /service/ldap {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Ldap Service Object. Contains information necessary to be able to provide ldap service.When a ldap service is created the ldap login provided is used as the uid of the directory entry in the user mapping scheme";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/pcm_client
+#=======================================
+
+STORABLE CLASS /service/pcm_client {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Class used to provide identity to non-CSR applications connecting to Infranet. For example, applications like radiusd, the billing applications etc. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+		DESCR = "Substruct containing login attempts and lock status info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_LOCK_STATUS {
+
+			LABEL = "LOCK_STATUS";
+			DESCR = "The status of the login service. If value is 1 service locked, 0 - normal";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_LOGIN_ATTEMPTS {
+
+			LABEL = "LOGIN_ATTEMPTS";
+			DESCR = "The number of incorrect login attempts";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/provider
+#=======================================
+
+STORABLE CLASS /service/provider {
+
+	LABEL = "remittance definition";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Identity for an account acting as a supplier or vendor of various services or topics (ala pay-per-view). When others use these services, the ISP remits this account a fraction of the charges.Service for service providers (remittance calculation).";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROVIDER_TOPICS {
+
+		DESCR = "Array of topics. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_RATE_PER_AMOUNT {
+
+			DESCR = "Rate category to be used when remitting a percent of the amount to the vendor for every event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT {
+
+			DESCR = "Rate category to be used when remitting a fixed amount to the vendor for every event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TOPIC_NAME {
+
+			DESCR = "Topic name which is part of the events used for remittance calculation. The PIN_FLD_PROVIDER_DESCR field in the remittance related events contain value specified in this field.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/provider_prod
+#=======================================
+
+STORABLE CLASS /service/provider_prod {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Identity for an account acting as a supplier or vendor of various products. When others use these products, the ISP remits this account a fraction of the charges.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROVIDER_PRODUCTS {
+
+		DESCR = "Array of products supplied by the provider. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PROD_NAME {
+
+			DESCR = "Product name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_AMOUNT {
+
+			DESCR = "Rate category to be used when remitting a percent of the purchase amount to the vendor.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_AMOUNT_CYCLE {
+
+			DESCR = "Rate category to be used when remitting a percent of the cycle fees to the vendor for every event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT {
+
+			DESCR = "Rate category to be used when remitting a fixed amount to the vendor for every product purchase.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT_CYCLE {
+
+			DESCR = "Rate category to be used when remitting a fixed amount to the vendor for every cycle fees event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement
+#=======================================
+
+STORABLE CLASS /service/settlement {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Settlement Service Object. Use to settle roaming or inter carrier exchange";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service Roaming Settlement Object. Use to track the settlement info for the roaming partners";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/incollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/incollect {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service Roaming Settlement (Incollect) Object. Use to track the settlement info for the roaming partners (incollect usage)";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/outcollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/outcollect {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service Roaming Settlement (Outcollect) Object. Use to track the settlement info for the roaming partners (OutCollect usage)";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws
+#=======================================
+
+STORABLE CLASS /service/settlement/ws {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Wholesale Commission Settlement";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/dsa
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/dsa {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement DSA Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/dsa_commission
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/dsa_commission {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement DSA Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/incollect
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/incollect {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement Incollect Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/incollect/dtr
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/incollect/dtr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement Incollect Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/incollect/lco
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/incollect/lco {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement Incollect Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/outcollect
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/outcollect {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement Outcollect Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/outcollect/dtr
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/outcollect/dtr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement Outcollect Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/outcollect/lco
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/outcollect/lco {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement Outcollect Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/ssg
+#=======================================
+
+STORABLE CLASS /service/ssg {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "SSG Service Object. Contains information necessary to be able  to provide SSG service.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		DESCR = "Terminal Server Protocol Extensions Array. List of (name, value) pairs which are used to set the SSG session characteristics. Element id not significant.  Multiple entries with same name may be used if appropriate. See PCM_OP_TERM_POL_AUTHORIZE.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Extension name. For RADIUS, this name must match a name from the dictionary. e.g. Framed-IP-Netmask, Framed-MTU.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Extension value. Stringified version of the value for the corresponding extension name. e.g. for IP addrs this is in dotted decimal notation. For enumerated values, either enumerated name or decimal value may be used (e.g. PPP or 1 for Framed-Protocol)";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		DESCR = "Array of secondary services that are authorized by this SSG service.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "POID of the SSG secondary service";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/stream
+#=======================================
+
+STORABLE CLASS /service/stream {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This service object provides an identity to a streaming media service user. ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco
+#=======================================
+
+STORABLE CLASS /service/telco {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Contains generalized telco information.Information about a specific service is contained in substructs or arrays in subclasses of this class, such as /service/telco/gsm.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TELCO_FEATURES {
+
+		DESCR = "Array containing all features associated with this service object. A feature represents a  supplementary service.  Egs: Call Forwarding, Call Waiting.";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Feature name as described thru the provisioning tag mechanism.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Feature Provisioning Status. Values are: Processing, Failed, Complete";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		DESCR = "Substruct to hold telco service-specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_PRIMARY_NUMBER {
+
+			DESCR = "An indicator used to identify if this service contains the primary number.";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/broadband
+#=======================================
+
+STORABLE CLASS /service/telco/broadband {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_BB_INFO {
+
+		DESCR = "Broadband Provisioning information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			DESCR = "Agreemnt no";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_COMMISION_MODEL {
+
+			DESCR = "Commission Model.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_FUP_STATUS {
+
+			DESCR = "FUP Status. 0 - N/A, 1 - Within FUP Limit, 2 - Over FUP Limit";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_ID {
+
+			DESCR = "Network ID";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_IDLE_TIMEOUT {
+
+			DESCR = "Idle timeout.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_IS1CLICK_FLAG {
+
+			DESCR = "0-False, 1-True";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_ISTAL_FLAG {
+
+			DESCR = "0-Non TAL, 1-TAL\n";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_LEGACY_AGR_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_MAC_ID {
+
+			DESCR = "PC MAC address";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_AMPLIFIER {
+
+			DESCR = "Only For DOCSIS: amplifier";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_ELEMENT {
+
+			DESCR = "Network Element.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_IP {
+
+			DESCR = "Network IP.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			DESCR = "The network node under which the BB device is getting connected. MUM24Online:ANDHERIEAST1:Area1:street1";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_NTF_STATUS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PASSWORD {
+
+			DESCR = "Password";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_RENEW_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			DESCR = "Sales man account poid to be stored in system for reference";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_TECHNOLOGY {
+
+			DESCR = "1-DOCSIS 2.0, 2- DOCSIS 3.0, 3-ETHERNET, 4- FIBER, 5-WIRELESS";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_INDICATOR {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm
+#=======================================
+
+STORABLE CLASS /service/telco/gsm {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Base class for GSM services. This class includes fields for all GSM service configuration information, such as the MSISDN, and information about GSM supplementary services.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GSM_INFO {
+
+		DESCR = "Substruct to hold GSM service-specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BEARER_SERVICE {
+
+			DESCR = "This field holds the bearer service information.";
+			ORDER = 2;
+			LENGTH = 64;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMEI {
+
+			DESCR = "IMEI associated with user.";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/data {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Data Service Object. Contains information necessary to be able to provide GSM Data service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/fax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Fax Service Object. Contains information necessary to be able to provide GSM Fax service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service telco gsm Roaming Object. Use to track the roaming gsm service for roaming subscribers";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/sms {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Sms Service Object. Contains information necessary to be able to provide GSM Sms service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/telephony {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Telephony Service Object. Contains information necessary to be able to provide GSM Telephony service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telephony
+#=======================================
+
+STORABLE CLASS /service/telephony {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Provides telephony service. Contains call settings and network information.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		DESCR = "Terminal Server Protocol Extensions Array. List of (name, value) pairs which are used to set the Telephony session characteristics. Element id not significant. Multiple entries with same name may be used if appropriate. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Extension name. For RADIUS, this name must match a name from the dictionary. e.g. Framed-IP-Netmask, Framed-MTU.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Extension value. Stringified version of the value for the corresponding extension name. e.g. for IP addrs this is in dotted decimal notation. For enumerated values, either enumerated name or decimal value may be used (e.g. PPP or 1 for Framed-Protocol)";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_FILTER_DETAILS {
+
+		DESCR = "An array to hold the filter list and the filterlist mode";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_FILTER_LIST {
+
+			DESCR = "An array of either prefix or complete phonenumbers or IP addresses. The elements aresorted as alphanumeric strings.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NUMBER {
+
+				DESCR = "A prefix/complete phone number or  IP address.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM PIN_FLD_MODE {
+
+			DESCR = "The mode of PIN_FLD_FILTER_LIST.Values are PIN_IPT_MODE_UNDEFINED(0),PIN_IPT_MODE_ALLOW(1), andPIN_IPT_MODE_BLOCK(2).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_REDIRECT_LIST {
+
+		DESCR = "An array of phone numbers/IP addresses.  The elements are sorted as alphanumeric strings. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NUMBER_IN {
+
+			DESCR = "A prefix or complete phone number or  IP address.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NUMBER_OUT {
+
+			DESCR = "A complete phone number or IP address.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_TELEPHONY {
+
+		DESCR = "Substruct to hold telephony service specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COS {
+
+			DESCR = "Class of Service as in Basic, Enhanced, Premium expressed by a number ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_MAX_ACTIVE_CALLS {
+
+			DESCR = "Indicates the maximum number of simultaneous calls are allowed. 0 = no limit. Default = 1";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			DESCR = "The network name or site name.  The exact use of this field is determined by the service provider's policy code";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_QOS {
+
+			DESCR = "Quality of Service";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SPEED_DIAL_LIST {
+
+		DESCR = "An indexed array of phone numbers or IP address associated with speed dial digits. The speed  dial digits are used as the array element-id.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NUMBER {
+
+			DESCR = "A phone number or IP address associated  with this element-id";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/vpdn
+#=======================================
+
+STORABLE CLASS /service/vpdn {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "VPDN Service Object. This is designed for support of VPDN  solutions. This object is used to store certain attributes  that are needed to establish a VPDN session, like the  tunneling protocol and other information that the NAS  uses to set up a tunnel to the organization that the  user wants to connect to. This object is similar to the  /service/ip object and a VPDN solution can be implemented  using either one of these, but /service/vpdn is recommended  because this will allow the /service/ip storable object  to support the /account dialup function.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		DESCR = "Terminal Server Protocol Extensions Array. List of (name, value) pairs which are used to set the VPDN session characteristics. Element id not significant.  Multiple entries with same name may be used if appropriate. See PCM_OP_TERM_POL_AUTHORIZE.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Extension name. For RADIUS, this name must match a name from the dictionary. e.g. Framed-IP-Netmask, Framed-MTU.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Extension value. Stringified version of the value for the corresponding extension name. e.g. for IP addrs this is in dotted decimal notation. For enumerated values, either enumerated name or decimal value may be used (e.g. PPP or 1 for Framed-Protocol)";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_IP {
+
+		DESCR = "Substruct to hold IP service specific information. Note that these entries are obsoleted by the PIN_FLD_ARGS array and are supported only for backward compatibility.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_COMPRESSION {
+
+			DESCR = "Compression option (for protocol). (Framed-Compression)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BINSTR PIN_FLD_IPADDR {
+
+			DESCR = "IP addres. Zero length means dynamically assigned.  (Framed-IP-Address)";
+			ORDER = 0;
+			LENGTH = 160;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PROTOCOL {
+
+			DESCR = "SLIP, PPP etc. (Framed-Protocol)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service
+#=======================================
+
+STORABLE CLASS /service IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "service_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING PIN_FLD_AAC_ACCESS {
+
+		SQL_COLUMN = "aac_access";
+	}
+
+	STRING PIN_FLD_AAC_PACKAGE {
+
+		SQL_COLUMN = "aac_package";
+	}
+
+	STRING PIN_FLD_AAC_PROMO_CODE {
+
+		SQL_COLUMN = "aac_promo_code";
+	}
+
+	STRING PIN_FLD_AAC_SERIAL_NUM {
+
+		SQL_COLUMN = "aac_serial_num";
+	}
+
+	STRING PIN_FLD_AAC_SOURCE {
+
+		SQL_COLUMN = "aac_source";
+	}
+
+	STRING PIN_FLD_AAC_VENDOR {
+
+		SQL_COLUMN = "aac_vendor";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ARRAY PIN_FLD_ALIAS_LIST {
+
+		SQL_TABLE = "service_alias_list_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		SQL_COLUMN = "bal_grp_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+		SQL_COLUMN = "close_when_t";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	STRING PIN_FLD_ITEM_POID_LIST {
+
+		SQL_COLUMN = "item_poid_list";
+	}
+
+	STRING PIN_FLD_LASTSTAT_CMNT {
+
+		SQL_COLUMN = "laststat_cmnt";
+	}
+
+	TIMESTAMP PIN_FLD_LAST_STATUS_T {
+
+		SQL_COLUMN = "last_status_t";
+	}
+
+	INT PIN_FLD_LIFECYCLE_STATE {
+
+		SQL_COLUMN = "lifecycle_state";
+	}
+
+	STRING PIN_FLD_LOGIN {
+
+		SQL_COLUMN = "login";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+		SQL_COLUMN = "next_item_poid_list";
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		SQL_COLUMN = "object_cache_type";
+	}
+
+	STRING PIN_FLD_PASSWD {
+
+		SQL_COLUMN = "passwd";
+	}
+
+	TIMESTAMP PIN_FLD_PASSWD_EXPIRATION_T {
+
+		SQL_COLUMN = "passwd_expiration_t";
+	}
+
+	ENUM PIN_FLD_PASSWD_STATUS {
+
+		SQL_COLUMN = "passwd_status";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	POID PIN_FLD_PROFILE_OBJ {
+
+		SQL_COLUMN = "profile_obj";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_SERVICE_ID {
+
+		SQL_COLUMN = "service_id";
+	}
+
+	TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+		SQL_COLUMN = "state_expiration_t";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	INT PIN_FLD_STATUS_FLAGS {
+
+		SQL_COLUMN = "status_flags";
+	}
+
+	POID PIN_FLD_SUBSCRIPTION_OBJ {
+
+		SQL_COLUMN = "subscription_obj";
+	}
+
+	ARRAY PIN_FLD_TRANSFER_LIST {
+
+		SQL_TABLE = "service_transfer_list_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			SQL_COLUMN = "billinfo_obj";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_ITEM_POID_LIST {
+
+			SQL_COLUMN = "item_poid_list";
+		}
+
+		STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+			SQL_COLUMN = "next_item_poid_list";
+		}
+
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "type";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/admin_client
+#=======================================
+
+STORABLE CLASS /service/admin_client IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+		SQL_TABLE = "admsvc_lockinfo_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_LOCK_STATUS {
+
+			SQL_COLUMN = "lock_status";
+		}
+
+		INT PIN_FLD_LOGIN_ATTEMPTS {
+
+			SQL_COLUMN = "login_atmpts";
+		}
+
+	}
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		SQL_TABLE = "service_admin_permitteds_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			SQL_COLUMN = "action";
+		}
+
+		DECIMAL PIN_FLD_MAXIMUM {
+
+			SQL_COLUMN = "maximum";
+		}
+
+		DECIMAL PIN_FLD_MINIMUM {
+
+			SQL_COLUMN = "minimum";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+	ARRAY PIN_FLD_ROLE {
+
+		SQL_TABLE = "service_admin_role_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_APPLICATION {
+
+			SQL_COLUMN = "application";
+		}
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			SQL_COLUMN = "profile_obj";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_ADMINCLIENT {
+
+		SQL_TABLE = "service_adminclient_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "role_desc";
+		}
+
+		INT PIN_FLD_PROFILE {
+
+			SQL_COLUMN = "profile";
+		}
+
+		BUF PIN_FLD_USER_PREFS {
+
+			SQL_TABLE = "admin_client_user_prefs_buf";
+			SQL_COLUMN = "user_prefs";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/broadband
+#=======================================
+
+STORABLE CLASS /service/broadband IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_IP_ADDRESSES {
+
+		SQL_TABLE = "service_broadband_ipaddrs_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_IP_ADDRESS {
+
+			SQL_COLUMN = "ip_address";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_BROADBAND {
+
+		SQL_TABLE = "service_broadband_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			SQL_COLUMN = "event_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/catv
+#=======================================
+
+STORABLE CLASS /service/catv IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CATV_INFO {
+
+		SQL_TABLE = "service_catv_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		STRING MSO_FLD_BOUQUET_ID {
+
+			SQL_COLUMN = "bouquet_id";
+		}
+
+		ENUM MSO_FLD_CARF_RECEIVED {
+
+			SQL_COLUMN = "crf_flag";
+		}
+
+		STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+			SQL_COLUMN = "cas_subscriber_id";
+		}
+
+		STRING MSO_FLD_LEGACY_AGR_NO {
+
+			SQL_COLUMN = "legacy_agr_no";
+		}
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			SQL_COLUMN = "network_node";
+		}
+
+		STRING MSO_FLD_REGION_KEY {
+
+			SQL_COLUMN = "region_key";
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			SQL_COLUMN = "salesman_obj";
+		}
+
+		ENUM PIN_FLD_CONN_TYPE {
+
+			SQL_COLUMN = "conn_type";
+		}
+
+	}
+
+	ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+		SQL_TABLE = "mso_personal_bit_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			SQL_COLUMN = "param_name";
+		}
+
+		STRING PIN_FLD_PARAM_VALUE {
+
+			SQL_COLUMN = "param_value";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/email
+#=======================================
+
+STORABLE CLASS /service/email IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ALIASES {
+
+		SQL_TABLE = "service_email_aliases_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+	}
+
+	ARRAY PIN_FLD_ATTRIBUTES {
+
+		SQL_TABLE = "service_email_attributes_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_EMAIL {
+
+		SQL_TABLE = "service_email_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		BINSTR PIN_FLD_MAIL_SERVER_ID {
+
+			SQL_COLUMN = "mail_server_id";
+		}
+
+		INT PIN_FLD_MAX_MBOX_SIZE {
+
+			SQL_COLUMN = "max_mbox_size";
+		}
+
+		INT PIN_FLD_MAX_MSG_CNT {
+
+			SQL_COLUMN = "max_msg_cnt";
+		}
+
+		INT PIN_FLD_MAX_MSG_SIZE {
+
+			SQL_COLUMN = "max_msg_size";
+		}
+
+		STRING PIN_FLD_PATH {
+
+			SQL_COLUMN = "path";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/fax
+#=======================================
+
+STORABLE CLASS /service/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/ip
+#=======================================
+
+STORABLE CLASS /service/ip IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		SQL_TABLE = "service_ip_args_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_IP {
+
+		SQL_TABLE = "service_ip_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_COMPRESSION {
+
+			SQL_COLUMN = "compression";
+		}
+
+		BINSTR PIN_FLD_IPADDR {
+
+			SQL_COLUMN = "ipaddr";
+		}
+
+		ENUM PIN_FLD_PROTOCOL {
+
+			SQL_COLUMN = "protocol";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/ldap
+#=======================================
+
+STORABLE CLASS /service/ldap IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/pcm_client
+#=======================================
+
+STORABLE CLASS /service/pcm_client IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+		SQL_TABLE = "pcmsvc_lockinfo_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_LOCK_STATUS {
+
+			SQL_COLUMN = "lock_status";
+		}
+
+		INT PIN_FLD_LOGIN_ATTEMPTS {
+
+			SQL_COLUMN = "login_atmpts";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/provider
+#=======================================
+
+STORABLE CLASS /service/provider IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROVIDER_TOPICS {
+
+		SQL_TABLE = "service_provider_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_RATE_PER_AMOUNT {
+
+			SQL_COLUMN = "rate_per_amount";
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT {
+
+			SQL_COLUMN = "rate_per_event";
+		}
+
+		STRING PIN_FLD_TOPIC_NAME {
+
+			SQL_COLUMN = "topic_name";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/provider_prod
+#=======================================
+
+STORABLE CLASS /service/provider_prod IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROVIDER_PRODUCTS {
+
+		SQL_TABLE = "service_provider_products_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PROD_NAME {
+
+			SQL_COLUMN = "product_name";
+		}
+
+		STRING PIN_FLD_RATE_PER_AMOUNT {
+
+			SQL_COLUMN = "rate_per_amount";
+		}
+
+		STRING PIN_FLD_RATE_PER_AMOUNT_CYCLE {
+
+			SQL_COLUMN = "rate_per_amount_cycle";
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT {
+
+			SQL_COLUMN = "rate_per_event";
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT_CYCLE {
+
+			SQL_COLUMN = "rate_per_event_cycle";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement
+#=======================================
+
+STORABLE CLASS /service/settlement IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/incollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/incollect IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/outcollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/outcollect IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws
+#=======================================
+
+STORABLE CLASS /service/settlement/ws IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/dsa
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/dsa IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/dsa_commission
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/dsa_commission IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/incollect
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/incollect IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/incollect/dtr
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/incollect/dtr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/incollect/lco
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/incollect/lco IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/outcollect
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/outcollect IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/outcollect/dtr
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/outcollect/dtr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/outcollect/lco
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/outcollect/lco IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/ssg
+#=======================================
+
+STORABLE CLASS /service/ssg IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		SQL_TABLE = "service_ssg_args_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		SQL_TABLE = "service_ssg_services_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/stream
+#=======================================
+
+STORABLE CLASS /service/stream IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco
+#=======================================
+
+STORABLE CLASS /service/telco IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TELCO_FEATURES {
+
+		SQL_TABLE = "service_telco_features_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		SQL_TABLE = "service_telco_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_PRIMARY_NUMBER {
+
+			SQL_COLUMN = "primary_number";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/broadband
+#=======================================
+
+STORABLE CLASS /service/telco/broadband IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_BB_INFO {
+
+		SQL_TABLE = "service_bb_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		ENUM MSO_FLD_COMMISION_MODEL {
+
+			SQL_COLUMN = "commission_model";
+		}
+
+		INT MSO_FLD_FUP_STATUS {
+
+			SQL_COLUMN = "fup_status";
+		}
+
+		STRING MSO_FLD_ID {
+
+			SQL_COLUMN = "NETWORK_ID";
+		}
+
+		INT MSO_FLD_IDLE_TIMEOUT {
+
+			SQL_COLUMN = "idle_timeout";
+		}
+
+		ENUM MSO_FLD_IS1CLICK_FLAG {
+
+			SQL_COLUMN = "is1click_flag";
+		}
+
+		ENUM MSO_FLD_ISTAL_FLAG {
+
+			SQL_COLUMN = "tal_flag";
+		}
+
+		STRING MSO_FLD_LEGACY_AGR_NO {
+
+			SQL_COLUMN = "legacy_agr_no";
+		}
+
+		STRING MSO_FLD_MAC_ID {
+
+			SQL_COLUMN = "MAC_ID";
+		}
+
+		STRING MSO_FLD_NETWORK_AMPLIFIER {
+
+			SQL_COLUMN = "network_amplifier";
+		}
+
+		STRING MSO_FLD_NETWORK_ELEMENT {
+
+			SQL_COLUMN = "network_element";
+		}
+
+		STRING MSO_FLD_NETWORK_IP {
+
+			SQL_COLUMN = "network_ip";
+		}
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			SQL_COLUMN = "network_node";
+		}
+
+		INT MSO_FLD_NTF_STATUS {
+
+			SQL_COLUMN = "ntf_status";
+		}
+
+		STRING MSO_FLD_PASSWORD {
+
+			SQL_COLUMN = "password";
+		}
+
+		TIMESTAMP MSO_FLD_RENEW_T {
+
+			SQL_COLUMN = "renew_t";
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			SQL_COLUMN = "salesman_obj";
+		}
+
+		ENUM MSO_FLD_TECHNOLOGY {
+
+			SQL_COLUMN = "technology";
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			SQL_COLUMN = "bill_when";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		INT PIN_FLD_INDICATOR {
+
+			SQL_COLUMN = "indicator";
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			SQL_COLUMN = "start_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm
+#=======================================
+
+STORABLE CLASS /service/telco/gsm IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GSM_INFO {
+
+		SQL_TABLE = "service_telco_gsm_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BEARER_SERVICE {
+
+			SQL_COLUMN = "bearer_service";
+		}
+
+		STRING PIN_FLD_IMEI {
+
+			SQL_COLUMN = "imei";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/roaming IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telephony
+#=======================================
+
+STORABLE CLASS /service/telephony IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		SQL_TABLE = "service_tel_args_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	ARRAY PIN_FLD_FILTER_DETAILS {
+
+		SQL_TABLE = "service_tel_filter_details_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_FILTER_LIST {
+
+			SQL_TABLE = "service_tel_filter_list_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NUMBER {
+
+				SQL_COLUMN = "filter_number";
+			}
+
+		}
+
+		ENUM PIN_FLD_MODE {
+
+			SQL_COLUMN = "filter_mode";
+		}
+
+	}
+
+	ARRAY PIN_FLD_REDIRECT_LIST {
+
+		SQL_TABLE = "service_tel_redirect_list_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NUMBER_IN {
+
+			SQL_COLUMN = "number_in";
+		}
+
+		STRING PIN_FLD_NUMBER_OUT {
+
+			SQL_COLUMN = "number_out";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_TELEPHONY {
+
+		SQL_TABLE = "service_telephony_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COS {
+
+			SQL_COLUMN = "cos";
+		}
+
+		ENUM PIN_FLD_MAX_ACTIVE_CALLS {
+
+			SQL_COLUMN = "max_active_calls";
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			SQL_COLUMN = "network";
+		}
+
+		ENUM PIN_FLD_QOS {
+
+			SQL_COLUMN = "qos";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SPEED_DIAL_LIST {
+
+		SQL_TABLE = "service_tel_speed_dial_list_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NUMBER {
+
+			SQL_COLUMN = "dial_number";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/vpdn
+#=======================================
+
+STORABLE CLASS /service/vpdn IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		SQL_TABLE = "service_vpdn_args_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_IP {
+
+		SQL_TABLE = "service_vpdn_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_COMPRESSION {
+
+			SQL_COLUMN = "compression";
+		}
+
+		BINSTR PIN_FLD_IPADDR {
+
+			SQL_COLUMN = "ipaddr";
+		}
+
+		ENUM PIN_FLD_PROTOCOL {
+
+			SQL_COLUMN = "protocol";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,95 @@
+
+#=======================================
+#  Field PIN_FLD_LOCALES
+#=======================================
+
+ARRAY PIN_FLD_LOCALES {
+
+	ID = 124;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE
+#=======================================
+
+STRING PIN_FLD_LOCALE {
+
+	ID = 109;
+}
+
+
+#=======================================
+#  Storable Class /event/customer/locale
+#=======================================
+
+STORABLE CLASS /event/customer/locale {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the locale information for accounts. This event is created by PCM_OP_CUST_SET_LOCALE opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOCALES {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LOCALE {
+
+			DESCR = "Same as PIN_FLD_LOCALE in /account.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/locale
+#=======================================
+
+STORABLE CLASS /event/customer/locale IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOCALES {
+
+		SQL_TABLE = "event_customer_locale_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LOCALE {
+
+			SQL_COLUMN = "locale";
+		}
+
+	}
+
+}
+

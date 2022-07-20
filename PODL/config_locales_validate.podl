@@ -1,0 +1,186 @@
+
+#=======================================
+#  Field PIN_FLD_LOCALES
+#=======================================
+
+ARRAY PIN_FLD_LOCALES {
+
+	ID = 124;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALIDATION_SPECIFICS
+#=======================================
+
+ARRAY PIN_FLD_VALIDATION_SPECIFICS {
+
+	ID = 897;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Storable Class /config/locales_validate
+#=======================================
+
+STORABLE CLASS /config/locales_validate {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to validate input in customer manager policies. This object lists on a per-country basis, the validation categories for various fields. The validation category is the name of the /config/fld_validate object that lists the various validation criteria. A pre-defined set of mappings provided in init_objects.source file is used when installing Infranet. For example, this object might specify that for country 'USA', the validation category for 'PIN_FLD_STATE' is 'USA_STATE'. The actual list of acceptable state names is specified by the /config/fld_validate object with PIN_FLD_NAME set to 'USA_STATE'.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOCALES {
+
+		DESCR = "Array of information specific to various countries. Array element id is not significant. There can be only element for a given country.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_COUNTRY {
+
+			LABEL = "Country";
+			DESCR = "The case-insensitive country name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_VALIDATION_SPECIFICS {
+
+			DESCR = "Array of validation information specific to one country on various fields. Array element id is not significant. There can be only one element for a given field.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				LABEL = "Field name";
+				DESCR = "The actual field name as seen by the policy input. For example, 'PIN_FLD_STATE'.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_NAME {
+
+				LABEL = "Field Validation Name";
+				DESCR = "The validation category for the field. There should be a /config/fld_validate object with that name. For example, 'USA_STATE'.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/locales_validate
+#=======================================
+
+STORABLE CLASS /config/locales_validate IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOCALES {
+
+		SQL_TABLE = "config_locales_validate_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		ARRAY PIN_FLD_VALIDATION_SPECIFICS {
+
+			SQL_TABLE = "config_locales_valid_spec_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				SQL_COLUMN = "fld_name";
+			}
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "cfg_name";
+			}
+
+		}
+
+	}
+
+}
+

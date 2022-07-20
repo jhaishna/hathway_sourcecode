@@ -1,0 +1,352 @@
+
+#=======================================
+#  Field PIN_FLD_USAGE_MAP
+#=======================================
+
+ARRAY PIN_FLD_USAGE_MAP {
+
+	ID = 2210;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INCR_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_INCR_QUANTITY {
+
+	ID = 2207;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INCR_UNIT
+#=======================================
+
+ENUM PIN_FLD_INCR_UNIT {
+
+	ID = 2208;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIN_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_MIN_QUANTITY {
+
+	ID = 2205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIN_UNIT
+#=======================================
+
+ENUM PIN_FLD_MIN_UNIT {
+
+	ID = 2206;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PLAN_NAME
+#=======================================
+
+STRING PIN_FLD_RATE_PLAN_NAME {
+
+	ID = 2212;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROUNDING_MODE
+#=======================================
+
+ENUM PIN_FLD_ROUNDING_MODE {
+
+	ID = 1627;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RUM_NAME
+#=======================================
+
+STRING PIN_FLD_RUM_NAME {
+
+	ID = 2211;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TIMEZONE_MODE
+#=======================================
+
+ENUM PIN_FLD_TIMEZONE_MODE {
+
+	ID = 2204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOD_MODE
+#=======================================
+
+ENUM PIN_FLD_TOD_MODE {
+
+	ID = 2203;
+}
+
+
+#=======================================
+#  Storable Class /config/usage_map
+#=======================================
+
+STORABLE CLASS /config/usage_map {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Abstract config object used for usage_map configuration for events. See also /config/usage_map/system. This class is for sub-typing only. If a customer requires additional usage_maps for events, for example, a brand-level usage_map, create a custom /config/usage_map/brand storable class. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_USAGE_MAP {
+
+		DESCR = "Array of entries defining how rating should be performed for different events.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "Type of event that this entry specifies rating for. Unique within usage map. Subtypes are implicitly included.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_INCR_QUANTITY {
+
+			DESCR = "Incremental value to round RUM Quantity to. RUM Quantity is always rounded to an integral multiple of the Incr Quantity.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_INCR_UNIT {
+
+			DESCR = "Units that INCR_QUANTITY is specified in.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MIN_QUANTITY {
+
+			DESCR = "Minimum value that the RUM quantity is rounded to. Value smaller than min_quantity is rounded to min_quantity.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_MIN_UNIT {
+
+			DESCR = "Unit min_quantity is expressed in. Value can be NONE(0), SECOND(1), MINUTE(2), HOUR(3), or DAY(4)";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PLAN_NAME {
+
+			DESCR = "Optional rate plan name. If the name is not NULL, we use it for this event type. Otherwise, we use the rate_plan_selector to find a rate plan.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_ROUNDING_MODE {
+
+			DESCR = "Specifies how RUM quantity is rounded. Value can be UP(0), Down(1), or Nearest(2).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RUM_NAME {
+
+			DESCR = "Specifies which RUM should be used to rate this event type. Must be a defined Candidate RUM for this event type.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TIMEZONE_MODE {
+
+			DESCR = "Timezone mode defines which timezone to use when apply TOD rates. Value can be EVENT(0), SERVER(1), or ACCOUNT(2)";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TOD_MODE {
+
+			DESCR = "TOD mode defines how TOD rates are applied to the event. Value can be START_TIME(0), END_TIME(1), or TIMED(2)";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/usage_map/system
+#=======================================
+
+STORABLE CLASS /config/usage_map/system {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Abstract class to indicate config object that stores usage maps for system events.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/usage_map
+#=======================================
+
+STORABLE CLASS /config/usage_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_USAGE_MAP {
+
+		SQL_TABLE = "config_usage_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		DECIMAL PIN_FLD_INCR_QUANTITY {
+
+			SQL_COLUMN = "incr_quantity";
+		}
+
+		ENUM PIN_FLD_INCR_UNIT {
+
+			SQL_COLUMN = "incr_unit";
+		}
+
+		DECIMAL PIN_FLD_MIN_QUANTITY {
+
+			SQL_COLUMN = "min_quantity";
+		}
+
+		ENUM PIN_FLD_MIN_UNIT {
+
+			SQL_COLUMN = "min_unit";
+		}
+
+		STRING PIN_FLD_RATE_PLAN_NAME {
+
+			SQL_COLUMN = "rate_plan_name";
+		}
+
+		ENUM PIN_FLD_ROUNDING_MODE {
+
+			SQL_COLUMN = "rounding_mode";
+		}
+
+		STRING PIN_FLD_RUM_NAME {
+
+			SQL_COLUMN = "rum_name";
+		}
+
+		ENUM PIN_FLD_TIMEZONE_MODE {
+
+			SQL_COLUMN = "timezone_mode";
+		}
+
+		ENUM PIN_FLD_TOD_MODE {
+
+			SQL_COLUMN = "tod_mode";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/usage_map/system
+#=======================================
+
+STORABLE CLASS /config/usage_map/system IMPLEMENTATION ORACLE7 {
+
+}
+

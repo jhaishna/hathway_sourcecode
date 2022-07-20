@@ -1,0 +1,284 @@
+
+#=======================================
+#  Field PIN_FLD_CC_INFO
+#=======================================
+
+ARRAY PIN_FLD_CC_INFO {
+
+	ID = 142;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_EXP
+#=======================================
+
+STRING PIN_FLD_DEBIT_EXP {
+
+	ID = 130;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_NUM
+#=======================================
+
+STRING PIN_FLD_DEBIT_NUM {
+
+	ID = 129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/validate/cc
+#=======================================
+
+STORABLE CLASS /event/billing/validate/cc {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created on a credit card specific billing validation operation.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		DESCR = "Array of validation details. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Same as PIN_FLD_ADDRESS in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "Same as PIN_FLD_CITY in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Same as PIN_FLD_COUNTRY in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_EXP {
+
+			DESCR = "Same as PIN_FLD_DEBIT_EXP in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			DESCR = "Same as PIN_FLD_DEBIT_NUM in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Same as PIN_FLD_NAME in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "Same as PIN_FLD_STATE in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Same as PIN_FLD_ZIP in /payinfo/cc.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/validate/cc
+#=======================================
+
+STORABLE CLASS /event/billing/validate/cc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		SQL_TABLE = "event_billing_valid_cc_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_DEBIT_EXP {
+
+			SQL_COLUMN = "debit_exp";
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+

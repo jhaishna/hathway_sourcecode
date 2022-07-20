@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/ordered_balgrp/delete
+#=======================================
+
+STORABLE CLASS /event/billing/ordered_balgrp/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /ordered_balgrp object for an account/service is modified. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/ordered_balgrp/delete
+#=======================================
+
+STORABLE CLASS /event/billing/ordered_balgrp/delete IMPLEMENTATION ORACLE7 {
+
+}
+

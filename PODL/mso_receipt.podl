@@ -1,0 +1,1000 @@
+
+#=======================================
+#  Field MSO_FLD_GSTIN
+#=======================================
+
+STRING MSO_FLD_GSTIN {
+
+	ID = 42645;
+	DESCR = "GSTIN Number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PP_TYPE
+#=======================================
+
+ENUM MSO_FLD_PP_TYPE {
+
+	ID = 40053;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PYMT_CHANNEL
+#=======================================
+
+ENUM MSO_FLD_PYMT_CHANNEL {
+
+	ID = 43057;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SERVICE_TYPE
+#=======================================
+
+ENUM MSO_FLD_SERVICE_TYPE {
+
+	ID = 43058;
+	DESCR = "Service Type (0-BB, 1-CATV)";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+	ID = 932;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_CODE
+#=======================================
+
+STRING PIN_FLD_BANK_CODE {
+
+	ID = 930;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_NAME
+#=======================================
+
+STRING PIN_FLD_BANK_NAME {
+
+	ID = 1061;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BRANCH_NO
+#=======================================
+
+STRING PIN_FLD_BRANCH_NO {
+
+	ID = 1055;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHANNEL
+#=======================================
+
+STRING PIN_FLD_CHANNEL {
+
+	ID = 6006;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHECK_NO
+#=======================================
+
+STRING PIN_FLD_CHECK_NO {
+
+	ID = 931;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IP_ADDRESS
+#=======================================
+
+STRING PIN_FLD_IP_ADDRESS {
+
+	ID = 1653;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPE
+#=======================================
+
+ENUM PIN_FLD_PAY_TYPE {
+
+	ID = 7852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECEIPT_NO
+#=======================================
+
+STRING PIN_FLD_RECEIPT_NO {
+
+	ID = 929;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REFERENCE_ID
+#=======================================
+
+STRING PIN_FLD_REFERENCE_ID {
+
+	ID = 6302;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UNAPPLIED_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_UNAPPLIED_AMOUNT {
+
+	ID = 2412;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_receipt
+#=======================================
+
+STORABLE CLASS /mso_receipt {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO Receipt";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_GSTIN {
+
+		DESCR = "GSTIN Number";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_PP_TYPE {
+
+		DESCR = "0-Hathway Primary LCO\n1-NON Hathway Secondary LCO";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_PYMT_CHANNEL {
+
+		DESCR = "0:OAP CSR, 1:OAP Selfcare, 2:UPASS, 3:LCO BULK, 4:eSeva, 5:BillDesk, 6:IVR, 7:Batch CC, 8:Batch DD or SI";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_SERVICE_TYPE {
+
+		DESCR = "Service Type (0-BB, 1-CATV)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		DESCR = "account_no";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ADDRESS {
+
+		DESCR = "Full Address";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		DESCR = "Amount Paid";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+		DESCR = "Bank Account Number of Customer";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BANK_CODE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BANK_NAME {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BRANCH_NO {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CHANNEL {
+
+		DESCR = "payment channel or mode how the payment happened.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CHECK_NO {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Description";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "To Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "Flag to indicate whether the payment is reversed or not (1 - Reversed, 0 - NotReversed)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_IP_ADDRESS {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Full Name";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_PAY_TYPE {
+
+		DESCR = "Pay Type [10011 - Cash, 10012 - Check, 10013 - Online]";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		DESCR = "Program Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_RECEIPT_NO {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_REFERENCE_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "From Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status(0-Unprocessed, 1 - Processed)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STATUS_FLAGS {
+
+		DESCR = "Flag for migrated data. 1-Migrated, Null/0 - Not Migrated";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "(0 - Software, 1 - Hardware)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_UNAPPLIED_AMOUNT {
+
+		DESCR = "This Field is used for unapplied ageing amount only here.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "User, who posted the payments";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_receipt
+#=======================================
+
+STORABLE CLASS /mso_receipt IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_receipt_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_GSTIN {
+
+		SQL_COLUMN = "gstin";
+	}
+
+	ENUM MSO_FLD_PP_TYPE {
+
+		SQL_COLUMN = "pp_type";
+	}
+
+	ENUM MSO_FLD_PYMT_CHANNEL {
+
+		SQL_COLUMN = "pymt_channel";
+	}
+
+	ENUM MSO_FLD_SERVICE_TYPE {
+
+		SQL_COLUMN = "srvc_type";
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		SQL_COLUMN = "acct_no";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_ADDRESS {
+
+		SQL_COLUMN = "address";
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		SQL_COLUMN = "amt";
+	}
+
+	STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+		SQL_COLUMN = "bank_acc_no";
+	}
+
+	STRING PIN_FLD_BANK_CODE {
+
+		SQL_COLUMN = "bank_code";
+	}
+
+	STRING PIN_FLD_BANK_NAME {
+
+		SQL_COLUMN = "bank_name";
+	}
+
+	STRING PIN_FLD_BRANCH_NO {
+
+		SQL_COLUMN = "branch_name";
+	}
+
+	STRING PIN_FLD_CHANNEL {
+
+		SQL_COLUMN = "payment_mode";
+	}
+
+	STRING PIN_FLD_CHECK_NO {
+
+		SQL_COLUMN = "check_no";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "pymt_coll_t";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "to_date";
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		SQL_COLUMN = "event_obj";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "is_reversed";
+	}
+
+	STRING PIN_FLD_IP_ADDRESS {
+
+		SQL_COLUMN = "gateway";
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		SQL_COLUMN = "item_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	ENUM PIN_FLD_PAY_TYPE {
+
+		SQL_COLUMN = "pay_type";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "pgm_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_RECEIPT_NO {
+
+		SQL_COLUMN = "receipt_no";
+	}
+
+	STRING PIN_FLD_REFERENCE_ID {
+
+		SQL_COLUMN = "sp_code";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "from_date";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	INT PIN_FLD_STATUS_FLAGS {
+
+		SQL_COLUMN = "is_migrated";
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "coll_type";
+	}
+
+	DECIMAL PIN_FLD_UNAPPLIED_AMOUNT {
+
+		SQL_COLUMN = "unapplied_ageing_amount";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "user_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+

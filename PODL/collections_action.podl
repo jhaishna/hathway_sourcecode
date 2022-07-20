@@ -1,0 +1,1075 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_MODE
+#=======================================
+
+ENUM PIN_FLD_ACTION_MODE {
+
+	ID = 7737;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AGENT_OBJ
+#=======================================
+
+POID PIN_FLD_AGENT_OBJ {
+
+	ID = 7721;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMPLETED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_COMPLETED_T {
+
+	ID = 7722;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONFIG_ACTION_OBJ
+#=======================================
+
+POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+	ID = 7718;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_DUE_T {
+
+	ID = 798;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCENARIO_OBJ
+#=======================================
+
+POID PIN_FLD_SCENARIO_OBJ {
+
+	ID = 7700;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCHEDULE_OBJ
+#=======================================
+
+POID PIN_FLD_SCHEDULE_OBJ {
+
+	ID = 7720;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TARGET_ACTION
+#=======================================
+
+ENUM PIN_FLD_TARGET_ACTION {
+
+	ID = 7749;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENT
+#=======================================
+
+SUBSTRUCT PIN_FLD_PAYMENT {
+
+	ID = 899;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PAYINFO_OBJ {
+
+	ID = 901;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUNNING_INFO
+#=======================================
+
+ARRAY PIN_FLD_DUNNING_INFO {
+
+	ID = 7727;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_STATUS
+#=======================================
+
+ENUM PIN_FLD_DELIVERY_STATUS {
+
+	ID = 7702;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUNNING_DATA
+#=======================================
+
+BUF PIN_FLD_DUNNING_DATA {
+
+	ID = 7728;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMINDER_INFO
+#=======================================
+
+ARRAY PIN_FLD_REMINDER_INFO {
+
+	ID = 7726;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MESSAGE_OBJ
+#=======================================
+
+POID PIN_FLD_MESSAGE_OBJ {
+
+	ID = 7703;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROMISE_TO_PAY_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+	ID = 7740;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Storable Class /collections_action
+#=======================================
+
+STORABLE CLASS /collections_action {
+
+	SEQ_START = "2000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Defines an instance of a collections action. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the /account object. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_ACTION_MODE {
+
+		DESCR = "This value indicates whether the respective action must be executed, in case, if, billinfo enters the collections after the action execution date. PIN_ACTION_MUST_EXECUTE (0) This action will be executed in any case. PIN_ACTION_OPTIONAL_EXECUTE (1) This actions will be executed only if execution date is not passed. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_AGENT_OBJ {
+
+		DESCR = "Link to an special /account object, which denotes a collection agent. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		DESCR = "Link to the /billinfo object. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_COMPLETED_T {
+
+		DESCR = "Actual date when this action is completed. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+		DESCR = "Action poid linked to /config/collections/action object.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_DUE_T {
+
+		DESCR = "Due date for this action to be completed. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SCENARIO_OBJ {
+
+		DESCR = "Link to the /collections_scenario object. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SCHEDULE_OBJ {
+
+		DESCR = "Link to the /schedule object. Used when the action is a system action";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of the action. Values are PENDING (0), CANCELLED (1), COMPLETED (2), ERROR (3) and NO_EXECUTE (4). ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TARGET_ACTION {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/close_billinfo
+#=======================================
+
+STORABLE CLASS /collections_action/close_billinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store close billinfo information This object is created when close billinfo action is scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/collect_payment
+#=======================================
+
+STORABLE CLASS /collections_action/collect_payment {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store additional information for collect_payment action. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PAYMENT {
+
+		DESCR = "Substructure to hold collect payment action info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Amount to be paid. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			DESCR = "Link to the /payinfo/cc or /payinfo/dd object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/dunning_letter
+#=======================================
+
+STORABLE CLASS /collections_action/dunning_letter {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store additional information for dunning_letter action ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DUNNING_INFO {
+
+		DESCR = "To save the dunning letter data and status. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DELIVERY_STATUS {
+
+			DESCR = "Has the dunning letter been sent? Valid values are 0 - not sent and 1 - sent. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BUF PIN_FLD_DUNNING_DATA {
+
+			DESCR = "Hold the dunning data to be used to generate a real dunning letter.  It is in XML format.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/finance_charge
+#=======================================
+
+STORABLE CLASS /collections_action/finance_charge {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store finance charge information This object is created when finance charge action is scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/inactivate_billinfo
+#=======================================
+
+STORABLE CLASS /collections_action/inactivate_billinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store inactivate billinfo actioninformation.This object is created when inactivate billinfo actionis scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/invoice_reminder
+#=======================================
+
+STORABLE CLASS /collections_action/invoice_reminder {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store additional information for invoice_reminder action ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_REMINDER_INFO {
+
+		DESCR = "Additional info for invoice reminder action. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_MESSAGE_OBJ {
+
+			DESCR = "Link to the /message object, which holds the actual invoice reminder message. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/late_fee
+#=======================================
+
+STORABLE CLASS /collections_action/late_fee {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store latefee information This object is created when late fee action is scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/manual_action
+#=======================================
+
+STORABLE CLASS /collections_action/manual_action {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store manual action information This object is created when manual action is scheduled for abillinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/policy_action
+#=======================================
+
+STORABLE CLASS /collections_action/policy_action {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of/collections_action to store policy action information This object is created when policy action is scheduled for abillinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/promise_to_pay
+#=======================================
+
+STORABLE CLASS /collections_action/promise_to_pay {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store additional information for promise_to_pay action. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+		DESCR = "Substructure to hold promise to pay action info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Amount to be paid in this milestone. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			DESCR = "Link to collections activity event object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			DESCR = "Link to the /payinfo/cc or /payinfo/dd object. If NULL only validation is done, otherwise the promised amount is auto-collected. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/refer_to_outside_agency
+#=======================================
+
+STORABLE CLASS /collections_action/refer_to_outside_agency {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store refer outside agencyinformation.This object is created when refer to outside agencyaction is scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/writeoff_billinfo
+#=======================================
+
+STORABLE CLASS /collections_action/writeoff_billinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store writeoff billinfo information This object is created when writeoff billinfo action is scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action
+#=======================================
+
+STORABLE CLASS /collections_action IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "collections_action_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ENUM PIN_FLD_ACTION_MODE {
+
+		SQL_COLUMN = "action_mode";
+	}
+
+	POID PIN_FLD_AGENT_OBJ {
+
+		SQL_COLUMN = "agent_obj";
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		SQL_COLUMN = "billinfo_obj";
+	}
+
+	TIMESTAMP PIN_FLD_COMPLETED_T {
+
+		SQL_COLUMN = "completed_t";
+	}
+
+	POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+		SQL_COLUMN = "config_action_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_DUE_T {
+
+		SQL_COLUMN = "due_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SCENARIO_OBJ {
+
+		SQL_COLUMN = "scenario_obj";
+	}
+
+	POID PIN_FLD_SCHEDULE_OBJ {
+
+		SQL_COLUMN = "schedule_obj";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	ENUM PIN_FLD_TARGET_ACTION {
+
+		SQL_COLUMN = "target_action";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/close_billinfo
+#=======================================
+
+STORABLE CLASS /collections_action/close_billinfo IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/collect_payment
+#=======================================
+
+STORABLE CLASS /collections_action/collect_payment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PAYMENT {
+
+		SQL_TABLE = "collections_collect_payment_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			SQL_COLUMN = "payinfo_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/dunning_letter
+#=======================================
+
+STORABLE CLASS /collections_action/dunning_letter IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DUNNING_INFO {
+
+		SQL_TABLE = "collections_dunning_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DELIVERY_STATUS {
+
+			SQL_COLUMN = "delivery_status";
+		}
+
+		BUF PIN_FLD_DUNNING_DATA {
+
+			SQL_TABLE = "collections_dunning_buf_t";
+			SQL_COLUMN = "dunning_data";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/finance_charge
+#=======================================
+
+STORABLE CLASS /collections_action/finance_charge IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/inactivate_billinfo
+#=======================================
+
+STORABLE CLASS /collections_action/inactivate_billinfo IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/invoice_reminder
+#=======================================
+
+STORABLE CLASS /collections_action/invoice_reminder IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_REMINDER_INFO {
+
+		SQL_TABLE = "collections_inv_reminder_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_MESSAGE_OBJ {
+
+			SQL_COLUMN = "message_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/late_fee
+#=======================================
+
+STORABLE CLASS /collections_action/late_fee IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/manual_action
+#=======================================
+
+STORABLE CLASS /collections_action/manual_action IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/policy_action
+#=======================================
+
+STORABLE CLASS /collections_action/policy_action IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/promise_to_pay
+#=======================================
+
+STORABLE CLASS /collections_action/promise_to_pay IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+		SQL_TABLE = "collections_promise_to_pay_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			SQL_COLUMN = "event_obj";
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			SQL_COLUMN = "payinfo_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/refer_to_outside_agency
+#=======================================
+
+STORABLE CLASS /collections_action/refer_to_outside_agency IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/writeoff_billinfo
+#=======================================
+
+STORABLE CLASS /collections_action/writeoff_billinfo IMPLEMENTATION ORACLE7 {
+
+}
+

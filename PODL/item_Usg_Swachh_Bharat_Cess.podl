@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/Usg_Swachh_Bharat_Cess
+#=======================================
+
+STORABLE CLASS /item/Usg_Swachh_Bharat_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Usage Swachh Bharat Cess.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Usg_Swachh_Bharat_Cess
+#=======================================
+
+STORABLE CLASS /item/Usg_Swachh_Bharat_Cess IMPLEMENTATION ORACLE7 {
+
+}
+

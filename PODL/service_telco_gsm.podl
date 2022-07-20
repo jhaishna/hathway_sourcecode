@@ -1,0 +1,231 @@
+
+#=======================================
+#  Field PIN_FLD_GSM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_GSM_INFO {
+
+	ID = 6412;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BEARER_SERVICE
+#=======================================
+
+STRING PIN_FLD_BEARER_SERVICE {
+
+	ID = 6400;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMEI
+#=======================================
+
+STRING PIN_FLD_IMEI {
+
+	ID = 3012;
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm
+#=======================================
+
+STORABLE CLASS /service/telco/gsm {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Base class for GSM services. This class includes fields for all GSM service configuration information, such as the MSISDN, and information about GSM supplementary services.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GSM_INFO {
+
+		DESCR = "Substruct to hold GSM service-specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BEARER_SERVICE {
+
+			DESCR = "This field holds the bearer service information.";
+			ORDER = 2;
+			LENGTH = 64;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMEI {
+
+			DESCR = "IMEI associated with user.";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/data {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Data Service Object. Contains information necessary to be able to provide GSM Data service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/fax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Fax Service Object. Contains information necessary to be able to provide GSM Fax service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service telco gsm Roaming Object. Use to track the roaming gsm service for roaming subscribers";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/sms {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Sms Service Object. Contains information necessary to be able to provide GSM Sms service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/telephony {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Telco GSM Telephony Service Object. Contains information necessary to be able to provide GSM Telephony service.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm
+#=======================================
+
+STORABLE CLASS /service/telco/gsm IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GSM_INFO {
+
+		SQL_TABLE = "service_telco_gsm_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BEARER_SERVICE {
+
+			SQL_COLUMN = "bearer_service";
+		}
+
+		STRING PIN_FLD_IMEI {
+
+			SQL_COLUMN = "imei";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/roaming IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,267 @@
+
+#=======================================
+#  Field MSO_FLD_SERVICE_TERMINATE
+#=======================================
+
+ARRAY MSO_FLD_SERVICE_TERMINATE {
+
+	ID = 41160;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}	
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/terminate_service
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/terminate_service {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_SERVICE_TERMINATE {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CODE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+		
+		STRING PIN_FLD_TYPE_STR {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+		
+		STRING PIN_FLD_VALUE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			ORDER = 0;
+			LENGTH = 120;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/terminate_service
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/terminate_service IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_SERVICE_TERMINATE {
+
+		SQL_TABLE = "mso_evt_lc_service_terminate_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		STRING PIN_FLD_CODE {
+
+			SQL_COLUMN = "code";
+		}
+		
+		STRING PIN_FLD_TYPE_STR {
+
+			SQL_COLUMN = "term_res_type";
+		}
+		
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "term_res_subtype";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "description";
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			SQL_COLUMN = "plan_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cmts_change
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cmts_change {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk cmts change class type";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cmts_change
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cmts_change IMPLEMENTATION ORACLE7 {
+
+}
+

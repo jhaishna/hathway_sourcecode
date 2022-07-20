@@ -1,0 +1,1544 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACH
+#=======================================
+
+INT PIN_FLD_ACH {
+
+	ID = 7851;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUE_DOM
+#=======================================
+
+INT PIN_FLD_DUE_DOM {
+
+	ID = 908;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOICE_OBJ
+#=======================================
+
+POID PIN_FLD_INVOICE_OBJ {
+
+	ID = 47;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_TYPE
+#=======================================
+
+ENUM PIN_FLD_INV_TYPE {
+
+	ID = 918;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_OFFSET
+#=======================================
+
+INT PIN_FLD_PAYMENT_OFFSET {
+
+	ID = 916;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_TERM
+#=======================================
+
+ENUM PIN_FLD_PAYMENT_TERM {
+
+	ID = 915;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_DUE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_RELATIVE_DUE_T {
+
+	ID = 907;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CC_INFO
+#=======================================
+
+ARRAY PIN_FLD_CC_INFO {
+
+	ID = 142;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_EXP
+#=======================================
+
+STRING PIN_FLD_DEBIT_EXP {
+
+	ID = 130;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_NUM
+#=======================================
+
+STRING PIN_FLD_DEBIT_NUM {
+
+	ID = 129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DD_INFO
+#=======================================
+
+ARRAY PIN_FLD_DD_INFO {
+
+	ID = 143;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_NO
+#=======================================
+
+STRING PIN_FLD_BANK_NO {
+
+	ID = 1054;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DD_ACTIVATION_DATE
+#=======================================
+
+TIMESTAMP PIN_FLD_DD_ACTIVATION_DATE {
+
+	ID = 911;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIAS_ID
+#=======================================
+
+STRING PIN_FLD_FIAS_ID {
+
+	ID = 912;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MANDATE_STATUS
+#=======================================
+
+INT PIN_FLD_MANDATE_STATUS {
+
+	ID = 913;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAN_RECEIVED_DATE
+#=======================================
+
+TIMESTAMP PIN_FLD_MAN_RECEIVED_DATE {
+
+	ID = 914;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_INFO
+#=======================================
+
+ARRAY PIN_FLD_INV_INFO {
+
+	ID = 898;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AREA_NAME
+#=======================================
+
+STRING MSO_FLD_AREA_NAME {
+
+	ID = 41116;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BUILDING_NAME
+#=======================================
+
+STRING MSO_FLD_BUILDING_NAME {
+
+	ID = 41119;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LANDMARK_NAME
+#=======================================
+
+STRING MSO_FLD_LANDMARK_NAME {
+
+	ID = 41139;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LOCATION_NAME
+#=======================================
+
+STRING MSO_FLD_LOCATION_NAME {
+
+	ID = 41117;
+}
+
+
+#=======================================
+#  Field MSO_FLD_STREET_NAME
+#=======================================
+
+STRING MSO_FLD_STREET_NAME {
+
+	ID = 41118;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TDS_RECV
+#=======================================
+
+ENUM MSO_FLD_TDS_RECV {
+
+	ID = 41147;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_DESCR
+#=======================================
+
+STRING PIN_FLD_DELIVERY_DESCR {
+
+	ID = 885;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_PREFER
+#=======================================
+
+ENUM PIN_FLD_DELIVERY_PREFER {
+
+	ID = 884;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EMAIL_ADDR
+#=======================================
+
+STRING PIN_FLD_EMAIL_ADDR {
+
+	ID = 171;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INDICATOR
+#=======================================
+
+INT PIN_FLD_INDICATOR {
+
+	ID = 958;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_INSTR
+#=======================================
+
+STRING PIN_FLD_INV_INSTR {
+
+	ID = 136;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_TERMS
+#=======================================
+
+ENUM PIN_FLD_INV_TERMS {
+
+	ID = 138;
+}
+
+
+#=======================================
+#  Storable Class /payinfo
+#=======================================
+
+STORABLE CLASS /payinfo {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Generic payment information class that defines the payment information for an account. Subtypes are defined to capture information related to specific payment types.  Currently, there can be only one payment information object associated with an account.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the account object to which this payment information belongs to.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_ACH {
+
+		DESCR = "Automatic Clearing House id. This points to the rec_id of PIN_FLD_ACH_INFO array in the /config/ach object. If not specified charges associated with this payment method will not be collect.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_DUE_DOM {
+
+		DESCR = "Day of month (1-28). Used to determine the item due date during billing. If nonzero, the due date is moved past to the next immediate date that matches this field. See also PIN_FLD_RELATIVE_DUE_T.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_INVOICE_OBJ {
+
+		DESCR = "Database id and object type are used in MAKE_INVOICE to know where to save invoices";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_INV_TYPE {
+
+		DESCR = "Invoice type is defined by the following bits. 0x1: Type of Regular Invoice: 0 indicates Detail, 1 - Summary 0x2: Type of Replacement Invoice: 0 indicates Detail, 1 - Summary 0x4: Type of Correction Letter Invoice: 0 indicates Detail, 1 - Summary 0x8: Corrective Invoice Type to use: 0 indicates to use Replacement, 1 - Correction Letter ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Name of the payinfo object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_PAYMENT_OFFSET {
+
+		DESCR = "Offset value used to calulate payment collection date for online/offline payment.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_PAYMENT_TERM {
+
+		DESCR = "Payment Term identifier used to calculate the payment term of the bill. The duration until payment is due.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_RELATIVE_DUE_T {
+
+		DESCR = "Offset in number of seconds that is added during billing to the item billed date to determine the date when the item is considered due. See also PIN_FLD_DUE_DOM. This value is configured in the policy opcode PCM_OP_CUST_POL_PREP_PAYINFO.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/cc
+#=======================================
+
+STORABLE CLASS /payinfo/cc {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Credit Card payment information class.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		DESCR = "Array to hold the credit card specific information. There can be only one array element. Array element id not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Street address. Typically the same as the billing contact address in account. But this is not necessarily true always if the contact person is not the one responsible for payment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_EXP {
+
+			DESCR = "Credit card expiration date (mmyy).";
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			DESCR = "Credit card number.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name as it appears on the credit card.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State or Province. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Zipcode. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/dd
+#=======================================
+
+STORABLE CLASS /payinfo/dd {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Direct Debit payment information class.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DD_INFO {
+
+		DESCR = "Array to hold the direct debit specific information. There can be only one array element. Array element id not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Street address. Typically the same as the billing contact address in account. But this is not necessarily true always if the contact person is not the one responsible for payment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BANK_NO {
+
+			DESCR = "RDFI/Bank ID used for routing transactions";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_DD_ACTIVATION_DATE {
+
+			DESCR = "DD payment info submitted/activation date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			DESCR = "Customer's bank account number.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIAS_ID {
+
+			DESCR = "FIAS ID.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MANDATE_STATUS {
+
+			DESCR = "Current mandate status.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_MAN_RECEIVED_DATE {
+
+			DESCR = "Mandate received date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name on the account";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State or Province. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Bank account type (Checking, Savings, or Corporate.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Zipcode. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/invoice
+#=======================================
+
+STORABLE CLASS /payinfo/invoice {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Invoice payment information class.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_INV_INFO {
+
+		DESCR = "Array to hold invoice specific information. There can be only one array element. Array element id not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AREA_NAME {
+
+			DESCR = "area name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_BUILDING_NAME {
+
+			DESCR = "building name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_LANDMARK_NAME {
+
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_LOCATION_NAME {
+
+			DESCR = "location name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_STREET_NAME {
+
+			DESCR = "street name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_TDS_RECV {
+
+			DESCR = "0:Default, 1: Not Received";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Street address. Typically the same as the billing contact address. But this is not necessarily true always if the contact person is not the one responsible for payment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DELIVERY_DESCR {
+
+			DESCR = "Delivery description - fax number, email address or printer name. The contents depend on the delivery mechanism specified in PIN_FLD_DELIVERY_PREFER.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DELIVERY_PREFER {
+
+			DESCR = "The preferred method of delivery: email (0), postal (1) or fax (2).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			DESCR = "Email address to which invoice  be delivered ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_INDICATOR {
+
+			DESCR = "0: postpaid    1:prepaid";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_INV_INSTR {
+
+			DESCR = "Comments to appear on each invoice.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_INV_TERMS {
+
+			DESCR = "Not currently used. Used for invoice terms to be printed on the invoice.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name of the party responsible for the payment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State or Province. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Zipcode. Typically the same as in the billing contact.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/invoice/postpaid
+#=======================================
+
+STORABLE CLASS /payinfo/invoice/postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /payinfo/invoice/prepaid
+#=======================================
+
+STORABLE CLASS /payinfo/invoice/prepaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /payinfo
+#=======================================
+
+STORABLE CLASS /payinfo IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "payinfo_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	INT PIN_FLD_ACH {
+
+		SQL_COLUMN = "ach";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_DUE_DOM {
+
+		SQL_COLUMN = "due_dom";
+	}
+
+	POID PIN_FLD_INVOICE_OBJ {
+
+		SQL_COLUMN = "invoice_obj";
+	}
+
+	ENUM PIN_FLD_INV_TYPE {
+
+		SQL_COLUMN = "inv_type";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	INT PIN_FLD_PAYMENT_OFFSET {
+
+		SQL_COLUMN = "payment_offset";
+	}
+
+	ENUM PIN_FLD_PAYMENT_TERM {
+
+		SQL_COLUMN = "payment_term";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	TIMESTAMP PIN_FLD_RELATIVE_DUE_T {
+
+		SQL_COLUMN = "relative_due_t";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/cc
+#=======================================
+
+STORABLE CLASS /payinfo/cc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		SQL_TABLE = "payinfo_cc_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_DEBIT_EXP {
+
+			SQL_COLUMN = "debit_exp";
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/dd
+#=======================================
+
+STORABLE CLASS /payinfo/dd IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DD_INFO {
+
+		SQL_TABLE = "payinfo_dd_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_BANK_NO {
+
+			SQL_COLUMN = "bank_no";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		TIMESTAMP PIN_FLD_DD_ACTIVATION_DATE {
+
+			SQL_COLUMN = "dd_activation_date";
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		STRING PIN_FLD_FIAS_ID {
+
+			SQL_COLUMN = "fias_id";
+		}
+
+		INT PIN_FLD_MANDATE_STATUS {
+
+			SQL_COLUMN = "mandate_status";
+		}
+
+		TIMESTAMP PIN_FLD_MAN_RECEIVED_DATE {
+
+			SQL_COLUMN = "man_received_date";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/invoice
+#=======================================
+
+STORABLE CLASS /payinfo/invoice IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_INV_INFO {
+
+		SQL_TABLE = "payinfo_inv_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AREA_NAME {
+
+			SQL_COLUMN = "area";
+		}
+
+		STRING MSO_FLD_BUILDING_NAME {
+
+			SQL_COLUMN = "building";
+		}
+
+		STRING MSO_FLD_LANDMARK_NAME {
+
+			SQL_COLUMN = "landmark";
+		}
+
+		STRING MSO_FLD_LOCATION_NAME {
+
+			SQL_COLUMN = "location";
+		}
+
+		STRING MSO_FLD_STREET_NAME {
+
+			SQL_COLUMN = "street";
+		}
+
+		ENUM MSO_FLD_TDS_RECV {
+
+			SQL_COLUMN = "tds_recv";
+		}
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_DELIVERY_DESCR {
+
+			SQL_COLUMN = "delivery_descr";
+		}
+
+		ENUM PIN_FLD_DELIVERY_PREFER {
+
+			SQL_COLUMN = "delivery_prefer";
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			SQL_COLUMN = "email_addr";
+		}
+
+		INT PIN_FLD_INDICATOR {
+
+			SQL_COLUMN = "indicator";
+		}
+
+		STRING PIN_FLD_INV_INSTR {
+
+			SQL_COLUMN = "inv_instr";
+		}
+
+		ENUM PIN_FLD_INV_TERMS {
+
+			SQL_COLUMN = "inv_terms";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/invoice/postpaid
+#=======================================
+
+STORABLE CLASS /payinfo/invoice/postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /payinfo/invoice/prepaid
+#=======================================
+
+STORABLE CLASS /payinfo/invoice/prepaid IMPLEMENTATION ORACLE7 {
+
+}
+

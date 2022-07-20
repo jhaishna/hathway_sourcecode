@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/ordered_balgrp/create
+#=======================================
+
+STORABLE CLASS /event/billing/ordered_balgrp/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /ordered_balgrp object for an account/service is created. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/ordered_balgrp/create
+#=======================================
+
+STORABLE CLASS /event/billing/ordered_balgrp/create IMPLEMENTATION ORACLE7 {
+
+}
+

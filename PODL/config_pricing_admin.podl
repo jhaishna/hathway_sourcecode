@@ -1,0 +1,227 @@
+
+#=======================================
+#  Field PIN_FLD_CONFIG_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CONFIG_INFO {
+
+	ID = 7440;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HOSTNAME
+#=======================================
+
+STRING PIN_FLD_HOSTNAME {
+
+	ID = 337;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN
+#=======================================
+
+STRING PIN_FLD_LOGIN {
+
+	ID = 92;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PASSWD
+#=======================================
+
+STRING PIN_FLD_PASSWD {
+
+	ID = 93;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PORT
+#=======================================
+
+INT PIN_FLD_PORT {
+
+	ID = 336;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVER_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVER_TYPE {
+
+	ID = 6419;
+}
+
+
+#=======================================
+#  Storable Class /config/pricing_admin
+#=======================================
+
+STORABLE CLASS /config/pricing_admin {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object for Pipeline server log-in info.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CONFIG_INFO {
+
+		DESCR = "Substruct containing Pipeline server log-in info.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_HOSTNAME {
+
+			DESCR = "The name of the Pipeline db server host.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			DESCR = "The username to log into the Pipeline db server.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "The name of the Pipeline db.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PASSWD {
+
+			DESCR = "The password to log into the Pipeline db server.";
+			ORDER = 0;
+			LENGTH = 79;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PORT {
+
+			DESCR = "The port number for connection to the Pipeline db server host.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVER_TYPE {
+
+			DESCR = "The Pipeline db type, e.g., oracle.  This has to match the alias of a driver configuration group in the configuration file on the client machine.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/pricing_admin
+#=======================================
+
+STORABLE CLASS /config/pricing_admin IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CONFIG_INFO {
+
+		SQL_TABLE = "pricing_admin_config_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_HOSTNAME {
+
+			SQL_COLUMN = "hostname";
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			SQL_COLUMN = "login";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_PASSWD {
+
+			SQL_COLUMN = "passwd";
+		}
+
+		INT PIN_FLD_PORT {
+
+			SQL_COLUMN = "port";
+		}
+
+		STRING PIN_FLD_SERVER_TYPE {
+
+			SQL_COLUMN = "server_type";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,120 @@
+
+#=======================================
+#  Field PIN_FLD_BRAND_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_BRAND_INFO {
+
+	ID = 1902;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEW_BRAND
+#=======================================
+
+POID PIN_FLD_NEW_BRAND {
+
+	ID = 5571;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_BRAND
+#=======================================
+
+POID PIN_FLD_OLD_BRAND {
+
+	ID = 5570;
+}
+
+
+#=======================================
+#  Storable Class /event/order/brand
+#=======================================
+
+STORABLE CLASS /event/order/brand {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order brand is changedThe object is created by PCM_OP_ORDER_SET_BRAND opcode";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BRAND_INFO {
+
+		DESCR = "Substruct to hold the brand info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_NEW_BRAND {
+
+			DESCR = "The new brand of order";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OLD_BRAND {
+
+			DESCR = "The old brand of order";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/brand
+#=======================================
+
+STORABLE CLASS /event/order/brand IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BRAND_INFO {
+
+		SQL_TABLE = "event_order_brand_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_NEW_BRAND {
+
+			SQL_COLUMN = "new_brand";
+		}
+
+		POID PIN_FLD_OLD_BRAND {
+
+			SQL_COLUMN = "old_brand";
+		}
+
+	}
+
+}
+

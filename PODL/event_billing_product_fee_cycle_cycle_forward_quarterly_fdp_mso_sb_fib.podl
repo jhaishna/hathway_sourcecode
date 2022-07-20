@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_fib {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Prepaid Quarterly subscription for FIBER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_fib IMPLEMENTATION ORACLE7 {
+
+}
+

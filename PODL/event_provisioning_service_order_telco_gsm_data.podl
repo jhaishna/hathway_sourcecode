@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/data {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event object created for Services that need Provisioning. This object is created by PCM_OP_TELCO_PROV_CREATE_SVC_ORDER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+

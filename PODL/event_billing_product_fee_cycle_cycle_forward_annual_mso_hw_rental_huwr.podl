@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr IMPLEMENTATION ORACLE7 {
+
+}
+

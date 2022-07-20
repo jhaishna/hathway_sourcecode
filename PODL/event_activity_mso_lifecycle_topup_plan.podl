@@ -1,0 +1,352 @@
+
+#=======================================
+#  Field MSO_FLD_TOPUP_PLAN
+#=======================================
+
+ARRAY MSO_FLD_TOPUP_PLAN {
+
+	ID = 41168;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DISC_AMOUNT
+#=======================================
+
+DECIMAL MSO_FLD_DISC_AMOUNT {
+
+	ID = 41138;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DISC_PERCENT
+#=======================================
+
+DECIMAL MSO_FLD_DISC_PERCENT {
+
+	ID = 41137;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BALANCES
+#=======================================
+
+ARRAY PIN_FLD_BALANCES {
+
+	ID = 198;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLLOVER_UNITS
+#=======================================
+
+DECIMAL PIN_FLD_ROLLOVER_UNITS {
+
+	ID = 7784;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/topup_plan
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/topup_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_TOPUP_PLAN {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_DISC_AMOUNT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_DISC_PERCENT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_BALANCES {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_RESOURCE_ID {
+
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_ROLLOVER_UNITS {
+
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_CODE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/topup_plan
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/topup_plan IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_TOPUP_PLAN {
+
+		SQL_TABLE = "mso_evt_lc_topup_plan_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		DECIMAL MSO_FLD_DISC_AMOUNT {
+
+			SQL_COLUMN = "disc_amount";
+		}
+
+		DECIMAL MSO_FLD_DISC_PERCENT {
+
+			SQL_COLUMN = "disc_percent";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		ARRAY PIN_FLD_BALANCES {
+
+			SQL_TABLE = "mso_evt_lc_topup_rollover_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_RESOURCE_ID {
+
+				SQL_COLUMN = "resource_id";
+			}
+
+			DECIMAL PIN_FLD_ROLLOVER_UNITS {
+
+				SQL_COLUMN = "rollover_balance";
+			}
+
+		}
+
+		STRING PIN_FLD_CODE {
+
+			SQL_COLUMN = "code";
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			SQL_COLUMN = "plan_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+

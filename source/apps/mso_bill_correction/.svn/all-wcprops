@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/hathway/!svn/ver/298/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_bill_correction
+END
+.mso_bill_accts_now.c.swo
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/hathway/!svn/ver/295/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_bill_correction/.mso_bill_accts_now.c.swo
+END
+mso_bill_correction.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/hathway/!svn/ver/298/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_bill_correction/mso_bill_correction.c
+END
+.mso_trial_bill_accts.c.swm
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/hathway/!svn/ver/295/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_bill_correction/.mso_trial_bill_accts.c.swm
+END
+.mso_trial_bill_accts.c.swn
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/hathway/!svn/ver/295/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_bill_correction/.mso_trial_bill_accts.c.swn
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/hathway/!svn/ver/295/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_bill_correction/Makefile
+END
+.mso_trial_bill_accts.c.swo
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/hathway/!svn/ver/295/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_bill_correction/.mso_trial_bill_accts.c.swo
+END

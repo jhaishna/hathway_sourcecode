@@ -1,0 +1,28 @@
+# This file controls the masking of arbitrary STR field values in flists returned from the cm
+# to client applications.
+#
+# Enable this server-side masking by uncommenting the line:
+# - cm pin_fld_mask_file ${PIN_HOME}/sys/cm/pin_fld_mask_file
+# in ${PIN_HOME}/sys/cm/pin.conf
+#
+# Configure the masking by editing this file.
+#
+# Only fields of type STR can be masked
+#
+# Each valid entry is of 1 of 3 types:
+# 1.   PIN_FLD_XXX        N            c         # mask with a string of length N composed entirely of the prescribed char c
+# 2.   PIN_FLD_XXX       -NL           c         # mask with char c but leave up to N chars unmasked on left
+# 3.   PIN_FLD_XXX       -NR           c         # mask with char c but leave up to N chars unmasked on right
+# In each case N is an integer >= 0 and c is the masking character (N must not exceed 128 for type 1)
+# The first type is useful for masking passwords where we don't want to reveal how many characters make up the password.
+# The remaining 2 types are useful for partial masking; note that the integer N indicates how many characters are revealed.
+#
+# FIELD_NAME            LENGTH   MASK_CHAR
+PIN_FLD_PASSWD          10           *          # mask with 10 '*'. Result: "**********"
+PIN_FLD_PASSWD_CLEAR    10           *          # mask with 10 '*'. Result: "**********"
+PIN_FLD_DEBIT_NUM       -4R          *          # the last 4 positions are not masked. e.g. "*******1234"
+PIN_FLD_BANK_NO         -2L          *          # the first 2 positions are not masked, e.g. "12***********"
+PIN_FLD_BANK_ACCOUNT    -2L          *          # the first 2 positions are not masked, e.g. "12***********"
+PIN_FLD_BANK_ACCOUNT_NO -2L          *          # the first 2 positions are not masked, e.g. "12***********"
+PIN_FLD_IBAN            -0L          *          # same as -0R, all positions are masked with *
+

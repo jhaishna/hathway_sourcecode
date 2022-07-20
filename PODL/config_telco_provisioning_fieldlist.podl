@@ -1,0 +1,224 @@
+
+#=======================================
+#  Field PIN_FLD_OBJ_ELEM
+#=======================================
+
+ARRAY PIN_FLD_OBJ_ELEM {
+
+	ID = 545;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NUM
+#=======================================
+
+ENUM PIN_FLD_FIELD_NUM {
+
+	ID = 89;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_TYPE
+#=======================================
+
+INT PIN_FLD_FIELD_TYPE {
+
+	ID = 509;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Storable Class /config/telco/provisioning/fieldlist
+#=======================================
+
+STORABLE CLASS /config/telco/provisioning/fieldlist {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Specifies fields to be included in service order from  /service/telco and /device objects.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OBJ_ELEM {
+
+		DESCR = "Array of object describing some fields  of an object";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			DESCR = "In case of array the element if -1 = all element id";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_FIELD_NUM {
+
+			DESCR = "The field number as in pin_flds.h.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FIELD_TYPE {
+
+			DESCR = "The type of field: Array, substruct, other.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "The field name in the SO";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Link to field list containing an Array or a substruct Link to a config.fieldlist object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "The possible field hard coded value.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/provisioning/fieldlist
+#=======================================
+
+STORABLE CLASS /config/telco/provisioning/fieldlist IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OBJ_ELEM {
+
+		SQL_TABLE = "cfg_tlc_prov_flist_obj_elem_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			SQL_COLUMN = "element_id";
+		}
+
+		ENUM PIN_FLD_FIELD_NUM {
+
+			SQL_COLUMN = "field_num";
+		}
+
+		INT PIN_FLD_FIELD_TYPE {
+
+			SQL_COLUMN = "field_type";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+}
+

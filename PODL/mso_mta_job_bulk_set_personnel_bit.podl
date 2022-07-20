@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_set_personnel_bit
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_set_personnel_bit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "set personnel bit ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_set_personnel_bit
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_set_personnel_bit IMPLEMENTATION ORACLE7 {
+
+}
+

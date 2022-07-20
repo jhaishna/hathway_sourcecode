@@ -1,0 +1,154 @@
+
+#=======================================
+#  Field PIN_FLD_CRITERIA
+#=======================================
+
+ARRAY PIN_FLD_CRITERIA {
+
+	ID = 1025;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CRITERIA_NAME
+#=======================================
+
+STRING PIN_FLD_CRITERIA_NAME {
+
+	ID = 9522;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CRITERIA_TYPES
+#=======================================
+
+ARRAY PIN_FLD_CRITERIA_TYPES {
+
+	ID = 9521;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Storable Class /config/event_order_criteria
+#=======================================
+
+STORABLE CLASS /config/event_order_criteria {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " Configuration object that stores the criteria for  selecting the events for out-of-order detection. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CRITERIA {
+
+		DESCR = "Array to hold the criteria for detecting out-of-order events.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CRITERIA_NAME {
+
+			DESCR = "Name of the out-of-order criteria";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_CRITERIA_TYPES {
+
+			DESCR = "array of criteria ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_TYPE_STR {
+
+				DESCR = "service type, event type or product poidstring or discount poid string";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/event_order_criteria
+#=======================================
+
+STORABLE CLASS /config/event_order_criteria IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CRITERIA {
+
+		SQL_TABLE = "config_event_order_criteria_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CRITERIA_NAME {
+
+			SQL_COLUMN = "criteria_name";
+		}
+
+		ARRAY PIN_FLD_CRITERIA_TYPES {
+
+			SQL_TABLE = "config_eo_criteria_type_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_TYPE_STR {
+
+				SQL_COLUMN = "type_str";
+			}
+
+		}
+
+	}
+
+}
+

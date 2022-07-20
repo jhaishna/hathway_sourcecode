@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/HW_Service_Tax
+#=======================================
+
+STORABLE CLASS /item/HW_Service_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Service Tax for Hardware";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Service_Tax
+#=======================================
+
+STORABLE CLASS /item/HW_Service_Tax IMPLEMENTATION ORACLE7 {
+
+}
+

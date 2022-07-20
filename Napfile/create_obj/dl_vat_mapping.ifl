@@ -1,0 +1,20 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_vat_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "DL_VAT_BB"
+0 PIN_FLD_TAX_CODE                   STR [0] "VAT_5_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 0
+XX
+xop 1 0 1
+
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_vat_mapping -1 1
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "DL_VAT_CATV"
+0 PIN_FLD_TAX_CODE                   STR [0] "VAT_12_5"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+XX
+xop 1 0 1
+
+

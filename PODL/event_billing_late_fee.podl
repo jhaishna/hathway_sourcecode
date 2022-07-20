@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/late_fee
+#=======================================
+
+STORABLE CLASS /event/billing/late_fee {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Events created when there is a late fee charged.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/late_fee
+#=======================================
+
+STORABLE CLASS /event/billing/late_fee IMPLEMENTATION ORACLE7 {
+
+}
+

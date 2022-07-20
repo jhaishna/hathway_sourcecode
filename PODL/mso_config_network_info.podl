@@ -1,0 +1,528 @@
+
+#=======================================
+#  Storable Class /mso_config_network_info
+#=======================================
+
+STORABLE CLASS /mso_config_network_info {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to hold address and CIN information for Hathway offices to be used in invoice";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CIN_NO {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_ENT_TAX_NO {
+
+		DESCR = "Field to store KST Tax No";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_GSTIN {
+
+		DESCR = "GSTIN Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_PAN_NO {
+
+		DESCR = "PAN No.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_SERVICE_TYPE {
+
+		DESCR = "Service Type (0-BB, 1-CATV)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_ST_REG_NO {
+
+		DESCR = "Service Tax Reg No.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_VAT_TAX_NO {
+
+		DESCR = "VAT TIN No.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		DESCR = "Winner Account No";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ADDRESS {
+
+		ORDER = 0;
+		LENGTH = 250;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CITY {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_COUNTRY {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_EMAIL_ADDR {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_FAX_PHONE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_INVOICE_DATA {
+
+		DESCR = "Terms and Conditions";
+		ORDER = 0;
+		LENGTH = 4000;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_KEY_RIB {
+
+		DESCR = "key to search address for CATV - state , ISP - City";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "City Winner Name";
+		ORDER = 0;
+		LENGTH = 120;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_PHONES {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			DESCR = "Stores email address";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PHONE {
+
+			ORDER = 0;
+			LENGTH = 250;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_STATE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TAX_CODE {
+
+		DESCR = "CST No.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TEMPLATE {
+
+		DESCR = "Terms & Conditions for PP";
+		ORDER = 0;
+		LENGTH = 4000;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ZIP {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_config_network_info
+#=======================================
+
+STORABLE CLASS /mso_config_network_info IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_config_network_info_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CIN_NO {
+
+		SQL_COLUMN = "cin_no";
+	}
+
+	STRING MSO_FLD_ENT_TAX_NO {
+
+		SQL_COLUMN = "KST_TAX_NO";
+	}
+
+	STRING MSO_FLD_GSTIN {
+
+		SQL_COLUMN = "gstin";
+	}
+
+	STRING MSO_FLD_PAN_NO {
+
+		SQL_COLUMN = "PAN_NO";
+	}
+
+	ENUM MSO_FLD_SERVICE_TYPE {
+
+		SQL_COLUMN = "service_type";
+	}
+
+	STRING MSO_FLD_ST_REG_NO {
+
+		SQL_COLUMN = "SERVICE_TAX_REG_NO";
+	}
+
+	STRING MSO_FLD_VAT_TAX_NO {
+
+		SQL_COLUMN = "VAT_TIN_NO";
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		SQL_COLUMN = "WINNER_ACT_NO";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_ADDRESS {
+
+		SQL_COLUMN = "address";
+	}
+
+	STRING PIN_FLD_CITY {
+
+		SQL_COLUMN = "city";
+	}
+
+	STRING PIN_FLD_COUNTRY {
+
+		SQL_COLUMN = "country";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_EMAIL_ADDR {
+
+		SQL_COLUMN = "email_addrpin_";
+	}
+
+	STRING PIN_FLD_FAX_PHONE {
+
+		SQL_COLUMN = "FAX_NO";
+	}
+
+	STRING PIN_FLD_INVOICE_DATA {
+
+		SQL_COLUMN = "terms";
+	}
+
+	STRING PIN_FLD_KEY_RIB {
+
+		SQL_COLUMN = "key";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "WINNER_NAME";
+	}
+
+	ARRAY PIN_FLD_PHONES {
+
+		SQL_TABLE = "MSO_CFG_NEINFO_PHINES_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			SQL_COLUMN = "EMAIL_ADDRESS";
+		}
+
+		STRING PIN_FLD_PHONE {
+
+			SQL_COLUMN = "phone";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_STATE {
+
+		SQL_COLUMN = "state";
+	}
+
+	STRING PIN_FLD_TAX_CODE {
+
+		SQL_COLUMN = "CST_NO";
+	}
+
+	STRING PIN_FLD_TEMPLATE {
+
+		SQL_COLUMN = "terms_pp";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+	STRING PIN_FLD_ZIP {
+
+		SQL_COLUMN = "zip";
+	}
+
+}
+

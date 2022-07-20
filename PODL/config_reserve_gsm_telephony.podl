@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/reserve/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/reserve/gsm/telephony {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores the default reservation parameters for GSM telephony service family.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/reserve/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/reserve/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

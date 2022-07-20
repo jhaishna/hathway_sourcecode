@@ -1,0 +1,146 @@
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Storable Class /config/notify
+#=======================================
+
+STORABLE CLASS /config/notify {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used by the activity manager to determine the (policy) opcode(s) to be called when an event happens. This policy serves as a callback hook for you to perform event specific actions. Note that the notification opcode is called right after recording the event. This object is set up by the load_pin_notify command line utility. A sample file pin_notify is supplied with Portal system.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		DESCR = "Array of notification callbacks, one (or many) per event. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Opcode flags to be passed to the notification opcode. 0 is recommended.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "The policy opcode number.  Policy opcodes should have numeric ids greater than 10000. You may use the generic event notification policy PCM_OP_ACT_POL_EVENT_NOTIFY. Also, you can use the same opcode for multiple event types.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			DESCR = "Event type string regular expression that allows you to set up wildcards.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/notify
+#=======================================
+
+STORABLE CLASS /config/notify IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		SQL_TABLE = "config_notify_events_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			SQL_COLUMN = "type_str";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,818 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BALANCES
+#=======================================
+
+ARRAY PIN_FLD_BALANCES {
+
+	ID = 198;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONSUMED_RESERVED_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_CONSUMED_RESERVED_AMOUNT {
+
+	ID = 3205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONSUMPTION_RULE
+#=======================================
+
+ENUM PIN_FLD_CONSUMPTION_RULE {
+
+	ID = 7770;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_PROFILE
+#=======================================
+
+INT PIN_FLD_CREDIT_PROFILE {
+
+	ID = 7755;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_BAL
+#=======================================
+
+DECIMAL PIN_FLD_NEXT_BAL {
+
+	ID = 226;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESERVED_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_RESERVED_AMOUNT {
+
+	ID = 5604;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUB_BALANCES
+#=======================================
+
+ARRAY PIN_FLD_SUB_BALANCES {
+
+	ID = 7753;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONTRIBUTOR_STR
+#=======================================
+
+STRING PIN_FLD_CONTRIBUTOR_STR {
+
+	ID = 7759;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENT_BAL
+#=======================================
+
+DECIMAL PIN_FLD_CURRENT_BAL {
+
+	ID = 199;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELAYED_BAL
+#=======================================
+
+DECIMAL PIN_FLD_DELAYED_BAL {
+
+	ID = 7768;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GRANTOR_OBJ
+#=======================================
+
+POID PIN_FLD_GRANTOR_OBJ {
+
+	ID = 7771;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLLOVER_DATA
+#=======================================
+
+INT PIN_FLD_ROLLOVER_DATA {
+
+	ID = 7760;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_FROM {
+
+	ID = 6429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM_DETAILS
+#=======================================
+
+INT PIN_FLD_VALID_FROM_DETAILS {
+
+	ID = 9627;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_TO {
+
+	ID = 6430;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO_DETAILS
+#=======================================
+
+INT PIN_FLD_VALID_TO_DETAILS {
+
+	ID = 9628;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_CNTR
+#=======================================
+
+INT PIN_FLD_BATCH_CNTR {
+
+	ID = 7767;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_CACHE_TYPE
+#=======================================
+
+ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+	ID = 567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REALTIME_CNTR
+#=======================================
+
+INT PIN_FLD_REALTIME_CNTR {
+
+	ID = 7766;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /balance_group
+#=======================================
+
+STORABLE CLASS /balance_group {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The balance group concept extends the balances array in the account object, to allow one account have multiple balance groups.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "The account object this balance group belongs to";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_BALANCES {
+
+		DESCR = "Balances array. Tracks current balances, limits and thresholds for all resources in this balance group. Each element index in the array is a resource ID. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CONSUMED_RESERVED_AMOUNT {
+
+			DESCR = "The consumed reserved amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CONSUMPTION_RULE {
+
+			DESCR = "Consumption rule to be applied on the resource. Possible values are EST(1), LST(2), EET(3), LET(4), ESTLET(5), ESTEET(6), LSTEET(7), LSTLET(8), EETEST(9), EETLST(10), LETEST(11), LETLST(12).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CREDIT_PROFILE {
+
+			DESCR = "the element id pointing to the credit profiles entry in the /config/credit_profile object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_NEXT_BAL {
+
+			DESCR = "If you have delayed batch events coming in Infranet and you have configured the system to have a delay for the billing run, so that all the events for the current billing cycle are recieved, before billing is actually run, this field will store the balance for the next cycle (given that the billing for the current cycle is not yet run. CURRENT_BAL at any given time will be CURRENT_BAL + NEXT_BAL";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_RESERVED_AMOUNT {
+
+			DESCR = "This field represents the balance for this resource that is currently reserved. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_SUB_BALANCES {
+
+			DESCR = "sub_balances array, conceptually replacing today’s current_bal field";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_CONTRIBUTOR_STR {
+
+				DESCR = "The contributor for this sub-balance counter";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_CURRENT_BAL {
+
+				DESCR = "This field represents the current sub balance";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_DELAYED_BAL {
+
+				DESCR = "If you have delayed batch events coming in Infranet and you have configured the system to have a delay for the billing run,this field will track the balance used by the delayed events in the delay period";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_GRANTOR_OBJ {
+
+				DESCR = "Poid of /purchase_product or /purchase_discount or /product that granted the resource";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_NEXT_BAL {
+
+				DESCR = "If you have delayed batch events coming in Infranet and you have configured the system to have a delay for the billing run,this field will track the balance used by the new cycle events in the delay period";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_ROLLOVER_DATA {
+
+				DESCR = "have rollover information stored, rollover type  and rollover date";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			TIMESTAMP PIN_FLD_VALID_FROM {
+
+				DESCR = "The start date of this validity based balance, 0 indicate infinity";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_VALID_FROM_DETAILS {
+
+				DESCR = "Detail of field PIN_FLD_VALID_FROM mode, offset and unit.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			TIMESTAMP PIN_FLD_VALID_TO {
+
+				DESCR = "The end date of this validity based balance, 0 indicate infinity";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_VALID_TO_DETAILS {
+
+				DESCR = "Detail of field PIN_FLD_VALID_TO mode, offset and unit.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+	INT PIN_FLD_BATCH_CNTR {
+
+		DESCR = "Used *internally* for batch rec_id assignment";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		DESCR = "The billinfo object this balance group belongs to";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Effective time of modification of this balance group on an external system.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Name of the balance group";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		DESCR = "Stores the cache residency distinction value for an object instance. Possible values are DEFAULT(0), REALTIME(1) and BATCH(2).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_REALTIME_CNTR {
+
+		DESCR = "Used *internally* for realtime rec_id assignment";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /balance_group/monitor
+#=======================================
+
+STORABLE CLASS /balance_group/monitor {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The monitor balance group  is used as a running counter of the amounts in the balance_groups that are monitored. The members are determined in the /group/sharing/monitor object.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /balance_group
+#=======================================
+
+STORABLE CLASS /balance_group IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "bal_grp_t";
+	SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ARRAY PIN_FLD_BALANCES {
+
+		SQL_TABLE = "bal_grp_bals_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CONSUMED_RESERVED_AMOUNT {
+
+			SQL_COLUMN = "consumed_reserved_amount";
+		}
+
+		ENUM PIN_FLD_CONSUMPTION_RULE {
+
+			SQL_COLUMN = "consumption_rule";
+		}
+
+		INT PIN_FLD_CREDIT_PROFILE {
+
+			SQL_COLUMN = "credit_profile";
+		}
+
+		DECIMAL PIN_FLD_NEXT_BAL {
+
+			SQL_COLUMN = "next_bal";
+		}
+
+		DECIMAL PIN_FLD_RESERVED_AMOUNT {
+
+			SQL_COLUMN = "reserved_amount";
+		}
+
+		ARRAY PIN_FLD_SUB_BALANCES {
+
+			SQL_TABLE = "bal_grp_sub_bals_t";
+			SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_CONTRIBUTOR_STR {
+
+				SQL_COLUMN = "contributor";
+			}
+
+			DECIMAL PIN_FLD_CURRENT_BAL {
+
+				SQL_COLUMN = "current_bal";
+			}
+
+			DECIMAL PIN_FLD_DELAYED_BAL {
+
+				SQL_COLUMN = "delayed_bal";
+			}
+
+			POID PIN_FLD_GRANTOR_OBJ {
+
+				SQL_COLUMN = "grantor_obj";
+			}
+
+			DECIMAL PIN_FLD_NEXT_BAL {
+
+				SQL_COLUMN = "next_bal";
+			}
+
+			INT PIN_FLD_ROLLOVER_DATA {
+
+				SQL_COLUMN = "rollover_data";
+			}
+
+			TIMESTAMP PIN_FLD_VALID_FROM {
+
+				SQL_COLUMN = "valid_from";
+			}
+
+			INT PIN_FLD_VALID_FROM_DETAILS {
+
+				SQL_COLUMN = "valid_from_details";
+			}
+
+			TIMESTAMP PIN_FLD_VALID_TO {
+
+				SQL_COLUMN = "valid_to";
+			}
+
+			INT PIN_FLD_VALID_TO_DETAILS {
+
+				SQL_COLUMN = "valid_to_details";
+			}
+
+		}
+
+	}
+
+	INT PIN_FLD_BATCH_CNTR {
+
+		SQL_COLUMN = "batch_cntr";
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		SQL_COLUMN = "billinfo_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		SQL_COLUMN = "object_cache_type";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	INT PIN_FLD_REALTIME_CNTR {
+
+		SQL_COLUMN = "realtime_cntr";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /balance_group/monitor
+#=======================================
+
+STORABLE CLASS /balance_group/monitor IMPLEMENTATION ORACLE7 {
+
+}
+

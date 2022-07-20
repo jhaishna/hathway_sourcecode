@@ -1,0 +1,1123 @@
+
+#=======================================
+#  Field PIN_FLD_PAYMENT
+#=======================================
+
+SUBSTRUCT PIN_FLD_PAYMENT {
+
+	ID = 899;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+	ID = 846;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUB_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_SUB_TRANS_ID {
+
+	ID = 3042;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_TRANS_ID {
+
+	ID = 189;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CASH_INFO
+#=======================================
+
+ARRAY PIN_FLD_CASH_INFO {
+
+	ID = 928;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REASON_CODE
+#=======================================
+
+STRING PIN_FLD_REASON_CODE {
+
+	ID = 938;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CC_INFO
+#=======================================
+
+ARRAY PIN_FLD_CC_INFO {
+
+	ID = 142;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_NUM
+#=======================================
+
+STRING PIN_FLD_DEBIT_NUM {
+
+	ID = 129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHECK_INFO
+#=======================================
+
+ARRAY PIN_FLD_CHECK_INFO {
+
+	ID = 927;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DD_INFO
+#=======================================
+
+ARRAY PIN_FLD_DD_INFO {
+
+	ID = 143;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_ORDER_INFO
+#=======================================
+
+ARRAY PIN_FLD_PAY_ORDER_INFO {
+
+	ID = 940;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POSTAL_ORDER_INFO
+#=======================================
+
+ARRAY PIN_FLD_POSTAL_ORDER_INFO {
+
+	ID = 941;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VOUCHERS_INFO
+#=======================================
+
+ARRAY PIN_FLD_VOUCHERS_INFO {
+
+	ID = 7617;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WIRE_TRANSFER_INFO
+#=======================================
+
+ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+	ID = 939;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal
+#=======================================
+
+STORABLE CLASS /event/billing/reversal {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These events are created when a payment reversal (chargeback) is made.  See also /event/billing/payment. An item transfer is effected to /item/payment/reversal items.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PAYMENT {
+
+		DESCR = "Substruct with the details of the reversal.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+			DESCR = "Same as PIN_FLD_TRANS_ID in the PIN_FLD_PAYMENT field of /event/billing/payment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Status will be set only in case when the Payment is reversed as unallocated.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUB_TRANS_ID {
+
+			DESCR = "Payment reversal sub-transaction id. This field will be populated with the Original Payment Transaction id when the payment is reversed as unallocated. This field and status field together will decide whether entire distribution can be reversed or not. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			DESCR = "Payment reversal transaction id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash {
+
+	LABEL = "Cash Payment Reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a cash payment reversal is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CASH_INFO {
+
+		DESCR = "Array detailing the reversal information. Onlyone array element will be present. Arrayelement id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Reversal date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/sp_autopay {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/tds {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cc
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cc {
+
+	LABEL = "Credit Card Payment Reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "CC payment reversal";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		DESCR = "Array detailing the reversal information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			DESCR = "Same as PIN_FLD_DEBIT_NUM in PIN_FLD_CC_INFO of /event/billing/payment/cc.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Chargeback date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/check
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/check {
+
+	LABEL = "Check payment reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a check payment reversal is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHECK_INFO {
+
+		DESCR = "Array detailing the reversal information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Chargeback date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/dd
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/dd {
+
+	LABEL = "Direct Debit Payment Reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "DD payment reversal";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DD_INFO {
+
+		DESCR = "Array detailing the reversal information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			DESCR = "Same as PIN_FLD_DEBIT_NUM in PIN_FLD_DD_INFO of /event/billing/payment/dd.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Chargeback date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/failed
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/failed {
+
+	LABEL = "Failed Payment Reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a failed payment reversal is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/payorder
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/payorder {
+
+	LABEL = "Inter bank payment order reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a payorder payment reversal is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAY_ORDER_INFO {
+
+		DESCR = "Array detailing the reversal information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Chargeback date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/postalorder
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/postalorder {
+
+	LABEL = "Postal order payment reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a postalorder payment reversal is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_POSTAL_ORDER_INFO {
+
+		DESCR = "Array detailing the reversal information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Chargeback date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/voucher
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/voucher {
+
+	LABEL = "topup-payment reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a voucher-topup event /event/billing/payment/voucher is reversed";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHERS_INFO {
+
+		DESCR = "Array detailing the reversal information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Reversal date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/wtransfer
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/wtransfer {
+
+	LABEL = "Wire Transfer payment reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a wire transfer payment reversal is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+		DESCR = "Array detailing the reversal information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Chargeback date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal
+#=======================================
+
+STORABLE CLASS /event/billing/reversal IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PAYMENT {
+
+		SQL_TABLE = "event_billing_reversal_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+			SQL_COLUMN = "payment_trans_id";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		STRING PIN_FLD_SUB_TRANS_ID {
+
+			SQL_COLUMN = "sub_trans_id";
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			SQL_COLUMN = "trans_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CASH_INFO {
+
+		SQL_TABLE = "event_billing_reversal_cash_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/sp_autopay IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/tds IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cc
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		SQL_TABLE = "event_billing_reversal_cc_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/check
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/check IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHECK_INFO {
+
+		SQL_TABLE = "event_billing_reversal_check_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/dd
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/dd IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DD_INFO {
+
+		SQL_TABLE = "event_billing_reversal_dd_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/failed
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/failed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/payorder
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/payorder IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAY_ORDER_INFO {
+
+		SQL_TABLE = "event_billing_reversal_pordr_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/postalorder
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/postalorder IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_POSTAL_ORDER_INFO {
+
+		SQL_TABLE = "event_billing_reversal_post_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/voucher
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/voucher IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHERS_INFO {
+
+		SQL_TABLE = "event_billing_rvrsl_voucher_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/wtransfer
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/wtransfer IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+		SQL_TABLE = "event_billing_reversal_wtran_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+

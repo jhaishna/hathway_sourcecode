@@ -1,0 +1,240 @@
+E Wed Jan 30 09:17:55 2019  prod-brm.hathway.com  <no name>:11171  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(11171): no pin.conf file in . or /etc 2
+E Wed Jan 30 09:17:55 2019  prod-brm.hathway.com  <no name>:11171  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(11171): no pin.conf file in . or /etc 2
+E Wed Jan 30 09:17:55 2019  prod-brm.hathway.com  <no name>:11171  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(11171): no pin.conf file in . or /etc 2
+E Wed Jan 30 09:17:55 2019  prod-brm.hathway.com  <no name>:11171  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(11171): no pin.conf file in . or /etc 2
+E Wed Jan 30 09:17:55 2019  prod-brm.hathway.com  <no name>:11171  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(11171): no pin.conf file in . or /etc 2
+E Wed Jan 30 09:17:55 2019  prod-brm.hathway.com  testnap:11171  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(11171): no pin.conf file in . or /etc 2
+E Wed Jan 30 09:17:55 2019  prod-brm.hathway.com  testnap:11171  pcm_conn.c(6):233 1:<machine>:<program>:0:0:0:0:0
+	pcm_connect: bad/no login_type in pin.conf, err 30
+E Sun Feb  3 00:01:11 2019  prod-brm.hathway.com  <no name>:25225  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(25225): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:01:11 2019  prod-brm.hathway.com  <no name>:25225  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(25225): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:01:11 2019  prod-brm.hathway.com  <no name>:25225  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(25225): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:01:11 2019  prod-brm.hathway.com  <no name>:25225  pin_mta_api.c:445 1:<machine>:<program>:0:0:0:0:0
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:01:11 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:25225  pin_mta.c:1907 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:25225:-141523232:0:1549132271:1
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:01:11 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:25225  pin_mta.c:2124 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:25225:-141523232:0:1549132271:1
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:01:11 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:25225  pin_mta.c:2146 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:25225:-141523232:0:1549132271:1
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_update_wallet_bal"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 0
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 25225
+1     PIN_FLD_HOSTNAME        STR [0] "prod-brm.hathway.com"
+1     PIN_FLD_START_T      TSTAMP [0] (1549132271) Sun Feb  3 00:01:11 2019
+1     PIN_FLD_END_T        TSTAMP [0] (1549132271) Sun Feb  3 00:01:11 2019
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_INVALID_CONF"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "1:prod-brm.hathway.com:mso_mta_update_wallet_bal:25225:-141523232:0:1549132271:1"
+E Sun Feb  3 00:01:21 2019  prod-brm.hathway.com  <no name>:25482  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(25482): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:01:21 2019  prod-brm.hathway.com  <no name>:25482  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(25482): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:01:21 2019  prod-brm.hathway.com  <no name>:25482  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(25482): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:01:21 2019  prod-brm.hathway.com  <no name>:25482  pin_mta_api.c:445 1:<machine>:<program>:0:0:0:0:0
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:01:21 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:25482  pin_mta.c:1907 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:25482:-141068576:0:1549132281:1
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:01:21 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:25482  pin_mta.c:2124 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:25482:-141068576:0:1549132281:1
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:01:21 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:25482  pin_mta.c:2146 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:25482:-141068576:0:1549132281:1
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_update_wallet_bal"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 0
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 25482
+1     PIN_FLD_HOSTNAME        STR [0] "prod-brm.hathway.com"
+1     PIN_FLD_START_T      TSTAMP [0] (1549132281) Sun Feb  3 00:01:21 2019
+1     PIN_FLD_END_T        TSTAMP [0] (1549132281) Sun Feb  3 00:01:21 2019
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_INVALID_CONF"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "1:prod-brm.hathway.com:mso_mta_update_wallet_bal:25482:-141068576:0:1549132281:1"
+E Sun Feb  3 00:05:33 2019  prod-brm.hathway.com  <no name>:32322  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(32322): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:05:33 2019  prod-brm.hathway.com  <no name>:32322  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(32322): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:05:33 2019  prod-brm.hathway.com  <no name>:32322  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(32322): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:05:33 2019  prod-brm.hathway.com  <no name>:32322  pin_mta_api.c:445 1:<machine>:<program>:0:0:0:0:0
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:05:33 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:32322  pin_mta.c:1907 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:32322:-141502752:0:1549132533:1
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:05:33 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:32322  pin_mta.c:2124 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:32322:-141502752:0:1549132533:1
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:05:33 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:32322  pin_mta.c:2146 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:32322:-141502752:0:1549132533:1
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_update_wallet_bal"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 0
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 32322
+1     PIN_FLD_HOSTNAME        STR [0] "prod-brm.hathway.com"
+1     PIN_FLD_START_T      TSTAMP [0] (1549132533) Sun Feb  3 00:05:33 2019
+1     PIN_FLD_END_T        TSTAMP [0] (1549132533) Sun Feb  3 00:05:33 2019
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_INVALID_CONF"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "1:prod-brm.hathway.com:mso_mta_update_wallet_bal:32322:-141502752:0:1549132533:1"
+E Sun Feb  3 00:07:31 2019  prod-brm.hathway.com  <no name>:2993  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2993): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:07:31 2019  prod-brm.hathway.com  <no name>:2993  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2993): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:07:31 2019  prod-brm.hathway.com  <no name>:2993  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2993): no pin.conf file in . or /etc 2
+E Sun Feb  3 00:07:31 2019  prod-brm.hathway.com  <no name>:2993  pin_mta_api.c:445 1:<machine>:<program>:0:0:0:0:0
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:07:31 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:2993  pin_mta.c:1907 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:2993:-141646112:0:1549132651:1
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:07:31 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:2993  pin_mta.c:2124 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:2993:-141646112:0:1549132651:1
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun Feb  3 00:07:31 2019  prod-brm.hathway.com  mso_mta_update_wallet_bal:2993  pin_mta.c:2146 1:prod-brm.hathway.com:mso_mta_update_wallet_bal:2993:-141646112:0:1549132651:1
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_update_wallet_bal"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 0
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 2993
+1     PIN_FLD_HOSTNAME        STR [0] "prod-brm.hathway.com"
+1     PIN_FLD_START_T      TSTAMP [0] (1549132651) Sun Feb  3 00:07:31 2019
+1     PIN_FLD_END_T        TSTAMP [0] (1549132651) Sun Feb  3 00:07:31 2019
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_INVALID_CONF"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "1:prod-brm.hathway.com:mso_mta_update_wallet_bal:2993:-141646112:0:1549132651:1"
+E Wed Feb 27 16:25:28 2019  prod-brm.hathway.com  <no name>:4841  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(4841): no pin.conf file in . or /etc 2
+E Wed Feb 27 16:25:28 2019  prod-brm.hathway.com  <no name>:4841  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(4841): no pin.conf file in . or /etc 2
+E Wed Feb 27 16:25:28 2019  prod-brm.hathway.com  <no name>:4841  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(4841): no pin.conf file in . or /etc 2
+E Wed Feb 27 16:25:28 2019  prod-brm.hathway.com  <no name>:4841  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(4841): no pin.conf file in . or /etc 2
+E Wed Feb 27 16:25:28 2019  prod-brm.hathway.com  <no name>:4841  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(4841): no pin.conf file in . or /etc 2
+E Wed Feb 27 16:25:28 2019  prod-brm.hathway.com  testnap:4841  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(4841): no pin.conf file in . or /etc 2
+E Wed Feb 27 16:25:28 2019  prod-brm.hathway.com  testnap:4841  pcm_conn.c(6):233 1:<machine>:<program>:0:0:0:0:0
+	pcm_connect: bad/no login_type in pin.conf, err 30

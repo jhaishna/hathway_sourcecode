@@ -1,0 +1,226 @@
+
+#=======================================
+#  Field PIN_FLD_ITEM_TYPES
+#=======================================
+
+ARRAY PIN_FLD_ITEM_TYPES {
+
+	ID = 2007;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_SUB_TYPE
+#=======================================
+
+STRING PIN_FLD_ITEM_SUB_TYPE {
+
+	ID = 2009;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_TAG
+#=======================================
+
+STRING PIN_FLD_ITEM_TAG {
+
+	ID = 2005;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_TYPE
+#=======================================
+
+STRING PIN_FLD_ITEM_TYPE {
+
+	ID = 2008;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRECREATE
+#=======================================
+
+INT PIN_FLD_PRECREATE {
+
+	ID = 2006;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /config/item_types
+#=======================================
+
+STORABLE CLASS /config/item_types {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "The object defined by this class determines the item types that are created when an event occurs. These items may be individual or cumulative.  If the item type is cumulative, the existing item of that type (with the pending status) is used when the event is recorded.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ITEM_TYPES {
+
+		DESCR = "Array of configurable item types that may be created for various event types. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Item description.  Will be used as items title.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ITEM_SUB_TYPE {
+
+			DESCR = "Item sub type for user defined types like  usage,onetime,recurring etc.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ITEM_TAG {
+
+			DESCR = "Item tag derived by event type, service type and other event information";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ITEM_TYPE {
+
+			DESCR = "Item type.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PRECREATE {
+
+			DESCR = "If the item should be precreated or not Pecreate (1) or non-precreate (0).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Type of the item. Individual (1) or Cumulative (2).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/item_types
+#=======================================
+
+STORABLE CLASS /config/item_types IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ITEM_TYPES {
+
+		SQL_TABLE = "config_item_types_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		STRING PIN_FLD_ITEM_SUB_TYPE {
+
+			SQL_COLUMN = "item_sub_type";
+		}
+
+		STRING PIN_FLD_ITEM_TAG {
+
+			SQL_COLUMN = "item_tag";
+		}
+
+		STRING PIN_FLD_ITEM_TYPE {
+
+			SQL_COLUMN = "item_type";
+		}
+
+		INT PIN_FLD_PRECREATE {
+
+			SQL_COLUMN = "precreate";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

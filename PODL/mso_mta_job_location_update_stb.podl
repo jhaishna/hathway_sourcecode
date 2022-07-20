@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "STB location update";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/stb IMPLEMENTATION ORACLE7 {
+
+}
+

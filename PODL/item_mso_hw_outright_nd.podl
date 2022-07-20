@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nd IMPLEMENTATION ORACLE7 {
+
+}
+

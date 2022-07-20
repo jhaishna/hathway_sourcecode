@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_repush
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_repush {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk repush order";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_repush
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_repush IMPLEMENTATION ORACLE7 {
+
+}
+

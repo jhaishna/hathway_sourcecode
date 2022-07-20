@@ -1,0 +1,296 @@
+
+#=======================================
+#  Field MSO_FLD_TRANSFER_SUBSCR
+#=======================================
+
+ARRAY MSO_FLD_TRANSFER_SUBSCR {
+
+	ID = 43358;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field MSO_FLD_VC_ID
+#=======================================
+
+STRING MSO_FLD_VC_ID {
+
+	ID = 40049;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_ID
+#=======================================
+
+STRING PIN_FLD_DEVICE_ID {
+
+	ID = 5551;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FROM_OBJ
+#=======================================
+
+POID PIN_FLD_FROM_OBJ {
+
+	ID = 8253;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_VALUE
+#=======================================
+
+STRING PIN_FLD_OLD_VALUE {
+
+	ID = 8154;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PREV_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_PREV_SERVICE_OBJ {
+
+	ID = 6318;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/transfer_subscription
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/transfer_subscription {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_TRANSFER_SUBSCR {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_VC_ID {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_FROM_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OLD_VALUE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_POID {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PREV_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/transfer_subscription
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/transfer_subscription IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_TRANSFER_SUBSCR {
+
+		SQL_TABLE = "mso_evt_lc_transfer_subscr_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		STRING MSO_FLD_VC_ID {
+
+			SQL_COLUMN = "vc_id";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "new_account_no";
+		}
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			SQL_COLUMN = "device_id";
+		}
+
+		POID PIN_FLD_FROM_OBJ {
+
+			SQL_COLUMN = "old_account_obj";
+		}
+
+		STRING PIN_FLD_OLD_VALUE {
+
+			SQL_COLUMN = "old_account_no";
+		}
+
+		POID PIN_FLD_POID {
+
+			SQL_COLUMN = "new_account_obj";
+		}
+
+		POID PIN_FLD_PREV_SERVICE_OBJ {
+
+			SQL_COLUMN = "old_service_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "new_service_obj";
+		}
+
+	}
+
+}
+

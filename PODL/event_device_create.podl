@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/device/create
+#=======================================
+
+STORABLE CLASS /event/device/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to indicate creating device event.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/device/create
+#=======================================
+
+STORABLE CLASS /event/device/create IMPLEMENTATION ORACLE7 {
+
+}
+

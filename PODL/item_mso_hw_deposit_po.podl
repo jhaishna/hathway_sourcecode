@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/po
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/po {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Port Opening.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/po
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/po IMPLEMENTATION ORACLE7 {
+
+}
+

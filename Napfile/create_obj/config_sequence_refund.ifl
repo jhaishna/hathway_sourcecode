@@ -1,0 +1,10 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /data/sequence -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_BUFFER                     BUF [0] flag/size/offset 0x00 0 0 data:
+0 PIN_FLD_HEADER_NUM                 INT [0] 1
+0 PIN_FLD_HEADER_STR                 STR [0] ":-:RF"
+0 PIN_FLD_NAME                       STR [0] "MSO_SEQUENCE_TYPE_REFUND"
+XX
+xop 1 0 1
+

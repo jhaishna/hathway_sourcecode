@@ -1,0 +1,499 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_AR_DISC_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_AR_DISC_AMT {
+
+	ID = 1802;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_AR_NET_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_AR_NET_AMT {
+
+	ID = 1801;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_AR_TAX_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_AR_TAX_AMT {
+
+	ID = 1803;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_AR_DISC_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_AR_DISC_AMT {
+
+	ID = 1806;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_AR_NET_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_AR_NET_AMT {
+
+	ID = 1805;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_AR_TAX_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_AR_TAX_AMT {
+
+	ID = 1807;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EARNED_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EARNED_END_T {
+
+	ID = 520;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EARNED_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EARNED_START_T {
+
+	ID = 519;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ID
+#=======================================
+
+INT PIN_FLD_GL_ID {
+
+	ID = 840;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /tmp_journals_to_process
+#=======================================
+
+STORABLE CLASS /tmp_journals_to_process {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "tmp_journals_to_process object is used to temporary store data from the journal object. It has the same structure as a journal object. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the account object associated with this tmp_journals_to_process.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CR_AR_DISC_AMT {
+
+		DESCR = "Sum of all credit discounts for this object.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CR_AR_NET_AMT {
+
+		DESCR = "Sum of all credit impacts for this object.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CR_AR_TAX_AMT {
+
+		DESCR = "Sum of all credit tax amounts for this object.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DB_AR_DISC_AMT {
+
+		DESCR = "Sum of all debit discounts for this object.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DB_AR_NET_AMT {
+
+		DESCR = "Sum of all debit impacts for this object.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DB_AR_TAX_AMT {
+
+		DESCR = "Sum of all debit tax amounts for this object.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EARNED_END_T {
+
+		DESCR = "Timestamp, when the object is earned completely. Value of Zero (default) indicate that the event is earned immediately.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EARNED_START_T {
+
+		DESCR = "Timestamp, when the object start earning. Value of Zero (default) indicate that the event start earning immediately.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_GL_ID {
+
+		DESCR = "GLID associated with this object. To get information about available ranges of G/L ID please refer to Portal documentationand /config/glid object";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		DESCR = "Link to the item object associated with this tmp_journals_to_process. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_RESOURCE_ID {
+
+		DESCR = "Numeric value of the resource that is impacted.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "A flag that represents the status of the object (0) not processed, (1) processed";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /tmp_journals_to_process
+#=======================================
+
+STORABLE CLASS /tmp_journals_to_process IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "tmp_journals_to_process_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	DECIMAL PIN_FLD_CR_AR_DISC_AMT {
+
+		SQL_COLUMN = "cr_ar_disc_amt";
+	}
+
+	DECIMAL PIN_FLD_CR_AR_NET_AMT {
+
+		SQL_COLUMN = "cr_ar_net_amt";
+	}
+
+	DECIMAL PIN_FLD_CR_AR_TAX_AMT {
+
+		SQL_COLUMN = "cr_ar_tax_amt";
+	}
+
+	DECIMAL PIN_FLD_DB_AR_DISC_AMT {
+
+		SQL_COLUMN = "db_ar_disc_amt";
+	}
+
+	DECIMAL PIN_FLD_DB_AR_NET_AMT {
+
+		SQL_COLUMN = "db_ar_net_amt";
+	}
+
+	DECIMAL PIN_FLD_DB_AR_TAX_AMT {
+
+		SQL_COLUMN = "db_ar_tax_amt";
+	}
+
+	TIMESTAMP PIN_FLD_EARNED_END_T {
+
+		SQL_COLUMN = "earned_end_t";
+	}
+
+	TIMESTAMP PIN_FLD_EARNED_START_T {
+
+		SQL_COLUMN = "earned_start_t";
+	}
+
+	INT PIN_FLD_GL_ID {
+
+		SQL_COLUMN = "gl_id";
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		SQL_COLUMN = "item_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	INT PIN_FLD_RESOURCE_ID {
+
+		SQL_COLUMN = "resource_id";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

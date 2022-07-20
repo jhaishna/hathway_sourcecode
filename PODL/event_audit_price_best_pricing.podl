@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/price/best_pricing
+#=======================================
+
+STORABLE CLASS /event/audit/price/best_pricing {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to best_pricing.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/price/best_pricing
+#=======================================
+
+STORABLE CLASS /event/audit/price/best_pricing IMPLEMENTATION ORACLE7 {
+
+}
+

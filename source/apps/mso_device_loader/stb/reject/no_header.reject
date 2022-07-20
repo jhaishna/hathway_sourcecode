@@ -1,0 +1,23 @@
+##########################################################
+#       comment should start with a hash
+#       device loading must have header record
+#       header record must start with "Header,"
+#       Empty lines doesn't bother
+############################################################
+#Header,SP code 1,sup code 2,1-32232377,po_code 1,20131031,
+
+serial_00016,NDS,10000C,1120130000000016,Std,STB device,12
+0.0.0.1-121266,serial_00011,NDS,10000C,1120130000000011,Std,STB device,a
+0.0.0.1-121266,serial_00011,NDS,10000C,112013000000001,Std,STB device,a
+0.0.0.1-121266,serial_00011,NDS,10000C,1120130000000011,Std,STB device,12
+0.0.0.1-121266,serial_00012,NDS,10000C,1120130000000012,Std,STB device,12
+0.0.0.1-121266,serial_00013,NDS,10000C,1120130000000013,Std,STB device,12
+0.0.0.1-121266,serial_00014,NDS,10000C,1120130000000014,Std,STB device,12
+0.0.0.1-121266,serial_00015,NDS,10000C,1120130000000015,Std,STB device,12
+0.0.0.1-121266,serial_00016,NDS,10000C,1120130000000016,Std,STB device,12
+0.0.0.1-121266,serial_00017,NDS,10000C,1120130000000017,Std,STB device,12
+0.0.0.1-121266,serial_00018,NDS,10000C,1120130000000018,Std,STB device,12
+0.0.0.1-121266,serial_00019,NDS,10000C,1120130000000019,Std,STB device,12
+0.0.0.1-121266,serial_00010,NDS,10000C,1120130000000010,Std,STB device,12
+
+

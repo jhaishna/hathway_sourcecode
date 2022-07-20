@@ -1,0 +1,167 @@
+
+#=======================================
+#  Field PIN_FLD_CUSTOM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+	ID = 1518;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_TYPE
+#=======================================
+
+INT PIN_FLD_BATCH_TYPE {
+
+	ID = 1354;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_ID
+#=======================================
+
+INT PIN_FLD_GROUP_ID {
+
+	ID = 9168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_STATUS
+#=======================================
+
+ENUM PIN_FLD_GROUP_STATUS {
+
+	ID = 9169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Storable Class /job_batch/amt
+#=======================================
+
+STORABLE CLASS /job_batch/amt {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "AMT job batch.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		DESCR = "AMT-specific job batch info.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_TYPE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_GROUP_ID {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GROUP_STATUS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /job_batch/amt
+#=======================================
+
+STORABLE CLASS /job_batch/amt IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		SQL_TABLE = "job_batch_amt_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_TYPE {
+
+			SQL_COLUMN = "batch_type";
+		}
+
+		INT PIN_FLD_GROUP_ID {
+
+			SQL_COLUMN = "group_id";
+		}
+
+		ENUM PIN_FLD_GROUP_STATUS {
+
+			SQL_COLUMN = "group_status";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd IMPLEMENTATION ORACLE7 {
+
+}
+

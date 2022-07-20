@@ -1,0 +1,16 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_refund_rule 322244 0
+0 PIN_FLD_CREATED_T               TSTAMP [0] (1384542361) 16/11/2013 00:36:01:000 AM
+0 PIN_FLD_MOD_T                   TSTAMP [0] (1384542361) 16/11/2013 00:36:01:000 AM
+0 PIN_FLD_READ_ACCESS                STR [0] "S"
+0 PIN_FLD_WRITE_ACCESS               STR [0] "S"
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 MSO_FLD_RULE_NAME                  STR [0] "HardwarePlan_STP_OPTION_1"
+0 MSO_FLD_PLAN_NAME                  STR [0] "HardwarePlan_STP_OPTION_1"
+0 MSO_FLD_RULE_TYPE                 ENUM [0] 0
+0 MSO_FLD_RULE_STEPS                ARRAY [0] allocated 3, used 3
+1     MSO_FLD_STEP_UNIT             ENUM [0] 1
+1     MSO_FLD_STEP_VALUE          DECIMAL [0] 1
+1     MSO_FLD_STEP_AMOUNT          DECIMAL [0] 400
+XX
+xop 1 0 1

@@ -1,0 +1,252 @@
+
+#=======================================
+#  Field PIN_FLD_DISTRIBUTION
+#=======================================
+
+ARRAY PIN_FLD_DISTRIBUTION {
+
+	ID = 2307;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CRITERION
+#=======================================
+
+STRING PIN_FLD_CRITERION {
+
+	ID = 2301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURR_ACCOUNT_SIZE
+#=======================================
+
+INT PIN_FLD_CURR_ACCOUNT_SIZE {
+
+	ID = 2305;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_NO
+#=======================================
+
+INT PIN_FLD_DB_NO {
+
+	ID = 2302;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_PRIORITY
+#=======================================
+
+INT PIN_FLD_DB_PRIORITY {
+
+	ID = 2303;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_STATUS
+#=======================================
+
+ENUM PIN_FLD_DB_STATUS {
+
+	ID = 2306;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_ACCOUNT_SIZE
+#=======================================
+
+INT PIN_FLD_MAX_ACCOUNT_SIZE {
+
+	ID = 2304;
+}
+
+
+#=======================================
+#  Storable Class /config/distribution
+#=======================================
+
+STORABLE CLASS /config/distribution {
+
+	LABEL = "Object for storing account distribution criteria ";
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "An object of this class is used to specify the criteria for selecting the database that a newly created account should go in. Objects in this class are created at install time, and updated by a periodically running application ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISTRIBUTION {
+
+		DESCR = "Array of Account distribution criteria ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CRITERION {
+
+			DESCR = "Optional criterion that customers can use to change distribution policies ";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURR_ACCOUNT_SIZE {
+
+			DESCR = "Current Account Size ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DB_NO {
+
+			DESCR = "A number identifying the database for account creation ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DB_PRIORITY {
+
+			DESCR = "Priority of the database - The customer creation logic uses this to determine the order in which databases are chosen for account creation ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DB_STATUS {
+
+			DESCR = "Current Database Status - Open/Closed";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Brief description";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_ACCOUNT_SIZE {
+
+			DESCR = "Maximum Account Size for this DB";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/distribution
+#=======================================
+
+STORABLE CLASS /config/distribution IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DISTRIBUTION {
+
+		SQL_TABLE = "config_distribution_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CRITERION {
+
+			SQL_COLUMN = "criterion";
+		}
+
+		INT PIN_FLD_CURR_ACCOUNT_SIZE {
+
+			SQL_COLUMN = "curr_account_size";
+		}
+
+		INT PIN_FLD_DB_NO {
+
+			SQL_COLUMN = "db_no";
+		}
+
+		INT PIN_FLD_DB_PRIORITY {
+
+			SQL_COLUMN = "db_priority";
+		}
+
+		ENUM PIN_FLD_DB_STATUS {
+
+			SQL_COLUMN = "db_status";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		INT PIN_FLD_MAX_ACCOUNT_SIZE {
+
+			SQL_COLUMN = "max_account_size";
+		}
+
+	}
+
+}
+

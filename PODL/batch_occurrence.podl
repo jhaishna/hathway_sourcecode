@@ -1,0 +1,119 @@
+
+#=======================================
+#  Field PIN_FLD_BATCH_OCCURRENCE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_BATCH_OCCURRENCE_INFO {
+
+	ID = 2612;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_CONTROLLER_OBJ
+#=======================================
+
+POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+	ID = 2603;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /batch/occurrence
+#=======================================
+
+STORABLE CLASS /batch/occurrence {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A batch subclass used to record a Batch Controller occurrence.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BATCH_OCCURRENCE_INFO {
+
+		DESCR = "Substruct containing information about this Batch Occurrence.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+			DESCR = "Portal object id of the Batch Controller session which created this occurrence object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Type of this occurrence. Permitted values include TIMED, EXTERNAL, etc.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/occurrence
+#=======================================
+
+STORABLE CLASS /batch/occurrence IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BATCH_OCCURRENCE_INFO {
+
+		SQL_TABLE = "batch_occurrence_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+			SQL_COLUMN = "batch_controller_obj";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

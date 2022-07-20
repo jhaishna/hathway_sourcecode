@@ -1,0 +1,171 @@
+
+#=======================================
+#  Field PIN_FLD_FIELD
+#=======================================
+
+ARRAY PIN_FLD_FIELD {
+
+	ID = 88;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ATTRIBUTE
+#=======================================
+
+INT PIN_FLD_ATTRIBUTE {
+
+	ID = 513;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NUM
+#=======================================
+
+ENUM PIN_FLD_FIELD_NUM {
+
+	ID = 89;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_TYPE
+#=======================================
+
+INT PIN_FLD_FIELD_TYPE {
+
+	ID = 509;
+}
+
+
+#=======================================
+#  Storable Class /config/invoice_data_map
+#=======================================
+
+STORABLE CLASS /config/invoice_data_map {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "The objects of this class are used to hold the pin field mapping. They are used to generate a flist from the invoice cache encoded by Pipeline. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_FIELD {
+
+		DESCR = "This array holds a list of fields that are used to generate a flist. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ATTRIBUTE {
+
+			DESCR = "This field is used to store the level of nesting of a field in the resulting flist.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "This contains the name of a field.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_FIELD_NUM {
+
+			DESCR = "This contains the field number as described  in pin_flds.h.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FIELD_TYPE {
+
+			DESCR = "This indicates the type of a field: Array or Substruct.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/invoice_data_map
+#=======================================
+
+STORABLE CLASS /config/invoice_data_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_FIELD {
+
+		SQL_TABLE = "config_inv_data_map_flds_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ATTRIBUTE {
+
+			SQL_COLUMN = "fldattr";
+		}
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "fldname";
+		}
+
+		ENUM PIN_FLD_FIELD_NUM {
+
+			SQL_COLUMN = "fldnum";
+		}
+
+		INT PIN_FLD_FIELD_TYPE {
+
+			SQL_COLUMN = "fldtype";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /service/settlement/ws/outcollect/lco
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/outcollect/lco {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale Settlement Outcollect Service";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/ws/outcollect/lco
+#=======================================
+
+STORABLE CLASS /service/settlement/ws/outcollect/lco IMPLEMENTATION ORACLE7 {
+
+}
+

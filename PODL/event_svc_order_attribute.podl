@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/svc_order/attribute
+#=======================================
+
+STORABLE CLASS /event/svc_order/attribute {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Used to record attribute changes to a service order.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/svc_order/attribute
+#=======================================
+
+STORABLE CLASS /event/svc_order/attribute IMPLEMENTATION ORACLE7 {
+
+}
+

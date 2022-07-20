@@ -1,0 +1,94 @@
+
+#=======================================
+#  Field PIN_FLD_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_MEMBERS {
+
+	ID = 119;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+
+#=======================================
+#  Storable Class /event/group/member
+#=======================================
+
+STORABLE CLASS /event/group/member {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track additions or deletions of members to a group using the PCM_OP_GROUP_ADD_MEMBER or PCM_OP_GROUP_DELETE_MEMBER operations. The PIN_FLD_GROUP_OBJ of the base /event class identifies the group being operated on. And the PIN_FLD_SYS_DESCR field in the base /event class identifies the type (add/delete) of the operation.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of member being added or deleted. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "The object id (POID) of the member.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/member
+#=======================================
+
+STORABLE CLASS /event/group/member IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "event_group_members_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,34 @@
+r << XX 1
+0 PIN_FLD_POID                   POID [0] 0.0.0.1 /config/mta -1 0
+0 PIN_FLD_HOSTNAME                STR [0] "host"
+0 PIN_FLD_NAME                    STR [0] "Config MTA"
+0 PIN_FLD_PROGRAM_NAME            STR [0] "MTA"
+0 PIN_FLD_VALUE                   STR [0] ""
+0 PIN_FLD_VERSION                 STR [0] ""
+0 PIN_FLD_CONFIG_MTA            ARRAY [0] allocated 20, used 4
+1     PIN_FLD_LIBRARY             STR [0] ""
+1     PIN_FLD_NAME                STR [0] "pin_inv_accts"
+1     PIN_FLD_OPCODE_MAP        ARRAY [0] allocated 20, used 2
+2         PIN_FLD_FUNCTION        STR [0] "MTA_INIT_SEARCH"
+2         PIN_FLD_NAME            STR [0] "MSO_OP_UTILS_ADD_HINT_BILLING"
+0 PIN_FLD_CONFIG_MTA            ARRAY [2] allocated 20, used 3
+1     PIN_FLD_LIBRARY             STR [0] ""
+1     PIN_FLD_NAME                STR [0] "pin_cycle_fees"
+1     PIN_FLD_OPCODE_MAP        ARRAY [0] allocated 20, used 2
+2         PIN_FLD_FUNCTION        STR [0] "MTA_INIT_SEARCH"
+2         PIN_FLD_NAME            STR [0] "MSO_OP_UTILS_ADD_HINT_BILLING"
+0 PIN_FLD_CONFIG_MTA            ARRAY [3] allocated 20, used 3
+1     PIN_FLD_LIBRARY             STR [0] ""
+1     PIN_FLD_NAME                STR [0] "pin_deferred_act"
+1     PIN_FLD_OPCODE_MAP        ARRAY [0] allocated 20, used 2
+2         PIN_FLD_FUNCTION        STR [0] "MTA_INIT_SEARCH"
+2         PIN_FLD_NAME            STR [0] "MSO_OP_UTILS_ADD_HINT_BILLING"
+0 PIN_FLD_CONFIG_MTA            ARRAY [1] allocated 20, used 4
+1     PIN_FLD_LIBRARY             STR [0] ""
+1     PIN_FLD_NAME                STR [0] "pin_bill_accts"
+1     PIN_FLD_OPCODE_MAP        ARRAY [0] allocated 20, used 2
+2         PIN_FLD_FUNCTION        STR [0] "MTA_CONFIG"
+2         PIN_FLD_NAME            STR [0] "MSO_OP_UTILS_ADD_HINT_BILLING"
+XX
+xop 1 0 1
+

@@ -1,0 +1,216 @@
+
+#=======================================
+#  Field PIN_FLD_RA_FLOWS
+#=======================================
+
+ARRAY PIN_FLD_RA_FLOWS {
+
+	ID = 9029;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONTROL_POINTS
+#=======================================
+
+ARRAY PIN_FLD_CONTROL_POINTS {
+
+	ID = 9028;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_TYPE
+#=======================================
+
+STRING PIN_FLD_OBJECT_TYPE {
+
+	ID = 9019;
+}
+
+
+#=======================================
+#  Storable Class /config/ra_flows
+#=======================================
+
+STORABLE CLASS /config/ra_flows {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores flow info";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RA_FLOWS {
+
+		DESCR = "Revenue Assurance Flow Details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CONTROL_POINTS {
+
+			DESCR = "Control Point Info";
+			ORDER = 1;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_DESCR {
+
+				DESCR = "Control Point Descrition";
+				ORDER = 2;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Control Point name";
+				ORDER = 2;
+				LENGTH = 80;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_OBJECT_TYPE {
+
+				DESCR = "Object Name ";
+				ORDER = 2;
+				LENGTH = 80;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description About flow";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Flow Name";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/ra_flows
+#=======================================
+
+STORABLE CLASS /config/ra_flows IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RA_FLOWS {
+
+		SQL_TABLE = "config_ra_flows_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CONTROL_POINTS {
+
+			SQL_TABLE = "config_ra_ctrl_pt_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_DESCR {
+
+				SQL_COLUMN = "cp_descr";
+			}
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "cp_name";
+			}
+
+			STRING PIN_FLD_OBJECT_TYPE {
+
+				SQL_COLUMN = "obj_type";
+			}
+
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "flow_descr";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "flow_name";
+		}
+
+	}
+
+}
+

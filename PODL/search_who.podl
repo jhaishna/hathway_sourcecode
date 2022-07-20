@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /search/who
+#=======================================
+
+STORABLE CLASS /search/who {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "WHO DM search objects to hold pre-created search templates to be used with PCM_OP_SEARCH opcode. A pre-defined set of search objects are loaded into the system during installation from the init_objects.source file.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /search/who
+#=======================================
+
+STORABLE CLASS /search/who IMPLEMENTATION ORACLE7 {
+
+}
+

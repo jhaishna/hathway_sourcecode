@@ -1,0 +1,184 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Prepaid subscription items for FIBER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bi-Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+

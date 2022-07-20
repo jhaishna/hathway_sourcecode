@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/settlement/tax_event
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/tax_event {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created to capture a settlement made to an event that involved taxes. This event belongs to the settlement item. An event is created for each /event/billing/cycle/tax event being settled.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/tax_event
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/tax_event IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,22 @@
+--
+-- @(#)create_md_primary_uniqueness.source 1 09/25/2001
+--
+--     Copyright (c) 1999-2007 Oracle. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+--
+-- sql file to prepare database for replicating /uniqueness objects
+
+insert into md_static_objects_t
+        select 
+	       UT.table_name, UT.tablespace_name, NULL,
+	       0, 'UNIQUENESS', NULL, 0, 0, 0, 0, 0, 0, 0, 0 
+	from 
+	     dd_objects_fields_t DD, user_tables UT 
+	where 
+	      UPPER(DD.sm_item_name) = UT.table_name AND
+	      UT.table_name like '%UNIQUE%';

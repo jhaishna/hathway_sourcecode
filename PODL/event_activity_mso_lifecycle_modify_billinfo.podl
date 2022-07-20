@@ -1,0 +1,167 @@
+
+#=======================================
+#  Field MSO_FLD_MODIFY_BILLINFO
+#=======================================
+
+ARRAY MSO_FLD_MODIFY_BILLINFO {
+
+	ID = 41193;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_CYCLE_DOM
+#=======================================
+
+INT PIN_FLD_ACTG_CYCLE_DOM {
+
+	ID = 752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLING_SEGMENT
+#=======================================
+
+ENUM PIN_FLD_BILLING_SEGMENT {
+
+	ID = 8301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_WHEN
+#=======================================
+
+INT PIN_FLD_BILL_WHEN {
+
+	ID = 131;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/modify_billinfo
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/modify_billinfo {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_BILLINFO {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_BILLING_SEGMENT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/modify_billinfo
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/modify_billinfo IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_BILLINFO {
+
+		SQL_TABLE = "mso_evt_lc_modify_billinfo_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			SQL_COLUMN = "actg_cycle_dom";
+		}
+
+		ENUM PIN_FLD_BILLING_SEGMENT {
+
+			SQL_COLUMN = "billing_segment";
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			SQL_COLUMN = "bill_when";
+		}
+
+	}
+
+}
+

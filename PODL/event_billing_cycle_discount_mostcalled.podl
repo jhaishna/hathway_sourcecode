@@ -1,0 +1,177 @@
+
+#=======================================
+#  Field PIN_FLD_MOST_CALLED_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+	ID = 7461;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOST_CALLED_LIST
+#=======================================
+
+STRING PIN_FLD_MOST_CALLED_LIST {
+
+	ID = 7462;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/discount/mostcalled
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/discount/mostcalled {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a billing time discount is applied. This event holds the most called numbers based on the configuration of the provisioning tag. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+		DESCR = "Substruct to hold the info about the most called numbers in the current cycle.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			LABEL = "Most Called Cost";
+			DESCR = "Total charges of the events of  the most called numbers.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_COUNT {
+
+			LABEL = "Most Called Occurrences";
+			DESCR = "Total number of events of the most called numbers.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MOST_CALLED_LIST {
+
+			LABEL = "Most Called List";
+			DESCR = "semicolon seperated list of most called numbers.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			LABEL = "Most Called Duration";
+			DESCR = "Total duration used by the most called numbers.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/discount/mostcalled
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/discount/mostcalled IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+		SQL_TABLE = "event_billing_cdisc_mostcall_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "cost";
+		}
+
+		INT PIN_FLD_COUNT {
+
+			SQL_COLUMN = "occurrences";
+		}
+
+		STRING PIN_FLD_MOST_CALLED_LIST {
+
+			SQL_COLUMN = "mostcalled_list";
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			SQL_COLUMN = "duration";
+		}
+
+	}
+
+}
+

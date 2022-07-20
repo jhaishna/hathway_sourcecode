@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_space_addi
+#=======================================
+
+STORABLE CLASS /item/mso_space_addi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Additional Storage Space Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_space_addi
+#=======================================
+
+STORABLE CLASS /item/mso_space_addi IMPLEMENTATION ORACLE7 {
+
+}
+

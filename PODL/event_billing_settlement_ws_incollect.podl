@@ -1,0 +1,349 @@
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+	ID = 43324;
+	DESCR = "Charge Head Based Commission";
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD
+#=======================================
+
+STRING MSO_FLD_CHARGE_HEAD {
+
+	ID = 43301;
+	DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+}
+
+
+#=======================================
+#  Field MSO_FLD_COLLECTION_AMT
+#=======================================
+
+DECIMAL MSO_FLD_COLLECTION_AMT {
+
+	ID = 43343;
+	DESCR = "Collection Amount";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_PLAN_INFO {
+
+	ID = 43323;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_CATEGORY
+#=======================================
+
+ENUM MSO_FLD_PLAN_CATEGORY {
+
+	ID = 43300;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_NAME
+#=======================================
+
+STRING MSO_FLD_PLAN_NAME {
+
+	ID = 43005;
+	DESCR = "Hardware Plan Name";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_POID
+#=======================================
+
+INT MSO_FLD_PLAN_POID {
+
+	ID = 43319;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_SUB_CATEGORY
+#=======================================
+
+STRING MSO_FLD_PLAN_SUB_CATEGORY {
+
+	ID = 43306;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PRICE
+#=======================================
+
+DECIMAL MSO_FLD_PRICE {
+
+	ID = 42017;
+	DESCR = "Supplier Price of the item";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/incollect
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/incollect {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event to track Wholesale Settlement Incollect Services charges";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/incollect/charge_head_based
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/incollect/charge_head_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Charge Head Based Commission";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		DESCR = "Charge Head Based Commission";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_COLLECTION_AMT {
+
+			DESCR = "Collection Amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/incollect/plan_based
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/incollect/plan_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Plan Based Commission";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_PLAN_INFO {
+
+		DESCR = "Plan Based Commission";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_PLAN_CATEGORY {
+
+			DESCR = "Plan Category (0-Hardware, 1-Subscription, 2-One-time, etc)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PLAN_NAME {
+
+			DESCR = "Hardware Plan Name";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_PLAN_POID {
+
+			DESCR = "Plan Poid";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PLAN_SUB_CATEGORY {
+
+			DESCR = "Plan Sub Category";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_PRICE {
+
+			DESCR = "Price";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/incollect
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/incollect IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/incollect/charge_head_based
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/incollect/charge_head_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		SQL_TABLE = "event_in_sett_charge_head_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			SQL_COLUMN = "charge_head";
+		}
+
+		DECIMAL MSO_FLD_COLLECTION_AMT {
+
+			SQL_COLUMN = "collection_amt";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/incollect/plan_based
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/incollect/plan_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_PLAN_INFO {
+
+		SQL_TABLE = "event_in_sett_plan_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_PLAN_CATEGORY {
+
+			SQL_COLUMN = "plan_category";
+		}
+
+		STRING MSO_FLD_PLAN_NAME {
+
+			SQL_COLUMN = "plan_name";
+		}
+
+		INT MSO_FLD_PLAN_POID {
+
+			SQL_COLUMN = "plan_poid";
+		}
+
+		STRING MSO_FLD_PLAN_SUB_CATEGORY {
+
+			SQL_COLUMN = "plan_sub_category";
+		}
+
+		DECIMAL MSO_FLD_PRICE {
+
+			SQL_COLUMN = "price";
+		}
+
+	}
+
+}
+

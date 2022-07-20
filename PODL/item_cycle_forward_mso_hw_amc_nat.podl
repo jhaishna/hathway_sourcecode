@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nat
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nat
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nat IMPLEMENTATION ORACLE7 {
+
+}
+

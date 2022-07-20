@@ -1,0 +1,489 @@
+#!/bin/sh
+
+####################################################################
+#-------------------------------------------------------------------
+#
+#  @(#)$Id: pin_bill_day.sh /cgbubrm_7.5.0.rwsmod/3 2013/03/29 18:03:51 mnarasim Exp $
+#
+# Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved. 
+#	
+#	This material is the confidential property of Oracle Corporation
+#	or its licensors and may be used, reproduced, stored or transmitted
+#	only in accordance with a valid Oracle license or sublicense agreement.
+#
+#-------------------------------------------------------------------
+####################################################################
+
+VERSION=$PIN_VERSION
+
+####################################################################
+#-------------------------------------------------------------------
+#
+# Master Daily Billing Script
+#
+#	Performs the following daily billing tasks:
+#
+#		- Deferred Actions   	(pin_deferred_act)
+#
+#		- Cycle Fee Cleanup	(pin_cycle_fees)
+#		- Deferred Cancellation (pin_cycle_fees)
+#		- Deferred Purchase Fee (pin_cycle_fees)
+#
+#		- Bill Generation	(pin_bill_accts)
+#		- Credit Card refunds 	(pin_refund -pay_type 10003 -vendor fusa)
+#		- Direct Debit refunds 	(pin_refund -pay_type 10005 -vendor fusa)
+#		- CreditCard Collect	(pin_collect -pay_type 10003 -vendor fusa)
+#		- DirectDebit Collect	(pin_collect -pay_type 10005 -vendor fusa)
+#		- Invoice Generation	(pin_inv_accts -pay_type 10001)
+#		- CreditCard Deposits	(pin_deposit -pay_type 10003 -vendor fusa)
+#		- DirectDebit Deposits	(pin_deposit -pay_type 10005 -vendor fusa)
+#
+#	It is assumed that this script is run (in the background)
+#	by cron once a day, via a crontab entry something like the
+#	following (which will run the script at 12:05 am):
+#
+#		5 0 * * * /opt/portal/$PIN_VERSION/bin/pin_bill_day &
+#
+#-------------------------------------------------------------------
+####################################################################
+DB_STRING=`cat /home/pin/.pass/pin.db`
+sqlplus -S ${DB_STRING} <<EOF
+EOF
+
+
+PINDIR=/home/pin/Thirdparty/BRM12/BRM/
+LOGDIR=/home/pin/Thirdparty/BRM12/BRM/var/pin_billd
+
+CNFDIR=${PINDIR}/apps/pin_billd
+INVDIR=${PINDIR}/apps/pin_inv
+SUBSDIR=${PINDIR}/apps/pin_subscription
+
+PATH=/usr/bin:/bin:${PINDIR}/bin
+
+OUT_FILE=${CNFDIR}/BB_Cancel.dat
+LOGFILE=${CNFDIR}/BB_Cancel.log
+
+START_DATE=`date +%d' '%b' '%y' '%H:%M:%S`
+UNIX_START_DATE=`date +%s -d "$START_DATE"`
+
+###ADED two mail is in the last on 31-Jan-2018 - Vineet
+
+#MAIL_BODY_FILE=${PINDIR}/apps/pin_billd/mailBody.txt
+
+#TOM='newton.cardoza@hathway.net','rohan.naik@hathway.net','vishal.vairal@hathway.net','sandeepvarma@hcspl.net','prafulla@hathway.net','vivekanand.tripathi@hathway.net','vineet.tripathi@hathway.net','tcs-obrm-lead@hathway.net','tcs-pm@hathway.net'
+#TOM='krishnan.shyam@tcs.com'
+DB_STRING=`cat /home/pin/.pass/pin.db`
+
+CURRENT_DATE=`date +%d' '%b' '%y`;
+UNIXTIME=`date +%s -d "$CURRENT_DATE"`;
+
+:>$LOGFILE
+echo $CURRENT_DATE > $LOGFILE
+echo $UNIXTIME >> $LOGFILE
+
+cd ${CNFDIR}
+
+#-------------------------------------------------------------------
+#  Collections                          (pin_collections_process)
+#                                       (pin_collections_send_dunning)
+#
+#     This is an optional process.  It is only valid when you have
+#     the collections module installed.  Please uncomment the following
+#     lines to enable the collections process.
+#
+#     pin_collections_process examines all the accounts that have a
+#     due that cannot be ignored and put them into collections according
+#     to the user-defined criteria.
+#
+#     pin_collections_send_dunning collects all dunning letters
+#     created for today and send them to the customers.
+#-------------------------------------------------------------------
+# cd ${PINDIR}/apps/pin_collections
+# pin_collections_process
+# pin_collections_send_dunning
+
+####### START Section - Pre-Billing Parallel Cycle Fee Processing #######
+
+#----------------------------------------------------------------------------
+# Pre-Billing Parallel Cycle Fee Processing
+# -----------------------------------------
+#
+# Cycle fees that are due at the bill period end time are normally applied
+# by the billing application pin_bill_accts. When configuring BRM to process
+# cycle fees in parallel by service, pin_cycle_fees will need to be run PRIOR
+# to running pin_bill_accts. In that case, uncomment the following invocations
+# of the application pin_cycle_fees as well as the application
+# pin_update_items_journals. For more information on when and how to configure
+# BRM for this feature, refer to product documentation.
+#
+# NOTES:
+# - DO NOT uncomment these invocations when not using this feature.
+# - You will also need to follow similar instructions towards the end of this
+#   script regarding another invocation of pin_update_items_journals.
+#----------------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+# Deferred Purchase Fees			(pin_cycle_fees)
+#
+#   Apply purchase fee and cycle fee for products with expired purchase
+#   start time.
+#-------------------------------------------------------------------
+##### pin_cycle_fees -defer_purchase
+
+#-------------------------------------------------------------------
+# Deferred Cycle Fees				(pin_cycle_fees)
+#
+#   Apply deferred cycle fees
+#-------------------------------------------------------------------
+##### pin_cycle_fees -defer_cycle_fees
+
+#-------------------------------------------------------------------
+# Deferred Product Cancellation			(pin_cycle_fees)
+#
+#   Apply cancellation fee and cycle fee for products with expired
+#   cancellation time.
+#-------------------------------------------------------------------
+##### pin_cycle_fees -defer_cancel
+
+#-------------------------------------------------------------------
+# Regular Cycle Fees				(pin_cycle_fees)
+#
+#   Apply regular cycle fees for products whose cycle fee is due as
+#   of billing time.
+#-------------------------------------------------------------------
+##### pin_cycle_fees -regular_cycle_fees
+
+#-------------------------------------------------------------------
+# Process item and journal data			(pin_update_items_journals)
+#
+#   Update item and journal data based on temporary tables populated
+#   earlier by pin_cycle_fees above.
+#-------------------------------------------------------------------
+##### pin_update_items_journals
+
+####### END Section - Pre-Billing Parallel Cycle Fee Processing #######
+
+#-------------------------------------------------------------------
+# Deferred Actions 	    			(pin_deferred_act)
+#	Provides the deferred actions for the schedule objects with expired
+#	WHEN time.
+#
+#-------------------------------------------------------------------
+#echo "starting pin_deffered_act @" `date`
+#pin_deferred_act -verbose
+#err=$?
+#if [ $err != 0 ]; then
+#	exit $err;
+#fi
+#wait
+#echo "finished pin_deffered_act @" `date`
+#-------------------------------------------------------------------
+# Bill Generation			(pin_bill_accts)
+#
+#	We do the bill creation as two (parrallel) batches,
+#	the active accounts and the closed/inactive accounts.
+#
+#	Run all types of accounts in one search since pin_bill_accts
+#	is a multi-thread application. You also can specify a
+#	particular type of account with one of [-active/close/inactive]
+#	options.
+#
+#	This application can optionally take two parameters passed
+#	via pin_bill_day script.
+#
+#	pin_bill_day -file PinBillRunControl.xml -split
+#	
+#	These parameters are used to control bill runs.
+#     
+#       The split parameter will specify audit revenue data to be collected
+#        
+#       by  item type or not.
+#
+#	IMPORTANT: Must finish before next step.
+#
+#-------------------------------------------------------------------
+#pin_bill_accts -pay_type 10007 -file mso_PinBillRunControl.xml
+#err=$?
+#if [ $err != 0 ]; then
+#	exit $err;
+#fi
+#wait
+
+
+#pin_bill_accts -pay_type 10001 -file mso_PinBillRunControl.xml
+#err=$?
+#if [ $err != 0 ]; then
+#        exit $err;
+#fi
+#wait
+
+
+#pin_bill_accts -discount $1 $2 $3
+#err=$?
+#if [ $err != 0 ]; then
+#	exit $err;
+#fi
+#pin_bill_accts -sponsorship $1 $2 $3
+#err=$?
+#if [ $err != 0 ]; then
+#	exit $err;
+#fi
+#pin_bill_accts $1 $2 $3
+#err=$?
+#if [ $err != 0 ]; then
+#	exit $err;
+#fi
+
+
+#-------------------------------------------------------------------
+# Credit Card Refunds		(pin_refund -pay_type 10003 -vendor fusa)
+#
+#	Refund the credit due from credit card accounts.
+#
+#-------------------------------------------------------------------
+#pin_refund -active -pay_type 10003 -vendor fusa&
+#pin_refund -inactive -pay_type 10003 -vendor fusa&
+#pin_refund -close -pay_type 10003 -vendor fusa&
+
+#-------------------------------------------------------------------
+# Direct Debit Refunds		(pin_refund -pay_type 10005 -vendor fusa)
+#
+#	Refund the credit due from direct debit accounts.
+#
+#-------------------------------------------------------------------
+#pin_refund -active -pay_type 10005 -vendor fusa&
+#pin_refund -inactive -pay_type 10005 -vendor fusa&
+#pin_refund -close -pay_type 10005 -vendor fusa&
+
+#-------------------------------------------------------------------
+# Credit Card Collection	(pin_collect -pay_type 10003 -vendor fusa)
+#
+#	Collect the balance due from credit card accounts.
+#
+#-------------------------------------------------------------------
+#pin_collect -inactive -pay_type 10003 -vendor fusa
+#pin_collect -active -pay_type 10003 -vendor fusa&
+#pin_collect -close -pay_type 10003 -vendor fusa&
+
+#-------------------------------------------------------------------
+# Wait for billing to finish up.
+#-------------------------------------------------------------------
+#wait
+
+
+#-------------------------------------------------------------------
+# Direct Debit Collection	(pin_collect -pay_type 10005 -vendor fusa)
+#
+#	Collect the balance due from direct debit accounts.
+#
+#-------------------------------------------------------------------
+#pin_collect -inactive -pay_type 10005 -vendor fusa
+#pin_collect -active -pay_type 10005 -vendor fusa&
+#pin_collect -close -pay_type 10005 -vendor fusa&
+
+#-------------------------------------------------------------------
+# Wait for billing to finish up.
+#-------------------------------------------------------------------
+#wait
+
+#-------------------------------------------------------------------
+# Invoice Generation		(pin_inv_accts -pay_type 10001)
+#
+#	Generate the invoices and store them in the database.
+#	Payment types are defined as follows:
+#			<id>  meaning
+#			----- -------
+#		        10000 prepaid
+#		        10001 invoice
+#		        10002 debit
+#		        10003 credit card
+#		        10004 French direct debit
+#		        10005 US/Canadian direct debit
+#		        10006 smart card
+#		        10007 subordinate 
+#		        10008 beta
+#		        10009 internal
+#		        10010 guest
+#		        10011 cash
+#		        10012 check
+#		        10013 wtransfer
+#		        10014 payorder
+#		        10015 postal order
+#
+# 	If you want to invoice all the bills, 
+#	you can simply put "pin_inv_accts" instead. Also
+#	"pin_inv_accts -regen" provide a way to regenerate invoices.
+#	"pin_inv_accts -hierarchy" is used to generate the invoice
+#	for selective subordinate accounts. If threshold_subords_detail
+#	threshold_subords_summary params in /config/business_params are
+#	set as NON Zero with hierarchical accounts in Infranet then uncomment
+#	this line.
+#-------------------------------------------------------------------
+#cd ${INVDIR}
+
+#pin_inv_accts -hierarchy
+
+#pin_inv_accts -pay_type 10001&
+
+#cd ${CNFDIR}
+#wait
+
+#-------------------------------------------------------------------
+# Credit Card Deposits		(pin_deposit -pay_type 10003 -vendor fusa)
+# Direct Debit Deposits		(pin_deposit -pay_type 10005 -vendor fusa)
+#
+#	Deposit outstanding creditcard authorizations.
+#	Deposit outstanding direct debit authorizations.
+#
+#	The default for pin_deposit is to look for outstanding
+#	charges made within the past (from yesterday) 30 days. This
+#	seems reasonable for now, but if performance warrants, the
+#	scope of the search can bemodifed by adding the appropriate
+#	options to the pin_deposit call below.
+#
+#	See the pin_deposit manpage for details.
+#
+#-------------------------------------------------------------------
+#pin_deposit -pay_type 10003 -vendor fusa&
+#pin_deposit -pay_type 10005 -vendor fusa&
+
+#-------------------------------------------------------------------
+# Wait for deposits to finish up.
+#-------------------------------------------------------------------
+#wait
+
+#-------------------------------------------------------------------
+# Deferred Purchase Fees			(pin_cycle_fees)
+#
+#   Apply purchase fee and cycle fee for products with expired purchase
+#   start time.
+#-------------------------------------------------------------------
+#echo "starting  pin_cycle_fees for defer_purchase@" `date`
+#pin_cycle_fees -verbose -defer_purchase
+#wait
+#echo "finished  pin_cycle_fees for defer_purchase@" `date`
+
+#-------------------------------------------------------------------
+# Deferred Cycle Fees				(pin_cycle_fees)
+#
+#   Apply deferred cycle fees
+#-------------------------------------------------------------------
+#echo "starting  pin_cycle_fees for defer_cycle_fees@" `date`
+#pin_cycle_fees -verbose -defer_cycle_fees
+#wait
+#echo "finished  pin_cycle_fees for defer_cycle_fees@" `date`
+
+#-------------------------------------------------------------------
+# Deferred Product Cancellation			(pin_cycle_fees)
+#
+#   Apply cancellation fee and cycle fee for products with expired
+#   cancellation time.
+#-------------------------------------------------------------------
+
+echo "starting  pin_cycle_fees for defer_cancel@" `date`
+pin_cycle_fees -verbose -defer_cancel -segment 101
+wait
+pin_cycle_fees -verbose -defer_cancel -segment 105
+wait
+pin_cycle_fees -verbose -defer_cancel -segment 106
+wait
+echo "finished  pin_cycle_fees for defer_cancel@" `date`
+
+echo "starting  pin_cycle_fees for cancel@" `date`
+pin_cycle_fees -verbose -cancel -segment 101
+pin_cycle_fees -verbose -cancel -segment 105
+pin_cycle_fees -verbose -cancel -segment 106
+echo "finished  pin_cycle_fees for cancel@" `date`
+echo $OUT_FILE
+echo $UNIXTIME
+
+#----------------------------------------------------------------#
+# Pending records check
+#----------------------------------------------------------------#
+
+echo "Report Execution Query Started"
+#/home/oracle/11g/database/client/11.2.0.4/bin/sqlplus -s ${DB_STRING} << EOF > $OUT_FILE
+
+sqlplus -s /nolog << eof >>$OUT_FILE
+connect ${DB_STRING}
+
+set echo off head off pagesize 0 trimspool on linesize 5000;
+select /*full(pp)*/ pp.account_obj_id0||'' from purchased_product_t pp,product_t p
+where pp.product_obj_id0 = p.poid_id0 and p.provisioning_tag is not null
+and pp.service_obj_type ='/service/telco/broadband'  
+and pp.status =1 and pp.purchase_end_t <>0 
+and pp.purchase_end_t <= $UNIXTIME;
+exit;
+EOF
+
+echo "Report Execution Completed"
+END_DATE=`date +%d' '%b' '%y' '%H:%M:%S`
+UNIX_END_DATE=`date +%s -d "$END_DATE"`
+DURATION=`expr $UNIX_END_DATE - $UNIX_START_DATE`
+HOURS=`expr $DURATION / 60 / 60`
+MINS=`expr $DURATION / 60`
+SECS=`expr $DURATION % 60`
+
+
+:>$MAIL_BODY_FILE
+echo -e 'Dear All,\n\nPFB BB Cancel Job results' > $MAIL_BODY_FILE;
+echo -e '\nStart time = ' $START_DATE >> $MAIL_BODY_FILE;
+echo -e '\nEnd time = ' $END_DATE >> $MAIL_BODY_FILE;
+echo -e "\nDuration = $HOURS hours, $MINS mins and $SECS secs\n" >> $MAIL_BODY_FILE;
+echo -e '\nTotal no of records pending for Cancellation job:\n' >> $MAIL_BODY_FILE;
+cat $OUT_FILE >> $MAIL_BODY_FILE
+echo -e '\nThanks and Regards,\nAMS Team' >> $MAIL_BODY_FILE;
+
+mail -s "BB Cancellation job Status $CURRENT_DATE " $TOM -- -r "ams@hathway.net" < $MAIL_BODY_FILE
+
+#-------------------------------------------------------------------
+# Flexible Cycle rollover			(pin_rollover)
+#	Triggers the Cycle rollover op-code to rollover the old
+#	buckets. It is an MTA app.
+#
+#-------------------------------------------------------------------
+#cd ${SUBSDIR}
+
+#pin_rollover
+
+#-------------------------------------------------------------------
+# Flexible Cycle Fees				(pin_cycle_fees)
+#
+#   Apply cycle fees not aligned to the billing cycle.
+#-------------------------------------------------------------------
+#cd ${CNFDIR}
+#echo "starting  pin_cycle_fees for regular_cycle_fees@" `date`
+#pin_cycle_fees -regular_cycle_fees
+#echo "finished  pin_cycle_fees for regular_cycle_fees@" `date`
+
+####### START Section - Post-Billing Parallel Cycle Fee Processing #######
+
+#----------------------------------------------------------------------------
+# Post-Billing Parallel Cycle Fee Processing
+# ------------------------------------------
+#
+# When configuring BRM to process cycle fees in parallel by service, uncomment
+# the following invocation of the application pin_update_items_journals. For
+# more information on when and how to configure BRM for this feature, refer to
+# product documentation.
+#
+# NOTE:
+# - You will also need to follow similar instructions towards the start of this
+#   script regarding another invocation of pin_update_items_journals as well as
+#   invocations of pin_cycle_fees.
+#----------------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+# Process item and journal data			(pin_update_items_journals)
+#
+#   Update item and journal data based on temporary tables populated
+#   earlier by pin_cycle_fees above.
+#-------------------------------------------------------------------
+##### pin_update_items_journals
+
+####### END Section - Post-Billing Parallel Cycle Fee Processing #######
+
+# All done
+#-------------------------------------------------------------------
+
+exit 0

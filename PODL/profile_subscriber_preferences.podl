@@ -1,0 +1,145 @@
+
+#=======================================
+#  Field PIN_FLD_SUBSCRIBER_PREFERENCES
+#=======================================
+
+ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+	ID = 8032;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBSCRIBER_PREFERENCE_ID
+#=======================================
+
+INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+	ID = 8033;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Storable Class /profile/subscriber_preferences
+#=======================================
+
+STORABLE CLASS /profile/subscriber_preferences {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This profile class extension will hold the subscriber preferences for the associated service or account. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "This field will contain the name of this particular preference.";
+			ORDER = 1;
+			LENGTH = 256;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+			DESCR = "This field will contain the ID associated with this particular preference.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "This field will contain the Value set for this particular preference for this service/account.";
+			ORDER = 2;
+			LENGTH = 256;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/subscriber_preferences
+#=======================================
+
+STORABLE CLASS /profile/subscriber_preferences IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+		SQL_TABLE = "subscriber_prefs_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+			SQL_COLUMN = "preference_id";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+}
+

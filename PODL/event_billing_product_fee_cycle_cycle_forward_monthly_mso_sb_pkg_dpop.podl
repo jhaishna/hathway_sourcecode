@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_dpop {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO Ditital Popular pakcage event";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_sb_pkg_dpop IMPLEMENTATION ORACLE7 {
+
+}
+

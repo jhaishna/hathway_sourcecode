@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_order/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_remove_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_remove_plan IMPLEMENTATION ORACLE7 {
+
+}
+

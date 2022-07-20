@@ -1,0 +1,266 @@
+
+#=======================================
+#  Field PIN_FLD_CONFIG_MTA
+#=======================================
+
+ARRAY PIN_FLD_CONFIG_MTA {
+
+	ID = 1370;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FUNCTION_MAP
+#=======================================
+
+ARRAY PIN_FLD_FUNCTION_MAP {
+
+	ID = 1380;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FUNCTION
+#=======================================
+
+STRING PIN_FLD_FUNCTION {
+
+	ID = 1381;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LIBRARY
+#=======================================
+
+STRING PIN_FLD_LIBRARY {
+
+	ID = 1379;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE_MAP
+#=======================================
+
+ARRAY PIN_FLD_OPCODE_MAP {
+
+	ID = 7451;
+}
+
+
+#=======================================
+#  Storable Class /config/mta
+#=======================================
+
+STORABLE CLASS /config/mta {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Configuration object for applications based on MTA framework.Used for customization purposes and is not required by default.Enables policy opcode calls on Customization layerfrom pre-defined execution points on Framework layerand function call substitution on Application layer.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CONFIG_MTA {
+
+		DESCR = "Configuration information related to particular MTA application.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_FUNCTION_MAP {
+
+			DESCR = "Represents mapping between customized function from shared/dynamic library and default MTA callback functionon Application layer.";
+			ORDER = 2;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FUNCTION {
+
+				DESCR = "Name of default application callback function,like pin_mta_config or pin_mta_worker_init";
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Function name in shared/dynamic library, whichsubstitutes default call back funtion at run-time";
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_LIBRARY {
+
+			DESCR = "Shared/dynamic library name. The library loaded by applicationat run-time and provides substitutional functions to default implementation functions on Application layer";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "MTA Application name; has to match with MTA applicationname at run-time.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_OPCODE_MAP {
+
+			DESCR = "Represents mapping between MTA application execution phase andpolicy opcode call. Policy opcode calls are executed from predefined execution points on Framework layer.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FUNCTION {
+
+				DESCR = "Name of application execution phase like MTA_CONFIG or MTA_TUNE";
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Policy opcode name";
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/mta
+#=======================================
+
+STORABLE CLASS /config/mta IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CONFIG_MTA {
+
+		SQL_TABLE = "config_mta_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_FUNCTION_MAP {
+
+			SQL_TABLE = "config_mta_function_map_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FUNCTION {
+
+				SQL_COLUMN = "callback_function";
+			}
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+		}
+
+		STRING PIN_FLD_LIBRARY {
+
+			SQL_COLUMN = "library";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		ARRAY PIN_FLD_OPCODE_MAP {
+
+			SQL_TABLE = "config_mta_opcode_map_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FUNCTION {
+
+				SQL_COLUMN = "callback_function";
+			}
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+		}
+
+	}
+
+}
+

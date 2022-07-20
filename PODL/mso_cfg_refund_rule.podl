@@ -1,0 +1,463 @@
+
+#=======================================
+#  Field MSO_FLD_PLAN_NAME
+#=======================================
+
+STRING MSO_FLD_PLAN_NAME {
+
+	ID = 43005;
+	DESCR = "Hardware Plan Name";
+}
+
+
+#=======================================
+#  Field MSO_FLD_RULE_NAME
+#=======================================
+
+STRING MSO_FLD_RULE_NAME {
+
+	ID = 43000;
+	DESCR = "Rule Name";
+}
+
+
+#=======================================
+#  Field MSO_FLD_RULE_STEPS
+#=======================================
+
+ARRAY MSO_FLD_RULE_STEPS {
+
+	ID = 43001;
+	DESCR = "Rule Steps Array";
+}
+
+
+#=======================================
+#  Field MSO_FLD_END_STEP
+#=======================================
+
+ENUM MSO_FLD_END_STEP {
+
+	ID = 43068;
+}
+
+
+#=======================================
+#  Field MSO_FLD_START_STEP
+#=======================================
+
+ENUM MSO_FLD_START_STEP {
+
+	ID = 43067;
+}
+
+
+#=======================================
+#  Field MSO_FLD_STEP_AMOUNT
+#=======================================
+
+DECIMAL MSO_FLD_STEP_AMOUNT {
+
+	ID = 43004;
+	DESCR = "Refund Value (flat or %)";
+}
+
+
+#=======================================
+#  Field MSO_FLD_STEP_UNIT
+#=======================================
+
+ENUM MSO_FLD_STEP_UNIT {
+
+	ID = 43002;
+	DESCR = "Step Unit (0 - Days, 1 - Months, 3 - Years)";
+}
+
+
+#=======================================
+#  Field MSO_FLD_STEP_VALUE
+#=======================================
+
+DECIMAL MSO_FLD_STEP_VALUE {
+
+	ID = 43003;
+	DESCR = "Refund Value as per steps Days/Months/years";
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RULE_TYPE
+#=======================================
+
+ENUM MSO_FLD_RULE_TYPE {
+
+	ID = 43006;
+	DESCR = "Rule Type (0 - Total, 1 - Step, 3 - % based)";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_refund_rule
+#=======================================
+
+STORABLE CLASS /mso_cfg_refund_rule {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO Refund Rule Master";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_PLAN_NAME {
+
+		DESCR = "Hardware Plan Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_RULE_NAME {
+
+		DESCR = "Rule Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY MSO_FLD_RULE_STEPS {
+
+		DESCR = "Rule Steps Array";
+		ORDER = 0;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_END_STEP {
+
+			DESCR = "Step end range for the refund rule";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_START_STEP {
+
+			DESCR = "Refund value as per steps Days/Months/years";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_STEP_AMOUNT {
+
+			DESCR = "Refund Value (flat or %)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_STEP_UNIT {
+
+			DESCR = "Step Unit (0 - Days, 1 - Months, 3 - Years)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_STEP_VALUE {
+
+			DESCR = "Refund Value as per steps Days/Months/years";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "0-Without Tax,1-With Tax";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ENUM MSO_FLD_RULE_TYPE {
+
+		DESCR = "Rule Type (0 - Total, 1 - Step, 3 - % based)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_refund_rule
+#=======================================
+
+STORABLE CLASS /mso_cfg_refund_rule IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_refund_rule_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_PLAN_NAME {
+
+		SQL_COLUMN = "plan_name";
+	}
+
+	STRING MSO_FLD_RULE_NAME {
+
+		SQL_COLUMN = "rule_name";
+	}
+
+	ARRAY MSO_FLD_RULE_STEPS {
+
+		SQL_TABLE = "mso_cfg_refund_rule_steps_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_END_STEP {
+
+			SQL_COLUMN = "end_step";
+		}
+
+		ENUM MSO_FLD_START_STEP {
+
+			SQL_COLUMN = "start_step";
+		}
+
+		DECIMAL MSO_FLD_STEP_AMOUNT {
+
+			SQL_COLUMN = "step_amount";
+		}
+
+		ENUM MSO_FLD_STEP_UNIT {
+
+			SQL_COLUMN = "step_unit";
+		}
+
+		DECIMAL MSO_FLD_STEP_VALUE {
+
+			SQL_COLUMN = "step_value";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flag";
+		}
+
+	}
+
+	ENUM MSO_FLD_RULE_TYPE {
+
+		SQL_COLUMN = "rule_type";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

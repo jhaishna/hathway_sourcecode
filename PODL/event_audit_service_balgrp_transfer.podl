@@ -1,0 +1,330 @@
+
+#=======================================
+#  Field PIN_FLD_SERVICES
+#=======================================
+
+ARRAY PIN_FLD_SERVICES {
+
+	ID = 122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FROM_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_FROM_BAL_GRP_OBJ {
+
+	ID = 9071;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FROM_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_FROM_BILLINFO_OBJ {
+
+	ID = 9053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FROM_OBJ
+#=======================================
+
+POID PIN_FLD_FROM_OBJ {
+
+	ID = 8253;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_POID_LIST
+#=======================================
+
+STRING PIN_FLD_ITEM_POID_LIST {
+
+	ID = 964;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_ITEM_POID_LIST
+#=======================================
+
+STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+	ID = 155;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_TO_BAL_GRP_OBJ {
+
+	ID = 9072;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_TO_BILLINFO_OBJ {
+
+	ID = 9054;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_OBJ
+#=======================================
+
+POID PIN_FLD_TO_OBJ {
+
+	ID = 8254;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_TO_SERVICE_OBJ {
+
+	ID = 9077;
+}
+
+
+#=======================================
+#  Storable Class /event/audit/service_balgrp_transfer
+#=======================================
+
+STORABLE CLASS /event/audit/service_balgrp_transfer {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize changes due to service transfer..";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICES {
+
+		DESCR = "Array of services that are transferred.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_FROM_BAL_GRP_OBJ {
+
+			DESCR = "The old /balance_group poid before the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_FROM_BILLINFO_OBJ {
+
+			DESCR = "The old /billinfo poid before the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_FROM_OBJ {
+
+			DESCR = "The old /account poid before the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ITEM_POID_LIST {
+
+			DESCR = "The old item poid list before the transfer.";
+			ORDER = 0;
+			LENGTH = 4000;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+			DESCR = "The old next item poid list before the transfer.";
+			ORDER = 0;
+			LENGTH = 4000;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "The /service poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_BAL_GRP_OBJ {
+
+			DESCR = "The new /balance_group poid after the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_BILLINFO_OBJ {
+
+			DESCR = "The new /billinfo poid after the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_OBJ {
+
+			DESCR = "The new /account poid after the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_SERVICE_OBJ {
+
+			DESCR = "The target /service poid incase of cross schema transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/service_balgrp_transfer
+#=======================================
+
+STORABLE CLASS /event/audit/service_balgrp_transfer IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICES {
+
+		SQL_TABLE = "event_audit_svc_bg_transfer_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_FROM_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "from_bal_grp_obj";
+		}
+
+		POID PIN_FLD_FROM_BILLINFO_OBJ {
+
+			SQL_COLUMN = "from_billinfo_obj";
+		}
+
+		POID PIN_FLD_FROM_OBJ {
+
+			SQL_COLUMN = "from_obj";
+		}
+
+		STRING PIN_FLD_ITEM_POID_LIST {
+
+			SQL_COLUMN = "item_poid_list";
+		}
+
+		STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+			SQL_COLUMN = "next_item_poid_list";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		POID PIN_FLD_TO_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "to_bal_grp_obj";
+		}
+
+		POID PIN_FLD_TO_BILLINFO_OBJ {
+
+			SQL_COLUMN = "to_billinfo_obj";
+		}
+
+		POID PIN_FLD_TO_OBJ {
+
+			SQL_COLUMN = "to_obj";
+		}
+
+		POID PIN_FLD_TO_SERVICE_OBJ {
+
+			SQL_COLUMN = "target_service_obj";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,207 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_outright
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Outright Hardware Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/huwr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/huwr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+

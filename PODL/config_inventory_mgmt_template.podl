@@ -1,0 +1,93 @@
+
+#=======================================
+#  Field PIN_FLD_INVENTORY_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_INVENTORY_INFO {
+
+	ID = 7614;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVENTORY_TEMPLATE
+#=======================================
+
+BUF PIN_FLD_INVENTORY_TEMPLATE {
+
+	ID = 7615;
+}
+
+
+#=======================================
+#  Storable Class /config/inventory_mgmt_template
+#=======================================
+
+STORABLE CLASS /config/inventory_mgmt_template {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores an XML object containing parameters which specify how a Request or Response file should be parsed by the Inventory Management Center tool.  Options include how the file is delimited (by record and field), fields to map, ...";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_INVENTORY_INFO {
+
+		DESCR = "Substruct containing the XML object.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_INVENTORY_TEMPLATE {
+
+			DESCR = "The XML object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/inventory_mgmt_template
+#=======================================
+
+STORABLE CLASS /config/inventory_mgmt_template IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_INVENTORY_INFO {
+
+		SQL_TABLE = "config_invtry_template_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_INVENTORY_TEMPLATE {
+
+			SQL_TABLE = "config_invtry_template_buf_t";
+			SQL_COLUMN = "inventory_template";
+		}
+
+	}
+
+}
+

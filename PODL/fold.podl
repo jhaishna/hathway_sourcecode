@@ -1,0 +1,725 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_IMPACTS
+#=======================================
+
+ARRAY PIN_FLD_BAL_IMPACTS {
+
+	ID = 256;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIXED_OPERAND
+#=======================================
+
+DECIMAL PIN_FLD_FIXED_OPERAND {
+
+	ID = 257;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FREE_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_FREE_QUANTITY {
+
+	ID = 259;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ID
+#=======================================
+
+INT PIN_FLD_GL_ID {
+
+	ID = 840;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCALED_OPERAND
+#=======================================
+
+DECIMAL PIN_FLD_SCALED_OPERAND {
+
+	ID = 258;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWN_MAX
+#=======================================
+
+DECIMAL PIN_FLD_OWN_MAX {
+
+	ID = 239;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWN_MIN
+#=======================================
+
+DECIMAL PIN_FLD_OWN_MIN {
+
+	ID = 238;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRIORITY
+#=======================================
+
+DECIMAL PIN_FLD_PRIORITY {
+
+	ID = 64;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_PRODUCT_OBJ {
+
+	ID = 244;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_RELATIVE_END_T {
+
+	ID = 704;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_RELATIVE_START_T {
+
+	ID = 703;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZONE
+#=======================================
+
+ENUM PIN_FLD_ZONE {
+
+	ID = 77;
+}
+
+
+#=======================================
+#  Storable Class /fold
+#=======================================
+
+STORABLE CLASS /fold {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "A fold is a special type of rate used usually at the end of the accounting cycle. Typical uses are: 1. Removing remaining free hours (Define a fold that removes any free hours from the customer's balance at the end of the month). 2. Converting currencies (Create folds to convert the Infranet system currency to the customer's currency).  Note that currency conversion is done real-time. 3. Exchanging one resource for another. For example, you can track the amount charged for a usage fee, and give the customer 10 free hours for every  of usage fees. 4. Calculating charges based on volume usage. In this case, the rate serves as a counter to tabulate usage data. The fold then applies a charge to that amount at the end of the accounting cycle. 5. Transferring resources directly from one account to another in sponsorship scenarios. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_BAL_IMPACTS {
+
+		DESCR = "Array of balance operations. Multiple impacts can be defined on the same resource. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			DESCR = "Numeric value of the resource to be impacted.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_FIXED_OPERAND {
+
+			DESCR = "Fixed Balance operand - amount to increment independent of quantity.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Reserved for future use.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_FREE_QUANTITY {
+
+			DESCR = "Free quantity - subtracted from quantity before scaled impact is applied.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_GL_ID {
+
+			DESCR = "GLID to be used when impacting the resource associated with this balance operation.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_SCALED_OPERAND {
+
+			DESCR = "Scaled Balance operand - amount to imcrement per unit of quantity.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		DESCR = "Numeric value of a currency resource. A value of 0 implies that this is a non-currency fold. This fold is picked if this field matches the currency of the account to which the event belongs.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Fold description.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_ELEMENT_ID {
+
+		DESCR = "Numeric value of the resource id being folded. For currency conversion folds, this would be the system currency. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "Non-inclusive end time of the validity period for the fold. If the value is 0, the fold does not expire.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "Balance Impact Flags. Specifies whether the impact is sponsorable (0x4).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Name of the fold object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_OWN_MAX {
+
+		DESCR = "Ownership Maximum - maximum quantity owned to use this fold. Test is inclusive - quantity must be <= max. A value of PIN_NUM_MAX means no maximum limit.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_OWN_MIN {
+
+		DESCR = "Ownership Minimum - minimum quantity owned to use this fold. Test is non-inclusive - quantity must be > min. A value of PIN_NUM_MIN means no minimum limit.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_PRIORITY {
+
+		DESCR = "Priority - used to resolve ordering of fold application.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		DESCR = "Link to the product object to which this rate belongs to.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_RELATIVE_END_T {
+
+		DESCR = "Non-inclusive end time of the validity period for the fold relative to the product purchase time. If the value is 0, the fold is always valid.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_RELATIVE_START_T {
+
+		DESCR = "Inclusive start time of the validity period for the fold relative to the product purchase time. If zero, the fold is valid immediately.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "Inclusive start time of the validity period for the fold. If zero, the fold is valid immediately.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_ZONE {
+
+		DESCR = "Reserved for future use.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /fold
+#=======================================
+
+STORABLE CLASS /fold IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "fold_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ARRAY PIN_FLD_BAL_IMPACTS {
+
+		SQL_TABLE = "fold_bal_impacts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			SQL_COLUMN = "element_id";
+		}
+
+		DECIMAL PIN_FLD_FIXED_OPERAND {
+
+			SQL_COLUMN = "fixed_operand";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		DECIMAL PIN_FLD_FREE_QUANTITY {
+
+			SQL_COLUMN = "free_quantity";
+		}
+
+		INT PIN_FLD_GL_ID {
+
+			SQL_COLUMN = "gl_id";
+		}
+
+		DECIMAL PIN_FLD_SCALED_OPERAND {
+
+			SQL_COLUMN = "scaled_operand";
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		SQL_COLUMN = "currency";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	INT PIN_FLD_ELEMENT_ID {
+
+		SQL_COLUMN = "element_id";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "end_t";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "flags";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	DECIMAL PIN_FLD_OWN_MAX {
+
+		SQL_COLUMN = "own_max";
+	}
+
+	DECIMAL PIN_FLD_OWN_MIN {
+
+		SQL_COLUMN = "own_min";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	DECIMAL PIN_FLD_PRIORITY {
+
+		SQL_COLUMN = "priority";
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		SQL_COLUMN = "product_obj";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	TIMESTAMP PIN_FLD_RELATIVE_END_T {
+
+		SQL_COLUMN = "relative_end_t";
+	}
+
+	TIMESTAMP PIN_FLD_RELATIVE_START_T {
+
+		SQL_COLUMN = "relative_start_t";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "start_t";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+	ENUM PIN_FLD_ZONE {
+
+		SQL_COLUMN = "zone";
+	}
+
+}
+

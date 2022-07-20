@@ -1,0 +1,525 @@
+
+#=======================================
+#  Field PIN_FLD_ARGS
+#=======================================
+
+ARRAY PIN_FLD_ARGS {
+
+	ID = 49;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILTER_DETAILS
+#=======================================
+
+ARRAY PIN_FLD_FILTER_DETAILS {
+
+	ID = 1577;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILTER_LIST
+#=======================================
+
+ARRAY PIN_FLD_FILTER_LIST {
+
+	ID = 1570;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUMBER
+#=======================================
+
+STRING PIN_FLD_NUMBER {
+
+	ID = 1573;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODE
+#=======================================
+
+ENUM PIN_FLD_MODE {
+
+	ID = 1576;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REDIRECT_LIST
+#=======================================
+
+ARRAY PIN_FLD_REDIRECT_LIST {
+
+	ID = 1571;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUMBER_IN
+#=======================================
+
+STRING PIN_FLD_NUMBER_IN {
+
+	ID = 1574;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUMBER_OUT
+#=======================================
+
+STRING PIN_FLD_NUMBER_OUT {
+
+	ID = 1575;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TELEPHONY
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_TELEPHONY {
+
+	ID = 1580;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COS
+#=======================================
+
+INT PIN_FLD_COS {
+
+	ID = 1579;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_ACTIVE_CALLS
+#=======================================
+
+ENUM PIN_FLD_MAX_ACTIVE_CALLS {
+
+	ID = 1578;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK
+#=======================================
+
+STRING PIN_FLD_NETWORK {
+
+	ID = 74;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QOS
+#=======================================
+
+ENUM PIN_FLD_QOS {
+
+	ID = 1564;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPEED_DIAL_LIST
+#=======================================
+
+ARRAY PIN_FLD_SPEED_DIAL_LIST {
+
+	ID = 1569;
+}
+
+
+#=======================================
+#  Storable Class /service/telephony
+#=======================================
+
+STORABLE CLASS /service/telephony {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Provides telephony service. Contains call settings and network information.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		DESCR = "Terminal Server Protocol Extensions Array. List of (name, value) pairs which are used to set the Telephony session characteristics. Element id not significant. Multiple entries with same name may be used if appropriate. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Extension name. For RADIUS, this name must match a name from the dictionary. e.g. Framed-IP-Netmask, Framed-MTU.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Extension value. Stringified version of the value for the corresponding extension name. e.g. for IP addrs this is in dotted decimal notation. For enumerated values, either enumerated name or decimal value may be used (e.g. PPP or 1 for Framed-Protocol)";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_FILTER_DETAILS {
+
+		DESCR = "An array to hold the filter list and the filterlist mode";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_FILTER_LIST {
+
+			DESCR = "An array of either prefix or complete phonenumbers or IP addresses. The elements aresorted as alphanumeric strings.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NUMBER {
+
+				DESCR = "A prefix/complete phone number or  IP address.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM PIN_FLD_MODE {
+
+			DESCR = "The mode of PIN_FLD_FILTER_LIST.Values are PIN_IPT_MODE_UNDEFINED(0),PIN_IPT_MODE_ALLOW(1), andPIN_IPT_MODE_BLOCK(2).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_REDIRECT_LIST {
+
+		DESCR = "An array of phone numbers/IP addresses.  The elements are sorted as alphanumeric strings. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NUMBER_IN {
+
+			DESCR = "A prefix or complete phone number or  IP address.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NUMBER_OUT {
+
+			DESCR = "A complete phone number or IP address.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_TELEPHONY {
+
+		DESCR = "Substruct to hold telephony service specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COS {
+
+			DESCR = "Class of Service as in Basic, Enhanced, Premium expressed by a number ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_MAX_ACTIVE_CALLS {
+
+			DESCR = "Indicates the maximum number of simultaneous calls are allowed. 0 = no limit. Default = 1";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			DESCR = "The network name or site name.  The exact use of this field is determined by the service provider's policy code";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_QOS {
+
+			DESCR = "Quality of Service";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SPEED_DIAL_LIST {
+
+		DESCR = "An indexed array of phone numbers or IP address associated with speed dial digits. The speed  dial digits are used as the array element-id.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NUMBER {
+
+			DESCR = "A phone number or IP address associated  with this element-id";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/telephony
+#=======================================
+
+STORABLE CLASS /service/telephony IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		SQL_TABLE = "service_tel_args_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	ARRAY PIN_FLD_FILTER_DETAILS {
+
+		SQL_TABLE = "service_tel_filter_details_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_FILTER_LIST {
+
+			SQL_TABLE = "service_tel_filter_list_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NUMBER {
+
+				SQL_COLUMN = "filter_number";
+			}
+
+		}
+
+		ENUM PIN_FLD_MODE {
+
+			SQL_COLUMN = "filter_mode";
+		}
+
+	}
+
+	ARRAY PIN_FLD_REDIRECT_LIST {
+
+		SQL_TABLE = "service_tel_redirect_list_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NUMBER_IN {
+
+			SQL_COLUMN = "number_in";
+		}
+
+		STRING PIN_FLD_NUMBER_OUT {
+
+			SQL_COLUMN = "number_out";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_TELEPHONY {
+
+		SQL_TABLE = "service_telephony_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COS {
+
+			SQL_COLUMN = "cos";
+		}
+
+		ENUM PIN_FLD_MAX_ACTIVE_CALLS {
+
+			SQL_COLUMN = "max_active_calls";
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			SQL_COLUMN = "network";
+		}
+
+		ENUM PIN_FLD_QOS {
+
+			SQL_COLUMN = "qos";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SPEED_DIAL_LIST {
+
+		SQL_TABLE = "service_tel_speed_dial_list_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NUMBER {
+
+			SQL_COLUMN = "dial_number";
+		}
+
+	}
+
+}
+

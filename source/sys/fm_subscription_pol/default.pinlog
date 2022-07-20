@@ -1,0 +1,30 @@
+E Fri Jan 22 00:08:09 2016  prod-brm.hathway.com  <no name>:2106  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2106): no pin.conf file in . or /etc 2
+E Fri Jan 22 00:08:09 2016  prod-brm.hathway.com  <no name>:2106  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2106): no pin.conf file in . or /etc 2
+E Fri Jan 22 00:08:09 2016  prod-brm.hathway.com  <no name>:2106  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2106): no pin.conf file in . or /etc 2
+E Fri Jan 22 00:08:09 2016  prod-brm.hathway.com  <no name>:2106  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2106): no pin.conf file in . or /etc 2
+E Fri Jan 22 00:08:09 2016  prod-brm.hathway.com  <no name>:2106  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2106): no pin.conf file in . or /etc 2
+E Fri Jan 22 00:08:09 2016  prod-brm.hathway.com  testnap:2106  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(2106): no pin.conf file in . or /etc 2
+E Fri Jan 22 00:08:09 2016  prod-brm.hathway.com  testnap:2106  pcm_conn.c(6):233 1:<machine>:<program>:0:0:0:0:0
+	pcm_connect: bad/no login_type in pin.conf, err 30
+E Fri Nov 12 14:52:56 2021  dev-brm-upg.hathway.net  <no name>:56479  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(56479): no pin.conf file in . or /etc 2
+E Fri Nov 12 14:52:56 2021  dev-brm-upg.hathway.net  <no name>:56479  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(56479): no pin.conf file in . or /etc 2
+E Fri Nov 12 14:52:56 2021  dev-brm-upg.hathway.net  <no name>:56479  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(56479): no pin.conf file in . or /etc 2
+E Fri Nov 12 14:52:56 2021  dev-brm-upg.hathway.net  <no name>:56479  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(56479): no pin.conf file in . or /etc 2
+E Fri Nov 12 14:52:56 2021  dev-brm-upg.hathway.net  <no name>:56479  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(56479): no pin.conf file in . or /etc 2
+E Fri Nov 12 14:52:56 2021  dev-brm-upg.hathway.net  testnap:56479  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(56479): no pin.conf file in . or /etc 2
+E Fri Nov 12 14:52:56 2021  dev-brm-upg.hathway.net  testnap:56479  pcm_conn.c(9):236 2:<machine>:<program>:0:0:0:0:0::::
+	pcm_connect: bad/no login_type in pin.conf, err 30
+E Fri Nov 12 14:52:56 2021  dev-brm-upg.hathway.net  testnap:56479  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(56479): no pin.conf file in . or /etc 2

@@ -1,0 +1,242 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/vc IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/modem IMPLEMENTATION ORACLE7 {
+
+}
+

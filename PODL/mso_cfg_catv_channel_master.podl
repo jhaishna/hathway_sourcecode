@@ -1,0 +1,372 @@
+
+#=======================================
+#  Field MSO_FLD_CHANNEL_GENRE
+#=======================================
+
+STRING MSO_FLD_CHANNEL_GENRE {
+
+	ID = 40032;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHANNEL_ID
+#=======================================
+
+STRING MSO_FLD_CHANNEL_ID {
+
+	ID = 40030;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHANNEL_NAME
+#=======================================
+
+STRING MSO_FLD_CHANNEL_NAME {
+
+	ID = 40034;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHANNEL_TYPE
+#=======================================
+
+ENUM MSO_FLD_CHANNEL_TYPE {
+
+	ID = 40031;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RATE
+#=======================================
+
+DECIMAL MSO_FLD_RATE {
+
+	ID = 40033;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_catv_channel_master
+#=======================================
+
+STORABLE CLASS /mso_cfg_catv_channel_master {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "For storing CATV channel mapping with each provisioning";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CHANNEL_GENRE {
+
+		DESCR = "MSO Channel Generation";
+		ORDER = 0;
+		LENGTH = 200;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CHANNEL_ID {
+
+		DESCR = "Channel uniqure ID";
+		ORDER = 0;
+		LENGTH = 100;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CHANNEL_NAME {
+
+		DESCR = "Channel Name";
+		ORDER = 0;
+		LENGTH = 400;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_CHANNEL_TYPE {
+
+		DESCR = "MSO Channel Type: 0-GE,1.Movies,2-News,3-E GE,4- E Movie,Etc.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_RATE {
+
+		DESCR = "MSO Alacarte Channel Rate";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		DESCR = "Loader program name";
+		ORDER = 0;
+		LENGTH = 100;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "0 - Free, 1 - Paid";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_catv_channel_master
+#=======================================
+
+STORABLE CLASS /mso_cfg_catv_channel_master IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_catv_channel_master_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CHANNEL_GENRE {
+
+		SQL_COLUMN = "channel_genre";
+	}
+
+	STRING MSO_FLD_CHANNEL_ID {
+
+		SQL_COLUMN = "channel_id";
+	}
+
+	STRING MSO_FLD_CHANNEL_NAME {
+
+		SQL_COLUMN = "channel_name";
+	}
+
+	ENUM MSO_FLD_CHANNEL_TYPE {
+
+		SQL_COLUMN = "channel_type";
+	}
+
+	DECIMAL MSO_FLD_RATE {
+
+		SQL_COLUMN = "rate";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "paid";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

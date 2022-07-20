@@ -1,0 +1,425 @@
+
+#=======================================
+#  Field PIN_FLD_BROADBAND
+#=======================================
+
+SUBSTRUCT PIN_FLD_BROADBAND {
+
+	ID = 5226;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLIENT_IP
+#=======================================
+
+STRING PIN_FLD_CLIENT_IP {
+
+	ID = 5228;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COLLECTOR_ID
+#=======================================
+
+INT PIN_FLD_COLLECTOR_ID {
+
+	ID = 5229;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DATA_RECORD_ID
+#=======================================
+
+STRING PIN_FLD_DATA_RECORD_ID {
+
+	ID = 5230;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVER_IP
+#=======================================
+
+STRING PIN_FLD_SERVER_IP {
+
+	ID = 5232;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BROADBAND_USAGE
+#=======================================
+
+SUBSTRUCT PIN_FLD_BROADBAND_USAGE {
+
+	ID = 5227;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_IN
+#=======================================
+
+INT PIN_FLD_BYTES_IN {
+
+	ID = 421;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_OUT
+#=======================================
+
+INT PIN_FLD_BYTES_OUT {
+
+	ID = 422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DURATION_SECONDS
+#=======================================
+
+INT PIN_FLD_DURATION_SECONDS {
+
+	ID = 5249;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLOW_INTERVAL
+#=======================================
+
+INT PIN_FLD_FLOW_INTERVAL {
+
+	ID = 5231;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROTOCOL
+#=======================================
+
+ENUM PIN_FLD_PROTOCOL {
+
+	ID = 306;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_CATEGORY
+#=======================================
+
+INT PIN_FLD_USAGE_CATEGORY {
+
+	ID = 1718;
+}
+
+
+#=======================================
+#  Storable Class /event/broadband
+#=======================================
+
+STORABLE CLASS /event/broadband {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created to record broadband events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BROADBAND {
+
+		DESCR = "Substruct detailing the broadband event.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CLIENT_IP {
+
+			DESCR = "The IP address of the client for the broadband event.";
+			ORDER = 0;
+			LENGTH = 80;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_COLLECTOR_ID {
+
+			DESCR = "The identification number of the data collector that created this data record.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DATA_RECORD_ID {
+
+			DESCR = "The sequence number of the input data record for this event. ";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVER_IP {
+
+			DESCR = "The IP address of the server for the broadband event.";
+			ORDER = 0;
+			LENGTH = 80;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/broadband/usage
+#=======================================
+
+STORABLE CLASS /event/broadband/usage {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created to record the rating of broadband usage event. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BROADBAND_USAGE {
+
+		DESCR = "Substruct detailing the usage for a broadband event.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BYTES_IN {
+
+			DESCR = "Bytes sent from server to client.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BYTES_OUT {
+
+			DESCR = "Bytes sent from client to server.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DURATION_SECONDS {
+
+			DESCR = "Duration of this session in seconds.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLOW_INTERVAL {
+
+			DESCR = "Length of flow interval in seconds.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PROTOCOL {
+
+			DESCR = "The protocol for the broadband event.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			DESCR = "Quantity of the usage.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_USAGE_CATEGORY {
+
+			DESCR = "Category of the usage. These are essentially resource identifiers defined in the price list to identify categories like peak vs non-peak bytes etc.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/broadband
+#=======================================
+
+STORABLE CLASS /event/broadband IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BROADBAND {
+
+		SQL_TABLE = "event_broadband_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CLIENT_IP {
+
+			SQL_COLUMN = "client_ip";
+		}
+
+		INT PIN_FLD_COLLECTOR_ID {
+
+			SQL_COLUMN = "collector_id";
+		}
+
+		STRING PIN_FLD_DATA_RECORD_ID {
+
+			SQL_COLUMN = "record_id";
+		}
+
+		STRING PIN_FLD_SERVER_IP {
+
+			SQL_COLUMN = "server_ip";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/broadband/usage
+#=======================================
+
+STORABLE CLASS /event/broadband/usage IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BROADBAND_USAGE {
+
+		SQL_TABLE = "event_broadband_usage_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BYTES_IN {
+
+			SQL_COLUMN = "bytes_in";
+		}
+
+		INT PIN_FLD_BYTES_OUT {
+
+			SQL_COLUMN = "bytes_out";
+		}
+
+		INT PIN_FLD_DURATION_SECONDS {
+
+			SQL_COLUMN = "duration";
+		}
+
+		INT PIN_FLD_FLOW_INTERVAL {
+
+			SQL_COLUMN = "flow_interval";
+		}
+
+		ENUM PIN_FLD_PROTOCOL {
+
+			SQL_COLUMN = "protocol";
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			SQL_COLUMN = "quantity";
+		}
+
+		INT PIN_FLD_USAGE_CATEGORY {
+
+			SQL_COLUMN = "usage_category";
+		}
+
+	}
+
+}
+

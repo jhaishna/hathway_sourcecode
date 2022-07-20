@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /collections_action/late_fee
+#=======================================
+
+STORABLE CLASS /collections_action/late_fee {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store latefee information This object is created when late fee action is scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/late_fee
+#=======================================
+
+STORABLE CLASS /collections_action/late_fee IMPLEMENTATION ORACLE7 {
+
+}
+

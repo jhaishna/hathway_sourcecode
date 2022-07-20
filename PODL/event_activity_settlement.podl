@@ -1,0 +1,497 @@
+
+#=======================================
+#  Field PIN_FLD_SETTLEMENT_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_SETTLEMENT_INFO {
+
+	ID = 6500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_DIRECTION
+#=======================================
+
+STRING PIN_FLD_BILL_DIRECTION {
+
+	ID = 6508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_RUN
+#=======================================
+
+STRING PIN_FLD_BILL_RUN {
+
+	ID = 6501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENTRY_TYPE
+#=======================================
+
+STRING PIN_FLD_ENTRY_TYPE {
+
+	ID = 1258;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENTRY_TYPE_SEQ
+#=======================================
+
+DECIMAL PIN_FLD_ENTRY_TYPE_SEQ {
+
+	ID = 6506;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ICPRODUCT
+#=======================================
+
+STRING PIN_FLD_ICPRODUCT {
+
+	ID = 6505;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MSID
+#=======================================
+
+STRING PIN_FLD_MSID {
+
+	ID = 7453;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK
+#=======================================
+
+STRING PIN_FLD_NETWORK {
+
+	ID = 74;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_ITEMS
+#=======================================
+
+DECIMAL PIN_FLD_NUM_ITEMS {
+
+	ID = 6507;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POI
+#=======================================
+
+STRING PIN_FLD_POI {
+
+	ID = 6503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PLAN
+#=======================================
+
+STRING PIN_FLD_RATE_PLAN {
+
+	ID = 2201;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SEQUENCE_NUM
+#=======================================
+
+INT PIN_FLD_SEQUENCE_NUM {
+
+	ID = 954;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CLASS
+#=======================================
+
+STRING PIN_FLD_SERVICE_CLASS {
+
+	ID = 2362;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SVC_CODE
+#=======================================
+
+STRING PIN_FLD_SVC_CODE {
+
+	ID = 6424;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SWITCH
+#=======================================
+
+STRING PIN_FLD_SWITCH {
+
+	ID = 6502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TIMEMODEL
+#=======================================
+
+STRING PIN_FLD_TIMEMODEL {
+
+	ID = 6509;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRUNK
+#=======================================
+
+STRING PIN_FLD_TRUNK {
+
+	ID = 6504;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/settlement
+#=======================================
+
+STORABLE CLASS /event/activity/settlement {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Records aggregated settlement information for inter-network usage such as roaming. Each event contains information for one network partner.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SETTLEMENT_INFO {
+
+		DESCR = "Substruct containing settlement information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BILL_DIRECTION {
+
+			DESCR = "Type of billing, defines the cash-flow (I=incoming, O=outgoing). Possible values:I or O";
+			ORDER = 8;
+			LENGTH = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BILL_RUN {
+
+			DESCR = "Defines the bill run period for the bill,  format BCYYYYMMxx";
+			ORDER = 3;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ENTRY_TYPE {
+
+			DESCR = "Normal Booking: N, Cancellation/Reversal: R, Correction: C, Storno: S";
+			ORDER = 10;
+			LENGTH = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_ENTRY_TYPE_SEQ {
+
+			DESCR = "Identifier for more than one correction";
+			ORDER = 11;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ICPRODUCT {
+
+			DESCR = "Interconnect product on which the bill has been aggregated";
+			ORDER = 7;
+			LENGTH = 10;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MSID {
+
+			DESCR = "Related network operator to whom the settlement bill belongs";
+			ORDER = 1;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			DESCR = "Related network model to which the settlement bill belongs ";
+			ORDER = 0;
+			LENGTH = 10;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_NUM_ITEMS {
+
+			DESCR = "Aggregation result: count of all single edrs";
+			ORDER = 12;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_POI {
+
+			DESCR = "Name and areacode of a physical/virtual point of interconnect";
+			ORDER = 5;
+			LENGTH = 15;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PLAN {
+
+			DESCR = "Interconnect rate plan on which the bill has been aggregated";
+			ORDER = 9;
+			LENGTH = 10;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SEQUENCE_NUM {
+
+			DESCR = "Optional stream/file sequence number of the aggregated settlement bill part";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_CLASS {
+
+			DESCR = "Interconnect service class on which the bill has been aggregated";
+			ORDER = 14;
+			LENGTH = 5;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SVC_CODE {
+
+			DESCR = "Interconnect service code on which the bill has been aggregated";
+			ORDER = 13;
+			LENGTH = 5;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SWITCH {
+
+			DESCR = "Name and network operator of a switch";
+			ORDER = 4;
+			LENGTH = 15;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TIMEMODEL {
+
+			DESCR = "Interconnect time model on which the bill has been aggregated";
+			ORDER = 15;
+			LENGTH = 5;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRUNK {
+
+			DESCR = "Name of the trunk connected to points of interconnect";
+			ORDER = 6;
+			LENGTH = 15;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/settlement
+#=======================================
+
+STORABLE CLASS /event/activity/settlement IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SETTLEMENT_INFO {
+
+		SQL_TABLE = "event_activity_settlement_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BILL_DIRECTION {
+
+			SQL_COLUMN = "bill_direction";
+		}
+
+		STRING PIN_FLD_BILL_RUN {
+
+			SQL_COLUMN = "bill_run";
+		}
+
+		STRING PIN_FLD_ENTRY_TYPE {
+
+			SQL_COLUMN = "entry_type";
+		}
+
+		DECIMAL PIN_FLD_ENTRY_TYPE_SEQ {
+
+			SQL_COLUMN = "entry_type_seq";
+		}
+
+		STRING PIN_FLD_ICPRODUCT {
+
+			SQL_COLUMN = "icproduct";
+		}
+
+		STRING PIN_FLD_MSID {
+
+			SQL_COLUMN = "msid";
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			SQL_COLUMN = "network";
+		}
+
+		DECIMAL PIN_FLD_NUM_ITEMS {
+
+			SQL_COLUMN = "num_items";
+		}
+
+		STRING PIN_FLD_POI {
+
+			SQL_COLUMN = "poi";
+		}
+
+		STRING PIN_FLD_RATE_PLAN {
+
+			SQL_COLUMN = "rate_plan";
+		}
+
+		INT PIN_FLD_SEQUENCE_NUM {
+
+			SQL_COLUMN = "sequence_num";
+		}
+
+		STRING PIN_FLD_SERVICE_CLASS {
+
+			SQL_COLUMN = "service_class";
+		}
+
+		STRING PIN_FLD_SVC_CODE {
+
+			SQL_COLUMN = "svc_code";
+		}
+
+		STRING PIN_FLD_SWITCH {
+
+			SQL_COLUMN = "switch";
+		}
+
+		STRING PIN_FLD_TIMEMODEL {
+
+			SQL_COLUMN = "timemodel";
+		}
+
+		STRING PIN_FLD_TRUNK {
+
+			SQL_COLUMN = "trunk";
+		}
+
+	}
+
+}
+

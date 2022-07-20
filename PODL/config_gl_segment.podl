@@ -1,0 +1,229 @@
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENTS
+#=======================================
+
+ARRAY PIN_FLD_GL_SEGMENTS {
+
+	ID = 1828;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BRAND_NAME
+#=======================================
+
+STRING PIN_FLD_BRAND_NAME {
+
+	ID = 1832;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COA_ID
+#=======================================
+
+STRING PIN_FLD_COA_ID {
+
+	ID = 1833;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT_SEGMENT
+#=======================================
+
+STRING PIN_FLD_PARENT_SEGMENT {
+
+	ID = 1830;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLL_UP
+#=======================================
+
+STRING PIN_FLD_ROLL_UP {
+
+	ID = 1831;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SEGMENT_NAME
+#=======================================
+
+STRING PIN_FLD_SEGMENT_NAME {
+
+	ID = 1829;
+}
+
+
+#=======================================
+#  Storable Class /config/gl_segment
+#=======================================
+
+STORABLE CLASS /config/gl_segment {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A single configuration object of this class defines the General Ledger (GL) segments in an Infranet system. GL segments are tags that get assigned to all customer accounts when the accounts are created. An URL-like notation is used to define gl segments to allow subordinate segments. Brands also use segments, with the brand name as the segment name and use the same URL-like notation. The /config/glid object consists of all the glid's defined for the GL segment. The /config/gl_segment object is loaded using the load_pin_glid utility. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GL_SEGMENTS {
+
+		DESCR = "Array of valid gl_segments in the system. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BRAND_NAME {
+
+			DESCR = "Brand Name, most cases will be the same as segment name, but denotes that the segment is also a brand.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COA_ID {
+
+			DESCR = "Chart Of Accounts ID, for this particular gl segment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description of the GL segment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARENT_SEGMENT {
+
+			DESCR = "Parent segment of the GL segment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ROLL_UP {
+
+			DESCR = "(Y/N) Whether roll up should be done.";
+			ORDER = 0;
+			LENGTH = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SEGMENT_NAME {
+
+			DESCR = "Name of the GL segment.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/gl_segment
+#=======================================
+
+STORABLE CLASS /config/gl_segment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GL_SEGMENTS {
+
+		SQL_TABLE = "config_gl_segment_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BRAND_NAME {
+
+			SQL_COLUMN = "brand_name";
+		}
+
+		STRING PIN_FLD_COA_ID {
+
+			SQL_COLUMN = "coa_id";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		STRING PIN_FLD_PARENT_SEGMENT {
+
+			SQL_COLUMN = "parent_segment";
+		}
+
+		STRING PIN_FLD_ROLL_UP {
+
+			SQL_COLUMN = "roll_up";
+		}
+
+		STRING PIN_FLD_SEGMENT_NAME {
+
+			SQL_COLUMN = "segment_name";
+		}
+
+	}
+
+}
+

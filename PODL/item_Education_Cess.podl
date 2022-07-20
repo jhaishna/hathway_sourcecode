@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/Education_Cess
+#=======================================
+
+STORABLE CLASS /item/Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Education_Cess";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Education_Cess
+#=======================================
+
+STORABLE CLASS /item/Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+

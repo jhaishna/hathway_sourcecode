@@ -1,0 +1,1046 @@
+/*******************************************************************
+ *
+ *      Copyright (c) 1998 - 2006 Oracle. All rights reserved.
+ *
+ *      This material is the confidential property of Oracle Corporation
+ *      or its subsidiaries or licensors and may be used, reproduced, stored
+ *      or transmitted only in accordance with a valid Oracle license or
+ *      sublicense agreement.
+ *
+ *******************************************************************/
+
+#ifndef lint
+static  char    Sccs_id[] = "@(#)%Portal Version: fm_rate_pol_map_tax_supplier.c:ServerIDCVelocityInt:5:2006-Sep-06 16:41:07 %";
+#endif
+
+/*******************************************************************
+ * Contains the PCM_OP_RATE_POL_MAP_TAX_SUPPLIER operation. 
+ *
+ * Used to provide tax_supplier information based on:
+ *	 product map (tax_supplier defined using Price Tool)
+ * or
+ *	tax_supplier_map(lookup table)
+ *
+ *******************************************************************/
+
+#include <stdio.h> 
+#include <string.h> 
+ 
+#include "pcm.h"
+#include "ops/rate.h"
+#include "pin_bill.h"
+#include "pin_cust.h"
+#include "pin_rate.h"
+#include "cm_fm.h"
+#include "pin_errs.h"
+#include "pinlog.h"
+#include "fm_utils.h"
+#include "fm_bill_utils.h"
+#include "mso_ops_flds.h"
+
+#define FILE_SOURCE_ID  "fm_rate_pol_map_tax_supplier.c"
+
+#define SERVICE_TAX "Service_Tax"
+#define EDUCATION_CESS "Education_Cess"
+#define SWACHH_CESS "Swachh_Bharat_Cess"
+#define KRISH_CESS "Krish_Kalyan_Cess"
+#define SHE_CESS "Secondary_Higher_Education_Cess"
+#define VAT_PLUS_SERVICE_TAX "VAT_ServiceTax"
+#define ADDITIONAL_CESS "Additional_Cess"
+#define VAT "VAT"
+#define CGST "CGST"
+#define SGST "SGST"
+#define IGST "IGST"
+#define	ADD_CESS "ADDITIONAL_CESS" 
+
+#define MSO_SRVC_TAX "MSO_Service_Tax"
+#define MSO_VAT "MSO_VAT"
+#define MSO_VAT_ST "MSO_VAT_ST"
+#define MSO_ET "MSO_ET"
+#define MSO_ET_MAIN "MSO_ET_MAIN"
+#define MSO_ET_ADDI "MSO_ET_ADDI"
+#define MSO_SGST_CGST 0 
+#define	MSO_IGST 1
+#define	MSO_ADD_CESS 2 
+#define MSO_GST_AND_ADD_CESS 3
+
+#define NCF_PKG_TYPE    3
+#define ALL_PKG_TYPE    10
+
+/*******************************************************************
+ * Routines contained within.
+ *******************************************************************/
+EXPORT_OP void
+op_rate_pol_map_tax_supplier(
+	cm_nap_connection_t	*connp,
+	int32				opcode,
+	int32				flags,
+	pin_flist_t			*i_flistp,
+	pin_flist_t			**o_flistpp,
+	pin_errbuf_t		*ebufp);
+
+static void
+fm_rate_pol_map_tax_supplier(
+	pcm_context_t		*ctxp,
+	pin_flist_t			*i_flistp,
+	pin_flist_t			**o_flistpp,
+	pin_errbuf_t		*ebufp);
+
+static void
+fm_rate_pol_map_tax_supplier_map(
+	pcm_context_t		*ctxp,
+	pin_flist_t			*i_flistp,
+	pin_flist_t			**o_flistpp,
+	pin_errbuf_t		*ebufp);
+
+static void
+mso_add_custom_balImpact_taxation(
+	pcm_context_t		*ctxp,
+	pin_decimal_t		*scaelp,
+	poid_t			*plan_pdp,
+	int32			free_flag,
+	pin_flist_t		**bill_tax_iflistp,
+	pin_errbuf_t		*ebufp);
+
+PIN_EXPORT void 
+mso_getTaxCodelist(
+	pcm_context_t		*ctxp,
+	char			*tax_code,
+	int32			gst_type,
+	pin_flist_t		**taxCodelist_flistp,
+	pin_errbuf_t		*ebufp);
+
+PIN_EXPORT
+char* mso_get_taxcode(
+	pcm_context_t		*ctxp,
+	poid_t				*srvc_pdp,
+	pin_errbuf_t		*ebufp);
+
+PIN_IMPORT void
+fm_mso_utils_get_profile(
+        pcm_context_t   *ctxp,
+        poid_t          *account_pdp,
+	pin_flist_t	**ret_flistpp,
+        pin_errbuf_t    *ebufp);
+
+PIN_IMPORT void
+fm_mso_get_account_info(
+	pcm_context_t	*ctxp,
+	poid_t		*acnt_pdp,
+	pin_flist_t	**ret_flistp,
+	pin_errbuf_t	*ebufp);
+
+PIN_IMPORT void
+fm_mso_get_service_level_discount(
+	pcm_context_t	*ctxp,
+	pin_flist_t	*in_flistp,
+	int32		dpo_flag,
+	pin_flist_t	**ret_flistp,
+	pin_errbuf_t	*ebufp);
+
+extern void fm_bill_utils_tax_loc_shipto();
+
+/*******************************************************************
+ * Main routine for the PCM_OP_RATE_POL_MAP_TAX_SUPPLIER operation.
+ *******************************************************************/
+void
+op_rate_pol_map_tax_supplier(
+	cm_nap_connection_t	*connp,
+	int32				opcode,
+	int32				flags,
+	pin_flist_t			*i_flistp,
+	pin_flist_t			**o_flistpp,
+	pin_errbuf_t		*ebufp)
+{
+	int32			stack_opcode = 0;
+	pin_flist_t		*bill_tax_iflistp = NULL;
+	pin_flist_t		*prod_flistp = NULL;
+	pin_flist_t		*initial_flistp = NULL;
+	pin_flist_t		*event_flistp = NULL;
+	pcm_context_t	*ctxp = connp->dm_ctx;
+	cm_op_info_t	*opstackp = connp->coip;
+	poid_t			*plan_pdp = NULL;
+	pin_decimal_t		*scalep = NULL;
+	char			msg1[512];
+	char			*program_namep = NULL;
+	int32			free_plan = 0;
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		return;
+	}
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	/*
+	 * Insanity check.
+	 */
+	if (opcode != PCM_OP_RATE_POL_MAP_TAX_SUPPLIER) {
+		pin_set_err(ebufp, PIN_ERRLOC_FM,
+			PIN_ERRCLASS_SYSTEM_DETERMINATE,
+			PIN_ERR_BAD_OPCODE, 0, 0, opcode);
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"op_rate_pol_map_tax_supplier opcode error", ebufp);
+		return;
+		/*****/
+	}
+
+	/*
+	 * Debug: What we got.
+	 */
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+		"op_rate_pol_map_tax_supplier input flist", i_flistp);
+
+	/* MSO Customization starts */
+	opstackp = opstackp->next;
+	stack_opcode = opstackp->opcode;
+	bill_tax_iflistp = opstackp->in_flistp;
+	memset(msg1, '\0', sizeof(msg1));
+	sprintf(msg1, "opcode no = %d",stack_opcode);
+	PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg1);
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,	"bill_tax_iflistp input flist", bill_tax_iflistp);
+	opstackp = connp->coip;
+	while(opstackp != NULL)
+	{
+		stack_opcode = opstackp->opcode;	
+		if (stack_opcode == PCM_OP_ACT_USAGE)
+		{
+			PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,"PCM_OP_ACT_USAGE FLIST", opstackp->in_flistp);
+			scalep = PIN_FLIST_FLD_GET(opstackp->in_flistp, PIN_FLD_SCALE, 1, ebufp);	
+			prod_flistp = PIN_FLIST_ELEM_GET(opstackp->in_flistp, PIN_FLD_PRODUCTS, 0, 1, ebufp);
+			if (prod_flistp)
+			{
+				plan_pdp = PIN_FLIST_FLD_GET(prod_flistp, PIN_FLD_PLAN_OBJ, 0, ebufp);
+			}
+		}
+		initial_flistp = opstackp->in_flistp;
+        	opstackp = opstackp->next;                	
+	}	
+
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "op_rate_pol_map_tax_supplier :Initial input FLIST", initial_flistp);
+	program_namep = PIN_FLIST_FLD_GET(initial_flistp, PIN_FLD_PROGRAM_NAME, 1, ebufp);
+	if (program_namep && strstr(program_namep, "BLK|data_migration"))
+	{
+		free_plan = 1;
+	}
+
+	event_flistp = PIN_FLIST_SUBSTR_GET(bill_tax_iflistp, PIN_FLD_EVENT, 1, ebufp);
+    if (event_flistp)
+    {
+        PIN_FLIST_FLD_SET(event_flistp, PIN_FLD_PROGRAM_NAME, program_namep, ebufp);
+    }
+    
+	mso_add_custom_balImpact_taxation(ctxp, scalep, plan_pdp, free_plan, &bill_tax_iflistp, ebufp);
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,	"bill_tax_iflistp input flist after modification", bill_tax_iflistp);
+	
+	/* MSO Customization Ends */
+
+	/*
+	 * Do the actual op in a sub.
+	 */
+	fm_rate_pol_map_tax_supplier(ctxp, i_flistp, o_flistpp, ebufp);
+
+	/*
+	 * Error?
+	 */
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"op_rate_pol_map_tax_supplier error", ebufp);
+	} else {
+		/*
+		 * Debug: What we're sending back.
+		 */
+		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+		  "op_rate_pol_map_tax_supplier return flist", *o_flistpp);
+	}
+//	bill_tax_iflistp = NULL;
+//	PIN_FLIST_DESTROY_EX(&bill_tax_iflistp, ebufp);
+	return;
+}
+
+/*******************************************************************
+ * fm_rate_pol_map_tax_supplier():
+ *
+ * This policy will search for the tax_supplier ID and other tax_supplier
+ * related information from:
+ *   - products if no tax_supplier_map table is available
+ *   - or from tax_supplier_map table otherwise
+ *
+ * Return flist with PIN_FLD_TAX_SUPPLIER_INFO substruct
+ * in the 'match' case or return a NULL flist if no findings...
+ *
+ *******************************************************************/
+static void
+fm_rate_pol_map_tax_supplier(
+	pcm_context_t		*ctxp,
+	pin_flist_t			*i_flistp,
+	pin_flist_t			**o_flistpp,
+	pin_errbuf_t		*ebufp)
+{
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		return;
+		/*****/
+	}
+
+	*o_flistpp = NULL;
+
+	if( fm_utils_is_ts_map() ) {
+		fm_rate_pol_map_tax_supplier_map(ctxp,
+			i_flistp, o_flistpp, ebufp);
+	}
+	
+	return;
+}
+
+/*******************************************************************
+ * fm_rate_pol_map_tax_supplier_map():
+ *
+ *    This policy will search through /config/tax_supplier object
+ *    and return findings...
+ *
+ *******************************************************************/
+static void
+fm_rate_pol_map_tax_supplier_map(
+	pcm_context_t		*ctxp,
+	pin_flist_t			*i_flistp,
+	pin_flist_t			**o_flistpp,
+	pin_errbuf_t		*ebufp)
+{
+	void			*vp = NULL;
+	pin_cookie_t	cookie = NULL;
+	pin_flist_t		*flistp = NULL;
+	pin_flist_t		*r_flistp = NULL;
+	pin_flist_t		*ip_flistp = NULL;
+	char			*prod_name = NULL;
+	char			*ship_to = NULL;
+	char			*company_id = NULL;
+	char			*business_location = NULL;
+	char			*ship_from = NULL;
+	int32			reg_flag = 1;
+	char			template[256];
+	int32			rec_id = 0;
+
+	/*
+	 * Create tmp ip_flistp to share.
+	 */
+	ip_flistp = PIN_FLIST_CREATE(ebufp);
+
+	/*
+	 * Find tax supplier id and add it to the output flist.
+	 * 1. get product name from /product (first one)
+	 * 2. get Ship To address from /account
+	 */
+	
+	while ((flistp = PIN_FLIST_ELEM_GET_NEXT(i_flistp, PIN_FLD_PRODUCTS,
+		 &rec_id, 1, &cookie, ebufp)) != (pin_flist_t *)NULL) {
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_PRODUCT_OBJ, 1, ebufp);
+		/*
+		 * possible ?
+		 */
+		if( vp == (pin_flist_t *)NULL) continue;
+
+		PIN_FLIST_FLD_SET(ip_flistp, PIN_FLD_POID, vp, ebufp);
+		PIN_FLIST_FLD_SET(ip_flistp, PIN_FLD_NAME, NULL, ebufp);
+
+		/*
+		 * Read the fields from a /product obj.
+		 */
+		PCM_OP(ctxp, PCM_OP_READ_FLDS, 0, ip_flistp, &r_flistp, ebufp);
+
+		if (PIN_ERRBUF_IS_ERR(ebufp)) {
+			break;
+			/****/
+		}
+
+		vp = PIN_FLIST_FLD_TAKE(r_flistp, PIN_FLD_NAME, 1, ebufp);
+		if( vp ==  NULL) {
+			PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+			continue;
+			/*******/
+		}
+		prod_name = (char *)vp;
+
+		/*
+		 * Found what we are looking for (just the first one)
+		 */
+		PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+		r_flistp = NULL;
+		break;
+		/****/
+	}
+
+	if( prod_name == NULL ) {
+		goto Done;
+		/********/
+	}
+
+	/* 
+	 * build Ship To address 
+	 *	(same as in PCM_OP_RATE_POL_TAX_LOC)
+	 */
+	r_flistp = PIN_FLIST_CREATE(ebufp);
+
+	fm_bill_utils_tax_loc_shipto(ctxp, i_flistp, r_flistp, ebufp);
+
+	ship_to = (char*) PIN_FLIST_FLD_GET(r_flistp, PIN_FLD_SHIP_TO, 1, ebufp);
+	if (!ship_to) {
+		goto Done;
+		/********/
+	}
+
+	/*
+	 * get company_id, business_location and Ship From from 
+	 * tax_supplier_map table
+	 */
+	if( !fm_utils_get_ts_map(prod_name, ship_to, &company_id,
+			&business_location, &ship_from, &reg_flag) ) {
+		goto Done;
+		/********/
+	}
+
+	/*
+	 * Set something to return
+	 */
+	*o_flistpp = PIN_FLIST_CREATE(ebufp);
+	vp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_POID, 0, ebufp);
+	if( PIN_ERRBUF_IS_ERR(ebufp)) {
+		goto Done;
+		/********/
+	}
+	PIN_FLIST_FLD_SET(*o_flistpp, PIN_FLD_POID, vp, ebufp);
+
+	if (!fm_utils_init_tax_supplier_objects_flistp) {
+		goto Done;
+		/********/
+	}
+
+	/*
+	 * Loop through list of cached tax suppliers.
+	 * We are searching for a tax_supplier with 
+	 * 	PIN_FLD_NAME = company_id
+	 * it is always one tax_supplier record per company_id
+	 * (in this case)
+	 */
+	rec_id = 0; cookie = NULL;
+	while ((flistp = PIN_FLIST_ELEM_GET_NEXT(
+		fm_utils_init_tax_supplier_objects_flistp,
+		PIN_FLD_TAX_SUPPLIERS,
+		&rec_id, 1, &cookie, ebufp)) != (pin_flist_t *)NULL ) {
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_NAME, 0, ebufp);
+		if (vp && (strcmp(company_id, (char*)vp) == 0)) {
+			/*
+			 * found what we are looking for ( just the first one)
+			 * Buyers VAT cert. will be defined with the 
+			 * exemptions later ...
+			 */
+			break;
+			/****/
+		}
+	}
+
+	if (flistp == (pin_flist_t*)NULL) {
+		pin_set_err(ebufp, PIN_ERRLOC_FM,
+			PIN_ERRCLASS_SYSTEM_DETERMINATE,
+			PIN_ERR_BAD_VALUE, 0, 0, 0);
+		/* we don't need template */
+		pin_snprintf(template, sizeof (template), 
+			"fm_rate_pol_map_tax_supplier_map: can't "
+			"find tax_supplier for company id %s", company_id);
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, template, ebufp );
+
+		goto Done;
+		/********/
+	}
+
+	/* 
+	 * Return the TAX_SUPPLIER along with information that 
+	 * was found from the tax_supplier_map table
+	 */
+	PIN_FLIST_FLD_SET(*o_flistpp, PIN_FLD_TAX_SUPPLIER, &rec_id, ebufp);
+
+	flistp = PIN_FLIST_SUBSTR_ADD(*o_flistpp, PIN_FLD_TAX_SUPPLIER_INFO,
+					 ebufp);
+	PIN_FLIST_FLD_SET(flistp, PIN_FLD_NAME,
+					(void *)company_id, ebufp);
+	PIN_FLIST_FLD_SET(flistp, PIN_FLD_SHIP_FROM,
+					(void *)ship_from, ebufp);
+	PIN_FLIST_FLD_SET(flistp, PIN_FLD_SHIP_TO,
+					(void *)ship_to, ebufp);
+	PIN_FLIST_FLD_SET(flistp, PIN_FLD_LOCATION,
+					(void *)business_location, ebufp);
+	PIN_FLIST_FLD_SET(flistp, PIN_FLD_REGULATED_FLAG,
+					(void *)&reg_flag, ebufp);
+	
+Done:
+	/*
+	 * Error?
+	 */
+	PIN_FLIST_DESTROY_EX(&ip_flistp, NULL);
+	PIN_FLIST_DESTROY_EX(&r_flistp, NULL);
+
+	if( prod_name != NULL ) {
+		free( prod_name);
+	}
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_rate_pol_map_tax_supplier_map error", ebufp);
+	}
+
+	return;
+}
+
+
+
+static void
+mso_add_custom_balImpact_taxation(
+	pcm_context_t		*ctxp,
+	pin_decimal_t		*scalep,
+	poid_t			*plan_pdp,
+	int32			free_flag,
+	pin_flist_t		**bill_tax_iflistp,
+	pin_errbuf_t		*ebufp)
+{
+
+	void			*vp = NULL;
+	pin_cookie_t		cookie = NULL;
+	pin_cookie_t		cookie1 = NULL;
+	pin_flist_t		*event_flistp = NULL;
+	pin_flist_t		*event_local_flistp = NULL;
+	pin_flist_t		*balImpact_flistp = NULL;
+	pin_flist_t		*total_flistp = NULL;
+	pin_flist_t		*gst_flistp = NULL;
+	pin_flist_t		*plan_map_flistp = NULL;
+	pin_flist_t		*discount_flistp = NULL;
+	char			*tax_code=NULL;
+	char			*actual_tax_code = NULL;
+	char			*code = NULL;
+	char			*new_taxcode = NULL;
+	char			msg[100]="";
+	char			*serv_type = NULL;
+	char			*areap = NULL;
+	pin_flist_t		*taxCodelist_flistp = NULL;
+	pin_flist_t		*taxes_flistp = NULL;
+	pin_flist_t		*custom_balImpact_flistp = NULL;
+	poid_t			*acct_pdp = NULL;
+	poid_t			*plan_map_pdp = NULL;
+	poid_t			*serv_pdp = NULL;
+	pin_decimal_t		*amountp = NULL;
+	pin_decimal_t		*orig_scalep = NULL;
+	pin_decimal_t		*ncf_amtp = NULL;
+	pin_decimal_t		*sub_amtp = NULL;
+	pin_decimal_t		*disc_perp = NULL;
+	pin_decimal_t		*disc_amtp = NULL;
+	pin_decimal_t		*onep = NULL;
+	pin_decimal_t		*tmp_discp = NULL;
+	pin_decimal_t		*total_discp = NULL;
+	pin_decimal_t		*total_ncf_discp = NULL;
+	pin_decimal_t		*total_sub_discp = NULL;
+	int32			rec_id = 0;
+	int32			rec_id1 = 0;
+	int32			bal_rec_id = 0;
+	int32			gst_type = -1;
+        int32                   gst_exempt = -1;
+	int32			dpo_flags = 0;
+	int32			discount_flag = -1;
+	int32			*rate_flags = 0;
+	int32			pkg_type = -1;
+	
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "mso_add_custom_balImpact_taxation input flist", *bill_tax_iflistp);
+	event_flistp = PIN_FLIST_SUBSTR_GET(*bill_tax_iflistp, PIN_FLD_EVENT,0, ebufp);
+        acct_pdp = PIN_FLIST_FLD_GET(event_flistp, PIN_FLD_ACCOUNT_OBJ, 0, ebufp);
+	serv_pdp = PIN_FLIST_FLD_GET(event_flistp, PIN_FLD_SERVICE_OBJ, 1, ebufp);
+	rate_flags = (int32 *)PIN_FLIST_FLD_GET(event_flistp, PIN_FLD_FLAGS, 1, ebufp);
+
+	if (free_flag)
+	{
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "mso_add_custom_balImpact_taxation free flag set for DM");
+	}	
+	if(serv_pdp)
+        {
+        	serv_type = (char *)PIN_POID_GET_TYPE(serv_pdp);
+        }
+
+	if (serv_type && strcmp(serv_type, "/service/catv") == 0)
+	{
+		/******************************************************
+		 * Check this is a DPO pack or not
+		 *****************************************************/
+		if (plan_pdp)
+		{
+			event_local_flistp = PIN_FLIST_CREATE(ebufp);
+			PIN_FLIST_FLD_SET(event_local_flistp, PIN_FLD_POID, plan_pdp, ebufp);
+			PIN_FLIST_FLD_SET(event_local_flistp, PIN_FLD_DESCR, NULL, ebufp);
+
+			PCM_OP(ctxp, PCM_OP_READ_FLDS , 0, event_local_flistp, &gst_flistp, ebufp);
+
+			PIN_FLIST_DESTROY_EX(&event_local_flistp, NULL);
+			
+			code = PIN_FLIST_FLD_GET(gst_flistp, PIN_FLD_DESCR, 0, ebufp); 
+			if (strstr(code, "DPO-"))
+			{
+				dpo_flags = 1;
+			}
+				
+			PIN_FLIST_DESTROY_EX(&gst_flistp, NULL);
+
+			if (rate_flags && ((*rate_flags & PIN_RATE_FLG_INVERTED)))
+			{
+				event_local_flistp = CM_FM_GET_NAMED_TRANS_FLIST(ctxp, "orig_grant_event");
+				PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,  "named input flist", event_local_flistp);
+				balImpact_flistp = PIN_FLIST_ELEM_GET(event_local_flistp, PIN_FLD_BAL_IMPACTS, 
+						0, 1, ebufp);
+				if (balImpact_flistp)
+				{
+					amountp = pbo_decimal_copy(PIN_FLIST_FLD_GET(balImpact_flistp, 
+							PIN_FLD_AMOUNT, 0, ebufp), ebufp);
+					pbo_decimal_multiply_assign(amountp, scalep, ebufp);
+					pbo_decimal_negate_assign(amountp, ebufp);
+					pbo_decimal_round_assign(amountp, 2, ROUND_HALF_UP, ebufp);
+				}
+			}
+
+			if ((dpo_flags) && !(*rate_flags & PIN_RATE_FLG_INVERTED))
+			{
+				/***************************************************************
+				 * Get pkg_channel details to get configured price  
+				 ***************************************************************/
+				event_local_flistp = PIN_FLIST_CREATE(ebufp);
+				PIN_FLIST_FLD_SET(event_local_flistp, PIN_FLD_POID, plan_pdp, ebufp);
+				PIN_FLIST_FLD_SET(event_local_flistp, PIN_FLD_FLAGS, &dpo_flags, ebufp);
+				
+				PCM_OP(ctxp, MSO_OP_CUST_GET_PKG_CHANNELS, 0, event_local_flistp, &plan_map_flistp, ebufp);
+
+				PIN_FLIST_DESTROY_EX(&event_local_flistp, NULL);
+
+				PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "mso_add_custom_balImpact_taxation pkg_channels", 
+					plan_map_flistp);
+				if (plan_map_flistp)
+				{
+        				ncf_amtp = PIN_FLIST_FLD_TAKE(plan_map_flistp, MSO_FLD_NCF_CHARGE, 0, ebufp);
+        				sub_amtp = PIN_FLIST_FLD_TAKE(plan_map_flistp, MSO_FLD_SUBSCRIPTION_CHARGE, 0, ebufp);
+        				plan_map_pdp = PIN_FLIST_FLD_GET(plan_map_flistp, PIN_FLD_POID, 0, ebufp);
+				}
+
+				/***************************************************************
+				 * Get service level discount  
+				 ***************************************************************/
+				event_local_flistp = PIN_FLIST_CREATE(ebufp);
+				PIN_FLIST_FLD_SET(event_local_flistp, PIN_FLD_POID, serv_pdp, ebufp);
+				pkg_type = NCF_PKG_TYPE;
+				PIN_FLIST_FLD_SET(event_local_flistp, MSO_FLD_PKG_TYPE, &pkg_type, ebufp);
+				PIN_FLIST_FLD_SET(event_local_flistp, PIN_FLD_PLAN_OBJ, plan_pdp, ebufp);
+
+				fm_mso_get_service_level_discount(ctxp, event_local_flistp, 1, &discount_flistp, ebufp);
+
+				PIN_FLIST_DESTROY_EX(&event_local_flistp, NULL);
+				/***************************************************************
+				 * Sort results FLIST to apply discount on NCF first
+				 ***************************************************************/
+				PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "mso_add_custom_balImpact_taxation discount", 
+					discount_flistp);
+				discount_flag = *(int32 *)PIN_FLIST_FLD_GET(discount_flistp,
+						PIN_FLD_STATUS, 0, ebufp);	
+				if (discount_flag != 1)
+				{
+					event_local_flistp = PIN_FLIST_CREATE(ebufp);
+					gst_flistp = PIN_FLIST_ELEM_ADD(event_local_flistp, PIN_FLD_RESULTS, 0, ebufp);
+					PIN_FLIST_FLD_SET(gst_flistp, MSO_FLD_PKG_TYPE, NULL, ebufp);
+					PIN_FLIST_SORT(discount_flistp, event_local_flistp, 1, ebufp);
+					
+					PIN_FLIST_DESTROY_EX(&event_local_flistp, NULL);
+				}
+				onep = pbo_decimal_from_str("1.0", ebufp);
+				total_discp = pbo_decimal_from_str("0.0", ebufp);
+				total_ncf_discp = pbo_decimal_from_str("0.0", ebufp);
+				total_sub_discp = pbo_decimal_from_str("0.0", ebufp);
+				while ((balImpact_flistp = PIN_FLIST_ELEM_GET_NEXT(discount_flistp, PIN_FLD_RESULTS,
+					&rec_id, 1, &cookie, ebufp)) != (pin_flist_t *)NULL)
+				{
+					pkg_type = *(int32 *)PIN_FLIST_FLD_GET(balImpact_flistp,
+						MSO_FLD_PKG_TYPE, 0, ebufp);	
+
+					/***************************************************************
+				 	 * Skip BC and ALC pkg in the DPO pack; 
+				 	 ***************************************************************/
+					if (pkg_type == 1 || pkg_type == 2)
+					{
+						continue;
+					}
+
+					discount_flag = *(int32 *)PIN_FLIST_FLD_GET(balImpact_flistp,
+						PIN_FLD_DISCOUNT_FLAGS, 0, ebufp);	
+					if (discount_flag == 0)
+					{
+						/***************************************************************
+				 		 * Handling percentage discount 
+				 		 ***************************************************************/
+						disc_perp = PIN_FLIST_FLD_GET(balImpact_flistp, PIN_FLD_DISCOUNT, 0, ebufp);
+						if (!pbo_decimal_compare(onep, disc_perp, ebufp))
+						{
+							PIN_ERR_LOG_MSG(3, "100% service level discount configured");
+							
+							if (pkg_type == ALL_PKG_TYPE)
+							{
+								if (sub_amtp && pbo_decimal_is_zero(sub_amtp, ebufp) == 0)
+								{
+									pbo_decimal_add_assign(total_discp, ncf_amtp, ebufp);
+									pbo_decimal_add_assign(total_ncf_discp, ncf_amtp, ebufp);
+									pbo_decimal_subtract_assign(ncf_amtp, ncf_amtp, ebufp);
+								}
+								pbo_decimal_add_assign(total_discp, sub_amtp, ebufp);
+								pbo_decimal_add_assign(total_sub_discp, sub_amtp, ebufp);
+								pbo_decimal_subtract_assign(sub_amtp, sub_amtp, ebufp);
+							}
+							else if (pkg_type == NCF_PKG_TYPE)
+							{
+								pbo_decimal_add_assign(total_discp, ncf_amtp, ebufp);
+								pbo_decimal_add_assign(total_ncf_discp, ncf_amtp, ebufp);
+								pbo_decimal_subtract_assign(ncf_amtp, ncf_amtp, ebufp);
+							}
+						}
+						else
+						{
+							if (pkg_type == NCF_PKG_TYPE)
+							{
+								tmp_discp = pbo_decimal_round(pbo_decimal_multiply(ncf_amtp, disc_perp, ebufp), 
+									2, ROUND_HALF_UP, ebufp);
+								pbo_decimal_add_assign(total_discp, tmp_discp, ebufp);
+								pbo_decimal_add_assign(total_ncf_discp, tmp_discp, ebufp);
+								pbo_decimal_subtract_assign(ncf_amtp, tmp_discp, ebufp);
+								pbo_decimal_destroy(&tmp_discp);								
+							}
+							else if (pkg_type == ALL_PKG_TYPE)
+							{
+								if (ncf_amtp && pbo_decimal_is_zero(ncf_amtp, ebufp) == 0)
+								{
+									tmp_discp = pbo_decimal_round(pbo_decimal_multiply(ncf_amtp, disc_perp, ebufp),
+										2, ROUND_HALF_UP, ebufp);
+									pbo_decimal_add_assign(total_discp, tmp_discp, ebufp);
+									pbo_decimal_add_assign(total_ncf_discp, tmp_discp, ebufp);
+									pbo_decimal_subtract_assign(ncf_amtp, tmp_discp, ebufp);
+									pbo_decimal_destroy(&tmp_discp);
+								}
+								tmp_discp = pbo_decimal_round(pbo_decimal_multiply(sub_amtp, disc_perp, ebufp),
+                                                                                2, ROUND_HALF_UP, ebufp);
+								pbo_decimal_add_assign(total_discp, tmp_discp, ebufp);
+								pbo_decimal_add_assign(total_sub_discp, tmp_discp, ebufp);
+								pbo_decimal_subtract_assign(sub_amtp, tmp_discp, ebufp);
+								pbo_decimal_destroy(&tmp_discp);
+							}
+						}
+					}
+					else if (discount_flag == 1)
+					{
+						/***************************************************************
+				 		 * Handling fixed discount 
+				 		 ***************************************************************/
+						disc_amtp = PIN_FLIST_FLD_GET(balImpact_flistp, PIN_FLD_DISCOUNT, 0, ebufp);
+						if (disc_amtp && pbo_decimal_is_zero(disc_amtp, ebufp) == 0)
+						{
+							if (pkg_type == NCF_PKG_TYPE)
+							{
+								pbo_decimal_subtract_assign(ncf_amtp, disc_amtp, ebufp);
+								pbo_decimal_add_assign(total_ncf_discp, disc_amtp, ebufp);
+							}
+							else if (pkg_type == ALL_PKG_TYPE)
+							{
+								pbo_decimal_subtract_assign(sub_amtp, disc_amtp, ebufp);
+								pbo_decimal_add_assign(total_sub_discp, disc_amtp, ebufp);
+							}
+							pbo_decimal_add_assign(total_discp, disc_amtp, ebufp);
+						}
+					}
+				}
+				
+				amountp = pbo_decimal_add(ncf_amtp, sub_amtp, ebufp);	
+				pbo_decimal_destroy(&ncf_amtp);
+				pbo_decimal_destroy(&sub_amtp);
+				pbo_decimal_destroy(&onep);
+				PIN_FLIST_DESTROY_EX(&discount_flistp, NULL);
+			}
+			
+		}
+		gst_flistp = PIN_FLIST_SUBSTR_GET(event_flistp, PIN_FLD_CYCLE_INFO, 1, ebufp);
+		if (gst_flistp)
+		{
+			if (dpo_flags)
+			{
+				if (amountp)
+				{
+					total_flistp = PIN_FLIST_ELEM_GET(event_flistp, PIN_FLD_TOTAL, 356, 0, ebufp);
+					balImpact_flistp = PIN_FLIST_ELEM_GET(event_flistp, PIN_FLD_BAL_IMPACTS, 0, 0, ebufp);
+					if (free_flag)
+					{
+						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "mso_add_custom_balImpact_taxation for DM");
+						pbo_decimal_subtract_assign(amountp, amountp, ebufp);
+						PIN_FLIST_FLD_SET(total_flistp, PIN_FLD_AMOUNT, amountp, ebufp);
+						PIN_FLIST_FLD_PUT(balImpact_flistp, PIN_FLD_AMOUNT, amountp, ebufp);
+						sprintf(msg, "DATA MIGRATION CHARGE");
+						PIN_FLIST_FLD_SET(balImpact_flistp, PIN_FLD_RATE_TAG, msg, ebufp);
+					}
+					else
+					{
+						PIN_FLIST_FLD_SET(total_flistp, PIN_FLD_AMOUNT, amountp, ebufp);
+						PIN_FLIST_FLD_PUT(balImpact_flistp, PIN_FLD_AMOUNT, amountp, ebufp);
+					}
+				}
+				if (total_discp)
+				{
+					PIN_FLIST_FLD_PUT(balImpact_flistp, PIN_FLD_DISCOUNT, total_discp, ebufp);
+				}
+				if (total_ncf_discp && total_sub_discp)
+				{
+					sprintf(msg, "NCF DISCOUNT:%s|SERVICE DISCOUNT:%s",  pbo_decimal_to_str(total_ncf_discp, ebufp),
+						pbo_decimal_to_str(total_sub_discp, ebufp));
+					PIN_FLIST_FLD_SET(balImpact_flistp, PIN_FLD_RATE_TAG, msg, ebufp);
+					pbo_decimal_destroy(&total_ncf_discp);
+					pbo_decimal_destroy(&total_sub_discp);
+				}
+				PIN_ERR_LOG_MSG(3, msg);
+				if (plan_map_pdp)
+				{
+					PIN_FLIST_FLD_SET(balImpact_flistp, PIN_FLD_RATE_OBJ, plan_map_pdp, ebufp);
+				}
+			}
+
+        		orig_scalep = PIN_FLIST_FLD_GET(gst_flistp, PIN_FLD_SCALE, 0, ebufp);
+			if ((pbo_decimal_compare(scalep, orig_scalep, ebufp) != 0) || free_flag)
+			{
+				balImpact_flistp = PIN_FLIST_ELEM_GET(event_flistp, PIN_FLD_BAL_IMPACTS, 0, 0, ebufp);
+				total_flistp = PIN_FLIST_ELEM_GET(event_flistp, PIN_FLD_TOTAL, 356, 0, ebufp);
+				PIN_FLIST_FLD_SET(balImpact_flistp, PIN_FLD_PERCENT, scalep, ebufp);
+        			amountp = PIN_FLIST_FLD_TAKE(balImpact_flistp, PIN_FLD_AMOUNT, 0, ebufp);
+				pbo_decimal_multiply_assign(amountp, scalep, ebufp);
+				pbo_decimal_round_assign(amountp, 2, ROUND_HALF_UP, ebufp);
+		
+				if (free_flag)
+				{
+					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "mso_add_custom_balImpact_taxation non-dpo for DM");
+					pbo_decimal_subtract_assign(amountp, amountp, ebufp);
+					PIN_FLIST_FLD_SET(total_flistp, PIN_FLD_AMOUNT, amountp, ebufp);
+					PIN_FLIST_FLD_PUT(balImpact_flistp, PIN_FLD_AMOUNT, amountp, ebufp);
+					sprintf(msg, "DATA MIGRATION CHARGE");
+					PIN_FLIST_FLD_SET(balImpact_flistp, PIN_FLD_RATE_TAG, msg, ebufp);
+				}
+				else
+				{
+					PIN_FLIST_FLD_SET(total_flistp, PIN_FLD_AMOUNT, amountp, ebufp);
+					PIN_FLIST_FLD_PUT(balImpact_flistp, PIN_FLD_AMOUNT, amountp, ebufp);
+				}
+			}
+		}
+	}
+
+        if(PIN_ERRBUF_IS_ERR(ebufp))
+        {
+                PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Error befor getting GST Type");
+		goto CLEANUP;
+        }
+        if (serv_type && strcmp(serv_type, "/service/catv") != 0 && strcmp(serv_type, "/service/telco/broadband") != 0)
+        {
+                PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Not CATV or ISP Service");
+        }
+	else
+	{
+		fm_mso_utils_get_profile(ctxp, acct_pdp, &gst_flistp, ebufp);
+		PIN_ERR_LOG_FLIST(3, "Gst FListp", gst_flistp);
+		if(gst_flistp)
+		{
+			gst_type = *(int32 *)PIN_FLIST_FLD_GET(gst_flistp, PIN_FLD_CONN_TYPE, 0, ebufp);
+            gst_exempt = *(int32 *)PIN_FLIST_FLD_GET(gst_flistp, MSO_FLD_TAX_TYPE, 0, ebufp);
+		}
+
+		if (PIN_ERRBUF_IS_ERR(ebufp) || gst_type == -1)
+		{
+			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Error is getting GST Type");
+			goto CLEANUP;
+		}
+		else if (gst_exempt == 1 && serv_type && strcmp(serv_type, "/service/catv") == 0) {
+                        PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Customer's LCO is not registered GSTIN");
+			fm_mso_get_account_info(ctxp, acct_pdp, &event_local_flistp, ebufp);
+			areap = PIN_FLIST_FLD_GET(event_local_flistp, MSO_FLD_AREA, 0, ebufp);
+			if (!strstr(areap, "KL") && gst_exempt == 1)
+			{
+                 goto CLEANUP;
+			}
+            else if (strstr(areap, "KL") && gst_exempt == 0)
+            {
+                gst_type = MSO_GST_AND_ADD_CESS;
+            }
+			else if (strstr(areap, "KL") && gst_exempt == 1)
+			{
+				gst_type = MSO_ADD_CESS;
+			}
+		}
+	}
+	
+	event_local_flistp = PIN_FLIST_COPY(event_flistp,ebufp);
+	bal_rec_id = PIN_FLIST_ELEM_COUNT(event_flistp,PIN_FLD_BAL_IMPACTS,ebufp); 
+	rec_id = 0;
+	cookie = NULL;
+	while ((balImpact_flistp = PIN_FLIST_ELEM_GET_NEXT(event_local_flistp, PIN_FLD_BAL_IMPACTS,
+		&rec_id, 1, &cookie, ebufp)) != (pin_flist_t *)NULL)
+	{
+		serv_pdp = PIN_FLIST_FLD_GET(event_local_flistp, PIN_FLD_SERVICE_OBJ, 0, ebufp);
+		tax_code = PIN_FLIST_FLD_GET(balImpact_flistp, PIN_FLD_TAX_CODE, 0, ebufp);
+
+		if (strcmp(tax_code, MSO_ET)==0)
+		{
+			sprintf(msg, "Actual Taxcode is %s.", tax_code); 
+			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+			new_taxcode = mso_get_taxcode(ctxp, serv_pdp, ebufp);
+			sprintf(msg, "Update Taxcode is %s.", new_taxcode); 
+			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+			custom_balImpact_flistp = PIN_FLIST_COPY(balImpact_flistp,ebufp);
+			PIN_FLIST_FLD_SET(custom_balImpact_flistp, PIN_FLD_TAX_CODE, new_taxcode, ebufp);
+			PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "Updated Balance flist", custom_balImpact_flistp);
+			PIN_FLIST_ELEM_PUT(event_flistp,custom_balImpact_flistp,PIN_FLD_BAL_IMPACTS,rec_id,ebufp);
+			PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "Updated Event flist", event_flistp);
+		}
+		else if (strcmp(tax_code, "") != 0)//if ((strcmp(tax_code, MSO_SRVC_TAX)==0)||(strcmp(tax_code, MSO_VAT_ST)==0))
+		{
+			taxCodelist_flistp = PIN_FLIST_CREATE(ebufp);
+			PIN_FLIST_FLD_SET(taxCodelist_flistp, PIN_FLD_POID, vp, ebufp);
+			mso_getTaxCodelist(ctxp, tax_code, gst_type, &taxCodelist_flistp, ebufp);
+			rec_id1=0;
+			cookie1 = NULL;
+			while ((taxes_flistp = PIN_FLIST_ELEM_GET_NEXT(taxCodelist_flistp, PIN_FLD_TAXES,
+					&rec_id1, 1, &cookie1, ebufp)) != (pin_flist_t *)NULL)
+			{
+				bal_rec_id++;
+				actual_tax_code = PIN_FLIST_FLD_GET(taxes_flistp, PIN_FLD_TAX_CODE, 0, ebufp);
+				custom_balImpact_flistp = PIN_FLIST_COPY(balImpact_flistp,ebufp);
+				PIN_FLIST_FLD_SET(custom_balImpact_flistp, PIN_FLD_TAX_CODE, actual_tax_code, ebufp);
+				PIN_FLIST_FLD_SET(custom_balImpact_flistp, PIN_FLD_RATE_TAG,"DUMMY_MSO_TAX", ebufp);
+				PIN_FLIST_FLD_SET(custom_balImpact_flistp, PIN_FLD_IMPACT_CATEGORY,"DUMMY_MSO_TAX", ebufp);
+				PIN_FLIST_ELEM_PUT(event_flistp,custom_balImpact_flistp,PIN_FLD_BAL_IMPACTS,bal_rec_id,ebufp);		
+			}
+		}
+	}
+	CLEANUP:
+	//PIN_FLIST_DESTROY_EX(&gst_flistp, NULL);
+	PIN_FLIST_DESTROY_EX(&plan_map_flistp, NULL);
+	return;
+}
+
+void 
+mso_getTaxCodelist(
+	pcm_context_t	*ctxp,
+	char		*tax_code,
+	int32		gst_type,
+	pin_flist_t	**taxCodelist_flistp,
+	pin_errbuf_t	*ebufp)
+{
+	int32		tax_code_flag = 0;
+	pin_flist_t	*taxes_flistp=NULL;
+
+
+	if (gst_type == MSO_SGST_CGST)
+        {
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp, PIN_FLD_TAXES, 0,ebufp);
+                PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, CGST, ebufp);
+                taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp, PIN_FLD_TAXES, 1, ebufp);
+                PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, SGST, ebufp);
+	}
+	else if (gst_type == MSO_IGST)
+        {
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp, PIN_FLD_TAXES, 2, ebufp);
+                PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, IGST, ebufp);
+	}
+	else if (gst_type == MSO_ADD_CESS)
+        {
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp, PIN_FLD_TAXES, 0, ebufp);
+                PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, ADDITIONAL_CESS, ebufp);
+	}
+    else if (gst_type == MSO_GST_AND_ADD_CESS)
+    {
+        taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp, PIN_FLD_TAXES, 0,ebufp);
+        PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, CGST, ebufp);
+        taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp, PIN_FLD_TAXES, 1, ebufp);
+        PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, SGST, ebufp);
+        taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp, PIN_FLD_TAXES, 2, ebufp);
+        PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, ADDITIONAL_CESS, ebufp);
+    }
+//	else
+//	{
+		//set error
+//	}
+	
+
+/*	if((strcmp(tax_code, MSO_SRVC_TAX)==0))
+	{
+	
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,0,ebufp);
+		PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, SERVICE_TAX, ebufp);
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,1,ebufp);
+                PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, SWACHH_CESS, ebufp);
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,2,ebufp);
+                PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, KRISH_CESS, ebufp);*/
+		//Commented because these tax items are now absolete 
+		/*taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,1,ebufp);
+		PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, EDUCATION_CESS, ebufp);
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,2,ebufp);
+		PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, SHE_CESS, ebufp);*/
+/*	}
+	else if ((strcmp(tax_code, MSO_VAT_ST)==0))
+	{
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,0,ebufp);
+		PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, MSO_VAT, ebufp);
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,1,ebufp);
+		PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, SERVICE_TAX, ebufp);
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,2,ebufp);
+                PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, SWACHH_CESS, ebufp);
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,3,ebufp);
+                PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, KRISH_CESS, ebufp);*/
+		//Commented because these tax items are now absolete
+		/*taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,2,ebufp);
+		PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, EDUCATION_CESS, ebufp);
+		taxes_flistp= PIN_FLIST_ELEM_ADD(*taxCodelist_flistp,PIN_FLD_TAXES,3,ebufp);
+		PIN_FLIST_FLD_SET(taxes_flistp, PIN_FLD_TAX_CODE, SHE_CESS, ebufp);*/
+//	}
+
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+		  "mso_getTaxCodelist return taxCodelist_flistp", *taxCodelist_flistp);
+	return;
+}
+
+char* mso_get_taxcode(
+	pcm_context_t		*ctxp,
+	poid_t				*srvc_pdp,
+	pin_errbuf_t		*ebufp)
+{
+		u_int64			db = 0;
+		u_int64			id = (u_int64)-1;
+		int32			s_flags = 256;
+		int32			conn_type = 0;
+		pin_flist_t		*s_flistp = NULL;
+		pin_flist_t		*r_flistp = NULL;
+		pin_flist_t		*rs_flistp = NULL;
+		pin_flist_t		*sub_flistp = NULL;
+		void			*vp = NULL;
+
+		PIN_ERR_LOG_POID(PIN_ERR_LEVEL_DEBUG, "ET Processing - service poid", srvc_pdp);
+
+		s_flistp = PIN_FLIST_CREATE(ebufp);
+		PIN_FLIST_FLD_SET(s_flistp, PIN_FLD_POID, srvc_pdp, ebufp);
+		sub_flistp = PIN_FLIST_SUBSTR_ADD(s_flistp, MSO_FLD_CATV_INFO,  ebufp);
+		PIN_FLIST_FLD_SET(sub_flistp, PIN_FLD_CONN_TYPE, 0, ebufp);
+		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "Read Input Flist", s_flistp);
+
+		PCM_OP(ctxp, PCM_OP_READ_FLDS, 0, s_flistp, &r_flistp, ebufp);
+		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "Read Output Flist", r_flistp);
+		rs_flistp = PIN_FLIST_SUBSTR_GET(r_flistp, MSO_FLD_CATV_INFO, 0, ebufp);
+		vp = PIN_FLIST_FLD_GET(rs_flistp, PIN_FLD_CONN_TYPE, 0, ebufp);
+		conn_type = *(int32 *)vp; 
+		if (conn_type == 0 || conn_type == 1)
+		{
+			return MSO_ET_MAIN ;
+		}
+		else if (conn_type == 2)
+		{
+			return MSO_ET_ADDI ;
+		}
+	PIN_FLIST_DESTROY_EX(&s_flistp, ebufp);
+	return;
+}

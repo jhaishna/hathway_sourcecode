@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/dcm IMPLEMENTATION ORACLE7 {
+
+}
+

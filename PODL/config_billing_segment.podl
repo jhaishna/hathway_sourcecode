@@ -1,0 +1,335 @@
+
+#=======================================
+#  Field PIN_FLD_BILLING_SEGMENTS
+#=======================================
+
+ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+	ID = 8307;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAP
+#=======================================
+
+ARRAY PIN_FLD_MAP {
+
+	ID = 8300;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_CYCLE_DOM
+#=======================================
+
+INT PIN_FLD_ACTG_CYCLE_DOM {
+
+	ID = 752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLING_SEGMENT
+#=======================================
+
+ENUM PIN_FLD_BILLING_SEGMENT {
+
+	ID = 8301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_ACCOUNTS
+#=======================================
+
+INT PIN_FLD_MAX_ACCOUNTS {
+
+	ID = 8303;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_SERVICES
+#=======================================
+
+INT PIN_FLD_MAX_SERVICES {
+
+	ID = 8305;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_ACCOUNTS
+#=======================================
+
+INT PIN_FLD_NUM_ACCOUNTS {
+
+	ID = 8302;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_SERVICES
+#=======================================
+
+INT PIN_FLD_NUM_SERVICES {
+
+	ID = 8304;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_PROCESS_T
+#=======================================
+
+TIMESTAMP PIN_FLD_TOTAL_PROCESS_T {
+
+	ID = 8306;
+}
+
+
+#=======================================
+#  Storable Class /config/billing_segment
+#=======================================
+
+STORABLE CLASS /config/billing_segment {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This is the configuration object where we define the Billing segments in the system which contains the info on the billing DOMs allowable for a Billing segment and the number of accounts and services allowed for each billing segment defined.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+		DESCR = "Stores all the billing segments defined in a Portal system. Essentially this array will contain ,starting from the name of the Billing segment to all the configuration information required to establish a Billing segment into the BRM system.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description of a Billing Segment.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_MAP {
+
+		DESCR = "Stores pairs of billing segment IDs and accounting days of month (DOMs).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			DESCR = "An accounting day of month (DOM).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_BILLING_SEGMENT {
+
+			DESCR = "A billing segment ID.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_ACCOUNTS {
+
+			DESCR = "Maximum number of accounts in this billing segment that can be assigned to this DOM.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MAX_SERVICES {
+
+			DESCR = "Maximum number of services in this billing segment that can use this DOM.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_ACCOUNTS {
+
+			DESCR = "Number of accounts in this billing segment that are currently assigned to this DOM.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_SERVICES {
+
+			DESCR = "Number of services in this billing segment that are using this DOM.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "The status of the DOM in this billing segment(open, restricted, or closed)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_TOTAL_PROCESS_T {
+
+			DESCR = "Total amount of time that it took to process the bills associated with this billing segment during the DOMs last billing run.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/billing_segment
+#=======================================
+
+STORABLE CLASS /config/billing_segment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+		SQL_TABLE = "config_billing_segment_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "config_billing_segment";
+		}
+
+	}
+
+	ARRAY PIN_FLD_MAP {
+
+		SQL_TABLE = "config_dom_map_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			SQL_COLUMN = "config_actg_dom";
+		}
+
+		ENUM PIN_FLD_BILLING_SEGMENT {
+
+			SQL_COLUMN = "config_billing_segment";
+		}
+
+		INT PIN_FLD_MAX_ACCOUNTS {
+
+			SQL_COLUMN = "config_max_accounts";
+		}
+
+		INT PIN_FLD_MAX_SERVICES {
+
+			SQL_COLUMN = "config_max_services";
+		}
+
+		INT PIN_FLD_NUM_ACCOUNTS {
+
+			SQL_COLUMN = "config_num_accounts";
+		}
+
+		INT PIN_FLD_NUM_SERVICES {
+
+			SQL_COLUMN = "config_num_services";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "config_status";
+		}
+
+		TIMESTAMP PIN_FLD_TOTAL_PROCESS_T {
+
+			SQL_COLUMN = "config_total_process_t";
+		}
+
+	}
+
+}
+

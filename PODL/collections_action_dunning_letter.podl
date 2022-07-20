@@ -1,0 +1,119 @@
+
+#=======================================
+#  Field PIN_FLD_DUNNING_INFO
+#=======================================
+
+ARRAY PIN_FLD_DUNNING_INFO {
+
+	ID = 7727;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_STATUS
+#=======================================
+
+ENUM PIN_FLD_DELIVERY_STATUS {
+
+	ID = 7702;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUNNING_DATA
+#=======================================
+
+BUF PIN_FLD_DUNNING_DATA {
+
+	ID = 7728;
+}
+
+
+#=======================================
+#  Storable Class /collections_action/dunning_letter
+#=======================================
+
+STORABLE CLASS /collections_action/dunning_letter {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store additional information for dunning_letter action ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DUNNING_INFO {
+
+		DESCR = "To save the dunning letter data and status. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DELIVERY_STATUS {
+
+			DESCR = "Has the dunning letter been sent? Valid values are 0 - not sent and 1 - sent. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BUF PIN_FLD_DUNNING_DATA {
+
+			DESCR = "Hold the dunning data to be used to generate a real dunning letter.  It is in XML format.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/dunning_letter
+#=======================================
+
+STORABLE CLASS /collections_action/dunning_letter IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DUNNING_INFO {
+
+		SQL_TABLE = "collections_dunning_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DELIVERY_STATUS {
+
+			SQL_COLUMN = "delivery_status";
+		}
+
+		BUF PIN_FLD_DUNNING_DATA {
+
+			SQL_TABLE = "collections_dunning_buf_t";
+			SQL_COLUMN = "dunning_data";
+		}
+
+	}
+
+}
+

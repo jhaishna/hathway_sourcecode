@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /payinfo/invoice/postpaid
+#=======================================
+
+STORABLE CLASS /payinfo/invoice/postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /payinfo/invoice/postpaid
+#=======================================
+
+STORABLE CLASS /payinfo/invoice/postpaid IMPLEMENTATION ORACLE7 {
+
+}
+

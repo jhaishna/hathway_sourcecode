@@ -1,0 +1,1040 @@
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CODES
+#=======================================
+
+ARRAY PIN_FLD_SERVICE_CODES {
+
+	ID = 6420;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SS_ACTION_CODE
+#=======================================
+
+STRING PIN_FLD_SS_ACTION_CODE {
+
+	ID = 6422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SS_CODE
+#=======================================
+
+STRING PIN_FLD_SS_CODE {
+
+	ID = 6423;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TELCO_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+	ID = 8002;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_DOWNLINK
+#=======================================
+
+DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+	ID = 428;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_UPLINK
+#=======================================
+
+DECIMAL PIN_FLD_BYTES_UPLINK {
+
+	ID = 429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALLED_TO
+#=======================================
+
+STRING PIN_FLD_CALLED_TO {
+
+	ID = 7448;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALLING_FROM
+#=======================================
+
+STRING PIN_FLD_CALLING_FROM {
+
+	ID = 7447;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESTINATION_NETWORK
+#=======================================
+
+STRING PIN_FLD_DESTINATION_NETWORK {
+
+	ID = 6406;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK_SESSION_ID
+#=======================================
+
+STRING PIN_FLD_NETWORK_SESSION_ID {
+
+	ID = 7449;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORIGIN_NETWORK
+#=======================================
+
+STRING PIN_FLD_ORIGIN_NETWORK {
+
+	ID = 6415;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRIMARY_MSID
+#=======================================
+
+STRING PIN_FLD_PRIMARY_MSID {
+
+	ID = 7445;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SECONDARY_MSID
+#=======================================
+
+STRING PIN_FLD_SECONDARY_MSID {
+
+	ID = 7446;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SVC_CODE
+#=======================================
+
+STRING PIN_FLD_SVC_CODE {
+
+	ID = 6424;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SVC_TYPE
+#=======================================
+
+STRING PIN_FLD_SVC_TYPE {
+
+	ID = 6425;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMINATE_CAUSE
+#=======================================
+
+ENUM PIN_FLD_TERMINATE_CAUSE {
+
+	ID = 427;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_CLASS
+#=======================================
+
+STRING PIN_FLD_USAGE_CLASS {
+
+	ID = 6427;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_TYPE
+#=======================================
+
+STRING PIN_FLD_USAGE_TYPE {
+
+	ID = 6428;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GSM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_GSM_INFO {
+
+	ID = 6412;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_IN
+#=======================================
+
+INT PIN_FLD_BYTES_IN {
+
+	ID = 421;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_OUT
+#=======================================
+
+INT PIN_FLD_BYTES_OUT {
+
+	ID = 422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALLED_NUM_MODIF_MARK
+#=======================================
+
+ENUM PIN_FLD_CALLED_NUM_MODIF_MARK {
+
+	ID = 6402;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CELL_ID
+#=======================================
+
+STRING PIN_FLD_CELL_ID {
+
+	ID = 3003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESTINATION_SID
+#=======================================
+
+STRING PIN_FLD_DESTINATION_SID {
+
+	ID = 6407;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DIALED_NUMBER
+#=======================================
+
+STRING PIN_FLD_DIALED_NUMBER {
+
+	ID = 6408;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DIRECTION
+#=======================================
+
+ENUM PIN_FLD_DIRECTION {
+
+	ID = 1705;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMEI
+#=======================================
+
+STRING PIN_FLD_IMEI {
+
+	ID = 3012;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOC_AREA_CODE
+#=======================================
+
+STRING PIN_FLD_LOC_AREA_CODE {
+
+	ID = 3013;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUMBER_OF_UNITS
+#=======================================
+
+INT PIN_FLD_NUMBER_OF_UNITS {
+
+	ID = 6414;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORIGIN_SID
+#=======================================
+
+STRING PIN_FLD_ORIGIN_SID {
+
+	ID = 6416;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QOS_NEGOTIATED
+#=======================================
+
+ENUM PIN_FLD_QOS_NEGOTIATED {
+
+	ID = 6417;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QOS_REQUESTED
+#=======================================
+
+ENUM PIN_FLD_QOS_REQUESTED {
+
+	ID = 6418;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUB_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_SUB_TRANS_ID {
+
+	ID = 3042;
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session
+#=======================================
+
+STORABLE CLASS /event/delayed/session {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Rated Event Loader session events base class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores fields associated with telco CDRs for prerated events loaded by the RE Loader.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_CODES {
+
+		DESCR = "Array containing possible Supplementary Service activity occuring during this session.";
+		ORDER = 12;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_SS_ACTION_CODE {
+
+			DESCR = "This qualifies the way in which the supplementary service is used.  ";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SS_CODE {
+
+			DESCR = "This uniquely defines the supplementary service or a group of supplementary services.  ";
+			ORDER = 1;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		DESCR = "Substruct containing information about a call.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+			DESCR = "Volume in bytes received by the call initiator.";
+			ORDER = 12;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_BYTES_UPLINK {
+
+			DESCR = "Volume in bytes sent by the call initiator.";
+			ORDER = 13;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CALLED_TO {
+
+			DESCR = "Destination number of the call.  Also called B number.";
+			ORDER = 6;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CALLING_FROM {
+
+			DESCR = "Originating phone number of the call.  Can be different from the phone number of the user in case of calling card scenario for example.  Also called A number.";
+			ORDER = 5;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESTINATION_NETWORK {
+
+			DESCR = "Is the network towards which the call or message is routed.";
+			ORDER = 2;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK_SESSION_ID {
+
+			DESCR = "Unique reference to used to bundle chained calls.  E.g: The 'A to C' and 'C to B' legs in a call forwarding scenario must be treated as separate calls, but linked together.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGIN_NETWORK {
+
+			DESCR = "Network code from which the call or message was routed. ";
+			ORDER = 1;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PRIMARY_MSID {
+
+			DESCR = "Mobile station ID of the user. In CDMA network this represent the MIN of the user and in GSM network this represnt the MSISDN.";
+			ORDER = 3;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SECONDARY_MSID {
+
+			DESCR = "Mobile station ID of the user. In CDMA network this represent the ESN number of the user and in GSM network this represnt the IMSI.";
+			ORDER = 4;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SVC_CODE {
+
+			DESCR = "Either a Teleservice Code or Bearer Service Code as determined by Service Type.  ";
+			ORDER = 8;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SVC_TYPE {
+
+			DESCR = "Uniquely defines the type of basic service. ";
+			ORDER = 7;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			DESCR = "Indicates whether a call was correctly completed or not. ";
+			ORDER = 9;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_USAGE_CLASS {
+
+			DESCR = "Classification describes the specific format related call scenario.  E.g. Call forwarding, roaming, mailbox request, local call, etc.";
+			ORDER = 10;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_USAGE_TYPE {
+
+			DESCR = "Type describes the specific customer related call scenario.  E.g. Customer-to-customer call, birthdate call, closed-user-group calls, friends & family, etc.";
+			ORDER = 11;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco/gsm
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco/gsm {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores fields associated with GSM CDRs for prerated events loaded by the RE Loader.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GSM_INFO {
+
+		DESCR = "Substruct containing  GSM specific information about a call.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BYTES_IN {
+
+			DESCR = "Volume in bytes received by the call initiator.";
+			ORDER = 21;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BYTES_OUT {
+
+			DESCR = "Volume in bytes sent by the call initiator.";
+			ORDER = 22;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CALLED_NUM_MODIF_MARK {
+
+			DESCR = "An indicator to show whether the called number has been modified by the VPLMN e.g. for privacy reasons.  Permitted values: 00\tDefault (undefined) and Normal. 01\tSocial Number. 02\tAnonymize Number. 04\tSpecial Number (e.g. Premium Rate). 08\tModified Number (e.g. Vanity-Routing or Short-Number-Translation).";
+			ORDER = 8;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CELL_ID {
+
+			DESCR = "ID of the cell from which the call originated.";
+			ORDER = 20;
+			LENGTH = 10;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESTINATION_SID {
+
+			DESCR = "Identification of the MSC or SwitchID handling the call at call destination.";
+			ORDER = 18;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DIALED_NUMBER {
+
+			DESCR = "Third party number at which the call was first terminated in the case of terminated transit or routed, forwarded calls.  This is the number initiating call forwarding.  Also called C number.";
+			ORDER = 10;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DIRECTION {
+
+			DESCR = "Indicate the direction of the call/SMS Message. Permitted values: 0\tOriginated.1\tTerminated.";
+			ORDER = 9;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMEI {
+
+			DESCR = "International Mobile station Equipment Identity of the served party.";
+			ORDER = 4;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LOC_AREA_CODE {
+
+			DESCR = "ID of the location area of the mobile equipment handling the call.";
+			ORDER = 19;
+			LENGTH = 10;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUMBER_OF_UNITS {
+
+			DESCR = "Number of units sent by the call initiator.";
+			ORDER = 23;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGIN_SID {
+
+			DESCR = "Identification of the MSC or SwitchID handling the call at call origin.";
+			ORDER = 17;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_QOS_NEGOTIATED {
+
+			DESCR = "QoS allocated by the Network Equipment.  See PIN_FLD_QOS_REQUESTED.";
+			ORDER = 14;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_QOS_REQUESTED {
+
+			DESCR = "QoS requested to the Network Equipment. (E.g. bandwidth).  Permitted values: 00\tHalf Rate Channel. 01\tFull Rate Channel. 02\tDual Rate Channel, Half Rate Preferred. 03\tDual Rate Channel, Full Rate Preferred.";
+			ORDER = 13;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUB_TRANS_ID {
+
+			DESCR = "Partial record indicator used to either discard split calls except one of them (eliminate duplicate calls) or to bundle them. Permitted values: S\tSingle (only one record present) F\tFirst (first record in the set of split call records). I\tIntermediate (one of the middle records in the set of split call records). L\tLast (last record in the set of split call records).";
+			ORDER = 16;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco/gsm/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This describes a roaming gsm call, which should be billedto a subscriber.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco/roaming
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Delayed session events for Roaming usage. Use to store roaming usage against roaming partner's portal account ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session
+#=======================================
+
+STORABLE CLASS /event/delayed/session IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_CODES {
+
+		SQL_TABLE = "event_dlay_sess_tlcs_svc_cds_t";
+		SQL_STORAGE = "tablespace pin00 initrans 4 storage (initial 750k next 750k maxextents unlimited pctincrease 0 freelists 4 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_SS_ACTION_CODE {
+
+			SQL_COLUMN = "ss_action_code";
+		}
+
+		STRING PIN_FLD_SS_CODE {
+
+			SQL_COLUMN = "ss_code";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		SQL_TABLE = "event_dlay_sess_tlcs_t";
+		SQL_STORAGE = "tablespace pin00 initrans 4 storage (initial 750k next 750k maxextents unlimited pctincrease 0 freelists 4 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+			SQL_COLUMN = "bytes_downlink";
+		}
+
+		DECIMAL PIN_FLD_BYTES_UPLINK {
+
+			SQL_COLUMN = "bytes_uplink";
+		}
+
+		STRING PIN_FLD_CALLED_TO {
+
+			SQL_COLUMN = "called_to";
+		}
+
+		STRING PIN_FLD_CALLING_FROM {
+
+			SQL_COLUMN = "calling_from";
+		}
+
+		STRING PIN_FLD_DESTINATION_NETWORK {
+
+			SQL_COLUMN = "destination_network";
+		}
+
+		STRING PIN_FLD_NETWORK_SESSION_ID {
+
+			SQL_COLUMN = "network_session_id";
+		}
+
+		STRING PIN_FLD_ORIGIN_NETWORK {
+
+			SQL_COLUMN = "origin_network";
+		}
+
+		STRING PIN_FLD_PRIMARY_MSID {
+
+			SQL_COLUMN = "primary_msid";
+		}
+
+		STRING PIN_FLD_SECONDARY_MSID {
+
+			SQL_COLUMN = "secondary_msid";
+		}
+
+		STRING PIN_FLD_SVC_CODE {
+
+			SQL_COLUMN = "svc_code";
+		}
+
+		STRING PIN_FLD_SVC_TYPE {
+
+			SQL_COLUMN = "svc_type";
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			SQL_COLUMN = "terminate_cause";
+		}
+
+		STRING PIN_FLD_USAGE_CLASS {
+
+			SQL_COLUMN = "usage_class";
+		}
+
+		STRING PIN_FLD_USAGE_TYPE {
+
+			SQL_COLUMN = "usage_type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco/gsm
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco/gsm IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GSM_INFO {
+
+		SQL_TABLE = "event_dlyd_session_tlco_gsm_t";
+		SQL_STORAGE = "tablespace pin00 initrans 4 storage (initial 750k next 750k maxextents unlimited pctincrease 0 freelists 4 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BYTES_IN {
+
+			SQL_COLUMN = "bytes_in";
+		}
+
+		INT PIN_FLD_BYTES_OUT {
+
+			SQL_COLUMN = "bytes_out";
+		}
+
+		ENUM PIN_FLD_CALLED_NUM_MODIF_MARK {
+
+			SQL_COLUMN = "called_num_modif_mark";
+		}
+
+		STRING PIN_FLD_CELL_ID {
+
+			SQL_COLUMN = "cell_id";
+		}
+
+		STRING PIN_FLD_DESTINATION_SID {
+
+			SQL_COLUMN = "destination_sid";
+		}
+
+		STRING PIN_FLD_DIALED_NUMBER {
+
+			SQL_COLUMN = "dialed_number";
+		}
+
+		ENUM PIN_FLD_DIRECTION {
+
+			SQL_COLUMN = "direction";
+		}
+
+		STRING PIN_FLD_IMEI {
+
+			SQL_COLUMN = "imei";
+		}
+
+		STRING PIN_FLD_LOC_AREA_CODE {
+
+			SQL_COLUMN = "loc_area_code";
+		}
+
+		INT PIN_FLD_NUMBER_OF_UNITS {
+
+			SQL_COLUMN = "number_of_units";
+		}
+
+		STRING PIN_FLD_ORIGIN_SID {
+
+			SQL_COLUMN = "origin_sid";
+		}
+
+		ENUM PIN_FLD_QOS_NEGOTIATED {
+
+			SQL_COLUMN = "qos_negotiated";
+		}
+
+		ENUM PIN_FLD_QOS_REQUESTED {
+
+			SQL_COLUMN = "qos_requested";
+		}
+
+		STRING PIN_FLD_SUB_TRANS_ID {
+
+			SQL_COLUMN = "sub_trans_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco/gsm/roaming IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco/roaming
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco/roaming IMPLEMENTATION ORACLE7 {
+
+}
+

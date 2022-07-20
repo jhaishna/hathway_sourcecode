@@ -1,0 +1,1300 @@
+3c3
+< * Copyright (c) 1996, 2015, Oracle and/or its affiliates. All rights reserved.
+---
+>  * Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved. 
+8a9,10
+>  * Version 1.0: 01-10-2013: Vilva Sabarikanth: Added the MSO Customization of 
+>  * applying the Minimum CATV Bill Amount of Rs.150 per service
+12c14
+< static char Sccs_id[] = "@#$Id: fm_bill_pol_spec_future_cycle.c /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:33:27 nishahan Exp $"; 
+---
+> static char Sccs_id[] = "@(#)%Portal Version: fm_bill_pol_spec_future_cycle.c:RWSmod7.3.1Int:3:2008-Mar-18 16:11:22 %"; 
+21a24
+> #include <math.h> 
+126c129,131
+< 	int32			event_t,
+---
+>     poid_t          *service_pdp,
+> 	time_t			event_t,
+>     pin_opcode_t    op_num,
+128c133
+< 	pin_errbuf_t		*ebufp);
+---
+> 	pin_errbuf_t    *ebufp);
+251c256
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+254,255c259
+< 	PIN_ERR_CLEAR_ERR(ebufp);
+< 
+---
+> 	PIN_ERRBUF_CLEAR(ebufp);
+299c303
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+347,348c351,352
+< 					mso_bill_pol_catv_main(ctxp, flags, pdp, event_t, &ret_flistp, ebufp);
+< 					if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 					//mso_bill_pol_catv_main(ctxp, flags, pdp, event_t, &ret_flistp, ebufp);
+> 					if (PIN_ERRBUF_IS_ERR(ebufp)) {
+361c365
+< 	PIN_ERR_CLEAR_ERR(ebufp);
+---
+> 	PIN_ERRBUF_CLEAR(ebufp);
+391c395
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+394c398
+< 	PIN_ERR_CLEAR_ERR(ebufp);
+---
+> 	PIN_ERRBUF_CLEAR(ebufp);
+455c459
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+491d494
+< 	int32                   dom_advanced = PIN_BILL_FLG_DOM_NOT_INCREMENTED;
+494c497
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+497c500
+< 	PIN_ERR_CLEAR_ERR(ebufp);
+---
+> 	PIN_ERRBUF_CLEAR(ebufp);
+529,533d531
+< 	vp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_FLAGS, 1, ebufp);
+< 	if (vp) {
+< 		dom_advanced = *((int32 *)vp);
+< 	}
+< 	
+547,551c545
+< 				if (dom_advanced == PIN_BILL_FLG_DOM_INCREMENTED) {
+< 					fm_utils_add_n_days(dom - curr_dom, &next_t);
+< 				} else {
+< 					fm_utils_add_n_days(dom - curr_dom + 1, &next_t);
+< 				}
+---
+> 			       fm_utils_add_n_days(dom - curr_dom + 1, &next_t);
+554,558c548,550
+< 				next_t = fm_utils_cycle_actgfuturet(dom, 
+< 					PIN_ACTG_CYCLE_SHORT, event_end_t, ebufp);
+< 				if (dom_advanced == PIN_BILL_FLG_DOM_NOT_INCREMENTED) {							
+< 					fm_utils_add_n_days(1, &next_t);
+< 				}
+---
+> 			       next_t = fm_utils_cycle_actgfuturet(dom, 
+> 				      PIN_ACTG_CYCLE_SHORT, event_end_t, ebufp);
+> 			       fm_utils_add_n_days(1, &next_t);
+646c638
+< 	if (PIN_ERR_IS_ERR(ebufp)) {
+---
+> 	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+664c656,658
+< 	int32			event_t,
+---
+>     poid_t          *service_pdp,
+> 	time_t			event_t,
+>     pin_opcode_t    op_num,
+666c660
+< 	pin_errbuf_t		*ebufp)
+---
+> 	pin_errbuf_t    *ebufp)
+690c684
+< 	pin_flist_t         		*mso_et_flist_copy = NULL;
+---
+> 	pin_flist_t      	*mso_et_flist_copy = NULL;
+693,694c687,688
+< 	pin_flist_t         		*et_in_flistp = NULL;
+< 	pin_flist_t                     *et_out_flistp = NULL; //CATV_REFUND_API_CHANGE
+---
+> 	pin_flist_t        	*et_in_flistp = NULL;
+> 	pin_flist_t         *et_out_flistp = NULL; //CATV_REFUND_API_CHANGE
+720c714
+< 	int32				*pay_indicator = NULL;
+---
+> 	int32				pay_indicator = 1;
+722d715
+< 	int32				an_local = 0;
+731d723
+<     int				diff_scale = 0;
+766a759
+>     time_t              calc_to_t = 0;
+800d792
+< 	an_local = *actg_next_t;
+806a799
+>     /* ET real time logic
+824,825c817,818
+< 
+< 
+---
+>     ET real time logic */
+>   
+873a867,871
+>         svc_pdp = PIN_FLIST_FLD_GET(res_flistp, PIN_FLD_POID, 0, ebufp);
+>         if (PIN_POID_COMPARE(service_pdp, svc_pdp, 0, ebufp) != 0)
+>         {
+>             continue;
+>         }
+878c876,878
+< 		
+---
+> 	    service_vp = (void *)PIN_POID_GET_TYPE(svc_pdp);
+>         if(strcmp((void*)service_vp, "/service/catv") ==0)
+>         {
+914,1428d913
+< 		
+< 
+< 		sprintf(tmp, "actg_next_t, next_bill_t = %d, %d", an_local, nb_local);
+< 	//	if(*actg_next_t == */next_bill_t) // check valid dates before triggering ET, this clause specially for non-monthly bill cycles
+< 		if(an_local == nb_local) // check valid dates before triggering ET, this clause specially for non-monthly bill cycles
+< 		{
+<             if(pay_indicator != NULL && *pay_indicator == 0)        // for postpaid
+<             {
+<                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"Calculate scale for postpaid");
+< 
+< 			    if(*serv_status == PIN_STATUS_CLOSED && *last_bill_t >= *last_status_t)
+< 			    {
+< 			    	PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"Billing already done once after service termination. ET shouldn't be triggered again.");
+< 				    continue;
+< 			    }
+< 
+< 			    if(mso_et_flistp)
+< 			    {
+< 				    /* calculate no of months = next_bill_t - charge_to_t */
+< 				    PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"calculate no of months = next_bill_t - charge_to_t");
+< 				    charge_to_t = PIN_FLIST_FLD_GET(mso_et_flistp, PIN_FLD_CHARGED_TO_T, 1, ebufp);
+< 
+< 				    if(*serv_status == PIN_STATUS_CLOSED && *last_bill_t < *last_status_t && *last_status_t > *charge_to_t)
+< 				    {
+< 					    /* Special scenario where ET is to be calculated in the next bill after termination */
+< 					    if( mso_get_days_from_timestamp(*last_status_t) - mso_get_days_from_timestamp(*charge_to_t) > 0 )
+< 					    {
+< 						    scale = (mso_get_months_from_timestamp(*last_status_t)
+< 								- mso_get_months_from_timestamp(*charge_to_t))
+< 								+ ((mso_get_years_from_timestamp(*last_status_t)
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 )
+< 								+ ((mso_get_days_from_timestamp(*last_status_t)
+< 								- mso_get_days_from_timestamp(*charge_to_t))
+< 								/ (mso_get_days_from_timestamp(*last_status_t)
+< 								- mso_get_days_from_timestamp(*charge_to_t)));
+<                         }
+<                         else
+<                         {
+< 							scale = (mso_get_months_from_timestamp(*last_status_t)
+< 								- mso_get_months_from_timestamp(*charge_to_t))
+< 								+ ((mso_get_years_from_timestamp(*last_status_t)
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+<                         }
+< 
+<                         no_of_days = (*last_status_t - *charge_to_t)/60/60/24;
+< 
+< 						sprintf(msg,"Postpaid CLOSED scale: %d",scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						/* Set values to be used for invoicing */
+< 						event_charge_from_t = PIN_FLIST_FLD_GET(mso_et_flist_copy, PIN_FLD_CHARGED_TO_T , 1 , ebufp);
+< 						*event_charge_to_t = *last_status_t;
+< 						sprintf(msg,"event_charge_from_t: %d", *event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);	
+< 
+< 						*charge_to_t = *last_status_t;
+< 						act = (char *) malloc(strlen("POST:STATUS CLOSED")+1);
+< 						strcpy(act,"POST:STATUS_CLOSED");
+< 					}
+< 					else if(*next_bill_t > *charge_to_t && *serv_status != PIN_STATUS_CLOSED )
+< 					{
+< 						if( mso_get_days_from_timestamp(*next_bill_t) - mso_get_days_from_timestamp(*charge_to_t) > 0 )
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*next_bill_t) 
+< 								- mso_get_months_from_timestamp(*charge_to_t)) 
+< 								+ ((mso_get_years_from_timestamp(*next_bill_t) 
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 )
+< 								+ ((mso_get_days_from_timestamp(*next_bill_t)
+< 								- mso_get_days_from_timestamp(*charge_to_t))
+< 								/ (mso_get_days_from_timestamp(*next_bill_t)
+< 								- mso_get_days_from_timestamp(*charge_to_t)));
+< 						}
+< 						else
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 								- mso_get_months_from_timestamp(*charge_to_t))
+< 								+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+< 						}
+< 					
+< 						no_of_days = (*next_bill_t - *charge_to_t)/60/60/24;
+< 
+< 						sprintf(msg,"Postpaid ACTIVE or INACTIVE scale: %d", scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						/* Set values to be used for invoicing */
+< 						event_charge_from_t = PIN_FLIST_FLD_GET(mso_et_flist_copy,PIN_FLD_CHARGED_TO_T,1,ebufp);
+< 						*event_charge_to_t = *next_bill_t;
+< 						sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 			
+< 							
+< 						*charge_to_t = *next_bill_t;
+< 						//*charge_to_t = *last_status_t;
+< 						act = (char *) malloc(strlen("POST:STATUS ACTIVE OR INACTIVE")+1);
+< 						strcpy(act,"POST:STATUS ACTIVE OR INACTIVE");
+< 					}
+< 					else
+< 					{
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"Not eligible for ET as next_bill_t <= charge_to_t");
+< 						charge_to_t_eligibility = 0;
+< 						act = (char *) malloc(strlen("POST:Not eligible for ET")+1);
+< 						strcpy(act,"POST:Not eligible for ET");
+< 					}
+< 				}
+< 				else
+< 				{
+< 					/* First time ET :- calculate no of months = next_bill_t - created_t */
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"First time ET :- calculate no of months = next_bill_t - created_t");
+< 					serv_created_t = PIN_FLIST_FLD_GET(res_flistp,PIN_FLD_CREATED_T,1,ebufp);
+< 	
+< 					if(*serv_status == PIN_STATUS_CLOSED)
+< 					{
+< 						/* Special scenario where ET is to be calculated in the next bill after termination */
+< 						if( mso_get_days_from_timestamp(*last_status_t) - mso_get_days_from_timestamp(*serv_created_t) > 0 )
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*last_status_t)
+< 								- mso_get_months_from_timestamp(*serv_created_t))
+< 								+ ((mso_get_years_from_timestamp(*last_status_t)
+< 								- mso_get_years_from_timestamp(*serv_created_t)) * 12 )
+< 								+ ((mso_get_days_from_timestamp(*last_status_t)
+< 								- mso_get_days_from_timestamp(*serv_created_t))
+< 								/ (mso_get_days_from_timestamp(*last_status_t)
+< 								- mso_get_days_from_timestamp(*serv_created_t)));
+< 						}
+< 						else
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*last_status_t)
+< 								- mso_get_months_from_timestamp(*serv_created_t))
+< 								+ ((mso_get_years_from_timestamp(*last_status_t)
+< 								- mso_get_years_from_timestamp(*serv_created_t)) * 12 );
+< 						}
+< 
+< 						no_of_days = (*last_status_t - *serv_created_t)/60/60/24;
+< 
+< 						/* Set values to be used for invoicing */
+< 						event_charge_from_t = PIN_FLIST_FLD_GET(res_flistp,PIN_FLD_CREATED_T,1,ebufp);
+< 						*event_charge_to_t = *last_status_t;
+< 						sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						sprintf(msg,"Postpaid CLOSED scale: %d",scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						*charge_to_t = *last_status_t;
+< 						act = (char *) malloc(strlen("POST:First time ET:STATUS CLOSED")+1);
+< 											strcpy(act,"POST:First time ET:STATUS CLOSED");
+< 					}
+< 					else 
+< 					{
+< 						if( mso_get_days_from_timestamp(*next_bill_t) - mso_get_days_from_timestamp(*serv_created_t) > 0 )
+< 						{	
+< 							scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 								- mso_get_months_from_timestamp(*serv_created_t))
+< 								+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 								- mso_get_years_from_timestamp(*serv_created_t)) * 12 )
+< 								+ ((mso_get_days_from_timestamp(*next_bill_t)
+< 								- mso_get_days_from_timestamp(*serv_created_t))
+< 								/ (mso_get_days_from_timestamp(*next_bill_t)
+< 								- mso_get_days_from_timestamp(*serv_created_t)));		
+< 						}
+< 						else
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 								- mso_get_months_from_timestamp(*serv_created_t))
+< 								+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 								- mso_get_years_from_timestamp(*serv_created_t)) * 12 );
+< 						}
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test");	
+< 						no_of_days = (*next_bill_t - *serv_created_t)/60/60/24;
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test1");	
+< 
+< 						sprintf(msg,"Postpaid ACTIVE or INACTIVE scale: %d",scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						/* Set values to be used for invoicing */
+< 						event_charge_from_t = PIN_FLIST_FLD_GET(res_flistp,PIN_FLD_CREATED_T,1,ebufp);
+< 						*event_charge_to_t = *next_bill_t;
+< 						sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 			
+< 						*charge_to_t = *next_bill_t;
+< 						act = (char *) malloc(strlen("POST:First time ET:STATUS ACTIVE OR INACTIVE")+1);
+< 						strcpy(act,"POST:First time ET:STATUS ACTIVE OR INACTIVE");
+< 					}
+< 				}
+< 			}
+< 			else
+< 			{
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"Calculate scale for prepaid");
+< 
+< 
+< 				if(mso_et_flistp)
+< 				{	
+< 					sprintf(tmp, "actg_next_t, next_bill_t = %d, %d", an_local, nb_local);
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test1");
+< 					sprintf(msg,"next_bill_t: %d",*next_bill_t);
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 					/* calculate no of months = future_bill_t - charge_to_t */
+< 					charge_to_t = PIN_FLIST_FLD_GET(mso_et_flistp, PIN_FLD_CHARGED_TO_T, 1 , ebufp);
+< 					/*Pawan:26-Jan-2015: Added OR condition in below IF to handle the scenario when service is deactivated
+< 						after billing date but before the billing is run. */
+< 					if( (*serv_status == PIN_STATUS_INACTIVE && *last_status_t < *next_bill_t && *next_bill_t > *charge_to_t)
+< 						|| (*serv_status == PIN_STATUS_INACTIVE && *last_status_t > *next_bill_t && *next_bill_t >= *charge_to_t) )
+< 					{
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"Service Inactive. Apply ET from charge_to_t to next_bill_t");
+< 						sprintf(msg,"next_bill_t: %d",*next_bill_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 						sprintf(msg,"charge_to_t: %d",*charge_to_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						if( mso_get_days_from_timestamp(*next_bill_t) - mso_get_days_from_timestamp(*charge_to_t) > 0 )
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 								- mso_get_months_from_timestamp(*charge_to_t))
+< 								+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 )
+< 								+ ((mso_get_days_from_timestamp(*next_bill_t)
+< 								- mso_get_days_from_timestamp(*charge_to_t))
+< 								/ (mso_get_days_from_timestamp(*next_bill_t)
+< 								- mso_get_days_from_timestamp(*charge_to_t)));
+< 						}
+< 						else
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 								- mso_get_months_from_timestamp(*charge_to_t))
+< 								+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+< 						}
+< 
+< 						no_of_days = (*next_bill_t - *charge_to_t)/60/60/24;
+< 						
+< 						sprintf(msg,"Prepaid INACTIVE scale: %d",scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						/* Set values to be used for invoicing */
+< 						event_charge_from_t = PIN_FLIST_FLD_GET(mso_et_flist_copy, PIN_FLD_CHARGED_TO_T, 1, ebufp);
+< 						*event_charge_to_t = *next_bill_t;
+< 						sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+<                         
+< 						*charge_to_t = *next_bill_t;
+< 						act = (char *) malloc(strlen("PRE:STATUS INACTIVE")+1);
+< 						strcpy(act,"PRE:STATUS INACTIVE");
+< 					}
+< 					//else if(*serv_status == PIN_STATUS_CLOSED
+< 					//change to fix et issue
+< 					else if(*serv_status == PIN_STATUS_CLOSED && *last_bill_t < *last_status_t && *last_status_t > *charge_to_t)
+< 					{
+< 						sprintf(msg,"next_bill_t: %d",*next_bill_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 						sprintf(msg,"charge_to_t: %d",*charge_to_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 						/* Pawan: 25-Nov-2014: Added OR condition in below IF to handle the scenario where service is 
+< 							closed after billing date but before the billing is run. In such scenario ET was not 
+< 							getting applied. e.g billing date: 1st Nov. Service closed: 5th Nov. Billing run on 12th Nov */
+< 						if(  ((*next_bill_t > *charge_to_t) && (*last_status_t > *charge_to_t))
+< 							|| ((*next_bill_t = *charge_to_t) && (*last_status_t > *next_bill_t)) )
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"Apply ET from charge_to_t to last_status_t.");
+< 							if( mso_get_days_from_timestamp(*last_status_t) - mso_get_days_from_timestamp(*charge_to_t) > 0 )
+< 							{
+< 								scale = (mso_get_months_from_timestamp(*last_status_t)
+< 									- mso_get_months_from_timestamp(*charge_to_t))
+< 									+ ((mso_get_years_from_timestamp(*last_status_t)
+< 									- mso_get_years_from_timestamp(*charge_to_t)) * 12 )
+< 									+ ((mso_get_days_from_timestamp(*last_status_t)
+< 									- mso_get_days_from_timestamp(*charge_to_t))
+< 									/ (mso_get_days_from_timestamp(*last_status_t)
+< 									- mso_get_days_from_timestamp(*charge_to_t)));
+< 							}
+< 							else
+< 							{
+< 								scale = (mso_get_months_from_timestamp(*last_status_t)
+< 									- mso_get_months_from_timestamp(*charge_to_t))
+< 									+ ((mso_get_years_from_timestamp(*last_status_t)
+< 									- mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+< 							}
+< 
+< 							no_of_days = (*last_status_t - *charge_to_t)/60/60/24;
+< 
+< 							/* Set values to be used for invoicing */
+< 							event_charge_from_t = PIN_FLIST_FLD_GET(mso_et_flist_copy, PIN_FLD_CHARGED_TO_T, 1, ebufp);
+< 							*event_charge_to_t = *last_status_t;
+< 							sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 					
+< 							*charge_to_t = *last_status_t;
+< 							act = (char *) malloc(strlen("PRE:STATUS CLOSED")+1);
+<                                         	strcpy(act,"PRE:STATUS CLOSED");
+< 						}
+< 						else
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"No ET should be charged post termination for prepaid.");
+< 							act = (char *) malloc(strlen("PRE:NO ET SHOULD BE CHARGED POST TERMIN:STATUS CLOSED")+1);
+< 							strcpy(act,"PRE:NO ET SHOULD BE CHARGED POST TERMIN:STATUS CLOSED");
+< 							//continue;
+< 							goto MIN_COMM;
+< 						}
+< 
+< 						sprintf(msg,"Prepaid CLOSED scale: %d",scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 					}
+< 					else if((*serv_status == PIN_STATUS_ACTIVE) && (*future_bill_t > *charge_to_t))
+< 					{
+< 						PIN_ERR_LOG_MSG(3, "Entering here2");
+< 						sprintf(msg,"Days in futurebill_T %d",mso_get_days_from_timestamp(*future_bill_t));
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 						sprintf(msg,"Days in charge_to_t %d",mso_get_days_from_timestamp(*charge_to_t));
+< 						 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 					
+< 						if( mso_get_days_from_timestamp(*future_bill_t) - mso_get_days_from_timestamp(*charge_to_t) > 0 )
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*future_bill_t)
+< 								- mso_get_months_from_timestamp(*charge_to_t))
+< 								+ ((mso_get_years_from_timestamp(*future_bill_t)
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 )
+< 								+ ((mso_get_days_from_timestamp(*future_bill_t)
+< 								- mso_get_days_from_timestamp(*charge_to_t))
+< 								/ (mso_get_days_from_timestamp(*future_bill_t)
+< 								- mso_get_days_from_timestamp(*charge_to_t))); 
+< //								- mso_get_days_from_timestamp(*charge_to_t))) + 1 ;// Added 1 as the ET Amount, to be charged for current month as well. Since we are using the FUTURE_BILL_T comparison with CHARGE_TO_T
+< 	
+< 						}
+< 						//These are cases where ET dates are not aligned to billing date 
+< 						else if( mso_get_days_from_timestamp(*future_bill_t) - mso_get_days_from_timestamp(*charge_to_t) < 0 )
+< 						{
+< 							PIN_ERR_LOG_MSG(3, "Entering here1");
+< 							*charge_to_t = *next_bill_t;
+< 							scale = (mso_get_months_from_timestamp(*future_bill_t)
+< 								- mso_get_months_from_timestamp(*charge_to_t))
+< 								+ ((mso_get_years_from_timestamp(*future_bill_t)
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+< 			
+< //								- mso_get_days_from_timestamp(*charge_to_t))) + 1 ;// Added 1 as the ET Amount, to be charged for current month as well. Since we are using the FUTURE_BILL_T comparison with CHARGE_TO_T
+< 						}
+< 						else
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*future_bill_t)
+< 								- mso_get_months_from_timestamp(*charge_to_t))
+< 								+ ((mso_get_years_from_timestamp(*future_bill_t)
+< 								- mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+< //								- mso_get_years_from_timestamp(*charge_to_t)) * 12 ) + 1; // Added 1 as the ET Amount, to be charged for current month as well. Since we are using the FUTURE_BILL_T comparison with CHARGE_TO_T
+< 						}
+< 
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test2");
+< 						no_of_days = (*next_bill_t - *charge_to_t)/60/60/24;
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test3");
+< 
+< 						sprintf(msg,"Prepaid ACTIVE scale: %d",scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						/* Set values to be used for invoicing */
+< 						event_charge_from_t = PIN_FLIST_FLD_GET(mso_et_flist_copy, PIN_FLD_CHARGED_TO_T, 1, ebufp);
+< 						*event_charge_to_t = *future_bill_t;
+< 						sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test4");
+< 						
+< 						*charge_to_t = *future_bill_t;
+< 						act = (char *) malloc(strlen("PRE:STATUS ACTIVE")+1);
+< 						strcpy(act,"PRE:STATUS ACTIVE");
+< 					}
+< 					else
+< 					{
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"Not eligible for ET as future_bill_t <= charge_to_t");
+< 						charge_to_t_eligibility = 0;
+< 					}
+< 				}
+< 				else
+< 				{
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test5");
+< 					/* First time ET :- calculate no of months = future_bill_t - created_t */
+< 					serv_created_t = PIN_FLIST_FLD_GET(res_flistp,PIN_FLD_CREATED_T,1,ebufp);
+< 
+< 					if( mso_get_days_from_timestamp(*future_bill_t) - mso_get_days_from_timestamp(*serv_created_t) > 0 )
+< 					{
+< 						scale = (mso_get_months_from_timestamp(*future_bill_t)
+< 							- mso_get_months_from_timestamp(*serv_created_t))
+< 							+ ((mso_get_years_from_timestamp(*future_bill_t)
+< 							- mso_get_years_from_timestamp(*serv_created_t)) * 12 )
+< 							+ ((mso_get_days_from_timestamp(*future_bill_t)
+< 							- mso_get_days_from_timestamp(*serv_created_t))
+< 							/ (mso_get_days_from_timestamp(*future_bill_t)
+< 							- mso_get_days_from_timestamp(*serv_created_t)));
+< 					}
+< 					else
+< 					{
+< 						scale = (mso_get_months_from_timestamp(*future_bill_t)
+< 							- mso_get_months_from_timestamp(*serv_created_t))
+< 							+ ((mso_get_years_from_timestamp(*future_bill_t)
+< 							- mso_get_years_from_timestamp(*serv_created_t)) * 12 );
+< 					}
+< 
+< 					sprintf(msg,"Prepaid ACTIVE scale: %d",scale);
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test6");
+< 					no_of_days = (*next_bill_t - *serv_created_t)/60/60/24;
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test7");
+< 
+< 					/* Set values to be used for invoicing */
+< 					event_charge_from_t = PIN_FLIST_FLD_GET(res_flistp,PIN_FLD_CREATED_T,1,ebufp);;
+< 					*event_charge_to_t = *future_bill_t;
+< 					sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test8");
+< 				
+< 					*charge_to_t = *future_bill_t;
+< 					//act = (char *) malloc(strlen("PRE:First time ET:STATUS ACTIVE OR INACTIVE")+1);
+< 					//strcpy(act,"PRE:First time ET:STATUS ACTIVE OR INACTIVE");
+< 					act = (char *) malloc(strlen("PRE:First time ET:STATUS ACTIVE")+1);
+< 					strcpy(act,"PRE:First time ET:STATUS ACTIVE");
+< 					if(*serv_status == PIN_STATUS_INACTIVE && *last_status_t < *next_bill_t)
+< 					{
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"1st bill and service is INACTIVE. ET should be applied for only 1 month.");
+< 
+< 						if( mso_get_days_from_timestamp(*next_bill_t) - mso_get_days_from_timestamp(*serv_created_t) > 0 )
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 									- mso_get_months_from_timestamp(*serv_created_t))
+< 									+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 									- mso_get_years_from_timestamp(*serv_created_t)) * 12 )
+< 								        + ((mso_get_days_from_timestamp(*next_bill_t)
+< 									- mso_get_days_from_timestamp(*serv_created_t))
+< 									/ (mso_get_days_from_timestamp(*next_bill_t)
+< 									- mso_get_days_from_timestamp(*serv_created_t)));
+< 						}
+< 						else
+< 						{
+< 								scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 									- mso_get_months_from_timestamp(*serv_created_t))
+< 									+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 									- mso_get_years_from_timestamp(*serv_created_t)) * 12 );
+< 						}
+< 
+< 						no_of_days = (*next_bill_t - *serv_created_t)/60/60/24;
+< 
+< 						/* Set values to be used for invoicing */
+< 						event_charge_from_t = PIN_FLIST_FLD_GET(res_flistp,PIN_FLD_CREATED_T,1,ebufp);
+< 						*event_charge_to_t = *next_bill_t;
+< 						sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						*charge_to_t = *next_bill_t;
+< 						if(strlen(act) < strlen("PRE:First time ET:STATUS INACTIVE"))
+< 						{ 
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"check1" );
+< 							act = pin_realloc(act, strlen((char *)act) + 2);
+< 							memset(act,'\0',sizeof(act));	
+< 							strcpy(act,"PRE:First time ET:STATUS INACTIVE");
+< 						}
+< 						else
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"check2" );
+< 							memset(act,'\0',sizeof(act));
+< 							strcpy(act,"PRE:First time ET:STATUS INACTIVE");
+< 						}
+< 
+< 						sprintf(msg,"Prepaid INACTIVE scale: %d",scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 					}
+< 
+< 					if(*serv_status == PIN_STATUS_CLOSED)
+< 					{
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"1st bill and service is terminated. ET should be applied for only 1 month.");
+< 
+< 						if( mso_get_days_from_timestamp(*last_status_t) - mso_get_days_from_timestamp(*serv_created_t) > 0 )
+<                         {
+< 							scale = (mso_get_months_from_timestamp(*last_status_t)
+< 								- mso_get_months_from_timestamp(*serv_created_t))
+< 								+ ((mso_get_years_from_timestamp(*last_status_t)
+< 								- mso_get_years_from_timestamp(*serv_created_t)) * 12 )
+< 								+ ((mso_get_days_from_timestamp(*last_status_t)
+< 								- mso_get_days_from_timestamp(*serv_created_t))
+< 								/ (mso_get_days_from_timestamp(*last_status_t)
+< 								- mso_get_days_from_timestamp(*serv_created_t)));
+< 						}
+< 						else
+< 						{
+< 							scale = (mso_get_months_from_timestamp(*last_status_t)
+< 								- mso_get_months_from_timestamp(*serv_created_t))
+< 								+ ((mso_get_years_from_timestamp(*last_status_t)
+< 								- mso_get_years_from_timestamp(*serv_created_t)) * 12 );
+< 						}
+< 
+< 						no_of_days = (*last_status_t - *serv_created_t)/60/60/24;
+< 
+< 						sprintf(msg,"Prepaid CLOSED scale: %d",scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						/* Set values to be used for invoicing */
+< 						event_charge_from_t = PIN_FLIST_FLD_GET(res_flistp,PIN_FLD_CREATED_T,1,ebufp);
+< 						*event_charge_to_t = *last_status_t;
+< 						sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 						*charge_to_t = *last_status_t;
+< 						if(strlen(act) < strlen("PRE:First time ET:STATUS CLOSED"))
+< 						{ 
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"check1" );
+< 							act = pin_realloc(act, strlen((char *)act) + 2);
+< 							memset(act,'\0',sizeof(act));	
+< 							strcpy(act,"PRE:First time ET:STATUS CLOSED");
+< 						}
+< 						else
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"check2" );
+< 							memset(act,'\0',sizeof(act));
+< 							strcpy(act,"PRE:First time ET:STATUS CLOSED");
+< 						}
+< 					}
+< 				}
+< 	
+< 			}
+1436c921
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Base FDP Pack Available !!!");
+---
+> 					PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "Base FDP Pack Available !!!", fdp_flistp);
+1438a924
+>                     calc_to_t = *fdp_pet; 
+1449d934
+< 						goto MIN_COMM;
+1457c942,949
+<                         calc_from_t = *charge_to_t;
+---
+>                         if (charge_to_t && *charge_to_t > 0 && op_num != 11007)
+>                         {
+>                             calc_from_t = *charge_to_t;
+>                         }
+>                         else
+>                         {
+>                             calc_from_t = *fdp_chrg_from_t;
+>                         }
+1461a954,966
+>                     
+>                         /************************************************************* 
+>                          * Real time ET logic 
+>                          *************************************************************/
+>                         if (calc_from_t > calc_to_t)
+>                         {
+>                             scale = 0;
+>                             charge_to_t_eligibility = 0;
+>                         }
+>                         else
+>                         {
+>                             scale = round(((calc_to_t - calc_from_t)/86400)/30);
+>                         }
+1463,1468c968,976
+< 		    else 
+< 		    {
+< 			PIN_ERR_LOG_MSG(3, "For new service consider Charge_from_t");
+< 			calc_from_t = *fdp_chrg_from_t;
+< 			*charge_to_t = *fdp_chrg_from_t;
+< 		    }
+---
+> 		            else 
+> 		            {
+> 			            PIN_ERR_LOG_MSG(3, "For new service consider Charge_from_t");
+>                         /************************************************************* 
+>                          * Real time ET logic 
+>                          *************************************************************/
+>                         calc_from_t = *fdp_chrg_from_t;
+>                         scale = round(((calc_to_t - calc_from_t)/86400)/30);
+> 		            }
+1470,1637d977
+< 
+< 					tm1 = localtime(fdp_pet);
+< /*					if (fdp_pet && (*fdp_pet > *next_bill_t))
+< 					{
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Aligning FDP Purchase End Date to Billing Date ...");
+< 						if ((mso_get_days_from_timestamp(*next_bill_t) - mso_get_days_from_timestamp(*fdp_pet)) >= 0 )
+< 						{
+< 							tm1->tm_mday=mso_get_days_from_timestamp(*next_bill_t);
+< 							tm1->tm_mon=mso_get_months_from_timestamp(*fdp_pet);
+< 							tm1->tm_year=mso_get_years_from_timestamp(*fdp_pet);
+< 
+< 							tm1->tm_sec = 0;
+< 							tm1->tm_min = 0;
+< 							tm1->tm_hour = 0;
+< 							calc_bill_t = mktime(tm1);
+< 						}
+< 						else 
+< 						{
+< 							tm1->tm_mday=mso_get_days_from_timestamp(*next_bill_t);
+< 							if (mso_get_months_from_timestamp(*fdp_pet) == 11)
+< 							{
+< 								tm1->tm_mon = 0;
+< 								tm1->tm_year = (mso_get_years_from_timestamp(*fdp_pet)) + 1;
+< 							}
+< 							else
+< 							{
+< 								tm1->tm_mon = (mso_get_months_from_timestamp(*fdp_pet)) + 1;
+< 								tm1->tm_year = mso_get_years_from_timestamp(*fdp_pet);
+< 							}
+< 							tm1->tm_sec = 0;
+< 							tm1->tm_min = 0;
+< 							tm1->tm_hour = 0;
+< 
+< 							calc_bill_t = mktime(tm1);
+< 						}
+< 						sprintf(msg,"calculated_bill_t: %d",calc_bill_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+<                         *charge_to_t = calc_bill_t;
+< 					} */
+< 					if (fdp_pet && (*fdp_pet > *charge_to_t))
+< 					{
+<                         calc_bill_t = *fdp_pet;
+<                         sprintf(msg, "calculated_bill_t: %d", calc_bill_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 
+<                         sprintf(msg, "FDP Based scale_Prior: %d", scale);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 						/* Added this block to handle if ADV
+< 						  case et already charged till future bill_T, FDP
+< 						  PLan added in mid of the cycle missing one month ET*/
+< 							
+< 						if (fdp_chrg_from_t && mso_et_flist_copy)
+< 						{		
+< 							PIN_ERR_LOG_MSG(3, "Entering blocok");
+< 							sprintf(msg, "(mso_get_months_from_timestamp(*charge_to_t) %d", mso_get_months_from_timestamp(*charge_to_t));
+<     						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 							sprintf(msg, "mso_get_months_from_timestamp(*fdp_chrg_from_t) %d", mso_get_months_from_timestamp(*fdp_chrg_from_t));
+<     						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 							sprintf(msg, "mso_get_months_from_timestamp(*fdp_chrg_from_t) %d",mso_get_years_from_timestamp(*charge_to_t));
+<     						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 							sprintf(msg, "mso_get_months_from_timestamp(*fdp_chrg_from_t) %d",mso_get_years_from_timestamp(*fdp_chrg_from_t));
+<     						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 							diff = (mso_get_months_from_timestamp(*charge_to_t) - mso_get_months_from_timestamp(*fdp_chrg_from_t))
+<                                    				+ ((mso_get_years_from_timestamp(*charge_to_t) - mso_get_years_from_timestamp(*fdp_chrg_from_t)) * 12 );
+< 							sprintf(msg, "Scale diff %d",diff );
+<     						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 							if(diff == 1)
+< 							{	
+< 
+< 								fdp_t = *fdp_chrg_from_t;
+< 								charge_to_t = &fdp_t ;
+< 								sprintf(msg, "ET charged_to_t: %d", *charge_to_t);
+<     						    PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 							}
+< 						}
+< 								
+< 
+< //                       *charge_to_t = calc_bill_t;
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Calculating the Latest ET Charging Date ...");
+< 						if( mso_get_days_from_timestamp(*fdp_pet) - mso_get_days_from_timestamp(*charge_to_t) > 0 )
+< 						{
+<                             PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Purchase End Day more than ET Calc Day");
+<                             if (!mso_et_flistp)
+< 							{
+<                                 //For First time ET Charging
+<                                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "First time ET charging calc");
+< 								diff_scale = (mso_get_months_from_timestamp(calc_bill_t)
+< 									- mso_get_months_from_timestamp(*charge_to_t))
+< 									+ ((mso_get_years_from_timestamp(calc_bill_t)
+< 									- mso_get_years_from_timestamp(*charge_to_t)) * 12 )
+< 									+ ((mso_get_days_from_timestamp(calc_bill_t)
+< 									- mso_get_days_from_timestamp(*charge_to_t))
+< 									/ (mso_get_days_from_timestamp(calc_bill_t)
+< 				                    - mso_get_days_from_timestamp(*charge_to_t))); 
+< 							}
+<                             else
+<                             {
+<                                 *event_charge_from_t = calc_from_t;
+< 							    diff_scale = (mso_get_months_from_timestamp(calc_bill_t)
+<                                     - mso_get_months_from_timestamp(*charge_to_t))
+<                                     + ((mso_get_years_from_timestamp(calc_bill_t)
+<                                     - mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+< 							}
+<                             
+<                             scale = diff_scale;
+< 
+<                             sprintf(msg, "FDP Based scale_Prior_Diff: %d", diff_scale);
+< 		    				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 
+<                             sprintf(msg, "FDP Based scale_Final: %d", scale);
+< 					    	PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 						}
+< 						else
+< 						{
+<                             PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Purchase End Day Equal to ET Calc Day");
+<                             if (!mso_et_flistp)
+< 							{
+<                                 // For First time ET Charging
+< 								diff_scale = (mso_get_months_from_timestamp(calc_bill_t)
+< 									- mso_get_months_from_timestamp(*charge_to_t))
+< 									+ ((mso_get_years_from_timestamp(calc_bill_t)
+< 									- mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+< 
+<                                 scale = diff_scale ;
+<     						}
+<                             else
+<                             {
+<                                 *event_charge_from_t = calc_from_t;
+< 							    diff_scale = (mso_get_months_from_timestamp(calc_bill_t)
+<                                     - mso_get_months_from_timestamp(*charge_to_t))
+<                                     + ((mso_get_years_from_timestamp(calc_bill_t)
+< 	    							- mso_get_years_from_timestamp(*charge_to_t)) * 12 );
+<                                 
+<                                 scale = diff_scale ;
+<                             }
+<     
+<                             sprintf(msg, "FDP Based scale_Prior_Diff: %d", diff_scale);
+< 		    				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 
+<                             sprintf(msg, "FDP Based scale_Final: %d", scale);
+< 					    	PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 						}
+< 
+< 						no_of_days = (calc_bill_t - *charge_to_t)/60/60/24;
+< 						if(scale ==0)
+< 						{
+< 							if(no_of_days >=1 )
+< 							{
+< 								scale = 1;
+< 							}
+< 						}
+< 						*event_charge_to_t = calc_bill_t;
+< 						sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+<                         sprintf(msg,"event_charge_to_t: %d",*event_charge_to_t);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+< 
+< 						*charge_to_t = calc_bill_t;
+< 					}
+< 					// If FDP pack validity and et_charge_to are same dont apply ET
+< 					else if(fdp_pet && (*fdp_pet == *charge_to_t))
+< 					{
+< 						scale = 0;
+< 					}
+< 					else
+< 					{
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "ET Charged Beyond FDP Dates");
+< 					} 
+1643,1669d982
+< 
+<                 if(*next_bill_t > *charge_to_t && *serv_status != PIN_STATUS_CLOSED )
+<                 {
+<                     PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Base FDP Check with next_bill_t > charge_to_t");
+<                     *charge_to_t = *next_bill_t;
+<                     //*charge_to_t = *last_status_t;
+< 					
+<                     charge_to_t_eligibility = 1;
+<                 }
+<                 else if (*charge_to_t > *next_bill_t && *serv_status != PIN_STATUS_CLOSED )
+<                 {
+<                     PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Base FDP Check with charge_to_t > next_bill_t");
+< 
+< 					charge_to_t_eligibility = 1;
+< 				}
+< 				//Commenting out this block as this value will be populated in upper block itself
+< 				/*if (pay_indicator != NULL && *pay_indicator == 0) //Postpaid
+< 				{
+< 					act = (char *) malloc(strlen("POST:STATUS ACTIVE OR INACTIVE")+1);
+< 					strcpy(act,"POST:STATUS ACTIVE OR INACTIVE");
+< 
+< 				}
+< 				else
+< 				{
+< 					act = (char *) malloc(strlen("PRE:STATUS ACTIVE OR INACTIVE")+1);
+< 					strcpy(act,"PRE:STATUS ACTIVE OR INACTIVE");
+< 				}*/
+1671,1677d983
+< 		}
+< 		else
+< 		{
+< 			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"Not eligible for ET as next_bill_t != actg_next_t. "
+< 								"ET should only be triggered at end of bill cycle and not accounting cycle.");
+< 			charge_to_t_eligibility = 0;
+< 		}
+1680,1904d985
+< 		//Commenting code block 21-OCT-2016 as below condition is not valid
+< 		/* Determine Karnataka eligibilty flag for ET - start *
+< 		read_acct_iflistp = PIN_FLIST_CREATE(ebufp);
+< 		PIN_FLIST_FLD_COPY(read_obj_oflistp,PIN_FLD_ACCOUNT_OBJ,read_acct_iflistp,PIN_FLD_POID,ebufp);
+< 		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,"Read Account input flist",read_acct_iflistp);
+< 		PCM_OP(ctxp, PCM_OP_READ_OBJ, 0, read_acct_iflistp, &read_acct_oflistp, ebufp);
+< 		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,"Read Account output flist",read_acct_oflistp);	
+< 
+< 		et_zone = PIN_FLIST_FLD_GET(read_acct_oflistp,MSO_FLD_ET_ZONE,1,ebufp);
+< 		if(et_zone)
+< 		{
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test5");	
+< 			token = strtok(et_zone, "_");
+< 			if(strcmp(token,"KA") == 0 && no_of_days < 15)
+< 			{
+< 				//karnataka_eligibility_flag = 0;
+< 				/*Commented above part after confirmation from Hathway that this criteria is not required 
+< 				  due to lack of clarity on adv charge of ET. Becoz of condition  no_of_days = (*next_bill_t - *charge_to_t)
+< 				  on line 1016  ET was not applied in advance. Setting karnataka_eligibility_flag to 1 always.*
+< 				karnataka_eligibility_flag = 1;
+< 			}
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,"test6");	
+< 		}
+< 		 Determine Karnataka eligibilty flag for ET - end */
+< 		// commenting 21-OCT-2016 ends
+< 
+< 		MIN_COMM :
+< 		
+< 		r_flistp=PIN_FLIST_CREATE(ebufp);
+< 		item_total = pbo_decimal_from_str("0.0",ebufp);
+< 		temp = (void *)0;
+< 
+< 		//Additional Confirmation of CATV service object
+< 		service_vp = (void *)PIN_POID_GET_TYPE(svc_pdp);
+< 		if(strcmp((void*)service_vp, "/service/catv") ==0)
+< 		{
+< 			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "CATV Service Object");
+< 
+< 
+< 			//Retrieve all the Pending Items for the billinfo object 
+< 			//Identify the existing amount for comparison with min charge of Rs.150 
+< 
+< 			PIN_FLIST_FLD_SET(i_flistp, PIN_FLD_BILLINFO_OBJ, binfo_pdp, ebufp);
+< 			PIN_FLIST_FLD_SET(i_flistp, PIN_FLD_SERVICE_OBJ, svc_pdp, ebufp);
+< 
+< 			mso_bill_pol_retrieve_catv_unbilled_items(ctxp, i_flistp, bill_obj, &r_flistp, ebufp);
+< 			PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,"Unbilled item retrieval output flist", r_flistp);
+< 			item_flistp = PIN_FLIST_SUBSTR_GET(r_flistp, PIN_FLD_RESULTS, 1, ebufp);
+< 			if (PIN_ERRBUF_IS_ERR(ebufp)) {
+< 				PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "No Items qualified for processing", r_flistp);
+< 				//PIN_ERRBUF_RESET(ebufp);
+< 			}
+< 			else if(an_local == nb_local) // Added this condition to avoid applying MC charge in-between multi-month cycle.
+< 			{
+< 
+< 				srcp_flistp = PIN_FLIST_COPY(r_flistp, ebufp);
+< 				rec_id2 = 0;
+< 				cookie2 = NULL;
+< 				sprintf(msg,"next_bill_t: %d",*next_bill_t);
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 				sprintf(msg,"next_lo_bill_t: %d",next_bt);
+<                                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 				//pp_status = mso_bill_pol_retrieve_purchased_product_status(ctxp, svc_pdp, last_bill_t, next_bill_t, ebufp);
+< 				pp_status = mso_bill_pol_retrieve_purchased_product_status(ctxp, svc_pdp, &last_bt, &next_bt, ebufp);
+< 				if (*conn_type == 0)
+< 				{
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Main Connection");
+< 					//Looping for all the pending item elements
+< 					while((item_flistp = PIN_FLIST_ELEM_GET_NEXT(r_flistp, PIN_FLD_RESULTS, &rec_id2, 1, &cookie2,  ebufp))!=(pin_flist_t*)NULL)
+< 					{
+< 						PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,"Looping every Items", item_flistp);
+< 						bill_pdp = PIN_FLIST_FLD_GET(item_flistp, PIN_FLD_BILL_OBJ, 1, ebufp);
+< 						a_pdp = PIN_FLIST_FLD_GET(item_flistp, PIN_FLD_ACCOUNT_OBJ, 1, ebufp);
+< 						i_pdp = PIN_FLIST_FLD_GET(item_flistp, PIN_FLD_POID, 1, ebufp);
+< 						item_type = (char *)PIN_POID_GET_TYPE(i_pdp);
+< 						if (item_type && ((strcmp(item_type,"/item/cycle_arrear/mso_sb_alc_paid") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_arrear/mso_sb_adn_normal") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_alc_paid") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_adn_normal") == 0) ||
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_adn_fdp") == 0) ||
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_alc_fdp") == 0)))
+< 						{
+< 							min_commit_eligibility = 1;
+< 							
+< 						}
+< /*						if (item_type && ((strcmp(item_type,"/item/cycle_arrear/mso_sb_pkg_bst") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_arrear/mso_sb_pkg_dstp") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_arrear/mso_sb_pkg_dpop") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_arrear/mso_sb_pkg_dprp") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_pkg_bst") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_pkg_dstp") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_pkg_dpop") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_pkg_dprp") == 0)))
+< 						{
+< 							base_plan = 1;
+< 						}
+< */					
+< 					
+< 						if (pp_status == 3)
+< 						{
+< 							base_plan = 1;
+< 						}
+< 						vp = PIN_FLIST_FLD_GET(item_flistp, PIN_FLD_ITEM_TOTAL, 1, ebufp);
+< 						temp = pbo_decimal_copy( (pin_decimal_t*)vp, ebufp);
+< 						if(pbo_decimal_is_null(temp, ebufp)==1)
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "ITEM_TOTAL Null error");
+< 						}	
+< 						pbo_decimal_add_assign(item_total, temp, ebufp);
+< 						temp = pbo_decimal_from_str("0.0",ebufp);
+< 						if(pbo_decimal_is_null(item_total, ebufp)==1)
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "ITEM_TOTAL Addition error");
+< 						}
+< 					}	
+< 				}
+< 				else
+< 				{
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Additional Connection");
+< 					min_commit_eligibility = 1;
+< 					//Looping for all the pending item elements
+< 					while((item_flistp = PIN_FLIST_ELEM_GET_NEXT(r_flistp, PIN_FLD_RESULTS, &rec_id2, 1, &cookie2,  ebufp))!=(pin_flist_t*)NULL)
+< 					{
+< 						PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,"Looping every Items", item_flistp);
+< 						bill_pdp = PIN_FLIST_FLD_GET(item_flistp, PIN_FLD_BILL_OBJ, 1, ebufp);
+< 						a_pdp = PIN_FLIST_FLD_GET(item_flistp, PIN_FLD_ACCOUNT_OBJ, 1, ebufp);
+< 						i_pdp = PIN_FLIST_FLD_GET(item_flistp, PIN_FLD_POID, 1, ebufp);
+< /*						item_type = (char *)PIN_POID_GET_TYPE(i_pdp);
+< 						if (item_type && ((strcmp(item_type,"/item/cycle_arrear/mso_sb_pkg_bst") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_arrear/mso_sb_pkg_dstp") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_arrear/mso_sb_pkg_dpop") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_arrear/mso_sb_pkg_dprp") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_pkg_bst") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_pkg_dstp") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_pkg_dpop") == 0) || 
+< 										  (strcmp(item_type,"/item/cycle_forward/mso_sb_pkg_dprp") == 0)))
+< 						{
+< 							min_commit_eligibility = 0;
+< 							base_plan = 1;
+< 						}
+< */
+< 						if (pp_status == 3)
+< 						{
+< 							base_plan = 1;
+< 							min_commit_eligibility = 0;
+< 						}
+< 						vp = PIN_FLIST_FLD_GET(item_flistp, PIN_FLD_ITEM_TOTAL, 1, ebufp);
+< 						temp = pbo_decimal_copy( (pin_decimal_t*)vp, ebufp);
+< 						if(pbo_decimal_is_null(temp, ebufp)==1)
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "ITEM_TOTAL Null error");
+< 						}	
+< 						pbo_decimal_add_assign(item_total, temp, ebufp);
+< 						temp = pbo_decimal_from_str("0.0",ebufp);
+< 						if(pbo_decimal_is_null(item_total, ebufp)==1)
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "ITEM_TOTAL Addition error");
+< 						}
+< 					}
+< 				}
+< 				
+< 				if ((base_plan != 1) || (pp_status!=3))
+< 				{
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Base Plan Not Available, Hence Eligible for Min. Commitment");
+< 					if (min_commit_eligibility == 1)
+< 					{
+< 						min_commit_eligibility = 0;
+< 						zero_amount = pbo_decimal_from_str("0.0",ebufp);
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Eligible for Min. Commitment");
+< 						//Check whether the Total Charges are positive ( > 0 )
+< 						if(pbo_decimal_compare(item_total, zero_amount, ebufp) >= 0)
+< 						{
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Unbilled Amount More than Zero");
+< 							//Check whether the Total Charges are lesser than minimum(Rs.150) amount
+< 							if(pbo_decimal_compare(item_total, min_amount, ebufp) == -1)
+< 							{
+< 								PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Unbilled Amount Lesser than the Minimum Amount");
+< 								if (pp_status == 1)
+< 								{
+< 									PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Purchased Product has Fixed Duration Packs Active");
+< 								}
+< 								else
+< 								{
+< 									PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "No Fixed Duration Packs Active");
+< 									PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+< 										"Unbilled item retrieval output flist", r_flistp);
+< 							
+< 									PIN_FLIST_FLD_SET(srcp_flistp, PIN_FLD_SERVICE_OBJ, svc_pdp, ebufp);
+< 									PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+< 										"apply adjustment pre processing input flist srcp_flistp", srcp_flistp);
+< 					
+< 									//Apply the Adjustment for the differential amount
+< 									if (*min_commit_flag == 0)
+< 									{
+< 										PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Min. Commitment flag Disabled!");
+< 									}
+< 									else
+< 									{
+< 										mso_bill_pol_catv_raise_correction(ctxp, item_total, event_t, last_bill_t, next_bill_t, binfo_pdp, srcp_flistp, &ar_flistp, ebufp);
+< 	
+< 										if (PIN_ERRBUF_IS_ERR(ebufp)) {
+< 											PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_ERROR, "Applying Adjustment Error", ar_flistp);
+< 											//PIN_ERRBUF_RESET(ebufp);
+< 										}
+< 									}
+< 								}
+< 							}
+< 						else
+< 						{	
+< 							PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Amount not lesser than the Minimum Amount");
+< 							//PIN_ERRBUF_RESET(ebufp);
+< 						}
+< 					}
+< 					else
+< 					{	
+< 						PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Amount lesser than zero");
+< 						//PIN_ERRBUF_RESET(ebufp);
+< 					}
+< 				}
+< 				else 
+< 				{
+< 					PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Not Eligible for Min. Commitment");
+< 				}
+< 			}
+< 		}
+1908,1914c989
+<         PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "mso_et_flist display", mso_et_flistp);
+< 		sprintf(msg,"event_charge_from_t: %d",*event_charge_from_t);
+< 		      PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+<         sprintf(msg,"event_charge_to_t: %p",event_charge_to_t);
+< 		      PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 		sprintf(msg,"event_charge_to_t: %ld",*event_charge_to_t);
+< 		      PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+---
+>             PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "mso_et_flist display", mso_et_flistp);
+1921,1922d995
+< 	    //Commented as its not valid anymore 
+<             //PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_FLAGS, &karnataka_eligibility_flag, ebufp);
+1925,1933c998,999
+<             if (mso_et_flistp && base_fdp_active !=0 && calc_from_t !=0 )
+<             {
+<                 PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_CHARGED_FROM_T, &calc_from_t, ebufp);
+<             }
+<             else
+<             {
+<                 PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_CHARGED_FROM_T, event_charge_from_t, ebufp);
+<             }
+<             PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_CHARGED_TO_T, event_charge_to_t, ebufp);
+---
+>             PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_CHARGED_FROM_T, &calc_from_t, ebufp);
+>             PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_CHARGED_TO_T, &calc_to_t, ebufp);
+1935,1937c1001,1005
+<             PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_INDICATOR, pay_indicator, ebufp);
+<             PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_NEXT_BILL_T, next_bill_t, ebufp);
+< 			PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_ACTION, act, ebufp);
+---
+>             PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_INDICATOR, &pay_indicator, ebufp);
+>             PIN_FLIST_FLD_SET(et_in_flistp, PIN_FLD_NEXT_BILL_T, &event_t, ebufp);
+>             act = (char *) malloc(strlen("REAL TIME:ET CALCULATION")+1);
+>             strcpy(act, "REAL TIME:ET CALCULATION");
+> 			PIN_FLIST_FLD_PUT(et_in_flistp, PIN_FLD_ACTION, act, ebufp);
+1959,1962d1026
+< 	if (!pbo_decimal_is_null(item_total, ebufp))
+< 	{
+< 		pbo_decimal_destroy(&item_total);
+< 	}
+2946,3012d2009
+< 		// Checking whether the call is from Change Plan - ET Refund
+< 		if ((act && strstr(act, "CHANGE PLAN - ET REFUND")) && pdt_pdp)
+< 		{
+< 			scale_decimal = pbo_decimal_from_str("0.0",ebufp);
+< 
+< 			subscription_amt = get_pdt_charge(ctxp, pdt_pdp, ebufp);
+< 			//For zero charge packs (demo),et refund scale is et to zero
+< 			if(pbo_decimal_compare(subscription_amt,scale_decimal,ebufp) == 0)
+< 			{
+< 				scale = 0;
+< 				PIN_ERR_LOG_MSG(3, "Old pack charge is zero ,so refund scale is set to zero");
+< 				goto ET_REFUND;
+< 			}
+< 			sub_amt_str = pbo_decimal_to_str(subscription_amt,ebufp);
+< 			sprintf(msg, "subscription_amt = %s",sub_amt_str);
+< 			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 			
+< //			pbo_decimal_add_assign(scale_decimal, (pin_decimal_t *)scale, ebufp);
+< 			sprintf(msg, "%d",scale);
+< 			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 			scale_decimal = pbo_decimal_from_str(msg, ebufp);
+< 			sub_amt_str = pbo_decimal_to_str(scale_decimal,ebufp);
+< 			sprintf(msg, "Scale Decimal = %s",sub_amt_str);
+< 			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 			calc_scale = fm_mso_get_charging_dates(ctxp, pdt_pdp, ebufp);
+< 			if (calc_scale != 0)
+< 			{
+< 				sprintf(msg, "%d",calc_scale);
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 				calc_scale_decimal = pbo_decimal_from_str(msg, ebufp);
+< 				sub_amt_str = pbo_decimal_to_str(calc_scale_decimal,ebufp);
+< 				sprintf(msg, "Calc Scale Decimal = %s",sub_amt_str);
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 				mon_subscription_amt= pbo_decimal_from_str("0.0",ebufp);
+< 				mon_subscription_amt = pbo_decimal_divide(subscription_amt, calc_scale_decimal, ebufp);
+< 
+< 				sub_amt_str = pbo_decimal_to_str(mon_subscription_amt,ebufp);
+< 				sprintf(msg, "Per Scale Amount: subscription_amt = %s",sub_amt_str);
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 				subscription_amt = pbo_decimal_multiply(mon_subscription_amt, scale_decimal, ebufp);
+< 				sub_amt_str = pbo_decimal_to_str(subscription_amt,ebufp);
+< 				sprintf(msg, "Refund Scale Amount: subscription_amt = %s",sub_amt_str);
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 				pbo_decimal_add_assign(tax_rate, st_tax_rate, ebufp);
+< 				pbo_decimal_add_assign(tax_rate, swachh_tax_rate, ebufp);
+< 				pbo_decimal_add_assign(tax_rate, krish_tax_rate, ebufp);
+< 				pbo_decimal_divide_assign(tax_rate, hundred, ebufp);
+< 
+< 				sub_amt_str = pbo_decimal_to_str(tax_rate,ebufp);
+< 				sprintf(msg, "Tax Percentage = %s",sub_amt_str);
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 
+< 				tax_amt = pbo_decimal_multiply(subscription_amt, tax_rate, ebufp);
+< 				sub_amt_str = pbo_decimal_to_str(tax_amt,ebufp);
+< 				sprintf(msg, "Tax Amount = %s",sub_amt_str);
+< 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 
+< 				subscription_fee_flag = 1;
+<             }
+< 
+< 		}
+< 
+3030,3070d2026
+< 	ET_REFUND :
+< 	if(pay_indicator != NULL && *pay_indicator == 1 && subscription_fee_flag != 1 && fdp_active==0 ) //for prepaid
+< 	{
+< 		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, 
+< 			"Special scenario: Service may be supended in entire bill cycle, but may be reactivated in next cycle.");
+< 		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Recalculate scale as next_bill_t - charge_to_t.");
+< 		/* charge_to_t already changed to future_bill_t. So calculate scale as next_bill_t - event_charge_from_t */ 
+< 		if (next_bill_t && event_charge_from_t && event_charge_to_t && charge_to_t && (*event_charge_from_t != 0 ) )
+< 		{
+< 			if(  mso_get_days_from_timestamp(*next_bill_t) - mso_get_days_from_timestamp(*event_charge_from_t) > 0 )
+< 			{
+< 				scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 					- mso_get_months_from_timestamp(*event_charge_from_t))
+< 					+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 					- mso_get_years_from_timestamp(*event_charge_from_t)) * 12 )
+< 					+ ((mso_get_days_from_timestamp(*next_bill_t)
+< 					- mso_get_days_from_timestamp(*event_charge_from_t))
+< 					/ (mso_get_days_from_timestamp(*next_bill_t)
+< 					- mso_get_days_from_timestamp(*event_charge_from_t)));
+< 			}
+< 			else
+< 			{
+< 				scale = (mso_get_months_from_timestamp(*next_bill_t)
+< 					- mso_get_months_from_timestamp(*event_charge_from_t))
+< 					+ ((mso_get_years_from_timestamp(*next_bill_t)
+< 					- mso_get_years_from_timestamp(*event_charge_from_t)) * 12 );
+< 			}
+<          
+< 			/* Set values to be used for invoicing */
+< 			*event_charge_to_t = *next_bill_t;
+< 			sprintf(msg,"event_charge_from_t: %d", *event_charge_from_t);
+< 			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+< 			sprintf(msg,"event_charge_to_t: %d", *event_charge_to_t);
+< 			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,msg);
+<          
+< 			*charge_to_t = *next_bill_t;		
+< 		}
+< 	}
+< 
+< 
+< 
+3157c2113
+< 				PIN_FLIST_FLD_SET(wrt_flds_iflistp, PIN_FLD_CHARGED_TO_T, charge_to_t, ebufp);
+---
+> 				PIN_FLIST_FLD_SET(wrt_flds_iflistp, PIN_FLD_CHARGED_TO_T, event_charge_to_t, ebufp);

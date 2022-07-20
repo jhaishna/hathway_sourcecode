@@ -1,0 +1,115 @@
+
+#=======================================
+#  Storable Class /event/audit/suppression
+#=======================================
+
+STORABLE CLASS /event/audit/suppression {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture the suppresstion change ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/account
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/account {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture the audit change when the account is placed in or out of suppression ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/account/off
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/account/off {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture the event while a bill is suppressed as manual account suppression ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/account/on
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/account/on {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture the event while a bill is suppressed as account unsuppress ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/bill
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/bill {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture the event while a bill is manually suppressed ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression
+#=======================================
+
+STORABLE CLASS /event/audit/suppression IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/account
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/account IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/account/off
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/account/off IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/account/on
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/account/on IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/bill
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/bill IMPLEMENTATION ORACLE7 {
+
+}
+

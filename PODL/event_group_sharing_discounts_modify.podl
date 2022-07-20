@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/discounts object for an account/service is modified. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/discounts/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/discounts/modify IMPLEMENTATION ORACLE7 {
+
+}
+

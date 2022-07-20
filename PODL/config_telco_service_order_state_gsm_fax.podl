@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/fax {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/fax.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,95 @@
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_FAILED_INFO
+#=======================================
+
+ARRAY PIN_FLD_PAYMENT_FAILED_INFO {
+
+	ID = 947;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+	ID = 846;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/failed
+#=======================================
+
+STORABLE CLASS /event/billing/payment/failed {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event Created when there is a failed payment.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAYMENT_FAILED_INFO {
+
+		DESCR = "The object provides information that payment processed according to optimistic approach failedactually.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+			DESCR = "Same as PIN_FLD_TRANS_ID in the PIN_FLD_PAYMENT of /event/billing/payment/xxx for successful payments posted according to the optimistic approach.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/failed
+#=======================================
+
+STORABLE CLASS /event/billing/payment/failed IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAYMENT_FAILED_INFO {
+
+		SQL_TABLE = "event_billing_payment_failed_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAYMENT_TRANS_ID {
+
+			SQL_COLUMN = "payment_trans_id";
+		}
+
+	}
+
+}
+

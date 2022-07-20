@@ -1,0 +1,496 @@
+
+#=======================================
+#  Field MSO_FLD_BB_USAGE_DATE
+#=======================================
+
+STRING MSO_FLD_BB_USAGE_DATE {
+
+	ID = 46007;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BYTES_DOWNLINK_AFT_FUP
+#=======================================
+
+DECIMAL MSO_FLD_BYTES_DOWNLINK_AFT_FUP {
+
+	ID = 46019;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BYTES_DOWNLINK_BEF_FUP
+#=======================================
+
+DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+	ID = 46016;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BYTES_UPLINK_AFT_FUP
+#=======================================
+
+DECIMAL MSO_FLD_BYTES_UPLINK_AFT_FUP {
+
+	ID = 46018;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BYTES_UPLINK_BEF_FUP
+#=======================================
+
+DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+	ID = 46015;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TOTAL_AFT_FUP
+#=======================================
+
+DECIMAL MSO_FLD_TOTAL_AFT_FUP {
+
+	ID = 46020;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TOTAL_BEF_FUP
+#=======================================
+
+DECIMAL MSO_FLD_TOTAL_BEF_FUP {
+
+	ID = 46017;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TOTAL_DATA
+#=======================================
+
+DECIMAL MSO_FLD_TOTAL_DATA {
+
+	ID = 46008;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_DOWNLINK
+#=======================================
+
+DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+	ID = 428;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_UPLINK
+#=======================================
+
+DECIMAL PIN_FLD_BYTES_UPLINK {
+
+	ID = 429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DURATION
+#=======================================
+
+STRING PIN_FLD_DURATION {
+
+	ID = 2529;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_bb_daily_usage
+#=======================================
+
+STORABLE CLASS /mso_bb_daily_usage {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_BB_USAGE_DATE {
+
+		DESCR = "String Notation of Date for daily usage details.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_BYTES_DOWNLINK_AFT_FUP {
+
+		DESCR = "MSO_FLD_BYTES_DOWNLINK_AFT_FUP";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+		DESCR = "MSO_FLD_BYTES_DOWNLINK_BEF_FUP";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_BYTES_UPLINK_AFT_FUP {
+
+		DESCR = "MSO_FLD_BYTES_UPLINK_AFT_FUP";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+		DESCR = "MSO_FLD_BYTES_UPLINK_BEF_FUP";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_TOTAL_AFT_FUP {
+
+		DESCR = "MSO_FLD_TOTAL_AFT_FUP";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_TOTAL_BEF_FUP {
+
+		DESCR = "MSO_FLD_TOTAL_BEF_FUP";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_TOTAL_DATA {
+
+		DESCR = "Total Data for daily usage details.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_BYTES_UPLINK {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DURATION {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_bb_daily_usage
+#=======================================
+
+STORABLE CLASS /mso_bb_daily_usage IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_bb_daily_usage_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_BB_USAGE_DATE {
+
+		SQL_COLUMN = "bb_usage_date";
+	}
+
+	DECIMAL MSO_FLD_BYTES_DOWNLINK_AFT_FUP {
+
+		SQL_COLUMN = "bytes_downlink_aft_fup";
+	}
+
+	DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+		SQL_COLUMN = "bytes_downlink_bef_fup";
+	}
+
+	DECIMAL MSO_FLD_BYTES_UPLINK_AFT_FUP {
+
+		SQL_COLUMN = "bytes_uplink_aft_fup";
+	}
+
+	DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+		SQL_COLUMN = "bytes_uplink_bef_fup";
+	}
+
+	DECIMAL MSO_FLD_TOTAL_AFT_FUP {
+
+		SQL_COLUMN = "total_aft_fup";
+	}
+
+	DECIMAL MSO_FLD_TOTAL_BEF_FUP {
+
+		SQL_COLUMN = "total_bef_fup";
+	}
+
+	DECIMAL MSO_FLD_TOTAL_DATA {
+
+		SQL_COLUMN = "total_data";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+		SQL_COLUMN = "bytes_downlink";
+	}
+
+	DECIMAL PIN_FLD_BYTES_UPLINK {
+
+		SQL_COLUMN = "bytes_uplink";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DURATION {
+
+		SQL_COLUMN = "duration";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

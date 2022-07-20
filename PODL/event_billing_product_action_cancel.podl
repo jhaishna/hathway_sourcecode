@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/action/cancel
+#=======================================
+
+STORABLE CLASS /event/billing/product/action/cancel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a product is cancelled. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/action/cancel
+#=======================================
+
+STORABLE CLASS /event/billing/product/action/cancel IMPLEMENTATION ORACLE7 {
+
+}
+

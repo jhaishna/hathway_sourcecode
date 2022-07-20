@@ -1,0 +1,36 @@
+0 PIN_FLD_INHERITED_INFO SUBSTRUCT [0] allocated 20, used 7
+1     PIN_FLD_PERMITTEDS    ARRAY [0] allocated 20, used 4
+2         PIN_FLD_ACTION          STR [0] "/appcenter/ResourceEditor"
+2         PIN_FLD_MAXIMUM      DECIMAL [0] 0
+2         PIN_FLD_MINIMUM      DECIMAL [0] 0
+2         PIN_FLD_TYPE           ENUM [0] 2
+1     PIN_FLD_PERMITTEDS    ARRAY [1] allocated 20, used 4
+2         PIN_FLD_ACTION          STR [0] "/appcenter/ZoneMapper"
+2         PIN_FLD_MAXIMUM      DECIMAL [0] 0
+2         PIN_FLD_MINIMUM      DECIMAL [0] 0
+2         PIN_FLD_TYPE           ENUM [0] 2
+1     PIN_FLD_PERMITTEDS    ARRAY [2] allocated 20, used 4
+2         PIN_FLD_ACTION          STR [0] "/appcenter/pricingcenter"
+2         PIN_FLD_MAXIMUM      DECIMAL [0] 0
+2         PIN_FLD_MINIMUM      DECIMAL [0] 0
+2         PIN_FLD_TYPE           ENUM [0] 2
+1     PIN_FLD_PERMITTEDS    ARRAY [3] allocated 20, used 4
+2         PIN_FLD_ACTION          STR [0] "/appcenter/provisioningtags"
+2         PIN_FLD_MAXIMUM      DECIMAL [0] 0
+2         PIN_FLD_MINIMUM      DECIMAL [0] 0
+2         PIN_FLD_TYPE           ENUM [0] 2
+1     PIN_FLD_PERMITTEDS    ARRAY [4] allocated 20, used 4
+2         PIN_FLD_ACTION          STR [0] "/loadpricelist/access"
+2         PIN_FLD_MAXIMUM      DECIMAL [0] 0
+2         PIN_FLD_MINIMUM      DECIMAL [0] 0
+2         PIN_FLD_TYPE           ENUM [0] 2
+1     PIN_FLD_PERMITTEDS    ARRAY [5] allocated 20, used 4
+2         PIN_FLD_ACTION          STR [0] "/pricingcenter/databaseaccess"
+2         PIN_FLD_MAXIMUM      DECIMAL [0] 0
+2         PIN_FLD_MINIMUM      DECIMAL [0] 0
+2         PIN_FLD_TYPE           ENUM [0] 2
+1     PIN_FLD_PERMITTEDS    ARRAY [6] allocated 20, used 4
+2         PIN_FLD_ACTION          STR [0] "/pricingcenter/filesystemaccess"
+2         PIN_FLD_MAXIMUM      DECIMAL [0] 0
+2         PIN_FLD_MINIMUM      DECIMAL [0] 0
+2         PIN_FLD_TYPE           ENUM [0] 2

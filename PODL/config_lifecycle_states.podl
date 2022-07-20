@@ -1,0 +1,537 @@
+
+#=======================================
+#  Field PIN_FLD_PERMITTED_SERVICE_TYPES
+#=======================================
+
+ARRAY PIN_FLD_PERMITTED_SERVICE_TYPES {
+
+	ID = 8027;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATES
+#=======================================
+
+ARRAY PIN_FLD_STATES {
+
+	ID = 8047;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INITIAL_STATE
+#=======================================
+
+INT PIN_FLD_INITIAL_STATE {
+
+	ID = 8054;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RULES
+#=======================================
+
+ARRAY PIN_FLD_RULES {
+
+	ID = 5779;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODULE
+#=======================================
+
+STRING PIN_FLD_MODULE {
+
+	ID = 8048;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_STATE_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+	ID = 8053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_ID
+#=======================================
+
+INT PIN_FLD_STATE_ID {
+
+	ID = 5552;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_NAME
+#=======================================
+
+STRING PIN_FLD_STATE_NAME {
+
+	ID = 8046;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VERSION
+#=======================================
+
+INT PIN_FLD_STR_VERSION {
+
+	ID = 1892;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANSITIONS
+#=======================================
+
+ARRAY PIN_FLD_TRANSITIONS {
+
+	ID = 8258;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEFAULT_FLAG
+#=======================================
+
+INT PIN_FLD_DEFAULT_FLAG {
+
+	ID = 1523;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_STATE
+#=======================================
+
+INT PIN_FLD_NEXT_STATE {
+
+	ID = 8049;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POST_OPCODE
+#=======================================
+
+INT PIN_FLD_POST_OPCODE {
+
+	ID = 8051;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRE_OPCODE
+#=======================================
+
+INT PIN_FLD_PRE_OPCODE {
+
+	ID = 8050;
+}
+
+
+#=======================================
+#  Storable Class /config/lifecycle_states
+#=======================================
+
+STORABLE CLASS /config/lifecycle_states {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " This class will contain the state machine configuration  for the prepaid lifecycle ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PERMITTED_SERVICE_TYPES {
+
+		DESCR = " Array containing the service types for which this lifecycle  state machine is applicable";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_STATES {
+
+		DESCR = " Array for the service state containing  rules and transitions to be defined";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_INITIAL_STATE {
+
+			DESCR = "this flag indicates if this array is for first state of Lifecycle.";
+			ORDER = 3;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_RULES {
+
+			DESCR = "Array containing the rules for the state.";
+			ORDER = 5;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_MODULE {
+
+				DESCR = "Module in which this rule would be applied";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Name of the Rule";
+				ORDER = 1;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				DESCR = "Rule enabled status. YES/NO need to be used";
+				ORDER = 2;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+			DESCR = "Expiration time for the current service state totransition to next state in lifecycle";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			DESCR = "state ID for the Lifecycle state.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE_NAME {
+
+			DESCR = "Name of the service state.";
+			ORDER = 4;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "String ID for State name. Used for localization.";
+			ORDER = 5;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			DESCR = "The version of the localized string.";
+			ORDER = 6;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_TRANSITIONS {
+
+			DESCR = "Array containing the possible transitions from a state";
+			ORDER = 6;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_DEFAULT_FLAG {
+
+				DESCR = "This flag will indicate  that the state defined in this transitionswill be the default state to which the transition will happen upon service.time expiration..";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_NEXT_STATE {
+
+				DESCR = "The state to which transition can happen from current state";
+				ORDER = 1;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_POST_OPCODE {
+
+				DESCR = "Opcode to be executed after the transition";
+				ORDER = 2;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_PRE_OPCODE {
+
+				DESCR = "Opcode to be executed before the transition";
+				ORDER = 3;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/lifecycle_states
+#=======================================
+
+STORABLE CLASS /config/lifecycle_states IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PERMITTED_SERVICE_TYPES {
+
+		SQL_TABLE = "config_lcm_states_perm_srvc_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "service_type";
+		}
+
+	}
+
+	ARRAY PIN_FLD_STATES {
+
+		SQL_TABLE = "config_lcm_states_array_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_INITIAL_STATE {
+
+			SQL_COLUMN = "initial_state_flag";
+		}
+
+		ARRAY PIN_FLD_RULES {
+
+			SQL_TABLE = "config_lcm_states_rules_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_MODULE {
+
+				SQL_COLUMN = "module";
+			}
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "value";
+			}
+
+		}
+
+		TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+			SQL_COLUMN = "state_expiration_t";
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			SQL_COLUMN = "state_id";
+		}
+
+		STRING PIN_FLD_STATE_NAME {
+
+			SQL_COLUMN = "state_name";
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "string_id";
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			SQL_COLUMN = "str_version";
+		}
+
+		ARRAY PIN_FLD_TRANSITIONS {
+
+			SQL_TABLE = "config_lcm_states_trans_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_DEFAULT_FLAG {
+
+				SQL_COLUMN = "default_state";
+			}
+
+			INT PIN_FLD_NEXT_STATE {
+
+				SQL_COLUMN = "next_state";
+			}
+
+			INT PIN_FLD_POST_OPCODE {
+
+				SQL_COLUMN = "post_opcode";
+			}
+
+			INT PIN_FLD_PRE_OPCODE {
+
+				SQL_COLUMN = "pre_opcode";
+			}
+
+		}
+
+	}
+
+}
+

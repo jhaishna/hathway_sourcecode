@@ -1,0 +1,480 @@
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CODES
+#=======================================
+
+ARRAY PIN_FLD_SERVICE_CODES {
+
+	ID = 6420;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SS_ACTION_CODE
+#=======================================
+
+STRING PIN_FLD_SS_ACTION_CODE {
+
+	ID = 6422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SS_CODE
+#=======================================
+
+STRING PIN_FLD_SS_CODE {
+
+	ID = 6423;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TELCO_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+	ID = 8002;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALLED_TO
+#=======================================
+
+STRING PIN_FLD_CALLED_TO {
+
+	ID = 7448;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALLING_FROM
+#=======================================
+
+STRING PIN_FLD_CALLING_FROM {
+
+	ID = 7447;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESTINATION_NETWORK
+#=======================================
+
+STRING PIN_FLD_DESTINATION_NETWORK {
+
+	ID = 6406;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK_SESSION_CORRELATION_ID
+#=======================================
+
+STRING PIN_FLD_NETWORK_SESSION_CORRELATION_ID {
+
+	ID = 8011;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK_SESSION_ID
+#=======================================
+
+STRING PIN_FLD_NETWORK_SESSION_ID {
+
+	ID = 7449;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORIGIN_NETWORK
+#=======================================
+
+STRING PIN_FLD_ORIGIN_NETWORK {
+
+	ID = 6415;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRIMARY_MSID
+#=======================================
+
+STRING PIN_FLD_PRIMARY_MSID {
+
+	ID = 7445;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SECONDARY_MSID
+#=======================================
+
+STRING PIN_FLD_SECONDARY_MSID {
+
+	ID = 7446;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SVC_CODE
+#=======================================
+
+STRING PIN_FLD_SVC_CODE {
+
+	ID = 6424;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SVC_TYPE
+#=======================================
+
+STRING PIN_FLD_SVC_TYPE {
+
+	ID = 6425;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMINATE_CAUSE
+#=======================================
+
+ENUM PIN_FLD_TERMINATE_CAUSE {
+
+	ID = 427;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_CLASS
+#=======================================
+
+STRING PIN_FLD_USAGE_CLASS {
+
+	ID = 6427;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/telco
+#=======================================
+
+STORABLE CLASS /event/activity/telco {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Records the data about a Telco activity event";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_CODES {
+
+		DESCR = "Array containing possible Supplementary Service activity occuring during this session.";
+		ORDER = 12;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_SS_ACTION_CODE {
+
+			DESCR = "This qualifies the way in which the supplementary service is used.  ";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SS_CODE {
+
+			DESCR = "This uniquely defines the supplementary service or a group of supplementary services.  ";
+			ORDER = 1;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		DESCR = "Substruct containing information about a call.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CALLED_TO {
+
+			DESCR = "Destination number of the call.  Also called B number.";
+			ORDER = 7;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CALLING_FROM {
+
+			DESCR = "Originating phone number of the call.  Can be different from the phone number of the user in case of calling card scenario for example.  Also called A number.";
+			ORDER = 6;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESTINATION_NETWORK {
+
+			DESCR = "Is the network towards which the call or message is routed.";
+			ORDER = 3;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK_SESSION_CORRELATION_ID {
+
+			DESCR = "Network session correlation identifier, used to correlate Master and Sub-session.";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK_SESSION_ID {
+
+			DESCR = "Session ID as provided by the network";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGIN_NETWORK {
+
+			DESCR = "Network code from which the call or message was routed. ";
+			ORDER = 2;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PRIMARY_MSID {
+
+			DESCR = "Mobile station ID of the user. In CDMA network this represent the MIN of the user and in GSM network this represnt the MSISDN.";
+			ORDER = 4;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SECONDARY_MSID {
+
+			DESCR = "Mobile station ID of the user. In CDMA network this represent the ESN number of the user and in GSM network this represnt the IMSI.";
+			ORDER = 5;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SVC_CODE {
+
+			DESCR = "Either a Teleservice Code or Bearer Service Code as determined by Service Type. ";
+			ORDER = 9;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SVC_TYPE {
+
+			DESCR = "Uniquely defines the type of basic service. ";
+			ORDER = 8;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			DESCR = "Indicates whether a call was correctly completed or not. ";
+			ORDER = 10;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_USAGE_CLASS {
+
+			DESCR = "Classification describes the specific format related call scenario.  E.g. Call forwarding, roaming, mailbox request, local call, etc.";
+			ORDER = 11;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/telco
+#=======================================
+
+STORABLE CLASS /event/activity/telco IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_CODES {
+
+		SQL_TABLE = "event_actv_tlcs_svc_codes_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_SS_ACTION_CODE {
+
+			SQL_COLUMN = "ss_action_code";
+		}
+
+		STRING PIN_FLD_SS_CODE {
+
+			SQL_COLUMN = "ss_code";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TELCO_INFO {
+
+		SQL_TABLE = "event_activity_tlcs_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CALLED_TO {
+
+			SQL_COLUMN = "called_to";
+		}
+
+		STRING PIN_FLD_CALLING_FROM {
+
+			SQL_COLUMN = "calling_from";
+		}
+
+		STRING PIN_FLD_DESTINATION_NETWORK {
+
+			SQL_COLUMN = "destination_network";
+		}
+
+		STRING PIN_FLD_NETWORK_SESSION_CORRELATION_ID {
+
+			SQL_COLUMN = "network_session_correl_id";
+		}
+
+		STRING PIN_FLD_NETWORK_SESSION_ID {
+
+			SQL_COLUMN = "network_session_id";
+		}
+
+		STRING PIN_FLD_ORIGIN_NETWORK {
+
+			SQL_COLUMN = "origin_network";
+		}
+
+		STRING PIN_FLD_PRIMARY_MSID {
+
+			SQL_COLUMN = "primary_msid";
+		}
+
+		STRING PIN_FLD_SECONDARY_MSID {
+
+			SQL_COLUMN = "secondary_msid";
+		}
+
+		STRING PIN_FLD_SVC_CODE {
+
+			SQL_COLUMN = "svc_code";
+		}
+
+		STRING PIN_FLD_SVC_TYPE {
+
+			SQL_COLUMN = "svc_type";
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			SQL_COLUMN = "terminate_cause";
+		}
+
+		STRING PIN_FLD_USAGE_CLASS {
+
+			SQL_COLUMN = "usage_class";
+		}
+
+	}
+
+}
+

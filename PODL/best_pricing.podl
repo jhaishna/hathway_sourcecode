@@ -1,0 +1,427 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_APPLY_MODE
+#=======================================
+
+ENUM PIN_FLD_APPLY_MODE {
+
+	ID = 9578;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALS
+#=======================================
+
+ARRAY PIN_FLD_DEALS {
+
+	ID = 247;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONDITIONS
+#=======================================
+
+ARRAY PIN_FLD_CONDITIONS {
+
+	ID = 9577;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPERATOR
+#=======================================
+
+ENUM PIN_FLD_OPERATOR {
+
+	ID = 2246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MINIMUM
+#=======================================
+
+DECIMAL PIN_FLD_MINIMUM {
+
+	ID = 86;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /best_pricing
+#=======================================
+
+STORABLE CLASS /best_pricing {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "Data for Best Pricing. Best Pricing defines a relationship between a deal and a set of alternate deals. It also allows definition of events for Best Pricing approximation.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_APPLY_MODE {
+
+		DESCR = "Mode of Best Pricing application - full rerate (0x0), one time adjustment (0x1).";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_DEALS {
+
+		DESCR = "Array of alternate deals for Best Pricing consideration.";
+		ORDER = 2;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CONDITIONS {
+
+			DESCR = "Conditions for Best Pricing consideration. If the conditions are met the deal will be considered by Best Pricing.";
+			ORDER = 2;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				DESCR = "Amount against which the condition will be compared.";
+				ORDER = 2;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_OPERATOR {
+
+				DESCR = "Conditional operator -- (0x0) equal to, (0x1) not equal to, (0x2) less than, (0x3) greater than, (0x4) less than or equal to, (0x5) greater than or equal to.";
+				ORDER = 2;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_RESOURCE_ID {
+
+				DESCR = "ID of resource used for the Best Pricing condition.";
+				ORDER = 2;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "An alternate deal for Best Pricing consideration.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MINIMUM {
+
+			DESCR = "Minimum charge for the alternate deal.";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_DEAL_OBJ {
+
+		DESCR = "Base deal for Best Pricing consideration.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /best_pricing
+#=======================================
+
+STORABLE CLASS /best_pricing IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "best_pricing_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ENUM PIN_FLD_APPLY_MODE {
+
+		SQL_COLUMN = "apply_mode";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ARRAY PIN_FLD_DEALS {
+
+		SQL_TABLE = "best_pricing_deals_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CONDITIONS {
+
+			SQL_TABLE = "best_pricing_conditions_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				SQL_COLUMN = "amount";
+			}
+
+			ENUM PIN_FLD_OPERATOR {
+
+				SQL_COLUMN = "operator";
+			}
+
+			INT PIN_FLD_RESOURCE_ID {
+
+				SQL_COLUMN = "resource_id";
+			}
+
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		DECIMAL PIN_FLD_MINIMUM {
+
+			SQL_COLUMN = "minimum";
+		}
+
+	}
+
+	POID PIN_FLD_DEAL_OBJ {
+
+		SQL_COLUMN = "deal_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

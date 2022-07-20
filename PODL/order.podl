@@ -1,0 +1,1529 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILES
+#=======================================
+
+ARRAY PIN_FLD_FILES {
+
+	ID = 7508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENCRYPTION_TYPE
+#=======================================
+
+STRING PIN_FLD_ENCRYPTION_TYPE {
+
+	ID = 7507;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILENAME
+#=======================================
+
+STRING PIN_FLD_FILENAME {
+
+	ID = 500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAMEINFO
+#=======================================
+
+ARRAY PIN_FLD_NAMEINFO {
+
+	ID = 156;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMPANY
+#=======================================
+
+STRING PIN_FLD_COMPANY {
+
+	ID = 164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONTACT_TYPE
+#=======================================
+
+STRING PIN_FLD_CONTACT_TYPE {
+
+	ID = 157;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EMAIL_ADDR
+#=======================================
+
+STRING PIN_FLD_EMAIL_ADDR {
+
+	ID = 171;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIRST_NAME
+#=======================================
+
+STRING PIN_FLD_FIRST_NAME {
+
+	ID = 159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_NAME
+#=======================================
+
+STRING PIN_FLD_LAST_NAME {
+
+	ID = 161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIDDLE_NAME
+#=======================================
+
+STRING PIN_FLD_MIDDLE_NAME {
+
+	ID = 160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONES
+#=======================================
+
+ARRAY PIN_FLD_PHONES {
+
+	ID = 180;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONE
+#=======================================
+
+STRING PIN_FLD_PHONE {
+
+	ID = 181;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SALUTATION
+#=======================================
+
+STRING PIN_FLD_SALUTATION {
+
+	ID = 158;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TITLE
+#=======================================
+
+STRING PIN_FLD_TITLE {
+
+	ID = 163;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDERS_DATA
+#=======================================
+
+ARRAY PIN_FLD_ORDERS_DATA {
+
+	ID = 7509;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_OBJ
+#=======================================
+
+POID PIN_FLD_ORDER_OBJ {
+
+	ID = 7500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_ID
+#=======================================
+
+STRING PIN_FLD_ORDER_ID {
+
+	ID = 943;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESULTS_DATA
+#=======================================
+
+ARRAY PIN_FLD_RESULTS_DATA {
+
+	ID = 7510;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAMETERS
+#=======================================
+
+STRING PIN_FLD_PARAMETERS {
+
+	ID = 69;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY_APPLIED
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY_APPLIED {
+
+	ID = 233;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECEIVED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_RECEIVED_T {
+
+	ID = 5705;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RES_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_RES_FILE_NAME {
+
+	ID = 5704;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VOUCHER_ORDERS
+#=======================================
+
+ARRAY PIN_FLD_VOUCHER_ORDERS {
+
+	ID = 7603;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_PART_NO
+#=======================================
+
+STRING PIN_FLD_BATCH_PART_NO {
+
+	ID = 7611;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+	ID = 7604;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_BATCH_TOTAL {
+
+	ID = 934;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CARD_EXPIRATION
+#=======================================
+
+INT PIN_FLD_CARD_EXPIRATION {
+
+	ID = 7613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_CODE
+#=======================================
+
+STRING PIN_FLD_DEALER_CODE {
+
+	ID = 7602;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_NAME
+#=======================================
+
+STRING PIN_FLD_DEALER_NAME {
+
+	ID = 7601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+	ID = 5601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK
+#=======================================
+
+STRING PIN_FLD_NETWORK {
+
+	ID = 74;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACK_PART_NO
+#=======================================
+
+STRING PIN_FLD_PACK_PART_NO {
+
+	ID = 7612;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACK_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_PACK_QUANTITY {
+
+	ID = 7605;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_CODE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+	ID = 7610;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_TYPE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+	ID = 7609;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_SERIAL_NO
+#=======================================
+
+STRING PIN_FLD_START_SERIAL_NO {
+
+	ID = 7600;
+}
+
+
+#=======================================
+#  Storable Class /order
+#=======================================
+
+STORABLE CLASS /order {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "This represents the order object";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the account/brand object that own  this order. ";
+		ORDER = 6;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_FILES {
+
+		DESCR = "Array containing information about the request files associated with this order ";
+		ORDER = 12;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CREATED_T {
+
+			DESCR = "Time the request file was created. ";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ENCRYPTION_TYPE {
+
+			DESCR = "The encryption of the request file";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FILENAME {
+
+			DESCR = "Name of the request file  with full path";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_NAMEINFO {
+
+		DESCR = "Contact information for account. Array contains any number of contacts with description for type of contact. Array index is not significant except for the billing contact (1) and mailing contact (2). Element ids 3-100 are reserved.";
+		ORDER = 10;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Street address of contact. Multiple lines can be stored with newline separator.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City portion of contact's address.";
+			ORDER = 1;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COMPANY {
+
+			DESCR = "Company  represented by contact.";
+			ORDER = 2;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CONTACT_TYPE {
+
+			DESCR = "Description of type of contact. Some values are recognized by system - 'billing', 'mailing'. Other values are user configurable.";
+			ORDER = 3;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country portion of contact's address.";
+			ORDER = 4;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			DESCR = "Email address for contact. ";
+			ORDER = 5;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			DESCR = "First name of contact.";
+			ORDER = 6;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			DESCR = "Last name of contact.";
+			ORDER = 7;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			DESCR = "Middle name of contact.";
+			ORDER = 8;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			DESCR = "Array of phone numbers for this contact. Each number has a type description, and any number of elements can be stored for a contact. Array element ids are not significant.";
+			ORDER = 9;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				DESCR = "Phone number. By default, format is limited to TAPI and validated using the PCM_OP_CUST_POL_VALID_NAMEINFO policy.";
+				ORDER = 0;
+				LENGTH = 75;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Phone types defined by Infranet are Home (1), Work (2), Fax (3), Pager (3), Portable (4), POP (5), Support (6).";
+				ORDER = 1;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_SALUTATION {
+
+			DESCR = "Salutation for contact name.";
+			ORDER = 10;
+			LENGTH = 75;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State or Province portion of contact's address.";
+			ORDER = 11;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TITLE {
+
+			DESCR = "Job title of contact.";
+			ORDER = 12;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Zip code or postal code portion of contact's address.";
+			ORDER = 13;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_ORDERS_DATA {
+
+		DESCR = "Array containing order object poids ";
+		ORDER = 13;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			DESCR = "The sub orders poid";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		DESCR = "Customer visible order number. System generated, derived from order poid by default. ";
+		ORDER = 1;
+		LENGTH = 64;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ORDER_OBJ {
+
+		DESCR = "Link to the parent order object - if any";
+		ORDER = 9;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_QUANTITY {
+
+		DESCR = "Total order quantity.";
+		ORDER = 7;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_RESULTS_DATA {
+
+		DESCR = "Array containing specific information with respect to the response files received from the voucher. ";
+		ORDER = 11;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PARAMETERS {
+
+			DESCR = "The starting number for thedevices ";
+			ORDER = 1;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_QUANTITY_APPLIED {
+
+			DESCR = "Represents received quantity. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_RECEIVED_T {
+
+			DESCR = "Response file receive time. ";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RES_FILE_NAME {
+
+			DESCR = "The response file name. ";
+			ORDER = 3;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of the order object. Legal values are NEW(1), REQUEST(2), RECEIVED(3), PARTIAL RECEIVE (4)  CANCELLED(5). Only new orders are modifiable. ";
+		ORDER = 8;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /order/voucher
+#=======================================
+
+STORABLE CLASS /order/voucher {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Order voucher object. Contains information that is specific to order of the vouchers ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHER_ORDERS {
+
+		DESCR = "Array containing information about the order of the vouchers. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_PART_NO {
+
+			DESCR = "Batch number associated with the order ";
+			ORDER = 11;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+			DESCR = "Batch quantity associated with this order.";
+			ORDER = 9;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_BATCH_TOTAL {
+
+			DESCR = "Total amount of batches withinthe order.";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CARD_EXPIRATION {
+
+			DESCR = "The expiration days of the voucher card ";
+			ORDER = 15;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEALER_CODE {
+
+			DESCR = "Code of the service provider ";
+			ORDER = 6;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEALER_NAME {
+
+			DESCR = "Name of the service provider ";
+			ORDER = 5;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Deal object which has the products to impact the balanceassociated with the card ";
+			ORDER = 13;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ENCRYPTION_TYPE {
+
+			DESCR = "The types used to encrypt the request and response files  ";
+			ORDER = 4;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			DESCR = "Time the expiration time of vouchers associated with the card ";
+			ORDER = 14;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			DESCR = "Name of the carrier ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PACK_PART_NO {
+
+			DESCR = "Pack number associated with the order ";
+			ORDER = 12;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PACK_QUANTITY {
+
+			DESCR = "Pack quantity associated with this order.";
+			ORDER = 10;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			DESCR = "Quantity associated with orderthis order.";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			DESCR = "Code associated with the recharge card ";
+			ORDER = 8;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			DESCR = "type of card associated with the recharge card ";
+			ORDER = 7;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_START_SERIAL_NO {
+
+			DESCR = "The starting serial number for thedevices ";
+			ORDER = 3;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /order
+#=======================================
+
+STORABLE CLASS /order IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "order_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ARRAY PIN_FLD_FILES {
+
+		SQL_TABLE = "order_files_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CREATED_T {
+
+			SQL_COLUMN = "created_t";
+		}
+
+		STRING PIN_FLD_ENCRYPTION_TYPE {
+
+			SQL_COLUMN = "encryption_type";
+		}
+
+		STRING PIN_FLD_FILENAME {
+
+			SQL_COLUMN = "req_file_name";
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	ARRAY PIN_FLD_NAMEINFO {
+
+		SQL_TABLE = "order_name_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COMPANY {
+
+			SQL_COLUMN = "company";
+		}
+
+		STRING PIN_FLD_CONTACT_TYPE {
+
+			SQL_COLUMN = "contact_type";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			SQL_COLUMN = "email_addr";
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			SQL_COLUMN = "first_name";
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			SQL_COLUMN = "last_name";
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			SQL_COLUMN = "middle_name";
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			SQL_TABLE = "order_phones_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				SQL_COLUMN = "phone";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		STRING PIN_FLD_SALUTATION {
+
+			SQL_COLUMN = "salutation";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_TITLE {
+
+			SQL_COLUMN = "title";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+	ARRAY PIN_FLD_ORDERS_DATA {
+
+		SQL_TABLE = "order_orders_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			SQL_COLUMN = "order_obj";
+		}
+
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		SQL_COLUMN = "order_id";
+	}
+
+	POID PIN_FLD_ORDER_OBJ {
+
+		SQL_COLUMN = "parent_order_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	DECIMAL PIN_FLD_QUANTITY {
+
+		SQL_COLUMN = "quantity";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ARRAY PIN_FLD_RESULTS_DATA {
+
+		SQL_TABLE = "order_results_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PARAMETERS {
+
+			SQL_COLUMN = "parameters";
+		}
+
+		DECIMAL PIN_FLD_QUANTITY_APPLIED {
+
+			SQL_COLUMN = "quantity_applied";
+		}
+
+		TIMESTAMP PIN_FLD_RECEIVED_T {
+
+			SQL_COLUMN = "received_t";
+		}
+
+		STRING PIN_FLD_RES_FILE_NAME {
+
+			SQL_COLUMN = "res_file_name";
+		}
+
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /order/voucher
+#=======================================
+
+STORABLE CLASS /order/voucher IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHER_ORDERS {
+
+		SQL_TABLE = "order_voucher_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_PART_NO {
+
+			SQL_COLUMN = "batch_part_no";
+		}
+
+		DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+			SQL_COLUMN = "batch_qty";
+		}
+
+		DECIMAL PIN_FLD_BATCH_TOTAL {
+
+			SQL_COLUMN = "batch_total";
+		}
+
+		INT PIN_FLD_CARD_EXPIRATION {
+
+			SQL_COLUMN = "card_expiration";
+		}
+
+		STRING PIN_FLD_DEALER_CODE {
+
+			SQL_COLUMN = "dealer_code";
+		}
+
+		STRING PIN_FLD_DEALER_NAME {
+
+			SQL_COLUMN = "dealer_name";
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		STRING PIN_FLD_ENCRYPTION_TYPE {
+
+			SQL_COLUMN = "encryption_type";
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			SQL_COLUMN = "expiration_t";
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			SQL_COLUMN = "network";
+		}
+
+		STRING PIN_FLD_PACK_PART_NO {
+
+			SQL_COLUMN = "pack_part_no";
+		}
+
+		DECIMAL PIN_FLD_PACK_QUANTITY {
+
+			SQL_COLUMN = "pack_qty";
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			SQL_COLUMN = "quantity";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			SQL_COLUMN = "card_code";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			SQL_COLUMN = "card_type";
+		}
+
+		STRING PIN_FLD_START_SERIAL_NO {
+
+			SQL_COLUMN = "start_serial_no";
+		}
+
+	}
+
+}
+

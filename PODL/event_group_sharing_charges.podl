@@ -1,0 +1,163 @@
+
+#=======================================
+#  Field PIN_FLD_SPONSORS
+#=======================================
+
+ARRAY PIN_FLD_SPONSORS {
+
+	ID = 2340;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSOR_OBJ
+#=======================================
+
+POID PIN_FLD_SPONSOR_OBJ {
+
+	ID = 1204;
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Sub-class to indicate Charges group sharing object related events. (New style sponsorship). ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SPONSORS {
+
+		DESCR = "Array of /sponsorship object. Refer the pricing object for more details. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SPONSOR_OBJ {
+
+			DESCR = "/sponsorship object reference. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/charges object for an account/service is created. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/charges object for an account/service is deleted or if some/all of the members or sponsors are deleted from the group. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/charges object for an account/service is modified. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SPONSORS {
+
+		SQL_TABLE = "event_group_share_charges_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SPONSOR_OBJ {
+
+			SQL_COLUMN = "sponsor_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/delete
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/modify
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/modify IMPLEMENTATION ORACLE7 {
+
+}
+

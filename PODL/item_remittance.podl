@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/remittance
+#=======================================
+
+STORABLE CLASS /item/remittance {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent remittance items.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/remittance
+#=======================================
+
+STORABLE CLASS /item/remittance IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,453 @@
+
+#=======================================
+#  Field MSO_FLD_LCO_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_OBJ {
+
+	ID = 40006;
+	DESCR = "LCO account Object";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN
+#=======================================
+
+ARRAY PIN_FLD_PLAN {
+
+	ID = 444;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ET_CRITERIA
+#=======================================
+
+ENUM MSO_FLD_ET_CRITERIA {
+
+	ID = 42071;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ST_CRITERIA
+#=======================================
+
+ENUM MSO_FLD_ST_CRITERIA {
+
+	ID = 42070;
+}
+
+
+#=======================================
+#  Field MSO_FLD_VAT_CRITERIA
+#=======================================
+
+ENUM MSO_FLD_VAT_CRITERIA {
+
+	ID = 42072;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIXED_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_FIXED_AMOUNT {
+
+	ID = 2220;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERCENT
+#=======================================
+
+DECIMAL PIN_FLD_PERCENT {
+
+	ID = 531;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SETTLEMENT_TYPE
+#=======================================
+
+ENUM PIN_FLD_SETTLEMENT_TYPE {
+
+	ID = 971;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_agreement
+#=======================================
+
+STORABLE CLASS /mso_lco_agreement {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "LCO contract configuration for settlement";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID MSO_FLD_LCO_OBJ {
+
+		DESCR = "LCO account Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_PLAN {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_ET_CRITERIA {
+
+			DESCR = "0 - Inclusive, 1 - Exclusive, 2 - Sharing";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_ST_CRITERIA {
+
+			DESCR = "0 - Inclusive, 1 - Exclusive, 2 - Sharing";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_VAT_CRITERIA {
+
+			DESCR = "0 - Inclusive, 1 - Exclusive, 2 - Sharing";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_FIXED_AMOUNT {
+
+			DESCR = "Fix charge amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			DESCR = "Percent share";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_SETTLEMENT_TYPE {
+
+			DESCR = "0 = Fixed, 1 = Percent \n";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_agreement
+#=======================================
+
+STORABLE CLASS /mso_lco_agreement IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_lco_agreement_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID MSO_FLD_LCO_OBJ {
+
+		SQL_COLUMN = "LCO_OBJ";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	ARRAY PIN_FLD_PLAN {
+
+		SQL_TABLE = "mso_lco_agreement_plan_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_ET_CRITERIA {
+
+			SQL_COLUMN = "ET_CRITERIA";
+		}
+
+		ENUM MSO_FLD_ST_CRITERIA {
+
+			SQL_COLUMN = "ST_CRITERIA";
+		}
+
+		ENUM MSO_FLD_VAT_CRITERIA {
+
+			SQL_COLUMN = "VAT_CRITERIA";
+		}
+
+		DECIMAL PIN_FLD_FIXED_AMOUNT {
+
+			SQL_COLUMN = "FIXED_AMOUNT";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "PLAN_NAME";
+		}
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			SQL_COLUMN = "PERCENT_SHARE";
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			SQL_COLUMN = "PLAN_OBJ";
+		}
+
+		ENUM PIN_FLD_SETTLEMENT_TYPE {
+
+			SQL_COLUMN = "SETTLEMENT_TYPE";
+		}
+
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

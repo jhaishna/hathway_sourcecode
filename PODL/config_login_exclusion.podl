@@ -1,0 +1,93 @@
+
+#=======================================
+#  Field PIN_FLD_SERVICES
+#=======================================
+
+ARRAY PIN_FLD_SERVICES {
+
+	ID = 122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Storable Class /config/login_exclusion
+#=======================================
+
+STORABLE CLASS /config/login_exclusion {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This config class is used to store a list of service types that do not populate the uniqueness table when in multi-db mode.  The data is loaded using the load_pin_excluded_logins utility from an XML file.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICES {
+
+		DESCR = "The array of services that do *not* populate the uniqueness table";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service type name. For example, /service/telco/gsm.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/login_exclusion
+#=======================================
+
+STORABLE CLASS /config/login_exclusion IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICES {
+
+		SQL_TABLE = "config_login_exclude_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "cnf_ex_login_svc_type";
+		}
+
+	}
+
+}
+

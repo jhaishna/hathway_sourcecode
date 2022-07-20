@@ -1,0 +1,142 @@
+
+#=======================================
+#  Field PIN_FLD_RERATE_FIELDS
+#=======================================
+
+ARRAY PIN_FLD_RERATE_FIELDS {
+
+	ID = 9205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RERATE_EXTRACTION_KEY
+#=======================================
+
+STRING PIN_FLD_RERATE_EXTRACTION_KEY {
+
+	ID = 9204;
+}
+
+
+#=======================================
+#  Storable Class /config/rerate_flds
+#=======================================
+
+STORABLE CLASS /config/rerate_flds {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A singleton configuration object of this class is used to set up the mapping of user extraction key to  field name.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RERATE_FIELDS {
+
+		DESCR = "Array of rerate fields. Each element in this array represents a mapping between the extraction key and event field name.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "Event Field Name.";
+			ORDER = 0;
+			LENGTH = 100;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RERATE_EXTRACTION_KEY {
+
+			DESCR = "User defined rerate extraction key.";
+			ORDER = 0;
+			LENGTH = 25;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/rerate_flds/compare_bi
+#=======================================
+
+STORABLE CLASS /config/rerate_flds/compare_bi {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A singleton configuration object of this class is used to list the fields used by rerating to determine that event balance impacts are in an equivalent category. If these fields match between two balance impacts then the PIN_FLD_AMOUNT in each balance impact is considered to be comparable to the other.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/rerate_flds
+#=======================================
+
+STORABLE CLASS /config/rerate_flds IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RERATE_FIELDS {
+
+		SQL_TABLE = "cfg_rerate_fields_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "field_name";
+		}
+
+		STRING PIN_FLD_RERATE_EXTRACTION_KEY {
+
+			SQL_COLUMN = "rerate_extraction_key";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/rerate_flds/compare_bi
+#=======================================
+
+STORABLE CLASS /config/rerate_flds/compare_bi IMPLEMENTATION ORACLE7 {
+
+}
+

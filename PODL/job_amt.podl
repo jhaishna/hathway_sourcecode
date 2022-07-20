@@ -1,0 +1,221 @@
+
+#=======================================
+#  Field PIN_FLD_CUSTOM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+	ID = 1518;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_SIZE
+#=======================================
+
+INT PIN_FLD_BATCH_SIZE {
+
+	ID = 1373;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEST_DATABASE
+#=======================================
+
+STRING PIN_FLD_DEST_DATABASE {
+
+	ID = 9156;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SRC_DATABASE
+#=======================================
+
+STRING PIN_FLD_SRC_DATABASE {
+
+	ID = 9162;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING
+#=======================================
+
+STRING PIN_FLD_STRING {
+
+	ID = 1893;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USER_NAME
+#=======================================
+
+STRING PIN_FLD_USER_NAME {
+
+	ID = 9164;
+}
+
+
+#=======================================
+#  Storable Class /job/amt
+#=======================================
+
+STORABLE CLASS /job/amt {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "AMT job.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		DESCR = "AMT-specific job info.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_SIZE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEST_DATABASE {
+
+			ORDER = 0;
+			LENGTH = 32;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SRC_DATABASE {
+
+			ORDER = 0;
+			LENGTH = 32;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STRING {
+
+			ORDER = 0;
+			LENGTH = 2000;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_USER_NAME {
+
+			ORDER = 0;
+			LENGTH = 32;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /job/amt
+#=======================================
+
+STORABLE CLASS /job/amt IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		SQL_TABLE = "job_amt_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_SIZE {
+
+			SQL_COLUMN = "batch_size";
+		}
+
+		STRING PIN_FLD_DEST_DATABASE {
+
+			SQL_COLUMN = "dest_database";
+		}
+
+		STRING PIN_FLD_SRC_DATABASE {
+
+			SQL_COLUMN = "src_database";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		STRING PIN_FLD_STRING {
+
+			SQL_COLUMN = "spec_contents";
+		}
+
+		STRING PIN_FLD_USER_NAME {
+
+			SQL_COLUMN = "user_name";
+		}
+
+	}
+
+}
+

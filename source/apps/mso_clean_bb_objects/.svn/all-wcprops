@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/hathway/!svn/ver/2335/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_clean_bb_objects
+END
+pin.conf
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/hathway/!svn/ver/774/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_clean_bb_objects/pin.conf
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/hathway/!svn/ver/2335/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_clean_bb_objects/Makefile
+END
+mso_clean_bb_objects.c
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/hathway/!svn/ver/774/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_clean_bb_objects/mso_clean_bb_objects.c
+END

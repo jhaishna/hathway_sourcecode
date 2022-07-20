@@ -1,0 +1,223 @@
+
+#=======================================
+#  Field PIN_FLD_CMT_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CMT_INFO {
+
+	ID = 9101;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_POID_ID0
+#=======================================
+
+DECIMAL PIN_FLD_END_POID_ID0 {
+
+	ID = 5963;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INPUT_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_INPUT_FILE_NAME {
+
+	ID = 2353;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_PROCESSED
+#=======================================
+
+INT PIN_FLD_NUM_PROCESSED {
+
+	ID = 8107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_TOTAL_RECORDS
+#=======================================
+
+INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+	ID = 2359;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_POID_ID0
+#=======================================
+
+DECIMAL PIN_FLD_START_POID_ID0 {
+
+	ID = 5962;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SYNC_ID
+#=======================================
+
+DECIMAL PIN_FLD_SYNC_ID {
+
+	ID = 5967;
+}
+
+
+#=======================================
+#  Storable Class /batch/cmt
+#=======================================
+
+STORABLE CLASS /batch/cmt {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A batch subclass used to record Conversion Manager  preprocessing information.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CMT_INFO {
+
+		DESCR = "Substruct containing information about this Batch CMT session.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_END_POID_ID0 {
+
+			DESCR = "Portal object id of the last object loaded.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_INPUT_FILE_NAME {
+
+			DESCR = "Fully-qualified name of the data file loaded by this CMT session.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_PROCESSED {
+
+			DESCR = "The quantity of records processed thus far.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+			DESCR = "The quantity of records read in from the data file.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_START_POID_ID0 {
+
+			DESCR = "Portal object id of the first object loaded.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_SYNC_ID {
+
+			DESCR = "A unique identifier for this Batch CMT  session used for synchronizing critical sections with other running Batch CMT sessions.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/cmt
+#=======================================
+
+STORABLE CLASS /batch/cmt IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CMT_INFO {
+
+		SQL_TABLE = "batch_cmt_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_END_POID_ID0 {
+
+			SQL_COLUMN = "end_poid_id0";
+		}
+
+		STRING PIN_FLD_INPUT_FILE_NAME {
+
+			SQL_COLUMN = "input_file_name";
+		}
+
+		INT PIN_FLD_NUM_PROCESSED {
+
+			SQL_COLUMN = "num_processed";
+		}
+
+		INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+			SQL_COLUMN = "num_total_records";
+		}
+
+		DECIMAL PIN_FLD_START_POID_ID0 {
+
+			SQL_COLUMN = "start_poid_id0";
+		}
+
+		DECIMAL PIN_FLD_SYNC_ID {
+
+			SQL_COLUMN = "sync_id";
+		}
+
+	}
+
+}
+

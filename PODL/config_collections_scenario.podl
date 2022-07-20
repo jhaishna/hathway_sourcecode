@@ -1,0 +1,449 @@
+
+#=======================================
+#  Field PIN_FLD_ACTIONS
+#=======================================
+
+ARRAY PIN_FLD_ACTIONS {
+
+	ID = 7717;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_MODE
+#=======================================
+
+ENUM PIN_FLD_ACTION_MODE {
+
+	ID = 7737;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONFIG_ACTION_OBJ
+#=======================================
+
+POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+	ID = 7718;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUE_DAY
+#=======================================
+
+INT PIN_FLD_DUE_DAY {
+
+	ID = 7719;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_DATA_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_PROFILE_DATA_ARRAY {
+
+	ID = 7790;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCENARIO_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_SCENARIO_INFO {
+
+	ID = 7710;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONFIG_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_CONFIG_PROFILE_OBJ {
+
+	ID = 7713;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENTRY_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+	ID = 7714;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENTRY_DAYS
+#=======================================
+
+INT PIN_FLD_ENTRY_DAYS {
+
+	ID = 7716;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXIT_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+	ID = 7715;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCENARIO_DESCR
+#=======================================
+
+STRING PIN_FLD_SCENARIO_DESCR {
+
+	ID = 7712;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCENARIO_NAME
+#=======================================
+
+STRING PIN_FLD_SCENARIO_NAME {
+
+	ID = 7711;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SEVERITY
+#=======================================
+
+INT PIN_FLD_SEVERITY {
+
+	ID = 7745;
+}
+
+
+#=======================================
+#  Storable Class /config/collections/scenario
+#=======================================
+
+STORABLE CLASS /config/collections/scenario {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Collections scenario object.  Contains information for  each scenario. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTIONS {
+
+		DESCR = "List all actions to be conducted in this scenario. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_ACTION_MODE {
+
+			DESCR = "This value indicates whether the respective action must be executed, in case, if, billinfo enters the collections after the action execution date. PIN_ACTION_MUST_EXECUTE (0) This action will be executed in any case. PIN_ACTION_OPTIONAL_EXECUTE (1) This actions will be executed only if execution date is not passed. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+			DESCR = "The config action poid linked to a /config/collections/action object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DUE_DAY {
+
+			DESCR = "The due day for the action to be completed.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_PROFILE_DATA_ARRAY {
+
+		DESCR = "This array is used to hold the additional configurable parameters (say, credit score, customer tenure.) that are used to evaluate assignment or replacement scenario. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "This field is link to the elem_id of the corresponding /config/collections/scenario_params element";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "This field is value which is a combination of field, operator and value. EX: (pay_type = 10003 OR pay_type = 10005)";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SCENARIO_INFO {
+
+		DESCR = "Substructure to hold scenario specific info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_CONFIG_PROFILE_OBJ {
+
+			DESCR = "Profile poid linked to the collections profile object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+			DESCR = "The minimum over-due amount for entering the scenario. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ENTRY_DAYS {
+
+			DESCR = "The minimum over-due days for entering the scenario. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+			DESCR = "The maximum over-due amount for exiting the scenario. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SCENARIO_DESCR {
+
+			DESCR = "Scenario description.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SCENARIO_NAME {
+
+			DESCR = "Scenario name to be displayed on GUI tools";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SEVERITY {
+
+			DESCR = "This field describes the severity of the scenario. Lower the number, higher the severity. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/scenario
+#=======================================
+
+STORABLE CLASS /config/collections/scenario IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTIONS {
+
+		SQL_TABLE = "config_collections_actions_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_ACTION_MODE {
+
+			SQL_COLUMN = "action_mode";
+		}
+
+		POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+			SQL_COLUMN = "action_obj";
+		}
+
+		INT PIN_FLD_DUE_DAY {
+
+			SQL_COLUMN = "due_day";
+		}
+
+	}
+
+	ARRAY PIN_FLD_PROFILE_DATA_ARRAY {
+
+		SQL_TABLE = "conf_coll_scen_profile_data_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "string_id";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SCENARIO_INFO {
+
+		SQL_TABLE = "config_collections_scenario_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_CONFIG_PROFILE_OBJ {
+
+			SQL_COLUMN = "profile_obj";
+		}
+
+		DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+			SQL_COLUMN = "entry_amount";
+		}
+
+		INT PIN_FLD_ENTRY_DAYS {
+
+			SQL_COLUMN = "entry_days";
+		}
+
+		DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+			SQL_COLUMN = "exit_amount";
+		}
+
+		STRING PIN_FLD_SCENARIO_DESCR {
+
+			SQL_COLUMN = "scenario_descr";
+		}
+
+		STRING PIN_FLD_SCENARIO_NAME {
+
+			SQL_COLUMN = "scenario_name";
+		}
+
+		INT PIN_FLD_SEVERITY {
+
+			SQL_COLUMN = "scenario_severity";
+		}
+
+	}
+
+}
+

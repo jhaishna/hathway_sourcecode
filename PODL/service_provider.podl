@@ -1,0 +1,149 @@
+
+#=======================================
+#  Field PIN_FLD_PROVIDER_TOPICS
+#=======================================
+
+ARRAY PIN_FLD_PROVIDER_TOPICS {
+
+	ID = 1002;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_AMOUNT
+#=======================================
+
+STRING PIN_FLD_RATE_PER_AMOUNT {
+
+	ID = 1004;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_EVENT
+#=======================================
+
+STRING PIN_FLD_RATE_PER_EVENT {
+
+	ID = 1003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPIC_NAME
+#=======================================
+
+STRING PIN_FLD_TOPIC_NAME {
+
+	ID = 1001;
+}
+
+
+#=======================================
+#  Storable Class /service/provider
+#=======================================
+
+STORABLE CLASS /service/provider {
+
+	LABEL = "remittance definition";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Identity for an account acting as a supplier or vendor of various services or topics (ala pay-per-view). When others use these services, the ISP remits this account a fraction of the charges.Service for service providers (remittance calculation).";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROVIDER_TOPICS {
+
+		DESCR = "Array of topics. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_RATE_PER_AMOUNT {
+
+			DESCR = "Rate category to be used when remitting a percent of the amount to the vendor for every event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT {
+
+			DESCR = "Rate category to be used when remitting a fixed amount to the vendor for every event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TOPIC_NAME {
+
+			DESCR = "Topic name which is part of the events used for remittance calculation. The PIN_FLD_PROVIDER_DESCR field in the remittance related events contain value specified in this field.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/provider
+#=======================================
+
+STORABLE CLASS /service/provider IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROVIDER_TOPICS {
+
+		SQL_TABLE = "service_provider_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_RATE_PER_AMOUNT {
+
+			SQL_COLUMN = "rate_per_amount";
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT {
+
+			SQL_COLUMN = "rate_per_event";
+		}
+
+		STRING PIN_FLD_TOPIC_NAME {
+
+			SQL_COLUMN = "topic_name";
+		}
+
+	}
+
+}
+

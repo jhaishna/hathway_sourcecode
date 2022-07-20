@@ -1,0 +1,67 @@
+E Tue Jun  9 09:44:48 2015  prod-brm.hathway.com  <no name>:28357  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(28357): no pin.conf file in . or /etc 2
+E Tue Jun  9 09:44:48 2015  prod-brm.hathway.com  <no name>:28357  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(28357): no pin.conf file in . or /etc 2
+E Tue Jun  9 09:44:48 2015  prod-brm.hathway.com  <no name>:28357  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(28357): no pin.conf file in . or /etc 2
+E Tue Jun  9 09:44:48 2015  prod-brm.hathway.com  <no name>:28357  pin_mta_api.c:445 1:<machine>:<program>:0:0:0:0:0
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun  9 09:44:48 2015  prod-brm.hathway.com  mso_mta_job_processor:28357  pin_mta.c:1907 1:prod-brm.hathway.com:mso_mta_job_processor:28357:-140945696:0:1433823288:1
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun  9 09:44:48 2015  prod-brm.hathway.com  mso_mta_job_processor:28357  pin_mta.c:2124 1:prod-brm.hathway.com:mso_mta_job_processor:28357:-140945696:0:1433823288:1
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun  9 09:44:48 2015  prod-brm.hathway.com  mso_mta_job_processor:28357  pin_mta.c:2146 1:prod-brm.hathway.com:mso_mta_job_processor:28357:-140945696:0:1433823288:1
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 0
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 28357
+1     PIN_FLD_HOSTNAME        STR [0] "prod-brm.hathway.com"
+1     PIN_FLD_START_T      TSTAMP [0] (1433823288) Tue Jun  9 09:44:48 2015
+1     PIN_FLD_END_T        TSTAMP [0] (1433823288) Tue Jun  9 09:44:48 2015
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_INVALID_CONF"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_INVALID_CONF:30>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "1:prod-brm.hathway.com:mso_mta_job_processor:28357:-140945696:0:1433823288:1"
+E Fri Nov 17 17:40:53 2017  prod-brm.hathway.com  <no name>:20110  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(20110): no pin.conf file in . or /etc 2
+E Fri Nov 17 17:40:53 2017  prod-brm.hathway.com  <no name>:20110  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(20110): no pin.conf file in . or /etc 2
+E Fri Nov 17 17:40:53 2017  prod-brm.hathway.com  <no name>:20110  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(20110): no pin.conf file in . or /etc 2
+E Fri Nov 17 17:40:53 2017  prod-brm.hathway.com  <no name>:20110  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(20110): no pin.conf file in . or /etc 2
+E Fri Nov 17 17:40:53 2017  prod-brm.hathway.com  <no name>:20110  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(20110): no pin.conf file in . or /etc 2
+E Fri Nov 17 17:40:53 2017  prod-brm.hathway.com  testnap:20110  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(20110): no pin.conf file in . or /etc 2
+E Fri Nov 17 17:40:53 2017  prod-brm.hathway.com  testnap:20110  pcm_conn.c(6):233 1:<machine>:<program>:0:0:0:0:0
+	pcm_connect: bad/no login_type in pin.conf, err 30

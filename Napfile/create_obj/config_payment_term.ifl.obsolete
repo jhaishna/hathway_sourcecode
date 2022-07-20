@@ -1,0 +1,17 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /config/payment_term 429634 0
+0 PIN_FLD_CREATED_T               TSTAMP [0] (1383545857) 04/11/2013 11:47:37:000 AM
+0 PIN_FLD_MOD_T                   TSTAMP [0] (1383545857) 04/11/2013 11:47:37:000 AM
+0 PIN_FLD_READ_ACCESS                STR [0] "G"
+0 PIN_FLD_WRITE_ACCESS               STR [0] "S"
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_DESCR                      STR [0] ""
+0 PIN_FLD_HOSTNAME                   STR [0] "-"
+0 PIN_FLD_NAME                       STR [0] "Payment Term Configuration"
+0 PIN_FLD_PROGRAM_NAME               STR [0] "load_pin_payment_term"
+0 PIN_FLD_VALUE                      STR [0] ""
+0 PIN_FLD_VERSION                    STR [0] ""
+0 PIN_FLD_PAYMENT_TERMS            ARRAY [101] allocated 1, used 1
+1     PIN_FLD_DESCR                  STR [0] "15 days"
+XX
+xop 1 0 1

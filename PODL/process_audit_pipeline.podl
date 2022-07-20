@@ -1,0 +1,339 @@
+
+#=======================================
+#  Field PIN_FLD_FAILED_CDRS
+#=======================================
+
+ARRAY PIN_FLD_FAILED_CDRS {
+
+	ID = 8214;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_CDR_ID
+#=======================================
+
+STRING PIN_FLD_FAILED_CDR_ID {
+
+	ID = 8215;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_CDR_REASON
+#=======================================
+
+STRING PIN_FLD_FAILED_CDR_REASON {
+
+	ID = 8216;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PIPE_LINE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_PIPE_LINE_INFO {
+
+	ID = 8206;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CDR_BATCH_ID
+#=======================================
+
+INT PIN_FLD_CDR_BATCH_ID {
+
+	ID = 8210;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CDR_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_CDR_FILE_NAME {
+
+	ID = 8207;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CDR_FILE_TIME_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CDR_FILE_TIME_T {
+
+	ID = 8208;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CDR_REVENUE
+#=======================================
+
+DECIMAL PIN_FLD_CDR_REVENUE {
+
+	ID = 8209;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCARD_CDRS
+#=======================================
+
+INT PIN_FLD_DISCARD_CDRS {
+
+	ID = 8212;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUP_CDRS
+#=======================================
+
+INT PIN_FLD_DUP_CDRS {
+
+	ID = 8211;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_STATUS
+#=======================================
+
+ENUM PIN_FLD_PROCESS_STATUS {
+
+	ID = 8213;
+}
+
+
+#=======================================
+#  Storable Class /process_audit/pipeline
+#=======================================
+
+STORABLE CLASS /process_audit/pipeline {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Defines an instance of pipe-line audit info class. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_FAILED_CDRS {
+
+		DESCR = "Array for storing the failed CDRS Id";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FAILED_CDR_ID {
+
+			DESCR = "CDR Id";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FAILED_CDR_REASON {
+
+			DESCR = "CDR Error Code";
+			ORDER = 0;
+			LENGTH = 124;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_PIPE_LINE_INFO {
+
+		DESCR = "Structure for pipe-line process audit info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CDR_BATCH_ID {
+
+			DESCR = "CDR file Batch Id";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CDR_FILE_NAME {
+
+			DESCR = "Inputfile name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CDR_FILE_TIME_T {
+
+			DESCR = "The file time stamp. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CDR_REVENUE {
+
+			DESCR = "Revenue for CDR file";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DISCARD_CDRS {
+
+			DESCR = "Count of discarded CDRs";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DUP_CDRS {
+
+			DESCR = "Count of duplicate CDRs";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PROCESS_STATUS {
+
+			DESCR = "Process status (0) Process Failed (1) completion of process";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/pipeline
+#=======================================
+
+STORABLE CLASS /process_audit/pipeline IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_FAILED_CDRS {
+
+		SQL_TABLE = "proc_aud_pipeline_err_cdr_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FAILED_CDR_ID {
+
+			SQL_COLUMN = "CDR_ID";
+		}
+
+		STRING PIN_FLD_FAILED_CDR_REASON {
+
+			SQL_COLUMN = "CDR_ERROR_CODE";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_PIPE_LINE_INFO {
+
+		SQL_TABLE = "proc_aud_pipe_line_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CDR_BATCH_ID {
+
+			SQL_COLUMN = "BatchId";
+		}
+
+		STRING PIN_FLD_CDR_FILE_NAME {
+
+			SQL_COLUMN = "FileName";
+		}
+
+		TIMESTAMP PIN_FLD_CDR_FILE_TIME_T {
+
+			SQL_COLUMN = "filetime_t";
+		}
+
+		DECIMAL PIN_FLD_CDR_REVENUE {
+
+			SQL_COLUMN = "Revenue";
+		}
+
+		INT PIN_FLD_DISCARD_CDRS {
+
+			SQL_COLUMN = "DiscardCdr";
+		}
+
+		INT PIN_FLD_DUP_CDRS {
+
+			SQL_COLUMN = "DupCdr";
+		}
+
+		ENUM PIN_FLD_PROCESS_STATUS {
+
+			SQL_COLUMN = "ProcessStatus";
+		}
+
+	}
+
+}
+

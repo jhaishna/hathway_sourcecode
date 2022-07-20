@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/settlement/roaming
+#=======================================
+
+STORABLE CLASS /item/settlement/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Settlement Item Object. Use to settle roaming or inter carrier exchange";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/roaming
+#=======================================
+
+STORABLE CLASS /item/settlement/roaming IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,46 @@
+
+#=======================================
+#  Storable Class /event/billing/writeoff_reversal
+#=======================================
+
+STORABLE CLASS /event/billing/writeoff_reversal {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to capture write-off reversal events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/writeoff_reversal/tax
+#=======================================
+
+STORABLE CLASS /event/billing/writeoff_reversal/tax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to capture write-off reversal events.This event belongs to /item/writeoff_reversal.This event is created for writeoff reversals with tax mode in addition to the event for the net amount and has tax amount in it. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/writeoff_reversal
+#=======================================
+
+STORABLE CLASS /event/billing/writeoff_reversal IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/writeoff_reversal/tax
+#=======================================
+
+STORABLE CLASS /event/billing/writeoff_reversal/tax IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+

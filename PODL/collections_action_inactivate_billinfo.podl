@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /collections_action/inactivate_billinfo
+#=======================================
+
+STORABLE CLASS /collections_action/inactivate_billinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store inactivate billinfo actioninformation.This object is created when inactivate billinfo actionis scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/inactivate_billinfo
+#=======================================
+
+STORABLE CLASS /collections_action/inactivate_billinfo IMPLEMENTATION ORACLE7 {
+
+}
+

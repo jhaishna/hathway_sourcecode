@@ -1,0 +1,222 @@
+
+#=======================================
+#  Field PIN_FLD_FAILED_PAYMENT_FEE
+#=======================================
+
+SUBSTRUCT PIN_FLD_FAILED_PAYMENT_FEE {
+
+	ID = 945;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT_ORIGINAL_PAYMENT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT_ORIGINAL_PAYMENT {
+
+	ID = 946;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHANNEL_ID
+#=======================================
+
+INT PIN_FLD_CHANNEL_ID {
+
+	ID = 944;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_SEGMENT
+#=======================================
+
+INT PIN_FLD_CUSTOMER_SEGMENT {
+
+	ID = 759;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPE
+#=======================================
+
+ENUM PIN_FLD_PAY_TYPE {
+
+	ID = 7852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_TRANS_ID {
+
+	ID = 189;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/fee
+#=======================================
+
+STORABLE CLASS /event/billing/fee {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class are used to store generic fee details.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/fee/failed_payment
+#=======================================
+
+STORABLE CLASS /event/billing/fee/failed_payment {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class are created at time of applying the payment failure fee";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FAILED_PAYMENT_FEE {
+
+		DESCR = "This substruct is used to store Payment Fee Information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT_ORIGINAL_PAYMENT {
+
+			DESCR = "This is the Original Payment Amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			DESCR = "This is the Payment Channel ID";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CUSTOMER_SEGMENT {
+
+			DESCR = "This is Segment of Customer";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			DESCR = "This is the Payment Type.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			DESCR = "This value is Transaction Id of failed payment";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/fee
+#=======================================
+
+STORABLE CLASS /event/billing/fee IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/fee/failed_payment
+#=======================================
+
+STORABLE CLASS /event/billing/fee/failed_payment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FAILED_PAYMENT_FEE {
+
+		SQL_TABLE = "event_billing_fee_failpymt_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT_ORIGINAL_PAYMENT {
+
+			SQL_COLUMN = "amount_original_payment";
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			SQL_COLUMN = "channel_id";
+		}
+
+		INT PIN_FLD_CUSTOMER_SEGMENT {
+
+			SQL_COLUMN = "customer_segment";
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			SQL_COLUMN = "pay_type";
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			SQL_COLUMN = "trans_id";
+		}
+
+	}
+
+}
+

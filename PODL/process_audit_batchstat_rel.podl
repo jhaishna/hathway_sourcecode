@@ -1,0 +1,171 @@
+
+#=======================================
+#  Field PIN_FLD_GROUP_DETAILS
+#=======================================
+
+ARRAY PIN_FLD_GROUP_DETAILS {
+
+	ID = 9003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_POID_ID0
+#=======================================
+
+DECIMAL PIN_FLD_END_POID_ID0 {
+
+	ID = 5963;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_COUNT
+#=======================================
+
+INT PIN_FLD_EVENT_COUNT {
+
+	ID = 9007;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_POID_ID0
+#=======================================
+
+DECIMAL PIN_FLD_START_POID_ID0 {
+
+	ID = 5962;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_VALUE
+#=======================================
+
+DECIMAL PIN_FLD_TOTAL_VALUE {
+
+	ID = 9014;
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/rel
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/rel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores REL audit informatiom";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		DESCR = "Group details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_END_POID_ID0 {
+
+			DESCR = "End Poid";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			DESCR = "Total number of EDRs";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_START_POID_ID0 {
+
+			DESCR = "Start Poid";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOTAL_VALUE {
+
+			DESCR = "Total Value";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/batchstat/rel
+#=======================================
+
+STORABLE CLASS /process_audit/batchstat/rel IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "gdtls_rel_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_END_POID_ID0 {
+
+			SQL_COLUMN = "End_poid";
+		}
+
+		INT PIN_FLD_EVENT_COUNT {
+
+			SQL_COLUMN = "Event_Count";
+		}
+
+		DECIMAL PIN_FLD_START_POID_ID0 {
+
+			SQL_COLUMN = "Start_poid";
+		}
+
+		DECIMAL PIN_FLD_TOTAL_VALUE {
+
+			SQL_COLUMN = "Total_Value";
+		}
+
+	}
+
+}
+

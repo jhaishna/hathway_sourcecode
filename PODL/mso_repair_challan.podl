@@ -1,0 +1,512 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICES
+#=======================================
+
+ARRAY PIN_FLD_DEVICES {
+
+	ID = 5558;
+}
+
+
+#=======================================
+#  Field MSO_FLD_MAKE
+#=======================================
+
+STRING MSO_FLD_MAKE {
+
+	ID = 42201;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SERIAL_NO
+#=======================================
+
+STRING MSO_FLD_SERIAL_NO {
+
+	ID = 42009;
+	DESCR = "Device Serial Number";
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_ID
+#=======================================
+
+STRING PIN_FLD_DEVICE_ID {
+
+	ID = 5551;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_OBJ
+#=======================================
+
+POID PIN_FLD_DEVICE_OBJ {
+
+	ID = 5559;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECEIPT_NO
+#=======================================
+
+STRING PIN_FLD_RECEIPT_NO {
+
+	ID = 929;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USER_NAME
+#=======================================
+
+STRING PIN_FLD_USER_NAME {
+
+	ID = 9164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VENDOR
+#=======================================
+
+STRING PIN_FLD_VENDOR {
+
+	ID = 6017;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END
+#=======================================
+
+TIMESTAMP MSO_FLD_WARRANTY_END {
+
+        ID = 42004;
+        DESCR = "Populated during device assignment with actual date";
+}
+
+
+
+#=======================================
+#  Storable Class /mso_repair_challan
+#=======================================
+
+STORABLE CLASS /mso_repair_challan {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "store details of challan raised for devices repaired by vendor";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_DEVICES {
+
+		DESCR = "to store devices repaired under this challan";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_MAKE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_SERIAL_NO {
+
+			DESCR = "Device Serial Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_DEVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_WARRANTY_END {
+
+                	DESCR = "Populated during device assignment with actual date";
+                	ORDER = 0;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_RECEIPT_NO {
+
+		DESCR = "to store BRM generated challan number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "0- new,1- done";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "to store user_obj who generated challan";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_USER_NAME {
+
+		DESCR = "to store user details who generated challan";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_VENDOR {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_repair_challan
+#=======================================
+
+STORABLE CLASS /mso_repair_challan IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_repair_challan_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ARRAY PIN_FLD_DEVICES {
+
+		SQL_TABLE = "mso_repair_challan_devices_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_MAKE {
+
+			SQL_COLUMN = "make";
+		}
+
+		STRING MSO_FLD_SERIAL_NO {
+
+			SQL_COLUMN = "serial_no";
+		}
+
+		STRING PIN_FLD_DEVICE_ID {
+
+			SQL_COLUMN = "device_id";
+		}
+
+		POID PIN_FLD_DEVICE_OBJ {
+
+			SQL_COLUMN = "device_obj";
+		}
+
+
+		TIMESTAMP MSO_FLD_WARRANTY_END {
+
+               		SQL_COLUMN = "WARRANTY_END";
+        	}
+
+
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_RECEIPT_NO {
+
+		SQL_COLUMN = "receipt_no";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "user_id";
+	}
+
+	STRING PIN_FLD_USER_NAME {
+
+		SQL_COLUMN = "user_name";
+	}
+
+	STRING PIN_FLD_VENDOR {
+
+		SQL_COLUMN = "VENDOR_ACCOUNT_NO";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

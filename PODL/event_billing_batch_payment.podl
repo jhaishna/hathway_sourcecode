@@ -1,0 +1,280 @@
+
+#=======================================
+#  Field PIN_FLD_BATCH_INFO
+#=======================================
+
+ARRAY PIN_FLD_BATCH_INFO {
+
+	ID = 926;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACH
+#=======================================
+
+INT PIN_FLD_ACH {
+
+	ID = 7851;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_ID
+#=======================================
+
+STRING PIN_FLD_BATCH_ID {
+
+	ID = 933;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_BATCH_TOTAL {
+
+	ID = 934;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHANNEL_ID
+#=======================================
+
+INT PIN_FLD_CHANNEL_ID {
+
+	ID = 944;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCKBOX_ID
+#=======================================
+
+STRING PIN_FLD_LOCKBOX_ID {
+
+	ID = 936;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCKBOX_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LOCKBOX_T {
+
+	ID = 937;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESULT
+#=======================================
+
+ENUM PIN_FLD_RESULT {
+
+	ID = 50;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBMITTER_ID
+#=======================================
+
+STRING PIN_FLD_SUBMITTER_ID {
+
+	ID = 935;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/batch/payment
+#=======================================
+
+STORABLE CLASS /event/billing/batch/payment {
+
+	LABEL = "Payment Batch Information";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Created by the system to record the batch payments.This is used to identify a charge batch for clearinghouse resubmit and an externally initiated payment batch for Portal.The object ID of this event is stored as the PIN_FLD_SESSION_OBJ field in the individual charge events and the payment events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BATCH_INFO {
+
+		DESCR = "Array detailing the batch payment information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACH {
+
+			DESCR = "Automatic Clearing House id. This points to the rec_id of PIN_FLD_ACH_INFO array in the /config/ach object. If not specified charges associated with this payment method will not be collect.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BATCH_ID {
+
+			DESCR = "Batch Id. This is derived from the PIN_FLD_TRANS_ID of the payment events associated with this batch by removing the sequence number.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_BATCH_TOTAL {
+
+			DESCR = "Total payment amount in this batch.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			DESCR = "Identifies the channel from which payment is received.Value must match with payment channel id configured in /strings object so that channel id can be translated to a specific channel name";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LOCKBOX_ID {
+
+			DESCR = "Lockbox id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LOCKBOX_T {
+
+			DESCR = "Lockbox date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			DESCR = "Result of batch submitted.  Before submission to CC DM, result will be set to checkpoint (999).  The result will subsequently be set to pending (888) if results are pending or success (0) if transactions were processed successfully.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUBMITTER_ID {
+
+			DESCR = "Submitter id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/batch/payment
+#=======================================
+
+STORABLE CLASS /event/billing/batch/payment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BATCH_INFO {
+
+		SQL_TABLE = "event_payment_batch_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACH {
+
+			SQL_COLUMN = "ach";
+		}
+
+		STRING PIN_FLD_BATCH_ID {
+
+			SQL_COLUMN = "batch_id";
+		}
+
+		DECIMAL PIN_FLD_BATCH_TOTAL {
+
+			SQL_COLUMN = "batch_total";
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			SQL_COLUMN = "channel_id";
+		}
+
+		STRING PIN_FLD_LOCKBOX_ID {
+
+			SQL_COLUMN = "lockbox_id";
+		}
+
+		TIMESTAMP PIN_FLD_LOCKBOX_T {
+
+			SQL_COLUMN = "lockbox_t";
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			SQL_COLUMN = "result";
+		}
+
+		STRING PIN_FLD_SUBMITTER_ID {
+
+			SQL_COLUMN = "submitter_id";
+		}
+
+	}
+
+}
+

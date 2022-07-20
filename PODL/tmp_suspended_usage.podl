@@ -1,0 +1,371 @@
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODE
+#=======================================
+
+ENUM PIN_FLD_MODE {
+
+	ID = 1576;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PIPELINE_ERROR_CODE
+#=======================================
+
+INT PIN_FLD_PIPELINE_ERROR_CODE {
+
+	ID = 8164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECYCLE_KEY
+#=======================================
+
+STRING PIN_FLD_RECYCLE_KEY {
+
+	ID = 8184;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECYCLE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_RECYCLE_T {
+
+	ID = 8161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_ID
+#=======================================
+
+DECIMAL PIN_FLD_SUSPENSE_ID {
+
+	ID = 8172;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_REASON
+#=======================================
+
+ENUM PIN_FLD_SUSPENSE_REASON {
+
+	ID = 8162;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_SUBREASON
+#=======================================
+
+ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+	ID = 8163;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /tmp_suspended_usage
+#=======================================
+
+STORABLE CLASS /tmp_suspended_usage {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Temporary data for updating suspended EDR.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_MODE {
+
+		DESCR = "Recycle mode: normal (1) or test recycle (2).";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_PIPELINE_ERROR_CODE {
+
+		DESCR = "Pipeline error code.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_RECYCLE_KEY {
+
+		DESCR = "Key for selecting EDRs to be recycled";
+		ORDER = 2;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_RECYCLE_T {
+
+		DESCR = "Date and time EDR for this recycling.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Current state of suspended EDR.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_SUSPENSE_ID {
+
+		DESCR = "Recycle suspended_usage poid_id0.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_SUSPENSE_REASON {
+
+		DESCR = "Code for reason why EDR was suspended.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+		DESCR = "Code for further qualification of reason EDR was suspended.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /tmp_suspended_usage
+#=======================================
+
+STORABLE CLASS /tmp_suspended_usage IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "tmp_suspended_usage_t";
+	SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ENUM PIN_FLD_MODE {
+
+		SQL_COLUMN = "recycle_mode";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	INT PIN_FLD_PIPELINE_ERROR_CODE {
+
+		SQL_COLUMN = "error_code";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_RECYCLE_KEY {
+
+		SQL_COLUMN = "recycle_key";
+	}
+
+	TIMESTAMP PIN_FLD_RECYCLE_T {
+
+		SQL_COLUMN = "recycle_t";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	DECIMAL PIN_FLD_SUSPENSE_ID {
+
+		SQL_COLUMN = "suspense_id";
+	}
+
+	ENUM PIN_FLD_SUSPENSE_REASON {
+
+		SQL_COLUMN = "suspense_reason";
+	}
+
+	ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+		SQL_COLUMN = "suspense_subreason";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

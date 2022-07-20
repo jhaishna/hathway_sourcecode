@@ -1,0 +1,92 @@
+
+#=======================================
+#  Field PIN_FLD_REMINDER_INFO
+#=======================================
+
+ARRAY PIN_FLD_REMINDER_INFO {
+
+	ID = 7726;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MESSAGE_OBJ
+#=======================================
+
+POID PIN_FLD_MESSAGE_OBJ {
+
+	ID = 7703;
+}
+
+
+#=======================================
+#  Storable Class /collections_action/invoice_reminder
+#=======================================
+
+STORABLE CLASS /collections_action/invoice_reminder {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store additional information for invoice_reminder action ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_REMINDER_INFO {
+
+		DESCR = "Additional info for invoice reminder action. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_MESSAGE_OBJ {
+
+			DESCR = "Link to the /message object, which holds the actual invoice reminder message. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/invoice_reminder
+#=======================================
+
+STORABLE CLASS /collections_action/invoice_reminder IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_REMINDER_INFO {
+
+		SQL_TABLE = "collections_inv_reminder_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_MESSAGE_OBJ {
+
+			SQL_COLUMN = "message_obj";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/subscription/cancel
+#=======================================
+
+STORABLE CLASS /event/audit/subscription/cancel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/subscription/cancel
+#=======================================
+
+STORABLE CLASS /event/audit/subscription/cancel IMPLEMENTATION ORACLE7 {
+
+}
+

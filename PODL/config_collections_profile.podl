@@ -1,0 +1,168 @@
+
+#=======================================
+#  Field PIN_FLD_PROFILE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_PROFILE_INFO {
+
+	ID = 7707;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_DESCR
+#=======================================
+
+STRING PIN_FLD_PROFILE_DESCR {
+
+	ID = 7709;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_NAME
+#=======================================
+
+STRING PIN_FLD_PROFILE_NAME {
+
+	ID = 7708;
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile
+#=======================================
+
+STORABLE CLASS /config/collections/profile {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Collections profile object.  Contains information to define the collections profiles. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROFILE_INFO {
+
+		DESCR = "Substructure to hold profile specific info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Numeric value of a currency resource. A value of 0 implies that no currency is tied with the profile. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PROFILE_DESCR {
+
+			DESCR = "Collections profile description.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PROFILE_NAME {
+
+			DESCR = "Collections profile name to be displayed on GUI tools";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile/default
+#=======================================
+
+STORABLE CLASS /config/collections/profile/default {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Contains defininition for default collection profiles that can be globally seen. ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile
+#=======================================
+
+STORABLE CLASS /config/collections/profile IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROFILE_INFO {
+
+		SQL_TABLE = "config_collections_profile_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		STRING PIN_FLD_PROFILE_DESCR {
+
+			SQL_COLUMN = "profile_descr";
+		}
+
+		STRING PIN_FLD_PROFILE_NAME {
+
+			SQL_COLUMN = "profile_name";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile/default
+#=======================================
+
+STORABLE CLASS /config/collections/profile/default IMPLEMENTATION ORACLE7 {
+
+}
+

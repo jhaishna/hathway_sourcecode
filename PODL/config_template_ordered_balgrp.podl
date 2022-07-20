@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/template/ordered_balgrp
+#=======================================
+
+STORABLE CLASS /config/template/ordered_balgrp {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for ordered_balgrp object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/ordered_balgrp
+#=======================================
+
+STORABLE CLASS /config/template/ordered_balgrp IMPLEMENTATION ORACLE7 {
+
+}
+

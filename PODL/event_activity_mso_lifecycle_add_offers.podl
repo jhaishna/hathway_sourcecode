@@ -1,0 +1,272 @@
+
+#=======================================
+#  Field PIN_FLD_OFFER
+#=======================================
+
+ARRAY PIN_FLD_OFFER {
+
+	ID = 436;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_FLAGS
+#=======================================
+
+ENUM PIN_FLD_DISCOUNT_FLAGS {
+
+	ID = 478;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_FROM {
+
+	ID = 6429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_TO {
+
+	ID = 6430;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/add_offers
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/add_offers {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "To have life cycle events related to adding DATA/DISCOUNT offers";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OFFER {
+
+		DESCR = "This holds the entries related to DATA and DISCOUNT OFFERS";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "PERCENT/AMOUNT";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DISCOUNT_FLAGS {
+
+			DESCR = "1-PERCENT 2-AMOUNT";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "1-DISCOUNT 2-DATA";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/add_offers
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/add_offers IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OFFER {
+
+		SQL_TABLE = "MSO_EVT_LC_ADD_OFFERS_T";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "AMOUNT";
+		}
+
+		ENUM PIN_FLD_DISCOUNT_FLAGS {
+
+			SQL_COLUMN = "DISC_FLAGS";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "offer_type";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			SQL_COLUMN = "VALID_FROM_T";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			SQL_COLUMN = "VALID_TO_T";
+		}
+
+	}
+
+}
+

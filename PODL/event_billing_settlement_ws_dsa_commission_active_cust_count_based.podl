@@ -1,0 +1,92 @@
+
+#=======================================
+#  Field PIN_FLD_CUSTOM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+	ID = 1518;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/dsa_commission/active_cust_count_based
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/dsa_commission/active_cust_count_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wholesale settlement event based on number active customers at the time of billing.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/dsa_commission/active_cust_count_based
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/dsa_commission/active_cust_count_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		SQL_TABLE = "event_dsa_sett_count_based_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			SQL_COLUMN = "active_cust_count";
+		}
+
+	}
+
+}
+

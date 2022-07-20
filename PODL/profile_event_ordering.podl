@@ -1,0 +1,171 @@
+
+#=======================================
+#  Field PIN_FLD_OOD_CRITERIA
+#=======================================
+
+ARRAY PIN_FLD_OOD_CRITERIA {
+
+	ID = 9611;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_CYCLE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_BILL_CYCLE_T {
+
+	ID = 9613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CRITERIA_NAME
+#=======================================
+
+STRING PIN_FLD_CRITERIA_NAME {
+
+	ID = 9522;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_EVENT_PROCESS_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_EVENT_PROCESS_T {
+
+	ID = 9612;
+}
+
+
+#=======================================
+#  Storable Class /profile/event_ordering
+#=======================================
+
+STORABLE CLASS /profile/event_ordering {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " Class to store the start time of last event processed  within the configured Criteria and balance group combination  for the account. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OOD_CRITERIA {
+
+		DESCR = "Array to hold rerating information specific to chronological ordering of events.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Balance group object";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_BILL_CYCLE_T {
+
+			DESCR = "Start time of the billing cycle of the event. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CRITERIA_NAME {
+
+			DESCR = "Criteria name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_EVENT_PROCESS_T {
+
+			DESCR = "Last event process time for current accounting cycle. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/event_ordering
+#=======================================
+
+STORABLE CLASS /profile/event_ordering IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OOD_CRITERIA {
+
+		SQL_TABLE = "profile_event_ordering_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp";
+		}
+
+		TIMESTAMP PIN_FLD_BILL_CYCLE_T {
+
+			SQL_COLUMN = "bill_cycle_t";
+		}
+
+		STRING PIN_FLD_CRITERIA_NAME {
+
+			SQL_COLUMN = "criteria_name";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_EVENT_PROCESS_T {
+
+			SQL_COLUMN = "last_event_process_t";
+		}
+
+	}
+
+}
+

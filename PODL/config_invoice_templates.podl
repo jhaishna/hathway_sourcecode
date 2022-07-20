@@ -1,0 +1,321 @@
+
+#=======================================
+#  Field PIN_FLD_INHERITED_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_INHERITED_INFO {
+
+	ID = 66;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_NAME
+#=======================================
+
+STRING PIN_FLD_TEMPLATE_NAME {
+
+	ID = 2365;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_INFO
+#=======================================
+
+ARRAY PIN_FLD_INV_INFO {
+
+	ID = 898;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BUFFER
+#=======================================
+
+BUF PIN_FLD_BUFFER {
+
+	ID = 34;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FORMATS
+#=======================================
+
+ARRAY PIN_FLD_FORMATS {
+
+	ID = 1129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILENAME
+#=======================================
+
+STRING PIN_FLD_FILENAME {
+
+	ID = 500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE
+#=======================================
+
+STRING PIN_FLD_LOCALE {
+
+	ID = 109;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Storable Class /config/invoice_templates
+#=======================================
+
+STORABLE CLASS /config/invoice_templates {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "The objects of this class are used to hold the HTML templates and style sheets. They are applied during invoice viewing. A command line utility can be used to load the style sheets or HTML templates into the config objects.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_INHERITED_INFO {
+
+		DESCR = "This contains additional fields used for invoice template config objects.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "This flag is used to distinguish the methods of formatting of an invoice between the HTML template and the XSL style sheet.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TEMPLATE_NAME {
+
+			DESCR = "This template name should be unique in a given brand and for a given category. It is reserved for future use.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_INV_INFO {
+
+		DESCR = "This array holds invoice templates. Each array element represents a template of a specific format and a specific locale. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_BUFFER {
+
+			DESCR = "This holds an invoice template used during invoice viewing by PCM_OP_INV_VIEW_INVOICE. You can store arbitrary format templates, but you need to have corresponding policies to handle them.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_FORMATS {
+
+			DESCR = "This array holds XSL style sheets for each level of the invoice template. Typically, it is used for Drill-down invoices.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FILENAME {
+
+				DESCR = "This is the file name of the style sheet used during drill-down invoicing.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_LOCALE {
+
+			DESCR = "This is the preferred locale for the template.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "This indicates the type of the template. The default type is HTML template. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/invoice_templates/dunning
+#=======================================
+
+STORABLE CLASS /config/invoice_templates/dunning {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This is sub class of /config/invoice_templates/ objects.This class is used to hold the HTML templates and stylesheets that are applied during dunning letter viewing. A command line util can be used to load the style sheetsor HTML templates into the config objects";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/invoice_templates
+#=======================================
+
+STORABLE CLASS /config/invoice_templates IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_INHERITED_INFO {
+
+		SQL_TABLE = "config_inv_temp_inherited_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		STRING PIN_FLD_TEMPLATE_NAME {
+
+			SQL_COLUMN = "template_name";
+		}
+
+	}
+
+	ARRAY PIN_FLD_INV_INFO {
+
+		SQL_TABLE = "config_inv_temp_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_BUFFER {
+
+			SQL_TABLE = "config_inv_temp_buf_t";
+			SQL_COLUMN = "buf";
+			SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+		}
+
+		ARRAY PIN_FLD_FORMATS {
+
+			SQL_TABLE = "config_inv_temp_formats_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FILENAME {
+
+				SQL_COLUMN = "filename";
+			}
+
+		}
+
+		STRING PIN_FLD_LOCALE {
+
+			SQL_COLUMN = "locale";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/invoice_templates/dunning
+#=======================================
+
+STORABLE CLASS /config/invoice_templates/dunning IMPLEMENTATION ORACLE7 {
+
+}
+

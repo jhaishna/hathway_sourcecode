@@ -1,0 +1,155 @@
+
+#=======================================
+#  Field PIN_FLD_COUNTRIES
+#=======================================
+
+ARRAY PIN_FLD_COUNTRIES {
+
+	ID = 2003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CANON_COUNTRY
+#=======================================
+
+STRING PIN_FLD_CANON_COUNTRY {
+
+	ID = 1501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCIES
+#=======================================
+
+ARRAY PIN_FLD_CURRENCIES {
+
+	ID = 1622;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Storable Class /config/country_currency_map
+#=======================================
+
+STORABLE CLASS /config/country_currency_map {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object this class contains information on permitted country/currency combinations.This is only used by the Bertelsmann Direct Debit optional install in the current version of Infranet. A sample file pin_country_currency_map that can be used with load_pin_country_currency_map is shipped with the Bertelsmann optional install.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_COUNTRIES {
+
+		DESCR = "Array containing all of the countries that are valid for this resource. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CANON_COUNTRY {
+
+			DESCR = "A string code for the country. The ISO code representing the country should be used.";
+			ORDER = 0;
+			LENGTH = 3;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_CURRENCIES {
+
+			DESCR = "Configuration information about each currency that is valid for this country. ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_CURRENCY {
+
+				DESCR = "The numeric value of the currency that is permitted. E.g. 840 is US Dollar. See pin_currency.h for the list of the ISO currencies. ";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/country_currency_map
+#=======================================
+
+STORABLE CLASS /config/country_currency_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_COUNTRIES {
+
+		SQL_TABLE = "config_ctry_cur_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CANON_COUNTRY {
+
+			SQL_COLUMN = "country_code";
+		}
+
+		ARRAY PIN_FLD_CURRENCIES {
+
+			SQL_TABLE = "config_ctry_cur_arr_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_CURRENCY {
+
+				SQL_COLUMN = "currency_id";
+			}
+
+		}
+
+	}
+
+}
+

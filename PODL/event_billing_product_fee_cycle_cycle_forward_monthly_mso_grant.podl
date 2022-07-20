@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_grant
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_grant {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Grant event";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_grant
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_grant IMPLEMENTATION ORACLE7 {
+
+}
+

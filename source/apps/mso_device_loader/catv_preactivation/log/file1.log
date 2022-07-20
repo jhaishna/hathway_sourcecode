@@ -1,0 +1,137 @@
+
+Processing Input file = ./catv_preactivation/input/file1
+Template file         = ./catv_preactivation/catv_preactivation.TMPL
+Flist file i          = ./catv_preactivation/catv_preactivation.IFL
+Opcode = 43003
+
+loglevel = 3
+
+DEFAULT db:  0.0.0.1 
+
+Input file template is:
+account_no:[\w]|vc_id:\d{12}|stb_id:\d{16}|network_node:[\w]|stb_type:[\w]|ca_id:[\w]|region_key:[\w]|bouquet_id:[\w]
+
+
+Flist template is:
+0 PIN_FLD_POID            POID [0] 0.0.0.1 /catv_preactivation -1 0
+0 PIN_FLD_ACCOUNT_OBJ     POID [0] LCO_obj
+0 MSO_FLD_STB_ID          STR [0] "stb_id"
+0 MSO_FLD_VC_ID           STR [0] "vc_id"
+0 MSO_FLD_NETWORK_NODE    STR [0] "network_node"
+0 PIN_FLD_DEVICE_TYPE     STR [0] "stb_type"
+0 MSO_FLD_CA_ID           STR [0] "ca_id"
+0 MSO_FLD_REGION_KEY      STR [0] "region_key"
+0 MSO_FLD_BOUQUET_ID      STR [0] "bouquet_id"
+
+Processing record :
+0.0.0.1-121266,112013000012,1120130000000012,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+
+flist for LCO search :
+0 PIN_FLD_POID              POID [0]  0.0.0.1 /search -1  
+0 PIN_FLD_FLAGS     INT [0] 512 
+0 PIN_FLD_TEMPLATE        STR [0] "select X from /account where F1 = V1 " 
+0 PIN_FLD_ARGS        ARRAY [1] 
+1   PIN_FLD_ACCOUNT_NO  STR [0] "0.0.0.1-121266"
+0 PIN_FLD_RESULTS       ARRAY [0]
+1  PIN_FLD_POID        POID [0] NULL
+
+LCO search output
+# number of field entries allocated 20, used 2
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /search -1 0
+0 PIN_FLD_RESULTS       ARRAY [0] allocated 20, used 1
+1     PIN_FLD_POID           POID [0] 0.0.0.1 /account 121266 22
+
+Device flist after enriching LCO_obj:
+0 PIN_FLD_POID            POID [0] 0.0.0.1 /catv_preactivation -1 0
+0 PIN_FLD_ACCOUNT_OBJ     POID [0]  0.0.0.1 /account 121266 22
+0 MSO_FLD_STB_ID          STR [0] "1120130000000012"
+0 MSO_FLD_VC_ID           STR [0] "112013000012"
+0 MSO_FLD_NETWORK_NODE    STR [0] "NDS"
+0 PIN_FLD_DEVICE_TYPE     STR [0] "PVR"
+0 MSO_FLD_CA_ID           STR [0] "ALL-CHANNELS"
+0 MSO_FLD_REGION_KEY      STR [0] "IND+600006"
+0 MSO_FLD_BOUQUET_ID      STR [0] "BOUQUET_ID1"
+
+Buffer created :
+# number of field entries allocated 20, used 2
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /catv_preactivation -1 0
+0 PIN_FLD_INPUT_FLIST     BUF [0] flag/size/offset 0x0 500 0 data:
+x000000  23206e756d626572206f66206669656c   # number of fiel
+x000010  6420656e747269657320616c6c6f6361   d entries alloca
+x000020  7465642032302c207573656420390a30   ted 20, used 9.0
+x000030  2050494e5f464c445f504f4944202020    PIN_FLD_POID   
+x000040  2020202020202020504f4944205b305d           POID [0]
+x000050  20302e302e302e31202f636174765f70    0.0.0.1 /catv_p
+x000060  726561637469766174696f6e202d3120   reactivation -1 
+x000070  300a302050494e5f464c445f4143434f   0.0 PIN_FLD_ACCO
+x000080  554e545f4f424a20202020504f494420   UNT_OBJ    POID 
+x000090  5b305d20302e302e302e31202f616363   [0] 0.0.0.1 /acc
+x0000a0  6f756e74203132313236362032320a30   ount 121266 22.0
+x0000b0  204d534f5f464c445f5354425f494420    MSO_FLD_STB_ID 
+x0000c0  202020202020202020535452205b305d            STR [0]
+x0000d0  20223131323031333030303030303030    "11201300000000
+x0000e0  3132220a30204d534f5f464c445f5643   12".0 MSO_FLD_VC
+x0000f0  5f494420202020202020202020205354   _ID           ST
+x000100  52205b305d2022313132303133303030   R [0] "112013000
+x000110  303132220a30204d534f5f464c445f4e   012".0 MSO_FLD_N
+x000120  4554574f524b5f4e4f44452020202053   ETWORK_NODE    S
+x000130  5452205b305d20224e4453220a302050   TR [0] "NDS".0 P
+x000140  494e5f464c445f4445564943455f5459   IN_FLD_DEVICE_TY
+x000150  50452020202020535452205b305d2022   PE     STR [0] "
+x000160  505652220a30204d534f5f464c445f43   PVR".0 MSO_FLD_C
+x000170  415f4944202020202020202020202053   A_ID           S
+x000180  5452205b305d2022414c4c2d4348414e   TR [0] "ALL-CHAN
+x000190  4e454c53220a30204d534f5f464c445f   NELS".0 MSO_FLD_
+x0001a0  524547494f4e5f4b4559202020202020   REGION_KEY      
+x0001b0  535452205b305d2022494e442b363030   STR [0] "IND+600
+x0001c0  303036220a30204d534f5f464c445f42   006".0 MSO_FLD_B
+x0001d0  4f55515545545f494420202020202053   OUQUET_ID      S
+x0001e0  5452205b305d2022424f55515545545f   TR [0] "BOUQUET_
+x0001f0  49443122                           ID1"
+
+Object created successfully :
+# number of field entries allocated 20, used 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /mso_mta_job/catv_preactivation 300034 0
+
+Processing record :
+0.0.0.1-12126,112013000011,1120130000000011,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+
+flist for LCO search :
+0 PIN_FLD_POID              POID [0]  0.0.0.1 /search -1  
+0 PIN_FLD_FLAGS     INT [0] 512 
+0 PIN_FLD_TEMPLATE        STR [0] "select X from /account where F1 = V1 " 
+0 PIN_FLD_ARGS        ARRAY [1] 
+1   PIN_FLD_ACCOUNT_NO  STR [0] "0.0.0.1-12126"
+0 PIN_FLD_RESULTS       ARRAY [0]
+1  PIN_FLD_POID        POID [0] NULL
+
+LCO search output
+# number of field entries allocated 20, used 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /search -1 0
+
+Invaid LCO account no for record: 
+0.0.0.1-12126,112013000011,1120130000000011,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+
+Please correct and process the error file: ./catv_preactivation/error/file1.error
+Processing record :
+0.0.0.1-121266,11201300001,1120130000000011,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+
+Field validation error for record: 
+0.0.0.1-121266,11201300001,1120130000000011,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+
+Please correct and process the error file: ./catv_preactivation/error/file1.error
+Processing record :
+0.0.0.1-121266,112013000011,112013000000001,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+
+Field validation error for record: 
+0.0.0.1-121266,112013000011,112013000000001,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+
+Please correct and process the error file: ./catv_preactivation/error/file1.error
+
+Processing Summary
+	 Total number of records = 4
+	 Records failed in parsing = 0
+	 Records failed in field validation = 3
+	 Records failed in opcode execution = 0 
+
+Doing cleanup 

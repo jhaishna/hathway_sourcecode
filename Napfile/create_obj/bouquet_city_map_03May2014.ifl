@@ -1,0 +1,338 @@
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "GHAZIABAD"
+0 MSO_FLD_CITY_CODE            STR [0] "UP-D187-C843"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58014"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E29E"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "BAGALKOT"
+0 MSO_FLD_CITY_CODE            STR [0] "KA-D31-C218"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57942"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E256"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "UJJAIN"
+0 MSO_FLD_CITY_CODE            STR [0] "MP-D556-C2589"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58040"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2B8"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "DELHI"
+0 MSO_FLD_CITY_CODE            STR [0] "DL-D514-C1850"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58036"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2B4"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] "58021"
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] "E2A5"
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "PUNE"
+0 MSO_FLD_CITY_CODE            STR [0] "MH-D433-C2073"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58051"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2C3"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "NANDED"
+0 MSO_FLD_CITY_CODE            STR [0] "MH-D383-C1793"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57969"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E271"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "JABALPUR"
+0 MSO_FLD_CITY_CODE            STR [0] "MP-D224-C1026"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57967"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E26F"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "VARANASI"
+0 MSO_FLD_CITY_CODE            STR [0] "UP-D569-C2639"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57966"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E26E"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "RAMPUR"
+0 MSO_FLD_CITY_CODE            STR [0] "UP-D451-C2151"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57987"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E283"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "BELGAUM"
+0 MSO_FLD_CITY_CODE            STR [0] "KA-D141-C341"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58052"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2C4"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "MYSORE"
+0 MSO_FLD_CITY_CODE            STR [0] "KA-D371-C1748"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58087"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2E7"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "BARODA"
+0 MSO_FLD_CITY_CODE            STR [0] "GJ-D566-C2623"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58052"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2C4"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "CHENNAI"
+0 MSO_FLD_CITY_CODE            STR [0] "TN-D103-C548"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58039"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2B7"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "LUDHIANA"
+0 MSO_FLD_CITY_CODE            STR [0] "PB-D330-C1498"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58050"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2C2"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "AGRA"
+0 MSO_FLD_CITY_CODE            STR [0] "UP-D4-C48"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57965"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E26D"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "SHAJAPUR"
+0 MSO_FLD_CITY_CODE            STR [0] "MP-D486-C2332"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57988"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E284"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "CHANDIGARH"
+0 MSO_FLD_CITY_CODE            STR [0] "CH-D99-C518"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58036"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2B4"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "JALANDHAR"
+0 MSO_FLD_CITY_CODE            STR [0] "PB-D231-C1051"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58050"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2C2"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "LATUR"
+0 MSO_FLD_CITY_CODE            STR [0] "MH-D323-C1479"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58005"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E295"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "RAIGAD"
+0 MSO_FLD_CITY_CODE            STR [0] "MH-D441-C2728"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57943"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E257"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "ALLAHABAD"
+0 MSO_FLD_CITY_CODE            STR [0] "UP-D12-C89"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57997"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E28D"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "JALNA"
+0 MSO_FLD_CITY_CODE            STR [0] "MH-D234-C1056"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57889"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E221"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "HOSHANGABAD"
+0 MSO_FLD_CITY_CODE            STR [0] "MP-D217-C993"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57939"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E253"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "SURAT"
+0 MSO_FLD_CITY_CODE            STR [0] "GJ-D524-C2461"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58059"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E2CB"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "GAUTAM BUDH NAGAR"
+0 MSO_FLD_CITY_CODE            STR [0] "UP-D185-C832"
+0 MSO_FLD_BOUQUET_ID           STR [0] "58014"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E29E"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+
+r << xx 1
+0 PIN_FLD_POID                POID [0] 0.0.0.1 /mso_cfg_bouquet_city_map -1 0
+0 PIN_FLD_ACCOUNT_OBJ         POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_CITY                 STR [0] "MAINPURI"
+0 MSO_FLD_CITY_CODE            STR [0] "UP-D341-C1548"
+0 MSO_FLD_BOUQUET_ID           STR [0] "57987"
+0 MSO_FLD_BOUQUET_ID_HEX       STR [0] "E283"
+0 MSO_FLD_BOUQUET_ID_HD        STR [0] ""
+0 MSO_FLD_BOUQUET_ID_HD_HEX    STR [0] ""
+xx
+xop 1 0 1
+
+

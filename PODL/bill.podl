@@ -1,0 +1,1008 @@
+
+#=======================================
+#  Field MSO_FLD_BILLTIME_TOTAL
+#=======================================
+
+DECIMAL MSO_FLD_BILLTIME_TOTAL {
+
+	ID = 43422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADJUSTED
+#=======================================
+
+DECIMAL PIN_FLD_ADJUSTED {
+
+	ID = 788;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_AR_BILLINFO_OBJ {
+
+	ID = 7908;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_HIERARCHY_SIZE
+#=======================================
+
+INT PIN_FLD_AR_HIERARCHY_SIZE {
+
+	ID = 2333;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_DATE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_BILL_DATE_T {
+
+	ID = 1058;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_NO
+#=======================================
+
+STRING PIN_FLD_BILL_NO {
+
+	ID = 793;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_OPERATOR
+#=======================================
+
+ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+	ID = 1612;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_RATE
+#=======================================
+
+DECIMAL PIN_FLD_CURRENCY_RATE {
+
+	ID = 1611;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_SECONDARY
+#=======================================
+
+INT PIN_FLD_CURRENCY_SECONDARY {
+
+	ID = 1616;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENT_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_CURRENT_TOTAL {
+
+	ID = 782;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISPUTED
+#=======================================
+
+DECIMAL PIN_FLD_DISPUTED {
+
+	ID = 786;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUE
+#=======================================
+
+DECIMAL PIN_FLD_DUE {
+
+	ID = 785;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_DUE_T {
+
+	ID = 798;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOICES
+#=======================================
+
+ARRAY PIN_FLD_INVOICES {
+
+	ID = 522;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HANDLE
+#=======================================
+
+STRING PIN_FLD_HANDLE {
+
+	ID = 523;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOICE_OBJ
+#=======================================
+
+POID PIN_FLD_INVOICE_OBJ {
+
+	ID = 47;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT
+#=======================================
+
+POID PIN_FLD_PARENT {
+
+	ID = 22;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+	ID = 7909;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PREVIOUS_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_PREVIOUS_TOTAL {
+
+	ID = 781;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECVD
+#=======================================
+
+DECIMAL PIN_FLD_RECVD {
+
+	ID = 787;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBORDS_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_SUBORDS_TOTAL {
+
+	ID = 783;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_DUE
+#=======================================
+
+DECIMAL PIN_FLD_TOTAL_DUE {
+
+	ID = 215;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANSFERED
+#=======================================
+
+DECIMAL PIN_FLD_TRANSFERED {
+
+	ID = 790;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITEOFF
+#=======================================
+
+DECIMAL PIN_FLD_WRITEOFF {
+
+	ID = 800;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /bill
+#=======================================
+
+STORABLE CLASS /bill {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Bill objects represent bills in Infranet. Each customer account has its own bill objects, even if the account is subordinate (the bill object will have a parent in that case). A bill object represents one billing period, which can be one or more months in length. The A/R for a bill is stored and tracked in the /item objects that point to the bill.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_BILLTIME_TOTAL {
+
+		DESCR = "Custom field to capture bill_time total";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this bill was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_ADJUSTED {
+
+		DESCR = "Total amount of adjustments that have been made to this bill. Includes both debit and credit adjustments (net). Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_AR_BILLINFO_OBJ {
+
+		DESCR = "Link to AR billinfo object. It is used for updating of subordinate bill objects for entire hierarchy.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_AR_HIERARCHY_SIZE {
+
+		DESCR = "number of subordinate bills under AR bill hierarchy.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		DESCR = "Link to billinfo object for which this bill was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_BILL_DATE_T {
+
+		DESCR = "Actual billing time";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BILL_NO {
+
+		DESCR = "Customer visible bill number. By default, bill numbers are guaranteed sequential. Custom bill numbering is possible via the PCM_OP_BILL_POL_PREP_BILLNO policy. Bill objects for subordinate accounts inherit their bill numbers from the parent bill object.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		DESCR = "Primary currency for the bill. Copied from the primary currency of the account owning the bill.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+		DESCR = "Reserved for future use.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CURRENCY_RATE {
+
+		DESCR = "Reserved for future use.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY_SECONDARY {
+
+		DESCR = "Secondary currency for the bill. Copied from the secondary currency of the account owning the bill.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CURRENT_TOTAL {
+
+		DESCR = "Total charges from items directly owned by this bill object (charges against the account directly)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DISPUTED {
+
+		DESCR = "Total amount of disputes that are currently open against the bill. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DUE {
+
+		DESCR = "Amount still due in this item. Due = Total - adjusted - disputed - recvd + or - transferred. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_DUE_T {
+
+		DESCR = "Due date of the bill. Calculated at bill processing time based on system configuration. See PIN_FLD_DUE_DOM and PIN_FLD_RELATIVE_DUE_T in /payinfo.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "Date of the end of the billing cycle that this bill represents. Will be zero, until billing is run.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "flags, currently used to mark on-demand, bill_now or regular  bill type. See pin_bill.h.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_INVOICES {
+
+		DESCR = "Reference to bill object's invoice. Invoices contains only one element. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_HANDLE {
+
+			DESCR = "Name and path relative to invoice_dir. Handle is stored in the following format:file:yyyy_mm_dd/nn/invoice_name.html. nn corresponds to the two least significant digits of the account poid.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			DESCR = "Invoice file format type is always set to html.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_INVOICE_OBJ {
+
+		DESCR = "Link to corresponding invoice object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "This field besides PIN_FLD_FLAGS helps differentiatebetween Regular,Bill_Now and Bill On Demand Bills.Main possible values are PIN Bill,PIN Bill NOW andPIN Bill On Demand. For additional feature specificvalues please refer pin_bill.h .";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PARENT {
+
+		DESCR = "Link to parent bill object if this bill is owned by a subordinate account. NULL means owning account was not subordinate when bill processing was run for this bill.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+		DESCR = "Link to billinfo object for which is one up level in subordinate hierarchy.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_PREVIOUS_TOTAL {
+
+		DESCR = "Amount of A/R from all the previous bills that is still due at the time this bill was processed. Not updated after bill creation.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_RECVD {
+
+		DESCR = "Total amount of payments or credits applied against this bill. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "Date of the start of the billing cycle that this bill represents.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_SUBORDS_TOTAL {
+
+		DESCR = "Total charges from items owned by subordinate bills but rolling up into this bill object (charges against subordinate accounts)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_TOTAL_DUE {
+
+		DESCR = "Total amount due for this bill. Calculation of this total depends on the accounting configuration for the account. For bills belonging to subordinate accounts, this field is set to zero.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_TRANSFERED {
+
+		DESCR = "Total amount transferred out of this billthis bill. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_WRITEOFF {
+
+		DESCR = "Total amount of write-off applied against this bill. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /bill
+#=======================================
+
+STORABLE CLASS /bill IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "bill_t";
+	SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (poid_id0) (partition partition_last values less than (MAXVALUE))";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_BILLTIME_TOTAL {
+
+		SQL_COLUMN = "billtime_total";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	DECIMAL PIN_FLD_ADJUSTED {
+
+		SQL_COLUMN = "adjusted";
+	}
+
+	POID PIN_FLD_AR_BILLINFO_OBJ {
+
+		SQL_COLUMN = "ar_billinfo_obj";
+	}
+
+	INT PIN_FLD_AR_HIERARCHY_SIZE {
+
+		SQL_COLUMN = "ar_hierarchy_size";
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		SQL_COLUMN = "billinfo_obj";
+	}
+
+	TIMESTAMP PIN_FLD_BILL_DATE_T {
+
+		SQL_COLUMN = "actual_bill_t";
+	}
+
+	STRING PIN_FLD_BILL_NO {
+
+		SQL_COLUMN = "bill_no";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		SQL_COLUMN = "currency";
+	}
+
+	ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+		SQL_COLUMN = "currency_oper";
+	}
+
+	DECIMAL PIN_FLD_CURRENCY_RATE {
+
+		SQL_COLUMN = "currency_rate";
+	}
+
+	INT PIN_FLD_CURRENCY_SECONDARY {
+
+		SQL_COLUMN = "currency_secondary";
+	}
+
+	DECIMAL PIN_FLD_CURRENT_TOTAL {
+
+		SQL_COLUMN = "current_total";
+	}
+
+	DECIMAL PIN_FLD_DISPUTED {
+
+		SQL_COLUMN = "disputed";
+	}
+
+	DECIMAL PIN_FLD_DUE {
+
+		SQL_COLUMN = "due";
+	}
+
+	TIMESTAMP PIN_FLD_DUE_T {
+
+		SQL_COLUMN = "due_t";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "end_t";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "flags";
+	}
+
+	ARRAY PIN_FLD_INVOICES {
+
+		SQL_TABLE = "bill_invoices_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_HANDLE {
+
+			SQL_COLUMN = "handle";
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			SQL_COLUMN = "type_str";
+		}
+
+	}
+
+	POID PIN_FLD_INVOICE_OBJ {
+
+		SQL_COLUMN = "invoice_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_PARENT {
+
+		SQL_COLUMN = "parent";
+	}
+
+	POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+		SQL_COLUMN = "parent_billinfo_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	DECIMAL PIN_FLD_PREVIOUS_TOTAL {
+
+		SQL_COLUMN = "previous_total";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	DECIMAL PIN_FLD_RECVD {
+
+		SQL_COLUMN = "recvd";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "start_t";
+	}
+
+	DECIMAL PIN_FLD_SUBORDS_TOTAL {
+
+		SQL_COLUMN = "subords_total";
+	}
+
+	DECIMAL PIN_FLD_TOTAL_DUE {
+
+		SQL_COLUMN = "total_due";
+	}
+
+	DECIMAL PIN_FLD_TRANSFERED {
+
+		SQL_COLUMN = "transferred";
+	}
+
+	DECIMAL PIN_FLD_WRITEOFF {
+
+		SQL_COLUMN = "writeoff";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

@@ -1,0 +1,2164 @@
+
+#=======================================
+#  Field MSO_FLD_ORDER_OBJ
+#=======================================
+
+POID MSO_FLD_ORDER_OBJ {
+
+	ID = 42010;
+	DESCR = "Order linkage to device object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORDER_TYPE
+#=======================================
+
+STRING MSO_FLD_ORDER_TYPE {
+
+	ID = 42015;
+	DESCR = "Entity for which order is placed";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PO_NO
+#=======================================
+
+STRING MSO_FLD_PO_NO {
+
+	ID = 42022;
+	DESCR = "Purchase Order No.";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUMBER
+#=======================================
+
+STRING PIN_FLD_NUMBER {
+
+	ID = 1573;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_ID
+#=======================================
+
+STRING PIN_FLD_ORDER_ID {
+
+	ID = 943;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_task
+#=======================================
+
+STORABLE CLASS /mso_task {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "This will store the task details of the order";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID MSO_FLD_ORDER_OBJ {
+
+		DESCR = "Order linkage to device object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_ORDER_TYPE {
+
+		DESCR = "Entity for which order is placed";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_PO_NO {
+
+		DESCR = "Purchase Order No.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NUMBER {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "to identify which user has submitted";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/ip
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/modem
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/nat
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/router
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/stb
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/vc
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_act_adj
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_act_adj {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_add_mb_gb
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_add_mb_gb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_add_plan
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_add_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_bill_adj
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_bill_adj {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_bill_hold
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_bill_hold {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_change_bouquet_id
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_change_bouquet_id {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_change_plan
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_change_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_check_bounce
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_check_bounce {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco1_bmail
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco1_bmail {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco1_osd
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco1_osd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco1_retrack
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco1_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco_bmail
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco_bmail {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco_osd
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco_osd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco_retrack
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cmts_change
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cmts_change {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cr_dr_note
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cr_dr_note {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_create_account {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bulk Account Creation";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_crf
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_crf {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "class to store the task of CRF ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_extend_validity
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_extend_validity {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_hierarchy
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_hierarchy {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_modify_gst_info
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_modify_gst_info {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_nds_retrack
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_nds_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_reconnection
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_reconnection {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_refund_load
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_refund_load {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_refund_rev_load
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_refund_rev_load {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_remove_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_renew
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_renew {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_set_personnel_bit
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_set_personnel_bit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_suspension
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_suspension {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_swap_cpe
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_swap_cpe {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_termination
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_termination {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_topup
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_topup {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_update_gst_info
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_update_gst_info {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_writeoff_cpe
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_writeoff_cpe {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/catv_preactivation
+#=======================================
+
+STORABLE CLASS /mso_task/catv_preactivation {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device
+#=======================================
+
+STORABLE CLASS /mso_task/device {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/ip
+#=======================================
+
+STORABLE CLASS /mso_task/device/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/device/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/ip/static
+#=======================================
+
+STORABLE CLASS /mso_task/device/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/modem
+#=======================================
+
+STORABLE CLASS /mso_task/device/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/nat
+#=======================================
+
+STORABLE CLASS /mso_task/device/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/router
+#=======================================
+
+STORABLE CLASS /mso_task/device/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/device/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/device/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/stb
+#=======================================
+
+STORABLE CLASS /mso_task/device/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/vc
+#=======================================
+
+STORABLE CLASS /mso_task/device/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/grv_uploader
+#=======================================
+
+STORABLE CLASS /mso_task/grv_uploader {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update
+#=======================================
+
+STORABLE CLASS /mso_task/location_update {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/ip
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/modem
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/nat
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/router
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/stb
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/vc
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/modem
+#=======================================
+
+STORABLE CLASS /mso_task/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/router
+#=======================================
+
+STORABLE CLASS /mso_task/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change
+#=======================================
+
+STORABLE CLASS /mso_task/state_change {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/ip
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/ip/static
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/modem
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/nat
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/stb
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/vc
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/stb
+#=======================================
+
+STORABLE CLASS /mso_task/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/vc
+#=======================================
+
+STORABLE CLASS /mso_task/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task
+#=======================================
+
+STORABLE CLASS /mso_task IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_task_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID MSO_FLD_ORDER_OBJ {
+
+		SQL_COLUMN = "Order_poid";
+	}
+
+	STRING MSO_FLD_ORDER_TYPE {
+
+		SQL_COLUMN = "order_type";
+	}
+
+	STRING MSO_FLD_PO_NO {
+
+		SQL_COLUMN = "Order_No";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NUMBER {
+
+		SQL_COLUMN = "task_no";
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		SQL_COLUMN = "Order_number";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "Program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "user_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/ip
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/modem
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/nat
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/router
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/stb
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/attribute_update/vc
+#=======================================
+
+STORABLE CLASS /mso_task/attribute_update/vc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_act_adj
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_act_adj IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_add_mb_gb
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_add_mb_gb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_add_plan
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_add_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_bill_adj
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_bill_adj IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_bill_hold
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_bill_hold IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_change_bouquet_id
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_change_bouquet_id IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_change_plan
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_change_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_check_bounce
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_check_bounce IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco1_bmail
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco1_bmail IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco1_osd
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco1_osd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco1_retrack
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco1_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco_bmail
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco_bmail IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco_osd
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco_osd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco_retrack
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cmts_change
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cmts_change IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cr_dr_note
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cr_dr_note IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_create_account IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_crf
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_crf IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_extend_validity
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_extend_validity IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_hierarchy
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_hierarchy IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_modify_gst_info
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_modify_gst_info IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_nds_retrack
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_nds_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_reconnection
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_reconnection IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_refund_load
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_refund_load IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_refund_rev_load
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_refund_rev_load IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_remove_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_renew
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_renew IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_set_personnel_bit
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_set_personnel_bit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_suspension
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_suspension IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_swap_cpe
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_swap_cpe IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_termination
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_termination IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_topup
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_topup IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_update_gst_info
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_update_gst_info IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_writeoff_cpe
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_writeoff_cpe IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/catv_preactivation
+#=======================================
+
+STORABLE CLASS /mso_task/catv_preactivation IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device
+#=======================================
+
+STORABLE CLASS /mso_task/device IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/ip
+#=======================================
+
+STORABLE CLASS /mso_task/device/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/device/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/ip/static
+#=======================================
+
+STORABLE CLASS /mso_task/device/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/modem
+#=======================================
+
+STORABLE CLASS /mso_task/device/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/nat
+#=======================================
+
+STORABLE CLASS /mso_task/device/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/router
+#=======================================
+
+STORABLE CLASS /mso_task/device/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/device/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/device/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/stb
+#=======================================
+
+STORABLE CLASS /mso_task/device/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/device/vc
+#=======================================
+
+STORABLE CLASS /mso_task/device/vc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/grv_uploader
+#=======================================
+
+STORABLE CLASS /mso_task/grv_uploader IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update
+#=======================================
+
+STORABLE CLASS /mso_task/location_update IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/ip
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/modem
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/nat
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/router
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/stb
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/vc
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/vc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/modem
+#=======================================
+
+STORABLE CLASS /mso_task/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/router
+#=======================================
+
+STORABLE CLASS /mso_task/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change
+#=======================================
+
+STORABLE CLASS /mso_task/state_change IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/ip
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/ip/static
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/modem
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/nat
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router/cable
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/stb
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/vc
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/vc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/stb
+#=======================================
+
+STORABLE CLASS /mso_task/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_task/vc
+#=======================================
+
+STORABLE CLASS /mso_task/vc IMPLEMENTATION ORACLE7 {
+
+}
+

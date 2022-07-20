@@ -1,0 +1,305 @@
+
+#=======================================
+#  Field PIN_FLD_ORDER_STATES
+#=======================================
+
+ARRAY PIN_FLD_ORDER_STATES {
+
+	ID = 7504;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_STATES
+#=======================================
+
+ARRAY PIN_FLD_NEXT_STATES {
+
+	ID = 5556;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_ID
+#=======================================
+
+INT PIN_FLD_STATE_ID {
+
+	ID = 5552;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_TYPE
+#=======================================
+
+ENUM PIN_FLD_STATE_TYPE {
+
+	ID = 5555;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VERSION
+#=======================================
+
+INT PIN_FLD_STR_VERSION {
+
+	ID = 1892;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_TYPE_INFO {
+
+	ID = 5569;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_TYPE
+#=======================================
+
+STRING PIN_FLD_ORDER_TYPE {
+
+	ID = 7506;
+}
+
+
+#=======================================
+#  Storable Class /config/order_state
+#=======================================
+
+STORABLE CLASS /config/order_state {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "Storable class contains the possible state transitions of /order";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ORDER_STATES {
+
+		DESCR = "Array of order state";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_NEXT_STATES {
+
+			DESCR = "Array of order state";
+			ORDER = 4;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_STATE_ID {
+
+				LABEL = "order states";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			DESCR = "The encryption of the request file";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATE_TYPE {
+
+			DESCR = "The state type of the order. It could be raw state, initial state, termination state, or normal state.";
+			ORDER = 3;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			LABEL = "Reason code str ID";
+			DESCR = "The string ID within the String Version. It identifies the reason code to which this G/L ID has been assigned.";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			LABEL = "Reason code str ver";
+			DESCR = "The version of the localized string within domain: Reason Codes-Credit Reasons or Reason Codes-Debit Reasons.";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TYPE_INFO {
+
+		DESCR = "Array containing specific information with respect to the response files received from the order. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ORDER_TYPE {
+
+			DESCR = "Represents order type";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/order_state/voucher
+#=======================================
+
+STORABLE CLASS /config/order_state/voucher {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Storable class to store order state of voucher";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/order_state
+#=======================================
+
+STORABLE CLASS /config/order_state IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ORDER_STATES {
+
+		SQL_TABLE = "config_order_states_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_NEXT_STATES {
+
+			SQL_TABLE = "config_order_next_states_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_STATE_ID {
+
+				SQL_COLUMN = "state_id";
+			}
+
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			SQL_COLUMN = "state_id";
+		}
+
+		ENUM PIN_FLD_STATE_TYPE {
+
+			SQL_COLUMN = "state_type";
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "string_id";
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			SQL_COLUMN = "str_version";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TYPE_INFO {
+
+		SQL_TABLE = "config_order_type_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ORDER_TYPE {
+
+			SQL_COLUMN = "order_type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/order_state/voucher
+#=======================================
+
+STORABLE CLASS /config/order_state/voucher IMPLEMENTATION ORACLE7 {
+
+}
+

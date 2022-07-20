@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/dispute/tax_event
+#=======================================
+
+STORABLE CLASS /event/billing/dispute/tax_event {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created to capture a dispute made to an event that involved taxes. This event belongs to the dispute item. An event is created for each /event/billing/cycle/tax_event being disputed. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/dispute/tax_event
+#=======================================
+
+STORABLE CLASS /event/billing/dispute/tax_event IMPLEMENTATION ORACLE7 {
+
+}
+

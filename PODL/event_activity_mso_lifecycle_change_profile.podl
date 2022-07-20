@@ -1,0 +1,348 @@
+
+#=======================================
+#  Field MSO_FLD_CHANGE_PROFILE
+#=======================================
+
+ARRAY MSO_FLD_CHANGE_PROFILE {
+
+	ID = 41205;
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISION_MODEL
+#=======================================
+
+ENUM MSO_FLD_COMMISION_MODEL {
+
+	ID = 41135;
+	DESCR = "Commission Model";
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISION_SERVICE
+#=======================================
+
+ENUM MSO_FLD_COMMISION_SERVICE {
+
+	ID = 41136;
+	DESCR = "Commission Service";
+}
+
+
+#=======================================
+#  Field MSO_FLD_ENT_TAX_NO
+#=======================================
+
+STRING MSO_FLD_ENT_TAX_NO {
+
+	ID = 40077;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ERP_CONTROL_ACCT_ID
+#=======================================
+
+INT MSO_FLD_ERP_CONTROL_ACCT_ID {
+
+	ID = 40064;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PAN_NO
+#=======================================
+
+STRING MSO_FLD_PAN_NO {
+
+	ID = 40075;
+	DESCR = "PAN CARD NO";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PP_TYPE
+#=======================================
+
+ENUM MSO_FLD_PP_TYPE {
+
+	ID = 40053;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PREF_DOM
+#=======================================
+
+ENUM MSO_FLD_PREF_DOM {
+
+	ID = 40052;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ST_REG_NO
+#=======================================
+
+STRING MSO_FLD_ST_REG_NO {
+
+	ID = 40076;
+}
+
+
+#=======================================
+#  Field MSO_FLD_VAT_TAX_NO
+#=======================================
+
+STRING MSO_FLD_VAT_TAX_NO {
+
+	ID = 40078;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_SEGMENT
+#=======================================
+
+INT PIN_FLD_CUSTOMER_SEGMENT {
+
+	ID = 759;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_TYPE
+#=======================================
+
+ENUM PIN_FLD_CUSTOMER_TYPE {
+
+	ID = 281;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/change_profile
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/change_profile {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CHANGE_PROFILE {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_COMMISION_MODEL {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_COMMISION_SERVICE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_ENT_TAX_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_ERP_CONTROL_ACCT_ID {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PAN_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_PP_TYPE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_PREF_DOM {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_ST_REG_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_VAT_TAX_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CUSTOMER_SEGMENT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CUSTOMER_TYPE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/change_profile
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/change_profile IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CHANGE_PROFILE {
+
+		SQL_TABLE = "mso_evt_lc_change_profile_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_COMMISION_MODEL {
+
+			SQL_COLUMN = "commision_model";
+		}
+
+		ENUM MSO_FLD_COMMISION_SERVICE {
+
+			SQL_COLUMN = "commision_service";
+		}
+
+		STRING MSO_FLD_ENT_TAX_NO {
+
+			SQL_COLUMN = "ent_tax_no";
+		}
+
+		INT MSO_FLD_ERP_CONTROL_ACCT_ID {
+
+			SQL_COLUMN = "erp_control_acct_id";
+		}
+
+		STRING MSO_FLD_PAN_NO {
+
+			SQL_COLUMN = "pan_no";
+		}
+
+		ENUM MSO_FLD_PP_TYPE {
+
+			SQL_COLUMN = "pp_type";
+		}
+
+		ENUM MSO_FLD_PREF_DOM {
+
+			SQL_COLUMN = "pref_dom";
+		}
+
+		STRING MSO_FLD_ST_REG_NO {
+
+			SQL_COLUMN = "st_reg_no";
+		}
+
+		STRING MSO_FLD_VAT_TAX_NO {
+
+			SQL_COLUMN = "vat_tax_no";
+		}
+
+		INT PIN_FLD_CUSTOMER_SEGMENT {
+
+			SQL_COLUMN = "segment_flag";
+		}
+
+		ENUM PIN_FLD_CUSTOMER_TYPE {
+
+			SQL_COLUMN = "customer_type";
+		}
+
+	}
+
+}
+

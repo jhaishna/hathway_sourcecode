@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/aggregation
+#=======================================
+
+STORABLE CLASS /event/aggregation {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to indicate aggregation events. Aggregation events are not one-time events. These are used to accumulate usage over a period of time. Usually used when the input event rate is very high and also when it is necessary to impose charge on an aggregated total instead of individual usage.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/aggregation
+#=======================================
+
+STORABLE CLASS /event/aggregation IMPLEMENTATION ORACLE7 {
+
+}
+

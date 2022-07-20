@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/deal/purchase
+#=======================================
+
+STORABLE CLASS /event/billing/deal/purchase {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture information when a deal is  purchased. The details of the purchase are in the PIN_FLD_DEAL_INFO array of the base /event/billing/deal class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/deal/purchase
+#=======================================
+
+STORABLE CLASS /event/billing/deal/purchase IMPLEMENTATION ORACLE7 {
+
+}
+

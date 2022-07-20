@@ -1,0 +1,405 @@
+
+#=======================================
+#  Field MSO_FLD_CC_MAPPING
+#=======================================
+
+ARRAY MSO_FLD_CC_MAPPING {
+
+	ID = 41122;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CLIENT_CLASS_ID
+#=======================================
+
+INT MSO_FLD_CLIENT_CLASS_ID {
+
+	ID = 42115;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CLIENT_CLASS_NAME
+#=======================================
+
+STRING MSO_FLD_CLIENT_CLASS_NAME {
+
+	ID = 42113;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CLIENT_CLASS_VALUE
+#=======================================
+
+STRING MSO_FLD_CLIENT_CLASS_VALUE {
+
+	ID = 41123;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVISIONING_TAG
+#=======================================
+
+STRING PIN_FLD_PROVISIONING_TAG {
+
+	ID = 272;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CODE
+#=======================================
+
+STRING PIN_FLD_SERVICE_CODE {
+
+	ID = 8169;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CMTS_ID
+#=======================================
+
+STRING MSO_FLD_CMTS_ID {
+
+	ID = 42221;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_cmts_cc_mapping
+#=======================================
+
+STORABLE CLASS /mso_cfg_cmts_cc_mapping {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config class to hold the CMTS and CC mapping.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CC_MAPPING {
+
+		DESCR = "Client class mapping";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT MSO_FLD_CLIENT_CLASS_ID {
+
+			DESCR = "Unique class id";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_CLIENT_CLASS_NAME {
+
+			DESCR = "Client class name.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_CLIENT_CLASS_VALUE {
+
+			DESCR = "Client class value";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PROVISIONING_TAG {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_CODE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING MSO_FLD_CMTS_ID {
+
+		DESCR = "CMTS/NAS/Router Unique identifier";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_cmts_cc_mapping
+#=======================================
+
+STORABLE CLASS /mso_cfg_cmts_cc_mapping IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_cmts_cc_mapping_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CC_MAPPING {
+
+		SQL_TABLE = "mso_cc_mapping_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT MSO_FLD_CLIENT_CLASS_ID {
+
+			SQL_COLUMN = "client_class_id";
+		}
+
+		STRING MSO_FLD_CLIENT_CLASS_NAME {
+
+			SQL_COLUMN = "client_class_name";
+		}
+
+		STRING MSO_FLD_CLIENT_CLASS_VALUE {
+
+			SQL_COLUMN = "client_class_value";
+		}
+
+		STRING PIN_FLD_PROVISIONING_TAG {
+
+			SQL_COLUMN = "provisioning_tag";
+		}
+
+		STRING PIN_FLD_SERVICE_CODE {
+
+			SQL_COLUMN = "service_code";
+		}
+
+	}
+
+	STRING MSO_FLD_CMTS_ID {
+
+		SQL_COLUMN = "cmts_id";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

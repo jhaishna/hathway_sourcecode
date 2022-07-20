@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_dsa_commission
+#=======================================
+
+STORABLE CLASS /item/mso_dsa_commission {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item to track DSA Commission";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_dsa_commission
+#=======================================
+
+STORABLE CLASS /item/mso_dsa_commission IMPLEMENTATION ORACLE7 {
+
+}
+

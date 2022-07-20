@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /invoice/trial_billnow
+#=======================================
+
+STORABLE CLASS /invoice/trial_billnow {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These objects represent trial invoices for billnow. They are created when mso_bill_accts_now is executed. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /invoice/trial_billnow
+#=======================================
+
+STORABLE CLASS /invoice/trial_billnow IMPLEMENTATION ORACLE7 {
+
+}
+

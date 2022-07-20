@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/device/delete
+#=======================================
+
+STORABLE CLASS /event/device/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to indicate deleting device event.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/device/delete
+#=======================================
+
+STORABLE CLASS /event/device/delete IMPLEMENTATION ORACLE7 {
+
+}
+

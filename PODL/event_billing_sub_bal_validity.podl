@@ -1,0 +1,250 @@
+
+#=======================================
+#  Field PIN_FLD_SUB_BAL_AUDIT
+#=======================================
+
+ARRAY PIN_FLD_SUB_BAL_AUDIT {
+
+	ID = 7758;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_FROM {
+
+	ID = 6429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM_DETAILS
+#=======================================
+
+INT PIN_FLD_VALID_FROM_DETAILS {
+
+	ID = 9627;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_TO {
+
+	ID = 6430;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO_DETAILS
+#=======================================
+
+INT PIN_FLD_VALID_TO_DETAILS {
+
+	ID = 9628;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/sub_bal_validity
+#=======================================
+
+STORABLE CLASS /event/billing/sub_bal_validity {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the sub_balance validity. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUB_BAL_AUDIT {
+
+		DESCR = "Array describing the old and new validity. Array element id is significant. Even (old), Odd (new).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Link to the balance_group object ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			DESCR = "array index for this sub-balance";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "Resource id for which the validity is being changed.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			DESCR = "The start date of this validity based balance, 0 indicate infinity";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_VALID_FROM_DETAILS {
+
+			DESCR = "details of the validity start";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			DESCR = "The end date of this validity based balance, 0 indicate infinity";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_VALID_TO_DETAILS {
+
+			DESCR = "details of the validity end";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/sub_bal_validity
+#=======================================
+
+STORABLE CLASS /event/billing/sub_bal_validity IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUB_BAL_AUDIT {
+
+		SQL_TABLE = "event_billing_sb_validity_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			SQL_COLUMN = "element_id";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			SQL_COLUMN = "valid_from";
+		}
+
+		INT PIN_FLD_VALID_FROM_DETAILS {
+
+			SQL_COLUMN = "valid_from_details";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			SQL_COLUMN = "valid_to";
+		}
+
+		INT PIN_FLD_VALID_TO_DETAILS {
+
+			SQL_COLUMN = "valid_to_details";
+		}
+
+	}
+
+}
+

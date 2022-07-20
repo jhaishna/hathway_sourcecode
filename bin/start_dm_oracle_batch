@@ -1,0 +1,81 @@
+#!/bin/sh
+#
+#	@(#) % %
+# Copyright (c) 2010, 2017, Oracle and/or its affiliates. All rights reserved.
+#      
+#       This material is the confidential property of Oracle Corporation or its
+#       licensors and may be used, reproduced, stored or transmitted only in
+#       accordance with a valid Oracle license or sublicense agreement.
+#
+
+#
+# start_dm_oracle_batch
+#
+# The underlying database (if any) must already be started
+# when this script runs.
+#
+VERSION=7.5
+PATH=/usr/bin:/bin
+
+
+# Set the LIBPATH to include library(lib64) only in the case of AIX platform.
+case `uname` in
+  AIX)
+   LIBPATH=$PIN_HOME/lib64:$LIBPATH
+   ;;
+esac
+	
+# This is for HP Itanium. It works around a change in the thread libraries
+# for itanium which affects the way shared memory mutexes work
+case `uname -m` in
+  ia64**)
+    export PTHREAD_DISABLE_HANDOFF=1
+    ;;
+esac
+
+PINDIR=/home/pin/Thirdparty/BRM12/BRM
+LOGDIR=/home/pin/Thirdparty/BRM12/BRM/var/dm_oracle_batch
+
+DM=${PINDIR}/mso/bin/dm_oracle_batch
+
+DMDIR=/home/pin/Thirdparty/BRM12/BRM/mso/sys/dm_oracle_batch
+DMLOG=${LOGDIR}/dm_oracle_batch.log
+DMPID=${LOGDIR}/dm_oracle_batch.pid
+
+if [ -r ${DMPID} ]; then
+  /bin/ps -f -p `cat ${DMPID}` | grep ${DM} > /dev/null
+  if [ $? -eq 0 ]; then
+        echo "ERROR: dm_oracle_batch is already running"
+        exit 1
+  fi
+fi
+
+if [ ! -x ${DM} ]; then
+        echo "HELP: executable \"${DM}\" not found!"
+        exit 1
+fi       
+
+if [ ! -d ${DMDIR} ]; then
+        echo "HELP: dm_oracle_batch dir \"${DMDIR}\" not found!"
+        exit 1
+fi
+
+if [ ! -d ${LOGDIR} ]; then
+	mkdir -p ${LOGDIR}
+	if [ $? -ne 0 ]; then
+		echo "HELP: problems making dm_oracle_batch LOGDIR \"${LOGDIR}\"!"
+		exit 1
+	fi
+fi       
+
+# XXX ought to save old log file, or check for > some-size...
+( cd ${DMDIR} ;
+  echo "started dm_oracle_batch at..." >> ${DMLOG}
+  date >> ${DMLOG}
+  ${DM} >> ${DMLOG} 2>&1 &
+  echo $! > ${DMPID} ;
+  chmod 640 ${DMLOG} ;
+  chmod 640 ${DMPID} )
+
+# use rc from dm_oracle_batch startup
+exit $?

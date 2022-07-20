@@ -1,0 +1,127 @@
+# *******************************************************************
+# *
+# *  Copyright (c) 2000, 2011,  Oracle. All rights reserved.
+# *
+# *  This material is the confidential property of Oracle Corporation or its
+# *  licensors and may be used, reproduced, stored or transmitted only in
+# *  accordance with a valid Oracle license or sublicense agreement.
+# *
+# *******************************************************************/
+# Version: @(#)$Id: taxcodes_map /cgbubrm_7.5.0.rwsmod/1 2011/12/23 11:07:35 mlling Exp $      
+#
+#  This config file maps BRM taxcodes to the product codes of 
+#  your tax package(s). The columns of the table are described below.
+#  You need to create the table entries suitable for your business
+#  requirements.
+#
+#  Note: Restart the DM and the CM to make any changes in this
+#        file to take effect.
+#
+#  Col Name         Description
+#  ---------------- -------------------------------------------------------
+#   Taxcode .... BRM Taxcode: a unique alphanumeric value.
+#
+#   Pkg ........ Enter the code for your tax package(s):
+#                   T    Taxware (Sales/Use and WorldTax)
+#                   Q    Vertex Quantum (sales and use tax)
+#                   C    Vertex CommTax21 (telco tax)
+#                   U    Custom (user defined) tax tables
+#                Default is T.
+#
+#   Code1 ...... For package T, this is the InStateProdCode field, which
+#                   refers to transactions within state lines. These values
+#                   are generally 19000 and 19010 for internet service.
+#                For package Q, this is the TransactionType field. See 
+#                   the Quantum reference manual for a list of transaction 
+#                   types to enter.
+#                For packages C and B, this is the CategoryCode field. See
+#                   the CommTax21 reference manuals for a list of category
+#                   codes to enter.
+#                For package U, this is redefined as the tax rate that will
+#                    be used in the cust_pol_tax_calc policy. Also, look at 
+#                    the bottom of this file for a more detailed description 
+#                    for this format.
+#
+#   Code2 ...... For package T, this is the OutStateProdCode field, which
+#                   refers to transactions outside of state lines. These 
+#                   values are generally 19000 and 19010 for internet service.
+#                For package Q, this is the TransactionSubType field. See  
+#                   the Quantum reference manual for a list of transaction 
+#                   subtypes to enter.
+#                For packages C and B, this is the ServiceCode field. See 
+#                   the CommTax21 reference manuals for a list of service
+#                   codes to enter.
+#
+#   Si ......... For package T, this is the Service Indicator field (S) or (R).
+#                   The  default, a blank, means "Nonservice" product.
+#                For packages Q, C, and B, this is the Resale Flag field, which 
+#                   indicates if the product is for sale (S), or resale (R). If 
+#                   left blank, this means sale (S). 
+#
+#   Wt_code .... WorldTax code. Applies only to package T. See the WorldTax
+#                   documentation for a list of entries.
+#
+#   Cmdty_code . Commodity code. Applies only to package T. See the WorlTax
+#                   documentation for a list of entries.
+# 
+# Example taxcode_map table:
+#
+#   Taxcode           Pkg   Code1   Code2   Si   Wt_code   Cmdty_code
+#   ---------------   ---   -----   -----   --   -------   ----------
+    tw_usage        :  T  : 82000 : 82000 :  S  :        :      
+    tw_cycle        :  T  : 96000 : 96000 :  S  :        :      
+    wt_usage        :  T  :       :       :  2 :      23 : 99809902
+    wt_cycle        :  T  :       :       :  2 :      23 : 99809902
+    qt_usage        :  Q  :    01 :    01 :  S  :        :      
+    qt_cycle        :  Q  :    01 :    01 :  S  :        :      
+    ct_direct       :  C  :    01 :    01 :  S  :        :      
+    ct_toll         :  C  :    04 :    02 :  S  :        :      
+    user_code       :  U  :  10.0 
+
+# Table format for "Pkg=U" (enhanced custom tax policies):
+#
+#   Taxcode .... BRM taxcode: a unique alphanumeric value.
+#   Pkg ........ Package code. "Pkg=U" means user-defined (custom tax policy).
+#   Rate ....... Tax rate.  Value is in percentage, for ex. 4.0 means 4%.
+#   Start ...... Start date of validity period for the tax rate.  Format is
+#                "mm/dd/yy".  Example, "02/27/00".
+#   End ........ End date of the validity period for the tax rate. Format is
+#                "mm/dd/yy".  Example, "02/27/03".
+#   Lvl ........ Jurisdiction level this rate is applicable for. Values are:
+#                  Fed   - Federal level
+#                  Sta   - State level
+#                  Cou   - County level
+#                  Cit   - City level
+#   List ....... Jurisdiction list of values this rate is applicable for.
+#                This is similar to a "nexus" for the corresponding 
+#                jurisdiction level.  For example, if "Lvl=Fed", then 
+#                possible values could be:
+#                  "US"       - Applicable only to US
+#                  "US;CA;FR" - Applicable to US, Canada, and France
+#                  "*"        - Applicable to all countries.
+#   Descr ...... Text description of the tax.
+#   Rule ....... Tax rule.  Determines how taxes will be computed. Values are:
+#                  Std   - Standard tax computation. Taxes are computed
+#                          based on the 'taxable amount', and then added
+#                          to the total.
+#                  Tax   - 'Tax on tax' computation. Taxes are computed
+#                          based on previous 'taxable amounts' and taxes,
+#                          and then added to the total.
+#                  NCS   - Non-comulative standard tax computation. Taxes
+#                          are computed based on the 'taxable amount',
+#                          but are not added to the total.
+#                  NCT   - Non-comulative standard tax computation. Taxes
+#                          are computed based on previous 'taxable 
+#                          amounts' and taxes, but are not added to the
+#                          total.
+#
+# Taxcode     Pkg  Rate   Start      End        Lvl   List     Descr      Rule
+# ----------  ---  -----  --------   --------   ----  ------   --------   ----
+ VAT_0_0    : U : 0.0   : 01/01/02 : 01/31/20 : Sta : *     : VAT      : Std
+ VAT_12_5   : U : 12.5  : 01/01/02 : 01/31/20 : Sta : *     : VAT      : Std
+ VAT_13_125 : U : 13.125 : 01/01/02 : 01/31/20 : Sta : *     : VAT      : Std 
+ VAT_14_0   : U : 14.0  : 01/01/02 : 01/31/20 : Sta : *     : VAT      : Std
+ VAT_14_3   : U : 14.3  : 01/01/02 : 01/31/20 : Sta : *     : VAT      : Std
+ VAT_14_5   : U : 14.5  : 01/01/02 : 01/31/20 : Sta : *     : VAT      : Std
+ VAT_15_0   : U : 15.0  : 01/01/02 : 01/31/20 : Sta : *     : VAT      : Std
+ 

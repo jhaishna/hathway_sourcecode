@@ -1,0 +1,148 @@
+
+#=======================================
+#  Field PIN_FLD_BATCH_INFO
+#=======================================
+
+ARRAY PIN_FLD_BATCH_INFO {
+
+	ID = 926;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACH
+#=======================================
+
+INT PIN_FLD_ACH {
+
+	ID = 7851;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_ID
+#=======================================
+
+STRING PIN_FLD_BATCH_ID {
+
+	ID = 933;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESULT
+#=======================================
+
+ENUM PIN_FLD_RESULT {
+
+	ID = 50;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/batch/provision
+#=======================================
+
+STORABLE CLASS /event/billing/batch/provision {
+
+	LABEL = "Provision Batch Information";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Created by the system to record the batch provisions.This is used to identify a provision batch for Bertelsmann mandate request. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BATCH_INFO {
+
+		DESCR = "Array detailing the batch provision information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACH {
+
+			DESCR = "Automatic Clearing House id. This points to the rec_id of PIN_FLD_ACH_INFO array in the /config/ach object. If not specified charges associated with this payment method will not be collect.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BATCH_ID {
+
+			DESCR = "Batch Id. This is derived from the PIN_FLD_TRANS_ID of the provision events associated with this batch by removing the sequence number.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			DESCR = "Result of batch submitted.  Before submission to DD DM, result will be set to checkpoint (999).  The result will subsequently be set to pending (888) if results are pending or success (0) if transactions were processed successfully.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/batch/provision
+#=======================================
+
+STORABLE CLASS /event/billing/batch/provision IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BATCH_INFO {
+
+		SQL_TABLE = "event_provision_batch_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACH {
+
+			SQL_COLUMN = "ach";
+		}
+
+		STRING PIN_FLD_BATCH_ID {
+
+			SQL_COLUMN = "batch_id";
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			SQL_COLUMN = "result";
+		}
+
+	}
+
+}
+

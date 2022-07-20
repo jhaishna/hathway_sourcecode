@@ -1,0 +1,222 @@
+
+#=======================================
+#  Field PIN_FLD_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_MEMBERS {
+
+	ID = 119;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONN_TYPE
+#=======================================
+
+ENUM PIN_FLD_CONN_TYPE {
+
+	ID = 2915;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+        ID = 17;
+}
+
+#=======================================
+#  Field MSO_FLD_RMN
+#=======================================
+
+STRING MSO_FLD_RMN {
+
+        ID = 40062;
+}
+
+#=======================================
+#  Field MSO_FLD_RMAIL
+#=======================================
+
+STRING MSO_FLD_RMAIL {
+
+        ID = 40063;
+}
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ 
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Storable Class /group/mso_hierarchy
+#=======================================
+
+STORABLE CLASS /group/mso_hierarchy {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Group object used to hold information about the hierarchy of accounts.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of group members. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+
+		ENUM PIN_FLD_CONN_TYPE {
+
+			DESCR = "0-Main TV, 1- Additional TV";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Object id of the member account object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	        STRING PIN_FLD_NAME {
+
+                	DESCR = "Account Holder Name";
+                	ORDER = 0;
+                	LENGTH = 255;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "Link to account object that owns this product. NULL means the product is owned by the account, not by a specific service object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_RMN {
+
+                	DESCR = "Registered Mobile number(10 digits), by customer multi connection portal";
+                	ORDER = 0;
+                	LENGTH = 20;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+
+		STRING MSO_FLD_RMAIL {
+
+                	DESCR = "Registered email ID given by customer multi connection portal";
+                	ORDER = 0;
+                	LENGTH = 60;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/mso_hierarchy
+#=======================================
+
+STORABLE CLASS /group/mso_hierarchy IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "mso_group_hierarchy_members_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_CONN_TYPE {
+
+			SQL_COLUMN = "conn_type";
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		STRING PIN_FLD_NAME {
+
+                	SQL_COLUMN = "name";
+        	}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		STRING MSO_FLD_RMN {
+
+			SQL_COLUMN = "rmn";
+		}
+
+		STRING MSO_FLD_RMAIL {
+
+                	SQL_COLUMN = "rmail";
+        	}
+
+	}
+
+}
+

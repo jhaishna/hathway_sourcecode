@@ -1,0 +1,55 @@
+--
+-- Copyright (c) 2015, 2017, Oracle and/or its affiliates. All rights reserved.
+--	
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	from object specifications on Thu Apr 16 13:03:31 2020.
+--
+--	USE THIS FILE WITH CAUTION: NOT FOR USE IN PRODUCTION ENVIRONMENTS
+--
+
+
+declare
+cursor c1 is select sm_item_name from dd_objects_fields_t where sm_item_name not like ':%';
+tname c1%ROWTYPE;
+cid int;
+cnt int;
+thename varchar(80);
+begin
+for tname in c1
+loop
+cid := DBMS_SQL.OPEN_CURSOR;
+if tname.sm_item_name not like 'C%' then
+  select count(*) into cnt from user_tables where table_name = upper(tname.sm_item_name);
+  if (cnt > 0) then
+    DBMS_SQL.PARSE(cid, 'DROP TABLE ' || tname.sm_item_name, dbms_sql.v7);
+  end if;
+else
+  cnt := instr(tname.sm_item_name, 'T=');
+  thename := substr(tname.sm_item_name, cnt + 2);
+  select count(*) into cnt from user_tables where table_name = upper(thename);
+  if (cnt > 0) then
+    DBMS_SQL.PARSE(cid, 'DROP TABLE ' || thename, dbms_sql.v7);
+  end if;
+end if;
+DBMS_SQL.CLOSE_CURSOR(cid);
+end loop;
+end;
+/
+drop table dd_objects_t;
+drop table dd_objects_fields_t;
+drop table dd_fields_t;
+drop sequence obj_ids;
+drop sequence poid_ids2;
+drop table cryptkey_t;
+drop table aes_crypt_details_t;
+drop table global_pending_trans_t;
+drop synonym event_v;
+drop synonym event_bal_impacts_v;
+drop synonym event_total_v;
+drop synonym event_tax_jurisdictions_v;

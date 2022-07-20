@@ -1,0 +1,120 @@
+
+#=======================================
+#  Field PIN_FLD_STATE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_STATE_INFO {
+
+	ID = 5568;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEW_STATE
+#=======================================
+
+INT PIN_FLD_NEW_STATE {
+
+	ID = 5561;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_STATE
+#=======================================
+
+INT PIN_FLD_OLD_STATE {
+
+	ID = 5560;
+}
+
+
+#=======================================
+#  Storable Class /event/order/state
+#=======================================
+
+STORABLE CLASS /event/order/state {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order state is changedThe object is created by PCM_OP_ORDER_SET_STATE";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_STATE_INFO {
+
+		DESCR = "Order state information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_NEW_STATE {
+
+			DESCR = "The new state of order";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OLD_STATE {
+
+			DESCR = "The old state of order";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/state
+#=======================================
+
+STORABLE CLASS /event/order/state IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_STATE_INFO {
+
+		SQL_TABLE = "event_order_state_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_NEW_STATE {
+
+			SQL_COLUMN = "new_state";
+		}
+
+		INT PIN_FLD_OLD_STATE {
+
+			SQL_COLUMN = "old_state";
+		}
+
+	}
+
+}
+

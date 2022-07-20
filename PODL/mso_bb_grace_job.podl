@@ -1,0 +1,249 @@
+
+#=======================================
+#  Storable Class /mso_bb_grace_job
+#=======================================
+
+STORABLE CLASS /mso_bb_grace_job {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "This class to recalculate the bal_imp's for the NRC";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+
+	POID PIN_FLD_OFFERING_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+                ORDER = 0;
+                CREATE = System;
+                MODIFY = System;
+                AUDITABLE = 0;
+                ENCRYPTABLE = 0;
+                SERIALIZABLE = 0;
+        }
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+	
+	TIMESTAMP PIN_FLD_PURCHASE_END_T {
+		ORDER = 0;
+                CREATE = Optional;
+                MODIFY = Writeable;
+                AUDITABLE = 0;
+                ENCRYPTABLE = 0;
+                SERIALIZABLE = 0;
+	}
+	
+	TIMESTAMP PIN_FLD_CHARGED_TO_T {	
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+                ORDER = 0;
+                CREATE = Optional;
+                MODIFY = Writeable;
+                AUDITABLE = 0;
+                ENCRYPTABLE = 0;
+                SERIALIZABLE = 0;
+        }
+
+	TIMESTAMP PIN_FLD_EXIT_T {
+                ORDER = 0;
+                CREATE = Optional;
+                MODIFY = Writeable;
+                AUDITABLE = 0;
+                ENCRYPTABLE = 0;
+                SERIALIZABLE = 0;
+        }	
+
+}
+
+
+#=======================================
+#  Storable Class /mso_bb_grace_job 
+#=======================================
+
+STORABLE CLASS /mso_bb_grace_job IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_bb_grace_job_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+	
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		SQL_COLUMN = "product_obj_id0";
+	}
+
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		SQL_COLUMN = "plan_obj_id0";
+	}
+
+	TIMESTAMP PIN_FLD_PURCHASE_END_T {
+
+		SQL_COLUMN = "purchase_end_t";
+	}
+
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+	
+	TIMESTAMP PIN_FLD_CHARGED_TO_T {
+
+                SQL_COLUMN = "charged_to_t";
+        }
+	
+	ENUM PIN_FLD_STATUS {
+
+                SQL_COLUMN = "status";
+        }
+
+	POID PIN_FLD_OFFERING_OBJ {
+		
+		SQL_COLUMN = "offering_obj";
+	}
+	
+	TIMESTAMP PIN_FLD_EXIT_T {
+
+                SQL_COLUMN = "exit_t";
+        }
+
+}	
+

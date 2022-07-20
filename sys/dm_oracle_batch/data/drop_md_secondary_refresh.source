@@ -1,0 +1,111 @@
+--
+-- @(#)drop_md_secondary_refresh.source 1  10/09/2001
+--
+--
+--	
+--	Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+--	
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+--
+-- sql file to drop data replication and re-create the tables in
+-- secondary databases.
+
+set serveroutput on;
+
+create or replace PROCEDURE drop_snapshots
+	(tab_name IN VARCHAR2 ) AS
+        snapshot_count int;
+        table_count int;
+	cid int;
+BEGIN
+--------------------------------------------------------------------------
+-- DROP  SNAPSHOT
+--------------------------------------------------------------------------
+
+        select count(name) into snapshot_count  
+	from user_snapshots
+	where name = UPPER(tab_name);
+
+        select count(table_name) into table_count  
+	from user_tables
+	where table_name = UPPER(tab_name);
+
+        if snapshot_count > 0 then
+                -- PARSE AND IMMEDIATELY EXECUTE DDL STATEMENT
+                cid := DBMS_SQL.OPEN_CURSOR;
+                DBMS_SQL.PARSE (cid,
+                        'DROP SNAPSHOT ' || tab_name,
+                        dbms_sql.v7);
+
+                DBMS_SQL.CLOSE_CURSOR(cid);
+        end if;
+
+        if table_count = 0 then
+                cid := DBMS_SQL.OPEN_CURSOR;
+                DBMS_SQL.PARSE (cid,
+                        'CREATE TABLE ' || tab_name ||
+			'SELECT * FROM ' || tab_name ||
+			'@md_primary WHERE ACCOUNT_OBJ_ID0 = 1',
+                        dbms_sql.v7);
+
+                DBMS_SQL.CLOSE_CURSOR(cid);
+        end if;
+EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+                RAISE_APPLICATION_ERROR (-20963,
+                'FATAL ERROR - Please Contact Customer Support!!!');
+END;
+/
+--------------------------------------------------------------------------
+-- DROP THE SNAPSHOTS
+--------------------------------------------------------------------------
+create or replace PROCEDURE drop_refresh 
+	(ref_group	IN VARCHAR2) AS
+        cursor c2 is
+        SELECT table_name
+        FROM MD_STATIC_OBJECTS_T@md_primary
+        WHERE refresh_group = ref_group;
+
+        tname   c2%ROWTYPE;
+        t_name  varchar2(255);
+        ref_group_count number(38) := 0;
+        invalid_refresh_group   EXCEPTION;
+        PRAGMA EXCEPTION_INIT(invalid_refresh_group, -20001);
+        table_count     number  := 0;
+BEGIN
+
+        FOR tname in c2
+        LOOP
+                table_count := table_count + 1;
+                t_name := tname.table_name;
+                drop_snapshots(tname.table_name);
+        END LOOP;
+                if table_count = 0 then
+                        raise invalid_refresh_group;
+                end if;
+        select count(*) into ref_group_count  from user_refresh where
+                        rname = ref_group;
+        if ref_group_count = 1 then
+                Dbms_output.put_line('Dropping refresh group ' ||
+                                ref_group);
+                dbms_refresh.destroy (name      =>
+                                ref_group);
+        else
+                dbms_output.put_line('Refresh group ' || ref_group ||
+                                      ' does not exist');
+        end if;
+
+
+
+EXCEPTION
+
+        WHEN invalid_refresh_group THEN
+                raise_application_error(-20001,
+                                'INVALID REFRESH GROUP SPECIFIED');
+
+END;
+/
+

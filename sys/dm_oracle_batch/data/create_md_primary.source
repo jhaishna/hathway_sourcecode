@@ -1,0 +1,442 @@
+--
+-- @(#)$Id: create_md_primary.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:40:25 nishahan Exp $
+--
+-- Copyright (c) 2003, 2015, Oracle and/or its affiliates. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+--
+-- sql file to create the list of objects needed for replication
+
+set serveroutput on;
+
+-- set residency_type property for /uniqueness and /unique_account_no object
+update dd_objects_t set residency_type=101 where name in ('/uniqueness', '/au_uniqueness', '/unique_account_no', '/au_unique_account_no', '/config/credit_profile');
+commit;
+
+-- update residency_type property for all global objects, except /uniqueness objects.
+update dd_objects_t set residency_type=8 where (name LIKE '/config%'  OR
+                                        name LIKE '/deal%'              OR
+					name LIKE '/au_deal%'           OR
+					name LIKE '/plan%'              OR
+					name LIKE '/au_plan%'           OR
+					name LIKE '/product%'           OR
+					name LIKE '/au_product%'        OR
+					name LIKE '/rate%'              OR
+					name LIKE '/au_rate%'           OR
+					name LIKE '/rollover%'          OR
+					name LIKE '/au_rollover%'       OR
+					name LIKE '/sponsorship%'       OR
+					name LIKE '/au_sponsorship%'    OR
+					name LIKE '/discount%'          OR
+					name LIKE '/au_discount%'       OR
+					name LIKE '/zone%'              OR
+					name LIKE '/transition%'        OR
+					name LIKE '/au_transition%'     OR
+					name LIKE '/dependency%'        OR
+					name LIKE '/au_dependency%'     OR
+					name LIKE '/fold%'              OR
+					name LIKE '/strings%'           OR
+					name LIKE '/channel'            OR
+					name LIKE '/search%'            OR
+					name LIKE '/edr_field_mapping%' OR
+					name LIKE '/offer_profile%'   ) AND
+					name NOT LIKE '/config/credit_profile';
+commit;
+
+--------------------------------------------------------------------------
+-- Populate data into MD_STATIC_OBJECTS_T 
+--------------------------------------------------------------------------
+
+DECLARE
+	cursor cfg_cur is 
+	SELECT UPPER(DOF.sm_item_name) table_name FROM dd_objects_t DO, 
+	dd_objects_fields_t DOF
+	WHERE
+		DOF.obj_id0 = DO.obj_id0 AND
+		DO.name LIKE '/config%'  AND
+		DOF.field_type IN 
+		 (6, 9, 10, 11, 16);
+
+	cursor price_cur is 
+	SELECT UPPER(DOF.sm_item_name) table_name FROM dd_objects_t DO, 
+	dd_objects_fields_t DOF
+	WHERE
+		DOF.obj_id0 = DO.obj_id0 	 AND
+		(DO.name LIKE '/deal%' 		 OR 
+		 DO.name LIKE '/au_deal%' 	 OR 
+		 DO.name LIKE '/plan%' 	 	 OR
+		 DO.name LIKE '/au_plan%'	 OR 
+		 DO.name LIKE '/product%'	 OR 
+		 DO.name LIKE '/au_product%'	 OR 
+		 DO.name LIKE '/rate%'		 OR 
+		 DO.name LIKE '/au_rate%'	 OR 
+		 DO.name LIKE '/rollover%'	 OR 
+		 DO.name LIKE '/au_rollover%'	 OR 
+		 DO.name LIKE '/sponsorship%'	 OR 
+		 DO.name LIKE '/au_sponsorship%' OR 
+		 DO.name LIKE '/discount%' 	 OR 
+		 DO.name LIKE '/au_discount%' 	 OR 
+		 DO.name LIKE '/zone%' 	 	 OR 
+		 DO.name LIKE '/transition%' 	 OR 
+		 DO.name LIKE '/au_transition%'	 OR 
+		 DO.name LIKE '/dependency%'	 OR 
+		 DO.name LIKE '/au_dependency%'	 OR 
+		 DO.name LIKE '/fold%' 	 	 OR
+		 DO.name LIKE '/offer_profile%' 
+		) 				 AND
+		DOF.field_type IN 
+		 (6, 9, 10, 11, 16);
+
+	cursor general_cur is 
+	SELECT UPPER(DOF.sm_item_name) table_name FROM dd_objects_t DO, 
+	dd_objects_fields_t DOF
+	WHERE
+		DOF.obj_id0 = DO.obj_id0 	 AND
+		(DO.name LIKE '/strings%'	 OR 
+		 (DO.name LIKE '/channel%' 	 AND 
+		  UPPER(DOF.sm_item_name) NOT LIKE 'CHANNEL_EVE%'
+		 )				 OR
+		 DO.name LIKE '/search%' 	 OR 
+		 DO.name LIKE '/edr_field_mapping%'
+		) 				 AND
+		DOF.field_type IN 
+		 (6, 9, 10, 11, 16);
+
+	t_name  varchar2(255);
+	tblspace_name  varchar2(255);
+	tmp	int := 0;
+
+BEGIN
+	
+	dbms_output.enable(200000);
+
+--	For CONFIG group
+
+	FOR c_tname in cfg_cur
+	LOOP
+		tmp := 0;
+		SELECT INSTR(c_tname.table_name, 'T=') INTO tmp FROM dual;
+		IF tmp = 0 THEN
+			t_name := c_tname.table_name;
+		ELSE
+			SELECT SUBSTR(c_tname.table_name, tmp+2) INTO t_name FROM dual;
+		END IF;
+
+		SELECT UT.tablespace_name into tblspace_name from user_tables UT
+		WHERE UT.table_name = t_name;
+
+		INSERT INTO md_static_objects_t 
+		VALUES (
+			t_name,
+			tblspace_name,
+			NULL,
+			0,
+			'CONFIG',
+			NULL,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0 );
+	END LOOP;
+
+--	For PRICE group
+
+	FOR c_tname in price_cur
+	LOOP
+		tmp := 0;
+		SELECT INSTR(c_tname.table_name, 'T=') INTO tmp FROM dual;
+		IF tmp = 0 THEN
+			t_name := c_tname.table_name;
+		ELSE
+			SELECT SUBSTR(c_tname.table_name, tmp+2) INTO t_name FROM dual;
+		END IF;
+
+		SELECT UT.tablespace_name into tblspace_name from user_tables UT
+		WHERE UT.table_name = t_name;
+
+		INSERT INTO md_static_objects_t 
+		VALUES (
+			t_name,
+			tblspace_name,
+			NULL,
+			0,
+			'PRICE',
+			NULL,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0 );
+	END LOOP;
+
+--	For GENERAL group
+
+	FOR c_tname in general_cur
+	LOOP
+		tmp := 0;
+		SELECT INSTR(c_tname.table_name, 'T=') INTO tmp FROM dual;
+		IF tmp = 0 THEN
+			t_name := c_tname.table_name;
+		ELSE
+			SELECT SUBSTR(c_tname.table_name, tmp+2) INTO t_name FROM dual;
+		END IF;
+
+		SELECT UT.tablespace_name into tblspace_name from user_tables UT
+		WHERE UT.table_name = t_name;
+
+		INSERT INTO md_static_objects_t 
+		VALUES (
+			t_name,
+			tblspace_name,
+			NULL,
+			0,
+			'GENERAL',
+			NULL,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0 );
+	END LOOP;
+END;
+/
+
+
+--------------------------------------------------------------------------
+-- CREATE THE SNAPSHOT LOGS 
+--------------------------------------------------------------------------
+
+DECLARE
+	cursor c1 is 
+	SELECT table_name, sm_info, sm_index_info 
+	FROM MD_STATIC_OBJECTS_T;
+
+	tname 	c1%ROWTYPE;
+	t_name 	varchar2(255);
+	snapshot_log_count	number(38) := 0;
+	col_count	number(38) := 0;
+	ind_count	number(38) := 0;
+	constraint_count number(38) := 0;
+	drop_str	varchar2(1024) := ' ';
+	pk_str		varchar2(1024) := ' ';
+	cid		int :=0;
+	ind_name	varchar2(255);
+	temp_ind_name	varchar2(255);
+	ind_initial_e	int := 0;
+	ind_next_e	int := 0;
+	ind_pct_i	int := 0; 
+	ind_fl		int := 0;
+	initial_e	int := 0;
+	next_e		int := 0;
+	pct_i		int := 0;
+	fl		int := 0;
+	cons_col_list	varchar2(512);
+	ind_col_list	varchar2(512);	
+	vpos		number;
+	vnoc constant	number := 255;
+BEGIN
+
+
+--	create snapshot logs for each of the tables that need replication
+-- 
+	FOR tname in c1
+	LOOP
+		dbms_output.enable(200000);
+--		dbms_output.put_line(tname.table_name);
+		t_name := tname.table_name;
+
+--		Form the index name
+
+		select rtrim(t_name, '_T') into temp_ind_name from dual;
+		temp_ind_name := 'I_'||temp_ind_name||'_ID';
+--		check if the index name is greater than 30 chars
+		if (length(temp_ind_name) > 30 ) then
+			select rtrim(temp_ind_name,'_ID') into temp_ind_name from dual;
+		end if;
+
+-- 		Build the primary key string
+--
+		select count(column_name) into col_count from  
+			user_tab_columns where table_name = t_name AND
+			column_name = 'POID_ID0';
+
+		select count(index_name) into ind_count from user_ind_columns
+			  where table_name = t_name AND column_name = 'POID_ID0';
+		if col_count = 1 then 
+--			specify the index name if it doesn't exist
+			if ind_count = 0 then
+				pk_str := 'Alter table ' || t_name || 
+				' Add Primary Key (POID_ID0) USING INDEX (CREATE UNIQUE
+				INDEX ' || temp_ind_name || ' ON ' || t_name || 
+				'(POID_ID0) $PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL )';
+			else
+				pk_str := 'Alter table ' || t_name || 
+				' Add Primary Key (POID_ID0)' ; 
+			end if;
+		else 
+			select count(column_name) into col_count from  
+			user_tab_columns where table_name = t_name AND
+			(column_name = 'OBJ_ID0' OR
+			 column_name = 'REC_ID'  OR
+			 column_name = 'REC_ID2') ;
+
+			select count(index_name) into ind_count from  
+			user_ind_columns where table_name = t_name AND
+			(column_name = 'OBJ_ID0' OR
+			 column_name = 'REC_ID'  OR
+			 column_name = 'REC_ID2') ;
+
+			if col_count = 1 then 
+--				specify the index name if it doesn't exist
+				if ind_count = 0 then
+					pk_str := 'Alter table ' || t_name || 
+				  ' Add Primary Key (OBJ_ID0) USING INDEX (CREATE UNIQUE
+				  INDEX ' || temp_ind_name || ' ON ' || t_name ||
+				  '(OBJ_ID0) $PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL )';
+				else
+					pk_str := 'Alter table ' || t_name || 
+					' Add Primary Key (OBJ_ID0)' ; 
+				end if;
+					
+			elsif col_count = 2 then 
+--				specify the index name if it doesn't exist
+				if ind_count = 0 then
+					pk_str := 'Alter table ' || t_name || 
+				  ' Add Primary Key (OBJ_ID0, REC_ID) USING INDEX (CREATE 
+				  UNIQUE INDEX ' || temp_ind_name || ' ON ' || t_name || 
+				  '(OBJ_ID0, REC_ID) $PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL )' ;
+				else
+					pk_str := 'Alter table ' || t_name || 
+				  	' Add Primary Key (OBJ_ID0, REC_ID)' ; 
+				end if;
+			elsif col_count = 3 then 
+--				specify the index name if it doesn't exist
+				if ind_count = 0 then
+					pk_str := 'Alter table ' || t_name || 
+				  ' Add Primary Key (OBJ_ID0,REC_ID,REC_ID2) USING INDEX 
+				  (CREATE UNIQUE INDEX ' || temp_ind_name || ' ON ' 
+				  || t_name || '(OBJ_ID0,REC_ID,REC_ID2) $PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL )';
+				else
+					pk_str := 'Alter table ' || t_name || 
+				  ' Add Primary Key (OBJ_ID0,REC_ID,REC_ID2)' ; 
+				end if;
+
+			end if;
+		end if;
+		
+		-- If the primary key already exists, drop it.
+		select count(*) into constraint_count from user_constraints
+		where table_name = t_name and constraint_type = 'P';
+
+		if constraint_count = 0 then 	
+
+			-- Create the Primary Key on this table
+			-- Printing the SQL statement, Dividing the SQL statement into chunks of 255 bytes 
+			-- Because, the maximum length of the input string to putline method
+			-- should not exceed 255 characters
+			vpos := 1;
+			while (vpos <= length(pk_str)) loop
+				dbms_output.put_line(substr(pk_str,vpos,vnoc));
+				vpos := vpos + vnoc;
+		  	end loop;
+			cid := DBMS_SQL.OPEN_CURSOR;
+			DBMS_SQL.PARSE (cid,
+				pk_str,
+				dbms_sql.v7);
+			DBMS_SQL.CLOSE_CURSOR(cid);
+			select count(log_table) into snapshot_log_count from 
+			user_snapshot_logs where master = UPPER(t_name);
+			if snapshot_log_count = 0 then
+				dbms_output.put_line('creating SNAPSHOT LOG ' || 
+					t_name || '...');
+				cid := DBMS_SQL.OPEN_CURSOR;
+				DBMS_SQL.PARSE (cid,
+					'CREATE  SNAPSHOT LOG ON ' || 
+					t_name,
+					dbms_sql.v7);
+				DBMS_SQL.CLOSE_CURSOR(cid);
+			else
+				dbms_output.put_line('SNAPSHOT LOG ' || t_name ||
+					' exists');
+			end if;
+		end if;
+
+		cons_col_list := '';
+		FOR cursor_cons_col in
+			(select column_name from user_cons_columns 
+			where table_name = tname.table_name order by position)
+		LOOP
+			cons_col_list := cons_col_list || ',' ||
+				cursor_cons_col.column_name;
+		END LOOP;
+		cons_col_list := substr(cons_col_list, 2, 512);
+
+		FOR cursor_ind in
+		(select index_name from user_ind_columns
+		where table_name = tname.table_name)
+		LOOP
+			ind_col_list := '';
+			FOR cursor_ind_col in
+			(select column_name from user_ind_columns
+			where index_name = cursor_ind.index_name)
+			LOOP
+				ind_col_list := ind_col_list || ',' ||
+				cursor_ind_col.column_name;
+			END LOOP;
+			ind_col_list := substr(ind_col_list, 2, 512);
+			IF cons_col_list = ind_col_list THEN
+			ind_name := cursor_ind.index_name;
+			exit;
+			END IF;
+		END LOOP;
+		dbms_output.put_line(ind_name);
+
+
+		select initial_extent, next_extent, pct_increase, freelists
+		into ind_initial_e, ind_next_e, ind_pct_i, ind_fl 
+		from  user_indexes 
+		where index_name = ind_name;
+
+		select initial_extent, next_extent, pct_increase, freelists
+		into initial_e, next_e, pct_i, fl 
+		from  user_tables 
+		where table_name = t_name;
+
+
+		-- Update the Storage Infomation on MD_STATIC_OBJECTS_T for this table
+
+		update md_static_objects_t 
+		set 
+			index_name = ind_name,
+			ind_initial_ext = ind_initial_e,
+			ind_next_ext = ind_next_e,
+			ind_pct_inc = ind_pct_i,
+			ind_freelists = ind_fl,
+			initial_ext = initial_e,
+			next_ext = next_e,
+			pct_inc = pct_i,
+			freelists = fl
+		where table_name = t_name;
+			
+		Update md_static_objects_t set sm_index_info = (select user_indexes.tablespace_name from user_indexes where index_name = UPPER(md_static_objects_t.index_name)) where sm_index_info IS NULL; 
+
+	END LOOP;
+EXCEPTION
+		When Others then
+			DBMS_SQL.CLOSE_CURSOR(cid);
+END;
+/

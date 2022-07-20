@@ -1,0 +1,608 @@
+
+#=======================================
+#  Field MSO_FLD_DEPOSIT_AMOUNT
+#=======================================
+
+DECIMAL MSO_FLD_DEPOSIT_AMOUNT {
+
+	ID = 43150;
+	DESCR = "Deposit Amount";
+}
+
+
+#=======================================
+#  Field MSO_FLD_DEPOSIT_DATE
+#=======================================
+
+TIMESTAMP MSO_FLD_DEPOSIT_DATE {
+
+	ID = 43151;
+	DESCR = "Deposit Creation Date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_DEPOSIT_NO
+#=======================================
+
+STRING MSO_FLD_DEPOSIT_NO {
+
+	ID = 43152;
+	DESCR = "Deposit No";
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_DATE
+#=======================================
+
+TIMESTAMP MSO_FLD_REFUND_DATE {
+
+	ID = 43201;
+	DESCR = "Refund Date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_RULE
+#=======================================
+
+STRING MSO_FLD_REFUND_RULE {
+
+	ID = 43153;
+	DESCR = "Refund Rule";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_OBJ
+#=======================================
+
+POID PIN_FLD_DEVICE_OBJ {
+
+	ID = 5559;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEMS
+#=======================================
+
+ARRAY PIN_FLD_ITEMS {
+
+	ID = 789;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMPACT_TYPE
+#=======================================
+
+ENUM PIN_FLD_IMPACT_TYPE {
+
+	ID = 1205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_deposit
+#=======================================
+
+STORABLE CLASS /mso_deposit {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Deposit Base Table";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_DEPOSIT_AMOUNT {
+
+		DESCR = "Deposit Amount";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_DEPOSIT_DATE {
+
+		DESCR = "Deposit Creation Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_DEPOSIT_NO {
+
+		DESCR = "Deposit No";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_REFUND_DATE {
+
+		DESCR = "Refund Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_REFUND_RULE {
+
+		DESCR = "Refund Rule";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_DEVICE_OBJ {
+
+		DESCR = "Device details";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_ITEMS {
+
+		DESCR = "Table/Array to store the deposit items";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Amount corresponding to the deposit item";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_IMPACT_TYPE {
+
+			DESCR = "Impact Type of the event";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			DESCR = "Poid of the deposit item";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		DESCR = "Poid of the deposit item";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "HW Plan Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Service Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status [ 2 - Open, 4 - Closed]";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "User who posted the deposits";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_deposit
+#=======================================
+
+STORABLE CLASS /mso_deposit IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_deposit_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_DEPOSIT_AMOUNT {
+
+		SQL_COLUMN = "deposit_amount";
+	}
+
+	TIMESTAMP MSO_FLD_DEPOSIT_DATE {
+
+		SQL_COLUMN = "deposit_date";
+	}
+
+	STRING MSO_FLD_DEPOSIT_NO {
+
+		SQL_COLUMN = "deposit_ref_no";
+	}
+
+	TIMESTAMP MSO_FLD_REFUND_DATE {
+
+		SQL_COLUMN = "refund_date";
+	}
+
+	STRING MSO_FLD_REFUND_RULE {
+
+		SQL_COLUMN = "refund_rule";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	POID PIN_FLD_DEVICE_OBJ {
+
+		SQL_COLUMN = "device_obj";
+	}
+
+	ARRAY PIN_FLD_ITEMS {
+
+		SQL_TABLE = "MSO_DEPOSIT_ITEMS_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		ENUM PIN_FLD_IMPACT_TYPE {
+
+			SQL_COLUMN = "impact_type";
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			SQL_COLUMN = "item_obj";
+		}
+
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		SQL_COLUMN = "item_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "plan_name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "srvc_obj";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "deposit_status";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "user_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

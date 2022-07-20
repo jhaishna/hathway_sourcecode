@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /event/activity/admin
+#=======================================
+
+STORABLE CLASS /event/activity/admin {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/activity/admin
+#=======================================
+
+STORABLE CLASS /event/activity/admin IMPLEMENTATION ORACLE7 {
+
+}
+

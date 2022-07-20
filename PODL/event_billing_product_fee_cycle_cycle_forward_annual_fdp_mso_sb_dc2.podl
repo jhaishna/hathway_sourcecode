@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_dc2
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_dc2 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly subscription for DOCSIS 2.0 FDP.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_dc2
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual_fdp/mso_sb_dc2 IMPLEMENTATION ORACLE7 {
+
+}
+

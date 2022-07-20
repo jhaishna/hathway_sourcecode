@@ -1,0 +1,205 @@
+
+#=======================================
+#  Field PIN_FLD_VOUCHERS_INFO
+#=======================================
+
+ARRAY PIN_FLD_VOUCHERS_INFO {
+
+	ID = 7617;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_PART_NO
+#=======================================
+
+STRING PIN_FLD_BATCH_PART_NO {
+
+	ID = 7611;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACKAGE_INFO
+#=======================================
+
+ARRAY PIN_FLD_PACKAGE_INFO {
+
+	ID = 7606;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+	ID = 7604;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACK_PART_NO
+#=======================================
+
+STRING PIN_FLD_PACK_PART_NO {
+
+	ID = 7612;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACK_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_PACK_QUANTITY {
+
+	ID = 7605;
+}
+
+
+#=======================================
+#  Storable Class /config/voucher
+#=======================================
+
+STORABLE CLASS /config/voucher {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of thisclass is used to set up voucher order related information. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHERS_INFO {
+
+		DESCR = "Array of vouchers information. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_PART_NO {
+
+			DESCR = "Batch number associated with the order ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PACKAGE_INFO {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+				DESCR = "Batch quantity associated with this order.";
+				ORDER = 2;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_PACK_PART_NO {
+
+				DESCR = "Pack number associated with the order ";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_PACK_QUANTITY {
+
+				DESCR = "Pack quantity associated with this order.";
+				ORDER = 1;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/voucher
+#=======================================
+
+STORABLE CLASS /config/voucher IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHERS_INFO {
+
+		SQL_TABLE = "config_voucher_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_PART_NO {
+
+			SQL_COLUMN = "batch_part_no";
+		}
+
+		ARRAY PIN_FLD_PACKAGE_INFO {
+
+			SQL_TABLE = "config_voucher_pack_info_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+				SQL_COLUMN = "batch_qty";
+			}
+
+			STRING PIN_FLD_PACK_PART_NO {
+
+				SQL_COLUMN = "pack_part_no";
+			}
+
+			DECIMAL PIN_FLD_PACK_QUANTITY {
+
+				SQL_COLUMN = "pack_qty";
+			}
+
+		}
+
+	}
+
+}
+

@@ -1,0 +1,93 @@
+
+#=======================================
+#  Field PIN_FLD_DEVICE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_DEVICE_INFO {
+
+	ID = 5557;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_OBJ
+#=======================================
+
+POID PIN_FLD_DEVICE_OBJ {
+
+	ID = 5559;
+}
+
+
+#=======================================
+#  Storable Class /schedule/device
+#=======================================
+
+STORABLE CLASS /schedule/device {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Used to support deferred actions for /device objects.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DEVICE_INFO {
+
+		DESCR = "Used to contain /device specific information.";
+		ORDER = 2;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEVICE_OBJ {
+
+			DESCR = "Reference to a /device object.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /schedule/device
+#=======================================
+
+STORABLE CLASS /schedule/device IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DEVICE_INFO {
+
+		SQL_TABLE = "schedule_device_info_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEVICE_OBJ {
+
+			SQL_COLUMN = "device_obj";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_alc_fta {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event for  billing product fee cycle arrear monthly mso_sb_alc_fta";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_sb_alc_fta IMPLEMENTATION ORACLE7 {
+
+}
+

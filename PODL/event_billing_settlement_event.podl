@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/settlement/event
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/event {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture settlement made to an event.  This event belong to the settlement item.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/event
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/event IMPLEMENTATION ORACLE7 {
+
+}
+

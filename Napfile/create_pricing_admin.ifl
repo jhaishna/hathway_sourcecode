@@ -1,0 +1,42 @@
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /plan -1 0            
+0 PIN_FLD_USERID         POID [0] 0.0.0.1 /service/admin_client 2 0
+0 PIN_FLD_FLAGS           INT [0] 0                             
+0 PIN_FLD_LOGIN           STR [0] "pricingadmin"                    
+0 PIN_FLD_PASSWD_CLEAR    STR [0] "pricingadmin"                    
+0 MSO_FLD_ROLES		  STR [0] "PRICING_ADMIN"
+0 MSO_FLD_DATA_ACCESS     STR [0] ""
+0 PIN_FLD_ACCTINFO      ARRAY [0] allocated 20, used 6          
+1     PIN_FLD_BUSINESS_TYPE   ENUM [0] 1001000                        
+1     PIN_FLD_CURRENCY        INT [0] 356                       
+1     PIN_FLD_POID           POID [0] 0.0.0.1 /account -1 0     
+1     MSO_FLD_REGION         ENUM [0] 1                         
+1     MSO_FLD_AREA            STR [0] "area"
+1     MSO_FLD_CONTACT_PREF   ENUM [0] 5
+1     PIN_FLD_BAL_INFO      ARRAY [0]     NULL array ptr        
+0  PIN_FLD_PROFILES                     ARRAY [0] allocated 20, used
+1      PIN_FLD_PROFILE_OBJ               POID [0] 0.0.0.1 /profile/wholesale -1
+1      PIN_FLD_INHERITED_INFO       SUBSTRUCT [0] allocated 1, used 1
+2         MSO_FLD_WHOLESALE_INFO    SUBSTRUCT [0] allocated 1, used 1
+3            MSO_FLD_PP_TYPE             ENUM [0] 0
+3            PIN_FLD_PARENT              POID [0] 0.0.0.0 / 0 0
+0 PIN_FLD_NAMEINFO      ARRAY [1] allocated 21, used 21         
+1     PIN_FLD_SALUTATION      STR [0] "Mr."                     
+1     PIN_FLD_ADDRESS         STR [0] "Addr1"                   
+1     PIN_FLD_CITY            STR [0] "KOLKATA"                 
+1     PIN_FLD_COUNTRY         STR [0] "INDIA"                   
+1     PIN_FLD_FIRST_NAME      STR [0] "PRICING
+1     PIN_FLD_MIDDLE_NAME     STR [0] "ADMIN"                    
+1     PIN_FLD_LAST_NAME       STR [0] "ACCT"                    
+1     PIN_FLD_STATE           STR [0] "MAHARASTRA"              
+1     PIN_FLD_ZIP             STR [0] ""                        
+1     PIN_FLD_COMPANY         STR [0] "Hathway"                 
+1     PIN_FLD_EMAIL_ADDR      STR [0] "csradmin@hathwat.co.in"    
+1     PIN_FLD_PHONES        ARRAY [0] allocated 20, used 2      
+2         PIN_FLD_TYPE           ENUM [0] 1                     
+2         PIN_FLD_PHONE           STR [0] "98893552151"         
+1     PIN_FLD_PHONES        ARRAY [1] allocated 20, used 2      
+2         PIN_FLD_TYPE           ENUM [0] 0                     
+2         PIN_FLD_PHONE           STR [0] "98893557151"         
+1     PIN_FLD_PHONES        ARRAY [3] allocated 20, used 2      
+2         PIN_FLD_TYPE           ENUM [0] 3                     
+2         PIN_FLD_PHONE           STR [0] "98893552158"         

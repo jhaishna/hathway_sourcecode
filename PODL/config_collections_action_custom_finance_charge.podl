@@ -1,0 +1,92 @@
+
+#=======================================
+#  Field PIN_FLD_FINANCE_CHARGE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+	ID = 7734;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERCENT
+#=======================================
+
+DECIMAL PIN_FLD_PERCENT {
+
+	ID = 531;
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/finance_charge
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/finance_charge {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define finance charge action.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+		DESCR = "Contains additional fields for finance charges.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			DESCR = "Rate for the finance charge";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/finance_charge
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/finance_charge IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+		SQL_TABLE = "config_collections_fcharge_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			SQL_COLUMN = "percent";
+		}
+
+	}
+
+}
+

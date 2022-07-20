@@ -1,0 +1,469 @@
+
+#=======================================
+#  Field PIN_FLD_BALANCES
+#=======================================
+
+ARRAY PIN_FLD_BALANCES {
+
+	ID = 198;
+}
+
+
+#=======================================
+#  Field PIN_FLD_APPLY_MODE
+#=======================================
+
+ENUM PIN_FLD_APPLY_MODE {
+
+	ID = 9578;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BEID_STR_CODE
+#=======================================
+
+STRING PIN_FLD_BEID_STR_CODE {
+
+	ID = 1600;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONSUMPTION_RULE
+#=======================================
+
+ENUM PIN_FLD_CONSUMPTION_RULE {
+
+	ID = 7770;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RULES
+#=======================================
+
+ARRAY PIN_FLD_RULES {
+
+	ID = 5779;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESSING_STAGE
+#=======================================
+
+ENUM PIN_FLD_PROCESSING_STAGE {
+
+	ID = 7452;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROUNDING
+#=======================================
+
+INT PIN_FLD_ROUNDING {
+
+	ID = 72;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROUNDING_MODE
+#=======================================
+
+ENUM PIN_FLD_ROUNDING_MODE {
+
+	ID = 1627;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOLERANCE_AMOUNT_MAX
+#=======================================
+
+DECIMAL PIN_FLD_TOLERANCE_AMOUNT_MAX {
+
+	ID = 1602;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOLERANCE_AMOUNT_MIN
+#=======================================
+
+DECIMAL PIN_FLD_TOLERANCE_AMOUNT_MIN {
+
+	ID = 1601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOLERANCE_PERCENT
+#=======================================
+
+DECIMAL PIN_FLD_TOLERANCE_PERCENT {
+
+	ID = 1603;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SYMBOL
+#=======================================
+
+STRING PIN_FLD_SYMBOL {
+
+	ID = 1606;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALIDITY_IN_DAYS
+#=======================================
+
+INT PIN_FLD_VALIDITY_IN_DAYS {
+
+	ID = 1630;
+}
+
+
+#=======================================
+#  Storable Class /config/beid
+#=======================================
+
+STORABLE CLASS /config/beid {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object this class contains information on all Infranet resources. Resources can be either currency or non-currency resources. User-defined resources must have numeric resource id value greater than 1,000,000. Numeric ids for the currency resources are defined as per the ISO 4217 standard.  A sample file pin_beid that can be used with load_pin_beid is shipped with Portal system. These resources must not be changed after loading them into the database.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BALANCES {
+
+		DESCR = "Configuration information about one resource. The numeric value of the resource is used as the array element id. For e.g., PIN_FLD_BALANCES[840] is used to hold US Dollar information. See pin_currency.h for a list of the ISO currencies. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_APPLY_MODE {
+
+			DESCR = "Operation to be applied on a particular resource. Possible values are PIN_APPLY_MODE_UNDEFINED(0), PIN_APPLY_MODE_FOLD(1).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BEID_STR_CODE {
+
+			DESCR = "A string code (typically an abbreviation) for the resource. For currency resources, the three letter ISO code is used. For example, for US Dollars, the string code is USD.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CONSUMPTION_RULE {
+
+			DESCR = "Consumption rule to be applied on the resource. 0 means undefined. And other possible values are EST(1), LST(2), EET(3), LET(4), ESTLET(5), ESTEET(6), LSTEET(7), LSTLET(8), EETEST(9), EETLST(10), LETEST(11), LETLST(12).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Printable name of the resource. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_RULES {
+
+			DESCR = "Configuration information about a rounding rule, which consists of a rounding mode and a rounding precision.  You can specify a rounding rule for a (resource, event type, stage) combination.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				DESCR = "This field specifies the event type the rounding rule applies.  A value of * means that it is applicable to all events. Default is *.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_PROCESSING_STAGE {
+
+				DESCR = "This field specifies the activity or processing stage where the rounding rule should be applied. Possible values are: 0 (Rating), 1 (Discount),  2 (Taxation), 3 (AR operation). Default is 3.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_ROUNDING {
+
+				DESCR = "This field determines number of decimal places to round the resource. A positive and Negative values specifies precision. For example, +2 yields 0.11. Also note that rounding, value of .956 becomes .96 and a value of .954 becomes .95.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_ROUNDING_MODE {
+
+				DESCR = "This field specifies the rounding method. Possible values are: 0 (Nearest), 1 (Up), 2 (Down), 3 (Even). Default is 0.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_TOLERANCE_AMOUNT_MAX {
+
+				DESCR = "Tolerance is the allowable error on rounding when converting to primary currency that is acceptable for closing out open items. Tolerance can be specified as both percentage and absolute values. This field sets upper bound on tolerance. Default is 0.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_TOLERANCE_AMOUNT_MIN {
+
+				DESCR = "This field sets the lower bound on tolerance error. Used only when tolerance percent is non-zero. The maximum of this value and the percent of the original amount is used to set the lower bound on the tolerance. Default is 0.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_TOLERANCE_PERCENT {
+
+				DESCR = "Acceptable tolerance in percent (for ex, 0.5%) when converting from secondary to primary currency when applying payments to close items. When 0, item is closed if difference between the due and converted amount is less than tolerance max. Default is 0.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Possible values are Not Set (0), Active (1), Inactive (2). Only active resources show up in the Pricing Tool.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SYMBOL {
+
+			DESCR = "Symbol used to adorn resource values. For example, ' is used for US Dollars. Typically this is a UTF-8 encoded string for currency resources.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_VALIDITY_IN_DAYS {
+
+			DESCR = "This field has been added for Pipeline Selective Sub Balance Loading feature. This field tells.Pipeline to load Sub Balances corresponding to the resource that were valid for N number of days where N is the value of the field";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/beid
+#=======================================
+
+STORABLE CLASS /config/beid IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BALANCES {
+
+		SQL_TABLE = "config_beid_balances_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_APPLY_MODE {
+
+			SQL_COLUMN = "apply_mode";
+		}
+
+		STRING PIN_FLD_BEID_STR_CODE {
+
+			SQL_COLUMN = "beid_str_code";
+		}
+
+		ENUM PIN_FLD_CONSUMPTION_RULE {
+
+			SQL_COLUMN = "consumption_rule";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		ARRAY PIN_FLD_RULES {
+
+			SQL_TABLE = "config_beid_rules_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				SQL_COLUMN = "event_type";
+			}
+
+			ENUM PIN_FLD_PROCESSING_STAGE {
+
+				SQL_COLUMN = "processing_stage";
+			}
+
+			INT PIN_FLD_ROUNDING {
+
+				SQL_COLUMN = "rounding";
+			}
+
+			ENUM PIN_FLD_ROUNDING_MODE {
+
+				SQL_COLUMN = "rounding_mode";
+			}
+
+			DECIMAL PIN_FLD_TOLERANCE_AMOUNT_MAX {
+
+				SQL_COLUMN = "tolerance_amount_max";
+			}
+
+			DECIMAL PIN_FLD_TOLERANCE_AMOUNT_MIN {
+
+				SQL_COLUMN = "tolerance_amount_min";
+			}
+
+			DECIMAL PIN_FLD_TOLERANCE_PERCENT {
+
+				SQL_COLUMN = "tolerance_percent";
+			}
+
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		STRING PIN_FLD_SYMBOL {
+
+			SQL_COLUMN = "symbol";
+		}
+
+		INT PIN_FLD_VALIDITY_IN_DAYS {
+
+			SQL_COLUMN = "validity_in_days";
+		}
+
+	}
+
+}
+

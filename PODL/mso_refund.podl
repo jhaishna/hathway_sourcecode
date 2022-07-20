@@ -1,0 +1,714 @@
+
+#=======================================
+#  Field MSO_FLD_ACCOUNT_OWNER
+#=======================================
+
+STRING MSO_FLD_ACCOUNT_OWNER {
+
+	ID = 43203;
+	DESCR = "Bank Account Owner";
+}
+
+
+#=======================================
+#  Field MSO_FLD_CREDIT_TYPE
+#=======================================
+
+ENUM MSO_FLD_CREDIT_TYPE {
+
+	ID = 43204;
+	DESCR = "Credit Type (0 - Cash, 1 - Cheque, 2 - Direct Credit)";
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_AMOUNT
+#=======================================
+
+DECIMAL MSO_FLD_REFUND_AMOUNT {
+
+	ID = 43200;
+	DESCR = "REFUND_AMOUNT";
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_DATE
+#=======================================
+
+TIMESTAMP MSO_FLD_REFUND_DATE {
+
+	ID = 43201;
+	DESCR = "Refund Date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_NO
+#=======================================
+
+STRING MSO_FLD_REFUND_NO {
+
+	ID = 43202;
+	DESCR = "Refund No";
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_REV_EVENT_OBJ
+#=======================================
+
+POID MSO_FLD_REFUND_REV_EVENT_OBJ {
+
+	ID = 42627;
+	DESCR = "To store Refund Reversal Event Poid";
+}
+
+
+#=======================================
+#  Field MSO_FLD_REFUND_REV_ITEM_OBJ
+#=======================================
+
+POID MSO_FLD_REFUND_REV_ITEM_OBJ {
+
+	ID = 42628;
+	DESCR = "To store Refund Reversal Item Poid";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+	ID = 932;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_NAME
+#=======================================
+
+STRING PIN_FLD_BANK_NAME {
+
+	ID = 1061;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHECK_NO
+#=======================================
+
+STRING PIN_FLD_CHECK_NO {
+
+	ID = 931;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEPOSIT_OBJ
+#=======================================
+
+POID PIN_FLD_DEPOSIT_OBJ {
+
+	ID = 4000;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POSTED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_POSTED_T {
+
+	ID = 518;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REFERENCE_ID
+#=======================================
+
+STRING PIN_FLD_REFERENCE_ID {
+
+	ID = 6302;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_refund
+#=======================================
+
+STORABLE CLASS /mso_refund {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Refund Amount";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_ACCOUNT_OWNER {
+
+		DESCR = "Bank Account Owner";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_CREDIT_TYPE {
+
+		DESCR = "Credit Type (0 - Cash, 1 - Cheque, 2 - Direct Credit)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_REFUND_AMOUNT {
+
+		DESCR = "REFUND_AMOUNT";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_REFUND_DATE {
+
+		DESCR = "Refund Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_REFUND_NO {
+
+		DESCR = "Refund No";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_REFUND_REV_EVENT_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_REFUND_REV_ITEM_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BANK_NAME {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CHECK_NO {
+
+		DESCR = "cheque no";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_DEPOSIT_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Description of the refund";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "0-Default,1-Reversed";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		DESCR = "Refund debit item poid";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_POSTED_T {
+
+		DESCR = "Cheque posting Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_REFERENCE_ID {
+
+		DESCR = "Reference ID";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Srvice object for the refund object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "Type of Refund: 0-HW   1-Subscription";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "User, who raised the refunds";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_refund
+#=======================================
+
+STORABLE CLASS /mso_refund IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_refund_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_ACCOUNT_OWNER {
+
+		SQL_COLUMN = "accout_owner";
+	}
+
+	ENUM MSO_FLD_CREDIT_TYPE {
+
+		SQL_COLUMN = "credit_type";
+	}
+
+	DECIMAL MSO_FLD_REFUND_AMOUNT {
+
+		SQL_COLUMN = "refund_amount";
+	}
+
+	TIMESTAMP MSO_FLD_REFUND_DATE {
+
+		SQL_COLUMN = "refund_date";
+	}
+
+	STRING MSO_FLD_REFUND_NO {
+
+		SQL_COLUMN = "refund_ref_no";
+	}
+
+	POID MSO_FLD_REFUND_REV_EVENT_OBJ {
+
+		SQL_COLUMN = "reversal_event_obj";
+	}
+
+	POID MSO_FLD_REFUND_REV_ITEM_OBJ {
+
+		SQL_COLUMN = "reversal_item_obj";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+		SQL_COLUMN = "bank_account_no";
+	}
+
+	STRING PIN_FLD_BANK_NAME {
+
+		SQL_COLUMN = "bank_name";
+	}
+
+	STRING PIN_FLD_CHECK_NO {
+
+		SQL_COLUMN = "check_no";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	POID PIN_FLD_DEPOSIT_OBJ {
+
+		SQL_COLUMN = "deposit_obj";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		SQL_COLUMN = "event_obj";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "is_reverse";
+	}
+
+	POID PIN_FLD_ITEM_OBJ {
+
+		SQL_COLUMN = "item_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	TIMESTAMP PIN_FLD_POSTED_T {
+
+		SQL_COLUMN = "posted_t";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_REFERENCE_ID {
+
+		SQL_COLUMN = "reference_id";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "refund_type";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "user_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

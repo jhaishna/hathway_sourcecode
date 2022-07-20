@@ -1,0 +1,1348 @@
+E Tue Jun 29 14:11:48 2021  dev-brm-upg.hathway.net  <no name>:34911  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:11:48 2021  dev-brm-upg.hathway.net  pin_cycle_fees:34911  pin_mta.c:1958 2:dev-brm-upg.hathway.net:pin_cycle_fees:34911:-153241856:0:1624956108:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:11:48 2021  dev-brm-upg.hathway.net  pin_cycle_fees:34911  pin_mta.c:2240 2:dev-brm-upg.hathway.net:pin_cycle_fees:34911:-153241856:0:1624956108:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:11:48 2021  dev-brm-upg.hathway.net  pin_cycle_fees:34911  pin_mta.c:2262 2:dev-brm-upg.hathway.net:pin_cycle_fees:34911:-153241856:0:1624956108:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "pin_cycle_fees"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 34911
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1624956108) Tue Jun 29 14:11:48 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1624956108) Tue Jun 29 14:11:48 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:pin_cycle_fees:34911:-153241856:0:1624956108:1::::"
+E Tue Jun 29 14:14:18 2021  dev-brm-upg.hathway.net  <no name>:35105  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:14:18 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35105  pin_mta.c:1958 2:dev-brm-upg.hathway.net:pin_cycle_fees:35105:-152860928:0:1624956258:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:14:18 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35105  pin_mta.c:2240 2:dev-brm-upg.hathway.net:pin_cycle_fees:35105:-152860928:0:1624956258:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:14:18 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35105  pin_mta.c:2262 2:dev-brm-upg.hathway.net:pin_cycle_fees:35105:-152860928:0:1624956258:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "pin_cycle_fees"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 35105
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1624956258) Tue Jun 29 14:14:18 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1624956258) Tue Jun 29 14:14:18 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:pin_cycle_fees:35105:-152860928:0:1624956258:1::::"
+E Tue Jun 29 14:15:14 2021  dev-brm-upg.hathway.net  <no name>:35325  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:15:14 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35325  pin_mta.c:1958 2:dev-brm-upg.hathway.net:pin_cycle_fees:35325:-153286912:0:1624956314:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:15:14 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35325  pin_mta.c:2240 2:dev-brm-upg.hathway.net:pin_cycle_fees:35325:-153286912:0:1624956314:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:15:14 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35325  pin_mta.c:2262 2:dev-brm-upg.hathway.net:pin_cycle_fees:35325:-153286912:0:1624956314:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "pin_cycle_fees"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 32
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 35325
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1624956314) Tue Jun 29 14:15:14 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1624956314) Tue Jun 29 14:15:14 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:pin_cycle_fees:35325:-153286912:0:1624956314:1::::"
+E Tue Jun 29 14:20:14 2021  dev-brm-upg.hathway.net  <no name>:35907  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:20:14 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35907  pin_mta.c:1958 2:dev-brm-upg.hathway.net:pin_cycle_fees:35907:-153241856:0:1624956614:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:20:14 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35907  pin_mta.c:2240 2:dev-brm-upg.hathway.net:pin_cycle_fees:35907:-153241856:0:1624956614:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Jun 29 14:20:14 2021  dev-brm-upg.hathway.net  pin_cycle_fees:35907  pin_mta.c:2262 2:dev-brm-upg.hathway.net:pin_cycle_fees:35907:-153241856:0:1624956614:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "pin_cycle_fees"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 35907
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1624956614) Tue Jun 29 14:20:14 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1624956614) Tue Jun 29 14:20:14 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:pin_cycle_fees:35907:-153241856:0:1624956614:1::::"
+E Thu Aug 19 13:30:34 2021  dev-brm-upg.hathway.net  <no name>:5696  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Thu Aug 19 13:30:34 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:5696  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:5696:-147409152:0:1629360034:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Thu Aug 19 13:30:34 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:5696  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:5696:-147409152:0:1629360034:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Thu Aug 19 13:30:34 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:5696  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:5696:-147409152:0:1629360034:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 5696
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629360034) Thu Aug 19 13:30:34 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629360034) Thu Aug 19 13:30:34 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:5696:-147409152:0:1629360034:1::::"
+E Mon Aug 23 18:15:03 2021  dev-brm-upg.hathway.net  <no name>:9332  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Mon Aug 23 18:15:03 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:9332  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:9332:-147478784:0:1629722703:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Mon Aug 23 18:15:03 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:9332  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:9332:-147478784:0:1629722703:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Mon Aug 23 18:15:03 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:9332  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:9332:-147478784:0:1629722703:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 9332
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629722703) Mon Aug 23 18:15:03 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629722703) Mon Aug 23 18:15:03 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:9332:-147478784:0:1629722703:1::::"
+E Tue Aug 24 09:13:58 2021  dev-brm-upg.hathway.net  <no name>:45517  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 09:13:58 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45517  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45517:-147089664:0:1629776638:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 09:13:58 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45517  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45517:-147089664:0:1629776638:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 09:13:58 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45517  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45517:-147089664:0:1629776638:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 45517
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629776638) Tue Aug 24 09:13:58 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629776638) Tue Aug 24 09:13:58 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:45517:-147089664:0:1629776638:1::::"
+E Tue Aug 24 09:14:14 2021  dev-brm-upg.hathway.net  <no name>:45556  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 09:14:14 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45556  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45556:-147736832:0:1629776654:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 09:14:14 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45556  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45556:-147736832:0:1629776654:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 09:14:14 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45556  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45556:-147736832:0:1629776654:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 45556
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629776654) Tue Aug 24 09:14:14 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629776654) Tue Aug 24 09:14:14 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:45556:-147736832:0:1629776654:1::::"
+E Tue Aug 24 13:32:36 2021  dev-brm-upg.hathway.net  <no name>:29781  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:32:36 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:29781  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:29781:-147720448:0:1629792156:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:32:36 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:29781  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:29781:-147720448:0:1629792156:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:32:36 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:29781  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:29781:-147720448:0:1629792156:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 29781
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629792156) Tue Aug 24 13:32:36 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629792156) Tue Aug 24 13:32:36 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:29781:-147720448:0:1629792156:1::::"
+E Tue Aug 24 13:35:23 2021  dev-brm-upg.hathway.net  <no name>:30222  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:35:23 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30222  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30222:-147814656:0:1629792323:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:35:23 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30222  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30222:-147814656:0:1629792323:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:35:23 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30222  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30222:-147814656:0:1629792323:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 30222
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629792323) Tue Aug 24 13:35:23 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629792323) Tue Aug 24 13:35:23 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:30222:-147814656:0:1629792323:1::::"
+E Tue Aug 24 13:35:46 2021  dev-brm-upg.hathway.net  <no name>:30369  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:35:46 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30369  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30369:-147515648:0:1629792346:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:35:46 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30369  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30369:-147515648:0:1629792346:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:35:46 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30369  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30369:-147515648:0:1629792346:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 30369
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629792346) Tue Aug 24 13:35:46 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629792346) Tue Aug 24 13:35:46 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:30369:-147515648:0:1629792346:1::::"
+E Tue Aug 24 13:36:21 2021  dev-brm-upg.hathway.net  <no name>:30428  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:36:21 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30428  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30428:-146970880:0:1629792381:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:36:21 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30428  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30428:-146970880:0:1629792381:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:36:21 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:30428  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:30428:-146970880:0:1629792381:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 30428
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629792381) Tue Aug 24 13:36:21 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629792381) Tue Aug 24 13:36:21 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:30428:-146970880:0:1629792381:1::::"
+E Tue Aug 24 13:39:21 2021  dev-brm-upg.hathway.net  <no name>:31279  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:39:21 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:31279  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:31279:-147761408:0:1629792561:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:39:21 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:31279  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:31279:-147761408:0:1629792561:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 13:39:21 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:31279  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:31279:-147761408:0:1629792561:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 31279
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629792561) Tue Aug 24 13:39:21 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629792561) Tue Aug 24 13:39:21 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:31279:-147761408:0:1629792561:1::::"
+E Tue Aug 24 17:54:58 2021  dev-brm-upg.hathway.net  <no name>:18081  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:54:58 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18081  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18081:-147073280:0:1629807898:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:54:58 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18081  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18081:-147073280:0:1629807898:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:54:58 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18081  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18081:-147073280:0:1629807898:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 18081
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629807898) Tue Aug 24 17:54:58 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629807898) Tue Aug 24 17:54:58 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:18081:-147073280:0:1629807898:1::::"
+E Tue Aug 24 17:58:43 2021  dev-brm-upg.hathway.net  <no name>:18820  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:58:43 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18820  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18820:-147429632:0:1629808123:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:58:43 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18820  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18820:-147429632:0:1629808123:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:58:43 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18820  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18820:-147429632:0:1629808123:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 18820
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629808123) Tue Aug 24 17:58:43 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629808123) Tue Aug 24 17:58:43 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:18820:-147429632:0:1629808123:1::::"
+E Tue Aug 24 17:59:19 2021  dev-brm-upg.hathway.net  <no name>:18919  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:59:19 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18919  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18919:-147486976:0:1629808159:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:59:19 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18919  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18919:-147486976:0:1629808159:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 17:59:19 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:18919  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:18919:-147486976:0:1629808159:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 18919
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629808159) Tue Aug 24 17:59:19 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629808159) Tue Aug 24 17:59:19 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:18919:-147486976:0:1629808159:1::::"
+E Tue Aug 24 18:01:39 2021  dev-brm-upg.hathway.net  <no name>:19538  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:01:39 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:19538  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:19538:-147515648:0:1629808299:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:01:39 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:19538  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:19538:-147515648:0:1629808299:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:01:39 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:19538  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:19538:-147515648:0:1629808299:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 19538
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629808299) Tue Aug 24 18:01:39 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629808299) Tue Aug 24 18:01:39 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:19538:-147515648:0:1629808299:1::::"
+E Tue Aug 24 18:17:33 2021  dev-brm-upg.hathway.net  <no name>:22551  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:17:33 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:22551  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:22551:-147687680:0:1629809253:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:17:33 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:22551  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:22551:-147687680:0:1629809253:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:17:33 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:22551  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:22551:-147687680:0:1629809253:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 22551
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629809253) Tue Aug 24 18:17:33 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629809253) Tue Aug 24 18:17:33 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:22551:-147687680:0:1629809253:1::::"
+E Tue Aug 24 18:19:57 2021  dev-brm-upg.hathway.net  <no name>:22936  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:19:57 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:22936  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:22936:-147802368:0:1629809397:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:19:57 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:22936  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:22936:-147802368:0:1629809397:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:19:57 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:22936  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:22936:-147802368:0:1629809397:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 22936
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629809397) Tue Aug 24 18:19:57 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629809397) Tue Aug 24 18:19:57 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:22936:-147802368:0:1629809397:1::::"
+E Tue Aug 24 18:23:11 2021  dev-brm-upg.hathway.net  <no name>:23569  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:23:11 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:23569  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:23569:-147040512:0:1629809591:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:23:11 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:23569  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:23569:-147040512:0:1629809591:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 24 18:23:11 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:23569  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:23569:-147040512:0:1629809591:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 23569
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1629809591) Tue Aug 24 18:23:11 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1629809591) Tue Aug 24 18:23:11 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:23569:-147040512:0:1629809591:1::::"
+E Wed Aug 25 16:28:29 2021  dev-brm-upg.hathway.net  testnap:6624  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:6624:-147048704:0:1629889109:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Wed Aug 25 16:28:29 2021  dev-brm-upg.hathway.net  testnap:6624  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:6624:-147048704:0:1629889109:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Wed Aug 25 16:28:29 2021  dev-brm-upg.hathway.net  testnap:6624  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:6624:-147048704:0:1629889109:0::::
+	Server connection(ip 172.20.21.16 55501) ready to failover (no trans)
+E Wed Aug 25 16:28:29 2021  dev-brm-upg.hathway.net  testnap:6624  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:6624:-147048704:0:1629889109:0::::
+	(6624): bad receive of login response, err 50
+W Wed Aug 25 16:28:29 2021  dev-brm-upg.hathway.net  testnap:6624  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:6624:-147048704:0:1629889109:0::::
+	connect to host=172.20.21.16, port=55501 FAILED,  returned ebufp->pin_err=50
+E Wed Aug 25 16:28:29 2021  dev-brm-upg.hathway.net  testnap:6624  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:6624:-147048704:0:1629889109:0::::
+	(6624): pcp_connect(), connecting - failed
+E Wed Aug 25 16:28:29 2021  dev-brm-upg.hathway.net  testnap:6624  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:6624:-147048704:0:1629889109:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Wed Aug 25 16:28:29 2021  dev-brm-upg.hathway.net  testnap:6624  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:6624:-147048704:0:1629889109:0::::
+	pcm_connect: bad pcm_context_open, err 50
+E Tue Aug 31 09:55:24 2021  dev-brm-upg.hathway.net  <no name>:15554  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 09:55:24 2021  dev-brm-upg.hathway.net  mso_bb_create_credit_note:15554  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_bb_create_credit_note:15554:-147933440:0:1630383924:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 09:55:24 2021  dev-brm-upg.hathway.net  mso_bb_create_credit_note:15554  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_bb_create_credit_note:15554:-147933440:0:1630383924:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 09:55:24 2021  dev-brm-upg.hathway.net  mso_bb_create_credit_note:15554  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_bb_create_credit_note:15554:-147933440:0:1630383924:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_bb_create_credit_note"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 0
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 15554
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1630383924) Tue Aug 31 09:55:24 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1630383924) Tue Aug 31 09:55:24 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_bb_create_credit_note:15554:-147933440:0:1630383924:1::::"
+E Tue Aug 31 11:35:19 2021  dev-brm-upg.hathway.net  <no name>:34088  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 11:35:19 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:34088  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:34088:-147159296:0:1630389919:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 11:35:19 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:34088  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:34088:-147159296:0:1630389919:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 11:35:19 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:34088  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:34088:-147159296:0:1630389919:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 34088
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1630389919) Tue Aug 31 11:35:19 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1630389919) Tue Aug 31 11:35:19 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:34088:-147159296:0:1630389919:1::::"
+E Tue Aug 31 12:17:12 2021  dev-brm-upg.hathway.net  <no name>:43388  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 12:17:12 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:43388  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:43388:-147241216:0:1630392432:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 12:17:12 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:43388  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:43388:-147241216:0:1630392432:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 12:17:12 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:43388  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:43388:-147241216:0:1630392432:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 43388
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1630392432) Tue Aug 31 12:17:12 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1630392432) Tue Aug 31 12:17:12 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:43388:-147241216:0:1630392432:1::::"
+E Tue Aug 31 12:28:51 2021  dev-brm-upg.hathway.net  <no name>:45642  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 12:28:51 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45642  pin_mta.c:1907 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45642:-147921152:0:1630393131:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 12:28:51 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45642  pin_mta.c:2124 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45642:-147921152:0:1630393131:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug 31 12:28:51 2021  dev-brm-upg.hathway.net  mso_mta_job_processor:45642  pin_mta.c:2146 2:dev-brm-upg.hathway.net:mso_mta_job_processor:45642:-147921152:0:1630393131:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "mso_mta_job_processor"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 2
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 45642
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1630393131) Tue Aug 31 12:28:51 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1630393131) Tue Aug 31 12:28:51 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:mso_mta_job_processor:45642:-147921152:0:1630393131:1::::"
+E Tue Oct 26 15:45:51 2021  dev-brm-upg.hathway.net  <no name>:63688  pin_mta_api.c:445 2:<machine>:<program>:0:0:0:0:0::::
+	pin_mta_get_str_from_pinconf error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Oct 26 15:45:51 2021  dev-brm-upg.hathway.net  pin_cycle_fees:63688  pin_mta.c:1958 2:dev-brm-upg.hathway.net:pin_cycle_fees:63688:-153307392:0:1635243351:1::::
+	pcm_connect error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Oct 26 15:45:51 2021  dev-brm-upg.hathway.net  pin_cycle_fees:63688  pin_mta.c:2240 2:dev-brm-upg.hathway.net:pin_cycle_fees:63688:-153307392:0:1635243351:1::::
+	normal error
+	<location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>
+	<field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Oct 26 15:45:51 2021  dev-brm-upg.hathway.net  pin_cycle_fees:63688  pin_mta.c:2262 2:dev-brm-upg.hathway.net:pin_cycle_fees:63688:-153307392:0:1635243351:1::::
+	Application global flist at exit
+# number of field entries allocated 20, used 6
+0 PIN_FLD_CONFIG_OBJ   SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_APPLICATION_INFO SUBSTRUCT [0] allocated 20, used 13
+1     PIN_FLD_NAME            STR [0] "pin_cycle_fees"
+1     PIN_FLD_CHILDREN        INT [0] 1
+1     PIN_FLD_STEP_SIZE       INT [0] 0
+1     PIN_FLD_BATCH_SIZE      INT [0] 0
+1     PIN_FLD_FETCH_SIZE      INT [0] 0
+1     PIN_FLD_SLEEP_INTERVAL    INT [0] 60
+1     PIN_FLD_NUM_RETRIES     INT [0] 0
+1     PIN_FLD_FLAGS           INT [0] 32
+1     PIN_FLD_MAX_ERROR       INT [0] 0
+1     PIN_FLD_MAX_TIME        INT [0] 0
+1     PIN_FLD_HOTLIST_FILENAME    STR [0] ""
+1     PIN_FLD_MONITOR_FILENAME    STR [0] ""
+1     PIN_FLD_OBJ_TYPE        STR [0] "/config/mta"
+0 PIN_FLD_SEARCH_FLIST SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_SEARCH_RESULTS SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 0
+0 PIN_FLD_OPERATION_INFO SUBSTRUCT [0] allocated 20, used 5
+1     PIN_FLD_PID             INT [0] 63688
+1     PIN_FLD_HOSTNAME        STR [0] "dev-brm-upg.hathway.net"
+1     PIN_FLD_START_T      TSTAMP [0] (1635243351) Tue Oct 26 15:45:51 2021
+1     PIN_FLD_END_T        TSTAMP [0] (1635243351) Tue Oct 26 15:45:51 2021
+1     PIN_FLD_ERROR_INFO    ARRAY [0] allocated 20, used 5
+2         PIN_FLD_ERROR_NUM       INT [0] 1
+2         PIN_FLD_SYS_ERROR_NUM    INT [0] 0
+2         PIN_FLD_ERROR_CODE      STR [0] "PIN_ERR_NOT_FOUND"
+2         PIN_FLD_ERROR_DESCR     STR [0] "\t            <location=PIN_ERRLOC_APP:8 class=PIN_ERRCLASS_APPLICATION:4 errno=PIN_ERR_NOT_FOUND:3>\n\t            <field num=PIN_FLD_LOGFILE:5,305 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>\n\t            <facility=0 msg_id=0 version=0>\n"
+2         PIN_FLD_TRACKING_ID     STR [0] "2:dev-brm-upg.hathway.net:pin_cycle_fees:63688:-153307392:0:1635243351:1::::"
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:932  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:932:-147572992:0:1635405314:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:932  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:932:-147572992:0:1635405314:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:932  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:932:-147572992:0:1635405314:0::::
+	Server connection(ip 172.20.21.16 55502) ready to failover (no trans)
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:932  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:932:-147572992:0:1635405314:0::::
+	(932): bad receive of login response, err 50
+W Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:932  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:932:-147572992:0:1635405314:0::::
+	connect to host=172.20.21.16, port=55502 FAILED,  returned ebufp->pin_err=50
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:932  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:932:-147572992:0:1635405314:0::::
+	(932): pcp_connect(), connecting - failed
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:2036  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:2036:-147642624:0:1635405642:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:2036  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:2036:-147642624:0:1635405642:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:2036  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:2036:-147642624:0:1635405642:0::::
+	Server connection(ip 172.20.21.16 55502) ready to failover (no trans)
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:2036  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:2036:-147642624:0:1635405642:0::::
+	(2036): bad receive of login response, err 50
+W Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:2036  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:2036:-147642624:0:1635405642:0::::
+	connect to host=172.20.21.16, port=55502 FAILED,  returned ebufp->pin_err=50
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:2036  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:2036:-147642624:0:1635405642:0::::
+	(2036): pcp_connect(), connecting - failed
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:6455  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:6455:-147155200:0:1635407016:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:6455  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:6455:-147155200:0:1635407016:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:6455  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:6455:-147155200:0:1635407016:0::::
+	Server connection(ip 172.20.21.16 55502) ready to failover (no trans)
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:6455  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:6455:-147155200:0:1635407016:0::::
+	(6455): bad receive of login response, err 50
+W Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:6455  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:6455:-147155200:0:1635407016:0::::
+	connect to host=172.20.21.16, port=55502 FAILED,  returned ebufp->pin_err=50
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:6455  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:6455:-147155200:0:1635407016:0::::
+	(6455): pcp_connect(), connecting - failed
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:932  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:932:-147572992:0:1635405314:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:932  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:932:-147572992:0:1635405314:0::::
+	pcm_connect: bad pcm_context_open, err 50
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:6455  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:6455:-147155200:0:1635407016:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:6455  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:6455:-147155200:0:1635407016:0::::
+	pcm_connect: bad pcm_context_open, err 50
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:2036  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:2036:-147642624:0:1635405642:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Thu Oct 28 13:16:36 2021  dev-brm-upg.hathway.net  testnap:2036  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:2036:-147642624:0:1635405642:0::::
+	pcm_connect: bad pcm_context_open, err 50
+E Fri Oct 29 12:35:09 2021  dev-brm-upg.hathway.net  testnap:18877  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:18877:-147314944:0:1635491108:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Fri Oct 29 12:35:09 2021  dev-brm-upg.hathway.net  testnap:18877  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:18877:-147314944:0:1635491108:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Fri Oct 29 12:35:09 2021  dev-brm-upg.hathway.net  testnap:18877  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:18877:-147314944:0:1635491108:0::::
+	Server connection(ip 172.20.21.16 55502) ready to failover (no trans)
+E Fri Oct 29 12:35:09 2021  dev-brm-upg.hathway.net  testnap:18877  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:18877:-147314944:0:1635491108:0::::
+	(18877): bad receive of login response, err 50
+W Fri Oct 29 12:35:09 2021  dev-brm-upg.hathway.net  testnap:18877  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:18877:-147314944:0:1635491108:0::::
+	connect to host=172.20.21.16, port=55502 FAILED,  returned ebufp->pin_err=50
+E Fri Oct 29 12:35:09 2021  dev-brm-upg.hathway.net  testnap:18877  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:18877:-147314944:0:1635491108:0::::
+	(18877): pcp_connect(), connecting - failed
+E Fri Oct 29 12:35:09 2021  dev-brm-upg.hathway.net  testnap:18877  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:18877:-147314944:0:1635491108:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Fri Oct 29 12:35:09 2021  dev-brm-upg.hathway.net  testnap:18877  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:18877:-147314944:0:1635491108:0::::
+	pcm_connect: bad pcm_context_open, err 50
+E Fri Oct 29 12:36:58 2021  dev-brm-upg.hathway.net  testnap:19447  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:19447:-147446016:0:1635491217:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Fri Oct 29 12:36:58 2021  dev-brm-upg.hathway.net  testnap:19447  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:19447:-147446016:0:1635491217:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Fri Oct 29 12:36:58 2021  dev-brm-upg.hathway.net  testnap:19447  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:19447:-147446016:0:1635491217:0::::
+	Server connection(ip 172.20.21.16 55502) ready to failover (no trans)
+E Fri Oct 29 12:36:58 2021  dev-brm-upg.hathway.net  testnap:19447  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:19447:-147446016:0:1635491217:0::::
+	(19447): bad receive of login response, err 50
+W Fri Oct 29 12:36:58 2021  dev-brm-upg.hathway.net  testnap:19447  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:19447:-147446016:0:1635491217:0::::
+	connect to host=172.20.21.16, port=55502 FAILED,  returned ebufp->pin_err=50
+E Fri Oct 29 12:36:58 2021  dev-brm-upg.hathway.net  testnap:19447  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:19447:-147446016:0:1635491217:0::::
+	(19447): pcp_connect(), connecting - failed
+E Fri Oct 29 12:36:58 2021  dev-brm-upg.hathway.net  testnap:19447  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:19447:-147446016:0:1635491217:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Fri Oct 29 12:36:58 2021  dev-brm-upg.hathway.net  testnap:19447  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:19447:-147446016:0:1635491217:0::::
+	pcm_connect: bad pcm_context_open, err 50
+W Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pin_conf.c(46):811 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	Re-reading the pin.conf file "./pin.conf" since it has changed. Previous file mod time was 1635259384, now it is 1635494799
+E Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	Server connection(ip 172.20.21.16 55502) ready to failover (no trans)
+E Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	(19390): bad receive of login response, err 50
+W Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	connect to host=172.20.21.16, port=55502 FAILED,  returned ebufp->pin_err=50
+E Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	(19390): pcp_connect(), connecting - failed
+E Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Nov  9 11:21:17 2021  dev-brm-upg.hathway.net  testnap:19390  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:19390:-147495168:0:1635491179:0::::
+	pcm_connect: bad pcm_context_open, err 50
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:35873  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:35873:-147568896:0:1648206809:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:35873  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:35873:-147568896:0:1648206809:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:35873  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:35873:-147568896:0:1648206809:0::::
+	Server connection(ip 172.20.21.16 55501) ready to failover (no trans)
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:35873  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:35873:-147568896:0:1648206809:0::::
+	(35873): bad receive of login response, err 50
+W Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:35873  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:35873:-147568896:0:1648206809:0::::
+	connect to host=172.20.21.16, port=55501 FAILED,  returned ebufp->pin_err=50
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:35873  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:35873:-147568896:0:1648206809:0::::
+	(35873): pcp_connect(), connecting - failed
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:44305  pcp_xdrst.c(62):3202 2:dev-brm-upg.hathway.net:testnap:44305:-147028224:0:1647941066:0::::
+	received PIN_ERR_STREAM_EOF, closing socket
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:35873  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:35873:-147568896:0:1648206809:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:35873  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:35873:-147568896:0:1648206809:0::::
+	pcm_connect: bad pcm_context_open, err 50
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:44305  pcp_xdrst.c(62):3216 2:dev-brm-upg.hathway.net:testnap:44305:-147028224:0:1647941066:0::::
+	pcpxdr_op_decode: bad xdr: PinErr=50 - PIN_ERR_STREAM_EOF
+W Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:44305  pcpst.c(107):4764 2:dev-brm-upg.hathway.net:testnap:44305:-147028224:0:1647941066:0::::
+	Server connection(ip 172.20.21.16 55501) ready to failover (no trans)
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:44305  pcp_login.c(31):322 2:dev-brm-upg.hathway.net:testnap:44305:-147028224:0:1647941066:0::::
+	(44305): bad receive of login response, err 50
+W Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:44305  pcpst.c(107):2092 2:dev-brm-upg.hathway.net:testnap:44305:-147028224:0:1647941066:0::::
+	connect to host=172.20.21.16, port=55501 FAILED,  returned ebufp->pin_err=50
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:44305  pcpst.c(107):2132 2:dev-brm-upg.hathway.net:testnap:44305:-147028224:0:1647941066:0::::
+	(44305): pcp_connect(), connecting - failed
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:44305  pcm.c(65):197 2:dev-brm-upg.hathway.net:testnap:44305:-147028224:0:1647941066:0::::
+	Connect open failed in pcm_context_open
+	<location=PIN_ERRLOC_PCP:2 class=PIN_ERRCLASS_SYSTEM_RETRYABLE:3 errno=PIN_ERR_STREAM_EOF:50>
+	<field num=opsflds:0,0 recid=0 reserved=0 reserved2=1 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Sun May 15 06:07:29 2022  dev-brm-upg.hathway.net  testnap:44305  pcm_conn.c(9):285 2:dev-brm-upg.hathway.net:testnap:44305:-147028224:0:1647941066:0::::
+	pcm_connect: bad pcm_context_open, err 50

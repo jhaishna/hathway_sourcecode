@@ -1,0 +1,193 @@
+
+#=======================================
+#  Field PIN_FLD_CYCLE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CYCLE_INFO {
+
+	ID = 1827;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+	ID = 267;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+	ID = 266;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORIGINAL_SCALE
+#=======================================
+
+DECIMAL PIN_FLD_ORIGINAL_SCALE {
+
+	ID = 9070;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCALE
+#=======================================
+
+DECIMAL PIN_FLD_SCALE {
+
+	ID = 71;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/mso_catv_commitment
+#=======================================
+
+STORABLE CLASS /event/billing/mso_catv_commitment {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO CATV Min. Commitment";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CYCLE_INFO {
+
+		DESCR = "event cycle info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_ORIGINAL_SCALE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_SCALE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/mso_catv_commitment
+#=======================================
+
+STORABLE CLASS /event/billing/mso_catv_commitment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CYCLE_INFO {
+
+		SQL_TABLE = "cycle_info_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+			SQL_COLUMN = "end_t";
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+			SQL_COLUMN = "start_t";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		DECIMAL PIN_FLD_ORIGINAL_SCALE {
+
+			SQL_COLUMN = "original_scale";
+		}
+
+		DECIMAL PIN_FLD_SCALE {
+
+			SQL_COLUMN = "scale";
+		}
+
+	}
+
+}
+

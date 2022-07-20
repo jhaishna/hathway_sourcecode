@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_email_pk
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_email_pk {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk email mta for PK";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_email_pk
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_email_pk IMPLEMENTATION ORACLE7 {
+
+}
+

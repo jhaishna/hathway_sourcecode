@@ -1,0 +1,5056 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADJUSTED
+#=======================================
+
+DECIMAL PIN_FLD_ADJUSTED {
+
+	ID = 788;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVE_STATUS
+#=======================================
+
+ENUM PIN_FLD_ARCHIVE_STATUS {
+
+	ID = 1755;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_AR_BILLINFO_OBJ {
+
+	ID = 7908;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_AR_BILL_OBJ {
+
+	ID = 796;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_BILL_OBJ {
+
+	ID = 44;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLOSED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CLOSED_T {
+
+	ID = 792;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_OPERATOR
+#=======================================
+
+ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+	ID = 1612;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_RATE
+#=======================================
+
+DECIMAL PIN_FLD_CURRENCY_RATE {
+
+	ID = 1611;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_SECONDARY
+#=======================================
+
+INT PIN_FLD_CURRENCY_SECONDARY {
+
+	ID = 1616;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELTA_DUE
+#=======================================
+
+DECIMAL PIN_FLD_DELTA_DUE {
+
+	ID = 870;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISPUTED
+#=======================================
+
+DECIMAL PIN_FLD_DISPUTED {
+
+	ID = 786;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUE
+#=======================================
+
+DECIMAL PIN_FLD_DUE {
+
+	ID = 785;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_DUE_T {
+
+	ID = 798;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_POID_LIST
+#=======================================
+
+STRING PIN_FLD_EVENT_POID_LIST {
+
+	ID = 2500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENT
+#=======================================
+
+STRING PIN_FLD_GL_SEGMENT {
+
+	ID = 517;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_NO
+#=======================================
+
+STRING PIN_FLD_ITEM_NO {
+
+	ID = 797;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_ITEM_TOTAL {
+
+	ID = 784;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPENED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_OPENED_T {
+
+	ID = 799;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECVD
+#=======================================
+
+DECIMAL PIN_FLD_RECVD {
+
+	ID = 787;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANSFERED
+#=======================================
+
+DECIMAL PIN_FLD_TRANSFERED {
+
+	ID = 790;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITEOFF
+#=======================================
+
+DECIMAL PIN_FLD_WRITEOFF {
+
+	ID = 800;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /item
+#=======================================
+
+STORABLE CLASS /item {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Item objects represent A/R in Infranet. Any impact to an account's A/R is stored and tracked in an /item object. This includes not only fees and usage charges, but also payments, adjustments, disputes and refunds. Events always belong to one or more /item objects. The impact from any event can be traced to the /item tracking that A/R. Some /item objects belong to a /bill object (cycle fees, usage, etc), while others are direct A/R and do not belong to any bill (payments, refunds, etc). See /event.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object that owns this item.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_ADJUSTED {
+
+		DESCR = "Total amount of adjustments that have been made to this item. Includes both debit and credit adjustments (net). Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_ARCHIVE_STATUS {
+
+		DESCR = "Archiving status for this item instance";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_AR_BILLINFO_OBJ {
+
+		DESCR = "Link to billinfo object that owns the A/R from this item. If billinfo is not subordinate, then A/R billinfo is the billinfo that owns the item. For a subordinate billinfo, A/R billinfo is the first non-subordinate billinfo ancestor of this billinfo.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_AR_BILL_OBJ {
+
+		DESCR = "Link to bill object that owns the A/R for this item. If account is not subordinate, A/R bill object is identical to bill object. For a subordinate account, A/R bill is the bill object that will actually be collected.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		DESCR = "Link to balance_group object. This field will be setwhile creation of new individual bill-item.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		DESCR = "Link to billinfo object. This field will be setwhile creation of new item.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILL_OBJ {
+
+		DESCR = "Link to bill object that owns this item.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CLOSED_T {
+
+		DESCR = "Date when item was closed. If item is re-opened due to an adjustment, field is reset until item is closed again. 0 means item is not closed.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		DESCR = "Primary currency for the item. Copied from the primary currency of the account owning the item.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+		DESCR = "Reserved for future use.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CURRENCY_RATE {
+
+		DESCR = "Reserved for future use.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY_SECONDARY {
+
+		DESCR = "Secondary currency for the Item. Copied from the secondary currency of the account owning the item.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DELTA_DUE {
+
+		DESCR = "The difference between the due amount and the rounded due amount of this item.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DISPUTED {
+
+		DESCR = "Total amount of disputes that are currently open against the item. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_DUE {
+
+		DESCR = "Amount still due in this item. Due = Total - adjusted - disputed - recvd + or - transferred. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_DUE_T {
+
+		DESCR = "Date when Due amount in item is considered due. Calculated at bill processing time based on system configuration. See PIN_FLD_DUE_DOM and PIN_FLD_RELATIVE_DUE_T in /payinfo.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Date when this item was opened (billed). 0 means item has not yet been billed.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_EVENT_POID_LIST {
+
+		DESCR = "List of comulative event poids - all events that have affected this item";
+		ORDER = 0;
+		LENGTH = 4000;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "This field is supposed to be used to mark items for some reasons. Examples are: Mark special items to show them separately in invoices. Or include/exclude items from invoices. Or mark items for taxation in order to avoid double taxation for Bill_Now.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_GL_SEGMENT {
+
+		DESCR = "GL segment this account belongs to. This information is used in the ledger reports to group the accounts based on which GL segment they belong. The is cached here for performance reasons.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ITEM_NO {
+
+		DESCR = "Customer visible item number for this item. System generated as bill number for A/R bill with an item sequence (1,2,3 etc.) appended. See /config/sequence.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_ITEM_TOTAL {
+
+		DESCR = "Total A/R that this item represents. Equal to the sum of all currency impacts in events that point to this item. Total field is updated in real-time, so even pending items have a running total. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "OBSOLETE FIELD - NOT USED ANYMORE";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_OPENED_T {
+
+		DESCR = "Timestamp, when the item became first open. This is different from the effective_t, which represents when the item was supposed to be opened. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_RECVD {
+
+		DESCR = "Total amount of payments or credits applied against this item. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Link to service object. This field will be setwhile creation of new individual bill-item.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of this item. Values are PENDING (unbilled), OPEN (billed) and CLOSED (zero due).";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_TRANSFERED {
+
+		DESCR = "Total amount transferred out of this item to other items. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_WRITEOFF {
+
+		DESCR = "Total amount of write-off applied against this item. Amount is stored in primary currency.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /item/Education_Cess
+#=======================================
+
+STORABLE CLASS /item/Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Education_Cess";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /item/Entertainment_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Entertainment_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Education_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Edu Cess for Hardware.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Krish_Kalyan_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Krish_Kalyan_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Secondary_Higher_Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "SHE Cess for Hardware.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Service_Tax
+#=======================================
+
+STORABLE CLASS /item/HW_Service_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Service Tax for Hardware";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Swachh_Bharat_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Swachh_Bharat_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "item for Hw Swachh bharat cess.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Krish_Kalyan_Cess
+#=======================================
+
+STORABLE CLASS /item/Krish_Kalyan_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/MSO_Tax
+#=======================================
+
+STORABLE CLASS /item/MSO_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /item/Secondary_Higher_Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Secondary_Higher_Education_Cess";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Service_Tax
+#=======================================
+
+STORABLE CLASS /item/Service_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Service_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Swachh_Bharat_Cess
+#=======================================
+
+STORABLE CLASS /item/Swachh_Bharat_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "item for Swachh Bharat Cess.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Usg_Krish_Kalyan_Cess
+#=======================================
+
+STORABLE CLASS /item/Usg_Krish_Kalyan_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Usg_Service_Tax
+#=======================================
+
+STORABLE CLASS /item/Usg_Service_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Usage Service Tax.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Usg_Swachh_Bharat_Cess
+#=======================================
+
+STORABLE CLASS /item/Usg_Swachh_Bharat_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Usage Swachh Bharat Cess.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/VAT
+#=======================================
+
+STORABLE CLASS /item/VAT {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "VAT";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/adjustment
+#=======================================
+
+STORABLE CLASS /item/adjustment {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent adjustment items.  These items created when adustments are made to an account or item or event.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent cycle_arrear items.  These items are created from cycle_arrear fee generated events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/monthly_mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/monthly_mso_sb_pkg_dpop {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "monthly_mso_sb_pkg_dpop";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_et
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_et {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Arrear Entertainment tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_amc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso hw amc";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for monthly Cycle Arrear Harhware Rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_adn_normal {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_adn_normal";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_alc_fta {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_alc_fta";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_alc_paid
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_alc_paid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_alc_paid";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_hw
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_hw {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear of mso_sb_onetime_hw";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_srvc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_srvc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear of mso_sb_onetime_srvc";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_bst
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_bst {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_pkg_bst";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dpop {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_pkg_dpop";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dprp
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dprp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_pkg_dprp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dstp
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dstp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_pkg_dstp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward
+#=======================================
+
+STORABLE CLASS /item/cycle_forward {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent cycle_forward items.  These items are created from cycle_forward fee generated events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_et
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_et {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward mso et";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_grant
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_grant {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Grant item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Annual Maintenance Charge";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/cm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/cr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for DOCSIS 3.0 Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/huwr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nat
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nwifi
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/wlnd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward hardware Rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward item for Additional IP.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_add_mb_gb
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_add_mb_gb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Additional MB/GB.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_adn_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_adn_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Annual Addon fixed Duration Package Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_adn_normal {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward addon normal";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso_sb_alc_fdp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_fta {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward ala-carte fta";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_paid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_paid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward ala-carte paid";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Subscription for DOCSIS 2.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half yearly Subscription for DOCSIS 2.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for DOCSIS 2.0 Postpaid Plans.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Subscription for DOCSIS 3.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bimonthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly Subscription for DOCSIS 3.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for DOCSIS 3.0 Postpaid Plans.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Prepaid subscription items for FIBER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bi-Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Fiber Postpaid Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fup_topup
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fup_topup {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for FUP Topup.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Normal Prepaid Subscription for various duration mode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Subscrription for Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bimonthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Normal Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half yearly Subscription for Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for Normal Postpaid Plans.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_bst
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_bst {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward basic service tier package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dpop {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward popular package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dprp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dprp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward premium package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dstp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dstp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward digital starter package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso_sb_pkg_fdp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_tod
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_tod {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "TOD plan subscription item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_tod/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_tod/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly TOD subscription item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_ssp_monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_ssp_monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Special Site Plan item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward_arrear
+#=======================================
+
+STORABLE CLASS /item/cycle_forward_arrear {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent cycle_forward_arrear items.  These items are created from cycle_forward_arrear fee generated events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_tax
+#=======================================
+
+STORABLE CLASS /item/cycle_tax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent tax items.  These items are created from various events that have a balance (currency) impact for tax. This item type includes amounts from tax inclusive adjustments, disputes and settlements generated events and tax events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/dispute
+#=======================================
+
+STORABLE CLASS /item/dispute {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent dispute items.  These items created when disputes are opened.  See also /event/billing/dispute/item class.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/gst
+#=======================================
+
+STORABLE CLASS /item/gst {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/hw_gst
+#=======================================
+
+STORABLE CLASS /item/hw_gst {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/incentive
+#=======================================
+
+STORABLE CLASS /item/incentive {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent incentive . These are created when incentive is provided to account  for early payment.See also /event/billing/incentive.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/misc
+#=======================================
+
+STORABLE CLASS /item/misc {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent miscellaneous items.  These items are created from various events that have a balance (currency) impact and are not mapped to any other type of items.  This item type includes amounts from usage generated events, tax events, etc.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_cable_shift
+#=======================================
+
+STORABLE CLASS /item/mso_cable_shift {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cable Shifting Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_catv_commitment
+#=======================================
+
+STORABLE CLASS /item/mso_catv_commitment {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO CATV Min. Commitment Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_commission_share
+#=======================================
+
+STORABLE CLASS /item/mso_commission_share {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item to track LCO Commission share";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_cr_dr_note
+#=======================================
+
+STORABLE CLASS /item/mso_cr_dr_note {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for CRedit/Debit Note";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_deposit
+#=======================================
+
+STORABLE CLASS /item/mso_deposit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item mso deposit";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_domain_host
+#=======================================
+
+STORABLE CLASS /item/mso_domain_host {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Domain Hosting Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_dsa_commission
+#=======================================
+
+STORABLE CLASS /item/mso_dsa_commission {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item to track DSA Commission";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_email_addi
+#=======================================
+
+STORABLE CLASS /item/mso_email_addi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Additional Email Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_et
+#=======================================
+
+STORABLE CLASS /item/mso_et {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Custom item for ET";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hathway_share
+#=======================================
+
+STORABLE CLASS /item/mso_hathway_share {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item to track Hathway share";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Depost Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/cr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/huwr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/po
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/po {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Port Opening.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Outright Hardware Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/huwr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_installation
+#=======================================
+
+STORABLE CLASS /item/mso_installation {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Installation Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_installation/normal
+#=======================================
+
+STORABLE CLASS /item/mso_installation/normal {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Normal Device Installation";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_installation/wireless
+#=======================================
+
+STORABLE CLASS /item/mso_installation/wireless {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wireless device installation.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_ip_addi
+#=======================================
+
+STORABLE CLASS /item/mso_ip_addi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Additional IP Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_late_fee
+#=======================================
+
+STORABLE CLASS /item/mso_late_fee {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Late Fee";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_non_recurring_charges
+#=======================================
+
+STORABLE CLASS /item/mso_non_recurring_charges {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Late Fee";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_penalty
+#=======================================
+
+STORABLE CLASS /item/mso_penalty {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Check bounce penalty charges";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_penalty/bank
+#=======================================
+
+STORABLE CLASS /item/mso_penalty/bank {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Check bounce penalty charges by the bank";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_purchase_adn_fdp
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_adn_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for mso_purchase_adn_fdp ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_purchase_atp
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_atp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for mso purchase atp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_purchase_outright
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_outright {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for  mso purchase outright";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_refund
+#=======================================
+
+STORABLE CLASS /item/mso_refund {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Deposit Refund Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_refund_credit
+#=======================================
+
+STORABLE CLASS /item/mso_refund_credit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item storing refund credit amount";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_refund_debit
+#=======================================
+
+STORABLE CLASS /item/mso_refund_debit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item storing refund debit amount";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_space_addi
+#=======================================
+
+STORABLE CLASS /item/mso_space_addi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Additional Storage Space Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_usage
+#=======================================
+
+STORABLE CLASS /item/mso_usage {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment
+#=======================================
+
+STORABLE CLASS /item/payment {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent payment items.  These items are created when payments are made.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_deposit
+#=======================================
+
+STORABLE CLASS /item/payment/mso_deposit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO Deposit ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Depost Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/cm
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/cr
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/crsoho
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/dcm
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/huwr
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/nd
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/nwifi
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/po
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/po {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Port Opening.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/wlnd
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/reversal
+#=======================================
+
+STORABLE CLASS /item/payment/reversal {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent payment reversals.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/refund
+#=======================================
+
+STORABLE CLASS /item/refund {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent refunds.These are created when refunds are made on account or bill level.  See also /event/billing/refund.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/remittance
+#=======================================
+
+STORABLE CLASS /item/remittance {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent remittance items.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/settlement
+#=======================================
+
+STORABLE CLASS /item/settlement {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent settlements.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/roaming
+#=======================================
+
+STORABLE CLASS /item/settlement/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Settlement Item Object. Use to settle roaming or inter carrier exchange";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/ws
+#=======================================
+
+STORABLE CLASS /item/settlement/ws {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/sponsor
+#=======================================
+
+STORABLE CLASS /item/sponsor {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent sponsor items.  These items are created from events that apply sponsor fees.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/usage
+#=======================================
+
+STORABLE CLASS /item/usage {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "item object usage.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/usg_gst
+#=======================================
+
+STORABLE CLASS /item/usg_gst {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/writeoff
+#=======================================
+
+STORABLE CLASS /item/writeoff {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent writeoffs.  These are created when writeoffs are made on account or bill or item level.  See also /event/billing/writeoff. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/writeoff_reversal
+#=======================================
+
+STORABLE CLASS /item/writeoff_reversal {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent writeoff reversals.  These are created when writeoff reversal is performed againts a write-off.  See also /event/billing/writeoff_reversal. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item
+#=======================================
+
+STORABLE CLASS /item IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "item_t";
+	SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (poid_id0) (partition partition_last values less than (MAXVALUE))";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	DECIMAL PIN_FLD_ADJUSTED {
+
+		SQL_COLUMN = "adjusted";
+	}
+
+	ENUM PIN_FLD_ARCHIVE_STATUS {
+
+		SQL_COLUMN = "archive_status";
+	}
+
+	POID PIN_FLD_AR_BILLINFO_OBJ {
+
+		SQL_COLUMN = "ar_billinfo_obj";
+	}
+
+	POID PIN_FLD_AR_BILL_OBJ {
+
+		SQL_COLUMN = "ar_bill_obj";
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		SQL_COLUMN = "bal_grp_obj";
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		SQL_COLUMN = "billinfo_obj";
+	}
+
+	POID PIN_FLD_BILL_OBJ {
+
+		SQL_COLUMN = "bill_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CLOSED_T {
+
+		SQL_COLUMN = "closed_t";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		SQL_COLUMN = "currency";
+	}
+
+	ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+		SQL_COLUMN = "currency_operator";
+	}
+
+	DECIMAL PIN_FLD_CURRENCY_RATE {
+
+		SQL_COLUMN = "currency_rate";
+	}
+
+	INT PIN_FLD_CURRENCY_SECONDARY {
+
+		SQL_COLUMN = "currency_secondary";
+	}
+
+	DECIMAL PIN_FLD_DELTA_DUE {
+
+		SQL_COLUMN = "delta_due";
+	}
+
+	DECIMAL PIN_FLD_DISPUTED {
+
+		SQL_COLUMN = "disputed";
+	}
+
+	DECIMAL PIN_FLD_DUE {
+
+		SQL_COLUMN = "due";
+	}
+
+	TIMESTAMP PIN_FLD_DUE_T {
+
+		SQL_COLUMN = "due_t";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	STRING PIN_FLD_EVENT_POID_LIST {
+
+		SQL_COLUMN = "event_poid_list";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "flags";
+	}
+
+	STRING PIN_FLD_GL_SEGMENT {
+
+		SQL_COLUMN = "gl_segment";
+	}
+
+	STRING PIN_FLD_ITEM_NO {
+
+		SQL_COLUMN = "item_no";
+	}
+
+	DECIMAL PIN_FLD_ITEM_TOTAL {
+
+		SQL_COLUMN = "item_total";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	TIMESTAMP PIN_FLD_OPENED_T {
+
+		SQL_COLUMN = "opened_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	DECIMAL PIN_FLD_RECVD {
+
+		SQL_COLUMN = "recvd";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	DECIMAL PIN_FLD_TRANSFERED {
+
+		SQL_COLUMN = "transfered";
+	}
+
+	DECIMAL PIN_FLD_WRITEOFF {
+
+		SQL_COLUMN = "writeoff";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /item/Education_Cess
+#=======================================
+
+STORABLE CLASS /item/Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /item/Entertainment_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Education_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Krish_Kalyan_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Krish_Kalyan_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Secondary_Higher_Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Service_Tax
+#=======================================
+
+STORABLE CLASS /item/HW_Service_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Swachh_Bharat_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Swachh_Bharat_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/Krish_Kalyan_Cess
+#=======================================
+
+STORABLE CLASS /item/Krish_Kalyan_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/MSO_Tax
+#=======================================
+
+STORABLE CLASS /item/MSO_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /item/Secondary_Higher_Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/Service_Tax
+#=======================================
+
+STORABLE CLASS /item/Service_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/Swachh_Bharat_Cess
+#=======================================
+
+STORABLE CLASS /item/Swachh_Bharat_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/Usg_Krish_Kalyan_Cess
+#=======================================
+
+STORABLE CLASS /item/Usg_Krish_Kalyan_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/Usg_Service_Tax
+#=======================================
+
+STORABLE CLASS /item/Usg_Service_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/Usg_Swachh_Bharat_Cess
+#=======================================
+
+STORABLE CLASS /item/Usg_Swachh_Bharat_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/VAT
+#=======================================
+
+STORABLE CLASS /item/VAT IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/adjustment
+#=======================================
+
+STORABLE CLASS /item/adjustment IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/monthly_mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/monthly_mso_sb_pkg_dpop IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_et
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_et IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_amc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_adn_normal IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_alc_fta IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_alc_paid
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_alc_paid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_hw
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_hw IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_srvc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_srvc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_bst
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_bst IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dpop IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dprp
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dprp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dstp
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dstp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward
+#=======================================
+
+STORABLE CLASS /item/cycle_forward IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_et
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_et IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_grant
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_grant IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/cm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/cr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/huwr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nat
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nwifi
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/wlnd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_add_mb_gb
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_add_mb_gb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_adn_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_adn_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_adn_normal IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_fta IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_paid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_paid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fup_topup
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fup_topup IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_bst
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_bst IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dpop IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dprp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dprp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dstp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dstp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_tod
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_tod IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_tod/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_tod/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_ssp_monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_ssp_monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward_arrear
+#=======================================
+
+STORABLE CLASS /item/cycle_forward_arrear IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_tax
+#=======================================
+
+STORABLE CLASS /item/cycle_tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/dispute
+#=======================================
+
+STORABLE CLASS /item/dispute IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/gst
+#=======================================
+
+STORABLE CLASS /item/gst IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/hw_gst
+#=======================================
+
+STORABLE CLASS /item/hw_gst IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/incentive
+#=======================================
+
+STORABLE CLASS /item/incentive IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/misc
+#=======================================
+
+STORABLE CLASS /item/misc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_cable_shift
+#=======================================
+
+STORABLE CLASS /item/mso_cable_shift IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_catv_commitment
+#=======================================
+
+STORABLE CLASS /item/mso_catv_commitment IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_commission_share
+#=======================================
+
+STORABLE CLASS /item/mso_commission_share IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_cr_dr_note
+#=======================================
+
+STORABLE CLASS /item/mso_cr_dr_note IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_deposit
+#=======================================
+
+STORABLE CLASS /item/mso_deposit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_domain_host
+#=======================================
+
+STORABLE CLASS /item/mso_domain_host IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_dsa_commission
+#=======================================
+
+STORABLE CLASS /item/mso_dsa_commission IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_email_addi
+#=======================================
+
+STORABLE CLASS /item/mso_email_addi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_et
+#=======================================
+
+STORABLE CLASS /item/mso_et IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hathway_share
+#=======================================
+
+STORABLE CLASS /item/mso_hathway_share IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/cr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/huwr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/po
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/po IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/cr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/huwr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_installation
+#=======================================
+
+STORABLE CLASS /item/mso_installation IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_installation/normal
+#=======================================
+
+STORABLE CLASS /item/mso_installation/normal IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_installation/wireless
+#=======================================
+
+STORABLE CLASS /item/mso_installation/wireless IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_ip_addi
+#=======================================
+
+STORABLE CLASS /item/mso_ip_addi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_late_fee
+#=======================================
+
+STORABLE CLASS /item/mso_late_fee IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_non_recurring_charges
+#=======================================
+
+STORABLE CLASS /item/mso_non_recurring_charges IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_penalty
+#=======================================
+
+STORABLE CLASS /item/mso_penalty IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_penalty/bank
+#=======================================
+
+STORABLE CLASS /item/mso_penalty/bank IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_purchase_adn_fdp
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_adn_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_purchase_atp
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_atp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_purchase_outright
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_outright IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_refund
+#=======================================
+
+STORABLE CLASS /item/mso_refund IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_refund_credit
+#=======================================
+
+STORABLE CLASS /item/mso_refund_credit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_refund_debit
+#=======================================
+
+STORABLE CLASS /item/mso_refund_debit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_space_addi
+#=======================================
+
+STORABLE CLASS /item/mso_space_addi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_usage
+#=======================================
+
+STORABLE CLASS /item/mso_usage IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment
+#=======================================
+
+STORABLE CLASS /item/payment IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_deposit
+#=======================================
+
+STORABLE CLASS /item/payment/mso_deposit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/cm
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/cr
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/crsoho
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/dcm
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/huwr
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/nd
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/nwifi
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/po
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/po IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/wlnd
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/payment/reversal
+#=======================================
+
+STORABLE CLASS /item/payment/reversal IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/refund
+#=======================================
+
+STORABLE CLASS /item/refund IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/remittance
+#=======================================
+
+STORABLE CLASS /item/remittance IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/settlement
+#=======================================
+
+STORABLE CLASS /item/settlement IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/roaming
+#=======================================
+
+STORABLE CLASS /item/settlement/roaming IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/ws
+#=======================================
+
+STORABLE CLASS /item/settlement/ws IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/sponsor
+#=======================================
+
+STORABLE CLASS /item/sponsor IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/usage
+#=======================================
+
+STORABLE CLASS /item/usage IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/usg_gst
+#=======================================
+
+STORABLE CLASS /item/usg_gst IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/writeoff
+#=======================================
+
+STORABLE CLASS /item/writeoff IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/writeoff_reversal
+#=======================================
+
+STORABLE CLASS /item/writeoff_reversal IMPLEMENTATION ORACLE7 {
+
+}
+

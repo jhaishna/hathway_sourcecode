@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/hathway/!svn/ver/2315/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_prepaid_limited_usage_notification
+END
+mso_prepaid_lim_usage_notif.c
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/hathway/!svn/ver/2315/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_prepaid_limited_usage_notification/mso_prepaid_lim_usage_notif.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/hathway/!svn/ver/2315/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_prepaid_limited_usage_notification/Makefile
+END

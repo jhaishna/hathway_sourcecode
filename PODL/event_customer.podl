@@ -1,0 +1,1761 @@
+
+#=======================================
+#  Field PIN_FLD_ACTGINFO
+#=======================================
+
+ARRAY PIN_FLD_ACTGINFO {
+
+	ID = 751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_CYCLE_DOM
+#=======================================
+
+INT PIN_FLD_ACTG_CYCLE_DOM {
+
+	ID = 752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_FUTURE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+	ID = 757;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_NEXT_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+	ID = 755;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_BILL_T
+#=======================================
+
+TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+	ID = 132;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO
+#=======================================
+
+ARRAY PIN_FLD_BILLINFO {
+
+	ID = 126;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_LAST_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTG_LAST_T {
+
+	ID = 756;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_ACTGCYCLES_LEFT
+#=======================================
+
+INT PIN_FLD_BILL_ACTGCYCLES_LEFT {
+
+	ID = 141;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_WHEN
+#=======================================
+
+INT PIN_FLD_BILL_WHEN {
+
+	ID = 131;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FUTURE_BILL_T
+#=======================================
+
+TIMESTAMP PIN_FLD_FUTURE_BILL_T {
+
+	ID = 7904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_BILL_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+	ID = 140;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+	ID = 7909;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPE
+#=======================================
+
+ENUM PIN_FLD_PAY_TYPE {
+
+	ID = 7852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALES
+#=======================================
+
+ARRAY PIN_FLD_LOCALES {
+
+	ID = 124;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE
+#=======================================
+
+STRING PIN_FLD_LOCALE {
+
+	ID = 109;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGINS
+#=======================================
+
+ARRAY PIN_FLD_LOGINS {
+
+	ID = 117;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ALIAS_LIST
+#=======================================
+
+ARRAY PIN_FLD_ALIAS_LIST {
+
+	ID = 527;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN
+#=======================================
+
+STRING PIN_FLD_LOGIN {
+
+	ID = 92;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAMEINFO
+#=======================================
+
+ARRAY PIN_FLD_NAMEINFO {
+
+	ID = 156;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CANON_COUNTRY
+#=======================================
+
+STRING PIN_FLD_CANON_COUNTRY {
+
+	ID = 1501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMPANY
+#=======================================
+
+STRING PIN_FLD_COMPANY {
+
+	ID = 164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONTACT_TYPE
+#=======================================
+
+STRING PIN_FLD_CONTACT_TYPE {
+
+	ID = 157;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EMAIL_ADDR
+#=======================================
+
+STRING PIN_FLD_EMAIL_ADDR {
+
+	ID = 171;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIRST_NAME
+#=======================================
+
+STRING PIN_FLD_FIRST_NAME {
+
+	ID = 159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_NAME
+#=======================================
+
+STRING PIN_FLD_LAST_NAME {
+
+	ID = 161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIDDLE_NAME
+#=======================================
+
+STRING PIN_FLD_MIDDLE_NAME {
+
+	ID = 160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONES
+#=======================================
+
+ARRAY PIN_FLD_PHONES {
+
+	ID = 180;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONE
+#=======================================
+
+STRING PIN_FLD_PHONE {
+
+	ID = 181;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SALUTATION
+#=======================================
+
+STRING PIN_FLD_SALUTATION {
+
+	ID = 158;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TITLE
+#=======================================
+
+STRING PIN_FLD_TITLE {
+
+	ID = 163;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PASSWORDS
+#=======================================
+
+ARRAY PIN_FLD_PASSWORDS {
+
+	ID = 118;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PASSWD
+#=======================================
+
+STRING PIN_FLD_PASSWD {
+
+	ID = 93;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUSES
+#=======================================
+
+ARRAY PIN_FLD_STATUSES {
+
+	ID = 144;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLOSE_WHEN_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+	ID = 149;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LIFECYCLE_STATE
+#=======================================
+
+INT PIN_FLD_LIFECYCLE_STATE {
+
+	ID = 8052;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_STATE_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+	ID = 8053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Storable Class /event/customer
+#=======================================
+
+STORABLE CLASS /event/customer {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to categorize all changes to customer information, specifically account and service modifications.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/customer/actginfo
+#=======================================
+
+STORABLE CLASS /event/customer/actginfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the accounting and billing information for accounts. This event is created by the PCM_OP_CUST_SET_ACTGINFO (obsoleted) opcode. The SET_ACTGINFO opcode has been replaced by the more general SET_BILLINFO opcode, and the trail event has been replaced by /event/customer/billinfo/modify.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTGINFO {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			DESCR = "Same as PIN_FLD_ACTG_CYCLE_DOM in /billinfo.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+			DESCR = "Same as PIN_FLD_ACTG_FUTURE_T in /billinfo.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+			DESCR = "Same as PIN_FLD_ACTG_FUTURE_T in /billinfo.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+			DESCR = "Same as PIN_FLD_NEXT_BILL_T in /billinfo.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object. This event is created by the PCM_OP_CUST_SET_BILLINFO opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BILLINFO {
+
+		DESCR = "Array of old and new values. Array element ids are significant: PIN_ELEMID_OLD - old (0), and PIN_ELEMID_NEW - new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			DESCR = "Day-of-month that monthly cycle begins for this billinfo. Cycle fees, folds and deferred taxation are synchronized to this day of the month. Legal values are 1-31. Additional restrictions be enforced using the PCM_OP_CUST_POL_PREP_ACTGINFO policy. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+			DESCR = "Date for when next monthly cycle (cycle after the current one) will end. Generally, this equates to the 2nd next occurance of actg day-of-month. If the customer changes the day-of-month, this field is used to synchronize to the new cycle.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_LAST_T {
+
+			DESCR = "Date that current monthly cycle began (and last monthly cycle ended).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+			DESCR = "Date that current monthly cycle ends (and next monthly cycle begins). Monthly billing gets triggered based on this field. If an event associated with this billinfo arrives with an end time beyond this date, the monthly billing is triggered automatically.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Link to the default Balance Group object for this billinfo.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			DESCR = "POID of the Billinfo Object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_ACTGCYCLES_LEFT {
+
+			DESCR = "Number of monthly cycles remaining until the current billing cycle ends. Billing cycles are always a multiple of monthly cycles; this field counts down each month until billing is run.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			DESCR = "Frequency for billing, stored as number of monthly cycles in each billing cycle (monthly billing = 1, bi-monthly = 2, quarterly = 3, annual = 12).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Primary currency for this billinfo. Stored as the resource ID of the currency (ISO 4217 standard). All A/R for the billinfo is tracked in the primary currency.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_FUTURE_BILL_T {
+
+			DESCR = "Date that the future billing cycle ends.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+			DESCR = "Date that the current billing cycle started and the previous billing cycle ended.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+			DESCR = "Date that the current billing cycle ends.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+			DESCR = "This is a link to the billinfo which is one level up in the hierarchy (but this object not necessarily being the subordinate). If the given billinfo is not a child, then this field will be NULL.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			DESCR = "Pay type, like PIN_PAY_TYPE_INVOICE - invoice (10001), PIN_PAY_TYPE_CC - credit card (10003), PIN_PAY_TYPE_DD - direct debit (10005), or PIN_PAY_TYPE_SUBORD - subordinate (10007).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/create
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/delete
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/modify
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/customer/locale
+#=======================================
+
+STORABLE CLASS /event/customer/locale {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the locale information for accounts. This event is created by PCM_OP_CUST_SET_LOCALE opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOCALES {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LOCALE {
+
+			DESCR = "Same as PIN_FLD_LOCALE in /account.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/login
+#=======================================
+
+STORABLE CLASS /event/customer/login {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the login information for services. This event is created by PCM_OP_CUST_SET_LOGIN opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOGINS {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_ALIAS_LIST {
+
+			DESCR = "Alias List. List of aliases that also identify this user/service. Examples are: Caller ID, or MAC address. Element id not significant. The name must be globally unique per service-type";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Associated alias name.";
+				ORDER = 0;
+				LENGTH = 128;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			DESCR = "Same as PIN_FLD_LOGIN in /service.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/nameinfo
+#=======================================
+
+STORABLE CLASS /event/customer/nameinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the contact information for accounts. This event is created by PCM_OP_CUST_SET_NAMEINFO opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_NAMEINFO {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Same as PIN_FLD_ADDRESS  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CANON_COUNTRY {
+
+			DESCR = "Same as PIN_FLD_CANON_COUNTRY  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "Same as PIN_FLD_CITY  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COMPANY {
+
+			DESCR = "Same as PIN_FLD_COMPANY  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CONTACT_TYPE {
+
+			DESCR = "Same as PIN_FLD_CONTACT_TYPE  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Same as PIN_FLD_COUNTRY  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			DESCR = "The specific contact information that got changed. This is the same as the element id of the PIN_FLD_NAMEINFO array in the /account object that got changed.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			DESCR = "Same as PIN_FLD_EMAIL_ADDR  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			DESCR = "Same as PIN_FLD_FIRST_NAME  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			DESCR = "Same as PIN_FLD_LAST_NAME  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			DESCR = "Same as PIN_FLD_MIDDLE_NAME in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			DESCR = "Same as PIN_FLD_PHONES array  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				DESCR = "Same as PIN_FLD_PHONE in the /account class PIN_FLD_NAMEINFO.PIN_FLD_PHONES array";
+				ORDER = 0;
+				LENGTH = 75;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Same as PIN_FLD_TYPE  in the /account class PIN_FLD_NAMEINFO.PIN_FLD_PHONES array";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_SALUTATION {
+
+			DESCR = "Same as PIN_FLD_SALUTATION  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 75;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "Same as PIN_FLD_STATE  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TITLE {
+
+			DESCR = "Same as PIN_FLD_TITLE in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Same as PIN_FLD_ZIP  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/password
+#=======================================
+
+STORABLE CLASS /event/customer/password {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the password information for services. This event is created by PCM_OP_CUST_SET_PASSWD opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PASSWORDS {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PASSWD {
+
+			DESCR = "No value is stored.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/status
+#=======================================
+
+STORABLE CLASS /event/customer/status {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the account or service status information. This event is created by the opcode PCM_OP_CUST_SET_STATUS. When the account status is changed, the PIN_FLD_SERVICE_OBJ of the base /event class is not set.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_STATUSES {
+
+		DESCR = "Array of status information. The element-id's are significant. The array element with element-id 0 represents the old status information and the array element with element-id 1 represents new status information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+			DESCR = "Same as PIN_FLD_CLOSE_WHEN_T in /account or /service.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_LIFECYCLE_STATE {
+
+			DESCR = "Same as PIN_FLD_LIFECYCLE_STATE in /service. See pin_cust.h for possible values.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+			DESCR = "Expiration time of the service state.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Same as PIN_FLD_STATUS in /account or /service.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			DESCR = "Same as PIN_FLD_STATUS_FLAGS in /account or /service.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer
+#=======================================
+
+STORABLE CLASS /event/customer IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/actginfo
+#=======================================
+
+STORABLE CLASS /event/customer/actginfo IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTGINFO {
+
+		SQL_TABLE = "event_customer_actginfo_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			SQL_COLUMN = "actg_cycle_dom";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+			SQL_COLUMN = "actg_future_t";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+			SQL_COLUMN = "actg_next_t";
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+			SQL_COLUMN = "next_bill_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BILLINFO {
+
+		SQL_TABLE = "event_customer_billinfo_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			SQL_COLUMN = "actg_cycle_dom";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+			SQL_COLUMN = "actg_future_t";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_LAST_T {
+
+			SQL_COLUMN = "actg_last_t";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+			SQL_COLUMN = "actg_next_t";
+		}
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			SQL_COLUMN = "billinfo_obj";
+		}
+
+		INT PIN_FLD_BILL_ACTGCYCLES_LEFT {
+
+			SQL_COLUMN = "bill_actgcycles_left";
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			SQL_COLUMN = "bill_when";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		TIMESTAMP PIN_FLD_FUTURE_BILL_T {
+
+			SQL_COLUMN = "future_bill_t";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+			SQL_COLUMN = "last_bill_t";
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+			SQL_COLUMN = "next_bill_t";
+		}
+
+		POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+			SQL_COLUMN = "parent_billinfo_obj";
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			SQL_COLUMN = "pay_type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/create
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/delete
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/modify
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/modify IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/locale
+#=======================================
+
+STORABLE CLASS /event/customer/locale IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOCALES {
+
+		SQL_TABLE = "event_customer_locale_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LOCALE {
+
+			SQL_COLUMN = "locale";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/login
+#=======================================
+
+STORABLE CLASS /event/customer/login IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOGINS {
+
+		SQL_TABLE = "event_customer_login_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_ALIAS_LIST {
+
+			SQL_TABLE = "event_customer_login_alias_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			SQL_COLUMN = "login";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/nameinfo
+#=======================================
+
+STORABLE CLASS /event/customer/nameinfo IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_NAMEINFO {
+
+		SQL_TABLE = "event_customer_nameinfo_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CANON_COUNTRY {
+
+			SQL_COLUMN = "canon_country";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COMPANY {
+
+			SQL_COLUMN = "company";
+		}
+
+		STRING PIN_FLD_CONTACT_TYPE {
+
+			SQL_COLUMN = "contact_type";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			SQL_COLUMN = "element_id";
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			SQL_COLUMN = "email_addr";
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			SQL_COLUMN = "first_name";
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			SQL_COLUMN = "last_name";
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			SQL_COLUMN = "middle_name";
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			SQL_TABLE = "event_customer_phones_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				SQL_COLUMN = "phone";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		STRING PIN_FLD_SALUTATION {
+
+			SQL_COLUMN = "salutation";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_TITLE {
+
+			SQL_COLUMN = "title";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/password
+#=======================================
+
+STORABLE CLASS /event/customer/password IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PASSWORDS {
+
+		SQL_TABLE = "event_customer_password_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PASSWD {
+
+			SQL_COLUMN = "passwd";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/status
+#=======================================
+
+STORABLE CLASS /event/customer/status IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_STATUSES {
+
+		SQL_TABLE = "event_customer_statuses_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+			SQL_COLUMN = "close_when_t";
+		}
+
+		INT PIN_FLD_LIFECYCLE_STATE {
+
+			SQL_COLUMN = "lifecycle_state";
+		}
+
+		TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+			SQL_COLUMN = "state_expiration_t";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			SQL_COLUMN = "status_flags";
+		}
+
+	}
+
+}
+

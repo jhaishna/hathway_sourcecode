@@ -1,0 +1,94 @@
+
+#=======================================
+#  Field PIN_FLD_SPONSORS
+#=======================================
+
+ARRAY PIN_FLD_SPONSORS {
+
+	ID = 2340;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSOR_OBJ
+#=======================================
+
+POID PIN_FLD_SPONSOR_OBJ {
+
+	ID = 1204;
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/charges
+#=======================================
+
+STORABLE CLASS /group/sharing/charges {
+
+	LABEL = "Group Charges Sharing object";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This sub-class is for group sharing charges object. It supports the new style of sponsorship. It contains a set of SPONSOR objects from the pricing model. The events for the member accounts/services can be sponsored using the new sponsor object and discount model configuration. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SPONSORS {
+
+		DESCR = "Subset of sponsor object('s) defined. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SPONSOR_OBJ {
+
+			DESCR = "Link to one sponsorship object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/sharing/charges
+#=======================================
+
+STORABLE CLASS /group/sharing/charges IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SPONSORS {
+
+		SQL_TABLE = "group_sharing_charges_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SPONSOR_OBJ {
+
+			SQL_COLUMN = "sponsor_obj";
+		}
+
+	}
+
+}
+

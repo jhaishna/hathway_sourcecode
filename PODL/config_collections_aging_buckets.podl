@@ -1,0 +1,92 @@
+
+#=======================================
+#  Field PIN_FLD_BUCKETS
+#=======================================
+
+ARRAY PIN_FLD_BUCKETS {
+
+	ID = 7706;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DAYS
+#=======================================
+
+INT PIN_FLD_DAYS {
+
+	ID = 6204;
+}
+
+
+#=======================================
+#  Storable Class /config/collections/aging_buckets
+#=======================================
+
+STORABLE CLASS /config/collections/aging_buckets {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define the aging buckets for this brand. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BUCKETS {
+
+		DESCR = "Array of bucket ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_DAYS {
+
+			DESCR = "Number of over-due days for the bucket. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/aging_buckets
+#=======================================
+
+STORABLE CLASS /config/collections/aging_buckets IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BUCKETS {
+
+		SQL_TABLE = "config_collections_buckets_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_DAYS {
+
+			SQL_COLUMN = "days";
+		}
+
+	}
+
+}
+

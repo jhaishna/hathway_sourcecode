@@ -1,0 +1,120 @@
+
+#=======================================
+#  Field MSO_FLD_VC_DATA
+#=======================================
+
+ARRAY MSO_FLD_VC_DATA {
+
+	ID = 42006;
+	DESCR = "Array to hold STB related data";
+}
+
+
+#=======================================
+#  Field MSO_FLD_STB_OBJ
+#=======================================
+
+POID MSO_FLD_STB_OBJ {
+
+	ID = 42008;
+	DESCR = "STB associated to VC";
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWNER_OBJ
+#=======================================
+
+POID PIN_FLD_OWNER_OBJ {
+
+	ID = 7756;
+}
+
+
+#=======================================
+#  Storable Class /device/vc
+#=======================================
+
+STORABLE CLASS /device/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "VC specific data";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_VC_DATA {
+
+		DESCR = "Array to hold STB related data";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_STB_OBJ {
+
+			DESCR = "STB associated to VC";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			DESCR = "LCO account object, used for preactivate device.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/vc
+#=======================================
+
+STORABLE CLASS /device/vc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_VC_DATA {
+
+		SQL_TABLE = "DEVICE_VC_DATA_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_STB_OBJ {
+
+			SQL_COLUMN = "STB_OBJ";
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			SQL_COLUMN = "OWNER_OBJ";
+		}
+
+	}
+
+}
+

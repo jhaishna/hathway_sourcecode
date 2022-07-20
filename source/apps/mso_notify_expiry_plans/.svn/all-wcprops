@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/hathway/!svn/ver/2346/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_notify_expiry_plans
+END
+mso_notify_expiry_plans.c
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/hathway/!svn/ver/1149/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_notify_expiry_plans/mso_notify_expiry_plans.c
+END
+pin.conf
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/hathway/!svn/ver/774/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_notify_expiry_plans/pin.conf
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/hathway/!svn/ver/2346/branches/bbDrop_1.0/BRM/opt/portal/7.5/mso/source/apps/mso_notify_expiry_plans/Makefile
+END

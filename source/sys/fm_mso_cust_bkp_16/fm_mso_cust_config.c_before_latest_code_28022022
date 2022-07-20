@@ -1,0 +1,109 @@
+/*******************************************************************
+ *
+ * Copyright (c) 2007, 2009, Oracle and/or its affiliates.All rights reserved. 
+ *
+ *      This material is the confidential property of Oracle Corporation
+ *      or its licensors and may be used, reproduced, stored or transmitted
+ *      only in accordance with a valid Oracle license or sublicense agreement.
+ *
+ *******************************************************************/
+
+#ifndef lint
+static const char Sccs_id[] = "@(#)%Portal Version: fm_mso_cust_config.c:CUPmod7.3PatchInt:1:2007-Jan-10 20:07:40 %";
+#endif
+
+#include <stdio.h>	/* for FILE * in pcm.h */
+#include "ops/act.h"
+#include "pcm.h"
+#include "cm_fm.h"
+#include "mso_ops_flds.h"
+
+#ifdef MSDOS
+__declspec(dllexport) void * fm_mso_cust_config_func();
+#endif
+
+
+/*******************************************************************
+ *******************************************************************/
+
+    /*
+     * NOTE THAT THE DISPATCH ENTRIES ARE COMMENTED. WHEN YOU OVERRIDE
+     * AN IMPLEMENTATION, UNCOMMENT THE LINE BELOW THAT MATCHES THE
+     * OPCODE FOR WHICH YOU HAVE PROVIDED AN ALTERNATE IMPLEMENTATION.
+     */
+
+struct cm_fm_config fm_mso_cust_config[] = {
+	/* opcode as a u_int, function name (as a string) */
+	{ MSO_OP_CUST_OAP_LOGIN,			"op_mso_cust_oap_login" },
+	{ MSO_OP_CUST_REGISTER_CUSTOMER,		"op_mso_cust_register_customer" },
+	{ MSO_OP_CUST_ACTIVATE_CUSTOMER,		"op_mso_cust_activate_customer" },
+	{ MSO_OP_CUST_GET_PLAN_DETAILS,			"op_mso_cust_get_plan_details" },
+	{ MSO_OP_CUST_GET_CUSTOMER_INFO,		"op_mso_cust_get_customer_info" },
+	{ MSO_OP_CUST_SET_CUSTOMER_BIT,			"op_mso_cust_set_customer_bit" },
+	{ MSO_OP_CUST_MODIFY_CUSTOMER_CREDENTIALS,	"op_mso_cust_modify_customer_credentials" },
+	{ MSO_OP_CUST_MODIFY_CUSTOMER,			"op_mso_cust_modify_customer" },
+	{ MSO_OP_CUST_SUSPEND_SERVICE,			"op_mso_cust_suspend_service" },
+	{ MSO_OP_CUST_TERMINATE_SERVICE ,		"op_mso_cust_terminate_service" },
+	{ MSO_OP_CUST_REACTIVATE_SERVICE ,		"op_mso_cust_reactivate_service" },
+	{ MSO_OP_CUST_CHANGE_PLAN,			"op_mso_cust_change_plan" },
+	{ MSO_OP_CUST_CANCEL_PLAN,			"op_mso_cust_cancel_plan" },
+	{ MSO_OP_CUST_ADD_PLAN,				"op_mso_cust_add_plan" },
+	{ MSO_OP_CUST_GET_INVOICE,			"op_mso_cust_get_invoice" },
+	{ MSO_OP_CUST_CREATE_SCHEDULE,			"op_mso_cust_create_schedule" },
+	{ MSO_OP_CUST_MODIFY_SCHEDULE,			"op_mso_cust_modify_schedule" },
+	{ MSO_OP_CUST_GET_DEVICE_DETAILS,		"op_mso_cust_get_device_details" },
+	{ MSO_OP_CUST_GET_CHANNEL_AND_PRICE,		"op_mso_cust_get_channel_and_price" },
+	{ MSO_OP_SEARCH,				"op_mso_search" },
+	{ MSO_OP_CUST_SEARCH_BILL,			"op_mso_cust_search_bill" },
+	{ MSO_OP_CUST_MODIFY_DATA_ACCESS,		"op_mso_cust_modify_data_access" },
+	{ MSO_OP_CUST_ALLOCATE_HARDWARE,                "op_mso_cust_allocate_hardware" },
+	{ MSO_OP_CUST_CREATE_BB_SERVICE,                "op_mso_cust_create_bb_service" },
+	{ MSO_OP_CUST_MANAGE_PLANS_ACTIVATION,          "op_mso_cust_manage_plans_activation" },
+	{ MSO_OP_CUST_BB_GET_INFO,                      "op_mso_cust_bb_get_info" },
+	{ MSO_OP_CUST_ACTIVATE_BB_SERVICE,		"op_mso_cust_activate_bb_service" },
+	{ MSO_OP_CUST_HOLD_SERVICE,                     "op_mso_cust_hold_service" },
+	{ MSO_OP_CUST_UNHOLD_SERVICE,                   "op_mso_cust_unhold_service" },
+	{ MSO_OP_CUST_EXTEND_VALIDITY,                  "op_mso_cust_extend_validity" },
+	{ MSO_OP_CUST_CALC_PRICE,			"op_mso_cust_calc_price" },
+	{ MSO_OP_CUST_GET_PLAN_RATES,			"op_mso_cust_get_plan_rates" },
+	{ MSO_OP_CUST_TOP_UP_BB_PLAN,           "op_mso_cust_topup_bb_plan" },
+	{ MSO_OP_CUST_RENEW_BB_PLAN,             "op_mso_cust_renew_bb_plan" },
+	{ MSO_OP_CUST_VIEW_INVOICE,			"op_mso_cust_view_invoice" },
+	{ MSO_OP_CUST_DEACTIVATE_BB_SERVICE,		"op_mso_cust_deactivate_bb_service" },
+	{ MSO_OP_CUST_SWAP_BB_DEVICE,                   "op_mso_cust_swap_bb_device" },
+	{ MSO_OP_CUST_DELETE_BB_DEVICE,                   "op_mso_cust_delete_bb_device" },
+	{ MSO_OP_CUST_BB_HW_AMC,			"op_mso_cust_bb_hw_amc" },
+	{ MSO_OP_CUST_BLK_REGISTER_CUSTOMER,            "op_mso_cust_blk_reg_customer" },
+	{ MSO_OP_CUST_DVBIP_REGISTER_CUSTOMER,            "op_mso_cust_dvbip_reg_customer" },
+	{ MSO_OP_CUST_GET_HIGHER_ARPU_PLANS,			"op_mso_cust_get_higher_arpu_plans" },
+	{ MSO_OP_CUST_GET_CATV_REFUND,                  "op_mso_cust_get_catv_refund" },
+        { MSO_OP_CUST_CATV_SWAP_SRVC_TAGGING,           "op_mso_cust_catv_swap_srvc_tagging" },
+        { MSO_OP_CUST_CATV_TRANSFER_SUBSCRIPTION,       "op_mso_cust_catv_transfer_subscription" },
+	{ MSO_OP_CUST_CREATE_OFFERS,                    "op_mso_cust_create_offers" },
+	{ MSO_OP_CUST_UPDATE_GST_INFO,                  "op_mso_cust_update_gst_info" },
+	{ MSO_OP_CUST_CATV_DISC_CONFIG, "op_mso_cust_catv_discount_config" },
+	{ MSO_OP_CUST_DEVICE_AUTHENTICATE, "op_mso_cust_device_authenticate" },
+       { MSO_OP_CUST_DEVICE_REGISTER, "op_mso_cust_device_register" },
+	{ MSO_OP_CUST_CREATE_PROMO_OBJ, "op_mso_cust_create_promo" },
+        { MSO_OP_CUST_NETFLIX_ACTIVATE, "op_mso_cust_netflix_activate" },
+        { MSO_OP_CUST_NETFLIX_RENEW, "op_mso_cust_netflix_renew" },
+        { MSO_OP_CUST_NETFLIX_REGISTER, "op_mso_cust_netflix_register" },
+	{ MSO_OP_CUST_APPLY_WALLET_BAL, "op_mso_cust_apply_wallet_bal" },
+	{ MSO_OP_CUST_GET_BOUQUET_IDS, "op_mso_cust_get_bouquet_ids" },
+        { MSO_OP_CUST_HYBRID_ACCTS_TAG, "op_mso_cust_hybrid_accts_tag" },
+        { MSO_OP_CUST_GET_LCO_INFO, "op_mso_cust_get_lco_info" },
+	{ MSO_OP_CUST_GET_PKG_CHANNEL_ATTR, "op_mso_cust_get_pkg_channel_attr" },
+	{ MSO_OP_CUST_GET_PKG_CHANNELS, "op_mso_cust_get_pkg_channels" },
+        { MSO_OP_CUST_GET_PLAN_DETAILS_LIST, "op_mso_cust_get_plan_details_list" },		
+	/*	{ MSO_OP_CAPTURE_TERMINATE_REASON, "op_mso_cust_load_terminate_reasons" },*/
+	{ 0,	(char *)0 }
+};
+
+#ifdef MSDOS
+void *
+fm_mso_cust_config_func()
+{
+  return ((void *) (fm_mso_cust_config));
+}
+#endif
+

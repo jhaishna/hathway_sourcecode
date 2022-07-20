@@ -1,0 +1,46 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_weekly
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_weekly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = " Event for  billing product fee cycle forward weekly";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_weekly/mso_sb_adn_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_weekly/mso_sb_adn_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = " Event for  billing product fee cycle forward weekly mso_sb_adn_fdp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_weekly
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_weekly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_weekly/mso_sb_adn_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_weekly/mso_sb_adn_fdp IMPLEMENTATION ORACLE7 {
+
+}
+

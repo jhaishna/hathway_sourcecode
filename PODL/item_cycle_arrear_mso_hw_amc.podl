@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_amc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso hw amc";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_amc IMPLEMENTATION ORACLE7 {
+
+}
+

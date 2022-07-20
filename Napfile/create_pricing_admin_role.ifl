@@ -1,0 +1,10 @@
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /service/admin_client -1 0
+0 PIN_FLD_NAME            STR [0] "Pricing Center"
+0 PIN_FLD_PASSWD_CLEAR    STR [0] "pricingadmin"
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_LOGIN           STR [0] "ROLE-<Pricing Center>PRICING_ADMIN"
+0 PIN_FLD_INHERITED_INFO SUBSTRUCT [0] allocated 20, used 1
+1     PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0] allocated 20, used 2
+2         PIN_FLD_DESCR           STR [0] "Pricing Administrator CSR"
+2         PIN_FLD_PROFILE         INT [0] 1
+0 PIN_FLD_STATUS         ENUM [0] 10102

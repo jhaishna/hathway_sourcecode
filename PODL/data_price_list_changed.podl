@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /data/price_list_changed
+#=======================================
+
+STORABLE CLASS /data/price_list_changed {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Global";
+	DESCR = "Data object that get updated everytime price list objects are changed.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /data/price_list_changed
+#=======================================
+
+STORABLE CLASS /data/price_list_changed IMPLEMENTATION ORACLE7 {
+
+}
+

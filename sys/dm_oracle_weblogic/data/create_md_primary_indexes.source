@@ -1,0 +1,416 @@
+--
+-- @(#)create_md_primary_indexes.source 6  01/08/2005
+--
+--     Copyright (c) 1999-2006 Oracle. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+--
+-- SOURCE OF sql file to create the indexes for primary in multidb environment
+-- DEFINES FOR:
+
+-- au_deal
+create unique index i_au_deal_md__id on au_deal_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_deal_products
+create unique index i_au_deal_products_md__id on au_deal_products_t 
+	( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_plan
+create unique index i_au_plan_md__id on au_plan_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_plan_limit
+create unique index i_au_plan_limit_md__id on au_plan_limit_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_plan_services
+create unique index i_au_plan_services_md_id on au_plan_services_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_product
+create unique index i_au_product_md__id on au_product_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_product_usage_map
+create unique index i_au_product_usage_map_md__id on au_product_usage_map_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_rate
+create unique index i_au_rate_md__id on au_rate_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_rate_quantity_tiers
+create unique index i_au_rate_q_tiers_md__id on au_rate_quantity_tiers_t
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_rate_bal_impacts
+create unique index i_au_rate_bal_impacts_md__id on au_rate_bal_impacts_t
+	( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_rate_plan
+create unique index i_au_rate_plan_md__id on au_rate_plan_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_rate_tiers
+create unique index i_au_rate_tiers_md__id on au_rate_tiers_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_date_ranges
+create unique index i_au_date_ranges_md__id on au_date_ranges_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_day_ranges
+create unique index i_au_day_ranges_md__id on au_day_ranges_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_rate_plan_selector
+create unique index i_au_rate_plan_selector_md__id on au_rate_plan_selector_t
+	( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_selector
+create unique index i_au_selector_md__id on au_selector_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_tod_ranges
+create unique index i_au_tod_ranges_md_id on au_tod_ranges_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- channel
+create unique index i_channel_md__id on channel_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- channel_consumers
+create unique index i_channel_consumers_md__id on channel_consumers_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- channel_suppliers
+create unique index i_channel_suppliers_md__id on channel_suppliers_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_cur_conv_rates
+create unique index i_config_cur_conv_rates_md__id on config_cur_conv_rates_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_cur_supported_seccur
+create unique index i_config_cur_sup_sec_md__id on config_cur_supported_seccur_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_permitted_events
+create unique index i_config_perm_events_md__id on config_permitted_events_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_fld_validate_val
+create unique index i_config_fld_valid_val_md__id on config_fld_validate_val_t
+        ( obj_id0)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_glid_accts
+create unique index i_config_glid_accts_md__id on config_glid_accts_t
+        ( obj_id0, rec_id, rec_id2)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_impact_categories
+create unique index i_config_imp_cat_md__id on config_impact_categories_t
+        ( obj_id0, rec_id)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_invoice_events
+create unique index i_config_invoice_events_md__id on config_invoice_events_t
+        ( obj_id0, rec_id)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_invoice_event_types
+create unique index i_config_inv_evt_types_md__id on config_invoice_event_types_t
+        ( obj_id0, rec_id)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_locales_codeset
+create unique index i_config_loc_code_md__id on config_locales_codeset_t
+        ( obj_id0, rec_id, rec_id2)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_locales_valid_spec
+create unique index i_config_loc_valid_spec_md__id on config_locales_valid_spec_t
+        ( obj_id0, rec_id, rec_id2)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_payment_opcodes
+create unique index i_config_pymt_opcodes_md__id on config_payment_opcodes_t
+        ( obj_id0, rec_id, rec_id2)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_pymttool_bt_fields
+create unique index i_config_pymttl_bt_flds_md__id on config_pymttool_bt_fields_t
+        ( obj_id0, rec_id, rec_id2)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_archive
+create unique index i_config_archive_md__id on config_archive_t
+        ( obj_id0, rec_id)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_archive_tablemap
+create unique index i_config_arch_tblmap_md__id on config_archive_tablemap_t
+        ( obj_id0, rec_id, rec_id2)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_candidate_rums
+create unique index i_config_candidate_rums_md__id on config_candidate_rums_t
+        ( obj_id0, rec_id, rec_id2)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_taxs
+create unique index i_config_taxs_md__id on config_taxs_t
+        ( obj_id0)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_gel_template_buf
+create unique index i_config_gel_tem_buf_md__id on config_gel_template_buf_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_inv_temp_buf
+create unique index i_config_inv_temp_buf_md__id on config_inv_temp_buf_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_business_params_t
+create unique index i_config_business_p_md__id on config_business_params_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_business_type_t
+create unique index i_config_business_type_md__id on config_business_type_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_device_permitteds_t
+create unique index i_config_device_p_md__id on config_device_permitteds_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_device_type_info_t
+create unique index i_config_device_t_info_md__id on config_device_type_info_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_device_next_states_t
+create unique index i_config_device_n_s_md__id on config_device_next_states_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_gl_chartaccts_t
+create unique index i_config_gl_chartaccts_md__id on config_gl_chartaccts_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_gl_coa_accts_t
+create unique index i_config_gl_coa_accts_md__id on config_gl_coa_accts_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_gl_segment_t
+create unique index i_config_gl_segment_md__id on config_gl_segment_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_inv_temp_formats_t
+create unique index i_config_inv_t_f_md__id on config_inv_temp_formats_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_inv_temp_inherited_t
+create unique index i_config_inv_t_i_md__id on config_inv_temp_inherited_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_network_element_t
+create unique index i_config_network_e_md__id on config_network_element_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_remittance_flds_t
+create unique index i_config_remit_f_md__id on config_remittance_flds_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_remittance_spec_t
+create unique index i_config_remit_s_md__id on config_remittance_spec_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_remittance_criteria_t
+create unique index i_config_remit_c_md__id on config_remittance_criteria_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_mta_t
+create unique index i_config_mta_md__id on config_mta_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_mta_opcode_map_t
+create unique index i_config_mta_op_map_md__id on config_mta_opcode_map_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_mta_function_map_t
+create unique index i_config_mta_fn_map_md__id on config_mta_function_map_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_ach_t
+create unique index i_config_ach_md__id on config_ach_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_event_resource_map_t
+create unique index i_config_evt_r_map_md__id on cfg_evt_resrc_map_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- config_sub_bal_contributor_t
+create unique index i_config_s_b_cnt_map_md__id on cfg_sub_bal_contrib_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- deal_discounts_t
+create unique index i_deal_discounts_md__id on deal_discounts_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_deal_discounts_t
+create unique index i_au_deal_dis_md__id on au_deal_discounts_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- product_rum_map_t
+create unique index i_product_r_map_md__id on product_rum_map_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- product_rum_list_t
+create unique index i_product_r_lst_md__id on product_rum_list_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_product_rum_map_t
+create unique index i_au_product_r_m_md__id on au_product_rum_map_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- au_product_rum_list_t
+create unique index i_au_prod_r_lst_md__id on au_product_rum_list_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- uniqueness_alias_list_t
+create unique index i_uniqueness_alias_list_md__id on uniqueness_alias_list_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- plan_limit
+create unique index i_plan_limit_md__id on plan_limit_t
+        ( obj_id0, rec_id)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- rate_bal_impacts_t
+create unique index i_rate_bal_impacts_md__id on rate_bal_impacts_t
+        ( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+-- strings
+create unique index i_strings_md__id on strings_t
+        ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL ;
+
+

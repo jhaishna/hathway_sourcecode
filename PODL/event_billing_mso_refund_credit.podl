@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/mso_refund_credit
+#=======================================
+
+STORABLE CLASS /event/billing/mso_refund_credit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Pre-Rated Event storing refund credit amount";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/mso_refund_credit
+#=======================================
+
+STORABLE CLASS /event/billing/mso_refund_credit IMPLEMENTATION ORACLE7 {
+
+}
+

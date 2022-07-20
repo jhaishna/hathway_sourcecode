@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_remove_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk remove plan mta";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_remove_plan IMPLEMENTATION ORACLE7 {
+
+}
+

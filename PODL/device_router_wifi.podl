@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /device/router/wifi
+#=======================================
+
+STORABLE CLASS /device/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/router/wifi
+#=======================================
+
+STORABLE CLASS /device/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+

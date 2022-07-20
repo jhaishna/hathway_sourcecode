@@ -1,0 +1,406 @@
+
+#=======================================
+#  Field MSO_FLD_INVOICE_DATE
+#=======================================
+
+STRING MSO_FLD_INVOICE_DATE {
+
+	ID = 42014;
+	DESCR = "Date of reference invoice";
+}
+
+
+#=======================================
+#  Field MSO_FLD_INVOICE_NO
+#=======================================
+
+STRING MSO_FLD_INVOICE_NO {
+
+	ID = 42013;
+	DESCR = "Reference Invoice number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORDER_TYPE
+#=======================================
+
+STRING MSO_FLD_ORDER_TYPE {
+
+	ID = 42015;
+	DESCR = "Entity for which order is placed";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PO_NO
+#=======================================
+
+STRING MSO_FLD_PO_NO {
+
+	ID = 42022;
+	DESCR = "Purchase Order No.";
+}
+
+
+#=======================================
+#  Field MSO_FLD_STOCK_POINT_CODE
+#=======================================
+
+STRING MSO_FLD_STOCK_POINT_CODE {
+
+	ID = 42011;
+	DESCR = "Entity for which order is placed";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SUPPLIER_CODE
+#=======================================
+
+STRING MSO_FLD_SUPPLIER_CODE {
+
+	ID = 42012;
+	DESCR = "Supplier from which items are supplied";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_ID
+#=======================================
+
+STRING PIN_FLD_ORDER_ID {
+
+	ID = 943;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_device_order
+#=======================================
+
+STORABLE CLASS /mso_device_order {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Order details";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_INVOICE_DATE {
+
+		DESCR = "Date of reference invoice";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_INVOICE_NO {
+
+		DESCR = "Reference Invoice number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_ORDER_TYPE {
+
+		DESCR = "Entity for which order is placed";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_PO_NO {
+
+		DESCR = "Purchase Order No.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_STOCK_POINT_CODE {
+
+		DESCR = "Entity for which order is placed";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_SUPPLIER_CODE {
+
+		DESCR = "Supplier from which items are supplied";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_device_order
+#=======================================
+
+STORABLE CLASS /mso_device_order IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_device_order_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_INVOICE_DATE {
+
+		SQL_COLUMN = "invoice_date";
+	}
+
+	STRING MSO_FLD_INVOICE_NO {
+
+		SQL_COLUMN = "invoice_no";
+	}
+
+	STRING MSO_FLD_ORDER_TYPE {
+
+		SQL_COLUMN = "order_type";
+	}
+
+	STRING MSO_FLD_PO_NO {
+
+		SQL_COLUMN = "PO_NO";
+	}
+
+	STRING MSO_FLD_STOCK_POINT_CODE {
+
+		SQL_COLUMN = "stock_point_code";
+	}
+
+	STRING MSO_FLD_SUPPLIER_CODE {
+
+		SQL_COLUMN = "supplier_code";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		SQL_COLUMN = "order_id";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

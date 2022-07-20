@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/opcodemap/gsm
+#=======================================
+
+STORABLE CLASS /config/opcodemap/gsm {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Abstract class to hold the opcode map for the generic wireless framework.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/opcodemap/gsm
+#=======================================
+
+STORABLE CLASS /config/opcodemap/gsm IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,12 @@
+# ####################################################################
+# Rule for the template file:
+#       1. Comment should start with hash (#)
+#       2. fields should be separated by a comman (|)
+#       3. a field contains two parts:
+#               field name and regular expression for that field
+#       4. Field and its regular expression should be separated by a colon (:)
+#       5. Empty line doesn't bother
+# ####################################################################
+
+Item_code:^STB$|serial_no:[\w]|price:[0-9]|warranty:[0-9]|device_id:\d{16}|network_node:[\w]|model:[\w]|stb_type:[\w]|category:[\w]|purpose:[\w]
+

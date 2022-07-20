@@ -1,0 +1,135 @@
+
+#=======================================
+#  Field MSO_FLD_ACCOUNT_DETAIL
+#=======================================
+
+ARRAY MSO_FLD_ACCOUNT_DETAIL {
+
+	ID = 42175;
+}
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_TAG
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_TAG {
+
+	ID = 113;
+}
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/tag_hybrid_acct
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/tag_hybrid_acct {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_ACCOUNT_DETAIL {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_TAG {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			ORDER = 0;
+			LENGTH = 100;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+	}
+}
+
+
+#===================================================================================
+#  Storable Class /event/activity/mso_lifecycle/tag_hybrid_acct
+#===================================================================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/tag_hybrid_acct IMPLEMENTATION ORACLE7 {
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_ACCOUNT_DETAIL {
+
+		SQL_TABLE = "mso_evt_lc_tag_hybrid_accnt_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "main_account_no";
+		}
+
+		STRING PIN_FLD_ACCOUNT_TAG {
+
+			SQL_COLUMN = "tagged_account_no";
+		}
+		
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "description";
+		}
+	}
+}
+

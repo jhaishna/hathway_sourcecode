@@ -1,0 +1,498 @@
+
+#=======================================
+#  Field PIN_FLD_CONFIG_ACTION_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CONFIG_ACTION_INFO {
+
+	ID = 7735;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_DESCR
+#=======================================
+
+STRING PIN_FLD_ACTION_DESCR {
+
+	ID = 7736;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_NAME
+#=======================================
+
+STRING PIN_FLD_ACTION_NAME {
+
+	ID = 1852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_TYPE
+#=======================================
+
+STRING PIN_FLD_ACTION_TYPE {
+
+	ID = 7704;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TARGET_ACTION
+#=======================================
+
+ENUM PIN_FLD_TARGET_ACTION {
+
+	ID = 7749;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_OBJ
+#=======================================
+
+POID PIN_FLD_TEMPLATE_OBJ {
+
+	ID = 7705;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FINANCE_CHARGE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+	ID = 7734;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERCENT
+#=======================================
+
+DECIMAL PIN_FLD_PERCENT {
+
+	ID = 531;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LATE_FEE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_LATE_FEE_INFO {
+
+	ID = 7732;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPTIONS
+#=======================================
+
+ENUM PIN_FLD_OPTIONS {
+
+	ID = 7733;
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action
+#=======================================
+
+STORABLE CLASS /config/collections/action {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Collections action object.  Contains information for  each individual action. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CONFIG_ACTION_INFO {
+
+		DESCR = "Contains the action information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION_DESCR {
+
+			DESCR = "Action description.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACTION_NAME {
+
+			DESCR = "Action name to be displayed on GUI tools";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACTION_TYPE {
+
+			DESCR = "The action type string. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "Opcode (ID) to be called for this action.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TARGET_ACTION {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TEMPLATE_OBJ {
+
+			DESCR = "Link to the template object. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define brand level actions (policy or manual actions).";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/finance_charge
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/finance_charge {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define finance charge action.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+		DESCR = "Contains additional fields for finance charges.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			DESCR = "Rate for the finance charge";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/late_fee
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/late_fee {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define late fees action.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LATE_FEE_INFO {
+
+		DESCR = "Contains additional fields for late fees.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Fixed amount to charge";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Numeric value of a currency resource. A value of 0 implies that the default currency will be used to calculate the late fee. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_OPTIONS {
+
+			DESCR = "Determine how the fixed amount and the percentage work together to get the late fee. Possible values are: PIN_OPTION_EITHER (0), PIN_OPTION_MIN (1), PIN_OPTION_MAX (2) and PIN_OPTION_BOTH (3).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			DESCR = "Percentage for overdue amount to charge";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action
+#=======================================
+
+STORABLE CLASS /config/collections/action IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CONFIG_ACTION_INFO {
+
+		SQL_TABLE = "config_collections_action_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION_DESCR {
+
+			SQL_COLUMN = "action_descr";
+		}
+
+		STRING PIN_FLD_ACTION_NAME {
+
+			SQL_COLUMN = "action_name";
+		}
+
+		STRING PIN_FLD_ACTION_TYPE {
+
+			SQL_COLUMN = "action_type";
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		ENUM PIN_FLD_TARGET_ACTION {
+
+			SQL_COLUMN = "target_action";
+		}
+
+		POID PIN_FLD_TEMPLATE_OBJ {
+
+			SQL_COLUMN = "template_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/finance_charge
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/finance_charge IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+		SQL_TABLE = "config_collections_fcharge_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			SQL_COLUMN = "percent";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/late_fee
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/late_fee IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LATE_FEE_INFO {
+
+		SQL_TABLE = "config_collections_latefee_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		ENUM PIN_FLD_OPTIONS {
+
+			SQL_COLUMN = "options";
+		}
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			SQL_COLUMN = "percent";
+		}
+
+	}
+
+}
+

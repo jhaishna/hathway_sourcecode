@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/finance_charge
+#=======================================
+
+STORABLE CLASS /event/billing/finance_charge {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Events created when a finance charge is applied.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/finance_charge
+#=======================================
+
+STORABLE CLASS /event/billing/finance_charge IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_penalty/bank
+#=======================================
+
+STORABLE CLASS /item/mso_penalty/bank {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Check bounce penalty charges by the bank";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_penalty/bank
+#=======================================
+
+STORABLE CLASS /item/mso_penalty/bank IMPLEMENTATION ORACLE7 {
+
+}
+

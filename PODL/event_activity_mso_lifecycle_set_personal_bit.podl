@@ -1,0 +1,202 @@
+
+#=======================================
+#  Field MSO_FLD_MODIFY_PERSONAL_BIT
+#=======================================
+
+ARRAY MSO_FLD_MODIFY_PERSONAL_BIT {
+
+	ID = 41190;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PERSONAL_BIT_INFO
+#=======================================
+
+ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+	ID = 40067;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_NAME
+#=======================================
+
+STRING PIN_FLD_PARAM_NAME {
+
+	ID = 5776;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_VALUE
+#=======================================
+
+STRING PIN_FLD_PARAM_VALUE {
+
+	ID = 5778;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/set_personal_bit
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/set_personal_bit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_PERSONAL_BIT {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PARAM_NAME {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_PARAM_VALUE {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/set_personal_bit
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/set_personal_bit IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_PERSONAL_BIT {
+
+		SQL_TABLE = "mso_evt_lc_modif_pers_bit_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+			SQL_TABLE = "mso_evt_lc_personal_bit_info_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PARAM_NAME {
+
+				SQL_COLUMN = "param_name";
+			}
+
+			STRING PIN_FLD_PARAM_VALUE {
+
+				SQL_COLUMN = "param_value";
+			}
+
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+

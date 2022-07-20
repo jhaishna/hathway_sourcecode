@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /item/settlement/ws
+#=======================================
+
+STORABLE CLASS /item/settlement/ws {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/ws
+#=======================================
+
+STORABLE CLASS /item/settlement/ws IMPLEMENTATION ORACLE7 {
+
+}
+

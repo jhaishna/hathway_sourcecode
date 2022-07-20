@@ -1,0 +1,118 @@
+
+#=======================================
+#  Field PIN_FLD_PAYMENT
+#=======================================
+
+SUBSTRUCT PIN_FLD_PAYMENT {
+
+	ID = 899;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PAYINFO_OBJ {
+
+	ID = 901;
+}
+
+
+#=======================================
+#  Storable Class /collections_action/collect_payment
+#=======================================
+
+STORABLE CLASS /collections_action/collect_payment {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store additional information for collect_payment action. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PAYMENT {
+
+		DESCR = "Substructure to hold collect payment action info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Amount to be paid. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			DESCR = "Link to the /payinfo/cc or /payinfo/dd object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_action/collect_payment
+#=======================================
+
+STORABLE CLASS /collections_action/collect_payment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PAYMENT {
+
+		SQL_TABLE = "collections_collect_payment_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			SQL_COLUMN = "payinfo_obj";
+		}
+
+	}
+
+}
+

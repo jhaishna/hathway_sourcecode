@@ -1,0 +1,236 @@
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPES
+#=======================================
+
+ARRAY PIN_FLD_PAY_TYPES {
+
+	ID = 7859;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYMENTTOOL_FIELDS
+#=======================================
+
+ARRAY PIN_FLD_PAYMENTTOOL_FIELDS {
+
+	ID = 1351;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_TYPE
+#=======================================
+
+INT PIN_FLD_BATCH_TYPE {
+
+	ID = 1354;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COLUMN_NAME
+#=======================================
+
+STRING PIN_FLD_COLUMN_NAME {
+
+	ID = 1352;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURPOSE
+#=======================================
+
+INT PIN_FLD_PURPOSE {
+
+	ID = 1353;
+}
+
+
+#=======================================
+#  Storable Class /config/paymenttool
+#=======================================
+
+STORABLE CLASS /config/paymenttool {
+
+	LABEL = "Payment Tool Configuration object";
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Objects of this class are used to create payment, reversal, and refund batch type actions on pre-defined and new payment types within Payment Tool database. While most of your payment decisions will be handled by the Payment Tool GUI, you can customize actions using these objects. Payment Tool GUI adjusts its characteristics (like column names, marking fields as read-only) etc. based on these objects. These configuration objects must be defined on a per-language basis. A language is recognized by appending the ISO 639 language name in the PIN_FLD_NAME of the base /config class. There can be only instance of this language for a given language. See on-line documentation for additional details. Pre-defined objects are loaded from init_objects.source file during Infranet installation.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAY_TYPES {
+
+		DESCR = "Array of configuration information for every payment type. The numeric value of the payment type is used as the array element id. See also /config/payment.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Descriptive name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PAYMENTTOOL_FIELDS {
+
+			DESCR = "Array of Payment Tool configurations for each batch type. Array element id is significant and determines the order in which the various fields will be displayed in the GUI. ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_BATCH_TYPE {
+
+				DESCR = "Batch type. Payment (0), Reversal (1). A payment batch only has data entry fields, a reversal batch can have display and data entry fields.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_COLUMN_NAME {
+
+				DESCR = "Column name to be used in the Payment Tool GUI.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				DESCR = "Name of a field in the custom section of the /event/billing/payment or /event/billing/reversal class depending on the batch type. For ex, or a check payment batch, the fields in PIN_FLD_CHECK_INFO array of /event/billing/payment/check may be used.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_PURPOSE {
+
+				DESCR = "Read-only field if 1. Data entry allowed if 0.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/paymenttool
+#=======================================
+
+STORABLE CLASS /config/paymenttool IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAY_TYPES {
+
+		SQL_TABLE = "config_pymttool_pay_types_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		ARRAY PIN_FLD_PAYMENTTOOL_FIELDS {
+
+			SQL_TABLE = "config_pymttool_bt_fields_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_BATCH_TYPE {
+
+				SQL_COLUMN = "batch_type";
+			}
+
+			STRING PIN_FLD_COLUMN_NAME {
+
+				SQL_COLUMN = "column_name";
+			}
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				SQL_COLUMN = "field_name";
+			}
+
+			INT PIN_FLD_PURPOSE {
+
+				SQL_COLUMN = "purpose";
+			}
+
+		}
+
+	}
+
+}
+

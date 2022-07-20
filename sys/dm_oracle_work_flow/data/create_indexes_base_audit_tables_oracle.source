@@ -1,0 +1,199 @@
+--
+--	@(#)%Portal Version: create_indexes_base_audit_tables.source:BillingVelocityInt:7:2006-Sep-14 18:47:41 %
+--
+-- Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved.
+--     
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+-- SOURCE OF sql file to create the indexes on audit tables 
+-- for the PIN database
+-- $PIN_CONF_TBLSPACEX          -- for tablespace to put all these in
+-- $PIN_CONF_STORAGE_SMALL      -- for storage phrase
+-- $PIN_CONF_PARTITION_INFO	-- partition clause
+
+-- /au_service
+create index i_au_service__id on au_service_t 
+	( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX8
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create index i_au_service_parent__id on au_service_t 
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX8
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_au_service_poid__id on au_service_t
+        ( poid_id0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create index i_au_service_login__id on au_service_t
+        ( login)
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+        
+create index i_au_service_bal_grp_obj__id on au_service_t
+        ( bal_grp_obj_id0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+        
+create index i_au_service_subscr_obj__id on au_service_t
+        ( subscription_obj_id0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- /au_service_alias_list_t
+create index i_au_service_alias_list__id on au_service_alias_list_t 
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX8
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- /au_product
+create index i_au_product__id on au_product_t 
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/product.INDEX_CLAUSE'} ;
+
+create unique index i_au_product_poid__id on au_product_t 
+	( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/product.INDEX_CLAUSE'} ;
+
+create index i_au_product_usage_map__id on au_product_usage_map_t
+      	( obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/product.INDEX_CLAUSE'} ;
+
+-- /au_account
+create index i_au_account__id on au_account_t 
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+--create index i_au_account_products__id on au_account_products_t 
+--	( obj_id0 )
+--	$PIN_CONF_TBLSPACEX3
+--	$PIN_CONF_STORAGE_MED
+--	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+--create index i_au_account_discounts__id on au_account_discounts_t
+--	( obj_id0 )
+--	$PIN_CONF_TBLSPACEX3
+--	$PIN_CONF_STORAGE_MED
+--	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+-- /au_balance_group
+create index i_au_balance_group__id on au_bal_grp_t 
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+create index i_au_bal_grp_bals__id on au_bal_grp_bals_t 
+	( obj_id0  )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+create index i_au_bal_grp_sub_bals__id on au_bal_grp_sub_bals_t 
+	( obj_id0  )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+-- /au_discounts
+create index i_au_discount__id on au_discount_t 
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/discount.INDEX_CLAUSE'} ;
+
+create index i_au_discount_usage_map__id on au_discount_usage_map_t
+      	( obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/discount.INDEX_CLAUSE'} ;
+
+-- /au_group
+create index i_au_group__id on au_group_t 
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+-- /au_group/sharing/discount
+create index i_au_group_sharing_dscnt__id on au_group_sharing_discounts_t 
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+-- /au_group/sharing/charges
+create index i_au_group_sharing_charges__id on au_group_sharing_charges_t 
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+-- /au_ordered_balgroup
+create index i_au_ordered_balgroup__id on au_ordered_balgroup_t 
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+
+create index i_au_ordered_groups__id on au_ordered_groups_t
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+
+-- /au_sponsorship
+create index i_au_sponsorship_parent__id on au_sponsorship_t 
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/sponsorship.INDEX_CLAUSE'} ;
+
+create index i_au_sponsorship_usage_map__id on au_sponsorship_usage_map_t 
+      	( obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/sponsorship.INDEX_CLAUSE'} ;
+
+
+-- /au_uniqeness
+--create index i_au_uniqueness__id on au_uniqueness_t
+--        ( poid_id0 )
+--	$PIN_CONF_TBLSPACEX12
+--	$PIN_CONF_STORAGE_MED
+--	$PIN_CONF_PARTITION_INFO{'/uniqueness.INDEX_CLAUSE'} ;
+
+--create index i_au_uniqueness_account__id on au_uniqueness_t
+--        ( account_obj_id0 )
+--        $PIN_CONF_TBLSPACEX12
+--        $PIN_CONF_STORAGE_MED
+--	$PIN_CONF_PARTITION_INFO{'/uniqueness.INDEX_CLAUSE'} ;
+
+-- /au_billinfo
+create index i_au_billinfo_parent__id on au_billinfo_t
+	( au_parent_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/billinfo.INDEX_CLAUSE'} ;
+

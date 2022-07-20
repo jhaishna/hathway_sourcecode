@@ -1,0 +1,122 @@
+
+#=======================================
+#  Field PIN_FLD_VOUCHERS_INFO
+#=======================================
+
+ARRAY PIN_FLD_VOUCHERS_INFO {
+
+	ID = 7617;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REASON_CODE
+#=======================================
+
+STRING PIN_FLD_REASON_CODE {
+
+	ID = 938;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/voucher
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/voucher {
+
+	LABEL = "topup-payment reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a voucher-topup event /event/billing/payment/voucher is reversed";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHERS_INFO {
+
+		DESCR = "Array detailing the reversal information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Reversal date.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			DESCR = "Reversal reason code. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/voucher
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/voucher IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHERS_INFO {
+
+		SQL_TABLE = "event_billing_rvrsl_voucher_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_REASON_CODE {
+
+			SQL_COLUMN = "reason_code";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,192 @@
+
+#=======================================
+#  Field PIN_FLD_DEAL_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_DEAL_INFO {
+
+	ID = 260;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACKAGE_ID
+#=======================================
+
+INT PIN_FLD_PACKAGE_ID {
+
+	ID = 9055;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/deal
+#=======================================
+
+STORABLE CLASS /event/billing/deal {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created by the billing manager when a deal is purchased. This event does not have any charges associated with it. Separate events (/event/billing/product) are logged for each of the products contained in the deal.  The product purchase events point to this event via the PIN_FLD_SESSION_OBJ field in the base /event class.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DEAL_INFO {
+
+		DESCR = "Substruct to hold the deal purchase information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Link to the deal object being purchased.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PACKAGE_ID {
+
+			DESCR = "This field is common for all product/discount instances purchased as part of deal or plan purchase. In case of deal purchase, all products/discounts within the  deal will have the same package id. In case of plan purchase, all the products/discounts within the plan, will share the same package id.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "Link to service object that owns this deal. NULL means the deal is owned by the account, not by a specific service object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/deal/cancel
+#=======================================
+
+STORABLE CLASS /event/billing/deal/cancel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture information when a deal is  cancelled. The details of the cancellation are in the PIN_FLD_DEAL_INFO array of the base /event/billing/deal class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/deal/purchase
+#=======================================
+
+STORABLE CLASS /event/billing/deal/purchase {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture information when a deal is  purchased. The details of the purchase are in the PIN_FLD_DEAL_INFO array of the base /event/billing/deal class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/deal
+#=======================================
+
+STORABLE CLASS /event/billing/deal IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DEAL_INFO {
+
+		SQL_TABLE = "event_billing_deal_info_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		INT PIN_FLD_PACKAGE_ID {
+
+			SQL_COLUMN = "package_id";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/deal/cancel
+#=======================================
+
+STORABLE CLASS /event/billing/deal/cancel IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/deal/purchase
+#=======================================
+
+STORABLE CLASS /event/billing/deal/purchase IMPLEMENTATION ORACLE7 {
+
+}
+

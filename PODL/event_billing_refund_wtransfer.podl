@@ -1,0 +1,176 @@
+
+#=======================================
+#  Field PIN_FLD_WIRE_TRANSFER_INFO
+#=======================================
+
+ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+	ID = 939;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+	ID = 932;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_CODE
+#=======================================
+
+STRING PIN_FLD_BANK_CODE {
+
+	ID = 930;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WIRE_TRANSFER_ID
+#=======================================
+
+STRING PIN_FLD_WIRE_TRANSFER_ID {
+
+	ID = 942;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/refund/wtransfer
+#=======================================
+
+STORABLE CLASS /event/billing/refund/wtransfer {
+
+	LABEL = "Wire transfer";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a refund is made by wire transfer.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+		DESCR = "Wire transfer information. Only one array element will be present. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			DESCR = "Bank account number.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			DESCR = "Bank code.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Date for which the wire transfer is effective.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_WIRE_TRANSFER_ID {
+
+			DESCR = "Wire transfer id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/refund/wtransfer
+#=======================================
+
+STORABLE CLASS /event/billing/refund/wtransfer IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WIRE_TRANSFER_INFO {
+
+		SQL_TABLE = "event_billing_refund_wtran_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+			SQL_COLUMN = "bank_account_no";
+		}
+
+		STRING PIN_FLD_BANK_CODE {
+
+			SQL_COLUMN = "bank_code";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		STRING PIN_FLD_WIRE_TRANSFER_ID {
+
+			SQL_COLUMN = "wtransfer_id";
+		}
+
+	}
+
+}
+

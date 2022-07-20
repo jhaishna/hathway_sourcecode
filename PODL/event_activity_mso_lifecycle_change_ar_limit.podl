@@ -1,0 +1,192 @@
+
+#=======================================
+#  Field MSO_FLD_CHANGE_AR_LIMIT
+#=======================================
+
+ARRAY MSO_FLD_CHANGE_AR_LIMIT {
+
+	ID = 41202;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ADJ_CURRENT_VALUE
+#=======================================
+
+DECIMAL MSO_FLD_ADJ_CURRENT_VALUE {
+
+	ID = 43065;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ADJ_LIMIT
+#=======================================
+
+DECIMAL MSO_FLD_ADJ_LIMIT {
+
+	ID = 43063;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CURRENT_MONTH
+#=======================================
+
+TIMESTAMP MSO_FLD_CURRENT_MONTH {
+
+	ID = 43066;
+}
+
+
+#=======================================
+#  Field MSO_FLD_MONTHLY_ADJ_LIMIT
+#=======================================
+
+DECIMAL MSO_FLD_MONTHLY_ADJ_LIMIT {
+
+	ID = 43064;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/change_ar_limit
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/change_ar_limit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CHANGE_AR_LIMIT {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_ADJ_CURRENT_VALUE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_ADJ_LIMIT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_CURRENT_MONTH {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_MONTHLY_ADJ_LIMIT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/change_ar_limit
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/change_ar_limit IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CHANGE_AR_LIMIT {
+
+		SQL_TABLE = "mso_evt_lc_change_ar_limit_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_ADJ_CURRENT_VALUE {
+
+			SQL_COLUMN = "adj_current_value";
+		}
+
+		DECIMAL MSO_FLD_ADJ_LIMIT {
+
+			SQL_COLUMN = "adj_limit";
+		}
+
+		TIMESTAMP MSO_FLD_CURRENT_MONTH {
+
+			SQL_COLUMN = "current_month";
+		}
+
+		DECIMAL MSO_FLD_MONTHLY_ADJ_LIMIT {
+
+			SQL_COLUMN = "monthly_adj_limit";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+	}
+
+}
+

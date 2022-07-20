@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fup_topup
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fup_topup {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for FUP Topup.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fup_topup
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fup_topup IMPLEMENTATION ORACLE7 {
+
+}
+

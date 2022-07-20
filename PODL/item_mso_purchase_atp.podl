@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_purchase_atp
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_atp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for mso purchase atp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_purchase_atp
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_atp IMPLEMENTATION ORACLE7 {
+
+}
+

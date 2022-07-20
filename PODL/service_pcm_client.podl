@@ -1,0 +1,120 @@
+
+#=======================================
+#  Field PIN_FLD_LOCK_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+	ID = 24;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCK_STATUS
+#=======================================
+
+ENUM PIN_FLD_LOCK_STATUS {
+
+	ID = 9882;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN_ATTEMPTS
+#=======================================
+
+INT PIN_FLD_LOGIN_ATTEMPTS {
+
+	ID = 9881;
+}
+
+
+#=======================================
+#  Storable Class /service/pcm_client
+#=======================================
+
+STORABLE CLASS /service/pcm_client {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Class used to provide identity to non-CSR applications connecting to Infranet. For example, applications like radiusd, the billing applications etc. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+		DESCR = "Substruct containing login attempts and lock status info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_LOCK_STATUS {
+
+			LABEL = "LOCK_STATUS";
+			DESCR = "The status of the login service. If value is 1 service locked, 0 - normal";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_LOGIN_ATTEMPTS {
+
+			LABEL = "LOGIN_ATTEMPTS";
+			DESCR = "The number of incorrect login attempts";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/pcm_client
+#=======================================
+
+STORABLE CLASS /service/pcm_client IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+		SQL_TABLE = "pcmsvc_lockinfo_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_LOCK_STATUS {
+
+			SQL_COLUMN = "lock_status";
+		}
+
+		INT PIN_FLD_LOGIN_ATTEMPTS {
+
+			SQL_COLUMN = "login_atmpts";
+		}
+
+	}
+
+}
+

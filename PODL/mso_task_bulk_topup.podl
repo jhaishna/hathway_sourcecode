@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_task/bulk_topup
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_topup {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_topup
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_topup IMPLEMENTATION ORACLE7 {
+
+}
+

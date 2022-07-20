@@ -1,0 +1,380 @@
+
+#=======================================
+#  Field MSO_FLD_UPDATE_CONTACT
+#=======================================
+
+ARRAY MSO_FLD_UPDATE_CONTACT {
+
+	ID = 41175;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAMEINFO
+#=======================================
+
+ARRAY PIN_FLD_NAMEINFO {
+
+	ID = 156;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMPANY
+#=======================================
+
+STRING PIN_FLD_COMPANY {
+
+	ID = 164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EMAIL_ADDR
+#=======================================
+
+STRING PIN_FLD_EMAIL_ADDR {
+
+	ID = 171;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIRST_NAME
+#=======================================
+
+STRING PIN_FLD_FIRST_NAME {
+
+	ID = 159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_NAME
+#=======================================
+
+STRING PIN_FLD_LAST_NAME {
+
+	ID = 161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIDDLE_NAME
+#=======================================
+
+STRING PIN_FLD_MIDDLE_NAME {
+
+	ID = 160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SALUTATION
+#=======================================
+
+STRING PIN_FLD_SALUTATION {
+
+	ID = 158;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONES
+#=======================================
+
+ARRAY PIN_FLD_PHONES {
+
+	ID = 180;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONE
+#=======================================
+
+STRING PIN_FLD_PHONE {
+
+	ID = 181;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/update_contact
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/update_contact {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_UPDATE_CONTACT {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_NAMEINFO {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_COMPANY {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_EMAIL_ADDR {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_FIRST_NAME {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_LAST_NAME {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_MIDDLE_NAME {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_SALUTATION {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/update_contact
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/update_contact IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_UPDATE_CONTACT {
+
+		SQL_TABLE = "mso_evt_lc_update_contact_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		ARRAY PIN_FLD_NAMEINFO {
+
+			SQL_TABLE = "mso_evt_lc_nameinfo_contact_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_COMPANY {
+
+				SQL_COLUMN = "company";
+			}
+
+			STRING PIN_FLD_EMAIL_ADDR {
+
+				SQL_COLUMN = "email_addr";
+			}
+
+			STRING PIN_FLD_FIRST_NAME {
+
+				SQL_COLUMN = "first_name";
+			}
+
+			STRING PIN_FLD_LAST_NAME {
+
+				SQL_COLUMN = "last_name";
+			}
+
+			STRING PIN_FLD_MIDDLE_NAME {
+
+				SQL_COLUMN = "middle_name";
+			}
+
+			STRING PIN_FLD_SALUTATION {
+
+				SQL_COLUMN = "salutation";
+			}
+
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			SQL_TABLE = "mso_evt_lc_phones_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				SQL_COLUMN = "phone";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/mso_jan_migration
+#=======================================
+
+STORABLE CLASS /event/mso_jan_migration {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Migration event for Jan-15";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/mso_jan_migration
+#=======================================
+
+STORABLE CLASS /event/mso_jan_migration IMPLEMENTATION ORACLE7 {
+
+}
+

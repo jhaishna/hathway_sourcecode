@@ -1,0 +1,175 @@
+
+#=======================================
+#  Field PIN_FLD_CC_INFO
+#=======================================
+
+ARRAY PIN_FLD_CC_INFO {
+
+	ID = 142;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AUTH_CODE
+#=======================================
+
+STRING PIN_FLD_AUTH_CODE {
+
+	ID = 190;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AUTH_DATE
+#=======================================
+
+STRING PIN_FLD_AUTH_DATE {
+
+	ID = 191;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESULT
+#=======================================
+
+ENUM PIN_FLD_RESULT {
+
+	ID = 50;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VENDOR_RESULTS
+#=======================================
+
+STRING PIN_FLD_VENDOR_RESULTS {
+
+	ID = 184;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/refund/cc
+#=======================================
+
+STORABLE CLASS /event/billing/refund/cc {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a credit card refund is completed.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		DESCR = "Credit card refund specific information. Array element id is not significant. Only one array element will be present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AUTH_CODE {
+
+			DESCR = "Credit card authorization code received from the external refund system.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_AUTH_DATE {
+
+			DESCR = "Date on which the authorization was issued. Format is YYMMDD.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			DESCR = "Portal-defined result code. Valid values are Pass (0), Bad Card (5), Soft Decline (7), Hard Decline (8) and Service Unavailable (6).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VENDOR_RESULTS {
+
+			DESCR = "The various results from the refund system like the vendor code, avs code and cvv result code are stored in this field.  The data format for this field will be VC=<vendor-code>&SR=<security-result>&AVS=<avs-result>.";
+			ORDER = 0;
+			LENGTH = 512;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/refund/cc
+#=======================================
+
+STORABLE CLASS /event/billing/refund/cc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CC_INFO {
+
+		SQL_TABLE = "event_billing_refund_cc_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AUTH_CODE {
+
+			SQL_COLUMN = "auth_code";
+		}
+
+		STRING PIN_FLD_AUTH_DATE {
+
+			SQL_COLUMN = "auth_date";
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			SQL_COLUMN = "result";
+		}
+
+		STRING PIN_FLD_VENDOR_RESULTS {
+
+			SQL_COLUMN = "vendor_results";
+		}
+
+	}
+
+}
+

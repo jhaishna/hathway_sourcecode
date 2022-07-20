@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_cable_shift
+#=======================================
+
+STORABLE CLASS /item/mso_cable_shift {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cable Shifting Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_cable_shift
+#=======================================
+
+STORABLE CLASS /item/mso_cable_shift IMPLEMENTATION ORACLE7 {
+
+}
+

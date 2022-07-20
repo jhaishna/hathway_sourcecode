@@ -1,0 +1,168 @@
+
+#=======================================
+#  Field MSO_FLD_SCHEDULE_MODIFY
+#=======================================
+
+ARRAY MSO_FLD_SCHEDULE_MODIFY {
+
+	ID = 41213;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_NAME
+#=======================================
+
+STRING PIN_FLD_ACTION_NAME {
+
+	ID = 1852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCHEDULE_OBJ
+#=======================================
+
+POID PIN_FLD_SCHEDULE_OBJ {
+
+	ID = 7720;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/create_schedule
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/create_schedule {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_SCHEDULE_MODIFY {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACTION_NAME {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SCHEDULE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/create_schedule
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/create_schedule IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_SCHEDULE_MODIFY {
+
+		SQL_TABLE = "mso_evt_lc_schedule_modify_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		STRING PIN_FLD_ACTION_NAME {
+
+			SQL_COLUMN = "action_name";
+		}
+
+		POID PIN_FLD_SCHEDULE_OBJ {
+
+			SQL_COLUMN = "schedule_obj";
+		}
+
+	}
+
+}
+

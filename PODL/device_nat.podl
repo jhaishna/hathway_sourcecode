@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /device/nat
+#=======================================
+
+STORABLE CLASS /device/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/nat
+#=======================================
+
+STORABLE CLASS /device/nat IMPLEMENTATION ORACLE7 {
+
+}
+

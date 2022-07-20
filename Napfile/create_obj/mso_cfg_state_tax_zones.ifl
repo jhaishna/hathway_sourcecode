@@ -1,0 +1,18 @@
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /mso_cfg_state_tax_zones -1 2
+0 MSO_FLD_TAX_PAYER_TYPE   ENUM [0] 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "config_loader"
+0 PIN_FLD_STATE           STR [0] "MH"
+0 MSO_FLD_ET_ZONES      ARRAY [1] allocated 20, used 1
+1     MSO_FLD_ET_ZONE_CODE    STR [0] "MH_PP_COMMERCIAL"
+0 MSO_FLD_ET_ZONES      ARRAY [10] allocated 20, used 1
+1     MSO_FLD_ET_ZONE_CODE    STR [0] "MH_SP_RESIDENTIAL"
+0 MSO_FLD_ET_ZONES      ARRAY [11] allocated 20, used 1
+1     MSO_FLD_ET_ZONE_CODE    STR [0] "MH_SP_COMMERCIAL"
+0 MSO_FLD_ET_ZONES      ARRAY [0] allocated 20, used 1
+1     MSO_FLD_ET_ZONE_CODE    STR [0] "MH_PP_RESIDENTIAL"
+0 MSO_FLD_VAT_ZONES     ARRAY [1] allocated 20, used 1
+1     MSO_FLD_VAT_ZONE_CODE    STR [0] "MH_VAT""
+XX
+xop 1 0 1

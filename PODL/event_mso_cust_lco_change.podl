@@ -1,0 +1,143 @@
+
+#=======================================
+#  Field PIN_FLD_EVENT_MISC_DETAILS
+#=======================================
+
+ARRAY PIN_FLD_EVENT_MISC_DETAILS {
+
+	ID = 7430;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LCO_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_OBJ {
+
+	ID = 40006;
+	DESCR = "LCO account Object";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REASON_ID
+#=======================================
+
+INT PIN_FLD_REASON_ID {
+
+	ID = 7432;
+}
+
+
+#=======================================
+#  Storable Class /event/mso_cust_lco_change
+#=======================================
+
+STORABLE CLASS /event/mso_cust_lco_change {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MISC_DETAILS {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_LCO_OBJ {
+
+			DESCR = "LCO account Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_REASON_ID {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/mso_cust_lco_change
+#=======================================
+
+STORABLE CLASS /event/mso_cust_lco_change IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MISC_DETAILS {
+
+		SQL_TABLE = "mso_cust_lco_change_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_LCO_OBJ {
+
+			SQL_COLUMN = "lco_obj";
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		INT PIN_FLD_REASON_ID {
+
+			SQL_COLUMN = "reason_id";
+		}
+
+	}
+
+}
+

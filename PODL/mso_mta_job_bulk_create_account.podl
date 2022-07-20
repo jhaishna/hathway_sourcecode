@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_create_account {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bulk Account Creation";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_create_account IMPLEMENTATION ORACLE7 {
+
+}
+

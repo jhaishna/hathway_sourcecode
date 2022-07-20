@@ -1,0 +1,33 @@
+
+			DEFAULT db:  0.0.0.1 
+Processing Input file = ./stb/input/file1
+Template file is      = ./stb/stb.TMPL
+Flist file is         =  ./stb/stb.IFL
+------------------------
+Input file template is:
+------------------------
+account_no:[a-zA-Z0-9],serial_no:[a-zA-Z0-9],manufacturer:[a-zA-Z0-9],model:[a-zA-Z0-9],device_id:[a-z],device_type:[a-zA-Z0-9],purpose:[a-zA-Z0-9],warranty:[0-9]
+
+-------------------
+Flist template is: 
+-------------------
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_device/stb -1 0
+0 PIN_FLD_STATUS                     ENUM [0] 0
+0 PIN_FLD_OPCODE                     INT  [0] 2700
+0 PIN_FLD_ACCOUNT_OBJ 		    POID [0] 0.0.0.1 /account 1
+0 PIN_FLD_SOURCE                     STR [0] "account_no"
+0 MSO_FLD_SERIAL_NO       	     STR [0] "serial_no"
+0 PIN_FLD_MANUFACTURER               STR [0] "manufacturer"
+0 PIN_FLD_MODEL                      STR [0] "model"
+0 PIN_FLD_DEVICE_ID                  STR [0] "device_id"
+0 PIN_FLD_DEVICE_TYPE                STR [0] "device_type"
+0 PIN_FLD_DESCR                      STR [0] "purpose"
+0 MSO_FLD_WARRANTY_END_OFFSET   INT [0] warranty
+0 MSO_FLD_WARRANTY_END 	TSTAMP [0] (0)
+0 MSO_FLD_ORDER_OBJ		     POID [0] order_obj
+0 PIN_FLD_STATE_ID                   INT [0] 1
+0 PIN_FLD_PROGRAM_NAME               STR [0] "device_loader"
+
+----------------------------------------------------
+Processing Summary
+	Doing cleanup

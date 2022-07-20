@@ -1,0 +1,9 @@
+K 14
+bugtraq:append
+V 5
+false
+K 11
+bugtraq:url
+V 44
+http://202.88.130.37/show_bug.cgi?id=%BUGID%
+END

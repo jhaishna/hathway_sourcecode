@@ -1,0 +1,36 @@
+#
+#       @(#) % %
+#
+#       Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+#      
+#       This material is the confidential property of Oracle Corporation or its
+#       licensors and may be used, reproduced, stored or transmitted only in
+#       accordance with a valid Oracle license or sublicense agreement.
+#
+#----------------------------------------------------------------------
+#
+# Contains a list of all known event types used from invoiceing
+#
+#----------------------------------------------------------------------
+/event/activity
+/event/activity/admin
+/event/activity/reg
+/event/billing/accounting
+/event/billing/charge
+/event/billing/cycle/arrears
+/event/billing/cycle/fold
+/event/billing/cycle/forward
+/event/billing/cycle/tax
+/event/billing/deal
+/event/billing/debit
+/event/billing/invoice
+/event/billing/limit
+/event/billing/product
+/event/customer/billinfo
+/event/customer/login
+/event/customer/nameinfo
+/event/customer/password
+/event/customer/status
+/event/session
+/event/session/dialup
+/event/session/pcm_client

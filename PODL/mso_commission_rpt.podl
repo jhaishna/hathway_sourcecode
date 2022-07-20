@@ -1,0 +1,901 @@
+
+#=======================================
+#  Field MSO_FLD_COMMISION_MODEL
+#=======================================
+
+ENUM MSO_FLD_COMMISION_MODEL {
+
+	ID = 41135;
+	DESCR = "Commission Model";
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISION_SERVICE
+#=======================================
+
+ENUM MSO_FLD_COMMISION_SERVICE {
+
+	ID = 41136;
+	DESCR = "Commission Service";
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISSION_CHARGE
+#=======================================
+
+DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+	ID = 43327;
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISSION_FOR
+#=======================================
+
+ENUM MSO_FLD_COMMISSION_FOR {
+
+	ID = 43344;
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISSION_RULE
+#=======================================
+
+ENUM MSO_FLD_COMMISSION_RULE {
+
+	ID = 43326;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DT_OBJ
+#=======================================
+
+POID MSO_FLD_DT_OBJ {
+
+	ID = 40004;
+	DESCR = "Distributor Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_LCO_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_OBJ {
+
+	ID = 40006;
+	DESCR = "LCO account Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SALESMAN_OBJ
+#=======================================
+
+POID MSO_FLD_SALESMAN_OBJ {
+
+	ID = 40002;
+	DESCR = "Sales man account poid to be stored in system for reference";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SDT_OBJ
+#=======================================
+
+POID MSO_FLD_SDT_OBJ {
+
+	ID = 40005;
+	DESCR = "Sub- Distributor Object";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SESSION_OBJ
+#=======================================
+
+POID PIN_FLD_SESSION_OBJ {
+
+	ID = 43;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_MSG
+#=======================================
+
+STRING PIN_FLD_STATUS_MSG {
+
+	ID = 150;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+	ID = 43324;
+	DESCR = "Charge Head Based Commission";
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD
+#=======================================
+
+STRING MSO_FLD_CHARGE_HEAD {
+
+	ID = 43301;
+	DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD_TOTAL
+#=======================================
+
+DECIMAL MSO_FLD_CHARGE_HEAD_TOTAL {
+
+	ID = 43342;
+	DESCR = "Charge Head Total";
+}
+
+
+#=======================================
+#  Field MSO_FLD_COLLECTION_AMT
+#=======================================
+
+DECIMAL MSO_FLD_COLLECTION_AMT {
+
+	ID = 43343;
+	DESCR = "Collection Amount";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+	ID = 1518;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Storable Class /mso_commission_rpt
+#=======================================
+
+STORABLE CLASS /mso_commission_rpt {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_COMMISION_MODEL {
+
+		DESCR = "Commission Model.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_COMMISION_SERVICE {
+
+		DESCR = "Commission Service.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_COMMISSION_FOR {
+
+		DESCR = "Commission for LCO/DT/SDT";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_COMMISSION_RULE {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_DT_OBJ {
+
+		DESCR = "Distributor Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_LCO_OBJ {
+
+		DESCR = "LCO account Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_SALESMAN_OBJ {
+
+		DESCR = "Sales man account poid to be stored in system for reference";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_SDT_OBJ {
+
+		DESCR = "Sub- Distributor Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		DESCR = "LCO Balance Group POID ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Subsriber's Service Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SESSION_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "0 - Pending 1 - Applied, 2 - Failed";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_STATUS_MSG {
+
+		DESCR = "Commission Status Msg";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_commission_rpt/chrg_head_based
+#=======================================
+
+STORABLE CLASS /mso_commission_rpt/chrg_head_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Charge Head Based Wholesale Settlement Commission";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		DESCR = "Charge Head Based Commission";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_CHARGE_HEAD_TOTAL {
+
+			DESCR = "Charge Head Total";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_COLLECTION_AMT {
+
+			DESCR = "Collection Amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "charge account obj";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			DESCR = "Item Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_POID {
+
+			DESCR = "actual charge item";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_commission_rpt/count_based
+#=======================================
+
+STORABLE CLASS /mso_commission_rpt/count_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Active Customer Count based Commission Report";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		DESCR = "Active Customer Count based Commission Report";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_commission_rpt
+#=======================================
+
+STORABLE CLASS /mso_commission_rpt IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_commission_rpt_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_COMMISION_MODEL {
+
+		SQL_COLUMN = "commission_model";
+	}
+
+	ENUM MSO_FLD_COMMISION_SERVICE {
+
+		SQL_COLUMN = "commission_service";
+	}
+
+	DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+		SQL_COLUMN = "commission_charge";
+	}
+
+	ENUM MSO_FLD_COMMISSION_FOR {
+
+		SQL_COLUMN = "commission_for";
+	}
+
+	ENUM MSO_FLD_COMMISSION_RULE {
+
+		SQL_COLUMN = "commission_rule";
+	}
+
+	POID MSO_FLD_DT_OBJ {
+
+		SQL_COLUMN = "dt_obj";
+	}
+
+	POID MSO_FLD_LCO_OBJ {
+
+		SQL_COLUMN = "lco_obj";
+	}
+
+	POID MSO_FLD_SALESMAN_OBJ {
+
+		SQL_COLUMN = "salesman_obj";
+	}
+
+	POID MSO_FLD_SDT_OBJ {
+
+		SQL_COLUMN = "sdt_obj";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		SQL_COLUMN = "bal_grp_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		SQL_COLUMN = "event_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	POID PIN_FLD_SESSION_OBJ {
+
+		SQL_COLUMN = "session_obj";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "commission_status";
+	}
+
+	STRING PIN_FLD_STATUS_MSG {
+
+		SQL_COLUMN = "commission_status_msg";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_commission_rpt/chrg_head_based
+#=======================================
+
+STORABLE CLASS /mso_commission_rpt/chrg_head_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		SQL_TABLE = "mso_comm_rpt_chrg_head_based_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			SQL_COLUMN = "charge_head";
+		}
+
+		DECIMAL MSO_FLD_CHARGE_HEAD_TOTAL {
+
+			SQL_COLUMN = "chrg_head_total";
+		}
+
+		DECIMAL MSO_FLD_COLLECTION_AMT {
+
+			SQL_COLUMN = "collection_amt";
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			SQL_COLUMN = "item_obj";
+		}
+
+		POID PIN_FLD_POID {
+
+			SQL_COLUMN = "charge_item_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_commission_rpt/count_based
+#=======================================
+
+STORABLE CLASS /mso_commission_rpt/count_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		SQL_TABLE = "mso_comm_rpt_count_based_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			SQL_COLUMN = "count";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,597 @@
+
+#=======================================
+#  Field PIN_FLD_BATCH_INFO
+#=======================================
+
+ARRAY PIN_FLD_BATCH_INFO {
+
+	ID = 926;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_ID
+#=======================================
+
+STRING PIN_FLD_BATCH_ID {
+
+	ID = 933;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESULT
+#=======================================
+
+ENUM PIN_FLD_RESULT {
+
+	ID = 50;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHARGES
+#=======================================
+
+ARRAY PIN_FLD_CHARGES {
+
+	ID = 186;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_NO
+#=======================================
+
+STRING PIN_FLD_BANK_NO {
+
+	ID = 1054;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_OCCURRENCE_OBJ
+#=======================================
+
+POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+	ID = 2613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CANON_NAME
+#=======================================
+
+STRING PIN_FLD_CANON_NAME {
+
+	ID = 162;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMMAND
+#=======================================
+
+ENUM PIN_FLD_COMMAND {
+
+	ID = 188;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_NUM
+#=======================================
+
+STRING PIN_FLD_DEBIT_NUM {
+
+	ID = 129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIAS_ID
+#=======================================
+
+STRING PIN_FLD_FIAS_ID {
+
+	ID = 912;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MANDATE_STATUS
+#=======================================
+
+INT PIN_FLD_MANDATE_STATUS {
+
+	ID = 913;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MERCHANT
+#=======================================
+
+STRING PIN_FLD_MERCHANT {
+
+	ID = 90;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_TRANS_ID {
+
+	ID = 189;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/provision
+#=======================================
+
+STORABLE CLASS /event/billing/provision {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created while processing mandate. The details are recorded in the /event base class. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/provision/dd
+#=======================================
+
+STORABLE CLASS /event/billing/provision/dd {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event object represents a  Bertelsmann account provisioning batch event. Includes information about the payment type, like debit number, bank number, address. It also stores the batch ID. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BATCH_INFO {
+
+		DESCR = "Stores the Batch ID and the batch status. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_ID {
+
+			DESCR = "Batch ID number.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			DESCR = "Portal-defined validation result code. Same as the result of a charge operation. See PIN_FLD_RESULT in /event/billing/charge and pin_bill.h.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_CHARGES {
+
+		DESCR = "All the mandate related information is stored here along with the account address and payment info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Street address of contact. Multiple lines can be stored with newline separator.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BANK_NO {
+
+			DESCR = "RDFI/Bank ID used for routing transactions";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BATCH_ID {
+
+			DESCR = "Batch Id. of the batch of accounts for which mandate request has been sent out. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+			DESCR = "POID of the batch occurrence which this handler application will service.";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CANON_NAME {
+
+			DESCR = "First name of contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City portion of contact's address.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_COMMAND {
+
+			DESCR = "Various commands to be used to call the direct debit processing DM with. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country portion of contact's address.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Currency of the account.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			DESCR = "Credit card number.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIAS_ID {
+
+			DESCR = "FIAS ID of the customer.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MANDATE_STATUS {
+
+			DESCR = "Current mandate status.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MERCHANT {
+
+			DESCR = "Merchant id of the customer.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State or Province portion of contact's address.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			DESCR = "Same as PIN_FLD_TRANS_ID in the PIN_FLD_CHARGE of /event/billing/charge for real-time refunds. For non-real-time refunds, the transaction id can be different from the one used for the charge.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Zip code or postal code portion of contact's address.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/provision
+#=======================================
+
+STORABLE CLASS /event/billing/provision IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/provision/dd
+#=======================================
+
+STORABLE CLASS /event/billing/provision/dd IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BATCH_INFO {
+
+		SQL_TABLE = "event_billing_provision_dd_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_ID {
+
+			SQL_COLUMN = "batch_id";
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			SQL_COLUMN = "result";
+		}
+
+	}
+
+	ARRAY PIN_FLD_CHARGES {
+
+		SQL_TABLE = "event_charge_provision_dd_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_BANK_NO {
+
+			SQL_COLUMN = "bank_no";
+		}
+
+		STRING PIN_FLD_BATCH_ID {
+
+			SQL_COLUMN = "batch_id";
+		}
+
+		POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+			SQL_COLUMN = "occurrence_obj";
+		}
+
+		STRING PIN_FLD_CANON_NAME {
+
+			SQL_COLUMN = "canon_name";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		ENUM PIN_FLD_COMMAND {
+
+			SQL_COLUMN = "command";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		STRING PIN_FLD_FIAS_ID {
+
+			SQL_COLUMN = "fias_id";
+		}
+
+		INT PIN_FLD_MANDATE_STATUS {
+
+			SQL_COLUMN = "mandate_status";
+		}
+
+		STRING PIN_FLD_MERCHANT {
+
+			SQL_COLUMN = "merchant";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			SQL_COLUMN = "trans_id";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+

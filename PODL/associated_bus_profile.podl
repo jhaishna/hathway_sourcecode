@@ -1,0 +1,414 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REPORT_NAME
+#=======================================
+
+STRING PIN_FLD_REPORT_NAME {
+
+	ID = 986;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_TEMPLATE_ARRAY {
+
+	ID = 9351;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_NAME
+#=======================================
+
+STRING PIN_FLD_TEMPLATE_NAME {
+
+	ID = 2365;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_END_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_END_TO {
+
+	ID = 985;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_START_FROM
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_START_FROM {
+
+	ID = 984;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /associated_bus_profile
+#=======================================
+
+STORABLE CLASS /associated_bus_profile {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores the profile Information for Invoicing for a /billinfo object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the account object for whom this associated_bus_profile object is created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		DESCR = "Link to the billinfo object for whom this associated_bus_profile object is created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "This will have the name as populated in the  PIN_FLD_NAME field of the /config/business_profile, this object is associated with. Example when associated with Invoicing /config/business_profile for Consumer Invoices the entry in this field will be ConsumerInvoice , the same name as present in the PIN_FLD_NAME of the corresponding /config/business_profile.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_REPORT_NAME {
+
+		DESCR = "The Report name (for Regular Invoice) configured in the pair key Report_Name of the corresponding Invoicing /config/business_profile object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_TEMPLATE_ARRAY {
+
+		DESCR = "The Template Name and Report name for Corrective Invoice configured in the pair key Template_Name and Report_Name for the corresponding Invoicing /config/business_profile object.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_REPORT_NAME {
+
+			DESCR = "The Report name (for Corrective Invoice) configured in the pair key Report_Name of the corresponding Invoicing /config/business_profile object.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TEMPLATE_NAME {
+
+			DESCR = "The Template name (for Corrective Invoice) configured in the pair key Template_Name of the corresponding Invoicing /config/business_profile object.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_TEMPLATE_NAME {
+
+		DESCR = "The Template name (for Regular Invoice) configured in the pair key Template_Name of the corresponding Invoicing /config/business_profile object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_VALID_END_TO {
+
+		DESCR = "Not populated with any value. Reserved for later use.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_VALID_START_FROM {
+
+		DESCR = "By default populated with the date of creation of this object. Reserved for later use.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /associated_bus_profile
+#=======================================
+
+STORABLE CLASS /associated_bus_profile IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "associated_bus_profile_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		SQL_COLUMN = "billinfo_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_REPORT_NAME {
+
+		SQL_COLUMN = "report_name";
+	}
+
+	ARRAY PIN_FLD_TEMPLATE_ARRAY {
+
+		SQL_TABLE = "ass_bus_profile_templates_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_REPORT_NAME {
+
+			SQL_COLUMN = "report_name";
+		}
+
+		STRING PIN_FLD_TEMPLATE_NAME {
+
+			SQL_COLUMN = "template_name";
+		}
+
+	}
+
+	STRING PIN_FLD_TEMPLATE_NAME {
+
+		SQL_COLUMN = "template_name";
+	}
+
+	TIMESTAMP PIN_FLD_VALID_END_TO {
+
+		SQL_COLUMN = "valid_end_to";
+	}
+
+	TIMESTAMP PIN_FLD_VALID_START_FROM {
+
+		SQL_COLUMN = "valid_start_from";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

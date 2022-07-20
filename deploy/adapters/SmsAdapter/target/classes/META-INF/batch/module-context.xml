@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="smsReader"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+		<property name="dataSource" ref="dataJDBC" />
+		<property name="sql"
+			value = "select a.ntf_id, b.sms_flist_buf_buf, a.status from mso_ntf_sms_t a, sms_flist_buf_t b where a.poid_id0 = b.obj_id0 and a.status = 1 order by a.priority desc" />
+		<property name="rowMapper">
+			<bean class="com.portal.SmsRowMapper" />
+		</property>
+	</bean>
+
+	<bean id="pagingItemReader"
+		class="org.springframework.batch.item.database.JdbcPagingItemReader"
+		scope="step">
+		<property name="dataSource" ref="dataJDBC" />
+		<property name="queryProvider">
+			<bean
+				class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="dataJDBC" />
+				<property name="selectClause" value="select a.ntf_id, b.sms_flist_buf_buf" />
+				<property name="fromClause" value="from mso_ntf_sms_t a, sms_flist_buf_t b" />
+				<property name="whereClause" value="where a.poid_id0 = b.obj_id0 and a.status=1" />
+				<property name="sortKey" value="a.priority" />
+				<property name="ascending" value="false" />
+			</bean>
+		</property>
+		<property name="pageSize" value="${batch.page.record.reader}" />
+		<property name="rowMapper">
+			<bean class="com.portal.SmsRowMapper" />
+		</property>
+	</bean>
+
+	<bean id="updateWriter" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+		<property name="dataSource" ref="dataJDBC" /> 
+		<property name="assertUpdates" value="false" />
+		<property name="itemSqlParameterSourceProvider">
+			<bean name="sqlParamSucessjob1" id="sqlParamSucessjob1" class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+		</property>
+		<property name="sql" value="update MSO_NTF_SMS_T 
+			set mod_t=:modT, status=:status, error_code=:err_code, error_descr=:err_desc where ntf_id=:ntf_id"/>
+	</bean>
+	
+	<bean id="itemProcessor" class="com.portal.SmsItemProcessor" >
+		<property name="smsSuccessMsg" value="${batch.sms.success.msg}" />
+		<property name="smsServerName" value="${batch.sms.server.name}" />
+		<property name="smsUsernameTag" value="${batch.sms.username.tag}" />
+		<property name="smsUsernameVal" value="${batch.sms.username.val}" />
+		<property name="smsPasswordTag" value="${batch.sms.password.tag}" />
+		<property name="smsPasswordVal" value="${batch.sms.password.val}" />
+		<property name="smsFeedIdTag" value="${batch.sms.feedid.tag}" />
+		<property name="smsFeedIdVal" value="${batch.sms.feedid.val}" />
+		<property name="smsUserDefParam" value="${batch.sms.user.def.param}" />
+		<property name="smsMobile" value="${batch.sms.mobile.param}" />
+		<property name="smsMessage" value="${batch.sms.message.param}" />
+		<property name="smsMailAlertReqd" value="${batch.sms.mail.alert.reqd}" />
+		<property name="smsMailFrom" value="${batch.sms.mail.from}" />
+		<property name="smsMailTo" value="${batch.sms.mail.to}" />
+		<property name="smsMailSubject" value="${batch.sms.mail.subject}" />
+		<property name="smsMailText" value="${batch.sms.mail.text}" />
+		<property name="smsMailSmtpHost" value="${batch.sms.mail.smtp.host}" />
+	</bean>
+	
+	<!-- Sms Job -->
+	<job id="smsJob" xmlns="http://www.springframework.org/schema/batch">
+		<step id="step1">
+			<tasklet>
+				<chunk reader="pagingItemReader" processor="itemProcessor" writer="updateWriter" commit-interval="${batch.update.commit.value}" />
+			</tasklet>
+		</step>
+	</job>
+	
+	<bean parent="placeholderProperties"/>
+
+	<bean id="dataJDBC"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${oracle.jdbc.driver}" />
+		<property name="url" value="${oracle.jdbc.url}" />
+		<property name="username" value="${oracle.jdbc.user}" />
+		<property name="password" value="${oracle.jdbc.password}" />
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+		
+	<bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher" >
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>
+	
+	<batch:job-repository id="jobRepository" />
+	
+	<bean id="runScheduler" class="com.portal.RunScheduler" >
+		<property name="jobLauncher" ref="jobLauncher" />
+		<property name="job" ref="smsJob" />
+	</bean>
+
+	<task:scheduled-tasks>
+		<task:scheduled ref="runScheduler" method="run" cron="${batch.scheduler.sec}" />
+	</task:scheduled-tasks>
+
+</beans>

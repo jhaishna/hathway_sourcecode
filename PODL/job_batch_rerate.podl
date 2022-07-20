@@ -1,0 +1,673 @@
+
+#=======================================
+#  Field PIN_FLD_DEALS
+#=======================================
+
+ARRAY PIN_FLD_DEALS {
+
+	ID = 247;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_DISCOUNTS {
+
+	ID = 2341;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_DISCOUNT_OBJ {
+
+	ID = 7780;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDE_DEALS
+#=======================================
+
+ARRAY PIN_FLD_OVERRIDE_DEALS {
+
+	ID = 9593;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDE_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_OVERRIDE_DEAL_OBJ {
+
+	ID = 9596;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDE_DISCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_OVERRIDE_DISCOUNTS {
+
+	ID = 9592;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDE_DISCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_OVERRIDE_DISCOUNT_OBJ {
+
+	ID = 9595;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDE_PRODUCTS
+#=======================================
+
+ARRAY PIN_FLD_OVERRIDE_PRODUCTS {
+
+	ID = 9591;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDE_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_OVERRIDE_PRODUCT_OBJ {
+
+	ID = 9594;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_PRODUCT_OBJ {
+
+	ID = 244;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRODUCTS
+#=======================================
+
+ARRAY PIN_FLD_PRODUCTS {
+
+	ID = 250;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RERATE_ACCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_RERATE_ACCOUNTS {
+
+	ID = 9201;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RERATE_REQUEST
+#=======================================
+
+BUF PIN_FLD_RERATE_REQUEST {
+
+	ID = 9202;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICES
+#=======================================
+
+ARRAY PIN_FLD_SERVICES {
+
+	ID = 122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /job_batch/rerate
+#=======================================
+
+STORABLE CLASS /job_batch/rerate {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Class to store accounts to be rerated";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DEALS {
+
+		DESCR = "selection criteria based on deals";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Deal object as selection criteria. Mutually exclusive to product object and discount object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_DISCOUNTS {
+
+		DESCR = "selection criteria based on discounts";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			DESCR = "Discount object as selection criteria. Mutually exclusive to product object and deal object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_EVENTS {
+
+		DESCR = "selection criteria based on event types";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			DESCR = "type only event poid as selection criteria.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_OVERRIDE_DEALS {
+
+		DESCR = "override deals";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Deal object that should be replaced.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OVERRIDE_DEAL_OBJ {
+
+			DESCR = "Override deal object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_OVERRIDE_DISCOUNTS {
+
+		DESCR = "override discounts";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			DESCR = "Discount object that should be replaced.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OVERRIDE_DISCOUNT_OBJ {
+
+			DESCR = "Override discount object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_OVERRIDE_PRODUCTS {
+
+		DESCR = "override products";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OVERRIDE_PRODUCT_OBJ {
+
+			DESCR = "Override product object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PRODUCT_OBJ {
+
+			DESCR = "Product object that should be replaced.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_PRODUCTS {
+
+		DESCR = "selection criteria based on products";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PRODUCT_OBJ {
+
+			DESCR = "Product object as selection criteria. Mutually exclusive to discount object and deal object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_RERATE_ACCOUNTS {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "top level account to be rerated.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BUF PIN_FLD_RERATE_REQUEST {
+
+			DESCR = "Buffered flist containing the rerating request, used as input for PCM_OP_SUBSCRIPTION_RERATE_REBILL.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Rerating status of the request - Uninitialized (0), New (1), Rerated (4), Rerating Failed (6), Unsuccessful (7).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		DESCR = "selection criteria based on service types";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "type only service poid as selection criteria.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /job_batch/rerate
+#=======================================
+
+STORABLE CLASS /job_batch/rerate IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DEALS {
+
+		SQL_TABLE = "job_batch_rerate_deal_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_DISCOUNTS {
+
+		SQL_TABLE = "job_batch_rerate_disc_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			SQL_COLUMN = "discount_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_EVENTS {
+
+		SQL_TABLE = "job_batch_rerate_evnt_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			SQL_COLUMN = "event_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_OVERRIDE_DEALS {
+
+		SQL_TABLE = "job_batch_rerate_ovride_deal_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		POID PIN_FLD_OVERRIDE_DEAL_OBJ {
+
+			SQL_COLUMN = "override_deal_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_OVERRIDE_DISCOUNTS {
+
+		SQL_TABLE = "job_batch_rerate_ovride_disc_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			SQL_COLUMN = "discount_obj";
+		}
+
+		POID PIN_FLD_OVERRIDE_DISCOUNT_OBJ {
+
+			SQL_COLUMN = "override_discount_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_OVERRIDE_PRODUCTS {
+
+		SQL_TABLE = "job_batch_rerate_ovride_prod_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OVERRIDE_PRODUCT_OBJ {
+
+			SQL_COLUMN = "override_product_obj";
+		}
+
+		POID PIN_FLD_PRODUCT_OBJ {
+
+			SQL_COLUMN = "product_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_PRODUCTS {
+
+		SQL_TABLE = "job_batch_rerate_prod_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PRODUCT_OBJ {
+
+			SQL_COLUMN = "product_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_RERATE_ACCOUNTS {
+
+		SQL_TABLE = "job_batch_rerate_accts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		BUF PIN_FLD_RERATE_REQUEST {
+
+			SQL_TABLE = "rerate_request_buf_t";
+			SQL_COLUMN = "rerate_request";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		SQL_TABLE = "job_batch_rerate_srvc_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+

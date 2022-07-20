@@ -1,0 +1,155 @@
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BALANCES
+#=======================================
+
+ARRAY PIN_FLD_BALANCES {
+
+	ID = 198;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Storable Class /config/event_resource_map
+#=======================================
+
+STORABLE CLASS /config/event_resource_map {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton derived configuration object of this class is used to record the mapping relationship between event type and the resources this event type will reference and impact. This object will be used to optimize getting balances and potentially  for discounting and other optimization as well. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		DESCR = "Each array element specifies the mapping relationshipbetween one event type and multiple resources.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_BALANCES {
+
+			DESCR = "Array of resources referenced/impacted by the event type.  The element_id indicates the resource_id";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_FLAGS {
+
+				DESCR = " 1 - referenced, 2 - impacted, 3 - both";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "The event type ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/event_resource_map
+#=======================================
+
+STORABLE CLASS /config/event_resource_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		SQL_TABLE = "cfg_evt_resrc_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_BALANCES {
+
+			SQL_TABLE = "cfg_evt_resrc_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_FLAGS {
+
+				SQL_COLUMN = "flags";
+			}
+
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+	}
+
+}
+

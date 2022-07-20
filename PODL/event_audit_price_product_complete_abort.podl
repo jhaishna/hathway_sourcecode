@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/price/product_complete_abort
+#=======================================
+
+STORABLE CLASS /event/audit/price/product_complete_abort {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to product complete & abort.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/price/product_complete_abort
+#=======================================
+
+STORABLE CLASS /event/audit/price/product_complete_abort IMPLEMENTATION ORACLE7 {
+
+}
+

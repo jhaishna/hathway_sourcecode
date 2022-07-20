@@ -1,0 +1,174 @@
+
+#=======================================
+#  Field MSO_FLD_STB_DATA
+#=======================================
+
+ARRAY MSO_FLD_STB_DATA {
+
+	ID = 42000;
+	DESCR = "Array to hold STB related data";
+}
+
+
+#=======================================
+#  Field MSO_FLD_STB_TYPE
+#=======================================
+
+INT MSO_FLD_STB_TYPE {
+
+	ID = 42002;
+	DESCR = "Type of STB: 1 - Std, 2 - HD, 3 - std-PVR, 4 - PVR-HD";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END
+#=======================================
+
+TIMESTAMP MSO_FLD_WARRANTY_END {
+
+	ID = 42004;
+	DESCR = "Populated during device assignment with actual date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END_OFFSET
+#=======================================
+
+INT MSO_FLD_WARRANTY_END_OFFSET {
+
+	ID = 42005;
+	DESCR = "Offset in Months";
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWNER_OBJ
+#=======================================
+
+POID PIN_FLD_OWNER_OBJ {
+
+	ID = 7756;
+}
+
+
+#=======================================
+#  Storable Class /mso_device/stb
+#=======================================
+
+STORABLE CLASS /mso_device/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "temporary STB data before loading it to DEVICE_STB_DATA_T";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_STB_DATA {
+
+		DESCR = "Array to hold STB related data";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT MSO_FLD_STB_TYPE {
+
+			DESCR = "Type of STB: 1 - Std, 2 - HD, 3 - std-PVR, 4 - PVR-HD";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_WARRANTY_END {
+
+			DESCR = "Type of VC";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_WARRANTY_END_OFFSET {
+
+			DESCR = "Offset in Months";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			DESCR = "Distributor/LCO  account object,whom the device is delivered from Vendor.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_device/stb
+#=======================================
+
+STORABLE CLASS /mso_device/stb IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_STB_DATA {
+
+		SQL_TABLE = "mso_stb_data_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT MSO_FLD_STB_TYPE {
+
+			SQL_COLUMN = "stb_type";
+		}
+
+		TIMESTAMP MSO_FLD_WARRANTY_END {
+
+			SQL_COLUMN = "warranty_end";
+		}
+
+		INT MSO_FLD_WARRANTY_END_OFFSET {
+
+			SQL_COLUMN = "end_offset";
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			SQL_COLUMN = "OWNER_OBJ";
+		}
+
+	}
+
+}
+

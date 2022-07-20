@@ -1,0 +1,749 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_IMPACTS
+#=======================================
+
+ARRAY PIN_FLD_BAL_IMPACTS {
+
+	ID = 256;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ID
+#=======================================
+
+INT PIN_FLD_GL_ID {
+
+	ID = 840;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMPACT_CATEGORY
+#=======================================
+
+STRING PIN_FLD_IMPACT_CATEGORY {
+
+	ID = 1452;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRORATE_FIRST
+#=======================================
+
+ENUM PIN_FLD_PRORATE_FIRST {
+
+	ID = 254;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRORATE_LAST
+#=======================================
+
+ENUM PIN_FLD_PRORATE_LAST {
+
+	ID = 255;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLLOVER_COUNT
+#=======================================
+
+INT PIN_FLD_ROLLOVER_COUNT {
+
+	ID = 7785;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLLOVER_MAX_UNITS
+#=======================================
+
+DECIMAL PIN_FLD_ROLLOVER_MAX_UNITS {
+
+	ID = 7783;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLLOVER_UNITS
+#=======================================
+
+DECIMAL PIN_FLD_ROLLOVER_UNITS {
+
+	ID = 7784;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLLOVER_UOM
+#=======================================
+
+ENUM PIN_FLD_ROLLOVER_UOM {
+
+	ID = 7788;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DATE_RANGE_TYPE
+#=======================================
+
+ENUM PIN_FLD_DATE_RANGE_TYPE {
+
+	ID = 2225;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_PRODUCT_OBJ {
+
+	ID = 244;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_END_OFFSET
+#=======================================
+
+INT PIN_FLD_RELATIVE_END_OFFSET {
+
+	ID = 2228;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_END_UNIT
+#=======================================
+
+ENUM PIN_FLD_RELATIVE_END_UNIT {
+
+	ID = 2230;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_START_OFFSET
+#=======================================
+
+INT PIN_FLD_RELATIVE_START_OFFSET {
+
+	ID = 2227;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_START_UNIT
+#=======================================
+
+ENUM PIN_FLD_RELATIVE_START_UNIT {
+
+	ID = 2229;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /rollover
+#=======================================
+
+STORABLE CLASS /rollover {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "Unused resources from one cycle that are credited to an account resource balance in succeeding cycles. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_BAL_IMPACTS {
+
+		DESCR = "Array of balance operations. Multiple impacts can be defined on the same resource. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_GL_ID {
+
+			DESCR = "GLID associated with this balance impact. Don't care if 0.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMPACT_CATEGORY {
+
+			DESCR = "Impact category determines which rate to apply with in a balance impact.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PRORATE_FIRST {
+
+			DESCR = "Prorating option for the first cycle the rollover is owned. You can charge for a whole month (701), prorate the charge based on the days left in the month (702), or not charge for the partial month (703). ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PRORATE_LAST {
+
+			DESCR = "Prorating option for the last cycle the rollover is owned. You can charge for a whole month (701), prorate the charge based on the days left in the month (702), or not charge for the partial month (703).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "Numeric value of the resource to be impacted.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ROLLOVER_COUNT {
+
+			DESCR = "Maximum no. of period to rollover. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_ROLLOVER_MAX_UNITS {
+
+			DESCR = "Maximum quantity that can be rolled over. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_ROLLOVER_UNITS {
+
+			DESCR = "Quantity of resource to rollover per period. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_ROLLOVER_UOM {
+
+			DESCR = "Specifies the unit of measure (days or months) of the field PIN_FLD_ROLLOVER_UNITS.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_CODE {
+
+		LABEL = "Code";
+		DESCR = "Codee of the rollover object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_DATE_RANGE_TYPE {
+
+		DESCR = "Specify which type of the date ranges are used in this object. Value can be ABSOLUTE(0), RELATIVE(1).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Rollover description.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "Non-inclusive end time of the validity period for the rollover. If the value is 0, the rollover does not expire.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		LABEL = "Name";
+		DESCR = "Name of the rollover object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		DESCR = "Link to product object this object is linked to.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_RELATIVE_END_OFFSET {
+
+		DESCR = "Offset value from end date.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_RELATIVE_END_UNIT {
+
+		DESCR = "Unit PIN_FLD_RELATIVE_END_OFFSET is expressed in. Value can be SECOND(1), MINUTE(2), HOUR(3) or DAY(4).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_RELATIVE_START_OFFSET {
+
+		DESCR = "Offset value from start date. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_RELATIVE_START_UNIT {
+
+		DESCR = "Unit PIN_FLD_RELATIVE_START_OFFSET is expressed in. Value can be SECOND(1), MINUTE(2), HOUR(3) or DAY(4).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "Inclusive start time of the validity period for the rollover. If the value is 0, the validity starts immediately.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /rollover
+#=======================================
+
+STORABLE CLASS /rollover IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "rollover_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ARRAY PIN_FLD_BAL_IMPACTS {
+
+		SQL_TABLE = "rollover_bal_impacts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_GL_ID {
+
+			SQL_COLUMN = "gl_id";
+		}
+
+		STRING PIN_FLD_IMPACT_CATEGORY {
+
+			SQL_COLUMN = "impact_category";
+		}
+
+		ENUM PIN_FLD_PRORATE_FIRST {
+
+			SQL_COLUMN = "prorate_first";
+		}
+
+		ENUM PIN_FLD_PRORATE_LAST {
+
+			SQL_COLUMN = "prorate_last";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+		INT PIN_FLD_ROLLOVER_COUNT {
+
+			SQL_COLUMN = "rollover_count";
+		}
+
+		DECIMAL PIN_FLD_ROLLOVER_MAX_UNITS {
+
+			SQL_COLUMN = "rollover_max_units";
+		}
+
+		DECIMAL PIN_FLD_ROLLOVER_UNITS {
+
+			SQL_COLUMN = "rollover_units";
+		}
+
+		ENUM PIN_FLD_ROLLOVER_UOM {
+
+			SQL_COLUMN = "uom";
+		}
+
+	}
+
+	STRING PIN_FLD_CODE {
+
+		SQL_COLUMN = "code";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ENUM PIN_FLD_DATE_RANGE_TYPE {
+
+		SQL_COLUMN = "date_range_type";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "end_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		SQL_COLUMN = "product_obj";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	INT PIN_FLD_RELATIVE_END_OFFSET {
+
+		SQL_COLUMN = "end_offset";
+	}
+
+	ENUM PIN_FLD_RELATIVE_END_UNIT {
+
+		SQL_COLUMN = "rel_end_unit";
+	}
+
+	INT PIN_FLD_RELATIVE_START_OFFSET {
+
+		SQL_COLUMN = "start_offset";
+	}
+
+	ENUM PIN_FLD_RELATIVE_START_UNIT {
+
+		SQL_COLUMN = "rel_start_unit";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "start_t";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

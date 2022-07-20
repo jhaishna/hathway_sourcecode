@@ -1,0 +1,6 @@
+E Fri Oct  9 13:01:41 2020  dev-brm-upg  testnap:26359  pcm_conn.c(9):236 2:<machine>:<program>:0:0:0:0:0::::
+	pcm_connect: bad/no login_type in pin.conf, err 3
+E Fri Oct  9 13:55:59 2020  dev-brm-upg  testnap:30416  pcm_conn.c(9):236 2:<machine>:<program>:0:0:0:0:0::::
+	pcm_connect: bad/no login_type in pin.conf, err 3
+E Wed Jun 29 09:47:16 2022  dev-brm-upg.hathway.net  testnap:41838  pcm_conn.c(9):236 2:<machine>:<program>:0:0:0:0:0::::
+	pcm_connect: bad/no login_type in pin.conf, err 3

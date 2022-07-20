@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for Normal Postpaid Plans.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+

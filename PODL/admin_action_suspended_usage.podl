@@ -1,0 +1,164 @@
+
+#=======================================
+#  Field PIN_FLD_RECYCLE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_RECYCLE_INFO {
+
+	ID = 8155;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODE
+#=======================================
+
+ENUM PIN_FLD_MODE {
+
+	ID = 1576;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDE_REASONS
+#=======================================
+
+STRING PIN_FLD_OVERRIDE_REASONS {
+
+	ID = 8177;
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Administrator action related to suspense handling.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage/recycle
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage/recycle {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Audit information for recycling suspended EDRs.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_RECYCLE_INFO {
+
+		DESCR = "Attributes of recycling";
+		ORDER = 2;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_MODE {
+
+			DESCR = "Recycle mode: normal or test recycle.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OVERRIDE_REASONS {
+
+			DESCR = "Override suspense reasons.";
+			ORDER = 2;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage/writeoff
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage/writeoff {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Audit information for writing off suspended EDRs.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage/recycle
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage/recycle IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_RECYCLE_INFO {
+
+		SQL_TABLE = "susp_usage_recycle_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_MODE {
+
+			SQL_COLUMN = "recycle_mode";
+		}
+
+		STRING PIN_FLD_OVERRIDE_REASONS {
+
+			SQL_COLUMN = "override_reasons";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /admin_action/suspended_usage/writeoff
+#=======================================
+
+STORABLE CLASS /admin_action/suspended_usage/writeoff IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,212 @@
+
+#=======================================
+#  Field PIN_FLD_EVENT_MAP
+#=======================================
+
+ARRAY PIN_FLD_EVENT_MAP {
+
+	ID = 2248;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REQUIRED_FIELDS
+#=======================================
+
+ARRAY PIN_FLD_REQUIRED_FIELDS {
+
+	ID = 6089;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Storable Class /config/rtp/trim_flist
+#=======================================
+
+STORABLE CLASS /config/rtp/trim_flist {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to store the flist fields to send to real-time Pipeline.Fields that are not in the list will be trimmed before sending to the Pipeline. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MAP {
+
+		DESCR = "Allowable events with all required fields.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENTS {
+
+			DESCR = "Event types to match.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_FLAGS {
+
+				DESCR = "1 means wildcard match, 0 means exact match";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ARRAY PIN_FLD_REQUIRED_FIELDS {
+
+			DESCR = "Required field list in dot notation, like PIN_FLD_EVENT.PIN_FLD_START_T. ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/rtp/trim_flist
+#=======================================
+
+STORABLE CLASS /config/rtp/trim_flist IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MAP {
+
+		SQL_TABLE = "cfg_rtp_trim_evt_map_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENTS {
+
+			SQL_TABLE = "cfg_rtp_trim_evts_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				SQL_COLUMN = "event_type";
+			}
+
+			INT PIN_FLD_FLAGS {
+
+				SQL_COLUMN = "flags";
+			}
+
+		}
+
+		ARRAY PIN_FLD_REQUIRED_FIELDS {
+
+			SQL_TABLE = "cfg_rtp_trim_req_flds_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				SQL_COLUMN = "field_name";
+			}
+
+		}
+
+	}
+
+}
+

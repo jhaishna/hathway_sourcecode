@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Normal Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+

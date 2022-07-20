@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_ssp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_ssp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event for Special Site Plan.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_ssp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_ssp IMPLEMENTATION ORACLE7 {
+
+}
+

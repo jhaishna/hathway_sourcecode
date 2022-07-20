@@ -1,0 +1,1544 @@
+
+#=======================================
+#  Field PIN_FLD_CONFIG_ACTION_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CONFIG_ACTION_INFO {
+
+	ID = 7735;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_DESCR
+#=======================================
+
+STRING PIN_FLD_ACTION_DESCR {
+
+	ID = 7736;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_NAME
+#=======================================
+
+STRING PIN_FLD_ACTION_NAME {
+
+	ID = 1852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_TYPE
+#=======================================
+
+STRING PIN_FLD_ACTION_TYPE {
+
+	ID = 7704;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TARGET_ACTION
+#=======================================
+
+ENUM PIN_FLD_TARGET_ACTION {
+
+	ID = 7749;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_OBJ
+#=======================================
+
+POID PIN_FLD_TEMPLATE_OBJ {
+
+	ID = 7705;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FINANCE_CHARGE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+	ID = 7734;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERCENT
+#=======================================
+
+DECIMAL PIN_FLD_PERCENT {
+
+	ID = 531;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LATE_FEE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_LATE_FEE_INFO {
+
+	ID = 7732;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPTIONS
+#=======================================
+
+ENUM PIN_FLD_OPTIONS {
+
+	ID = 7733;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BUCKETS
+#=======================================
+
+ARRAY PIN_FLD_BUCKETS {
+
+	ID = 7706;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DAYS
+#=======================================
+
+INT PIN_FLD_DAYS {
+
+	ID = 6204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_PROFILE_INFO {
+
+	ID = 7707;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_DESCR
+#=======================================
+
+STRING PIN_FLD_PROFILE_DESCR {
+
+	ID = 7709;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_NAME
+#=======================================
+
+STRING PIN_FLD_PROFILE_NAME {
+
+	ID = 7708;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTIONS
+#=======================================
+
+ARRAY PIN_FLD_ACTIONS {
+
+	ID = 7717;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_MODE
+#=======================================
+
+ENUM PIN_FLD_ACTION_MODE {
+
+	ID = 7737;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONFIG_ACTION_OBJ
+#=======================================
+
+POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+	ID = 7718;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DUE_DAY
+#=======================================
+
+INT PIN_FLD_DUE_DAY {
+
+	ID = 7719;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_DATA_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_PROFILE_DATA_ARRAY {
+
+	ID = 7790;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCENARIO_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_SCENARIO_INFO {
+
+	ID = 7710;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONFIG_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_CONFIG_PROFILE_OBJ {
+
+	ID = 7713;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENTRY_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+	ID = 7714;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENTRY_DAYS
+#=======================================
+
+INT PIN_FLD_ENTRY_DAYS {
+
+	ID = 7716;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXIT_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+	ID = 7715;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCENARIO_DESCR
+#=======================================
+
+STRING PIN_FLD_SCENARIO_DESCR {
+
+	ID = 7712;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCENARIO_NAME
+#=======================================
+
+STRING PIN_FLD_SCENARIO_NAME {
+
+	ID = 7711;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SEVERITY
+#=======================================
+
+INT PIN_FLD_SEVERITY {
+
+	ID = 7745;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAMS
+#=======================================
+
+ARRAY PIN_FLD_PARAMS {
+
+	ID = 5775;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLASS_NAME
+#=======================================
+
+STRING PIN_FLD_CLASS_NAME {
+
+	ID = 9885;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_NAME
+#=======================================
+
+STRING PIN_FLD_PARAM_NAME {
+
+	ID = 5776;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VERSION
+#=======================================
+
+INT PIN_FLD_STR_VERSION {
+
+	ID = 1892;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUES
+#=======================================
+
+ARRAY PIN_FLD_VALUES {
+
+	ID = 9501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Storable Class /config/collections
+#=======================================
+
+STORABLE CLASS /config/collections {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class which hosts a number of config classes to be used by the collections applications ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action
+#=======================================
+
+STORABLE CLASS /config/collections/action {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Collections action object.  Contains information for  each individual action. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CONFIG_ACTION_INFO {
+
+		DESCR = "Contains the action information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION_DESCR {
+
+			DESCR = "Action description.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACTION_NAME {
+
+			DESCR = "Action name to be displayed on GUI tools";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACTION_TYPE {
+
+			DESCR = "The action type string. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "Opcode (ID) to be called for this action.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TARGET_ACTION {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TEMPLATE_OBJ {
+
+			DESCR = "Link to the template object. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define brand level actions (policy or manual actions).";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/finance_charge
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/finance_charge {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define finance charge action.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+		DESCR = "Contains additional fields for finance charges.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			DESCR = "Rate for the finance charge";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/late_fee
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/late_fee {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define late fees action.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LATE_FEE_INFO {
+
+		DESCR = "Contains additional fields for late fees.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Fixed amount to charge";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Numeric value of a currency resource. A value of 0 implies that the default currency will be used to calculate the late fee. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_OPTIONS {
+
+			DESCR = "Determine how the fixed amount and the percentage work together to get the late fee. Possible values are: PIN_OPTION_EITHER (0), PIN_OPTION_MIN (1), PIN_OPTION_MAX (2) and PIN_OPTION_BOTH (3).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			DESCR = "Percentage for overdue amount to charge";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/aging_buckets
+#=======================================
+
+STORABLE CLASS /config/collections/aging_buckets {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Define the aging buckets for this brand. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BUCKETS {
+
+		DESCR = "Array of bucket ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_DAYS {
+
+			DESCR = "Number of over-due days for the bucket. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile
+#=======================================
+
+STORABLE CLASS /config/collections/profile {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Collections profile object.  Contains information to define the collections profiles. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROFILE_INFO {
+
+		DESCR = "Substructure to hold profile specific info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Numeric value of a currency resource. A value of 0 implies that no currency is tied with the profile. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PROFILE_DESCR {
+
+			DESCR = "Collections profile description.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PROFILE_NAME {
+
+			DESCR = "Collections profile name to be displayed on GUI tools";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile/default
+#=======================================
+
+STORABLE CLASS /config/collections/profile/default {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Contains defininition for default collection profiles that can be globally seen. ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/collections/scenario
+#=======================================
+
+STORABLE CLASS /config/collections/scenario {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Collections scenario object.  Contains information for  each scenario. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTIONS {
+
+		DESCR = "List all actions to be conducted in this scenario. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_ACTION_MODE {
+
+			DESCR = "This value indicates whether the respective action must be executed, in case, if, billinfo enters the collections after the action execution date. PIN_ACTION_MUST_EXECUTE (0) This action will be executed in any case. PIN_ACTION_OPTIONAL_EXECUTE (1) This actions will be executed only if execution date is not passed. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+			DESCR = "The config action poid linked to a /config/collections/action object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DUE_DAY {
+
+			DESCR = "The due day for the action to be completed.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_PROFILE_DATA_ARRAY {
+
+		DESCR = "This array is used to hold the additional configurable parameters (say, credit score, customer tenure.) that are used to evaluate assignment or replacement scenario. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "This field is link to the elem_id of the corresponding /config/collections/scenario_params element";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "This field is value which is a combination of field, operator and value. EX: (pay_type = 10003 OR pay_type = 10005)";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SCENARIO_INFO {
+
+		DESCR = "Substructure to hold scenario specific info. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_CONFIG_PROFILE_OBJ {
+
+			DESCR = "Profile poid linked to the collections profile object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+			DESCR = "The minimum over-due amount for entering the scenario. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ENTRY_DAYS {
+
+			DESCR = "The minimum over-due days for entering the scenario. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+			DESCR = "The maximum over-due amount for exiting the scenario. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SCENARIO_DESCR {
+
+			DESCR = "Scenario description.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SCENARIO_NAME {
+
+			DESCR = "Scenario name to be displayed on GUI tools";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SEVERITY {
+
+			DESCR = "This field describes the severity of the scenario. Lower the number, higher the severity. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/scenario_params
+#=======================================
+
+STORABLE CLASS /config/collections/scenario_params {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This object is used to hold the additional attribute information for scenario assignment/replacement";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PARAMS {
+
+		DESCR = "This array is used to hold the configuration data for the additional parameters that are used to evaluate assignment/replacement of collections scenario. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CLASS_NAME {
+
+			DESCR = "The class object to be referenced. For example: /account. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "The field name in the class. For example: account_type. Make sure the name is same as in the object. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			DESCR = "The name of the parameter.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "String ID of the parameter name. Used for localization.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			DESCR = "The version of the localized string within domain.Used for localization.";
+			ORDER = 3;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "The type of the parameter: STR: 1, INT: 2, ENUM: 3, DECIMAL: 4, TIMESTAMP: 5. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_VALUES {
+
+			DESCR = "The array which will hold the permitted set of values for the particular parameter. ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "The name";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_STRING_ID {
+
+				DESCR = "String ID of the parameter name. Used for localization.";
+				ORDER = 2;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_STR_VERSION {
+
+				DESCR = "The version of the localized string within domain.Used for localization.";
+				ORDER = 3;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				DESCR = "The value";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections
+#=======================================
+
+STORABLE CLASS /config/collections IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action
+#=======================================
+
+STORABLE CLASS /config/collections/action IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CONFIG_ACTION_INFO {
+
+		SQL_TABLE = "config_collections_action_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION_DESCR {
+
+			SQL_COLUMN = "action_descr";
+		}
+
+		STRING PIN_FLD_ACTION_NAME {
+
+			SQL_COLUMN = "action_name";
+		}
+
+		STRING PIN_FLD_ACTION_TYPE {
+
+			SQL_COLUMN = "action_type";
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		ENUM PIN_FLD_TARGET_ACTION {
+
+			SQL_COLUMN = "target_action";
+		}
+
+		POID PIN_FLD_TEMPLATE_OBJ {
+
+			SQL_COLUMN = "template_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/finance_charge
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/finance_charge IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_FINANCE_CHARGE_INFO {
+
+		SQL_TABLE = "config_collections_fcharge_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			SQL_COLUMN = "percent";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/action/custom/late_fee
+#=======================================
+
+STORABLE CLASS /config/collections/action/custom/late_fee IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LATE_FEE_INFO {
+
+		SQL_TABLE = "config_collections_latefee_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		ENUM PIN_FLD_OPTIONS {
+
+			SQL_COLUMN = "options";
+		}
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			SQL_COLUMN = "percent";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/aging_buckets
+#=======================================
+
+STORABLE CLASS /config/collections/aging_buckets IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BUCKETS {
+
+		SQL_TABLE = "config_collections_buckets_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_DAYS {
+
+			SQL_COLUMN = "days";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile
+#=======================================
+
+STORABLE CLASS /config/collections/profile IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROFILE_INFO {
+
+		SQL_TABLE = "config_collections_profile_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		STRING PIN_FLD_PROFILE_DESCR {
+
+			SQL_COLUMN = "profile_descr";
+		}
+
+		STRING PIN_FLD_PROFILE_NAME {
+
+			SQL_COLUMN = "profile_name";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile/default
+#=======================================
+
+STORABLE CLASS /config/collections/profile/default IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/scenario
+#=======================================
+
+STORABLE CLASS /config/collections/scenario IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTIONS {
+
+		SQL_TABLE = "config_collections_actions_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_ACTION_MODE {
+
+			SQL_COLUMN = "action_mode";
+		}
+
+		POID PIN_FLD_CONFIG_ACTION_OBJ {
+
+			SQL_COLUMN = "action_obj";
+		}
+
+		INT PIN_FLD_DUE_DAY {
+
+			SQL_COLUMN = "due_day";
+		}
+
+	}
+
+	ARRAY PIN_FLD_PROFILE_DATA_ARRAY {
+
+		SQL_TABLE = "conf_coll_scen_profile_data_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "string_id";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SCENARIO_INFO {
+
+		SQL_TABLE = "config_collections_scenario_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_CONFIG_PROFILE_OBJ {
+
+			SQL_COLUMN = "profile_obj";
+		}
+
+		DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+			SQL_COLUMN = "entry_amount";
+		}
+
+		INT PIN_FLD_ENTRY_DAYS {
+
+			SQL_COLUMN = "entry_days";
+		}
+
+		DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+			SQL_COLUMN = "exit_amount";
+		}
+
+		STRING PIN_FLD_SCENARIO_DESCR {
+
+			SQL_COLUMN = "scenario_descr";
+		}
+
+		STRING PIN_FLD_SCENARIO_NAME {
+
+			SQL_COLUMN = "scenario_name";
+		}
+
+		INT PIN_FLD_SEVERITY {
+
+			SQL_COLUMN = "scenario_severity";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/scenario_params
+#=======================================
+
+STORABLE CLASS /config/collections/scenario_params IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PARAMS {
+
+		SQL_TABLE = "config_coll_scenario_params_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CLASS_NAME {
+
+			SQL_COLUMN = "class_name";
+		}
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "field_name";
+		}
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			SQL_COLUMN = "param_name";
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "param_string_id";
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			SQL_COLUMN = "string_version";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "param_type";
+		}
+
+		ARRAY PIN_FLD_VALUES {
+
+			SQL_TABLE = "conf_coll_scen_params_values_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+			INT PIN_FLD_STRING_ID {
+
+				SQL_COLUMN = "name_string_id";
+			}
+
+			INT PIN_FLD_STR_VERSION {
+
+				SQL_COLUMN = "string_version";
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "value";
+			}
+
+		}
+
+	}
+
+}
+

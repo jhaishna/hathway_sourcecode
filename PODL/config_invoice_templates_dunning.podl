@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/invoice_templates/dunning
+#=======================================
+
+STORABLE CLASS /config/invoice_templates/dunning {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This is sub class of /config/invoice_templates/ objects.This class is used to hold the HTML templates and stylesheets that are applied during dunning letter viewing. A command line util can be used to load the style sheetsor HTML templates into the config objects";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/invoice_templates/dunning
+#=======================================
+
+STORABLE CLASS /config/invoice_templates/dunning IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,95 @@
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Storable Class /config/adjustment/event
+#=======================================
+
+STORABLE CLASS /config/adjustment/event {
+
+	LABEL = "configuration for event adjustment";
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class lists the event types that can be adjusted using PCM_OP_AR_EVENT_ADJUSTMENT opcode. This object is pre-configured to allow adjustments on purchase, cycle_forward, cycle_arrear, debit, usage and cancel events via the init_objects.source file. You can use the PCM_OP_WRITE_FLDS opcode to add additional event types to this configuration object. You have to restart your CM to pick up the changes.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		DESCR = "An array of event types that can be adjusted. The array element has no significance.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_TYPE_STR {
+
+			DESCR = "Event type string. For example, '/event/billing/product/fee/cycle/cycle_forward_monthly'.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/adjustment/event
+#=======================================
+
+STORABLE CLASS /config/adjustment/event IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		SQL_TABLE = "config_adjustment_events_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_TYPE_STR {
+
+			SQL_COLUMN = "type_str";
+		}
+
+	}
+
+}
+

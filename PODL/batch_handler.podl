@@ -1,0 +1,198 @@
+
+#=======================================
+#  Field PIN_FLD_BATCH_HANDLER_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_BATCH_HANDLER_INFO {
+
+	ID = 2605;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_APPLICATION_PID
+#=======================================
+
+INT PIN_FLD_BATCH_APPLICATION_PID {
+
+	ID = 2601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_CONTROLLER_OBJ
+#=======================================
+
+POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+	ID = 2603;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_HANDLER_CMDLINE
+#=======================================
+
+STRING PIN_FLD_BATCH_HANDLER_CMDLINE {
+
+	ID = 2604;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_OCCURRENCE_OBJ
+#=======================================
+
+POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+	ID = 2613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_REPLACES_OBJ
+#=======================================
+
+POID PIN_FLD_BATCH_REPLACES_OBJ {
+
+	ID = 2609;
+}
+
+
+#=======================================
+#  Storable Class /batch/handler
+#=======================================
+
+STORABLE CLASS /batch/handler {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A batch subclass used to record the lifecycle of a Batch Controller launched handler process.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BATCH_HANDLER_INFO {
+
+		DESCR = "Substruct containing information about this Batch Handler session.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_APPLICATION_PID {
+
+			DESCR = "The operating system id of the application launched by this handler process.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+			DESCR = "Portal object id of the Batch Controller object which launched this handler session.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BATCH_HANDLER_CMDLINE {
+
+			DESCR = "Command string to start the handler process.  Includes the full pathname to the executable and all of the arguments. The POID_ID of the poid of this object will be passed as the last argument when the handler is started to process an occurrence.  If the handler is being started to process an occurrence that a previously started handler failed to process, the POID_ID of the failed handler object will follow the POID_ID of this object as the last argument.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+			DESCR = "Portal object id of the Batch Occurrence object which this handler application will service.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BATCH_REPLACES_OBJ {
+
+			DESCR = "Portal object id of the Batch Handler object which this handler object replaces.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/handler
+#=======================================
+
+STORABLE CLASS /batch/handler IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BATCH_HANDLER_INFO {
+
+		SQL_TABLE = "batch_handler_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_APPLICATION_PID {
+
+			SQL_COLUMN = "batch_application_pid";
+		}
+
+		POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+			SQL_COLUMN = "batch_controller_obj";
+		}
+
+		STRING PIN_FLD_BATCH_HANDLER_CMDLINE {
+
+			SQL_COLUMN = "batch_handler_cmdline";
+		}
+
+		POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+			SQL_COLUMN = "batch_occurrence_obj";
+		}
+
+		POID PIN_FLD_BATCH_REPLACES_OBJ {
+
+			SQL_COLUMN = "batch_replaces_obj";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,570 @@
+
+#=======================================
+#  Field PIN_FLD_CUR_RATES_TIMEFRAMES
+#=======================================
+
+ARRAY PIN_FLD_CUR_RATES_TIMEFRAMES {
+
+	ID = 1607;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUR_CONV_RATES
+#=======================================
+
+ARRAY PIN_FLD_CUR_CONV_RATES {
+
+	ID = 1608;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_DST
+#=======================================
+
+INT PIN_FLD_CURRENCY_DST {
+
+	ID = 1610;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_OPERATOR
+#=======================================
+
+ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+	ID = 1612;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_RATE
+#=======================================
+
+DECIMAL PIN_FLD_CURRENCY_RATE {
+
+	ID = 1611;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_SRC
+#=======================================
+
+INT PIN_FLD_CURRENCY_SRC {
+
+	ID = 1609;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_EMU_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_CURRENCY_EMU_MEMBERS {
+
+	ID = 1617;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUR_SUPPORTED_COMB
+#=======================================
+
+ARRAY PIN_FLD_CUR_SUPPORTED_COMB {
+
+	ID = 1613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUR_SECONDARY_REQ
+#=======================================
+
+ENUM PIN_FLD_CUR_SECONDARY_REQ {
+
+	ID = 1614;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUR_SUPPORTED_SEC_CUR
+#=======================================
+
+ARRAY PIN_FLD_CUR_SUPPORTED_SEC_CUR {
+
+	ID = 1615;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_SECONDARY
+#=======================================
+
+INT PIN_FLD_CURRENCY_SECONDARY {
+
+	ID = 1616;
+}
+
+
+#=======================================
+#  Storable Class /config/currency
+#=======================================
+
+STORABLE CLASS /config/currency {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Abstract class for currency related configuration.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/currency/conversionrates
+#=======================================
+
+STORABLE CLASS /config/currency/conversionrates {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class lists the currencies for which conversion rates are available. These rates have validity time ranges. If not listed in this object, then a currency fold is needed for conversion. This object is used by the PCM_OP_BILL_CURRENCY_CONVERT_AMOUNTS and PCM_OP_BILL_CURRENCY_QUERY_CONVERSION_RATES opcodes. Currently this object is used only for Euro and EMU currencies and is loaded with pre-configured Euro conversions from the init_objects.source file.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CUR_RATES_TIMEFRAMES {
+
+		DESCR = "Array of validity periods. Each array will have a set of conversion rates. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CUR_CONV_RATES {
+
+			DESCR = "Array of conversion rates. Array element id is not significant.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_CURRENCY_DST {
+
+				DESCR = "Destination currency code.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+				DESCR = "Operator to be used when converting from source to destination currency. This can be either multiply(0) or divide (1). Note that for Euro conversion inverse exchange rates cannot be used.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_CURRENCY_RATE {
+
+				DESCR = "Rate of exchange from source currency to destination currency.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_CURRENCY_SRC {
+
+				DESCR = "Source currency code.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_DESCR {
+
+				DESCR = "Brief description of the conversion rate.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			DESCR = "End time of the valid time range for a set of conversion rate.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			DESCR = "Start time of the valid time range for a set of conversion rates.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/currency/emu
+#=======================================
+
+STORABLE CLASS /config/currency/emu {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This singleton configuration object holds the list of EMU currencies.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CURRENCY_EMU_MEMBERS {
+
+		DESCR = "Array of EMU currencies. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "EMU currency code.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/currency/supportedcombinations
+#=======================================
+
+STORABLE CLASS /config/currency/supportedcombinations {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class holds the two dimensional array of supported pairs of Primary and Secondary account currencies for the system.  This is configurable by the user to limit the allowable Primary currencies, and for each primary currency available, limit the set of secondary currencies.  This object is used by the PCM_OP_CUST_BILLINFO opcode and related policies.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CUR_SUPPORTED_COMB {
+
+		DESCR = "Array of supported combinations. One array element for each primary currency. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Primary currency code.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CUR_SECONDARY_REQ {
+
+			DESCR = "Specifies if a secondary currency is mandatory (1) or optional (0).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_CUR_SUPPORTED_SEC_CUR {
+
+			DESCR = "Array of acceptable secondary currencies. Array element id is not significant.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_CURRENCY_SECONDARY {
+
+				DESCR = "Secondary currency code.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/currency
+#=======================================
+
+STORABLE CLASS /config/currency IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/currency/conversionrates
+#=======================================
+
+STORABLE CLASS /config/currency/conversionrates IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CUR_RATES_TIMEFRAMES {
+
+		SQL_TABLE = "config_cur_rates_timeframes_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CUR_CONV_RATES {
+
+			SQL_TABLE = "config_cur_conv_rates_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_CURRENCY_DST {
+
+				SQL_COLUMN = "currency_dst";
+			}
+
+			ENUM PIN_FLD_CURRENCY_OPERATOR {
+
+				SQL_COLUMN = "currency_operator";
+			}
+
+			DECIMAL PIN_FLD_CURRENCY_RATE {
+
+				SQL_COLUMN = "currency_rate";
+			}
+
+			INT PIN_FLD_CURRENCY_SRC {
+
+				SQL_COLUMN = "currency_src";
+			}
+
+			STRING PIN_FLD_DESCR {
+
+				SQL_COLUMN = "descr";
+			}
+
+		}
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			SQL_COLUMN = "end_t";
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			SQL_COLUMN = "start_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/currency/emu
+#=======================================
+
+STORABLE CLASS /config/currency/emu IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CURRENCY_EMU_MEMBERS {
+
+		SQL_TABLE = "config_currency_emu_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/currency/supportedcombinations
+#=======================================
+
+STORABLE CLASS /config/currency/supportedcombinations IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CUR_SUPPORTED_COMB {
+
+		SQL_TABLE = "config_cur_supportedcomb_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		ENUM PIN_FLD_CUR_SECONDARY_REQ {
+
+			SQL_COLUMN = "cur_secondary_req";
+		}
+
+		ARRAY PIN_FLD_CUR_SUPPORTED_SEC_CUR {
+
+			SQL_TABLE = "config_cur_supported_seccur_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_CURRENCY_SECONDARY {
+
+				SQL_COLUMN = "currency_secondary";
+			}
+
+		}
+
+	}
+
+}
+

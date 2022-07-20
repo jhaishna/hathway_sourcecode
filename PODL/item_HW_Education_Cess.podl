@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/HW_Education_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Edu Cess for Hardware.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/HW_Education_Cess
+#=======================================
+
+STORABLE CLASS /item/HW_Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+

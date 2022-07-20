@@ -1,0 +1,118 @@
+
+#=======================================
+#  Field PIN_FLD_JOURNAL_INFO
+#=======================================
+
+ARRAY PIN_FLD_JOURNAL_INFO {
+
+	ID = 1799;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_POSTED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_POSTED_T {
+
+	ID = 2407;
+}
+
+
+#=======================================
+#  Storable Class /data/journal
+#=======================================
+
+STORABLE CLASS /data/journal {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This object holds information about the last event that was proccessed during journal creation/updation.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_JOURNAL_INFO {
+
+		DESCR = "Place holder for storing details of the last event that was journaled. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			DESCR = "This is the poid of the last event that was journaled from the HISTORIC partition. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_POSTED_T {
+
+			DESCR = "The created_time of the last event that was proccessed during the journal creation/updation. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /data/journal
+#=======================================
+
+STORABLE CLASS /data/journal IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_JOURNAL_INFO {
+
+		SQL_TABLE = "data_journal_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			SQL_COLUMN = "event_obj";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_POSTED_T {
+
+			SQL_COLUMN = "last_posted_t";
+		}
+
+	}
+
+}
+

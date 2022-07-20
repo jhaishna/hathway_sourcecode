@@ -1,0 +1,206 @@
+
+#=======================================
+#  Field PIN_FLD_FILTER_LIST
+#=======================================
+
+ARRAY PIN_FLD_FILTER_LIST {
+
+	ID = 1570;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VERSION
+#=======================================
+
+INT PIN_FLD_STR_VERSION {
+
+	ID = 1892;
+}
+
+
+#=======================================
+#  Storable Class /config/reason_code_scope
+#=======================================
+
+STORABLE CLASS /config/reason_code_scope {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This class stores configuration for implementing the reason code filter.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_FILTER_LIST {
+
+		DESCR = "Array of reason code filters.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENTS {
+
+			DESCR = "Array of event types and service types.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				DESCR = "The event type.";
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_SERVICE_TYPE {
+
+				DESCR = "The service type.";
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "Identifier for the reason code string";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			DESCR = "Identifier for the string domain.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/reason_code_scope
+#=======================================
+
+STORABLE CLASS /config/reason_code_scope IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_FILTER_LIST {
+
+		SQL_TABLE = "config_reason_code_scope_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENTS {
+
+			SQL_TABLE = "config_reason_code_events_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				SQL_COLUMN = "event_type";
+			}
+
+			STRING PIN_FLD_SERVICE_TYPE {
+
+				SQL_COLUMN = "service_type";
+			}
+
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "string_id";
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			SQL_COLUMN = "str_version";
+		}
+
+	}
+
+}
+

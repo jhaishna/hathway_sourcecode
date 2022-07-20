@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_ssp_monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_ssp_monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Special Site Plan item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_ssp_monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_ssp_monthly IMPLEMENTATION ORACLE7 {
+
+}
+

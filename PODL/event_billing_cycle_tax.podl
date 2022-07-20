@@ -1,0 +1,533 @@
+
+#=======================================
+#  Field PIN_FLD_TAXES
+#=======================================
+
+ARRAY PIN_FLD_TAXES {
+
+	ID = 528;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GEOCODE
+#=======================================
+
+STRING PIN_FLD_GEOCODE {
+
+	ID = 1510;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAXPKG_TYPE
+#=======================================
+
+ENUM PIN_FLD_TAXPKG_TYPE {
+
+	ID = 1515;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CODE
+#=======================================
+
+STRING PIN_FLD_TAX_CODE {
+
+	ID = 536;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_FLAGS
+#=======================================
+
+INT PIN_FLD_TAX_FLAGS {
+
+	ID = 1516;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_LOCALES
+#=======================================
+
+STRING PIN_FLD_TAX_LOCALES {
+
+	ID = 541;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CYCLES
+#=======================================
+
+ARRAY PIN_FLD_TAX_CYCLES {
+
+	ID = 540;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_BILL_OBJ {
+
+	ID = 44;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_VAT
+#=======================================
+
+INT PIN_FLD_BILL_VAT {
+
+	ID = 956;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "An event of this type is created to record the cyclical deferred taxes applied to a billinfo at the end of billing cycle or through on demand/bill now bill request.  A single event is recorded per bill object for a given billinfo. This tax event could be recorded at either billinfo or the A/R billinfo level.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TAXES {
+
+		DESCR = "Deferred taxes array. Each element corresponds to a tax-code/tax locales pair. Array element IDs start with 0 and are sequential. In addition, each element maps to a corresponding element (with the same element ID) in array PIN_FLD_BAL_IMPACTS that contains the computed tax.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Amount to be taxed. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_GEOCODE {
+
+			DESCR = "A geographic code that uniquely identifies a tax-collecting jurisdiction from all others. Geocode formats will differ from one tax-compliance system to another.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "Currency code. Currency in which taxes are applied. Same as the account currency.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TAXPKG_TYPE {
+
+			DESCR = "The tax-compliance system that was used to calculate the tax. Values are: Custom (0), Taxware (1), WorldTax (2), Quantum (3), CommTax21 (4), BillSoft (5).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TAX_CODE {
+
+			DESCR = "Tax code as specified in the rate category.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TAX_FLAGS {
+
+			DESCR = "Flag that contains masked values for the following flags: residence (0x01), incorporated (0x02), regulated (0x04). ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TAX_LOCALES {
+
+			DESCR = "See PIN_FLD_TAX_LOCALES in the base /event object.";
+			ORDER = 0;
+			LENGTH = 1024;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_TAX_CYCLES {
+
+		DESCR = "Array with information about the deferred tax cycle. Array element id is not significant. Only one array element per bill object is present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILL_OBJ {
+
+			DESCR = "Link to bill object that owns this element.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_VAT {
+
+			DESCR = "When non-zero (1) tax is applied and the account has a billing group (i.e. account hierarchy), deferred taxes can be calculated for the entire group. See CM pin.conf entry cycle_tax_interval.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Account currency expressed as the ISO currency code.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			DESCR = "Exclusive end time of the cycle.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			DESCR = "Inclusive start time of the cycle.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Education_Cess";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Entertainment_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Entertainment_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/MSO_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/MSO_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Secondary_Higher_Education_Cess {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Secondary_Higher_Education_Cess";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Service_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Service_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Service_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TAXES {
+
+		SQL_TABLE = "event_billing_taxes_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		STRING PIN_FLD_GEOCODE {
+
+			SQL_COLUMN = "geocode";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+		ENUM PIN_FLD_TAXPKG_TYPE {
+
+			SQL_COLUMN = "tax_pkg_type";
+		}
+
+		STRING PIN_FLD_TAX_CODE {
+
+			SQL_COLUMN = "tax_code";
+		}
+
+		INT PIN_FLD_TAX_FLAGS {
+
+			SQL_COLUMN = "tax_flags";
+		}
+
+		STRING PIN_FLD_TAX_LOCALES {
+
+			SQL_COLUMN = "tax_locales";
+		}
+
+	}
+
+	ARRAY PIN_FLD_TAX_CYCLES {
+
+		SQL_TABLE = "event_billing_tax_cycles_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILL_OBJ {
+
+			SQL_COLUMN = "bill_obj";
+		}
+
+		INT PIN_FLD_BILL_VAT {
+
+			SQL_COLUMN = "bill_vat";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			SQL_COLUMN = "end_t";
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			SQL_COLUMN = "start_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Entertainment_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/MSO_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/MSO_Tax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Secondary_Higher_Education_Cess
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Secondary_Higher_Education_Cess IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/tax/Service_Tax
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/tax/Service_Tax IMPLEMENTATION ORACLE7 {
+
+}
+

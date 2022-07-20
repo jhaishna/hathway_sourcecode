@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for monthly Cycle Arrear Harhware Rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+

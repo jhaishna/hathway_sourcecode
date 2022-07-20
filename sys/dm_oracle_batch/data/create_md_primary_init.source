@@ -1,0 +1,36 @@
+--
+-- @(#)create_md_primary_init.source 1 09/24/01
+--
+--     Copyright (c) 1999-2006 Oracle. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+--
+-- sql file to create the list of objects needed for replication
+
+set serveroutput on;
+
+drop table md_static_objects_t;
+
+-- table for holding the replicated (static) objects.
+
+create table md_static_objects_t (
+        table_name      varchar2(255),
+        sm_info         varchar2(255),
+        sm_index_info   varchar2(255),
+        status          INT,
+        refresh_group   varchar2(100),
+        index_name      varchar2(255),
+        ind_initial_ext INT,
+        ind_next_ext    INT,
+        ind_pct_inc     INT,
+        ind_freelists   INT,
+        initial_ext     INT,
+        next_ext        INT,
+        pct_inc         INT,
+        freelists       INT
+        ) ;
+

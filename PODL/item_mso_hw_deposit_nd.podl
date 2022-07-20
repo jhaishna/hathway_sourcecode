@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nd IMPLEMENTATION ORACLE7 {
+
+}
+

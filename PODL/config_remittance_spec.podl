@@ -1,0 +1,323 @@
+
+#=======================================
+#  Field PIN_FLD_REMIT_ACCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_REMIT_ACCOUNTS {
+
+	ID = 1027;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CRITERIA
+#=======================================
+
+ARRAY PIN_FLD_CRITERIA {
+
+	ID = 1025;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_FLD_NO
+#=======================================
+
+INT PIN_FLD_REMIT_FLD_NO {
+
+	ID = 1032;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_OP
+#=======================================
+
+STRING PIN_FLD_REMIT_OP {
+
+	ID = 1030;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_REMIT_ACCOUNT_OBJ {
+
+	ID = 1028;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_REMIT_PRODUCT_OBJ {
+
+	ID = 1029;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_TYPE
+#=======================================
+
+STRING PIN_FLD_REMIT_TYPE {
+
+	ID = 1008;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RUM_NAME
+#=======================================
+
+STRING PIN_FLD_RUM_NAME {
+
+	ID = 2211;
+}
+
+
+#=======================================
+#  Storable Class /config/remittance_spec
+#=======================================
+
+STORABLE CLASS /config/remittance_spec {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to define the remittance specification criteria to be used in specifying the remittance criteria.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_REMIT_ACCOUNTS {
+
+		LABEL = "Remittance Accounts definition";
+		DESCR = "Array of accounts to be used in remittance. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			DESCR = "Customer visible remittance account number.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_CRITERIA {
+
+			LABEL = "Remittance Accounts definition";
+			DESCR = "Array for each criteria field to define remittance fields, operator and value.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_REMIT_FLD_NO {
+
+				LABEL = "REMIT_FLD";
+				DESCR = "The name of the remittance field already defined in the remittance fields file.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_REMIT_OP {
+
+				LABEL = "REMIT_OP";
+				DESCR = "The operator as to what the field contains.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				LABEL = "REMIT_VAL";
+				DESCR = "The value of the remittance field.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		POID PIN_FLD_REMIT_ACCOUNT_OBJ {
+
+			LABEL = "REMIT_ACCOUNT_OBJ";
+			DESCR = "The remittance account object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_REMIT_PRODUCT_OBJ {
+
+			LABEL = "REMIT_PRODUCT_OBJ";
+			DESCR = "The remittance product object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REMIT_TYPE {
+
+			LABEL = "REMIT_TYPE";
+			DESCR = "The remittance type for the account defined in the remittance criteria. As of now these are the only values supported - U, B and P for Unbilled, Billed and Paid.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RUM_NAME {
+
+			DESCR = "Specifies which RUM should be used to rate for remittance to be applied for.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/remittance_spec
+#=======================================
+
+STORABLE CLASS /config/remittance_spec IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_REMIT_ACCOUNTS {
+
+		SQL_TABLE = "config_remittance_spec_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "remit_account_no";
+		}
+
+		ARRAY PIN_FLD_CRITERIA {
+
+			SQL_TABLE = "config_remittance_criteria_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_REMIT_FLD_NO {
+
+				SQL_COLUMN = "remit_spec_fld";
+			}
+
+			STRING PIN_FLD_REMIT_OP {
+
+				SQL_COLUMN = "remit_op";
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "remit_val";
+			}
+
+		}
+
+		POID PIN_FLD_REMIT_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "remit_account_obj";
+		}
+
+		POID PIN_FLD_REMIT_PRODUCT_OBJ {
+
+			SQL_COLUMN = "remit_product_obj";
+		}
+
+		STRING PIN_FLD_REMIT_TYPE {
+
+			SQL_COLUMN = "remit_type";
+		}
+
+		STRING PIN_FLD_RUM_NAME {
+
+			SQL_COLUMN = "rum_name";
+		}
+
+	}
+
+}
+

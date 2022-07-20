@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /collections_action/refer_to_outside_agency
+#=======================================
+
+STORABLE CLASS /collections_action/refer_to_outside_agency {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /collections_action to store refer outside agencyinformation.This object is created when refer to outside agencyaction is scheduled for a billinfo";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /collections_action/refer_to_outside_agency
+#=======================================
+
+STORABLE CLASS /collections_action/refer_to_outside_agency IMPLEMENTATION ORACLE7 {
+
+}
+

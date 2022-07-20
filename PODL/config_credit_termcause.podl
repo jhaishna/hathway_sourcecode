@@ -1,0 +1,172 @@
+
+#=======================================
+#  Field PIN_FLD_TERMINATE_CAUSES
+#=======================================
+
+ARRAY PIN_FLD_TERMINATE_CAUSES {
+
+	ID = 2000;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_AMOUNT {
+
+	ID = 2001;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMINATE_CAUSE
+#=======================================
+
+ENUM PIN_FLD_TERMINATE_CAUSE {
+
+	ID = 427;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMINATE_CAUSE_STR
+#=======================================
+
+STRING PIN_FLD_TERMINATE_CAUSE_STR {
+
+	ID = 2002;
+}
+
+
+#=======================================
+#  Storable Class /config/credit/termcause
+#=======================================
+
+STORABLE CLASS /config/credit/termcause {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This object is depricated. This will be removed in future release. A singleton configuration object this class contains information on supported call termination cause and the type of credit they specify. Although you can edit the sample pin_termcause file to add extra call termination cause, It is not recommended to change the call termination causes once they are loaded into the database.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TERMINATE_CAUSES {
+
+		DESCR = "Configuration information about one call terminate cause. It specifies what kind of credit will be applied to a call that is terminated abnormally.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CREDIT_AMOUNT {
+
+			DESCR = "Number of seconds the dropped call will get as credit for if this terminate cause is present.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Possible values are Not Set (0), Active (1), Inactive (2). Only active termination cause will be used in rating.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			DESCR = "Session termination code supported in IPT.Possible values are: NORMAL (0), ABNORMAL(1), NOCONNECTION(2).  See pin_credit_termcause for details.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TERMINATE_CAUSE_STR {
+
+			DESCR = "A string description for the terminate cause. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/credit/termcause
+#=======================================
+
+STORABLE CLASS /config/credit/termcause IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TERMINATE_CAUSES {
+
+		SQL_TABLE = "config_credit_termcauses_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CREDIT_AMOUNT {
+
+			SQL_COLUMN = "credit_amount";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			SQL_COLUMN = "terminate_cause";
+		}
+
+		STRING PIN_FLD_TERMINATE_CAUSE_STR {
+
+			SQL_COLUMN = "terminate_cause_str";
+		}
+
+	}
+
+}
+

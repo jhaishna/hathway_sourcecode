@@ -1,0 +1,7 @@
+fm_mso_search.c:		strcpy(template,"select X from /event where F1 = V1 and F2 >= V2 and F3 <= V3 and F4 like V4 and F5 = V5 order by end_t asc ");
+fm_mso_search.c:		strcpy(template,"select X from /event where F1 = V1 and F2 >= V2 and F3 <= V3 and F4 like V4 and F5 = V5 order by end_t asc ");
+fm_mso_search.c:		strcpy(template,"select X from /event where F1 = V1 and F2 >= V2 and F3 <= V3 and ( F4 like V4 or F5 like V5 ) and F6 = V6 order by end_t asc ");
+fm_mso_search.c:		strcpy(template,"select X from /event where F1 = V1 and F2 >= V2 and F3 <= V3 and F4 like V4 and F5 = V5 order by end_t asc ");
+fm_mso_search.c:		strcpy(template,"select X from /event where F1 = V1 and F2 >= V2 and F3 <= V3 and ( F4 like V4 or F5 like V5 or F6 like V6 or F7 like V7 or F8 like V8 or F9 like V9 or F10 like V10 or F11 like V11 or F12 like V12 or F13 like V13 ) and F14 = V14 order by end_t asc ");
+fm_mso_search.c:		strcpy(template,"select X from /event where F1 = V1 and F2 >= V2 and F3 <= V3 and ( F4 like V4 or F5 like V5 or F6 like V6 or F7 like V7 or F8 like V8 or F9 like V9 or F10 = V10 ) and F11 = V11 order by end_t asc ");
+fm_mso_search.c:		strcpy(template,"select X from /event where F1 = V1 and F2 >= V2 and F3 <= V3 and ( F4 like V4 ) order by end_t asc ");

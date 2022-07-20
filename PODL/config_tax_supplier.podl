@@ -1,0 +1,314 @@
+
+#=======================================
+#  Field PIN_FLD_TAX_SUPPLIERS
+#=======================================
+
+ARRAY PIN_FLD_TAX_SUPPLIERS {
+
+	ID = 1522;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEFAULT_FLAG
+#=======================================
+
+INT PIN_FLD_DEFAULT_FLAG {
+
+	ID = 1523;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXUSINFO
+#=======================================
+
+STRING PIN_FLD_NEXUSINFO {
+
+	ID = 1503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REGULATED_FLAG
+#=======================================
+
+ENUM PIN_FLD_REGULATED_FLAG {
+
+	ID = 1513;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VATINFO
+#=======================================
+
+ARRAY PIN_FLD_VATINFO {
+
+	ID = 1504;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CANON_COUNTRY
+#=======================================
+
+STRING PIN_FLD_CANON_COUNTRY {
+
+	ID = 1501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VAT_CERT
+#=======================================
+
+STRING PIN_FLD_VAT_CERT {
+
+	ID = 1505;
+}
+
+
+#=======================================
+#  Storable Class /config/tax_supplier
+#=======================================
+
+STORABLE CLASS /config/tax_supplier {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton object of this class is used to set tax supplier information.  A tax supplier is analogous to the company information described in tax packages such as Taxware, which uses the supplier identification along with many other attributes to determine taxes. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TAX_SUPPLIERS {
+
+		DESCR = "Array describing tax supplier information. Array Id is significant; it will be used to uniquely identify this tax supplier.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Address for this tax supplier in the format: city;state/province;zip;country.  Used as the FROM address in the tax transaction.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DEFAULT_FLAG {
+
+			DESCR = "Flag that identifies the 'default' (1) tax supplier in case a supplier cannot be determined from the product that is used to rate an event. A value of (0) means this is not the default.  Only one tax supplier can be marked as being the 'default'. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description for this tax supplier.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Unique name for this tax supplier.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NEXUSINFO {
+
+			DESCR = "Semicolon separated list of states where the tax supplier/company has significant presence.  '*' may be used to describe nexus for all states. Used only for Sales/Use tax. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_REGULATED_FLAG {
+
+			DESCR = "Flag that identifies the utility/company doing the billing as Regulated (0) or Unregulated (1). Some taxes apply to regulated or unregulated utilities only, and this flag is used to determine whether a particular tax should be calculated. Used for telco tax.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_VATINFO {
+
+			DESCR = "Array with details about VAT certificates (used with WorldTax package). ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_CANON_COUNTRY {
+
+				DESCR = "Canonical alphabetic country code passed to the Taxware package.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VAT_CERT {
+
+				DESCR = "Seller VAT certificate string specific to the country specified in PIN_FLD_CANON_COUNTRY.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/tax_supplier
+#=======================================
+
+STORABLE CLASS /config/tax_supplier IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_TAX_SUPPLIERS {
+
+		SQL_TABLE = "config_taxs_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		INT PIN_FLD_DEFAULT_FLAG {
+
+			SQL_COLUMN = "default_flag";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_NEXUSINFO {
+
+			SQL_COLUMN = "nexusinfo";
+		}
+
+		ENUM PIN_FLD_REGULATED_FLAG {
+
+			SQL_COLUMN = "regulated_flag";
+		}
+
+		ARRAY PIN_FLD_VATINFO {
+
+			SQL_TABLE = "config_vat_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_CANON_COUNTRY {
+
+				SQL_COLUMN = "canon_country";
+			}
+
+			STRING PIN_FLD_VAT_CERT {
+
+				SQL_COLUMN = "vat_cert";
+			}
+
+		}
+
+	}
+
+}
+

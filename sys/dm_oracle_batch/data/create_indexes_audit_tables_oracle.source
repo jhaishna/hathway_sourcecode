@@ -1,0 +1,97 @@
+--
+-- @(#)$Id: create_indexes_audit_tables.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:36:32 nishahan Exp $
+--
+-- Copyright (c) 2001, 2010, Oracle and/or its affiliates. 
+-- All rights reserved. 
+--      This material is the confidential property of Oracle Corporation
+--      or its licensors and may be used, reproduced, stored or transmitted
+--      only in accordance with a valid Oracle license or sublicense agreement.
+--
+-- SOURCE OF sql file to create the indexes on audit tables 
+-- (optional manager) for the PIN database
+-- $PIN_CONF_TBLSPACEX          -- for tablespace to put all these in
+-- $PIN_CONF_STORAGE_SMALL      -- for storage phrase
+
+
+-- /au_service_alias_list_t
+create index i_au_service_alias_list__name on au_service_alias_list_t
+        ( name )
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- /au_balance_group
+create index i_au_bal_grp_acct__id on au_bal_grp_t
+        ( account_obj_id0 )
+        $PIN_CONF_TBLSPACEX14
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+-- /au_ordered_balgroup
+create index i_au_ordered_balgroup_poid_rev on au_ordered_balgroup_t
+        ( poid_rev )
+        $PIN_CONF_TBLSPACEX14
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+
+create index i_au_ordered_balgroup_serv__id on au_ordered_balgroup_t
+        ( service_obj_id0 )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+
+-- /au_uniqueness
+create index i_au_uniqueness__login on au_uniqueness_t
+        ( login )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/uniqueness.INDEX_CLAUSE'} ;
+
+-- /au_profile
+create index i_au_profile_au_parent_obj_id on au_profile_t
+        ( au_parent_obj_id0  )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+create index i_au_profile_account_obj_id on au_profile_t
+        ( account_obj_id0 )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+create index i_au_profile_service_obj_id on au_profile_t
+        ( service_obj_id0 )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+create unique index i_au_profile_srv_era_da__id on au_profile_serv_extrating_da_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX16
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+create unique index i_au_profile_acct_era_da__id on au_profile_acct_extrating_da_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX16
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+create unique index i_au_profile_poid_acc_obj__id on au_profile_t
+        ( poid_id0, account_obj_id0 )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+CREATE INDEX i_au_group_sharing_prof__id ON au_group_sharing_profiles_t 
+	( obj_id0 )
+        $PIN_CONF_TBLSPACEX14
+        $PIN_CONF_STORAGE_MED
+        $PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+CREATE INDEX i_au_profile_serv_era__id ON au_profile_serv_extrating_t 
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;

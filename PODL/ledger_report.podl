@@ -1,0 +1,1503 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_GROUPS
+#=======================================
+
+ARRAY PIN_FLD_ACCOUNT_GROUPS {
+
+	ID = 2401;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BEG_ACCT
+#=======================================
+
+INT PIN_FLD_BEG_ACCT {
+
+	ID = 2402;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_ACCT
+#=======================================
+
+INT PIN_FLD_END_ACCT {
+
+	ID = 2403;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GRP_STAT
+#=======================================
+
+ENUM PIN_FLD_GRP_STAT {
+
+	ID = 2404;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCTS_NUM_FOR_GROUP
+#=======================================
+
+INT PIN_FLD_ACCTS_NUM_FOR_GROUP {
+
+	ID = 2408;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_ONLY
+#=======================================
+
+INT PIN_FLD_CURRENCY_ONLY {
+
+	ID = 1824;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ACCTS
+#=======================================
+
+ARRAY PIN_FLD_GL_ACCTS {
+
+	ID = 837;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_DISC_GL_ACCT
+#=======================================
+
+STRING PIN_FLD_AR_DISC_GL_ACCT {
+
+	ID = 1818;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_GROSS_GL_ACCT
+#=======================================
+
+STRING PIN_FLD_AR_GROSS_GL_ACCT {
+
+	ID = 1816;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_NET_GL_ACCT
+#=======================================
+
+STRING PIN_FLD_AR_NET_GL_ACCT {
+
+	ID = 1817;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_TAX_GL_ACCT
+#=======================================
+
+STRING PIN_FLD_AR_TAX_GL_ACCT {
+
+	ID = 1819;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_NO
+#=======================================
+
+STRING PIN_FLD_BILL_NO {
+
+	ID = 793;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_AR_DISC_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_AR_DISC_AMT {
+
+	ID = 1802;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_AR_GROSS_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_AR_GROSS_AMT {
+
+	ID = 1800;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_AR_NET_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_AR_NET_AMT {
+
+	ID = 1801;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_AR_TAX_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_AR_TAX_AMT {
+
+	ID = 1803;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_OFF_DISC_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_OFF_DISC_AMT {
+
+	ID = 1810;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_OFF_GROSS_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_OFF_GROSS_AMT {
+
+	ID = 1808;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_OFF_NET_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_OFF_NET_AMT {
+
+	ID = 1809;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CR_OFF_TAX_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CR_OFF_TAX_AMT {
+
+	ID = 1811;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_AR_DISC_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_AR_DISC_AMT {
+
+	ID = 1806;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_AR_GROSS_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_AR_GROSS_AMT {
+
+	ID = 1804;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_AR_NET_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_AR_NET_AMT {
+
+	ID = 1805;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_AR_TAX_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_AR_TAX_AMT {
+
+	ID = 1807;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_OFF_DISC_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_OFF_DISC_AMT {
+
+	ID = 1814;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_OFF_GROSS_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_OFF_GROSS_AMT {
+
+	ID = 1812;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_OFF_NET_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_OFF_NET_AMT {
+
+	ID = 1813;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DB_OFF_TAX_AMT
+#=======================================
+
+DECIMAL PIN_FLD_DB_OFF_TAX_AMT {
+
+	ID = 1815;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ID
+#=======================================
+
+INT PIN_FLD_GL_ID {
+
+	ID = 840;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_NAME
+#=======================================
+
+STRING PIN_FLD_ITEM_NAME {
+
+	ID = 514;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_NO
+#=======================================
+
+STRING PIN_FLD_ITEM_NO {
+
+	ID = 797;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFF_DISC_GL_ACCT
+#=======================================
+
+STRING PIN_FLD_OFF_DISC_GL_ACCT {
+
+	ID = 1822;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFF_GROSS_GL_ACCT
+#=======================================
+
+STRING PIN_FLD_OFF_GROSS_GL_ACCT {
+
+	ID = 1820;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFF_NET_GL_ACCT
+#=======================================
+
+STRING PIN_FLD_OFF_NET_GL_ACCT {
+
+	ID = 1821;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFF_TAX_GL_ACCT
+#=======================================
+
+STRING PIN_FLD_OFF_TAX_GL_ACCT {
+
+	ID = 1823;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_TYPE
+#=======================================
+
+INT PIN_FLD_GL_REPORT_TYPE {
+
+	ID = 516;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENT
+#=======================================
+
+STRING PIN_FLD_GL_SEGMENT {
+
+	ID = 517;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENTS_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_GL_SEGMENTS_ARRAY {
+
+	ID = 2410;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_GROUPS_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_TOTAL_GROUPS_ARRAY {
+
+	ID = 2406;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_GROUPS
+#=======================================
+
+INT PIN_FLD_TOTAL_GROUPS {
+
+	ID = 2405;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UPDATED_GROUPS
+#=======================================
+
+INT PIN_FLD_UPDATED_GROUPS {
+
+	ID = 2409;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /ledger_report
+#=======================================
+
+STORABLE CLASS /ledger_report {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The ledger report object is created as a result of executing the PCM_OP_GL_LEDGER_REPORT opcode. This object stores the resulting data from running the ledger report procedures.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACCOUNT_GROUPS {
+
+		DESCR = "Array of A/R account groups information. Element Id is significant (from 1 to n sequentially).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BEG_ACCT {
+
+			DESCR = "The first account for this group.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_END_ACCT {
+
+			DESCR = "The last account for this group.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GRP_STAT {
+
+			DESCR = "The status for this group. (1 for updated, 0 for not updated)";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_ACCTS_NUM_FOR_GROUP {
+
+		DESCR = "Specifies how many A/R accounts need to be grouped together into a single transaction.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY_ONLY {
+
+		DESCR = "Specifies whether the report is for non-currency resources (0 - PIN_GL_REPORT_NON_CURRENCY_TYPE), currency resources(1 - PIN_GL_REPORT_CURRENCY_TYPE) or all resources(2 - PIN_GL_REPORT_ANY_TYPE). The default value is 1 to indicate that only currency resources are considered in the report. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "End of the posting period of the ledger report. End time is NOT inclusive.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_GL_ACCTS {
+
+		DESCR = "Array of GL account information. Element Id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			DESCR = "Account number of the transaction being reported. Used only in the detailed report.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_AR_DISC_GL_ACCT {
+
+			DESCR = "AR G/L account for disc amount.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_AR_GROSS_GL_ACCT {
+
+			DESCR = "AR G/L account for the gross amount.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_AR_NET_GL_ACCT {
+
+			DESCR = "AR G/L account for the net amount.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_AR_TAX_GL_ACCT {
+
+			DESCR = "AR G/L account for tax amount.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			DESCR = "Bill number of the transaction being reported. Used only in the detailed report.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CR_AR_DISC_AMT {
+
+			DESCR = "Amount that impacts the credit side of the disc AR G/L account. This is the absolute value of the sum of all negative balance impacts for the given glid/resource pair.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CR_AR_GROSS_AMT {
+
+			DESCR = "Amount that impacts the credit side of the gross AR G/L account. This is the absolute value of the sum of all negative balance impacts for the given glid/resource pair.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CR_AR_NET_AMT {
+
+			DESCR = "Amount that impacts the credit side of the net AR G/L account. This is the absolute value of the sum of all negative balance impacts for the given glid/resource pair.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CR_AR_TAX_AMT {
+
+			DESCR = "Amount that impacts the credit side of the tax AR G/L account. This is the absolute value of the sum of all negative balance impacts for the given glid/resource pair.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CR_OFF_DISC_AMT {
+
+			DESCR = "Amount that impacts the credit side of the disc Offset G/L account. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CR_OFF_GROSS_AMT {
+
+			DESCR = "Amount that impacts the credit side of the gross Offset G/L account. The value in this field is exactly the same as the one in the PIN_FLD_DB_AR_GROSS_AMT. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CR_OFF_NET_AMT {
+
+			DESCR = "Amount that impacts the credit side of the net Offset G/L account. The value in this field is exactly the same as the one in the PIN_FLD_DB_AR_NET_AMT.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CR_OFF_TAX_AMT {
+
+			DESCR = "Amount that impacts the credit side of the tax Offset G/L account. The value in this field is exactly the same as the one in the PIN_FLD_DB_AR_TAX_AMT.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_DB_AR_DISC_AMT {
+
+			DESCR = "Amount that impacts the debit side of the disc AR G/L account. This is the absolute value of the sum of all positive balance impacts for the given glid/resource pair.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_DB_AR_GROSS_AMT {
+
+			DESCR = "Amount that impacts the debit side of the gross AR G/L account. This is the absolute value of the sum of all positive balance impacts for the given glid/resource pair.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_DB_AR_NET_AMT {
+
+			DESCR = "Amount that impacts the debit side of the net AR G/L account. This is the absolute value of the sum of all positive balance impacts for the given glid/resource pair.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_DB_AR_TAX_AMT {
+
+			DESCR = "Amount that impacts the debit side of the tax AR G/L account. This is the absolute value of the sum of all positive balance impacts for the given glid/resource pair.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_DB_OFF_DISC_AMT {
+
+			DESCR = "Amount that impacts the debit side of the disc Offset G/L account. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_DB_OFF_GROSS_AMT {
+
+			DESCR = "Amount that impacts the debit side of the gross Offset G/L account. The value in this field is exactly the same as the one in the PIN_FLD_CR_AR_GROSS_AMT.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_DB_OFF_NET_AMT {
+
+			DESCR = "Amount that impacts the debit side of the net Offset G/L account. The value in this field is exactly the same as the one in the PIN_FLD_CR_AR_NET_AMT.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_DB_OFF_TAX_AMT {
+
+			DESCR = "Amount that impacts the debit side of the tax Offset G/L account. The value in this field is exactly the same as the one in the PIN_FLD_CR_AR_TAX_AMT.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Date when this item was opened (billed). 0 means item has not yet been billed. Used only in the detailed report.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_GL_ID {
+
+			DESCR = "GLID associated with this balance impact. To get information about available ranges of G/L ID please refer to Portal documentation and /config/glid object";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ITEM_NAME {
+
+			DESCR = "Item name of the transaction being reported. Used only in the detailed report.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ITEM_NO {
+
+			DESCR = "Item number of the transaction being reported. Used only in the detailed report.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OFF_DISC_GL_ACCT {
+
+			DESCR = "Offset G/L account for disc amount.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OFF_GROSS_GL_ACCT {
+
+			DESCR = "Offset G/L account for gross amount.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OFF_NET_GL_ACCT {
+
+			DESCR = "Offset G/L account for net amount.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OFF_TAX_GL_ACCT {
+
+			DESCR = "Offset G/L account for tax amount.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "Numeric value of the resource that is impacted.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	INT PIN_FLD_GL_REPORT_TYPE {
+
+		DESCR = "Indicates characteristics of the report with bit values set as follows.  Bit value 0x01 (PIN_GL_REPORT_TYPE_DETAIL) indicates it is a detailed report as opposed to a summary report.  Bit value 0x10 (PIN_GL_REPORT_TYPE_CUSTOMIZED) indicates it is a customized report derived from a basic report that was summary or detailed.  Bit value 0x100 (PIN_GL_REPORT_TYPE_INCREMENTAL) indicates it is an incremental report in relation to a report for the previous period. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_GL_SEGMENT {
+
+		DESCR = "Name of GL segment for which this ledger report has been  created. The report will only include GL data for the accounts that  belong to this GL segment.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_GL_SEGMENTS_ARRAY {
+
+		DESCR = "This array will include all the individual segments under the hierarchy starting from the one in PIN_FLD_GL_SEGMENT.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			DESCR = "Segment included for ledger report generation";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "User-defined name of the object. Currently not used.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "Start time of the posting period for this ledger report. Start time is Inclusive.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_TOTAL_GROUPS_ARRAY {
+
+		DESCR = "This stores the numbers for the total groups (split and updated).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_TOTAL_GROUPS {
+
+			DESCR = "The total split groups.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_UPDATED_GROUPS {
+
+			DESCR = "The total updated groups.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "Indicates the type of ledger report. Possible types are, 1 (unbilled), 2 (billed), 4 (unbilled_earned), 8 (billed_earned), 16 (unbilled_unearned), 32 (billed_unearned), 64 (prev_billed_earned).";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /ledger_report
+#=======================================
+
+STORABLE CLASS /ledger_report IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "ledger_report_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACCOUNT_GROUPS {
+
+		SQL_TABLE = "ledger_report_account_groups_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BEG_ACCT {
+
+			SQL_COLUMN = "beg_acct";
+		}
+
+		INT PIN_FLD_END_ACCT {
+
+			SQL_COLUMN = "end_acct";
+		}
+
+		ENUM PIN_FLD_GRP_STAT {
+
+			SQL_COLUMN = "grp_stat";
+		}
+
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	INT PIN_FLD_ACCTS_NUM_FOR_GROUP {
+
+		SQL_COLUMN = "accts_num_for_group";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_CURRENCY_ONLY {
+
+		SQL_COLUMN = "currency_only";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "end_t";
+	}
+
+	ARRAY PIN_FLD_GL_ACCTS {
+
+		SQL_TABLE = "ledger_report_accts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		STRING PIN_FLD_AR_DISC_GL_ACCT {
+
+			SQL_COLUMN = "ar_disc_gl_acct";
+		}
+
+		STRING PIN_FLD_AR_GROSS_GL_ACCT {
+
+			SQL_COLUMN = "ar_gross_gl_acct";
+		}
+
+		STRING PIN_FLD_AR_NET_GL_ACCT {
+
+			SQL_COLUMN = "ar_net_gl_acct";
+		}
+
+		STRING PIN_FLD_AR_TAX_GL_ACCT {
+
+			SQL_COLUMN = "ar_tax_gl_acct";
+		}
+
+		STRING PIN_FLD_BILL_NO {
+
+			SQL_COLUMN = "bill_no";
+		}
+
+		DECIMAL PIN_FLD_CR_AR_DISC_AMT {
+
+			SQL_COLUMN = "cr_ar_disc_amt";
+		}
+
+		DECIMAL PIN_FLD_CR_AR_GROSS_AMT {
+
+			SQL_COLUMN = "cr_ar_gross_amt";
+		}
+
+		DECIMAL PIN_FLD_CR_AR_NET_AMT {
+
+			SQL_COLUMN = "cr_ar_net_amt";
+		}
+
+		DECIMAL PIN_FLD_CR_AR_TAX_AMT {
+
+			SQL_COLUMN = "cr_ar_tax_amt";
+		}
+
+		DECIMAL PIN_FLD_CR_OFF_DISC_AMT {
+
+			SQL_COLUMN = "cr_off_disc_amt";
+		}
+
+		DECIMAL PIN_FLD_CR_OFF_GROSS_AMT {
+
+			SQL_COLUMN = "cr_off_gross_amt";
+		}
+
+		DECIMAL PIN_FLD_CR_OFF_NET_AMT {
+
+			SQL_COLUMN = "cr_off_net_amt";
+		}
+
+		DECIMAL PIN_FLD_CR_OFF_TAX_AMT {
+
+			SQL_COLUMN = "cr_off_tax_amt";
+		}
+
+		DECIMAL PIN_FLD_DB_AR_DISC_AMT {
+
+			SQL_COLUMN = "db_ar_disc_amt";
+		}
+
+		DECIMAL PIN_FLD_DB_AR_GROSS_AMT {
+
+			SQL_COLUMN = "db_ar_gross_amt";
+		}
+
+		DECIMAL PIN_FLD_DB_AR_NET_AMT {
+
+			SQL_COLUMN = "db_ar_net_amt";
+		}
+
+		DECIMAL PIN_FLD_DB_AR_TAX_AMT {
+
+			SQL_COLUMN = "db_ar_tax_amt";
+		}
+
+		DECIMAL PIN_FLD_DB_OFF_DISC_AMT {
+
+			SQL_COLUMN = "db_off_disc_amt";
+		}
+
+		DECIMAL PIN_FLD_DB_OFF_GROSS_AMT {
+
+			SQL_COLUMN = "db_off_gross_amt";
+		}
+
+		DECIMAL PIN_FLD_DB_OFF_NET_AMT {
+
+			SQL_COLUMN = "db_off_net_amt";
+		}
+
+		DECIMAL PIN_FLD_DB_OFF_TAX_AMT {
+
+			SQL_COLUMN = "db_off_tax_amt";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		INT PIN_FLD_GL_ID {
+
+			SQL_COLUMN = "gl_id";
+		}
+
+		STRING PIN_FLD_ITEM_NAME {
+
+			SQL_COLUMN = "item_name";
+		}
+
+		STRING PIN_FLD_ITEM_NO {
+
+			SQL_COLUMN = "item_no";
+		}
+
+		STRING PIN_FLD_OFF_DISC_GL_ACCT {
+
+			SQL_COLUMN = "off_disc_gl_acct";
+		}
+
+		STRING PIN_FLD_OFF_GROSS_GL_ACCT {
+
+			SQL_COLUMN = "off_gross_gl_acct";
+		}
+
+		STRING PIN_FLD_OFF_NET_GL_ACCT {
+
+			SQL_COLUMN = "off_net_gl_acct";
+		}
+
+		STRING PIN_FLD_OFF_TAX_GL_ACCT {
+
+			SQL_COLUMN = "off_tax_gl_acct";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+	}
+
+	INT PIN_FLD_GL_REPORT_TYPE {
+
+		SQL_COLUMN = "gl_report_type";
+	}
+
+	STRING PIN_FLD_GL_SEGMENT {
+
+		SQL_COLUMN = "gl_segment";
+	}
+
+	ARRAY PIN_FLD_GL_SEGMENTS_ARRAY {
+
+		SQL_TABLE = "ledger_report_gl_segments_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			SQL_COLUMN = "gl_segment";
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "start_t";
+	}
+
+	ARRAY PIN_FLD_TOTAL_GROUPS_ARRAY {
+
+		SQL_TABLE = "ledger_report_total_groups_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_TOTAL_GROUPS {
+
+			SQL_COLUMN = "total_groups";
+		}
+
+		INT PIN_FLD_UPDATED_GROUPS {
+
+			SQL_COLUMN = "updated_groups";
+		}
+
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "type";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

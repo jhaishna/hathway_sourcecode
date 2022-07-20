@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_task/state_change/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/state_change/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_task/state_change/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,172 @@
+
+#=======================================
+#  Field PIN_FLD_ACTGINFO
+#=======================================
+
+ARRAY PIN_FLD_ACTGINFO {
+
+	ID = 751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_CYCLE_DOM
+#=======================================
+
+INT PIN_FLD_ACTG_CYCLE_DOM {
+
+	ID = 752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_FUTURE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+	ID = 757;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_NEXT_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+	ID = 755;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_BILL_T
+#=======================================
+
+TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+	ID = 132;
+}
+
+
+#=======================================
+#  Storable Class /event/customer/actginfo
+#=======================================
+
+STORABLE CLASS /event/customer/actginfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the accounting and billing information for accounts. This event is created by the PCM_OP_CUST_SET_ACTGINFO (obsoleted) opcode. The SET_ACTGINFO opcode has been replaced by the more general SET_BILLINFO opcode, and the trail event has been replaced by /event/customer/billinfo/modify.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTGINFO {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			DESCR = "Same as PIN_FLD_ACTG_CYCLE_DOM in /billinfo.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+			DESCR = "Same as PIN_FLD_ACTG_FUTURE_T in /billinfo.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+			DESCR = "Same as PIN_FLD_ACTG_FUTURE_T in /billinfo.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+			DESCR = "Same as PIN_FLD_NEXT_BILL_T in /billinfo.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/actginfo
+#=======================================
+
+STORABLE CLASS /event/customer/actginfo IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTGINFO {
+
+		SQL_TABLE = "event_customer_actginfo_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			SQL_COLUMN = "actg_cycle_dom";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+			SQL_COLUMN = "actg_future_t";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+			SQL_COLUMN = "actg_next_t";
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+			SQL_COLUMN = "next_bill_t";
+		}
+
+	}
+
+}
+

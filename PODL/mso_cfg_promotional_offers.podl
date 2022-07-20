@@ -1,0 +1,574 @@
+
+#=======================================
+#  Field MSO_FLD_CODE
+#=======================================
+
+STRING MSO_FLD_CODE {
+
+	ID = 42212;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+#=======================================
+#  Field MSO_FLD_DEPOSIT_AMOUNT 
+#=======================================
+
+DECIMAL MSO_FLD_DEPOSIT_AMOUNT {
+
+	ID = 43150;
+}
+
+#=======================================
+#  Field MSO_FLD_SUBSCRIPTION_CHARGE 
+#=======================================
+
+DECIMAL MSO_FLD_SUBSCRIPTION_CHARGE {
+
+	ID = 43413;
+}
+
+#=======================================
+#  Field MSO_FLD_NCF_CHARGE 
+#=======================================
+
+DECIMAL MSO_FLD_NCF_CHARGE {
+
+	ID = 46048;
+}
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+#=======================================
+#  Field PIN_FLD_DEPOSIT_PLAN_NAME 
+#=======================================
+
+STRING PIN_FLD_DEPOSIT_PLAN_NAME {
+
+	ID = 4001;
+}
+
+#=======================================
+#  Field MSO_FLD_PLAN_NAME 
+#=======================================
+
+STRING MSO_FLD_PLAN_NAME {
+
+	ID = 43005;
+}
+
+#=======================================
+#  Field MSO_FLD_PACKAGE_NAME 
+#=======================================
+
+STRING MSO_FLD_PACKAGE_NAME {
+
+	ID = 40080;
+}
+
+
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+#=======================================
+#  Field MSO_FLD_SUBSCRIPTION_PLAN_OBJ 
+#=======================================
+
+POID MSO_FLD_SUBSCRIPTION_PLAN_OBJ {
+
+	ID = 41152;
+}
+
+
+#=======================================
+#  Field MSO_FLD_HW_PLAN_OBJ 
+#=======================================
+
+POID MSO_FLD_HW_PLAN_OBJ {
+
+	ID = 41220;
+}
+
+#=======================================
+#  Field PIN_FLD_BASE_RATE_PLAN_OBJ 
+#=======================================
+
+POID PIN_FLD_BASE_RATE_PLAN_OBJ {
+
+	ID = 9844;
+}
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_promotional_offers
+#=======================================
+
+STORABLE CLASS /mso_cfg_promotional_offers {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config table for promotional offers";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CODE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		DESCR = "Offer or Discount Amount";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_DEPOSIT_AMOUNT {
+
+		DESCR = "ISP Deposit Amount";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_SUBSCRIPTION_CHARGE {
+
+		DESCR = "ISP Subscription Charge Amount";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}	
+
+	DECIMAL MSO_FLD_NCF_CHARGE {
+
+		DESCR = "CATV Subscriptoin Base Pack Charge Amount";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}	
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "Discount Validity End Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Plan Name having Discount Configuraion";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DEPOSIT_PLAN_NAME {
+
+		DESCR = "ISP Deposit Plan Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_PLAN_NAME {
+
+		DESCR = "ISP Subscription Plan Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_PACKAGE_NAME {
+
+		DESCR = "CATV Subscription Plan Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		DESCR = "Plan POID having Discount Configuration";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_SUBSCRIPTION_PLAN_OBJ {
+
+		DESCR = "ISP Subscription Plan POID";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_HW_PLAN_OBJ {
+
+		DESCR = "ISP HW Deposit Plan POID";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BASE_RATE_PLAN_OBJ {
+
+		DESCR = "CATV Subscription Base Plan POID";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TYPE_STR {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_promotional_offers
+#=======================================
+
+STORABLE CLASS /mso_cfg_promotional_offers IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_promotional_offers_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CODE {
+
+		SQL_COLUMN = "offer_code";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		SQL_COLUMN = "offer_amount";
+	}
+
+	DECIMAL MSO_FLD_SUBSCRIPTION_CHARGE {
+
+		SQL_COLUMN = "isp_sub_amt";
+	}
+
+	DECIMAL MSO_FLD_DEPOSIT_AMOUNT {
+
+		SQL_COLUMN = "isp_deposit_amt";
+	}
+
+	DECIMAL MSO_FLD_NCF_CHARGE {
+
+		SQL_COLUMN = "catv_sub_amt";
+	}
+
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "disc_end_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "plan_name";
+	}
+
+	STRING MSO_FLD_PLAN_NAME {
+
+		SQL_COLUMN = "isp_sub_plan_name";
+	}
+
+	STRING PIN_FLD_DEPOSIT_PLAN_NAME {
+
+		SQL_COLUMN = "isp_deposit_plan_name";
+	}
+
+	STRING MSO_FLD_PACKAGE_NAME {
+
+		SQL_COLUMN = "catv_sub_plan_name";
+	}
+
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		SQL_COLUMN = "plan_obj";
+	}
+
+	POID MSO_FLD_SUBSCRIPTION_PLAN_OBJ {
+
+		SQL_COLUMN = "isp_sub_plan_obj";
+	}
+
+	POID MSO_FLD_HW_PLAN_OBJ {
+
+		SQL_COLUMN = "isp_deposit_plan_obj";
+	}
+
+	POID PIN_FLD_BASE_RATE_PLAN_OBJ {
+
+		SQL_COLUMN = "catv_sub_plan_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_TYPE_STR {
+
+		SQL_COLUMN = "offer_type";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

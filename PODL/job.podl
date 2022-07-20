@@ -1,0 +1,752 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACK_EVENT_CNT
+#=======================================
+
+INT PIN_FLD_ACK_EVENT_CNT {
+
+	ID = 9153;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_CNT
+#=======================================
+
+INT PIN_FLD_BATCH_CNT {
+
+	ID = 9154;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_JOB_CREATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_JOB_CREATION_T {
+
+	ID = 9158;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESSING_TIME
+#=======================================
+
+INT PIN_FLD_PROCESSING_TIME {
+
+	ID = 9159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+	ID = 8205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+	ID = 8204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+	ID = 1518;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_SIZE
+#=======================================
+
+INT PIN_FLD_BATCH_SIZE {
+
+	ID = 1373;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEST_DATABASE
+#=======================================
+
+STRING PIN_FLD_DEST_DATABASE {
+
+	ID = 9156;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SRC_DATABASE
+#=======================================
+
+STRING PIN_FLD_SRC_DATABASE {
+
+	ID = 9162;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING
+#=======================================
+
+STRING PIN_FLD_STRING {
+
+	ID = 1893;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USER_NAME
+#=======================================
+
+STRING PIN_FLD_USER_NAME {
+
+	ID = 9164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REQUEST_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_REQUEST_INFO {
+
+	ID = 9203;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODE
+#=======================================
+
+ENUM PIN_FLD_MODE {
+
+	ID = 1576;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RERATE_REASON
+#=======================================
+
+INT PIN_FLD_RERATE_REASON {
+
+	ID = 9206;
+}
+
+
+#=======================================
+#  Storable Class /job
+#=======================================
+
+STORABLE CLASS /job {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the /account object which is responsible for creating this job.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_ACK_EVENT_CNT {
+
+		DESCR = "Number of acknowledgements received from different pipelines, AMT specific";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_BATCH_CNT {
+
+		DESCR = "Number of batches in this job object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_JOB_CREATION_T {
+
+		DESCR = "Job object creation time";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Process Name";
+		ORDER = 0;
+		LENGTH = 32;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_PROCESSING_TIME {
+
+		DESCR = "Time taken (in secs) to process the job";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+		DESCR = "Time when the job-processing got over";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+		DESCR = "Time to start processing the job";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /job/amt
+#=======================================
+
+STORABLE CLASS /job/amt {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "AMT job.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		DESCR = "AMT-specific job info.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_SIZE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEST_DATABASE {
+
+			ORDER = 0;
+			LENGTH = 32;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SRC_DATABASE {
+
+			ORDER = 0;
+			LENGTH = 32;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STRING {
+
+			ORDER = 0;
+			LENGTH = 2000;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_USER_NAME {
+
+			ORDER = 0;
+			LENGTH = 32;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /job/rerate
+#=======================================
+
+STORABLE CLASS /job/rerate {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Class to store rerating request";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_REQUEST_INFO {
+
+		DESCR = "Substruct to hold rerating request specific information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Ordering for rerating - By End Time (1), By Created Time (2).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_MODE {
+
+			DESCR = "Job creation mode - Normal (1), Failed (2).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RERATE_REASON {
+
+			DESCR = "reason why the rerate job is created.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Job status - Uninitialized (0), New (1), Waiting Account Lock (2), Account Locked (3) Rerated (4), Ready for Recycle (5), Rerating Failed (6), Updating (8), Completed (-1).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /job
+#=======================================
+
+STORABLE CLASS /job IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "job_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	INT PIN_FLD_ACK_EVENT_CNT {
+
+		SQL_COLUMN = "ack_event_cnt";
+	}
+
+	INT PIN_FLD_BATCH_CNT {
+
+		SQL_COLUMN = "batch_cnt";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_JOB_CREATION_T {
+
+		SQL_COLUMN = "job_creation_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	INT PIN_FLD_PROCESSING_TIME {
+
+		SQL_COLUMN = "processing_time";
+	}
+
+	TIMESTAMP PIN_FLD_PROCESS_END_T {
+
+		SQL_COLUMN = "process_end_t";
+	}
+
+	TIMESTAMP PIN_FLD_PROCESS_START_T {
+
+		SQL_COLUMN = "process_start_t";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /job/amt
+#=======================================
+
+STORABLE CLASS /job/amt IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		SQL_TABLE = "job_amt_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_SIZE {
+
+			SQL_COLUMN = "batch_size";
+		}
+
+		STRING PIN_FLD_DEST_DATABASE {
+
+			SQL_COLUMN = "dest_database";
+		}
+
+		STRING PIN_FLD_SRC_DATABASE {
+
+			SQL_COLUMN = "src_database";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		STRING PIN_FLD_STRING {
+
+			SQL_COLUMN = "spec_contents";
+		}
+
+		STRING PIN_FLD_USER_NAME {
+
+			SQL_COLUMN = "user_name";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /job/rerate
+#=======================================
+
+STORABLE CLASS /job/rerate IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_REQUEST_INFO {
+
+		SQL_TABLE = "job_rerate_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		ENUM PIN_FLD_MODE {
+
+			SQL_COLUMN = "rerate_mode";
+		}
+
+		INT PIN_FLD_RERATE_REASON {
+
+			SQL_COLUMN = "rerate_reason";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+}
+

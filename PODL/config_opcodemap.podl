@@ -1,0 +1,266 @@
+
+#=======================================
+#  Field PIN_FLD_OPCODES
+#=======================================
+
+ARRAY PIN_FLD_OPCODES {
+
+	ID = 886;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE_MAP
+#=======================================
+
+ARRAY PIN_FLD_OPCODE_MAP {
+
+	ID = 7451;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESSING_STAGE
+#=======================================
+
+ENUM PIN_FLD_PROCESSING_STAGE {
+
+	ID = 7452;
+}
+
+
+#=======================================
+#  Storable Class /config/opcodemap
+#=======================================
+
+STORABLE CLASS /config/opcodemap {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to set up the service type to opcode mapping used when a framework needs to determine which opcode to call based on the processing stage.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OPCODES {
+
+		DESCR = "An array to hold the list of opcodes that require a opcode map.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "The name of the opcode.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "Opcode that is called.";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_OPCODE_MAP {
+
+			DESCR = "An array of values that hold the mapping of type to opcode num for each processing stage (e.g. preprocess). The processing stage is used as the elemid in the array. The elements are sorted as alphanumeric strings.";
+			ORDER = 3;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_OPCODE {
+
+				DESCR = "Opcode to be called.";
+				ORDER = 1;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_TYPE_STR {
+
+				DESCR = "The type used to map the opcode. This could be a service type or any other string.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM PIN_FLD_PROCESSING_STAGE {
+
+			DESCR = "The processing stage.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/opcodemap/gsm
+#=======================================
+
+STORABLE CLASS /config/opcodemap/gsm {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Abstract class to hold the opcode map for the generic wireless framework.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/opcodemap/tcf
+#=======================================
+
+STORABLE CLASS /config/opcodemap/tcf {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Abstract class to hold the opcode map for the generic wireless framework.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/opcodemap
+#=======================================
+
+STORABLE CLASS /config/opcodemap IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OPCODES {
+
+		SQL_TABLE = "config_opcodemap_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		ARRAY PIN_FLD_OPCODE_MAP {
+
+			SQL_TABLE = "config_opcodemap_opcode_map_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_OPCODE {
+
+				SQL_COLUMN = "opcode";
+			}
+
+			STRING PIN_FLD_TYPE_STR {
+
+				SQL_COLUMN = "type_str";
+			}
+
+		}
+
+		ENUM PIN_FLD_PROCESSING_STAGE {
+
+			SQL_COLUMN = "processing_stage";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/opcodemap/gsm
+#=======================================
+
+STORABLE CLASS /config/opcodemap/gsm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/opcodemap/tcf
+#=======================================
+
+STORABLE CLASS /config/opcodemap/tcf IMPLEMENTATION ORACLE7 {
+
+}
+

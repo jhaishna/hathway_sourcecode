@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/misc
+#=======================================
+
+STORABLE CLASS /item/misc {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent miscellaneous items.  These items are created from various events that have a balance (currency) impact and are not mapped to any other type of items.  This item type includes amounts from usage generated events, tax events, etc.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/misc
+#=======================================
+
+STORABLE CLASS /item/misc IMPLEMENTATION ORACLE7 {
+
+}
+

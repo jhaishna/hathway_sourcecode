@@ -1,0 +1,121 @@
+
+#=======================================
+#  Field PIN_FLD_ARGS
+#=======================================
+
+ARRAY PIN_FLD_ARGS {
+
+	ID = 49;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NUM
+#=======================================
+
+ENUM PIN_FLD_FIELD_NUM {
+
+	ID = 89;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Storable Class /event/control_rerate
+#=======================================
+
+STORABLE CLASS /event/control_rerate {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Control object for each run of Re-rate/Re-bill. This control object identifies the re-rated events for each run of re-rating/re-billing. The pointer to this is stored in the Session Object field of re-rated events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		DESCR = "Each array element identifies a distinct search criteria used for a given run of re-rating Each arg is a field-number:field-value pair. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_FIELD_NUM {
+
+			DESCR = "Field number. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Field Value. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/control_rerate
+#=======================================
+
+STORABLE CLASS /event/control_rerate IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARGS {
+
+		SQL_TABLE = "event_control_rerate_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_FIELD_NUM {
+
+			SQL_COLUMN = "field_num";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "field_val";
+		}
+
+	}
+
+}
+

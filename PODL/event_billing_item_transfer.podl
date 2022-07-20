@@ -1,0 +1,148 @@
+
+#=======================================
+#  Field PIN_FLD_ACTION_INFO
+#=======================================
+
+ARRAY PIN_FLD_ACTION_INFO {
+
+	ID = 1826;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AR_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_AR_BILL_OBJ {
+
+	ID = 796;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BUFFER
+#=======================================
+
+BUF PIN_FLD_BUFFER {
+
+	ID = 34;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/item/transfer
+#=======================================
+
+STORABLE CLASS /event/billing/item/transfer {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture transfer of funds between  items. The details of the transfer are in the PIN_FLD_ITEMS array of the base /event/billing/item class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTION_INFO {
+
+		DESCR = "Array of transfer information. There will be one transfer per AR bill. This array will contain the AR bill object, amount involved in the transfer, and the the list of items stored in blob object in xml format.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Amount associated with this transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_AR_BILL_OBJ {
+
+			DESCR = "Link to the item object being affected.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BUF PIN_FLD_BUFFER {
+
+			DESCR = "Container to hold the details on item transfer. This information will be store in XML format.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/item/transfer
+#=======================================
+
+STORABLE CLASS /event/billing/item/transfer IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTION_INFO {
+
+		SQL_TABLE = "event_item_transfer_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		POID PIN_FLD_AR_BILL_OBJ {
+
+			SQL_COLUMN = "ar_bill_obj";
+		}
+
+		BUF PIN_FLD_BUFFER {
+
+			SQL_TABLE = "event_item_transfer_buf_t";
+			SQL_COLUMN = "buffer";
+			SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+		}
+
+	}
+
+}
+

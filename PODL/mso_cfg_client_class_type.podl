@@ -1,0 +1,352 @@
+
+#=======================================
+#  Field MSO_FLD_CLIENT_CLASSES
+#=======================================
+
+ARRAY MSO_FLD_CLIENT_CLASSES {
+
+	ID = 42136;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CLIENT_CLASS_DESCR
+#=======================================
+
+STRING MSO_FLD_CLIENT_CLASS_DESCR {
+
+	ID = 42188;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CLIENT_CLASS_ID
+#=======================================
+
+INT MSO_FLD_CLIENT_CLASS_ID {
+
+	ID = 42115;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CLIENT_CLASS_NAME
+#=======================================
+
+STRING MSO_FLD_CLIENT_CLASS_NAME {
+
+	ID = 42113;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TECHNOLOGY
+#=======================================
+
+ENUM MSO_FLD_TECHNOLOGY {
+
+	ID = 41105;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_client_class_type
+#=======================================
+
+STORABLE CLASS /mso_cfg_client_class_type {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CLIENT_CLASSES {
+
+		DESCR = "Client Classes";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CLIENT_CLASS_DESCR {
+
+			DESCR = "Client Class description";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_CLIENT_CLASS_ID {
+
+			DESCR = "Unique class id";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_CLIENT_CLASS_NAME {
+
+			DESCR = "Client class name.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_TECHNOLOGY {
+
+			DESCR = "1-DOCSIS 2.0, 2- DOCSIS 3.0, 3-ETHERNET, 4- FIBER, 5-WIRELESS";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Class description.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_client_class_type
+#=======================================
+
+STORABLE CLASS /mso_cfg_client_class_type IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_client_class_type_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CLIENT_CLASSES {
+
+		SQL_TABLE = "mso_cfg_client_classes_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CLIENT_CLASS_DESCR {
+
+			SQL_COLUMN = "client_class_descr";
+		}
+
+		INT MSO_FLD_CLIENT_CLASS_ID {
+
+			SQL_COLUMN = "client_class_id";
+		}
+
+		STRING MSO_FLD_CLIENT_CLASS_NAME {
+
+			SQL_COLUMN = "client_class_name";
+		}
+
+		ENUM MSO_FLD_TECHNOLOGY {
+
+			SQL_COLUMN = "technology";
+		}
+
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

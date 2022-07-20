@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_refund
+#=======================================
+
+STORABLE CLASS /item/mso_refund {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Deposit Refund Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_refund
+#=======================================
+
+STORABLE CLASS /item/mso_refund IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,391 @@
+
+#=======================================
+#  Field PIN_FLD_EXPORT_GL_AUDIT_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_EXPORT_GL_AUDIT_INFO {
+
+	ID = 9806;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROCESS_AUDIT_OBJ
+#=======================================
+
+POID PIN_FLD_PROCESS_AUDIT_OBJ {
+
+	ID = 8233;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SESSION_OBJ
+#=======================================
+
+POID PIN_FLD_SESSION_OBJ {
+
+	ID = 43;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_STR
+#=======================================
+
+STRING PIN_FLD_STATUS_STR {
+
+	ID = 9664;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_INFO
+#=======================================
+
+ARRAY PIN_FLD_GL_REPORT_INFO {
+
+	ID = 9801;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_NON_MONETARY_FLAG
+#=======================================
+
+ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+	ID = 9805;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_FREQUENCY_TYPE
+#=======================================
+
+ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+	ID = 9803;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_REPORT_POID_LIST
+#=======================================
+
+STRING PIN_FLD_GL_REPORT_POID_LIST {
+
+	ID = 9802;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENT
+#=======================================
+
+STRING PIN_FLD_GL_SEGMENT {
+
+	ID = 517;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID_LIST
+#=======================================
+
+STRING PIN_FLD_RESOURCE_ID_LIST {
+
+	ID = 975;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /process_audit/export_gl
+#=======================================
+
+STORABLE CLASS /process_audit/export_gl {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This object contains audit information about each run of the application pin_ledger_report in export mode. While this information is used internally by the application, the end-user can also use this audit in order to regenerate (and export) reports for earlier periods. There will be one instance of this object for each run of the application (including when the application is run with any of the optional switches). There will be an array element for each individual ledger report generated within the run.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_EXPORT_GL_AUDIT_INFO {
+
+		DESCR = "Contains audit information for a single exported report";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROCESS_AUDIT_OBJ {
+
+			DESCR = "If the application was invoked with the option to resend or regenerate a previously generated report or reports, this field will contain the POID of the audit object appropriate to the relevant previous run of the application. This will be a NULL POID (POID ID 0) otherwise.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PROGRAM_NAME {
+
+			DESCR = "Command-line string that was used to invoke pin_ledger_report. The primary purpose of this string is to record the switches used to invoke the application.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SESSION_OBJ {
+
+			DESCR = "Link to the object that represents the session within which the application ran. It thus captures the login information for the CM connection session.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATUS_STR {
+
+			DESCR = "This field is used primarily for allowing parallel runs of the export application. This status string acts as a locking mechanism such that only one instance of the application can process a given GL segment in the configuration. It has the secondary purpose of flagging the case when the export application terminates abnormally (that is, crashes) without resetting this field to indicate the run has completed. After abnormal termination, the value of this field will remain as '<segment_name>_IN_PROGRESS' where <segment_name> is the name of the segment against which the application was run. If all segments were being processed, <segment_name> will be 'All'. When the application is run again with switch -restart, this field is set to '<segment_name>_INCOMPLETE'. When application exits normally (with or without any processing error), this field is set to '<segment_name>_COMPLETED'.";
+			ORDER = 0;
+			LENGTH = 127;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_GL_REPORT_INFO {
+
+		DESCR = "Contains audit information for a single exported report";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			DESCR = "End time of the ledger reporting period";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+			DESCR = "Indicates if the list of non-monetary resource IDs provided in PIN_FLD_RESOURCE_ID_LIST were included in or excluded from the report. Possible values are 1 (include - PIN_GL_INCLUDE_NON_MONETARY_RESOURCE) and 0 (exclude - PIN_GL_EXCLUDE_NON_MONETARY_RESOURCE). This field will be unused if PIN_FLD_RESOURCE_ID_LIST is blank.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+			DESCR = "Indicates the frequency of running ledger reports. Possible types are 1 (daily - PIN_GL_REPORT_FREQUENCY_DAILY), 2 (weekly - PIN_GL_REPORT_FREQUENCY_WEEKLY), 3 (monthly - PIN_GL_REPORT_FREQUENCY_MONTHLY), 4 (yearly - PIN_GL_REPORT_FREQUENCY_YEARLY), 5 (specified dates - PIN_GL_REPORT_FREQUENCY_SPECIFIED_DATES).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_GL_REPORT_POID_LIST {
+
+			DESCR = "Contains a list of 1, 2 or 3 /ledger_report POIDs. The first one represents the basic report generated using ledger report opcode. If there are 2 POIDs, the second one is either the custom report generated after execution of PCM_OP_GL_POL_EXPORT_GL policy opcode (in the case of report types Billed, Billed earned and Previously billed earned) or the incremental report created using ledger report for previous period (in the case of report types Unbilled, Unbilled earned, Unbilled unearned and Billed unearned). If there are 3 POIDs, the second one is the custom report and the third one is the incremental report.";
+			ORDER = 0;
+			LENGTH = 4000;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			DESCR = "GL segment for which the ledger report was run";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RESOURCE_ID_LIST {
+
+			DESCR = "Contains a blank-separated list of non-monetary resource IDs that were included in or excluded from the report. This field is used in conjunction with PIN_FLD_GL_NON_MONETARY_FLAG and could be empty to indicate that no filtering of non-monetary resources was done.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Indicates the type of revenue reported. Possible types are 0x01 (Unbilled - PIN_GL_TYPE_UNBILLED), 0x02 (Billed - PIN_GL_TYPE_BILLED), 0x04 (Unbilled earned - PIN_GL_TYPE_UNBILLED_EARNED), 0x08 (Billed earned - PIN_GL_TYPE_BILLED_EARNED), 0x10 (Unbilled unearned - PIN_GL_TYPE_UNBILLED_UNEARNED), 0x20 (Billed unearned - PIN_GL_TYPE_BILLED_UNEARNED), 0x40 (Previously billed earned - PIN_GL_TYPE_PREV_BILLED_EARNED).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/export_gl
+#=======================================
+
+STORABLE CLASS /process_audit/export_gl IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_EXPORT_GL_AUDIT_INFO {
+
+		SQL_TABLE = "proc_aud_export_gl_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROCESS_AUDIT_OBJ {
+
+			SQL_COLUMN = "process_audit_obj";
+		}
+
+		STRING PIN_FLD_PROGRAM_NAME {
+
+			SQL_COLUMN = "program_command";
+		}
+
+		POID PIN_FLD_SESSION_OBJ {
+
+			SQL_COLUMN = "session_obj";
+		}
+
+		STRING PIN_FLD_STATUS_STR {
+
+			SQL_COLUMN = "status_str";
+		}
+
+	}
+
+	ARRAY PIN_FLD_GL_REPORT_INFO {
+
+		SQL_TABLE = "proc_aud_export_gl_report_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			SQL_COLUMN = "end_t";
+		}
+
+		ENUM PIN_FLD_GL_NON_MONETARY_FLAG {
+
+			SQL_COLUMN = "non_monetary_flag";
+		}
+
+		ENUM PIN_FLD_GL_REPORT_FREQUENCY_TYPE {
+
+			SQL_COLUMN = "gl_report_frequency_type";
+		}
+
+		STRING PIN_FLD_GL_REPORT_POID_LIST {
+
+			SQL_COLUMN = "ledger_report_poid_list";
+		}
+
+		STRING PIN_FLD_GL_SEGMENT {
+
+			SQL_COLUMN = "gl_segment";
+		}
+
+		STRING PIN_FLD_RESOURCE_ID_LIST {
+
+			SQL_COLUMN = "resource_id_list";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

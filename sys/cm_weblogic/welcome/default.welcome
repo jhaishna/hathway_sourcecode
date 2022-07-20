@@ -1,0 +1,10 @@
+Welcome to the wonderful world of the Internet
+
+Congratulations for selecting the ${price_plan} plan!
+
+Your new account ID is:   ${acct_poid}
+Your new login name is:   ${account_name}
+Your login password is:   ${account_password}
+Your new email name is:   ${email_name}
+Your email password is:   ${email_password}
+

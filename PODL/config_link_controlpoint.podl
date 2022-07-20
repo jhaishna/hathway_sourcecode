@@ -1,0 +1,200 @@
+
+#=======================================
+#  Field PIN_FLD_CONTROLPOINT_LINKS
+#=======================================
+
+ARRAY PIN_FLD_CONTROLPOINT_LINKS {
+
+	ID = 9034;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONTROL_POINT
+#=======================================
+
+STRING PIN_FLD_CONTROL_POINT {
+
+	ID = 9021;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_TYPE
+#=======================================
+
+STRING PIN_FLD_OBJECT_TYPE {
+
+	ID = 9019;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT_CONTROL_POINT
+#=======================================
+
+STRING PIN_FLD_PARENT_CONTROL_POINT {
+
+	ID = 9022;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT_OBJECT_TYPE
+#=======================================
+
+STRING PIN_FLD_PARENT_OBJECT_TYPE {
+
+	ID = 9020;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE
+#=======================================
+
+INT PIN_FLD_USAGE {
+
+	ID = 9035;
+}
+
+
+#=======================================
+#  Storable Class /config/link_controlpoint
+#=======================================
+
+STORABLE CLASS /config/link_controlpoint {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores link information";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CONTROLPOINT_LINKS {
+
+		DESCR = "Link details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CONTROL_POINT {
+
+			DESCR = "Control point where the data was collected.";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OBJECT_TYPE {
+
+			DESCR = "Type of the process_audit object to correlate.";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARENT_CONTROL_POINT {
+
+			DESCR = "Control point where the data for the parent object was collected.";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARENT_OBJECT_TYPE {
+
+			DESCR = "Type of the process_audit object to correlate with.";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_USAGE {
+
+			DESCR = "Control Usage: (0) correlation between rating control point and corresponding re-rating control point. (1) correlation between rating control point and corresponding writeoff control point.  Value range of 0-999 is reserved for Portal use.  Values over 1000 are available for use by Customers.";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/link_controlpoint
+#=======================================
+
+STORABLE CLASS /config/link_controlpoint IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CONTROLPOINT_LINKS {
+
+		SQL_TABLE = "config_controlpoints_links_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CONTROL_POINT {
+
+			SQL_COLUMN = "control_point";
+		}
+
+		STRING PIN_FLD_OBJECT_TYPE {
+
+			SQL_COLUMN = "object_type";
+		}
+
+		STRING PIN_FLD_PARENT_CONTROL_POINT {
+
+			SQL_COLUMN = "parent_ctrl_point";
+		}
+
+		STRING PIN_FLD_PARENT_OBJECT_TYPE {
+
+			SQL_COLUMN = "parent_obj_type";
+		}
+
+		INT PIN_FLD_USAGE {
+
+			SQL_COLUMN = "usage";
+		}
+
+	}
+
+}
+

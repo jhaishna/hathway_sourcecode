@@ -1,0 +1,198 @@
+
+#=======================================
+#  Field PIN_FLD_STATUSES
+#=======================================
+
+ARRAY PIN_FLD_STATUSES {
+
+	ID = 144;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLOSE_WHEN_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+	ID = 149;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LIFECYCLE_STATE
+#=======================================
+
+INT PIN_FLD_LIFECYCLE_STATE {
+
+	ID = 8052;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_STATE_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+	ID = 8053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Storable Class /event/customer/status
+#=======================================
+
+STORABLE CLASS /event/customer/status {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the account or service status information. This event is created by the opcode PCM_OP_CUST_SET_STATUS. When the account status is changed, the PIN_FLD_SERVICE_OBJ of the base /event class is not set.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_STATUSES {
+
+		DESCR = "Array of status information. The element-id's are significant. The array element with element-id 0 represents the old status information and the array element with element-id 1 represents new status information.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+			DESCR = "Same as PIN_FLD_CLOSE_WHEN_T in /account or /service.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_LIFECYCLE_STATE {
+
+			DESCR = "Same as PIN_FLD_LIFECYCLE_STATE in /service. See pin_cust.h for possible values.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+			DESCR = "Expiration time of the service state.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Same as PIN_FLD_STATUS in /account or /service.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			DESCR = "Same as PIN_FLD_STATUS_FLAGS in /account or /service.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/status
+#=======================================
+
+STORABLE CLASS /event/customer/status IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_STATUSES {
+
+		SQL_TABLE = "event_customer_statuses_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+			SQL_COLUMN = "close_when_t";
+		}
+
+		INT PIN_FLD_LIFECYCLE_STATE {
+
+			SQL_COLUMN = "lifecycle_state";
+		}
+
+		TIMESTAMP PIN_FLD_SERVICE_STATE_EXPIRATION_T {
+
+			SQL_COLUMN = "state_expiration_t";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			SQL_COLUMN = "status_flags";
+		}
+
+	}
+
+}
+

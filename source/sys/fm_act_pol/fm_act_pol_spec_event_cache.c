@@ -1,0 +1,704 @@
+/*******************************************************************
+ *
+* Copyright (c) 1999, 2019, Oracle and/or its affiliates. All rights reserved.
+ *
+ *      This material is the confidential property of Oracle Corporation
+ *      or its licensors and may be used, reproduced, stored or transmitted
+ *      only in accordance with a valid Oracle license or sublicense agreement.
+ *
+ *******************************************************************/
+
+#ifndef lint
+static  char    Sccs_id[] = "@(#)$Id: fm_act_pol_spec_event_cache.c /cgbubrm_omc.19.main.portalbase/1 2019/08/14 17:10:49 mnarasim Exp $";
+#endif
+
+/*******************************************************************
+ * Contains the PCM_OP_ACT_POL_SPEC_EVENT_CACHE operation. 
+ *******************************************************************/
+
+/*******************************************************************
+ * The event cache is mainly used to improve the invoicing 
+ * performance, i.e., the efficiency in the event search during
+ * invoicing.  By default, fields from the BAL_IMPACTS array are
+ * cached in a base table field PIN_FLD_INVOICE_DATA, so that 
+ * the event search will only need to look into the base event table,
+ * which saves time for not doing a table join.  
+ * Note the PIN_FLD_INVOICE_DATA field has a database length limit
+ * of 4000 bytes, if the cache size is greater than 4000 bytes, it 
+ * will be ignored.
+ * If you don't want to use the event cache for some reason, simply
+ * return a NULL pointer to the caller of this opcode. 
+ *******************************************************************/
+
+#include <stdio.h> 
+#include <string.h> 
+#include <time.h> 
+
+#include "pcm.h"
+#include "ops/act.h"
+#include "ops/bal.h"
+#include "pin_currency.h"
+#include "pin_act.h"
+#include "pin_cust.h"
+#include "cm_fm.h"
+#include "pin_errs.h"
+#include "pinlog.h"
+#include "fm_bill_utils.h"
+#include "psiu_business_params.h"
+#include "mso_ops_flds.h"
+
+/*******************************************************************
+ * Routines contained within.
+ *******************************************************************/
+EXPORT_OP void
+op_act_pol_spec_event_cache(
+	cm_nap_connection_t	*connp,
+	int32			opcode,
+	int32			flags,
+	pin_flist_t		*i_flistp,
+	pin_flist_t		**r_flistpp,
+	pin_errbuf_t		*ebufp);
+
+void
+fm_act_pol_spec_event_cache(
+	pcm_context_t	*ctxp,
+	int32		flags,
+	pin_flist_t	*i_flistp,
+	pin_flist_t	**r_flistpp,
+	pin_errbuf_t	*ebufp);
+
+
+void
+mso_act_pol_record_cur_bal(
+	cm_nap_connection_t	*connp,
+	pcm_context_t		*ctxp,
+	pin_flist_t		*i_flistp,
+	pin_errbuf_t		*ebufp)
+;
+
+
+/*******************************************************************
+ * Routines needed from elsewhere.
+ *******************************************************************/
+
+/*******************************************************************
+ * Main routine for the PCM_OP_ACT_POL_SPEC_EVENT_CACHE operation.
+ *******************************************************************/
+void
+op_act_pol_spec_event_cache(
+	cm_nap_connection_t	*connp,
+	int32			opcode,
+	int32			flags,
+	pin_flist_t		*i_flistp,
+	pin_flist_t		**r_flistpp,
+	pin_errbuf_t		*ebufp)
+{
+	pcm_context_t		*ctxp = connp->dm_ctx;
+
+	if (PIN_ERR_IS_ERR(ebufp))
+		return;
+	PIN_ERR_CLEAR_ERR(ebufp);
+
+	/***********************************************************
+	 * Insanity check.
+	 ***********************************************************/
+	if (opcode != PCM_OP_ACT_POL_SPEC_EVENT_CACHE) {
+		pin_set_err(ebufp, PIN_ERRLOC_FM,
+			PIN_ERRCLASS_SYSTEM_DETERMINATE,
+			PIN_ERR_BAD_OPCODE, 0, 0, opcode);
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"op_act_pol_spec_event_cache opcode error", ebufp);
+		return;
+	}
+	/***********************************************************
+	 * Debut what we got.
+	 ***********************************************************/
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+		"op_act_pol_spec_event_cache input flist", i_flistp);
+
+	/***********************************************************
+	 * Do the actual op in a sub.
+	 ***********************************************************/
+	fm_act_pol_spec_event_cache(ctxp, flags, i_flistp, r_flistpp, 
+		ebufp);
+
+	/***********************************************************
+	 * Error?
+	 ***********************************************************/
+	if (PIN_ERR_IS_ERR(ebufp)) {
+		*r_flistpp = (pin_flist_t *)NULL;
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"op_act_pol_spec_event_cache error", ebufp);
+
+	} else {
+
+	/***********************************************************
+	 * Output flist.
+	 ***********************************************************/
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+			"op_act_pol_spec_event_cache output flist", 
+			*r_flistpp);
+
+	}
+	return;
+}
+
+void
+fm_act_pol_spec_event_cache(
+	pcm_context_t		*ctxp,
+	int32			flags,
+	pin_flist_t		*i_flistp,
+	pin_flist_t		**r_flistpp,
+	pin_errbuf_t		*ebufp)
+{
+	pin_flist_t		*bal_flistp = NULL;
+	pin_flist_t		*r_flistp = NULL;
+	pin_flist_t		*flistp = NULL;
+	pin_flist_t		*elem_flistp = NULL;
+	pin_flist_t		*format_flistp = NULL;
+	pin_flist_t		*wrt_iflp = NULL;
+	
+	pin_flist_t		*wrt_oflp = NULL;
+	pin_flist_t		*payment_flistp = NULL;
+	pin_cookie_t		cookie = NULL;
+	int32			rec_id = 0;
+	pin_cookie_t		cookie1 = NULL;
+	int32			rec_id1 = 0;
+	int32			extended_attributes = PIN_BOOLEAN_FALSE;
+	int32			cur_event = 0;
+	int32			*res_id = NULL;
+	void			*vp = NULL;
+	poid_t          	*e_poid = NULL;
+	poid_t          	*plan_poid = NULL;
+	poid_t          	*deal_poid = NULL;
+	pin_flist_t		*obj_flistp = NULL;
+	pin_flist_t		*obj2_flistp = NULL;
+	pin_fld_num_t 		fld_id = 0;
+	int32 			fld_type = 0;
+	poid_t			*evt_pdp = NULL;
+	char			*evt_type = NULL;
+
+	return;
+
+	/**********************************************************
+	 * By default, the following fields in the BAL_IMPACTS
+	 * array will be cached:
+	 *    PIN_FLD_RESOURCE_ID
+	 *	  PIN_FLD_QUANTITY
+	 *	  PIN_FLD_RATE_TAG
+	 *	  PIN_FLD_ITEM_OBJ
+	 *	  PIN_FLD_AMOUNT 
+	 *	  PIN_FLD_IMPACT_TYPE
+	 *	  PIN_FLD_DISCOUNT
+	 *	  PIN_FLD_TAX_CODE
+	 * 
+	 * If customers would like to put more fields from 
+	 * the BAL_IMPACTS array to the cache, they need to keep 
+	 * the rec_id unchanged in the output flist.
+	 * Other fields from other objects or other arrays can be
+	 * put in the output flist and will be cached later too.
+	 **********************************************************/
+	 
+	 
+	 
+	 	//update Payment Type
+	evt_pdp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_POID, 1, ebufp);	
+	
+	if(evt_pdp)
+		evt_type = (char *)PIN_POID_GET_TYPE(evt_pdp);
+
+	if(evt_type && (
+		strcmp(evt_type, "/event/billing/payment/cash") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/cc") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/check") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/dd") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/payorder") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/postalorder") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/voucher") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/wtransfer") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/cash/sp_autopay") == 0 ||
+		strcmp(evt_type, "/event/billing/payment/cash/tds") == 0))
+	{
+		payment_flistp = PIN_FLIST_SUBSTR_GET(i_flistp, PIN_FLD_PAYMENT, 1, ebufp);
+		if(payment_flistp)
+		{
+			if (r_flistp == NULL) {
+                       		r_flistp = PIN_FLIST_CREATE(ebufp);
+                	}
+			PIN_FLIST_FLD_COPY(payment_flistp, PIN_FLD_PAY_TYPE, r_flistp, PIN_FLD_PAY_TYPE, ebufp);
+		}
+	}
+
+	/* Add more OOB fields and customized fields base on configuration */
+	extended_attributes = fm_bill_utils_get_cfg_include_extended_attr(
+							ctxp, ebufp);
+
+	e_poid = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_POID, 0, ebufp);
+	if (extended_attributes &&
+		fm_utils_get_customized_event_format(ctxp, e_poid, 
+			&format_flistp, ebufp)) {
+		r_flistp = PIN_FLIST_CREATE(ebufp);
+
+		/* Loop through format to get customized structures */
+		cookie = NULL;
+		rec_id = 0;
+		while ((flistp = PIN_FLIST_ELEM_GET_NEXT(format_flistp,
+			PIN_FLD_OBJ_DESC, &rec_id, 1, &cookie,
+			ebufp)) != (pin_flist_t *)NULL) {
+			cookie1 = NULL;
+			rec_id1 = 0;
+			while ((elem_flistp = PIN_FLIST_ELEM_GET_NEXT(flistp,
+					PIN_FLD_OBJ_ELEM, &rec_id1, 1, &cookie1,
+					ebufp)) != (pin_flist_t *)NULL) {
+
+				/* Get name and type of field, only sub-structure needed for now */
+				vp = PIN_FLIST_FLD_GET(elem_flistp, PIN_FLD_FIELD_TYPE, 
+					0, ebufp);
+				if (vp) {
+					fld_type = *(int32*)vp;
+				} else {
+					fld_type = 0;
+				}
+				if (vp && fld_type == PIN_FLDT_SUBSTRUCT) {
+					vp = PIN_FLIST_FLD_GET(elem_flistp, PIN_FLD_FIELD_NAME, 
+						0, ebufp);
+				    if (vp) {
+					fld_id = pin_field_of_name((char *)vp);
+
+					/* Get the sub-structure from event, set it into 
+					   output
+					 */
+					vp = PIN_FLIST_FLD_GET(i_flistp, fld_id, 
+							0, ebufp);
+					PIN_FLIST_FLD_SET(r_flistp, fld_id,
+							vp, ebufp);
+				    }
+				}
+				
+			}
+		}
+		
+	}
+
+	/***********************************************************
+	 * Check if the required fields are on the input flist
+	 * If not, just add them to the return flist.
+	 * By default, these fields should be added here.
+	 ***********************************************************/
+	flistp = NULL;
+	cookie = NULL;
+	rec_id = 0;
+	while ((flistp = PIN_FLIST_ELEM_GET_NEXT(i_flistp,
+		PIN_FLD_BAL_IMPACTS, &rec_id, 1, &cookie,
+		ebufp)) != (pin_flist_t *)NULL) {
+		
+			if(evt_type && strcmp(evt_type, "/event/session/telco/broadband") == 0)
+		{
+			res_id = PIN_FLIST_FLD_GET(flistp, PIN_FLD_RESOURCE_ID, 0, ebufp);
+			if(res_id && *res_id != 356)
+				continue;
+		}
+
+		plan_poid = NULL;
+		deal_poid = NULL;
+		/* r_flistp will be NULL if extended attributes parameter is disabled */
+		if (r_flistp == NULL) {
+			r_flistp = PIN_FLIST_CREATE(ebufp);
+		}
+		bal_flistp = PIN_FLIST_ELEM_ADD(r_flistp,
+				PIN_FLD_BAL_IMPACTS, rec_id, 
+				ebufp);
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_RESOURCE_ID, 
+				0, ebufp);
+		PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_RESOURCE_ID,
+				vp, ebufp);
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_QUANTITY, 
+				1, ebufp);
+		if (vp != NULL) {
+			PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_QUANTITY,
+				vp, ebufp);
+		}
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_RATE_TAG, 1, ebufp);
+		if (vp != NULL) {
+			PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_RATE_TAG,
+				vp, ebufp);
+		}
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_ITEM_OBJ, 0, ebufp);
+		PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_ITEM_OBJ,
+			vp, ebufp);
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_AMOUNT, 1, ebufp);
+		if (vp != NULL) {
+			PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_AMOUNT,
+				vp, ebufp);
+		}
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_IMPACT_TYPE, 1, ebufp);
+		if (vp != NULL) {
+			PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_IMPACT_TYPE,
+				vp, ebufp);
+		}
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_DISCOUNT, 1, ebufp);
+		if (vp != NULL) {
+			PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_DISCOUNT,
+				vp, ebufp);
+		}
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_TAX_CODE, 1, ebufp);
+		if (vp != NULL) {
+			PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_TAX_CODE,
+				vp, ebufp);
+		}
+
+		vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_GL_ID, 1, ebufp);
+		if (vp != NULL) {
+			PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_GL_ID,
+				vp, ebufp);
+		}
+
+		if (extended_attributes) {
+			PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,
+				"Adding extended fields and customized fields.");
+
+			/* Base fields to be added 
+			 * Product or Discount Name
+			 * Deal Name
+			 * Plan Name
+			 * (Unit Price will be presented as Rate Tag, already present)
+			 */
+			/* Get product or discount */
+			vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_PRODUCT_OBJ, 1, ebufp);
+			if (vp != NULL && !PIN_POID_IS_NULL(vp)) {
+				fm_bill_utils_read_object(ctxp, vp, &obj_flistp, ebufp);
+				/* No need to distinguish /product or /discount here */
+				if (obj_flistp) {
+					vp = PIN_FLIST_FLD_GET(obj_flistp, PIN_FLD_NAME, 1, ebufp);
+					if (vp != NULL) {
+						PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_PRODUCT_NAME,
+							vp, ebufp);
+					}
+					PIN_FLIST_DESTROY_EX(&obj_flistp, NULL);
+				}
+			}
+
+			/* Get purchased product or discount */
+			vp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_OFFERING_OBJ, 1, ebufp);
+			if (vp != NULL && !PIN_POID_IS_NULL(vp)) {
+				fm_bill_utils_read_object(ctxp, vp, &obj_flistp, ebufp);
+			}
+
+			/* No need to distinguish /purchased_product or /purchased_discount here */
+			if (obj_flistp) {
+				vp = PIN_FLIST_FLD_GET(obj_flistp, PIN_FLD_PLAN_OBJ, 1, ebufp);
+				if (vp != NULL) {
+					plan_poid = vp;
+				}
+				vp = PIN_FLIST_FLD_GET(obj_flistp, PIN_FLD_DEAL_OBJ, 1, ebufp);
+				if (vp != NULL) {
+					deal_poid = vp;
+				}
+			}
+
+			if (plan_poid != NULL && !PIN_POID_IS_NULL(plan_poid)) {
+				fm_bill_utils_read_object(ctxp, plan_poid, &obj2_flistp, ebufp);
+				if (obj2_flistp) {
+					vp = PIN_FLIST_FLD_GET(obj2_flistp, PIN_FLD_NAME, 1, ebufp);
+					if (vp != NULL) {
+						PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_NAME,
+							vp, ebufp);
+					}
+					PIN_FLIST_DESTROY_EX(&obj2_flistp, NULL);
+				}
+			}
+
+			if (deal_poid != NULL && !PIN_POID_IS_NULL(deal_poid)) {
+				fm_bill_utils_read_object(ctxp, deal_poid, &obj2_flistp, ebufp);
+				if (obj2_flistp) {
+					vp = PIN_FLIST_FLD_GET(obj2_flistp, PIN_FLD_NAME, 1, ebufp);
+					if (vp != NULL) {
+						PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_DEAL_NAME,
+							vp, ebufp);
+					}
+					PIN_FLIST_DESTROY_EX(&obj2_flistp, NULL);
+				}
+			}
+
+			PIN_FLIST_DESTROY_EX(&obj_flistp, NULL);
+		}
+	}
+
+	*r_flistpp = r_flistp;
+	PIN_FLIST_DESTROY_EX(&format_flistp, NULL);
+
+	return;
+}
+
+
+
+void
+mso_act_pol_record_cur_bal(
+	cm_nap_connection_t	*connp,
+	pcm_context_t	*ctxp,
+	pin_flist_t	*i_flistp,
+	pin_errbuf_t	*ebufp)
+{
+	pin_flist_t	*bal_flistp = NULL;
+	pin_flist_t	*bal_oflistp = NULL;
+	pin_flist_t	*wrt_iflp = NULL;
+	pin_flist_t	*wrt_oflp = NULL;
+	pin_flist_t	*rd_iflp = NULL;
+	pin_flist_t	*rd_oflp = NULL;
+	pin_flist_t	*tmp_flp = NULL;
+	pin_flist_t	*tmp1_flp = NULL;
+	pin_flist_t	*flistp = NULL;
+
+
+	poid_t		*cur_balpdp = NULL;
+	poid_t		*event_pdp = NULL;
+
+	int		database = 0;
+	int32		flags = 0;
+	int32		lock = 0;
+	int32		rec_id = 0;
+	pin_cookie_t	cookie = NULL;
+	void		*vp = NULL;
+
+	pin_decimal_t	*previous_totalp = NULL;
+	pin_decimal_t	*curr_balp = NULL;
+	pin_decimal_t	*tmp_balp = NULL;
+	pin_decimal_t	*amountp = NULL;
+	double		amount = 0;
+
+	char		*action_name = NULL;	
+	char		*impact_type = NULL;
+	char		*event_type = NULL;	
+	char		msg[1024];
+
+	PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Inside mso_act_pol_record_cur_bal");
+	/**********************************************************
+	 * Record the current balance of the account in 
+	 * /mso_account_balance object
+	 **********************************************************/
+	 /* Check if the event if having any balance impact then 
+	    only proceed					 */
+
+	if(!PIN_FLIST_ELEM_COUNT(i_flistp, PIN_FLD_BAL_IMPACTS, ebufp))
+		return;
+
+	// Find all the balance groups of this account
+	bal_flistp = PIN_FLIST_CREATE(ebufp);
+	PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_ACCOUNT_OBJ, bal_flistp, PIN_FLD_POID, ebufp);
+
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "PCM_OP_BAL_GET_ACCT_BAL_GRP_AND_SVC input flist", bal_flistp);
+	PCM_OP(ctxp, PCM_OP_BAL_GET_ACCT_BAL_GRP_AND_SVC, 0, bal_flistp, &bal_oflistp, ebufp);
+	PIN_FLIST_DESTROY_EX(&bal_flistp, NULL);
+	if(PIN_ERRBUF_IS_ERR(ebufp)){
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "Error in getting balance groups", ebufp);
+		PIN_ERRBUF_RESET(ebufp);
+		return;
+	}
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "PCM_OP_BAL_GET_ACCT_BAL_GRP_AND_SVC return flist", bal_oflistp);
+
+	while ((flistp = PIN_FLIST_ELEM_GET_NEXT(bal_oflistp,
+                PIN_FLD_RESULTS, &rec_id, 1, &cookie,
+                ebufp)) != (pin_flist_t *)NULL) {
+		// Find balances of all the balance groups
+		bal_flistp = PIN_FLIST_CREATE(ebufp);
+		PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_ACCOUNT_OBJ, bal_flistp, PIN_FLD_POID, ebufp);
+		PIN_FLIST_FLD_COPY(flistp, PIN_FLD_BAL_GRP_OBJ, bal_flistp, PIN_FLD_BAL_GRP_OBJ, ebufp);
+		PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_FLAGS, &flags, ebufp);
+		PIN_FLIST_FLD_SET(bal_flistp, PIN_FLD_READ_BALGRP_MODE, &lock, ebufp);
+		PIN_FLIST_ELEM_SET(bal_flistp,NULL, PIN_FLD_BALANCES, PIN_ELEMID_ANY, ebufp);
+
+		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "PCM_OP_BAL_GET_BALANCES input flist", bal_flistp);
+		PCM_OP(ctxp, PCM_OP_BAL_GET_BALANCES, 0, bal_flistp, &tmp1_flp, ebufp);
+		PIN_FLIST_DESTROY_EX(&bal_flistp, NULL);
+		if(PIN_ERRBUF_IS_ERR(ebufp)){
+			PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "Error in getting current balance", ebufp);
+			PIN_ERRBUF_RESET(ebufp);
+			return;
+		}
+		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "PCM_OP_BAL_GET_BALANCES return flist", tmp1_flp);
+		bal_flistp = PIN_FLIST_ELEM_GET(tmp1_flp, PIN_FLD_BALANCES, PIN_CURRENCY_INR, 1, ebufp);
+		if(bal_flistp){
+		    PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "bal_flistp is not null");
+		    if( pbo_decimal_is_null(previous_totalp, ebufp)){
+		        PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "previous_totalp is null");
+		        previous_totalp = pbo_decimal_copy(PIN_FLIST_FLD_GET(bal_flistp, PIN_FLD_CURRENT_BAL, 1, ebufp), ebufp);
+		    }
+		    else{
+		        PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "previous_totalp is not null");
+		        pbo_decimal_add_assign(previous_totalp, PIN_FLIST_FLD_GET(bal_flistp, PIN_FLD_CURRENT_BAL, 1, ebufp), ebufp);
+		    }
+		}
+	}
+
+
+	rec_id = 0;
+	cookie = NULL;
+
+	if(!pbo_decimal_is_null(previous_totalp, ebufp)){
+		sprintf(msg, "Copying previous_totalp(%f) to curr_balp",  (double)pbo_decimal_to_double(previous_totalp, ebufp));
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+	    curr_balp = pbo_decimal_copy(previous_totalp, ebufp);
+	}
+
+
+    /************************************************************
+     * Add the current balance as it will not be commited to DB 
+     * till now
+     ***********************************************************/
+    while ((flistp = PIN_FLIST_ELEM_GET_NEXT(i_flistp,
+            PIN_FLD_BAL_IMPACTS, &rec_id, 1, &cookie,
+            ebufp)) != (pin_flist_t *)NULL) {
+		tmp_balp = PIN_FLIST_FLD_GET(flistp, PIN_FLD_AMOUNT, 1, ebufp);
+		if(tmp_balp){
+			if( pbo_decimal_is_null(amountp, ebufp)){
+				amountp = pbo_decimal_copy(tmp_balp, ebufp);
+				sprintf(msg, "Copying tmp_balp(%f) to accountp",  (double)pbo_decimal_to_double(tmp_balp, ebufp));
+				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+			}
+			else{
+				pbo_decimal_add_assign(amountp, tmp_balp, ebufp);
+				sprintf(msg, "Added tmp_balp(%f) to amountp(%f)",  (double)pbo_decimal_to_double(tmp_balp, ebufp), (double)pbo_decimal_to_double(amountp, ebufp));
+				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+
+			}
+		}
+	}
+
+	if(PIN_ERRBUF_IS_ERR(ebufp)){
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "Error while getting balances", ebufp);
+		PIN_ERRBUF_RESET(ebufp);
+		return;
+	}
+	if( pbo_decimal_is_null(curr_balp, ebufp)){
+		curr_balp = pbo_decimal_copy(amountp, ebufp);
+		sprintf(msg, "Copying amounpt(%f) to curr_balp",  (double)pbo_decimal_to_double(amountp, ebufp));
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+	}
+	else{
+		pbo_decimal_add_assign(curr_balp, amountp, ebufp);
+		sprintf(msg, "Added amountp(%f) to curr_balp(%ld)",  (double)pbo_decimal_to_double(amountp, ebufp), (double)pbo_decimal_to_double(curr_balp, ebufp));
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, msg);
+	}
+
+	if(PIN_ERRBUF_IS_ERR(ebufp)){
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "Error while getting balances1", ebufp);
+		PIN_ERRBUF_RESET(ebufp);
+		return;
+	}
+	// Now get Account no from /account
+	rd_iflp = PIN_FLIST_CREATE(ebufp);
+	PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_ACCOUNT_OBJ, rd_iflp, PIN_FLD_POID, ebufp);
+	PIN_FLIST_FLD_SET(rd_iflp, PIN_FLD_ACCOUNT_NO, NULL, ebufp);
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "PCM_OP_READ_FLDS input flist", rd_iflp);
+	PCM_OP(ctxp, PCM_OP_READ_FLDS, 0, rd_iflp, &rd_oflp, ebufp);
+	PIN_FLIST_DESTROY_EX(&rd_iflp, NULL);
+	if(PIN_ERRBUF_IS_ERR(ebufp)){
+            PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "Error while creating /mso_account_balance", ebufp);
+            PIN_ERRBUF_RESET(ebufp);
+            return;
+	}
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "PCM_OP_READ_FLDS return flist", rd_oflp);
+
+	action_name = pin_malloc(60);
+	memset(action_name, '\0', sizeof(action_name));
+	
+	amount = (double)pbo_decimal_to_double(amountp, ebufp);
+	impact_type = pin_malloc(20);
+	memset(impact_type, '\0', sizeof(impact_type));
+	(amount < 0)? strcpy(impact_type,"CREDIT"):strcpy(impact_type,"DEBIT");
+
+	event_pdp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_POID, 0, ebufp);
+	event_type = pin_malloc(100);
+	memset(event_type, '\0', sizeof(event_type));
+	strcpy(event_type, PIN_POID_GET_TYPE(event_pdp));
+
+	/* Get the action using the opcode which initiated this */
+	if(fm_utils_op_is_ancestor(connp->coip,MSO_OP_CUST_ACTIVATE_CUSTOMER)){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as ACTIVATION");
+		strcpy(action_name, "ACTIVATION");
+	}
+	else if(fm_utils_op_is_ancestor(connp->coip,MSO_OP_CUST_ADD_PLAN)){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as ADD_PLAN");
+		strcpy(action_name, "ADD_PLAN");
+	}
+	else if(fm_utils_op_is_ancestor(connp->coip,MSO_OP_CUST_CHANGE_PLAN)){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as CHANGE_PLAN");
+		strcpy(action_name, "CHANGE_PLAN");
+	}
+	else if(fm_utils_op_is_ancestor(connp->coip,MSO_OP_CUST_CANCEL_PLAN)){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as CANCEL_PLAN");
+		strcpy(action_name, "CANCEL_PLAN");
+	}
+	else if(fm_utils_op_is_ancestor(connp->coip,MSO_OP_CUST_SUSPEND_SERVICE)){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as SUSPEND_SERVICE");
+		strcpy(action_name, "SUSPEND_SERVICE");
+	}
+	else if(fm_utils_op_is_ancestor(connp->coip,MSO_OP_CUST_REACTIVATE_SERVICE)){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as REACTIVATE_SERVICE");
+		strcpy(action_name, "REACTIVATE_SERVICE");
+	}
+	else if(fm_utils_op_is_ancestor(connp->coip,MSO_OP_CUST_TERMINATE_SERVICE)){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as TERMINATE_SERVICE");
+		strcpy(action_name, "TERMINATE_SERVICE");
+	}
+	else if(strstr(PIN_POID_GET_TYPE(event_pdp),"/billing/payment")) {
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as PAYMENT");
+		strcpy(action_name, "PAYMENT");
+	}
+	else if(strstr(PIN_POID_GET_TYPE(event_pdp),"/billing/reversal")){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as REVERSAL");
+		strcpy(action_name, "REVERSAL");
+	}
+	else if(strstr(PIN_POID_GET_TYPE(event_pdp),"/billing/adjustment")){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as ADJUSTMENT");
+		strcpy(action_name, "ADJUSTMENT");
+	}
+	else if(strstr(PIN_POID_GET_TYPE(event_pdp),"/billing/dispute")){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as DISPUTE");
+		strcpy(action_name, "DISPUTE");
+	}
+	else if((PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_PROGRAM_NAME, 1, ebufp) != NULL) &&
+		(strstr(PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_PROGRAM_NAME, 1, ebufp),"pin_cycle") ||
+		 strstr(PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_PROGRAM_NAME, 1, ebufp),"pin_bill_accts"))){
+		PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Setting action as BILLING");
+		strcpy(action_name, "BILLING");
+	}
+	
+
+	cur_balpdp = PIN_POID_CREATE(PIN_POID_GET_DB(event_pdp), "/mso_account_balance", -1, ebufp);
+	wrt_iflp = PIN_FLIST_CREATE(ebufp);
+	PIN_FLIST_FLD_PUT(wrt_iflp, PIN_FLD_POID, cur_balpdp, ebufp);
+	PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_ACCOUNT_OBJ, wrt_iflp, PIN_FLD_ACCOUNT_OBJ, ebufp);
+	PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_SERVICE_OBJ, wrt_iflp, PIN_FLD_SERVICE_OBJ, ebufp);
+	PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_SYS_DESCR , wrt_iflp, PIN_FLD_DESCR, ebufp);
+	PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_USERID , wrt_iflp, PIN_FLD_USERID, ebufp);
+	PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_PROGRAM_NAME , wrt_iflp, PIN_FLD_PROGRAM_NAME, ebufp);
+	PIN_FLIST_FLD_PUT(wrt_iflp,PIN_FLD_EVENT_TYPE, event_type, ebufp);
+	PIN_FLIST_FLD_PUT(wrt_iflp, PIN_FLD_PREVIOUS_TOTAL,previous_totalp,  ebufp);
+	PIN_FLIST_FLD_PUT(wrt_iflp, PIN_FLD_AMOUNT,amountp,  ebufp);
+	PIN_FLIST_FLD_PUT(wrt_iflp, PIN_FLD_CURRENT_BAL,curr_balp,  ebufp);
+	PIN_FLIST_FLD_PUT(wrt_iflp, PIN_FLD_ACTION_NAME,action_name,  ebufp);
+	PIN_FLIST_FLD_PUT(wrt_iflp, PIN_FLD_IMPACT_CATEGORY, impact_type, ebufp);
+
+	//PIN_FLIST_FLD_COPY(bal_flistp, PIN_FLD_CURRENT_BAL, wrt_iflp, PIN_FLD_CURRENT_BAL, ebufp);
+	PIN_FLIST_FLD_COPY(rd_oflp, PIN_FLD_ACCOUNT_NO, wrt_iflp, PIN_FLD_ACCOUNT_NO, ebufp);
+
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "PCM_OP_CREATE_OBJ input flist", wrt_iflp);
+	PCM_OP(ctxp, PCM_OP_CREATE_OBJ, 0, wrt_iflp, &wrt_oflp, ebufp);
+	PIN_FLIST_DESTROY_EX(&wrt_iflp, NULL);
+	if(PIN_ERRBUF_IS_ERR(ebufp)){
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "Error while creating /mso_account_balance", ebufp);
+		PIN_ERRBUF_RESET(ebufp);
+		return;
+	}
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "PCM_OP_CREATE_OBJ return flist", wrt_oflp);
+	
+
+	return;
+}

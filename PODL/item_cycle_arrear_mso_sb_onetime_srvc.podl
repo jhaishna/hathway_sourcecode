@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_srvc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_srvc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear of mso_sb_onetime_srvc";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_srvc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_srvc IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,361 @@
+
+#=======================================
+#  Field PIN_FLD_GROUP_TOPUP_LIMITS
+#=======================================
+
+ARRAY PIN_FLD_GROUP_TOPUP_LIMITS {
+
+	ID = 7864;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_TOPPED_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+	ID = 7857;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_TOPUP_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+	ID = 7858;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPUP_AMT
+#=======================================
+
+DECIMAL PIN_FLD_TOPUP_AMT {
+
+	ID = 7854;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPUP_CAP
+#=======================================
+
+DECIMAL PIN_FLD_TOPUP_CAP {
+
+	ID = 7855;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_TOPUP_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_GROUP_TOPUP_MEMBERS {
+
+	ID = 7863;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_TOPUP_T
+#=======================================
+
+TIMESTAMP PIN_FLD_NEXT_TOPUP_T {
+
+	ID = 7861;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PIN
+#=======================================
+
+STRING PIN_FLD_PIN {
+
+	ID = 6307;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOPUP_INTERVAL
+#=======================================
+
+INT PIN_FLD_TOPUP_INTERVAL {
+
+	ID = 7860;
+}
+
+
+#=======================================
+#  Storable Class /group/topup
+#=======================================
+
+STORABLE CLASS /group/topup {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores the buddy members and Buddy limits for a particular payer.One instance of the storable class for each limit group/payer.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_TOPUP_LIMITS {
+
+		DESCR = "This array stores the limits enforced on a topup group.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+			DESCR = "the amount that has been topped up inthe current topup cycle for the group.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+			DESCR = "The timestamp will be used to recognize and validate the current topup cycle";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "the resource that is being topped up";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOPUP_AMT {
+
+			DESCR = "will be used as the recurring topup amount";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOPUP_CAP {
+
+			DESCR = "will be used as topup cycle limit of the group";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_GROUP_TOPUP_MEMBERS {
+
+		DESCR = "This table stores the list of members that belong to this groupalso it stores the PIN, interval for topup, next topup date, status of association of the buddy etc information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Recipient balance group poid.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_TOPUP_T {
+
+			DESCR = "the date on which the next auto topup is due.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PIN {
+
+			DESCR = "Recipient PIN. for validation of ad-hoc topup.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "stores the status of member association;possible values: active, inactive";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TOPUP_INTERVAL {
+
+			DESCR = "the interval that is scheduled between each auto topup";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/topup
+#=======================================
+
+STORABLE CLASS /group/topup IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GROUP_TOPUP_LIMITS {
+
+		SQL_TABLE = "group_topup_limits_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CYCLE_TOPPED_AMT {
+
+			SQL_COLUMN = "cycle_topped_amt";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_TOPUP_T {
+
+			SQL_COLUMN = "last_topup_t";
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "resource_id";
+		}
+
+		DECIMAL PIN_FLD_TOPUP_AMT {
+
+			SQL_COLUMN = "topup_amt";
+		}
+
+		DECIMAL PIN_FLD_TOPUP_CAP {
+
+			SQL_COLUMN = "topup_cap";
+		}
+
+	}
+
+	ARRAY PIN_FLD_GROUP_TOPUP_MEMBERS {
+
+		SQL_TABLE = "group_topup_members_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_TOPUP_T {
+
+			SQL_COLUMN = "next_topup_t";
+		}
+
+		STRING PIN_FLD_PIN {
+
+			SQL_COLUMN = "pin";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		INT PIN_FLD_TOPUP_INTERVAL {
+
+			SQL_COLUMN = "topup_interval";
+		}
+
+	}
+
+}
+

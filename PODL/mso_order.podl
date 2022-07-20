@@ -1,0 +1,1438 @@
+
+#=======================================
+#  Field MSO_FLD_INVOICE_DATE
+#=======================================
+
+STRING MSO_FLD_INVOICE_DATE {
+
+	ID = 42014;
+	DESCR = "Date of reference invoice";
+}
+
+
+#=======================================
+#  Field MSO_FLD_INVOICE_NO
+#=======================================
+
+STRING MSO_FLD_INVOICE_NO {
+
+	ID = 42013;
+	DESCR = "Reference Invoice number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_LICENSE_NO
+#=======================================
+
+STRING MSO_FLD_LICENSE_NO {
+
+	ID = 42636;
+	DESCR = "MSO License Number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PO_NO
+#=======================================
+
+STRING MSO_FLD_PO_NO {
+
+	ID = 42022;
+	DESCR = "Purchase Order No.";
+}
+
+
+#=======================================
+#  Field MSO_FLD_STOCK_POINT_CODE
+#=======================================
+
+STRING MSO_FLD_STOCK_POINT_CODE {
+
+	ID = 42011;
+	DESCR = "Entity for which order is placed";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SUPPLIER_CODE
+#=======================================
+
+STRING MSO_FLD_SUPPLIER_CODE {
+
+	ID = 42012;
+	DESCR = "Supplier from which items are supplied";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_ID
+#=======================================
+
+STRING PIN_FLD_ORDER_ID {
+
+	ID = 943;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CR_ADJ_DATE
+#=======================================
+
+TIMESTAMP MSO_FLD_CR_ADJ_DATE {
+
+	ID = 41129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_order
+#=======================================
+
+STORABLE CLASS /mso_order {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Order details";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_INVOICE_DATE {
+
+		DESCR = "Date of reference invoice";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_INVOICE_NO {
+
+		DESCR = "Reference Invoice number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_LICENSE_NO {
+
+		DESCR = "MSO lot_number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_PO_NO {
+
+		DESCR = "Purchase Order No.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_STOCK_POINT_CODE {
+
+		DESCR = "Entity for which order is placed";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_SUPPLIER_CODE {
+
+		DESCR = "Supplier from which items are supplied";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_COUNTRY {
+
+		DESCR = "order country origin";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_CR_ADJ_DATE {
+
+		DESCR = "order shipment date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "User id to know which user has submitted the order";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_act_adj
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_act_adj {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_add_mb_gb
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_add_mb_gb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_add_plan
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_add_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_bill_adj
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_bill_adj {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_bill_hold
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_bill_hold {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_change_bouquet_id
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_change_bouquet_id {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_change_plan
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_change_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_check_bounce
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_check_bounce {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco1_bmail
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco1_bmail {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco1_osd
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco1_osd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco1_retrack
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco1_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco_bmail
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco_bmail {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco_osd
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco_osd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco_osd_pk
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco_osd_pk {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco_retrack
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cmts_change
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cmts_change {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cr_dr_note
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cr_dr_note {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_create_account {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "BULK CREATE ACCOUNT";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_crf
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_crf {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to store the bulk CRF order details";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_extend_validity
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_extend_validity {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_hierarchy
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_hierarchy {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to store the bulk hierarchy order details";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_modify_gst_info
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_modify_gst_info {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_nds_retrack
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_nds_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_reconnection
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_reconnection {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_refund_load
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_refund_load {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_refund_rev_load
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_refund_rev_load {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_remove_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_renew
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_renew {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_set_personnel_bit
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_set_personnel_bit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_suspension
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_suspension {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_swap_cpe
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_swap_cpe {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_termination
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_termination {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_topup
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_topup {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_update_gst_info
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_update_gst_info {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_writeoff_cpe
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_writeoff_cpe {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/catv_preactivation
+#=======================================
+
+STORABLE CLASS /mso_order/catv_preactivation {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/grv_upload
+#=======================================
+
+STORABLE CLASS /mso_order/grv_upload {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/modem
+#=======================================
+
+STORABLE CLASS /mso_order/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/nat
+#=======================================
+
+STORABLE CLASS /mso_order/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/router
+#=======================================
+
+STORABLE CLASS /mso_order/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/router/cable
+#=======================================
+
+STORABLE CLASS /mso_order/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_order/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/stb
+#=======================================
+
+STORABLE CLASS /mso_order/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order/vc
+#=======================================
+
+STORABLE CLASS /mso_order/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_order
+#=======================================
+
+STORABLE CLASS /mso_order IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_order_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_INVOICE_DATE {
+
+		SQL_COLUMN = "invoice_date";
+	}
+
+	STRING MSO_FLD_INVOICE_NO {
+
+		SQL_COLUMN = "invoice_no";
+	}
+
+	STRING MSO_FLD_LICENSE_NO {
+
+		SQL_COLUMN = "lot_number";
+	}
+
+	STRING MSO_FLD_PO_NO {
+
+		SQL_COLUMN = "PO_NO";
+	}
+
+	STRING MSO_FLD_STOCK_POINT_CODE {
+
+		SQL_COLUMN = "stock_point_code";
+	}
+
+	STRING MSO_FLD_SUPPLIER_CODE {
+
+		SQL_COLUMN = "supplier_code";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_COUNTRY {
+
+		SQL_COLUMN = "origin_country";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		SQL_COLUMN = "order_id";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	TIMESTAMP MSO_FLD_CR_ADJ_DATE {
+
+		SQL_COLUMN = "shipment_date";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "User_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_act_adj
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_act_adj IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_add_mb_gb
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_add_mb_gb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_add_plan
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_add_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_bill_adj
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_bill_adj IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_bill_hold
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_bill_hold IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_change_bouquet_id
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_change_bouquet_id IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_change_plan
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_change_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_check_bounce
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_check_bounce IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco1_bmail
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco1_bmail IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco1_osd
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco1_osd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco1_retrack
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco1_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco_bmail
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco_bmail IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco_osd
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco_osd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco_osd_pk
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco_osd_pk IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cisco_retrack
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cisco_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cmts_change
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cmts_change IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_cr_dr_note
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_cr_dr_note IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_create_account IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_crf
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_crf IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_extend_validity
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_extend_validity IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_hierarchy
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_hierarchy IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_modify_gst_info
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_modify_gst_info IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_nds_retrack
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_nds_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_reconnection
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_reconnection IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_refund_load
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_refund_load IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_refund_rev_load
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_refund_rev_load IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_remove_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_renew
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_renew IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_set_personnel_bit
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_set_personnel_bit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_suspension
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_suspension IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_swap_cpe
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_swap_cpe IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_termination
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_termination IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_topup
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_topup IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_update_gst_info
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_update_gst_info IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/bulk_writeoff_cpe
+#=======================================
+
+STORABLE CLASS /mso_order/bulk_writeoff_cpe IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/catv_preactivation
+#=======================================
+
+STORABLE CLASS /mso_order/catv_preactivation IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/grv_upload
+#=======================================
+
+STORABLE CLASS /mso_order/grv_upload IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/modem
+#=======================================
+
+STORABLE CLASS /mso_order/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/nat
+#=======================================
+
+STORABLE CLASS /mso_order/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/router
+#=======================================
+
+STORABLE CLASS /mso_order/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/router/cable
+#=======================================
+
+STORABLE CLASS /mso_order/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_order/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/stb
+#=======================================
+
+STORABLE CLASS /mso_order/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_order/vc
+#=======================================
+
+STORABLE CLASS /mso_order/vc IMPLEMENTATION ORACLE7 {
+
+}
+

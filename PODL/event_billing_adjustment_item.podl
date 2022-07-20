@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/adjustment/item
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/item {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture adjustment made to an item.This event belongs to the adjustment item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/item
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/item IMPLEMENTATION ORACLE7 {
+
+}
+

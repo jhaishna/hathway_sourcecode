@@ -1,0 +1,491 @@
+
+#=======================================
+#  Field PIN_FLD_VOUCHER_ORDERS
+#=======================================
+
+ARRAY PIN_FLD_VOUCHER_ORDERS {
+
+	ID = 7603;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_PART_NO
+#=======================================
+
+STRING PIN_FLD_BATCH_PART_NO {
+
+	ID = 7611;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+	ID = 7604;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_BATCH_TOTAL {
+
+	ID = 934;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CARD_EXPIRATION
+#=======================================
+
+INT PIN_FLD_CARD_EXPIRATION {
+
+	ID = 7613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_CODE
+#=======================================
+
+STRING PIN_FLD_DEALER_CODE {
+
+	ID = 7602;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_NAME
+#=======================================
+
+STRING PIN_FLD_DEALER_NAME {
+
+	ID = 7601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENCRYPTION_TYPE
+#=======================================
+
+STRING PIN_FLD_ENCRYPTION_TYPE {
+
+	ID = 7507;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+	ID = 5601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK
+#=======================================
+
+STRING PIN_FLD_NETWORK {
+
+	ID = 74;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACK_PART_NO
+#=======================================
+
+STRING PIN_FLD_PACK_PART_NO {
+
+	ID = 7612;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACK_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_PACK_QUANTITY {
+
+	ID = 7605;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_CODE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+	ID = 7610;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_TYPE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+	ID = 7609;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_SERIAL_NO
+#=======================================
+
+STRING PIN_FLD_START_SERIAL_NO {
+
+	ID = 7600;
+}
+
+
+#=======================================
+#  Storable Class /order/voucher
+#=======================================
+
+STORABLE CLASS /order/voucher {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Order voucher object. Contains information that is specific to order of the vouchers ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHER_ORDERS {
+
+		DESCR = "Array containing information about the order of the vouchers. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_PART_NO {
+
+			DESCR = "Batch number associated with the order ";
+			ORDER = 11;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+			DESCR = "Batch quantity associated with this order.";
+			ORDER = 9;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_BATCH_TOTAL {
+
+			DESCR = "Total amount of batches withinthe order.";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CARD_EXPIRATION {
+
+			DESCR = "The expiration days of the voucher card ";
+			ORDER = 15;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEALER_CODE {
+
+			DESCR = "Code of the service provider ";
+			ORDER = 6;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEALER_NAME {
+
+			DESCR = "Name of the service provider ";
+			ORDER = 5;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Deal object which has the products to impact the balanceassociated with the card ";
+			ORDER = 13;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ENCRYPTION_TYPE {
+
+			DESCR = "The types used to encrypt the request and response files  ";
+			ORDER = 4;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			DESCR = "Time the expiration time of vouchers associated with the card ";
+			ORDER = 14;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			DESCR = "Name of the carrier ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PACK_PART_NO {
+
+			DESCR = "Pack number associated with the order ";
+			ORDER = 12;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PACK_QUANTITY {
+
+			DESCR = "Pack quantity associated with this order.";
+			ORDER = 10;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			DESCR = "Quantity associated with orderthis order.";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			DESCR = "Code associated with the recharge card ";
+			ORDER = 8;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			DESCR = "type of card associated with the recharge card ";
+			ORDER = 7;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_START_SERIAL_NO {
+
+			DESCR = "The starting serial number for thedevices ";
+			ORDER = 3;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /order/voucher
+#=======================================
+
+STORABLE CLASS /order/voucher IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_VOUCHER_ORDERS {
+
+		SQL_TABLE = "order_voucher_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_BATCH_PART_NO {
+
+			SQL_COLUMN = "batch_part_no";
+		}
+
+		DECIMAL PIN_FLD_BATCH_QUANTITY {
+
+			SQL_COLUMN = "batch_qty";
+		}
+
+		DECIMAL PIN_FLD_BATCH_TOTAL {
+
+			SQL_COLUMN = "batch_total";
+		}
+
+		INT PIN_FLD_CARD_EXPIRATION {
+
+			SQL_COLUMN = "card_expiration";
+		}
+
+		STRING PIN_FLD_DEALER_CODE {
+
+			SQL_COLUMN = "dealer_code";
+		}
+
+		STRING PIN_FLD_DEALER_NAME {
+
+			SQL_COLUMN = "dealer_name";
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		STRING PIN_FLD_ENCRYPTION_TYPE {
+
+			SQL_COLUMN = "encryption_type";
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			SQL_COLUMN = "expiration_t";
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			SQL_COLUMN = "network";
+		}
+
+		STRING PIN_FLD_PACK_PART_NO {
+
+			SQL_COLUMN = "pack_part_no";
+		}
+
+		DECIMAL PIN_FLD_PACK_QUANTITY {
+
+			SQL_COLUMN = "pack_qty";
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			SQL_COLUMN = "quantity";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			SQL_COLUMN = "card_code";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			SQL_COLUMN = "card_type";
+		}
+
+		STRING PIN_FLD_START_SERIAL_NO {
+
+			SQL_COLUMN = "start_serial_no";
+		}
+
+	}
+
+}
+

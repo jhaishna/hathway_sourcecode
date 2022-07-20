@@ -1,0 +1,101 @@
+CREATE OR REPLACE PACKAGE
+-- @(#)%Portal Version: create_get_fields.source:CUPmod7.3PatchInt:1:2006-Oct-25 01:38:58 %
+pin_get_fields wrapped 
+a000000
+367
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+9
+1d0 124
+gHo41XKh1Vn1zaXBeExUZ8jv1NYwg43If5kVfC8CkE7VSPOOovW5jrf2JmHeUxrW62IrPuPn
+krUteRgrbYQDVe277Zly8jLIvRXtvAhjI5u+4uKwW1pJ5LNm2z7J7L1cNeyYLvzKX+CoDkJg
+i+ejxy0FjJtKc0VVR7qfPfvw3SYZdFjRDekSeWcH1p1rIGqAHEJFmnP+oJucB7Ty4Ed8TzD/
+a+xIlNkWIRhgs7OSpsLF+pSO8vBrT+cQocloEBRWlJ4yoeef/b0hq34nV68i/+kDH1yCP7w=
+
+
+/
+CREATE OR REPLACE PACKAGE BODY
+pin_get_fields wrapped 
+a000000
+367
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+9c0 4e1
+Cdkg1BQkNu+iDmKBTRS4jVvfx5owgzsrk64FZy+5Ck7Vi2PCLh0uFWvlb43Pft07C5geKgKw
+XMo5CQJnhBECiSyaMWrqy5IJmQuCwXiCmkqhTLUTEmDdDKzVMOz/OkwtXcTr4N9COXgeGiEI
+oche4d4sFdgLFBnqHDnK4lcsQkajB09+sAtpBiCNsNFsf4YUZow7IyT0MIpK590CDHPHnMvY
+rwgtsk2eeofeuvJ3f7EFQxvPZtNqyeJGQBc4irkJqrDq8qPGermBkd9l8prdZqBlGsu/d6Tn
+vuaISxaEmnrJo/CrnA7jh2NfW0a+OAGmDfpEF5OD3L8WS48Bzq3X057Kapz7wBhON0o4kbT2
+T/spLJG0wDZJzL+yZRGZpkQn7AA64hu0lKhGeQu4Bj4hFqRAFJ4nqtiSX5CMxsgb7+fhSvt/
+QtRjTNREX7mfOqbtP262kW9mPYqtAnn0r/Ada8otilge6TZi+OZo92kylBXtD/nu9XqsatRr
+sFdYDdz67qKh8Z5dRjrBEztfk+Fs+kus7BhMaYhFUH5UE4tMTTsMe+DchHPI2cj7p7z7HhBu
+S6jTqFBhYrw/ImKErQmT1Om+AZOE2ECjKz5oBwv479KufhKu5EDtN7IskklmSDLAUH+uXhr2
+Pi2Q02t89swceQNo2QQN7JAE9WLpqeh3QHO8YigGyXSQZD5hMjvuS/yOz/tX/IEj3UuAUb4G
+SInV9UqnthpgV/V7MPUn/Nlqkc0xgY79B0sUHouIkZTvbMaO/OsYRMD/rBiBiC+DyX/hjebT
+MIxfSa0Mx5+peNAVdVQbVsaxz8JuAE4Txpw60+hycBUnDTnzwcoLw/A3gavcNSqAuu33eSvd
+z+RpDoCNWuGceZpDv05XEkJ1xHa6hpIHmth1eFXbdyENd/CBj4R+unborUFibQJAg9RTozJw
+zWV0thwcSesF6nkF4LTLB5qGlddzMH9Lo8gr1evflFKODqTpc6M0K8fmR2GM1/psCMdgynbw
+Wi9FzkCjxrSTwdnrkTRWYbnmx/3Asvm+VBhAGWK7sRJFBcFyEC0WjwiSSU/cuNXylg2gn/hf
+wbZUjnh9a6R3nxIFOMdc1Zoz38/aQOQP1tXiWMltfldmNPn4X6DCz4+k1IhrWTttzRKvfNFo
+FkmIVIGAa+ki5FYhYTINM3mAkcyUwwXy4ucI0SI1ygiF4a/Q8V9+P9hG3oOxcnyLF0bem1e7
++eE2lFxo
+
+/
+CREATE OR REPLACE PROCEDURE get_fields_proc wrapped 
+a000000
+367
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+4c3 213
+tKVMMQ0eA22SXnn/OSD3IgaEI30wgzvD2dxqfC9d7M+VGezyzD3AO1cUCOgEKmEB2lEAOqZE
+qKg3qbUfP4noSGieFDPxML/JAEEuVhQgyNLT7kL+AUGHn2TQT4tzhs1rhcdLN9h/YpUqfy6W
+N/6rNgHJAnuRPUfhXSt9+xpTbuZjm6vqiTocSXQtVJIhH4XcksRxkvGZAvZ+IS/gMBAXmomz
+gisyVBwv0UUYwlhEBPKL9PIREEBvGCPV3Bg2/dx88pRR8YWgLex7/hoaRkK9t9fJgvT6HHOM
+VXjFSqJZbh87TK37vejQUJQ5g46j+pgL1ayNYMGTiz7+xBaz0WX08JRbeO5G7z3LCX/hEsY/
+uPhDWv8hl1SIw6sF63hZU5Kq1MxjPv12dLBF2/VSkVRFP9SiaRAQkJEwuu6P3tNeGgdXz6/v
+W9EugtpZm3iM5NlWxk5ZLlQxLoy9wcFo6wElDLCo0HNOwjP+olxks8VMogVFXqK1QpJa2XZi
+uFOhX0ucsZv8/XfMdMU=
+
+/
+show errors

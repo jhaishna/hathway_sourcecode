@@ -1,0 +1,760 @@
+
+#=======================================
+#  Field PIN_FLD_BILLING_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_BILLING_INFO {
+
+	ID = 8217;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_STATUS
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_STATUS {
+
+	ID = 1412;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_CYCLE_DOM
+#=======================================
+
+INT PIN_FLD_ACTG_CYCLE_DOM {
+
+	ID = 752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_TYPE
+#=======================================
+
+ENUM PIN_FLD_BILL_TYPE {
+
+	ID = 127;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REVENUE_COLLECTED
+#=======================================
+
+DECIMAL PIN_FLD_REVENUE_COLLECTED {
+
+	ID = 8220;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REVENUE_TO_BE_COLLECTED
+#=======================================
+
+DECIMAL PIN_FLD_REVENUE_TO_BE_COLLECTED {
+
+	ID = 8219;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_REVENUE_BILLED
+#=======================================
+
+DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+	ID = 8218;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLING_SEGMENTS
+#=======================================
+
+ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+	ID = 8307;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLING_SEGMENT
+#=======================================
+
+ENUM PIN_FLD_BILLING_SEGMENT {
+
+	ID = 8301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_SUPPRESSION
+#=======================================
+
+ARRAY PIN_FLD_BILL_SUPPRESSION {
+
+	ID = 8230;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REASON
+#=======================================
+
+ENUM PIN_FLD_REASON {
+
+	ID = 5506;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_ACCOUNTS
+#=======================================
+
+ARRAY PIN_FLD_FAILED_ACCOUNTS {
+
+	ID = 8221;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_FAILED_ACCOUNT_OBJ {
+
+	ID = 8222;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_FAILED_BILL_OBJ {
+
+	ID = 8223;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_ERROR_CODE
+#=======================================
+
+STRING PIN_FLD_FAILED_ERROR_CODE {
+
+	ID = 8224;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FAILED_RECORDS
+#=======================================
+
+INT PIN_FLD_FAILED_RECORDS {
+
+	ID = 8203;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REVENUES
+#=======================================
+
+ARRAY PIN_FLD_REVENUES {
+
+	ID = 8229;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_TYPE
+#=======================================
+
+STRING PIN_FLD_ITEM_TYPE {
+
+	ID = 2008;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUCCESSFUL_RECORDS
+#=======================================
+
+INT PIN_FLD_SUCCESSFUL_RECORDS {
+
+	ID = 8202;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_CONNECTIONS
+#=======================================
+
+INT PIN_FLD_TOTAL_CONNECTIONS {
+
+	ID = 8228;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTAL_RECORDS
+#=======================================
+
+INT PIN_FLD_TOTAL_RECORDS {
+
+	ID = 1703;
+}
+
+
+#=======================================
+#  Storable Class /process_audit/billing
+#=======================================
+
+STORABLE CLASS /process_audit/billing {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Defines an instance of billing audit info class. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BILLING_INFO {
+
+		DESCR = "Substruct for revenue info for different apps";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_STATUS {
+
+			DESCR = "Accounts status (0) Active (1)inactive (2) Canceled";
+			ORDER = 0;
+			LENGTH = 126;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			DESCR = "DOM Number";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_BILL_TYPE {
+
+			DESCR = "Bill Type (0) Regular (1) Bill Now (2) Bill On Demand (64) Auto Triggered";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_REVENUE_COLLECTED {
+
+			DESCR = "Total revenue collected (pin_collect process)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_REVENUE_TO_BE_COLLECTED {
+
+			DESCR = "Total to be revenue collected (pin_collect process)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+			DESCR = "Total revenue billed ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+		DESCR = " Array for storing the Billing Segment wise audit Information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_BILLING_SEGMENT {
+
+			DESCR = " Name of bill segment";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_BILL_SUPPRESSION {
+
+			DESCR = "Array for suppressed bill details";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_ACCOUNT_OBJ {
+
+				DESCR = "Suppressed bill's Account poid";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				DESCR = "Amount of the bill's suppressed";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_BILLINFO_OBJ {
+
+				DESCR = "Suppressed bill's billinfo poid";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_REASON {
+
+				DESCR = "Stores reason for Bill Suppression (1) Threshold Suppression (Automatic)(2) Bill Supressed manually(3) Account Suppressed manually";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ARRAY PIN_FLD_FAILED_ACCOUNTS {
+
+			DESCR = "Array for storing the failed accounts";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_FAILED_ACCOUNT_OBJ {
+
+				DESCR = "Account Obj poid";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_FAILED_BILL_OBJ {
+
+				DESCR = "Bill Obj poid";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_FAILED_ERROR_CODE {
+
+				DESCR = "Error code";
+				ORDER = 0;
+				LENGTH = 124;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_FAILED_RECORDS {
+
+			DESCR = "Number of Failed records";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_REVENUES {
+
+			DESCR = " This array used to store the Audit revenueadditional summaries such as Usage charges,One time, recurring etc.by service type";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				DESCR = " Revenue Billed for each item type like usage,one-time etc";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_ITEM_TYPE {
+
+				DESCR = "Item types  like 'Usage',  'Recurring','Onetime', 'Discounts', 'Adjustments','Disputes','Refunds', 'Settlements',' Writeoff', 'Writeoff Reversals','Payments','Payment-Reversal'";
+				ORDER = 0;
+				LENGTH = 126;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_SERVICE_TYPE {
+
+				DESCR = "Service types";
+				ORDER = 0;
+				LENGTH = 126;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_SUCCESSFUL_RECORDS {
+
+			DESCR = "Number of successful records";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TOTAL_CONNECTIONS {
+
+			DESCR = "Number of connections";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TOTAL_RECORDS {
+
+			DESCR = "Number of input records";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+			DESCR = "Total revenue billed for the segment";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /process_audit/billing
+#=======================================
+
+STORABLE CLASS /process_audit/billing IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BILLING_INFO {
+
+		SQL_TABLE = "proc_aud_bill_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_STATUS {
+
+			SQL_COLUMN = "accountsstatus";
+		}
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			SQL_COLUMN = "atcg_dom";
+		}
+
+		ENUM PIN_FLD_BILL_TYPE {
+
+			SQL_COLUMN = "bill_type";
+		}
+
+		DECIMAL PIN_FLD_REVENUE_COLLECTED {
+
+			SQL_COLUMN = "revenue_collected";
+		}
+
+		DECIMAL PIN_FLD_REVENUE_TO_BE_COLLECTED {
+
+			SQL_COLUMN = "revenue_to_be_collected";
+		}
+
+		DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+			SQL_COLUMN = "total_revenue";
+		}
+
+	}
+
+	ARRAY PIN_FLD_BILLING_SEGMENTS {
+
+		SQL_TABLE = "proc_aud_bill_segments_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_BILLING_SEGMENT {
+
+			SQL_COLUMN = "bill_seg_name";
+		}
+
+		ARRAY PIN_FLD_BILL_SUPPRESSION {
+
+			SQL_TABLE = "proc_aud_bill_suppress_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_ACCOUNT_OBJ {
+
+				SQL_COLUMN = "account_obj";
+			}
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				SQL_COLUMN = "revenue_anticipated";
+			}
+
+			POID PIN_FLD_BILLINFO_OBJ {
+
+				SQL_COLUMN = "billinfo_obj";
+			}
+
+			ENUM PIN_FLD_REASON {
+
+				SQL_COLUMN = "bill_sup_reason";
+			}
+
+		}
+
+		ARRAY PIN_FLD_FAILED_ACCOUNTS {
+
+			SQL_TABLE = "proc_aud_bill_err_acct_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_FAILED_ACCOUNT_OBJ {
+
+				SQL_COLUMN = "account_obj";
+			}
+
+			POID PIN_FLD_FAILED_BILL_OBJ {
+
+				SQL_COLUMN = "bill_obj";
+			}
+
+			STRING PIN_FLD_FAILED_ERROR_CODE {
+
+				SQL_COLUMN = "account_fail_status";
+			}
+
+		}
+
+		INT PIN_FLD_FAILED_RECORDS {
+
+			SQL_COLUMN = "failrecords";
+		}
+
+		ARRAY PIN_FLD_REVENUES {
+
+			SQL_TABLE = "proc_aud_bill_revenues_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_AMOUNT {
+
+				SQL_COLUMN = "item_total";
+			}
+
+			STRING PIN_FLD_ITEM_TYPE {
+
+				SQL_COLUMN = "item_type";
+			}
+
+			STRING PIN_FLD_SERVICE_TYPE {
+
+				SQL_COLUMN = "service_type";
+			}
+
+		}
+
+		INT PIN_FLD_SUCCESSFUL_RECORDS {
+
+			SQL_COLUMN = "successrecords";
+		}
+
+		INT PIN_FLD_TOTAL_CONNECTIONS {
+
+			SQL_COLUMN = "total_connections";
+		}
+
+		INT PIN_FLD_TOTAL_RECORDS {
+
+			SQL_COLUMN = "inputrecords";
+		}
+
+		DECIMAL PIN_FLD_TOTAL_REVENUE_BILLED {
+
+			SQL_COLUMN = "revenue_billed";
+		}
+
+	}
+
+}
+

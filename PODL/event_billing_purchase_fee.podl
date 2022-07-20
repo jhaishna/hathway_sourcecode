@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/purchase_fee
+#=======================================
+
+STORABLE CLASS /event/billing/purchase_fee {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "An event of this class is created by the billing manager to record purchase rates applied to an account.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/purchase_fee
+#=======================================
+
+STORABLE CLASS /event/billing/purchase_fee IMPLEMENTATION ORACLE7 {
+
+}
+

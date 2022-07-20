@@ -1,0 +1,614 @@
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_dc3 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Prepaid Thirty Days Subscription for DOCSIS 3.0 Device";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_grant
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_grant {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for grant";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/ip";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/cm";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/cr";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/huwr";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/nd";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/wlnd";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/dcm";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/nwifi";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for HW rental/crsoho";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/cm";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/cm/pre";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/dcm";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/dcm/pre";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/huwr";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/huwr/pre";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/nd";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/nd/pre";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/wlnd";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/wlnd/pre";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/nwifi";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/nwifi/pre";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/cr";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/cr";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/crsoho";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Thirty Days Cycle Forward fixed duration for AMC/crsoho/pre";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_sb_dc3 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_grant
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_grant IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cm/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/dcm/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/huwr/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nd/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/wlnd/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/nwifi/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/cr/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_rental/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_thirty_days/mso_hw_amc/crsoho/pre IMPLEMENTATION ORACLE7 {
+
+}
+

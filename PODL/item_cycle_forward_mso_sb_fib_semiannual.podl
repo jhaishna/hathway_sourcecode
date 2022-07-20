@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+

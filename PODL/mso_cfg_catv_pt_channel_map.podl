@@ -1,0 +1,791 @@
+
+#=======================================
+#  Field MSO_FLD_CATV_CHANNELS
+#=======================================
+
+ARRAY MSO_FLD_CATV_CHANNELS {
+
+	ID = 40038;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHANNEL_ID
+#=======================================
+
+STRING MSO_FLD_CHANNEL_ID {
+
+	ID = 40030;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHANNEL_NAME
+#=======================================
+
+STRING MSO_FLD_CHANNEL_NAME {
+
+	ID = 40034;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PRICE
+#=======================================
+
+DECIMAL MSO_FLD_PRICE {
+
+	ID = 42017;
+	DESCR = "Supplier Price of the item";
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRODUCT_NAME
+#=======================================
+
+STRING PIN_FLD_PRODUCT_NAME {
+
+	ID = 9160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_PRODUCT_OBJ {
+
+	ID = 244;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVISIONING_TAG
+#=======================================
+
+STRING PIN_FLD_PROVISIONING_TAG {
+
+	ID = 272;
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISSION_CHARGE
+#=======================================
+
+DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+	ID = 43327;
+}
+
+
+#=======================================
+#  Field MSO_FLD_INITIAL_AMOUNT
+#=======================================
+
+DECIMAL MSO_FLD_INITIAL_AMOUNT {
+
+	ID = 42123;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NCF_COUNT
+#=======================================
+
+INT MSO_FLD_NCF_COUNT {
+
+	ID = 46042;
+	DESCR = "NCF Channel Count";
+}
+
+
+#=======================================
+#  Field MSO_FLD_OFFERED_COUNT
+#=======================================
+
+INT MSO_FLD_OFFERED_COUNT {
+
+	ID = 46041;
+	DESCR = "Offered Channel Count";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PKG_TYPE
+#=======================================
+
+ENUM MSO_FLD_PKG_TYPE {
+
+	ID = 42020;
+	DESCR = "0 - Package Offer, 1 - Ala-carte offer, 2 - Add-on offer";
+}
+
+
+#=======================================
+#  Field MSO_FLD_RATE
+#=======================================
+
+DECIMAL MSO_FLD_RATE {
+
+	ID = 40033;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CATEGORY_ID
+#=======================================
+
+INT PIN_FLD_CATEGORY_ID {
+
+	ID = 5802;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_COUNT
+#=======================================
+
+INT PIN_FLD_ORDER_COUNT {
+
+	ID = 6013;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_catv_pt_channel_map
+#=======================================
+
+STORABLE CLASS /mso_cfg_catv_pt_channel_map {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "CATV provisioning tag and channel mapping";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CATV_CHANNELS {
+
+		DESCR = "Array to hold channel details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHANNEL_ID {
+
+			DESCR = "MSO Channel Id";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_CHANNEL_NAME {
+
+			DESCR = "Channel Name";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_PRICE {
+
+			DESCR = "Product Price. Ex. Rs.10/- without GST";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PRODUCT_NAME {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PRODUCT_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PROVISIONING_TAG {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+        ENUM MSO_FLD_PKG_TYPE {
+            ORDER = 0;
+            CREATE = Optional;
+            MODIFY = Writeable;
+            AUDITABLE = 0;
+            ENCRYPTABLE = 0;
+            SERIALIZABLE = 0;
+        }
+
+        STRING PIN_FLD_DESCR {
+
+            DESCR = "DESCR-DPO-BB-ADDON-ALC";
+            ORDER = 0;
+            LENGTH = 255;
+            CREATE = Optional;
+            MODIFY = Writeable;
+            AUDITABLE = 0;
+            ENCRYPTABLE = 0;
+            SERIALIZABLE = 0;
+        }
+	}
+
+	DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+		DESCR = "Distribution margin";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_INITIAL_AMOUNT {
+
+		DESCR = "To calculate the payout";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT MSO_FLD_NCF_COUNT {
+
+		DESCR = "NCF Channel Count";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT MSO_FLD_OFFERED_COUNT {
+
+		DESCR = "Offered Channel Count";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_PKG_TYPE {
+
+		DESCR = "0-Package Offer, 1 . Ala-carta offer, 2-Add-on offer";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL MSO_FLD_RATE {
+
+		DESCR = "Price. Ex. Rs.300/- per minute";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CATEGORY_ID {
+
+		DESCR = "1 - Subscription, 2 - Add-on, 3 - VAS";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CITY {
+
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_COUNT {
+
+		DESCR = "No of SD Channels";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_ORDER_COUNT {
+
+		DESCR = "HD Channel Count";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		DESCR = "Plan object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		ORDER = 0;
+		LENGTH = 100;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROVISIONING_TAG {
+
+		ORDER = 0;
+		LENGTH = 100;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_STATE {
+
+		DESCR = "State";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "Pay/FTA";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_catv_pt_channel_map
+#=======================================
+
+STORABLE CLASS /mso_cfg_catv_pt_channel_map IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_catv_pt_channel_map_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CATV_CHANNELS {
+
+		SQL_TABLE = "mso_cfg_catv_channles_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHANNEL_ID {
+
+			SQL_COLUMN = "channel_id";
+		}
+
+		STRING MSO_FLD_CHANNEL_NAME {
+
+			SQL_COLUMN = "channel_name";
+		}
+
+		DECIMAL MSO_FLD_PRICE {
+
+			SQL_COLUMN = "product_price";
+		}
+
+		STRING PIN_FLD_PRODUCT_NAME {
+
+			SQL_COLUMN = "PRODUCT_NAME";
+		}
+
+		POID PIN_FLD_PRODUCT_OBJ {
+
+			SQL_COLUMN = "product_obj";
+		}
+
+		STRING PIN_FLD_PROVISIONING_TAG {
+
+			SQL_COLUMN = "PROVISIONING_TAG";
+		}
+
+        ENUM MSO_FLD_PKG_TYPE { 
+            
+            SQL_COLUMN = "PKG_TYPE";
+        }
+
+        STRING PIN_FLD_DESCR {
+            
+            SQL_COLUMN = "DESCR";
+        }
+	}
+
+	DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+		SQL_COLUMN = "margin";
+	}
+
+	DECIMAL MSO_FLD_INITIAL_AMOUNT {
+
+		SQL_COLUMN = "cost";
+	}
+
+	INT MSO_FLD_NCF_COUNT {
+
+		SQL_COLUMN = "ncf_count";
+	}
+
+	INT MSO_FLD_OFFERED_COUNT {
+
+		SQL_COLUMN = "offered_count";
+	}
+
+	ENUM MSO_FLD_PKG_TYPE {
+
+		SQL_COLUMN = "pkg_type";
+	}
+
+	DECIMAL MSO_FLD_RATE {
+
+		SQL_COLUMN = "rate";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	INT PIN_FLD_CATEGORY_ID {
+
+		SQL_COLUMN = "category";
+	}
+
+	STRING PIN_FLD_CITY {
+
+		SQL_COLUMN = "city";
+	}
+
+	INT PIN_FLD_COUNT {
+
+		SQL_COLUMN = "sd_count";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	INT PIN_FLD_ORDER_COUNT {
+
+		SQL_COLUMN = "hd_count";
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		SQL_COLUMN = "plan_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_PROVISIONING_TAG {
+
+		SQL_COLUMN = "provisioning_tag";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_STATE {
+
+		SQL_COLUMN = "state";
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "type";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

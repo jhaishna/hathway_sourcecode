@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /config/device_state/modem
+#=======================================
+
+STORABLE CLASS /config/device_state/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/device_state/modem
+#=======================================
+
+STORABLE CLASS /config/device_state/modem IMPLEMENTATION ORACLE7 {
+
+}
+

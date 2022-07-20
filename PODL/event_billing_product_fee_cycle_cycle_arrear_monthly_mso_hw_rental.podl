@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event for product fee cycle arrear monthly hardware rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_arrear_monthly/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+

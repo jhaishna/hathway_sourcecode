@@ -1,0 +1,3381 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_CACHE_TYPE
+#=======================================
+
+ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+	ID = 567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DATA_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_DATA_ARRAY {
+
+	ID = 3006;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_FROM {
+
+	ID = 6429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_TO {
+
+	ID = 6430;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COLLECTIONS_PARAMS
+#=======================================
+
+ARRAY PIN_FLD_COLLECTIONS_PARAMS {
+
+	ID = 7750;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_CARE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CUSTOMER_CARE_INFO {
+
+	ID = 283;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CATV_ACCOUNT_OBJ
+#=======================================
+
+POID MSO_FLD_CATV_ACCOUNT_OBJ {
+
+	ID = 41131;
+	DESCR = "Reference of CATV account Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_DAS_TYPE
+#=======================================
+
+STRING MSO_FLD_DAS_TYPE {
+
+	ID = 40090;
+	DESCR = "DAS Type";
+}
+
+
+#=======================================
+#  Field MSO_FLD_DT_OBJ
+#=======================================
+
+POID MSO_FLD_DT_OBJ {
+
+	ID = 40004;
+	DESCR = "Distributor Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_GSTIN
+#=======================================
+
+STRING MSO_FLD_GSTIN {
+
+	ID = 42645;
+	DESCR = "GSTIN Number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_JV_OBJ
+#=======================================
+
+POID MSO_FLD_JV_OBJ {
+
+	ID = 40054;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LCO_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_OBJ {
+
+	ID = 40006;
+	DESCR = "LCO account Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PAN_NO
+#=======================================
+
+STRING MSO_FLD_PAN_NO {
+
+	ID = 40075;
+	DESCR = "PAN CARD NO";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PP_TYPE
+#=======================================
+
+ENUM MSO_FLD_PP_TYPE {
+
+	ID = 40053;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SALESMAN_OBJ
+#=======================================
+
+POID MSO_FLD_SALESMAN_OBJ {
+
+	ID = 40002;
+	DESCR = "Sales man account poid to be stored in system for reference";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SALES_CLOSE_TYPE
+#=======================================
+
+ENUM MSO_FLD_SALES_CLOSE_TYPE {
+
+	ID = 41132;
+	DESCR = "0-Inbound,1-Outbound";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SDT_OBJ
+#=======================================
+
+POID MSO_FLD_SDT_OBJ {
+
+	ID = 40005;
+	DESCR = "Sub- Distributor Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WELCOME_CALL_STATUS
+#=======================================
+
+ENUM MSO_FLD_WELCOME_CALL_STATUS {
+
+	ID = 41140;
+	DESCR = "0:Pending, 1:Completed";
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONN_TYPE
+#=======================================
+
+ENUM PIN_FLD_CONN_TYPE {
+
+	ID = 2915;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_TYPE
+#=======================================
+
+ENUM PIN_FLD_CUSTOMER_TYPE {
+
+	ID = 281;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT
+#=======================================
+
+POID PIN_FLD_PARENT {
+
+	ID = 22;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OOD_CRITERIA
+#=======================================
+
+ARRAY PIN_FLD_OOD_CRITERIA {
+
+	ID = 9611;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_CYCLE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_BILL_CYCLE_T {
+
+	ID = 9613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CRITERIA_NAME
+#=======================================
+
+STRING PIN_FLD_CRITERIA_NAME {
+
+	ID = 9522;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_EVENT_PROCESS_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_EVENT_PROCESS_T {
+
+	ID = 9612;
+}
+
+
+#=======================================
+#  Field MSO_FLD_GST_INFO
+#=======================================
+
+ARRAY MSO_FLD_GST_INFO {
+
+	ID = 42632;
+	DESCR = "GST information";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_CODE
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_CODE {
+
+	ID = 1837;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILENAME
+#=======================================
+
+STRING PIN_FLD_FILENAME {
+
+	ID = 500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMAGE_REF_NO
+#=======================================
+
+STRING PIN_FLD_IMAGE_REF_NO {
+
+	ID = 1066;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LDAP_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_LDAP_INFO {
+
+	ID = 1422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DN
+#=======================================
+
+STRING PIN_FLD_DN {
+
+	ID = 1257;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOST_CALLED_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+	ID = 7461;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CRITERION
+#=======================================
+
+STRING PIN_FLD_CRITERION {
+
+	ID = 2301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMPACT_CATEGORY
+#=======================================
+
+STRING PIN_FLD_IMPACT_CATEGORY {
+
+	ID = 1452;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFFERING_OBJ
+#=======================================
+
+POID PIN_FLD_OFFERING_OBJ {
+
+	ID = 9056;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_INFO
+#=======================================
+
+ARRAY PIN_FLD_RESOURCE_INFO {
+
+	ID = 9543;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECIPIENTS
+#=======================================
+
+ARRAY PIN_FLD_RECIPIENTS {
+
+	ID = 481;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXTRATING
+#=======================================
+
+SUBSTRUCT PIN_FLD_EXTRATING {
+
+	ID = 6409;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LABEL
+#=======================================
+
+STRING PIN_FLD_LABEL {
+
+	ID = 601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REFERENCE_COUNT
+#=======================================
+
+INT PIN_FLD_REFERENCE_COUNT {
+
+	ID = 6431;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBSCRIBER_PREFERENCES
+#=======================================
+
+ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+	ID = 8032;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBSCRIBER_PREFERENCE_ID
+#=======================================
+
+INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+	ID = 8033;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ACCESS_INFO
+#=======================================
+
+ARRAY MSO_FLD_ACCESS_INFO {
+
+	ID = 41133;
+	DESCR = "Array to store access level info";
+}
+
+
+#=======================================
+#  Field MSO_FLD_DATA_ACCESS_LEVEL
+#=======================================
+
+ENUM MSO_FLD_DATA_ACCESS_LEVEL {
+
+	ID = 41114;
+	DESCR = "0-Global, 1-State, 2-City, 3-Area, 4-Location";
+}
+
+
+#=======================================
+#  Field MSO_FLD_DATA_ACCESS_LIST
+#=======================================
+
+ARRAY MSO_FLD_DATA_ACCESS_LIST {
+
+	ID = 41115;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DATA_ACCESS
+#=======================================
+
+STRING MSO_FLD_DATA_ACCESS {
+
+	ID = 40072;
+	DESCR = "It is concatenation of Access level and its value. “STATE|WB”";
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORG_ACCESS_LEVEL
+#=======================================
+
+ENUM MSO_FLD_ORG_ACCESS_LEVEL {
+
+	ID = 41111;
+	DESCR = "0-All, 1-SP/JV, 2-DT, 3-STD, 4-LCO";
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORG_ACCESS_LIST
+#=======================================
+
+ARRAY MSO_FLD_ORG_ACCESS_LIST {
+
+	ID = 41112;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORG_OBJ
+#=======================================
+
+POID MSO_FLD_ORG_OBJ {
+
+	ID = 41113;
+	DESCR = "JV/DT/SDT/LCO Object poid";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WHOLESALE_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_WHOLESALE_INFO {
+
+	ID = 40055;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CIN
+#=======================================
+
+STRING MSO_FLD_CIN {
+
+	ID = 42635;
+	DESCR = "CIN Number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISION_MODEL
+#=======================================
+
+ENUM MSO_FLD_COMMISION_MODEL {
+
+	ID = 41135;
+	DESCR = "Commission Model";
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISION_SERVICE
+#=======================================
+
+ENUM MSO_FLD_COMMISION_SERVICE {
+
+	ID = 41136;
+	DESCR = "Commission Service";
+}
+
+
+#=======================================
+#  Field MSO_FLD_DOB
+#=======================================
+
+TIMESTAMP MSO_FLD_DOB {
+
+	ID = 42641;
+	DESCR = "Date of Birth";
+}
+
+
+#=======================================
+#  Field MSO_FLD_ENT_TAX_NO
+#=======================================
+
+STRING MSO_FLD_ENT_TAX_NO {
+
+	ID = 40077;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ERP_CONTROL_ACCT_ID
+#=======================================
+
+INT MSO_FLD_ERP_CONTROL_ACCT_ID {
+
+	ID = 40064;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IC_AGR_T
+#=======================================
+
+TIMESTAMP MSO_FLD_IC_AGR_T {
+
+	ID = 42638;
+	DESCR = "MSO LCO Interconnect Agreement Date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_LCO_IC_AGR_NO
+#=======================================
+
+STRING MSO_FLD_LCO_IC_AGR_NO {
+
+	ID = 42637;
+	DESCR = "MSO LCO Interconnect Agreement";
+}
+
+
+#=======================================
+#  Field MSO_FLD_LICENSE_NO
+#=======================================
+
+STRING MSO_FLD_LICENSE_NO {
+
+	ID = 42636;
+	DESCR = "MSO License Number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_POSTAL_REG_NO
+#=======================================
+
+STRING MSO_FLD_POSTAL_REG_NO {
+
+	ID = 40091;
+	DESCR = "Postal Regn No.";
+}
+
+
+#=======================================
+#  Field MSO_FLD_POST_EXP_T
+#=======================================
+
+TIMESTAMP MSO_FLD_POST_EXP_T {
+
+	ID = 42640;
+	DESCR = "Postal Registration Expiry date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_POST_REG_T
+#=======================================
+
+TIMESTAMP MSO_FLD_POST_REG_T {
+
+	ID = 42639;
+	DESCR = "Postal Registration Date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PREF_DOM
+#=======================================
+
+ENUM MSO_FLD_PREF_DOM {
+
+	ID = 40052;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ST_REG_NO
+#=======================================
+
+STRING MSO_FLD_ST_REG_NO {
+
+	ID = 40076;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TAN
+#=======================================
+
+STRING MSO_FLD_TAN {
+
+	ID = 42634;
+	DESCR = "TAN Number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_VAT_TAX_NO
+#=======================================
+
+STRING MSO_FLD_VAT_TAX_NO {
+
+	ID = 40078;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_SEGMENT
+#=======================================
+
+INT PIN_FLD_CUSTOMER_SEGMENT {
+
+	ID = 759;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NODE_LOCATION
+#=======================================
+
+STRING PIN_FLD_NODE_LOCATION {
+
+	ID = 1825;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITEOFF_INFO
+#=======================================
+
+ARRAY PIN_FLD_WRITEOFF_INFO {
+
+	ID = 2431;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Storable Class /profile
+#=======================================
+
+STORABLE CLASS /profile {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Generic class to allow customers to augment the account with arbitrary information easily without extending the account object. There may be many profile objects associated with each account.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the account object to which this profile information relates to.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Effective time of modification of this profile on an external system.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Name of the profile object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		DESCR = "Stores the cache residency distinction value for an object instance. Possible values are DEFAULT(0), REALTIME(1) and BATCH(2).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Link to service object that this profile relates to so that services can have multiple profiles.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/acct_extrating
+#=======================================
+
+STORABLE CLASS /profile/acct_extrating {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The /profile/acct_extrating class is used to hold extended account rating attributes. These attributes are used to associate custom information with a account object. The object supports an array of name/value pairs with both valid_from and valid_to contraints.  These attributes are currently used to store data related to Special Day discounting. Use extended account rating attributes to hold any custom data field associated with an account object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DATA_ARRAY {
+
+		DESCR = "Array containing the ERA name, values like birthdate, list of SLA...";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name of the pair, ie: birthdate, Agreement";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			DESCR = "if present, indicate the valid date range";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			DESCR = "if present, indicate the valid date range";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "property value, ie 01/02/1978, Cisco";
+			ORDER = 1;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/collections_params
+#=======================================
+
+STORABLE CLASS /profile/collections_params {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This profile object holds the info of collections";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_COLLECTIONS_PARAMS {
+
+		DESCR = "This array will hold the collections info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			DESCR = "Sender's billinfo obj";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/customer_care
+#=======================================
+
+STORABLE CLASS /profile/customer_care {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class are used by the Customer Center components. A /profile/customer_care object is created, if necessary, when registering new users or modifying existing users in Infranet through Customer Center.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOMER_CARE_INFO {
+
+		DESCR = "Substruct with details on the user's customer center profile.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_CATV_ACCOUNT_OBJ {
+
+			DESCR = "Reference of CATV account Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_DAS_TYPE {
+
+			DESCR = "DAS Type";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_DT_OBJ {
+
+			DESCR = "Distributor Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_GSTIN {
+
+			DESCR = "GSTIN Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_JV_OBJ {
+
+			DESCR = "JV Account Poid";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_LCO_OBJ {
+
+			DESCR = "LCO account Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PAN_NO {
+
+			DESCR = "PAN NO";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_PP_TYPE {
+
+			DESCR = "0-Hathway Primary LCO\n1-NON Hathway Secondary LCO";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			DESCR = "Sales man account poid to be stored in system for reference";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_SALES_CLOSE_TYPE {
+
+			DESCR = "0-Inbound,1-Outbound";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_SDT_OBJ {
+
+			DESCR = "Sub- Distributor Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_WELCOME_CALL_STATUS {
+
+			DESCR = "0:Pending, 1:Completed";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CONN_TYPE {
+
+			DESCR = "0-SGST+CGST, 1- IGST";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CUSTOMER_TYPE {
+
+			DESCR = "CATV or BB Subscriber type derived from PIN_FLD_BUSINESS_TYPE";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PARENT {
+
+			DESCR = "Immediate Parent";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/event_ordering
+#=======================================
+
+STORABLE CLASS /profile/event_ordering {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " Class to store the start time of last event processed  within the configured Criteria and balance group combination  for the account. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OOD_CRITERIA {
+
+		DESCR = "Array to hold rerating information specific to chronological ordering of events.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Balance group object";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_BILL_CYCLE_T {
+
+			DESCR = "Start time of the billing cycle of the event. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CRITERIA_NAME {
+
+			DESCR = "Criteria name";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_EVENT_PROCESS_T {
+
+			DESCR = "Last event process time for current accounting cycle. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/gst_info
+#=======================================
+
+STORABLE CLASS /profile/gst_info {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Profile to Store Cutomer GST information";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_GST_INFO {
+
+		DESCR = "GST Details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_CODE {
+
+			DESCR = "Abbreviation Code for Company or LCO short code.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			DESCR = "Goods and Service Taxpayer Identification Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Address";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FILENAME {
+
+			DESCR = "Name of the document";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMAGE_REF_NO {
+
+			DESCR = "Path of the GST document uploaded.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "PIN code";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/ldap
+#=======================================
+
+STORABLE CLASS /profile/ldap {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects are this class are used by Infranet Ldap Manager component. A /profile/ldap object is created,if necessary, when registering new users in Infranet who may already have an entry in the external system (Ldap) or when the user wants to control the id to be used for the new user in the external system. These external systems use a LDAP-compliant directory server. The information stored in this profile isused when exporting this new user from Infranet to the external system. This information is used in the PCM_OP_REPL_POL_PUSH opcode when invoking DM_LDAP operations.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LDAP_INFO {
+
+		DESCR = "Substruct with details on the user's LDAP profile.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DN {
+
+			DESCR = "The distinguished name (DN) of the entry to be created (or used if it already exists) when exporting the new user from Infranet into the external system LDAP directory server via DM_LDAP. ";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/mostcalled
+#=======================================
+
+STORABLE CLASS /profile/mostcalled {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class are used by pre_rating policy  for Dynamic Friends & Family feature. A /profile/mostcalled object is created when purchasing a discount with a mostcalled event type in the usage map.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+		DESCR = "Substruct with details on the most called profile.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			DESCR = "This is number of most called no.s to be considered while determining the most called numbers. For example, if this is set to 3, 3 most called no.s will be considered.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CRITERION {
+
+			DESCR = "criterion based on which the mostcalled numbers are ranked. Can be duration, cost or occurrences ";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "event_type to be considered while searching for the most called numbers ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMPACT_CATEGORY {
+
+			DESCR = "impact_category to be considered while searching for the most called numbers ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			DESCR = "The offering_obj of the discount ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/rollover_transfer
+#=======================================
+
+STORABLE CLASS /profile/rollover_transfer {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This profile object holds the rollover transfer information. It will be used during the rollover process to transfer the rolled over amounts.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RESOURCE_INFO {
+
+		DESCR = "This array will hold the receiver's details along with the period for which it is valid. The array element id will correspond to the resource id";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Sender's balance group. Rollover amounts will be transferred from this balance group.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_RECIPIENTS {
+
+			DESCR = "This array will hold the receiver's details along with the period for which it is valid. The array element id will correspond to the resource id";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_BAL_GRP_OBJ {
+
+				DESCR = "Receiver's balance group. Rollover amounts from the sender will be transferred here";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_SERVICE_OBJ {
+
+				DESCR = "Receiver's service for which  this transfer is configured.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			TIMESTAMP PIN_FLD_VALID_FROM {
+
+				DESCR = "Time from which this recipient is valid";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			TIMESTAMP PIN_FLD_VALID_TO {
+
+				DESCR = "Time upto which this recipient is valid";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/serv_extrating
+#=======================================
+
+STORABLE CLASS /profile/serv_extrating {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The /profile/serv_extrating class is used to hold extended service rating attributes. These attributes are used to associate custom information with a service object. The object supports an array of name/value pairs with both valid_from and valid_to contraints.  These attributes are currently used to store data related to Friends and Family discounting. Use extended service rating attributes to hold any custom data field associated with a service object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DATA_ARRAY {
+
+		DESCR = "Array containing the ERA values, like a list of friends and family phone numbers.";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "A name for the tuple.  Eg: Mom, Portal";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			DESCR = "if present, indicate the valid date range";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			DESCR = "if present, indicate the valid date range";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Tuple value.  Eg: 011-33-54980-5555, 1-408-572-2000";
+			ORDER = 1;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_EXTRATING {
+
+		DESCR = "Substruct to hold extended rating attributes information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LABEL {
+
+			DESCR = "This field contains ERA label name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_REFERENCE_COUNT {
+
+			DESCR = " A number which keeps the reference count. In  case of purchase increments the counter and  in case of cancel decrements the counter";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Provisioning status when relevant. Values are: Processing, Failed, Complete";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/subscriber_preferences
+#=======================================
+
+STORABLE CLASS /profile/subscriber_preferences {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This profile class extension will hold the subscriber preferences for the associated service or account. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "This field will contain the name of this particular preference.";
+			ORDER = 1;
+			LENGTH = 256;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+			DESCR = "This field will contain the ID associated with this particular preference.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "This field will contain the Value set for this particular preference for this service/account.";
+			ORDER = 2;
+			LENGTH = 256;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/wholesale
+#=======================================
+
+STORABLE CLASS /profile/wholesale {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Profile information for wholesale customers";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_ACCESS_INFO {
+
+		DESCR = "Array to store access level info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_DATA_ACCESS_LEVEL {
+
+			DESCR = "0-Global, 1-State, 2-City, 3-Area, 4-Location";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY MSO_FLD_DATA_ACCESS_LIST {
+
+			DESCR = "Array to store access list";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING MSO_FLD_DATA_ACCESS {
+
+				DESCR = "It is concatenation of Access level and its value. “STATE|WB”";
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM MSO_FLD_ORG_ACCESS_LEVEL {
+
+			DESCR = "0-All, 1-SP/JV, 2-DT, 3-STD, 4-LCO";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY MSO_FLD_ORG_ACCESS_LIST {
+
+			DESCR = "Array to store organization access object";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID MSO_FLD_ORG_OBJ {
+
+				DESCR = "JV/DT/SDT/LCO Object poid";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+	SUBSTRUCT MSO_FLD_WHOLESALE_INFO {
+
+		DESCR = "Profile information for wholesale customers";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CIN {
+
+			DESCR = "CIN Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_COMMISION_MODEL {
+
+			DESCR = "Commission Model";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_COMMISION_SERVICE {
+
+			DESCR = "Commission Service";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_DAS_TYPE {
+
+			DESCR = "DAS Type";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_DOB {
+
+			DESCR = "Date of Birth";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_DT_OBJ {
+
+			DESCR = "Distributor Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_ENT_TAX_NO {
+
+			DESCR = "Entertainment Tax Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_ERP_CONTROL_ACCT_ID {
+
+			DESCR = "6 digit ERP control account no for the LCO";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_GSTIN {
+
+			DESCR = "GSTIN Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_IC_AGR_T {
+
+			DESCR = "MSO LCO Interconnect Agreement Date";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_JV_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_LCO_IC_AGR_NO {
+
+			DESCR = "MSO LCO Interconnect Agreement";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_LCO_OBJ {
+
+			DESCR = "LCO account Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_LICENSE_NO {
+
+			DESCR = "MSO License Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PAN_NO {
+
+			DESCR = "Pan Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_POSTAL_REG_NO {
+
+			DESCR = "Postal Regn No.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_POST_EXP_T {
+
+			DESCR = "Postal Registration Expiry date";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_POST_REG_T {
+
+			DESCR = "Postal Registration Date";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_PP_TYPE {
+
+			DESCR = "0-Hathway Primary LCO\n1-NON Hathway Secondary LCO";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_PREF_DOM {
+
+			DESCR = "preferred DOM";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_SDT_OBJ {
+
+			DESCR = "Sub- Distributor Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_ST_REG_NO {
+
+			DESCR = "Service Tax Registration Number";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_TAN {
+
+			DESCR = "TAN Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_VAT_TAX_NO {
+
+			DESCR = "VAT Tax Number";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CUSTOMER_SEGMENT {
+
+			DESCR = "0: No bill segment\n1: Bill Segment";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CUSTOMER_TYPE {
+
+			DESCR = "0: OTHERS\n1: CSR_ADMIN\n2: CSR\n3: LCO\n4: JV\n5: DISTRIBUTOR\n6: SUB_SISTRIBUTOR\n7: OPERATION\n8: FIELD_SERVICE\n9: LOGISTICS\n10: COLLECTION_AGENT\n11: SALES_PERSON\n12: SELF_CARE";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NODE_LOCATION {
+
+			DESCR = "LCO ERP Locator";
+			ORDER = 0;
+			LENGTH = 100;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PARENT {
+
+			DESCR = "Immediate Parent Poid";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/writeoff
+#=======================================
+
+STORABLE CLASS /profile/writeoff {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Profile containing additional write-off information.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WRITEOFF_INFO {
+
+		DESCR = "Array containing additional write-off information. Only one array element will be present. The array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Flag determining the writeoff state on account. Written-off (1), Write-off-reversed (2).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			DESCR = "Item object of Write-off";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile
+#=======================================
+
+STORABLE CLASS /profile IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "profile_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		SQL_COLUMN = "object_cache_type";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/acct_extrating
+#=======================================
+
+STORABLE CLASS /profile/acct_extrating IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DATA_ARRAY {
+
+		SQL_TABLE = "profile_acct_extrating_data_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			SQL_COLUMN = "valid_from";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			SQL_COLUMN = "valid_to";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/collections_params
+#=======================================
+
+STORABLE CLASS /profile/collections_params IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_COLLECTIONS_PARAMS {
+
+		SQL_TABLE = "profile_collections_params_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			SQL_COLUMN = "billinfo_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/customer_care
+#=======================================
+
+STORABLE CLASS /profile/customer_care IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOMER_CARE_INFO {
+
+		SQL_TABLE = "profile_customer_care_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_CATV_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "catv_account_obj";
+		}
+
+		STRING MSO_FLD_DAS_TYPE {
+
+			SQL_COLUMN = "das_type";
+		}
+
+		POID MSO_FLD_DT_OBJ {
+
+			SQL_COLUMN = "dt_obj";
+		}
+
+		STRING MSO_FLD_GSTIN {
+
+			SQL_COLUMN = "gstin";
+		}
+
+		POID MSO_FLD_JV_OBJ {
+
+			SQL_COLUMN = "jv_obj";
+		}
+
+		POID MSO_FLD_LCO_OBJ {
+
+			SQL_COLUMN = "lco_obj";
+		}
+
+		STRING MSO_FLD_PAN_NO {
+
+			SQL_COLUMN = "pan_no";
+		}
+
+		ENUM MSO_FLD_PP_TYPE {
+
+			SQL_COLUMN = "pp_type";
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			SQL_COLUMN = "salesman_obj";
+		}
+
+		ENUM MSO_FLD_SALES_CLOSE_TYPE {
+
+			SQL_COLUMN = "sales_close_type";
+		}
+
+		POID MSO_FLD_SDT_OBJ {
+
+			SQL_COLUMN = "sdt_obj";
+		}
+
+		ENUM MSO_FLD_WELCOME_CALL_STATUS {
+
+			SQL_COLUMN = "welcome_call_status";
+		}
+
+		ENUM PIN_FLD_CONN_TYPE {
+
+			SQL_COLUMN = "gst_type";
+		}
+
+		ENUM PIN_FLD_CUSTOMER_TYPE {
+
+			SQL_COLUMN = "customer_type";
+		}
+
+		POID PIN_FLD_PARENT {
+
+			SQL_COLUMN = "parent";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/event_ordering
+#=======================================
+
+STORABLE CLASS /profile/event_ordering IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OOD_CRITERIA {
+
+		SQL_TABLE = "profile_event_ordering_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp";
+		}
+
+		TIMESTAMP PIN_FLD_BILL_CYCLE_T {
+
+			SQL_COLUMN = "bill_cycle_t";
+		}
+
+		STRING PIN_FLD_CRITERIA_NAME {
+
+			SQL_COLUMN = "criteria_name";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_EVENT_PROCESS_T {
+
+			SQL_COLUMN = "last_event_process_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/gst_info
+#=======================================
+
+STORABLE CLASS /profile/gst_info IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_GST_INFO {
+
+		SQL_TABLE = "mso_profile_gst_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_CODE {
+
+			SQL_COLUMN = "bu_code";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "gstin";
+		}
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_FILENAME {
+
+			SQL_COLUMN = "document_name";
+		}
+
+		STRING PIN_FLD_IMAGE_REF_NO {
+
+			SQL_COLUMN = "doc_path";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/ldap
+#=======================================
+
+STORABLE CLASS /profile/ldap IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LDAP_INFO {
+
+		SQL_TABLE = "profile_ldap_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DN {
+
+			SQL_COLUMN = "dn";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/mostcalled
+#=======================================
+
+STORABLE CLASS /profile/mostcalled IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+		SQL_TABLE = "profile_mostcalled_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			SQL_COLUMN = "count";
+		}
+
+		STRING PIN_FLD_CRITERION {
+
+			SQL_COLUMN = "criterion";
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		STRING PIN_FLD_IMPACT_CATEGORY {
+
+			SQL_COLUMN = "impact_category";
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			SQL_COLUMN = "offering_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/rollover_transfer
+#=======================================
+
+STORABLE CLASS /profile/rollover_transfer IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RESOURCE_INFO {
+
+		SQL_TABLE = "profile_roll_txfr_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		ARRAY PIN_FLD_RECIPIENTS {
+
+			SQL_TABLE = "profile_roll_txfr_recpts_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_BAL_GRP_OBJ {
+
+				SQL_COLUMN = "bal_grp_obj";
+			}
+
+			POID PIN_FLD_SERVICE_OBJ {
+
+				SQL_COLUMN = "service_obj";
+			}
+
+			TIMESTAMP PIN_FLD_VALID_FROM {
+
+				SQL_COLUMN = "valid_from";
+			}
+
+			TIMESTAMP PIN_FLD_VALID_TO {
+
+				SQL_COLUMN = "valid_to";
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/serv_extrating
+#=======================================
+
+STORABLE CLASS /profile/serv_extrating IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DATA_ARRAY {
+
+		SQL_TABLE = "profile_serv_extrating_data_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			SQL_COLUMN = "valid_from";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			SQL_COLUMN = "valid_to";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_EXTRATING {
+
+		SQL_TABLE = "profile_serv_extrating_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LABEL {
+
+			SQL_COLUMN = "label";
+		}
+
+		INT PIN_FLD_REFERENCE_COUNT {
+
+			SQL_COLUMN = "reference_count";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/subscriber_preferences
+#=======================================
+
+STORABLE CLASS /profile/subscriber_preferences IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+		SQL_TABLE = "subscriber_prefs_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+			SQL_COLUMN = "preference_id";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/wholesale
+#=======================================
+
+STORABLE CLASS /profile/wholesale IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_ACCESS_INFO {
+
+		SQL_TABLE = "mso_access_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_DATA_ACCESS_LEVEL {
+
+			SQL_COLUMN = "data_access_level";
+		}
+
+		ARRAY MSO_FLD_DATA_ACCESS_LIST {
+
+			SQL_TABLE = "mso_data_access_list_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING MSO_FLD_DATA_ACCESS {
+
+				SQL_COLUMN = "data_access";
+			}
+
+		}
+
+		ENUM MSO_FLD_ORG_ACCESS_LEVEL {
+
+			SQL_COLUMN = "org_access_level";
+		}
+
+		ARRAY MSO_FLD_ORG_ACCESS_LIST {
+
+			SQL_TABLE = "mso_org_access_list_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID MSO_FLD_ORG_OBJ {
+
+				SQL_COLUMN = "org_obj";
+			}
+
+		}
+
+	}
+
+	SUBSTRUCT MSO_FLD_WHOLESALE_INFO {
+
+		SQL_TABLE = "mso_wholesale_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CIN {
+
+			SQL_COLUMN = "cin_no";
+		}
+
+		ENUM MSO_FLD_COMMISION_MODEL {
+
+			SQL_COLUMN = "commision_model";
+		}
+
+		ENUM MSO_FLD_COMMISION_SERVICE {
+
+			SQL_COLUMN = "commision_service";
+		}
+
+		STRING MSO_FLD_DAS_TYPE {
+
+			SQL_COLUMN = "das_type";
+		}
+
+		TIMESTAMP MSO_FLD_DOB {
+
+			SQL_COLUMN = "dob";
+		}
+
+		POID MSO_FLD_DT_OBJ {
+
+			SQL_COLUMN = "dt_obj";
+		}
+
+		STRING MSO_FLD_ENT_TAX_NO {
+
+			SQL_COLUMN = "ent_tax_no";
+		}
+
+		INT MSO_FLD_ERP_CONTROL_ACCT_ID {
+
+			SQL_COLUMN = "erp_control_acct_id";
+		}
+
+		STRING MSO_FLD_GSTIN {
+
+			SQL_COLUMN = "gstin";
+		}
+
+		TIMESTAMP MSO_FLD_IC_AGR_T {
+
+			SQL_COLUMN = "lco_ic_agr_t";
+		}
+
+		POID MSO_FLD_JV_OBJ {
+
+			SQL_COLUMN = "jv_obj";
+		}
+
+		STRING MSO_FLD_LCO_IC_AGR_NO {
+
+			SQL_COLUMN = "lco_ic_agr_no";
+		}
+
+		POID MSO_FLD_LCO_OBJ {
+
+			SQL_COLUMN = "lco_obj";
+		}
+
+		STRING MSO_FLD_LICENSE_NO {
+
+			SQL_COLUMN = "mso_license_no";
+		}
+
+		STRING MSO_FLD_PAN_NO {
+
+			SQL_COLUMN = "pan_no";
+		}
+
+		STRING MSO_FLD_POSTAL_REG_NO {
+
+			SQL_COLUMN = "postal_reg_no";
+		}
+
+		TIMESTAMP MSO_FLD_POST_EXP_T {
+
+			SQL_COLUMN = "postal_exp_t";
+		}
+
+		TIMESTAMP MSO_FLD_POST_REG_T {
+
+			SQL_COLUMN = "postal_reg_t";
+		}
+
+		ENUM MSO_FLD_PP_TYPE {
+
+			SQL_COLUMN = "pp_type";
+		}
+
+		ENUM MSO_FLD_PREF_DOM {
+
+			SQL_COLUMN = "pref_dom";
+		}
+
+		POID MSO_FLD_SDT_OBJ {
+
+			SQL_COLUMN = "sdt_obj";
+		}
+
+		STRING MSO_FLD_ST_REG_NO {
+
+			SQL_COLUMN = "st_reg_no";
+		}
+
+		STRING MSO_FLD_TAN {
+
+			SQL_COLUMN = "tan_no";
+		}
+
+		STRING MSO_FLD_VAT_TAX_NO {
+
+			SQL_COLUMN = "vat_tax_no";
+		}
+
+		INT PIN_FLD_CUSTOMER_SEGMENT {
+
+			SQL_COLUMN = "segment_flag";
+		}
+
+		ENUM PIN_FLD_CUSTOMER_TYPE {
+
+			SQL_COLUMN = "customer_type";
+		}
+
+		STRING PIN_FLD_NODE_LOCATION {
+
+			SQL_COLUMN = "locator";
+		}
+
+		POID PIN_FLD_PARENT {
+
+			SQL_COLUMN = "parent";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/writeoff
+#=======================================
+
+STORABLE CLASS /profile/writeoff IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WRITEOFF_INFO {
+
+		SQL_TABLE = "profile_writeoff_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			SQL_COLUMN = "item_obj";
+		}
+
+	}
+
+}
+

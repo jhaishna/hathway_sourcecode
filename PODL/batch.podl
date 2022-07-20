@@ -1,0 +1,1471 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HOSTNAME
+#=======================================
+
+STRING PIN_FLD_HOSTNAME {
+
+	ID = 337;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PID
+#=======================================
+
+INT PIN_FLD_PID {
+
+	ID = 340;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CMT_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CMT_INFO {
+
+	ID = 9101;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_POID_ID0
+#=======================================
+
+DECIMAL PIN_FLD_END_POID_ID0 {
+
+	ID = 5963;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INPUT_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_INPUT_FILE_NAME {
+
+	ID = 2353;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_PROCESSED
+#=======================================
+
+INT PIN_FLD_NUM_PROCESSED {
+
+	ID = 8107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_TOTAL_RECORDS
+#=======================================
+
+INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+	ID = 2359;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_POID_ID0
+#=======================================
+
+DECIMAL PIN_FLD_START_POID_ID0 {
+
+	ID = 5962;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SYNC_ID
+#=======================================
+
+DECIMAL PIN_FLD_SYNC_ID {
+
+	ID = 5967;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GEL_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_GEL_INFO {
+
+	ID = 2352;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ERROR_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_ERROR_FILE_NAME {
+
+	ID = 2355;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILTER_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_FILTER_FILE_NAME {
+
+	ID = 5302;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_RETRIES
+#=======================================
+
+INT PIN_FLD_NUM_RETRIES {
+
+	ID = 2360;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUCCESS_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_SUCCESS_FILE_NAME {
+
+	ID = 2354;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_NAME
+#=======================================
+
+STRING PIN_FLD_TEMPLATE_NAME {
+
+	ID = 2365;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HEADER_INFO
+#=======================================
+
+ARRAY PIN_FLD_HEADER_INFO {
+
+	ID = 2367;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SESSION_STATS
+#=======================================
+
+ARRAY PIN_FLD_SESSION_STATS {
+
+	ID = 5301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_LOADED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_LOADED_T {
+
+	ID = 2356;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_FAILED
+#=======================================
+
+INT PIN_FLD_NUM_FAILED {
+
+	ID = 2358;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_FILTERED
+#=======================================
+
+INT PIN_FLD_NUM_FILTERED {
+
+	ID = 2370;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_SUCCEEDED
+#=======================================
+
+INT PIN_FLD_NUM_SUCCEEDED {
+
+	ID = 2357;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRAILER_INFO
+#=======================================
+
+ARRAY PIN_FLD_TRAILER_INFO {
+
+	ID = 2368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_HANDLER_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_BATCH_HANDLER_INFO {
+
+	ID = 2605;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_APPLICATION_PID
+#=======================================
+
+INT PIN_FLD_BATCH_APPLICATION_PID {
+
+	ID = 2601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_CONTROLLER_OBJ
+#=======================================
+
+POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+	ID = 2603;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_HANDLER_CMDLINE
+#=======================================
+
+STRING PIN_FLD_BATCH_HANDLER_CMDLINE {
+
+	ID = 2604;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_OCCURRENCE_OBJ
+#=======================================
+
+POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+	ID = 2613;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_REPLACES_OBJ
+#=======================================
+
+POID PIN_FLD_BATCH_REPLACES_OBJ {
+
+	ID = 2609;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_OCCURRENCE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_BATCH_OCCURRENCE_INFO {
+
+	ID = 2612;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /batch
+#=======================================
+
+STORABLE CLASS /batch {
+
+	SEQ_START = "1";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This is a base class suitable for tracking batch application processes.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the /account object which is responsible for creating this batch object.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "User-defined description of the batch object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "The time when batch (session) ended.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_HOSTNAME {
+
+		DESCR = "Name of the host on which the batch application was run during this session.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_PID {
+
+		DESCR = "The operating system id of the related process.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		DESCR = "The name of the program that generated the batch object.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "The time when the batch (session) started. For instantaneous batch operations, the start and end times are identical. For batch sessions, the start time indicates the time at which the batch session began.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status for this batch object.  Status value is application specific.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/cmt
+#=======================================
+
+STORABLE CLASS /batch/cmt {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A batch subclass used to record Conversion Manager  preprocessing information.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CMT_INFO {
+
+		DESCR = "Substruct containing information about this Batch CMT session.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_END_POID_ID0 {
+
+			DESCR = "Portal object id of the last object loaded.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_INPUT_FILE_NAME {
+
+			DESCR = "Fully-qualified name of the data file loaded by this CMT session.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_PROCESSED {
+
+			DESCR = "The quantity of records processed thus far.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+			DESCR = "The quantity of records read in from the data file.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_START_POID_ID0 {
+
+			DESCR = "Portal object id of the first object loaded.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_SYNC_ID {
+
+			DESCR = "A unique identifier for this Batch CMT  session used for synchronizing critical sections with other running Batch CMT sessions.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/controller
+#=======================================
+
+STORABLE CLASS /batch/controller {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A batch subclass used to manage the lifecycle of a Batch Controller session.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /batch/gel
+#=======================================
+
+STORABLE CLASS /batch/gel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass for storing data on each load session of Generic Event Loader. The session object of the events loaded for this session is the sameas the POID of this object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GEL_INFO {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ERROR_FILE_NAME {
+
+			DESCR = "Name of the error log file created with full path";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FILTER_FILE_NAME {
+
+			DESCR = "Name of the filter log file created with full path";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_INPUT_FILE_NAME {
+
+			DESCR = "Name of the event log file imported with full path";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_RETRIES {
+
+			DESCR = "Number of attempts to load this file";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+			DESCR = "Total number of records read in from the file";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUCCESS_FILE_NAME {
+
+			DESCR = "Name of the success log file created with full path";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TEMPLATE_NAME {
+
+			DESCR = "The template used for parsing the file";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_HEADER_INFO {
+
+		DESCR = "Array of header field names and values for the loaded file";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "Name of the field ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Value of the field in the header ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SESSION_STATS {
+
+		DESCR = "Array for holding the session information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_LAST_LOADED_T {
+
+			DESCR = "Timestamp of when the file was last loaded";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_FAILED {
+
+			DESCR = "Number of records failed to load";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_FILTERED {
+
+			DESCR = "Number of records filtered out";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_SUCCEEDED {
+
+			DESCR = "Number of records successfully loaded";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Current load status of UEL. Possible values are: FIELD_PARSE_ERROR = 1  ACCT_FORMAT_ERROR = 2  LOAD_FORMAT_ERROR = 3  PREV_PARSE_ERROR = 4  TOO_MANY_LOAD_ERRORS = 5  COMMAND_LINE_ARG_ERROR = 10  FILE_NOT_FOUND_ERROR = 11  ACCT_OPCODE_ERROR = 100  LOAD_OPCODE_ERROR = 101 ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_TRAILER_INFO {
+
+		DESCR = "Array of trailer field names and values for the loaded file";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "Name of the field ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Value of the field in the trailer ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/handler
+#=======================================
+
+STORABLE CLASS /batch/handler {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A batch subclass used to record the lifecycle of a Batch Controller launched handler process.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BATCH_HANDLER_INFO {
+
+		DESCR = "Substruct containing information about this Batch Handler session.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_APPLICATION_PID {
+
+			DESCR = "The operating system id of the application launched by this handler process.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+			DESCR = "Portal object id of the Batch Controller object which launched this handler session.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_BATCH_HANDLER_CMDLINE {
+
+			DESCR = "Command string to start the handler process.  Includes the full pathname to the executable and all of the arguments. The POID_ID of the poid of this object will be passed as the last argument when the handler is started to process an occurrence.  If the handler is being started to process an occurrence that a previously started handler failed to process, the POID_ID of the failed handler object will follow the POID_ID of this object as the last argument.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+			DESCR = "Portal object id of the Batch Occurrence object which this handler application will service.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BATCH_REPLACES_OBJ {
+
+			DESCR = "Portal object id of the Batch Handler object which this handler object replaces.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/occurrence
+#=======================================
+
+STORABLE CLASS /batch/occurrence {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A batch subclass used to record a Batch Controller occurrence.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BATCH_OCCURRENCE_INFO {
+
+		DESCR = "Substruct containing information about this Batch Occurrence.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+			DESCR = "Portal object id of the Batch Controller session which created this occurrence object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Type of this occurrence. Permitted values include TIMED, EXTERNAL, etc.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch
+#=======================================
+
+STORABLE CLASS /batch IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "batch_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "end_t";
+	}
+
+	STRING PIN_FLD_HOSTNAME {
+
+		SQL_COLUMN = "hostname";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	INT PIN_FLD_PID {
+
+		SQL_COLUMN = "pid";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "start_t";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/cmt
+#=======================================
+
+STORABLE CLASS /batch/cmt IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CMT_INFO {
+
+		SQL_TABLE = "batch_cmt_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_END_POID_ID0 {
+
+			SQL_COLUMN = "end_poid_id0";
+		}
+
+		STRING PIN_FLD_INPUT_FILE_NAME {
+
+			SQL_COLUMN = "input_file_name";
+		}
+
+		INT PIN_FLD_NUM_PROCESSED {
+
+			SQL_COLUMN = "num_processed";
+		}
+
+		INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+			SQL_COLUMN = "num_total_records";
+		}
+
+		DECIMAL PIN_FLD_START_POID_ID0 {
+
+			SQL_COLUMN = "start_poid_id0";
+		}
+
+		DECIMAL PIN_FLD_SYNC_ID {
+
+			SQL_COLUMN = "sync_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/controller
+#=======================================
+
+STORABLE CLASS /batch/controller IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /batch/gel
+#=======================================
+
+STORABLE CLASS /batch/gel IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GEL_INFO {
+
+		SQL_TABLE = "batch_gel_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ERROR_FILE_NAME {
+
+			SQL_COLUMN = "error_file_name";
+		}
+
+		STRING PIN_FLD_FILTER_FILE_NAME {
+
+			SQL_COLUMN = "filter_file_name";
+		}
+
+		STRING PIN_FLD_INPUT_FILE_NAME {
+
+			SQL_COLUMN = "input_file_name";
+		}
+
+		INT PIN_FLD_NUM_RETRIES {
+
+			SQL_COLUMN = "num_retries";
+		}
+
+		INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+			SQL_COLUMN = "num_total_records";
+		}
+
+		STRING PIN_FLD_SUCCESS_FILE_NAME {
+
+			SQL_COLUMN = "success_file_name";
+		}
+
+		STRING PIN_FLD_TEMPLATE_NAME {
+
+			SQL_COLUMN = "template_name";
+		}
+
+	}
+
+	ARRAY PIN_FLD_HEADER_INFO {
+
+		SQL_TABLE = "batch_gel_header_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "header_field_name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "header_field_value";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SESSION_STATS {
+
+		SQL_TABLE = "batch_gel_session_stat_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_LAST_LOADED_T {
+
+			SQL_COLUMN = "last_loaded_t";
+		}
+
+		INT PIN_FLD_NUM_FAILED {
+
+			SQL_COLUMN = "num_failed";
+		}
+
+		INT PIN_FLD_NUM_FILTERED {
+
+			SQL_COLUMN = "num_filtered";
+		}
+
+		INT PIN_FLD_NUM_SUCCEEDED {
+
+			SQL_COLUMN = "num_succeeded";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+	ARRAY PIN_FLD_TRAILER_INFO {
+
+		SQL_TABLE = "batch_gel_trailer_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "trailer_field_name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "trailer_field_value";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/handler
+#=======================================
+
+STORABLE CLASS /batch/handler IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BATCH_HANDLER_INFO {
+
+		SQL_TABLE = "batch_handler_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BATCH_APPLICATION_PID {
+
+			SQL_COLUMN = "batch_application_pid";
+		}
+
+		POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+			SQL_COLUMN = "batch_controller_obj";
+		}
+
+		STRING PIN_FLD_BATCH_HANDLER_CMDLINE {
+
+			SQL_COLUMN = "batch_handler_cmdline";
+		}
+
+		POID PIN_FLD_BATCH_OCCURRENCE_OBJ {
+
+			SQL_COLUMN = "batch_occurrence_obj";
+		}
+
+		POID PIN_FLD_BATCH_REPLACES_OBJ {
+
+			SQL_COLUMN = "batch_replaces_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/occurrence
+#=======================================
+
+STORABLE CLASS /batch/occurrence IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BATCH_OCCURRENCE_INFO {
+
+		SQL_TABLE = "batch_occurrence_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BATCH_CONTROLLER_OBJ {
+
+			SQL_COLUMN = "batch_controller_obj";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

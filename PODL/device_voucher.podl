@@ -1,0 +1,253 @@
+
+#=======================================
+#  Field PIN_FLD_DEVICE_VOUCHER
+#=======================================
+
+SUBSTRUCT PIN_FLD_DEVICE_VOUCHER {
+
+	ID = 7607;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_CODE
+#=======================================
+
+STRING PIN_FLD_DEALER_CODE {
+
+	ID = 7602;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_NAME
+#=======================================
+
+STRING PIN_FLD_DEALER_NAME {
+
+	ID = 7601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+	ID = 5601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_CODE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+	ID = 7610;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_TYPE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+	ID = 7609;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VOUCHER_PIN
+#=======================================
+
+STRING PIN_FLD_VOUCHER_PIN {
+
+	ID = 7608;
+}
+
+
+#=======================================
+#  Storable Class /device/voucher
+#=======================================
+
+STORABLE CLASS /device/voucher {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Used to represent a unique Voucher Device. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DEVICE_VOUCHER {
+
+		DESCR = "Substruct containing information about this voucher device.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEALER_CODE {
+
+			DESCR = "Code of the service provoider ";
+			ORDER = 2;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEALER_NAME {
+
+			DESCR = "Name of the service provider ";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Deal object which has the products to impact the balance";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			DESCR = "Expiration date of the voucher ";
+			ORDER = 6;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			DESCR = "Code associated with the recharge card ";
+			ORDER = 5;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			DESCR = "Type of the voucher card ";
+			ORDER = 4;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VOUCHER_PIN {
+
+			DESCR = "Voucher personal identification number.";
+			ORDER = 0;
+			LENGTH = 79;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/voucher
+#=======================================
+
+STORABLE CLASS /device/voucher IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DEVICE_VOUCHER {
+
+		SQL_TABLE = "device_voucher_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEALER_CODE {
+
+			SQL_COLUMN = "dealer_code";
+		}
+
+		STRING PIN_FLD_DEALER_NAME {
+
+			SQL_COLUMN = "dealer_name";
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			SQL_COLUMN = "expiration";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			SQL_COLUMN = "recharge_card_code";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			SQL_COLUMN = "recharge_card_type";
+		}
+
+		STRING PIN_FLD_VOUCHER_PIN {
+
+			SQL_COLUMN = "voucher_pin";
+		}
+
+	}
+
+}
+

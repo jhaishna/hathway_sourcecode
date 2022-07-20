@@ -1,0 +1,225 @@
+
+#=======================================
+#  Field PIN_FLD_LIMIT
+#=======================================
+
+ARRAY PIN_FLD_LIMIT {
+
+	ID = 116;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_FLOOR
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+	ID = 833;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_LIMIT
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+	ID = 200;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_THRESHOLDS
+#=======================================
+
+INT PIN_FLD_CREDIT_THRESHOLDS {
+
+	ID = 832;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_THRESHOLDS_FIXED
+#=======================================
+
+STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+	ID = 871;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/limit
+#=======================================
+
+STORABLE CLASS /event/billing/limit {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the credit limits of balance groups belonging to an account.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LIMIT {
+
+		DESCR = "Array describing the old and new credit limits. Array element id is significant. 0 (old), 1 (new).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Link to the balance_group object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+			DESCR = "Same as PIN_FLD_CREDIT_FLOOR in the PIN_FLD_PROFILES array present in the /config/credit_profile object pointed to by the respective balance_group whose credit limits are being tracked.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+			DESCR = "Same as PIN_FLD_CREDIT_LIMIT in the PIN_FLD_PROFILES array present in the /config/credit_profile object pointed to by the respective balance_group whose credit limits are being tracked.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CREDIT_THRESHOLDS {
+
+			DESCR = "Same as PIN_FLD_CREDIT_THRESHOLDS in the PIN_FLD_PROFILES array present in the /config/credit_profile object pointed to by the respective balance_group whose credit limits are being tracked.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+			DESCR = "Same as PIN_FLD_CREDIT_THRESHOLDS_FIXED in the PIN_FLD_PROFILES array present in the /config/credit_profile object pointed to by the respective balance_group whose credit limits are being tracked.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			DESCR = "Resource id for which the credit limit is being changed.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/limit
+#=======================================
+
+STORABLE CLASS /event/billing/limit IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LIMIT {
+
+		SQL_TABLE = "event_billing_limit_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+			SQL_COLUMN = "credit_floor";
+		}
+
+		DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+			SQL_COLUMN = "credit_limit";
+		}
+
+		INT PIN_FLD_CREDIT_THRESHOLDS {
+
+			SQL_COLUMN = "credit_thresholds";
+		}
+
+		STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+			SQL_COLUMN = "credit_thresholds_fixed";
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			SQL_COLUMN = "element_id";
+		}
+
+	}
+
+}
+

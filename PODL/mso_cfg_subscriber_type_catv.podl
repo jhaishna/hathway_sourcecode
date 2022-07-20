@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /mso_cfg_subscriber_type/catv
+#=======================================
+
+STORABLE CLASS /mso_cfg_subscriber_type/catv {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "CATV Subscriber Type Config";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_subscriber_type/catv
+#=======================================
+
+STORABLE CLASS /mso_cfg_subscriber_type/catv IMPLEMENTATION ORACLE7 {
+
+}
+

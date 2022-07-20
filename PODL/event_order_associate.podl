@@ -1,0 +1,94 @@
+
+#=======================================
+#  Field PIN_FLD_SUB_ORDER_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_SUB_ORDER_INFO {
+
+	ID = 7503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_OBJ
+#=======================================
+
+POID PIN_FLD_ORDER_OBJ {
+
+	ID = 7500;
+}
+
+
+#=======================================
+#  Storable Class /event/order/associate
+#=======================================
+
+STORABLE CLASS /event/order/associate {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when a suborder is associated with a master order.ThisObject is created by PCM_OP_ORDER_ASSOCIATE opcode";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SUB_ORDER_INFO {
+
+		DESCR = "The substruct to hold the sub order object info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			DESCR = "The poid of the sub order object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/associate
+#=======================================
+
+STORABLE CLASS /event/order/associate IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SUB_ORDER_INFO {
+
+		SQL_TABLE = "event_order_associate_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			SQL_COLUMN = "order_obj";
+		}
+
+	}
+
+}
+

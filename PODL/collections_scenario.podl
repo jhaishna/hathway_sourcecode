@@ -1,0 +1,559 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AGENT_OBJ
+#=======================================
+
+POID PIN_FLD_AGENT_OBJ {
+
+	ID = 7721;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONFIG_SCENARIO_OBJ
+#=======================================
+
+POID PIN_FLD_CONFIG_SCENARIO_OBJ {
+
+	ID = 7723;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENTRY_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+	ID = 7714;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ENTRY_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ENTRY_T {
+
+	ID = 7724;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXIT_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+	ID = 7715;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXIT_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EXIT_T {
+
+	ID = 7725;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERDUE_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_OVERDUE_AMOUNT {
+
+	ID = 7730;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERDUE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_OVERDUE_T {
+
+	ID = 7729;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROMISE_TO_PAY
+#=======================================
+
+ARRAY PIN_FLD_PROMISE_TO_PAY {
+
+	ID = 7744;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOKE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_INVOKE_T {
+
+	ID = 1403;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REASON
+#=======================================
+
+ENUM PIN_FLD_REASON {
+
+	ID = 5506;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /collections_scenario
+#=======================================
+
+STORABLE CLASS /collections_scenario {
+
+	SEQ_START = "2000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Defines an instance of a collections scenario. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the /account object that is in collections. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_AGENT_OBJ {
+
+		DESCR = "Link to the agent object that is assigned to this scenario. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		DESCR = "Link to the /billinfo object that is in collections. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_CONFIG_SCENARIO_OBJ {
+
+		DESCR = "Link to the /config/collections/scenario object. ";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+		DESCR = "Actual entry amount. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_ENTRY_T {
+
+		DESCR = "Actual entry date. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+		DESCR = "Actual exit amount. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EXIT_T {
+
+		DESCR = "Actual exit date. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_OVERDUE_AMOUNT {
+
+		DESCR = "The current overdue amount for the scenario. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_OVERDUE_T {
+
+		DESCR = "The current overdue date for this account. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_PROMISE_TO_PAY {
+
+		DESCR = "Single element array to hold common promise to pay information. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "Overdue amount at the time of promise. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			DESCR = "Link to collections activity event object. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_INVOKE_T {
+
+			DESCR = "Time when promise to pay is invoked. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_REASON {
+
+		DESCR = "Reason code for exiting the scenario. Two valid values: 0 -- Normal, 1 -- Manual(enforced) ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /collections_scenario
+#=======================================
+
+STORABLE CLASS /collections_scenario IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "collections_scenario_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	POID PIN_FLD_AGENT_OBJ {
+
+		SQL_COLUMN = "agent_obj";
+	}
+
+	POID PIN_FLD_BILLINFO_OBJ {
+
+		SQL_COLUMN = "billinfo_obj";
+	}
+
+	POID PIN_FLD_CONFIG_SCENARIO_OBJ {
+
+		SQL_COLUMN = "config_scenario_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	DECIMAL PIN_FLD_ENTRY_AMOUNT {
+
+		SQL_COLUMN = "entry_amount";
+	}
+
+	TIMESTAMP PIN_FLD_ENTRY_T {
+
+		SQL_COLUMN = "entry_t";
+	}
+
+	DECIMAL PIN_FLD_EXIT_AMOUNT {
+
+		SQL_COLUMN = "exit_amount";
+	}
+
+	TIMESTAMP PIN_FLD_EXIT_T {
+
+		SQL_COLUMN = "exit_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	DECIMAL PIN_FLD_OVERDUE_AMOUNT {
+
+		SQL_COLUMN = "overdue_amount";
+	}
+
+	TIMESTAMP PIN_FLD_OVERDUE_T {
+
+		SQL_COLUMN = "overdue_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	ARRAY PIN_FLD_PROMISE_TO_PAY {
+
+		SQL_TABLE = "coll_scen_promisetopay_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			SQL_COLUMN = "event_obj";
+		}
+
+		TIMESTAMP PIN_FLD_INVOKE_T {
+
+			SQL_COLUMN = "invoke_t";
+		}
+
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ENUM PIN_FLD_REASON {
+
+		SQL_COLUMN = "reason";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

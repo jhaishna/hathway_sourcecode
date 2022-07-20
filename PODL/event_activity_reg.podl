@@ -1,0 +1,298 @@
+
+#=======================================
+#  Field PIN_FLD_REG
+#=======================================
+
+SUBSTRUCT PIN_FLD_REG {
+
+	ID = 440;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_ACCESS
+#=======================================
+
+STRING PIN_FLD_AAC_ACCESS {
+
+	ID = 98;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_SOURCE
+#=======================================
+
+STRING PIN_FLD_AAC_SOURCE {
+
+	ID = 99;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_EXP
+#=======================================
+
+STRING PIN_FLD_DEBIT_EXP {
+
+	ID = 130;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEBIT_NUM
+#=======================================
+
+STRING PIN_FLD_DEBIT_NUM {
+
+	ID = 129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIRST_NAME
+#=======================================
+
+STRING PIN_FLD_FIRST_NAME {
+
+	ID = 159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_NAME
+#=======================================
+
+STRING PIN_FLD_LAST_NAME {
+
+	ID = 161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIDDLE_NAME
+#=======================================
+
+STRING PIN_FLD_MIDDLE_NAME {
+
+	ID = 160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESULT
+#=======================================
+
+ENUM PIN_FLD_RESULT {
+
+	ID = 50;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/reg
+#=======================================
+
+STORABLE CLASS /event/activity/reg {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_REG {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AAC_ACCESS {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_AAC_SOURCE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_EXP {
+
+			ORDER = 0;
+			LENGTH = 128;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/reg
+#=======================================
+
+STORABLE CLASS /event/activity/reg IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_REG {
+
+		SQL_TABLE = "event_activity_reg_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AAC_ACCESS {
+
+			SQL_COLUMN = "aac_access";
+		}
+
+		STRING PIN_FLD_AAC_SOURCE {
+
+			SQL_COLUMN = "aac_source";
+		}
+
+		STRING PIN_FLD_DEBIT_EXP {
+
+			SQL_COLUMN = "debit_exp";
+		}
+
+		STRING PIN_FLD_DEBIT_NUM {
+
+			SQL_COLUMN = "debit_num";
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			SQL_COLUMN = "first_name";
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			SQL_COLUMN = "last_name";
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			SQL_COLUMN = "middle_name";
+		}
+
+		ENUM PIN_FLD_RESULT {
+
+			SQL_COLUMN = "result";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

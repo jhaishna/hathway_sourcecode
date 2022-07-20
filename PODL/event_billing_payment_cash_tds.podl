@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/payment/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash/tds {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a tds cash payment is made by the user.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash/tds IMPLEMENTATION ORACLE7 {
+
+}
+

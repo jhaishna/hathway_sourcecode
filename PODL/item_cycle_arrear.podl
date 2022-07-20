@@ -1,0 +1,322 @@
+
+#=======================================
+#  Storable Class /item/cycle_arrear
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent cycle_arrear items.  These items are created from cycle_arrear fee generated events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/monthly_mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/monthly_mso_sb_pkg_dpop {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "monthly_mso_sb_pkg_dpop";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_et
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_et {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Arrear Entertainment tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_amc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso hw amc";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for monthly Cycle Arrear Harhware Rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_adn_normal {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_adn_normal";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_alc_fta {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_alc_fta";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_alc_paid
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_alc_paid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_alc_paid";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_hw
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_hw {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear of mso_sb_onetime_hw";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_srvc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_srvc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear of mso_sb_onetime_srvc";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_bst
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_bst {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_pkg_bst";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dpop {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_pkg_dpop";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dprp
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dprp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_pkg_dprp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dstp
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dstp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for cycle arrear mso_sb_pkg_dstp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/monthly_mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/monthly_mso_sb_pkg_dpop IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_et
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_et IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_amc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_adn_normal IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_alc_fta IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_alc_paid
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_alc_paid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_hw
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_hw IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_onetime_srvc
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_onetime_srvc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_bst
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_bst IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dpop IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dprp
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dprp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_arrear/mso_sb_pkg_dstp
+#=======================================
+
+STORABLE CLASS /item/cycle_arrear/mso_sb_pkg_dstp IMPLEMENTATION ORACLE7 {
+
+}
+

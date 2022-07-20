@@ -1,0 +1,215 @@
+
+Session altered.
+
+Elapsed: 00:00:00.00
+
+STARTDT
+-------------------
+06-07-2021 08:30.36
+
+Elapsed: 00:00:00.00
+
+DEN_FLAG   HW_FLAG    DSN_FLAG
+---------- ---------- ----------
+N	   Y	      N
+
+Elapsed: 00:00:00.00
+DROP TABLE dly_can_pan_india
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.00
+
+Table created.
+
+Elapsed: 00:00:20.42
+DROP INDEX tmp_ind_ser2
+           *
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.01
+CREATE INDEX tmp_ind_ser2
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+Elapsed: 00:00:00.00
+DROP TABLE dly_can_pan_fin
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.00
+
+Table created.
+
+Elapsed: 00:00:11.35
+DROP TABLE dly_can_pan_fin2
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.00
+CREATE TABLE dly_can_pan_fin2_1
+*
+ERROR at line 1:
+ORA-12801: error signaled in parallel query server P01I
+ORA-01652: unable to extend temp segment by 8192 in tablespace PIN1_TBS
+
+
+Elapsed: 00:00:16.39
+DROP TABLE hw_base_pack
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.01
+     FROM   dly_can_pan_fin2_1 a, account_t b
+            *
+ERROR at line 10:
+ORA-00942: table or view does not exist
+
+
+Elapsed: 00:00:00.00
+DROP TABLE den_base_pack
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.00
+     FROM   dly_can_pan_fin2_1 a, account_t b
+            *
+ERROR at line 10:
+ORA-00942: table or view does not exist
+
+
+Elapsed: 00:00:00.00
+DROP TABLE dsn_base_pack
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.00
+CREATE TABLE dsn_base_pack
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+Elapsed: 00:00:00.05
+DROP TABLE  others_base_pack
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.00
+     FROM   dly_can_pan_fin2_1
+            *
+ERROR at line 10:
+ORA-00942: table or view does not exist
+
+
+Elapsed: 00:00:00.00
+
+4639801 rows created.
+
+Elapsed: 00:02:32.89
+
+Commit complete.
+
+Elapsed: 00:00:00.09
+
+STARTDT1
+-------------------
+06-07-2021 08:33.57
+
+Elapsed: 00:00:00.00
+	    PIN1.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                 *
+ERROR at line 3:
+ORA-01654: unable to extend index PIN1.CANCEL_PLAN_IND_SERV by 1024 in
+tablespace PIN1_TBS
+
+
+Elapsed: 00:09:47.42
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+	    PIN1.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                 *
+ERROR at line 3:
+ORA-01654: unable to extend index PIN1.CANCEL_PLAN_IND_SERV by 1024 in
+tablespace PIN1_TBS
+
+
+Elapsed: 00:00:00.15
+
+Commit complete.
+
+Elapsed: 00:00:00.01
+
+STARTDT1
+-------------------
+06-07-2021 08:43.45
+
+Elapsed: 00:00:00.00
+	    PIN1.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                 *
+ERROR at line 3:
+ORA-01654: unable to extend index PIN1.CANCEL_PLAN_IND_SERV by 1024 in
+tablespace PIN1_TBS
+
+
+Elapsed: 00:00:00.09
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+0 rows created.
+
+Elapsed: 00:00:00.01
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+STARTDT1
+-------------------
+06-07-2021 08:43.45
+
+Elapsed: 00:00:00.00
+
+0 rows created.
+
+Elapsed: 00:00:00.01
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+ENDDT
+-------------------
+06-07-2021 08:43.45
+
+Elapsed: 00:00:00.00

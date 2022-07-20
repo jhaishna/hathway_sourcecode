@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /batch/controller
+#=======================================
+
+STORABLE CLASS /batch/controller {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "A batch subclass used to manage the lifecycle of a Batch Controller session.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /batch/controller
+#=======================================
+
+STORABLE CLASS /batch/controller IMPLEMENTATION ORACLE7 {
+
+}
+

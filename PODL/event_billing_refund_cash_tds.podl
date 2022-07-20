@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/refund/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/refund/cash/tds {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "TDS Refund";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/refund/cash/tds
+#=======================================
+
+STORABLE CLASS /event/billing/refund/cash/tds IMPLEMENTATION ORACLE7 {
+
+}
+

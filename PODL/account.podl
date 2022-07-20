@@ -1,0 +1,2151 @@
+
+#=======================================
+#  Field MSO_FLD_AREA
+#=======================================
+
+STRING MSO_FLD_AREA {
+
+	ID = 40068;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CONTACT_PREF
+#=======================================
+
+ENUM MSO_FLD_CONTACT_PREF {
+
+	ID = 40059;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ET_ZONE
+#=======================================
+
+STRING MSO_FLD_ET_ZONE {
+
+	ID = 40061;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LEGACY_ACCOUNT_NO
+#=======================================
+
+STRING MSO_FLD_LEGACY_ACCOUNT_NO {
+
+	ID = 40060;
+}
+
+
+#=======================================
+#  Field MSO_FLD_REGION
+#=======================================
+
+ENUM MSO_FLD_REGION {
+
+	ID = 40023;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RMAIL
+#=======================================
+
+STRING MSO_FLD_RMAIL {
+
+	ID = 40063;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RMN
+#=======================================
+
+STRING MSO_FLD_RMN {
+
+	ID = 40062;
+}
+
+
+#=======================================
+#  Field MSO_FLD_VAT_ZONE
+#=======================================
+
+STRING MSO_FLD_VAT_ZONE {
+
+	ID = 40071;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_ACCESS
+#=======================================
+
+STRING PIN_FLD_AAC_ACCESS {
+
+	ID = 98;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_PACKAGE
+#=======================================
+
+STRING PIN_FLD_AAC_PACKAGE {
+
+	ID = 101;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_PROMO_CODE
+#=======================================
+
+STRING PIN_FLD_AAC_PROMO_CODE {
+
+	ID = 102;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_SERIAL_NUM
+#=======================================
+
+STRING PIN_FLD_AAC_SERIAL_NUM {
+
+	ID = 103;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_SOURCE
+#=======================================
+
+STRING PIN_FLD_AAC_SOURCE {
+
+	ID = 99;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AAC_VENDOR
+#=======================================
+
+STRING PIN_FLD_AAC_VENDOR {
+
+	ID = 100;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCESS_CODE1
+#=======================================
+
+STRING PIN_FLD_ACCESS_CODE1 {
+
+	ID = 104;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCESS_CODE2
+#=======================================
+
+STRING PIN_FLD_ACCESS_CODE2 {
+
+	ID = 105;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_TAG
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_TAG {
+
+	ID = 113;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_TYPE
+#=======================================
+
+ENUM PIN_FLD_ACCOUNT_TYPE {
+
+	ID = 112;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ATTRIBUTE
+#=======================================
+
+INT PIN_FLD_ATTRIBUTE {
+
+	ID = 513;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BRAND_OBJ
+#=======================================
+
+POID PIN_FLD_BRAND_OBJ {
+
+	ID = 1905;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BUSINESS_TYPE
+#=======================================
+
+ENUM PIN_FLD_BUSINESS_TYPE {
+
+	ID = 282;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLOSE_WHEN_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+	ID = 149;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_SECONDARY
+#=======================================
+
+INT PIN_FLD_CURRENCY_SECONDARY {
+
+	ID = 1616;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_SEGMENT_LIST
+#=======================================
+
+STRING PIN_FLD_CUSTOMER_SEGMENT_LIST {
+
+	ID = 760;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXEMPTIONS
+#=======================================
+
+ARRAY PIN_FLD_EXEMPTIONS {
+
+	ID = 529;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CERTIFICATE_NUM
+#=======================================
+
+STRING PIN_FLD_CERTIFICATE_NUM {
+
+	ID = 1517;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERCENT
+#=======================================
+
+DECIMAL PIN_FLD_PERCENT {
+
+	ID = 531;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_SEGMENT
+#=======================================
+
+STRING PIN_FLD_GL_SEGMENT {
+
+	ID = 517;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_OBJ
+#=======================================
+
+POID PIN_FLD_GROUP_OBJ {
+
+	ID = 45;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INCORPORATED_FLAG
+#=======================================
+
+ENUM PIN_FLD_INCORPORATED_FLAG {
+
+	ID = 1512;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INTERNAL_NOTES
+#=======================================
+
+BUF PIN_FLD_INTERNAL_NOTES {
+
+	ID = 97;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_POID_LIST
+#=======================================
+
+STRING PIN_FLD_ITEM_POID_LIST {
+
+	ID = 964;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LASTSTAT_CMNT
+#=======================================
+
+STRING PIN_FLD_LASTSTAT_CMNT {
+
+	ID = 148;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_STATUS_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_STATUS_T {
+
+	ID = 147;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LINEAGE
+#=======================================
+
+STRING PIN_FLD_LINEAGE {
+
+	ID = 1900;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE
+#=======================================
+
+STRING PIN_FLD_LOCALE {
+
+	ID = 109;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAMEINFO
+#=======================================
+
+ARRAY PIN_FLD_NAMEINFO {
+
+	ID = 156;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CANON_COMPANY
+#=======================================
+
+STRING PIN_FLD_CANON_COMPANY {
+
+	ID = 165;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CANON_COUNTRY
+#=======================================
+
+STRING PIN_FLD_CANON_COUNTRY {
+
+	ID = 1501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMPANY
+#=======================================
+
+STRING PIN_FLD_COMPANY {
+
+	ID = 164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONTACT_TYPE
+#=======================================
+
+STRING PIN_FLD_CONTACT_TYPE {
+
+	ID = 157;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EMAIL_ADDR
+#=======================================
+
+STRING PIN_FLD_EMAIL_ADDR {
+
+	ID = 171;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIRST_CANON
+#=======================================
+
+STRING PIN_FLD_FIRST_CANON {
+
+	ID = 177;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIRST_NAME
+#=======================================
+
+STRING PIN_FLD_FIRST_NAME {
+
+	ID = 159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_CANON
+#=======================================
+
+STRING PIN_FLD_LAST_CANON {
+
+	ID = 179;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_NAME
+#=======================================
+
+STRING PIN_FLD_LAST_NAME {
+
+	ID = 161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIDDLE_CANON
+#=======================================
+
+STRING PIN_FLD_MIDDLE_CANON {
+
+	ID = 178;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIDDLE_NAME
+#=======================================
+
+STRING PIN_FLD_MIDDLE_NAME {
+
+	ID = 160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONES
+#=======================================
+
+ARRAY PIN_FLD_PHONES {
+
+	ID = 180;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONE
+#=======================================
+
+STRING PIN_FLD_PHONE {
+
+	ID = 181;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SALUTATION
+#=======================================
+
+STRING PIN_FLD_SALUTATION {
+
+	ID = 158;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TITLE
+#=======================================
+
+STRING PIN_FLD_TITLE {
+
+	ID = 163;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_ITEM_POID_LIST
+#=======================================
+
+STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+	ID = 155;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_CACHE_TYPE
+#=======================================
+
+ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+	ID = 567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESIDENCE_FLAG
+#=======================================
+
+ENUM PIN_FLD_RESIDENCE_FLAG {
+
+	ID = 1511;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TIMEZONE_ID
+#=======================================
+
+STRING PIN_FLD_TIMEZONE_ID {
+
+	ID = 2250;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VAT_CERT
+#=======================================
+
+STRING PIN_FLD_VAT_CERT {
+
+	ID = 1505;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /account
+#=======================================
+
+STORABLE CLASS /account {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The account object represents a customer in Billing system. It stores information about the customer including addresses and phone numbers. The account object is uniquely identified with its POID. The account POID acts as a key to identify the objects associated with the account, for instance, services, payment methods, balance groups, billinfo's, purchased products and purchased discounts. The account objects can be in a hiararchy, thus allowing an account to become a parent or a child of another account. The account will have a default balance group associated with it. The account status, tax exemptions and locale are also stored as part of the account object. Additional information about account may be captured in one or more profile objects.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_AREA {
+
+		DESCR = "Area Name";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_CONTACT_PREF {
+
+		DESCR = "Contact Preference 1:homephone, 2:Workphone, 4:Pager, 5:Mobile";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_ET_ZONE {
+
+		DESCR = "ET Tax zone mapped to customer";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_LEGACY_ACCOUNT_NO {
+
+		DESCR = "Legacy Account Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_REGION {
+
+		DESCR = "0:EAST, 1:WEST,  2:NORTH, 3:SOUTH";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_RMAIL {
+
+		DESCR = "Registered email ID for customer search.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_RMN {
+
+		DESCR = "Registered Mobile number(10 digits), for customer search.";
+		ORDER = 0;
+		LENGTH = 20;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_VAT_ZONE {
+
+		DESCR = "VAT Tax zone mapped to customer";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_ACCESS {
+
+		DESCR = "Automatic account creation fields. This is used to track the details of account registration for marketing intelligence. These are typically user-defined.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_PACKAGE {
+
+		DESCR = "Name of the package used for registration using automatic account creation mechanisms. For example, the name of the package the subscriber used to register into the system.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_PROMO_CODE {
+
+		DESCR = "Promotion code. This is user-defined to track the details of account registration. For example, the promotion code used identifies the marketing channel which attracted this new subscriber.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_SERIAL_NUM {
+
+		DESCR = "Serial number used when the user was registered. Typically these serial numbers are pre-authorized by the service provider to allow restricted initial access to the subscriber.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_SOURCE {
+
+		DESCR = "Source name. This is a user-defined field to track the details of account registration.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_AAC_VENDOR {
+
+		DESCR = "Vendor name. This is a user-defined field to track the details of account registration. This field identifies the vendor through which the subscriber got access to the registration software.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCESS_CODE1 {
+
+		DESCR = "Stores a secret word that only the customer would know (mother's maiden name is very common). This provides an authentication test for customer service requests. Even though this field is optional by default, this can be made as a required field by modifying PCM_OP_CUST_POL_PRE_COMMIT policy.";
+		ORDER = 0;
+		LENGTH = 30;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCESS_CODE2 {
+
+		DESCR = "Stores an additional secret word to further authenticate users during a customer service request. Even though this field is optional by default, this can be made as a required field by modifying PCM_OP_CUST_POL_PRE_COMMIT policy.";
+		ORDER = 0;
+		LENGTH = 30;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		DESCR = "Customer visible account number (separate from internal account object ID). By default, this is system generated, and derived from account object ID. The custom numbering can be implemented in PCM_OP_CUST_POL_PREP_ACCTINFO policy.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCOUNT_TAG {
+
+		DESCR = "OBSOLETE FIELD. NOT USED ANYMORE. DO NOT POPULATE VALUE FOR THIS FIELD.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_ACCOUNT_TYPE {
+
+		DESCR = "Specifier used to determine if an account is a specialtype or normal. Currently, this can be one of thethree values: PIN_ACCOUNT_TYPE_STANDARD(1), PIN_ACCOUNT_TYPE_BRAND(2) or PIN_ACCOUNT_TYPE_SUBSCRIPTION(3). Note that once thisvalue has been set, it cannot be reset.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_ATTRIBUTE {
+
+		DESCR = "Attribute field to determine if this is a remittance account or not.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		DESCR = "Link to /balance_group object for this account.";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BRAND_OBJ {
+
+		DESCR = "Reference to the brand account to which an account belongs. This field is managed by the Infranet system, and should not be updated by any apps.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_BUSINESS_TYPE {
+
+		DESCR = "Enumeration used to identify the type of account. Currently there are two business types, consumer (1) or business (2). This allows for the policy validation decisions to be based on the account type.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+		DESCR = "Date that account should be automatically closed. Used to schedule account closure in advance. A value of 0 indicates that this account has not been set to close automatically.";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		DESCR = "Primary currency for account. This is stored as the resource ID of the currency (ISO 4217 standard). All A/R for account is tracked in primary currency.";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY_SECONDARY {
+
+		DESCR = "Secondary currency. A/R can be viewed and payments/disputes/adjustments made in secondary currency, but all impacts are translated to primary currency for actual A/R tracking. Only Euro and EMU currencies are supported as secondary currencies currently.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CUSTOMER_SEGMENT_LIST {
+
+		DESCR = "The string of Customer Segments associated with the account. ";
+		ORDER = 0;
+		LENGTH = 4000;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Effective time of modification of this account on an external system.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_EXEMPTIONS {
+
+		DESCR = "Tax exemptions for this account. The array element-id is not significant. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CERTIFICATE_NUM {
+
+			DESCR = "Exemption cerificate number. This field indicates the number on an exemption certificate that uniquely identifies the exempt customer. The numbers are assigned by the jurisdiction. Not all jurisdictions require certificate numbers.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			DESCR = "Non-inclusive end time of the validity period for the exemption certificate.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			DESCR = "Percentage of the total amount which should be exempted from taxing. This is a fractional number. For example, 0.5 means 50% and 1.0 means 100%.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			DESCR = "Inclusive start time of the validity period for the exemption certificate.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Exemption jurisdiction type. Federal (0), State (1), County (2), City (3), Secondary County (4), Secondary City (5), Territory (6), Secondary State (7), District(8) and Secondary Federal (9).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_GL_SEGMENT {
+
+		DESCR = "GL segment this account belongs to. This information is used in the ledger reports to group the accounts based on which GL segment they belong.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_GROUP_OBJ {
+
+		DESCR = "Link to the billing group object if this account is a parent of a billing group. It is possible that this account itself may be a member of another billing group.";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_INCORPORATED_FLAG {
+
+		DESCR = "Flag that indicates whether the address (or GeoCode) for an account specifies an area Inside (0) or Outside (1) the incorporated area of the city. This determines whether county or city taxes apply.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	BUF PIN_FLD_INTERNAL_NOTES {
+
+		DESCR = "Free form notepad for CSRs to record information about the customer. This field contains a series of entries marked by the name of the CSR and the time of entry.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ITEM_POID_LIST {
+
+		DESCR = "List of currently active items(account level). This field indicates the charge to the account in the current monthly cycle that may be assigned to the /item/misc. The items that may be stored in the list are /item/misc, /item/sponsor etc. ";
+		ORDER = 0;
+		LENGTH = 4000;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LASTSTAT_CMNT {
+
+		DESCR = "Descriptive reason for the last status change to this account. This provides CSR a snapshot of why the status was changed.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_LAST_STATUS_T {
+
+		DESCR = "Time that account status was last changed. ";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LINEAGE {
+
+		DESCR = "Stores a snapshot of an account in a hierarchy. This is primarily designed to be a field by which accounts and and data tied to accounts can be searched through quickly.";
+		ORDER = 0;
+		LENGTH = 1023;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LOCALE {
+
+		DESCR = "Preferred locale for account. This field is used by Billing system applications. This may be used to drive UI in self-care web pages. The format is based on ISO 639 which is a 3 letter locale code, first two letters indicate the language and the third letter indicates the sub-language. For example, the locale code for US English is ENU.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "OBSOLETE FIELD - NOT USED ANYMORE";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_NAMEINFO {
+
+		DESCR = "Contact information for account. This array contains any number of contacts with the description for the type of contact. The element-id is not significant except for the billing contact (1) and mailing contact (2). The element-id's 3-100 are reserved.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Street address of the contact. The street address can have multiple lines. The Multiple lines can be stored with newline separator.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CANON_COMPANY {
+
+			DESCR = "Canonical version of Company field. This is System controlled, used to improve matching for searches on Company.  The locale specified in PIN_FLD_LOCALE is used for canonicalization.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CANON_COUNTRY {
+
+			DESCR = "Canonical version of Country field. This is System controlled, used to improve matching for searches on Country. WorldTax package is used for canonicalization.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "City portion of the contact's address.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COMPANY {
+
+			DESCR = "Company represented by the contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CONTACT_TYPE {
+
+			DESCR = "Description of type of contact. Some values are recognized by system - 'billing', 'mailing'. Other values are user configurable.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Country portion of the contact's address.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			DESCR = "Email address for the contact. ";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIRST_CANON {
+
+			DESCR = "Canonical version of First Name field. This is System controlled, used to improve matching for searches on name. The locale specified in PIN_FLD_LOCALE is used for canonicalization.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			DESCR = "First name of the contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LAST_CANON {
+
+			DESCR = "Canonical version of Last Name field. This is System controlled, used to improve matching for searches on name. The locale specified in PIN_FLD_LOCALE is used for canonicalization.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			DESCR = "Last name of the contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MIDDLE_CANON {
+
+			DESCR = "Canonical version of Middle Name field. This is System controlled, used to improve matching for searches on name. The locale specified in PIN_FLD_LOCALE is used for canonicalization.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			DESCR = "Middle name of the contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			DESCR = "Array of phone numbers for this contact. Each number has a type description, and any number of elements can be stored for a contact. Array element-id's are not significant.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				DESCR = "Phone number. By default, format is limited to TAPI and validated using the PCM_OP_CUST_POL_VALID_NAMEINFO policy.";
+				ORDER = 0;
+				LENGTH = 75;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Phone types defined by Infranet are Home (1), Work (2), Fax (3), Pager (3), Portable (4), POP (5), Support (6).";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_SALUTATION {
+
+			DESCR = "Salutation for the contact name.";
+			ORDER = 0;
+			LENGTH = 75;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "Link to the service object that this contact element represents. NOT YET IMPLEMENTED.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "State or Province portion of the contact's address.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TITLE {
+
+			DESCR = "Job title of the contact.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Zip code or postal code portion of the contact's address.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+		DESCR = "If you have delayed batch events coming into Billing system  and you have configured the system to have a delay for the billing run, so that all the events for the current billing cycle are received, before the billing is actually run, in that case, this field will store the list of item poids for next cycle (given that the billing for the current cycle is not yet run). ";
+		ORDER = 0;
+		LENGTH = 4000;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		DESCR = "Stores the cache residency distinction value for an object instance. The possible values are DEFAULT(0), REALTIME(1) and BATCH(2).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_RESIDENCE_FLAG {
+
+		DESCR = "Flag that identifies the customer being taxed as a Residential (0) customer or as a Business customer (1). Some taxes apply to business or residential customers only, and this flag is used to determine whether a particular tax should be calculated, depending on the type of customer.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of the account. The values are defunct (0), active (10100), inactive (10102) and closed (10103). Typically user access to services is blocked unless active (policy controlled).";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STATUS_FLAGS {
+
+		DESCR = "System and user-defined modifier flags to track the reasons for the account being inactive. See pin_cust.h for possible values.";
+		ORDER = 0;
+		CREATE = Prohibited;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TIMEZONE_ID {
+
+		DESCR = "TimeZone ID associated with the Account as a String.";
+		ORDER = 0;
+		LENGTH = 64;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_VAT_CERT {
+
+		DESCR = "Buyer's VAT certificate for VAT registered companies. This is typically used with business accounts outside the USA. An account with a buyer VAT is not charged taxes by the taxing package. It is the responsibility of this account to pay taxes directly. ";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /account
+#=======================================
+
+STORABLE CLASS /account IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "account_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_AREA {
+
+		SQL_COLUMN = "area";
+	}
+
+	ENUM MSO_FLD_CONTACT_PREF {
+
+		SQL_COLUMN = "contact_pref";
+	}
+
+	STRING MSO_FLD_ET_ZONE {
+
+		SQL_COLUMN = "et_zone";
+	}
+
+	STRING MSO_FLD_LEGACY_ACCOUNT_NO {
+
+		SQL_COLUMN = "legacy_account_no";
+	}
+
+	ENUM MSO_FLD_REGION {
+
+		SQL_COLUMN = "region";
+	}
+
+	STRING MSO_FLD_RMAIL {
+
+		SQL_COLUMN = "rmail";
+	}
+
+	STRING MSO_FLD_RMN {
+
+		SQL_COLUMN = "rmn";
+	}
+
+	STRING MSO_FLD_VAT_ZONE {
+
+		SQL_COLUMN = "vat_zone";
+	}
+
+	STRING PIN_FLD_AAC_ACCESS {
+
+		SQL_COLUMN = "aac_access";
+	}
+
+	STRING PIN_FLD_AAC_PACKAGE {
+
+		SQL_COLUMN = "aac_package";
+	}
+
+	STRING PIN_FLD_AAC_PROMO_CODE {
+
+		SQL_COLUMN = "aac_promo_code";
+	}
+
+	STRING PIN_FLD_AAC_SERIAL_NUM {
+
+		SQL_COLUMN = "aac_serial_num";
+	}
+
+	STRING PIN_FLD_AAC_SOURCE {
+
+		SQL_COLUMN = "aac_source";
+	}
+
+	STRING PIN_FLD_AAC_VENDOR {
+
+		SQL_COLUMN = "aac_vendor";
+	}
+
+	STRING PIN_FLD_ACCESS_CODE1 {
+
+		SQL_COLUMN = "access_code1";
+	}
+
+	STRING PIN_FLD_ACCESS_CODE2 {
+
+		SQL_COLUMN = "access_code2";
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		SQL_COLUMN = "account_no";
+	}
+
+	STRING PIN_FLD_ACCOUNT_TAG {
+
+		SQL_COLUMN = "account_tag";
+	}
+
+	ENUM PIN_FLD_ACCOUNT_TYPE {
+
+		SQL_COLUMN = "account_type";
+	}
+
+	INT PIN_FLD_ATTRIBUTE {
+
+		SQL_COLUMN = "attribute";
+	}
+
+	POID PIN_FLD_BAL_GRP_OBJ {
+
+		SQL_COLUMN = "bal_grp_obj";
+	}
+
+	POID PIN_FLD_BRAND_OBJ {
+
+		SQL_COLUMN = "brand_obj";
+	}
+
+	ENUM PIN_FLD_BUSINESS_TYPE {
+
+		SQL_COLUMN = "business_type";
+	}
+
+	TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+		SQL_COLUMN = "close_when_t";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		SQL_COLUMN = "currency";
+	}
+
+	INT PIN_FLD_CURRENCY_SECONDARY {
+
+		SQL_COLUMN = "currency_secondary";
+	}
+
+	STRING PIN_FLD_CUSTOMER_SEGMENT_LIST {
+
+		SQL_COLUMN = "cust_seg_list";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	ARRAY PIN_FLD_EXEMPTIONS {
+
+		SQL_TABLE = "account_exemptions_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CERTIFICATE_NUM {
+
+			SQL_COLUMN = "certificate_num";
+		}
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			SQL_COLUMN = "exempt_end_t";
+		}
+
+		DECIMAL PIN_FLD_PERCENT {
+
+			SQL_COLUMN = "percent";
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			SQL_COLUMN = "exempt_start_t";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+	STRING PIN_FLD_GL_SEGMENT {
+
+		SQL_COLUMN = "gl_segment";
+	}
+
+	POID PIN_FLD_GROUP_OBJ {
+
+		SQL_COLUMN = "group_obj";
+	}
+
+	ENUM PIN_FLD_INCORPORATED_FLAG {
+
+		SQL_COLUMN = "incorporated_flag";
+	}
+
+	BUF PIN_FLD_INTERNAL_NOTES {
+
+		SQL_TABLE = "account_internal_notes_buf";
+		SQL_COLUMN = "internal_notes";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+	}
+
+	STRING PIN_FLD_ITEM_POID_LIST {
+
+		SQL_COLUMN = "item_poid_list";
+	}
+
+	STRING PIN_FLD_LASTSTAT_CMNT {
+
+		SQL_COLUMN = "laststat_cmnt";
+	}
+
+	TIMESTAMP PIN_FLD_LAST_STATUS_T {
+
+		SQL_COLUMN = "last_status_t";
+	}
+
+	STRING PIN_FLD_LINEAGE {
+
+		SQL_COLUMN = "lineage";
+	}
+
+	STRING PIN_FLD_LOCALE {
+
+		SQL_COLUMN = "locale";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	ARRAY PIN_FLD_NAMEINFO {
+
+		SQL_TABLE = "account_nameinfo_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CANON_COMPANY {
+
+			SQL_COLUMN = "canon_company";
+		}
+
+		STRING PIN_FLD_CANON_COUNTRY {
+
+			SQL_COLUMN = "canon_country";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COMPANY {
+
+			SQL_COLUMN = "company";
+		}
+
+		STRING PIN_FLD_CONTACT_TYPE {
+
+			SQL_COLUMN = "contact_type";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			SQL_COLUMN = "email_addr";
+		}
+
+		STRING PIN_FLD_FIRST_CANON {
+
+			SQL_COLUMN = "first_canon";
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			SQL_COLUMN = "first_name";
+		}
+
+		STRING PIN_FLD_LAST_CANON {
+
+			SQL_COLUMN = "last_canon";
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			SQL_COLUMN = "last_name";
+		}
+
+		STRING PIN_FLD_MIDDLE_CANON {
+
+			SQL_COLUMN = "middle_canon";
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			SQL_COLUMN = "middle_name";
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			SQL_TABLE = "account_phones_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				SQL_COLUMN = "phone";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		STRING PIN_FLD_SALUTATION {
+
+			SQL_COLUMN = "salutation";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_TITLE {
+
+			SQL_COLUMN = "title";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+	STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+		SQL_COLUMN = "next_item_poid_list";
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		SQL_COLUMN = "object_cache_type";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ENUM PIN_FLD_RESIDENCE_FLAG {
+
+		SQL_COLUMN = "residence_flag";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	INT PIN_FLD_STATUS_FLAGS {
+
+		SQL_COLUMN = "status_flags";
+	}
+
+	STRING PIN_FLD_TIMEZONE_ID {
+
+		SQL_COLUMN = "timezone_id";
+	}
+
+	STRING PIN_FLD_VAT_CERT {
+
+		SQL_COLUMN = "vat_cert";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

@@ -1,0 +1,382 @@
+
+#=======================================
+#  Field PIN_FLD_PAIR
+#=======================================
+
+ARRAY PIN_FLD_PAIR {
+
+	ID = 432;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAIR_KEY
+#=======================================
+
+STRING PIN_FLD_PAIR_KEY {
+
+	ID = 433;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAIR_VALUE
+#=======================================
+
+STRING PIN_FLD_PAIR_VALUE {
+
+	ID = 9352;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_TEMPLATE_INFO {
+
+	ID = 9353;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ISCRIPT_BUF
+#=======================================
+
+BUF PIN_FLD_ISCRIPT_BUF {
+
+	ID = 9354;
+}
+
+
+#=======================================
+#  Storable Class /config/template
+#=======================================
+
+STORABLE CLASS /config/template {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This new configuration object is used as a base class for template super classes associated with /balance_group, /billinfo and /service.  Each template has a rule buffer to hold iScript code";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAIR {
+
+		DESCR = "Key value pair array used to store instance data for business profiles";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAIR_KEY {
+
+			DESCR = "Key used for value lookup.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PAIR_VALUE {
+
+			DESCR = "Value data stored in a string format  ";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TEMPLATE_INFO {
+
+		DESCR = "Template related infomation";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_ISCRIPT_BUF {
+
+			DESCR = "Buffer containing iScript Rule code. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/balance_group
+#=======================================
+
+STORABLE CLASS /config/template/balance_group {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for balance_group object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/billinfo
+#=======================================
+
+STORABLE CLASS /config/template/billinfo {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for billinfo object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/group
+#=======================================
+
+STORABLE CLASS /config/template/group {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for /group object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/group/sharing
+#=======================================
+
+STORABLE CLASS /config/template/group/sharing {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for /group/sharing object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/ordered_balgrp
+#=======================================
+
+STORABLE CLASS /config/template/ordered_balgrp {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for ordered_balgrp object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/profile
+#=======================================
+
+STORABLE CLASS /config/template/profile {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for profile object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/purchased_discount
+#=======================================
+
+STORABLE CLASS /config/template/purchased_discount {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for purchased_discount object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/purchased_product
+#=======================================
+
+STORABLE CLASS /config/template/purchased_product {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for purchased_product object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/service
+#=======================================
+
+STORABLE CLASS /config/template/service {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for service object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template
+#=======================================
+
+STORABLE CLASS /config/template IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAIR {
+
+		SQL_TABLE = "config_template_key_value_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAIR_KEY {
+
+			SQL_COLUMN = "pair_key";
+		}
+
+		STRING PIN_FLD_PAIR_VALUE {
+
+			SQL_COLUMN = "pair_value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_TEMPLATE_INFO {
+
+		SQL_TABLE = "config_template_info_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_ISCRIPT_BUF {
+
+			SQL_TABLE = "config_template_iscript";
+			SQL_COLUMN = "template_iscript";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/balance_group
+#=======================================
+
+STORABLE CLASS /config/template/balance_group IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/billinfo
+#=======================================
+
+STORABLE CLASS /config/template/billinfo IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/group
+#=======================================
+
+STORABLE CLASS /config/template/group IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/group/sharing
+#=======================================
+
+STORABLE CLASS /config/template/group/sharing IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/ordered_balgrp
+#=======================================
+
+STORABLE CLASS /config/template/ordered_balgrp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/profile
+#=======================================
+
+STORABLE CLASS /config/template/profile IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/purchased_discount
+#=======================================
+
+STORABLE CLASS /config/template/purchased_discount IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/purchased_product
+#=======================================
+
+STORABLE CLASS /config/template/purchased_product IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/service
+#=======================================
+
+STORABLE CLASS /config/template/service IMPLEMENTATION ORACLE7 {
+
+}
+

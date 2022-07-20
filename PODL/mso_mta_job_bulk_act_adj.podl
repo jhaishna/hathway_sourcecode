@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_act_adj
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_act_adj {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mta bulk_act_adj class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_act_adj
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_act_adj IMPLEMENTATION ORACLE7 {
+
+}
+

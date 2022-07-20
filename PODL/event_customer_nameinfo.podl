@@ -1,0 +1,560 @@
+
+#=======================================
+#  Field PIN_FLD_NAMEINFO
+#=======================================
+
+ARRAY PIN_FLD_NAMEINFO {
+
+	ID = 156;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CANON_COUNTRY
+#=======================================
+
+STRING PIN_FLD_CANON_COUNTRY {
+
+	ID = 1501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COMPANY
+#=======================================
+
+STRING PIN_FLD_COMPANY {
+
+	ID = 164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONTACT_TYPE
+#=======================================
+
+STRING PIN_FLD_CONTACT_TYPE {
+
+	ID = 157;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EMAIL_ADDR
+#=======================================
+
+STRING PIN_FLD_EMAIL_ADDR {
+
+	ID = 171;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIRST_NAME
+#=======================================
+
+STRING PIN_FLD_FIRST_NAME {
+
+	ID = 159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_NAME
+#=======================================
+
+STRING PIN_FLD_LAST_NAME {
+
+	ID = 161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIDDLE_NAME
+#=======================================
+
+STRING PIN_FLD_MIDDLE_NAME {
+
+	ID = 160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONES
+#=======================================
+
+ARRAY PIN_FLD_PHONES {
+
+	ID = 180;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PHONE
+#=======================================
+
+STRING PIN_FLD_PHONE {
+
+	ID = 181;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SALUTATION
+#=======================================
+
+STRING PIN_FLD_SALUTATION {
+
+	ID = 158;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TITLE
+#=======================================
+
+STRING PIN_FLD_TITLE {
+
+	ID = 163;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Storable Class /event/customer/nameinfo
+#=======================================
+
+STORABLE CLASS /event/customer/nameinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the contact information for accounts. This event is created by PCM_OP_CUST_SET_NAMEINFO opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_NAMEINFO {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Same as PIN_FLD_ADDRESS  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CANON_COUNTRY {
+
+			DESCR = "Same as PIN_FLD_CANON_COUNTRY  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "Same as PIN_FLD_CITY  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COMPANY {
+
+			DESCR = "Same as PIN_FLD_COMPANY  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CONTACT_TYPE {
+
+			DESCR = "Same as PIN_FLD_CONTACT_TYPE  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Same as PIN_FLD_COUNTRY  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			DESCR = "The specific contact information that got changed. This is the same as the element id of the PIN_FLD_NAMEINFO array in the /account object that got changed.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			DESCR = "Same as PIN_FLD_EMAIL_ADDR  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			DESCR = "Same as PIN_FLD_FIRST_NAME  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			DESCR = "Same as PIN_FLD_LAST_NAME  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			DESCR = "Same as PIN_FLD_MIDDLE_NAME in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			DESCR = "Same as PIN_FLD_PHONES array  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				DESCR = "Same as PIN_FLD_PHONE in the /account class PIN_FLD_NAMEINFO.PIN_FLD_PHONES array";
+				ORDER = 0;
+				LENGTH = 75;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Same as PIN_FLD_TYPE  in the /account class PIN_FLD_NAMEINFO.PIN_FLD_PHONES array";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_SALUTATION {
+
+			DESCR = "Same as PIN_FLD_SALUTATION  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 75;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "Same as PIN_FLD_STATE  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TITLE {
+
+			DESCR = "Same as PIN_FLD_TITLE in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Same as PIN_FLD_ZIP  in the /account class PIN_FLD_NAMEINFO array.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/nameinfo
+#=======================================
+
+STORABLE CLASS /event/customer/nameinfo IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_NAMEINFO {
+
+		SQL_TABLE = "event_customer_nameinfo_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CANON_COUNTRY {
+
+			SQL_COLUMN = "canon_country";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COMPANY {
+
+			SQL_COLUMN = "company";
+		}
+
+		STRING PIN_FLD_CONTACT_TYPE {
+
+			SQL_COLUMN = "contact_type";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			SQL_COLUMN = "element_id";
+		}
+
+		STRING PIN_FLD_EMAIL_ADDR {
+
+			SQL_COLUMN = "email_addr";
+		}
+
+		STRING PIN_FLD_FIRST_NAME {
+
+			SQL_COLUMN = "first_name";
+		}
+
+		STRING PIN_FLD_LAST_NAME {
+
+			SQL_COLUMN = "last_name";
+		}
+
+		STRING PIN_FLD_MIDDLE_NAME {
+
+			SQL_COLUMN = "middle_name";
+		}
+
+		ARRAY PIN_FLD_PHONES {
+
+			SQL_TABLE = "event_customer_phones_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_PHONE {
+
+				SQL_COLUMN = "phone";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		STRING PIN_FLD_SALUTATION {
+
+			SQL_COLUMN = "salutation";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		STRING PIN_FLD_TITLE {
+
+			SQL_COLUMN = "title";
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,144 @@
+
+#=======================================
+#  Field PIN_FLD_CALENDAR_DATE
+#=======================================
+
+ARRAY PIN_FLD_CALENDAR_DATE {
+
+	ID = 1326;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALENDAR_DOM
+#=======================================
+
+INT PIN_FLD_CALENDAR_DOM {
+
+	ID = 1327;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALENDAR_MOY
+#=======================================
+
+INT PIN_FLD_CALENDAR_MOY {
+
+	ID = 1328;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CALENDAR_YEAR
+#=======================================
+
+INT PIN_FLD_CALENDAR_YEAR {
+
+	ID = 1329;
+}
+
+
+#=======================================
+#  Storable Class /config/calendar
+#=======================================
+
+STORABLE CLASS /config/calendar {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to store all non-billing days for multiple calendars and multiple years.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CALENDAR_DATE {
+
+		DESCR = "Array of dates";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CALENDAR_DOM {
+
+			DESCR = "Day of month of the calendar date.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CALENDAR_MOY {
+
+			DESCR = "Month of year of the calendar date.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CALENDAR_YEAR {
+
+			DESCR = "Year of the calendar date. If the year is 0, the date is recurring non-billing date for all years. The year 2000 is the integer value 2000 and not 0.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/calendar
+#=======================================
+
+STORABLE CLASS /config/calendar IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CALENDAR_DATE {
+
+		SQL_TABLE = "config_calendar_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CALENDAR_DOM {
+
+			SQL_COLUMN = "calendardom";
+		}
+
+		INT PIN_FLD_CALENDAR_MOY {
+
+			SQL_COLUMN = "calendarmoy";
+		}
+
+		INT PIN_FLD_CALENDAR_YEAR {
+
+			SQL_COLUMN = "calendaryear";
+		}
+
+	}
+
+}
+

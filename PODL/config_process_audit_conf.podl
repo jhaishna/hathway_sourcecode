@@ -1,0 +1,181 @@
+
+#=======================================
+#  Field PIN_FLD_AUDIT_CONFIG
+#=======================================
+
+ARRAY PIN_FLD_AUDIT_CONFIG {
+
+	ID = 8225;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AUDIT_PROCESS
+#=======================================
+
+STRING PIN_FLD_AUDIT_PROCESS {
+
+	ID = 8226;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAMES
+#=======================================
+
+ARRAY PIN_FLD_FIELD_NAMES {
+
+	ID = 8227;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_THRESHOLD
+#=======================================
+
+INT PIN_FLD_THRESHOLD {
+
+	ID = 2423;
+}
+
+
+#=======================================
+#  Storable Class /config/process_audit_conf
+#=======================================
+
+STORABLE CLASS /config/process_audit_conf {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Defines configuration for process_audit objects. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_AUDIT_CONFIG {
+
+		DESCR = "Array for storing the configuration parameter for process";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AUDIT_PROCESS {
+
+			DESCR = "Type of the process_audit object ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_FIELD_NAMES {
+
+			DESCR = "Array for storing the field names duplication check";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				DESCR = "Name of the field for duplication check";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_THRESHOLD {
+
+			DESCR = "Threshold for number of failed records";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/process_audit_conf
+#=======================================
+
+STORABLE CLASS /config/process_audit_conf IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_AUDIT_CONFIG {
+
+		SQL_TABLE = "conf_proc_aud_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_AUDIT_PROCESS {
+
+			SQL_COLUMN = "Process_Name";
+		}
+
+		ARRAY PIN_FLD_FIELD_NAMES {
+
+			SQL_TABLE = "conf_proc_aud_fld_nm_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				SQL_COLUMN = "fieldname";
+			}
+
+		}
+
+		INT PIN_FLD_THRESHOLD {
+
+			SQL_COLUMN = "Threshold";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_installation/wireless
+#=======================================
+
+STORABLE CLASS /item/mso_installation/wireless {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Wireless device installation.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_installation/wireless
+#=======================================
+
+STORABLE CLASS /item/mso_installation/wireless IMPLEMENTATION ORACLE7 {
+
+}
+

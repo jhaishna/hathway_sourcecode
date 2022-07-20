@@ -1,0 +1,174 @@
+
+#=======================================
+#  Field MSO_FLD_VC_DATA
+#=======================================
+
+ARRAY MSO_FLD_VC_DATA {
+
+	ID = 42006;
+	DESCR = "Array to hold STB related data";
+}
+
+
+#=======================================
+#  Field MSO_FLD_VC_TYPE
+#=======================================
+
+INT MSO_FLD_VC_TYPE {
+
+	ID = 42007;
+	DESCR = "Type of VC";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END
+#=======================================
+
+TIMESTAMP MSO_FLD_WARRANTY_END {
+
+	ID = 42004;
+	DESCR = "Populated during device assignment with actual date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END_OFFSET
+#=======================================
+
+INT MSO_FLD_WARRANTY_END_OFFSET {
+
+	ID = 42005;
+	DESCR = "Offset in Months";
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWNER_OBJ
+#=======================================
+
+POID PIN_FLD_OWNER_OBJ {
+
+	ID = 7756;
+}
+
+
+#=======================================
+#  Storable Class /mso_device/vc
+#=======================================
+
+STORABLE CLASS /mso_device/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "VC specific data";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_VC_DATA {
+
+		DESCR = "Array to hold STB related data";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT MSO_FLD_VC_TYPE {
+
+			DESCR = "Type of VC";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_WARRANTY_END {
+
+			DESCR = "Populated during device assignment with actual date";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_WARRANTY_END_OFFSET {
+
+			DESCR = "Offset in Months";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			DESCR = "Distributor/LCO  account object,whom the device is delivered from Vendor.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_device/vc
+#=======================================
+
+STORABLE CLASS /mso_device/vc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_VC_DATA {
+
+		SQL_TABLE = "mso_vc_data_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT MSO_FLD_VC_TYPE {
+
+			SQL_COLUMN = "vc_type";
+		}
+
+		TIMESTAMP MSO_FLD_WARRANTY_END {
+
+			SQL_COLUMN = "warranty_end";
+		}
+
+		INT MSO_FLD_WARRANTY_END_OFFSET {
+
+			SQL_COLUMN = "end_offset";
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			SQL_COLUMN = "OWNER_OBJ";
+		}
+
+	}
+
+}
+

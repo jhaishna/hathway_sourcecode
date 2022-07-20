@@ -1,0 +1,199 @@
+
+#=======================================
+#  Field MSO_FLD_MODEM_DATA
+#=======================================
+
+ARRAY MSO_FLD_MODEM_DATA {
+
+	ID = 42016;
+	DESCR = "Array to hold Modem related data.";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PRICE
+#=======================================
+
+DECIMAL MSO_FLD_PRICE {
+
+	ID = 42017;
+	DESCR = "Supplier Price of the item";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END
+#=======================================
+
+TIMESTAMP MSO_FLD_WARRANTY_END {
+
+	ID = 42004;
+	DESCR = "Populated during device assignment with actual date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END_OFFSET
+#=======================================
+
+INT MSO_FLD_WARRANTY_END_OFFSET {
+
+	ID = 42005;
+	DESCR = "Offset in Months";
+}
+
+
+#=======================================
+#  Field PIN_FLD_CATEGORY
+#=======================================
+
+STRING PIN_FLD_CATEGORY {
+
+	ID = 1202;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWNER_OBJ
+#=======================================
+
+POID PIN_FLD_OWNER_OBJ {
+
+	ID = 7756;
+}
+
+
+#=======================================
+#  Storable Class /mso_device/modem
+#=======================================
+
+STORABLE CLASS /mso_device/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODEM_DATA {
+
+		DESCR = "Array to hold Modem related data.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_PRICE {
+
+			DESCR = "Supplier Price of the item";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP MSO_FLD_WARRANTY_END {
+
+			DESCR = "Populated during device assignment with actual date";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_WARRANTY_END_OFFSET {
+
+			DESCR = "Offset in Months";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CATEGORY {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			DESCR = "Order linkage to device object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_device/modem
+#=======================================
+
+STORABLE CLASS /mso_device/modem IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODEM_DATA {
+
+		SQL_TABLE = "MSO_MODEM_DATA_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_PRICE {
+
+			SQL_COLUMN = "PRICE";
+		}
+
+		TIMESTAMP MSO_FLD_WARRANTY_END {
+
+			SQL_COLUMN = "WARRANTY_END";
+		}
+
+		INT MSO_FLD_WARRANTY_END_OFFSET {
+
+			SQL_COLUMN = "END_OFFSET";
+		}
+
+		STRING PIN_FLD_CATEGORY {
+
+			SQL_COLUMN = "CATEGORY";
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			SQL_COLUMN = "OWNER_OBJ";
+		}
+
+	}
+
+}
+

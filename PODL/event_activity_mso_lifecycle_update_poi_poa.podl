@@ -1,0 +1,121 @@
+
+#=======================================
+#  Field PIN_FLD_ACCTINFO
+#=======================================
+
+ARRAY PIN_FLD_ACCTINFO {
+
+	ID = 1554;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCESS_CODE1
+#=======================================
+
+STRING PIN_FLD_ACCESS_CODE1 {
+
+	ID = 104;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCESS_CODE2
+#=======================================
+
+STRING PIN_FLD_ACCESS_CODE2 {
+
+	ID = 105;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/update_poi_poa
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/update_poi_poa {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Lifeycle to record POI/POA update";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACCTINFO {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCESS_CODE1 {
+
+			DESCR = "Proof of Identity";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCESS_CODE2 {
+
+			DESCR = "Proof of Address";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/update_poi_poa
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/update_poi_poa IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACCTINFO {
+
+		SQL_TABLE = "mso_evt_lc_update_poi_poa_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCESS_CODE1 {
+
+			SQL_COLUMN = "poi";
+		}
+
+		STRING PIN_FLD_ACCESS_CODE2 {
+
+			SQL_COLUMN = "poa";
+		}
+
+	}
+
+}
+

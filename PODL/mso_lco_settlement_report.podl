@@ -1,0 +1,981 @@
+
+#=======================================
+#  Field MSO_FLD_COMMISSION_CHARGE
+#=======================================
+
+DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+	ID = 43327;
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISSION_MODEL
+#=======================================
+
+ENUM MSO_FLD_COMMISSION_MODEL {
+
+	ID = 43320;
+}
+
+
+#=======================================
+#  Field MSO_FLD_COMMISSION_RULE
+#=======================================
+
+ENUM MSO_FLD_COMMISSION_RULE {
+
+	ID = 43326;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LCO_BAL_GRP_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_BAL_GRP_OBJ {
+
+	ID = 43329;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LCO_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_OBJ {
+
+	ID = 40006;
+	DESCR = "LCO account Object";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SESSION_OBJ
+#=======================================
+
+POID PIN_FLD_SESSION_OBJ {
+
+	ID = 43;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_MSG
+#=======================================
+
+STRING PIN_FLD_STATUS_MSG {
+
+	ID = 150;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+	ID = 43324;
+	DESCR = "Charge Head Based Commission";
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD
+#=======================================
+
+STRING MSO_FLD_CHARGE_HEAD {
+
+	ID = 43301;
+	DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PRICE
+#=======================================
+
+DECIMAL MSO_FLD_PRICE {
+
+	ID = 42017;
+	DESCR = "Supplier Price of the item";
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOM_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+	ID = 1518;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_PLAN_INFO {
+
+	ID = 43323;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_CATEGORY
+#=======================================
+
+ENUM MSO_FLD_PLAN_CATEGORY {
+
+	ID = 43300;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_NAME
+#=======================================
+
+STRING MSO_FLD_PLAN_NAME {
+
+	ID = 43005;
+	DESCR = "Hardware Plan Name";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_POID
+#=======================================
+
+INT MSO_FLD_PLAN_POID {
+
+	ID = 43319;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_SUB_CATEGORY
+#=======================================
+
+STRING MSO_FLD_PLAN_SUB_CATEGORY {
+
+	ID = 43306;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SERVICE_TYPE
+#=======================================
+
+ENUM MSO_FLD_SERVICE_TYPE {
+
+	ID = 43058;
+	DESCR = "Service Type (0-BB, 1-CATV)";
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCALE
+#=======================================
+
+DECIMAL PIN_FLD_SCALE {
+
+	ID = 71;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX
+#=======================================
+
+DECIMAL PIN_FLD_TAX {
+
+	ID = 530;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOTALS
+#=======================================
+
+DECIMAL PIN_FLD_TOTALS {
+
+	ID = 2417;
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_COMMISSION_MODEL {
+
+		DESCR = "Commission Model.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_COMMISSION_RULE {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_LCO_BAL_GRP_OBJ {
+
+		DESCR = "LCO Balance Group POID ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_LCO_OBJ {
+
+		DESCR = "LCO account Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Subsriber's Service Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SESSION_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "0 - Pending 1 - Applied, 2 - Failed";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_STATUS_MSG {
+
+		DESCR = "Commission Status Msg";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report/charge_head_based
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report/charge_head_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Charge Head Based Wholesale Settlement Commission";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		DESCR = "Charge Head Based Commission";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_PRICE {
+
+			DESCR = "Charge Head Amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report/count_based
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report/count_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Active Customer Count based Commission Report";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		DESCR = "Active Customer Count based Commission Report";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report/plan_based
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report/plan_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "plan_based commission report";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_PLAN_INFO {
+
+		DESCR = "Plan Based Commission";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_PLAN_CATEGORY {
+
+			DESCR = "Plan Category (0-Hardware, 1-Subscription, 2-One-time, etc)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PLAN_NAME {
+
+			DESCR = "Hardware Plan Name";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT MSO_FLD_PLAN_POID {
+
+			DESCR = "Plan Poid";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_PLAN_SUB_CATEGORY {
+
+			DESCR = "Plan Sub Category";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type (0-BB, 1-CATV)";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_SCALE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TAX {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TOTALS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_lco_settlement_report_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	DECIMAL MSO_FLD_COMMISSION_CHARGE {
+
+		SQL_COLUMN = "commission_charge";
+	}
+
+	ENUM MSO_FLD_COMMISSION_MODEL {
+
+		SQL_COLUMN = "commission_model";
+	}
+
+	ENUM MSO_FLD_COMMISSION_RULE {
+
+		SQL_COLUMN = "commission_rule";
+	}
+
+	POID MSO_FLD_LCO_BAL_GRP_OBJ {
+
+		SQL_COLUMN = "lco_bal_grp_obj";
+	}
+
+	POID MSO_FLD_LCO_OBJ {
+
+		SQL_COLUMN = "lco_obj_id0";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	POID PIN_FLD_EVENT_OBJ {
+
+		SQL_COLUMN = "event_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	POID PIN_FLD_SESSION_OBJ {
+
+		SQL_COLUMN = "session_obj";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "commission_status";
+	}
+
+	STRING PIN_FLD_STATUS_MSG {
+
+		SQL_COLUMN = "commission_status_msg";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report/charge_head_based
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report/charge_head_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		SQL_TABLE = "mso_lco_sett_rpt_charge_head_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			SQL_COLUMN = "charge_head";
+		}
+
+		DECIMAL MSO_FLD_PRICE {
+
+			SQL_COLUMN = "Amount";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report/count_based
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report/count_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CUSTOM_INFO {
+
+		SQL_TABLE = "mso_lco_sett_rpt_count_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			SQL_COLUMN = "count";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report/plan_based
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report/plan_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_PLAN_INFO {
+
+		SQL_TABLE = "mso_lco_sett_rpt_plan_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_PLAN_CATEGORY {
+
+			SQL_COLUMN = "plan_category";
+		}
+
+		STRING MSO_FLD_PLAN_NAME {
+
+			SQL_COLUMN = "plan_name";
+		}
+
+		INT MSO_FLD_PLAN_POID {
+
+			SQL_COLUMN = "plan_poid";
+		}
+
+		STRING MSO_FLD_PLAN_SUB_CATEGORY {
+
+			SQL_COLUMN = "plan_sub_category";
+		}
+
+		ENUM MSO_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "service_type";
+		}
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		DECIMAL PIN_FLD_SCALE {
+
+			SQL_COLUMN = "scale";
+		}
+
+		DECIMAL PIN_FLD_TAX {
+
+			SQL_COLUMN = "tax";
+		}
+
+		DECIMAL PIN_FLD_TOTALS {
+
+			SQL_COLUMN = "totals";
+		}
+
+	}
+
+}
+

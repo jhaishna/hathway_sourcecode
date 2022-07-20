@@ -1,0 +1,148 @@
+
+#=======================================
+#  Field PIN_FLD_IMPACT_CATEGORIES
+#=======================================
+
+ARRAY PIN_FLD_IMPACT_CATEGORIES {
+
+	ID = 1451;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMPACT_CATEGORY
+#=======================================
+
+STRING PIN_FLD_IMPACT_CATEGORY {
+
+	ID = 1452;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_CATEGORY
+#=======================================
+
+STRING PIN_FLD_RATE_CATEGORY {
+
+	ID = 1453;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Storable Class /config/impact_category
+#=======================================
+
+STORABLE CLASS /config/impact_category {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to categorize the various impact categories and limit their scope to a service type and rate category in the Pricing Tool. This configuration has no impact on the rating engine. See /config/spec_impact_categories class definition.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_IMPACT_CATEGORIES {
+
+		DESCR = "Array of impact categories. Array element id is not significant. There can be multiple entries for a given impact category in order to extend its scope to multiple service types and rate categories.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_IMPACT_CATEGORY {
+
+			DESCR = "The impact category name. There are two special categories - default ('default') and global ('*'). Default is used when no other impact category is specified to the rating engine. Global is always used in addition to the other categories.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_CATEGORY {
+
+			DESCR = "Rate category name. The impact category is allowed when specifying balance impacts for this rate category.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service Type String. This impact category is allowed when specifying balance impacts for rate categories that are limited to this service type.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/impact_category
+#=======================================
+
+STORABLE CLASS /config/impact_category IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_IMPACT_CATEGORIES {
+
+		SQL_TABLE = "config_impact_categories_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_IMPACT_CATEGORY {
+
+			SQL_COLUMN = "impact_category";
+		}
+
+		STRING PIN_FLD_RATE_CATEGORY {
+
+			SQL_COLUMN = "rate_category";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "service_type";
+		}
+
+	}
+
+}
+

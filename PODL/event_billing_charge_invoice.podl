@@ -1,0 +1,477 @@
+
+#=======================================
+#  Field PIN_FLD_INV_INFO
+#=======================================
+
+ARRAY PIN_FLD_INV_INFO {
+
+	ID = 898;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_DESCR
+#=======================================
+
+STRING PIN_FLD_DELIVERY_DESCR {
+
+	ID = 885;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_PREFER
+#=======================================
+
+ENUM PIN_FLD_DELIVERY_PREFER {
+
+	ID = 884;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_INSTR
+#=======================================
+
+STRING PIN_FLD_INV_INSTR {
+
+	ID = 136;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_TERMS
+#=======================================
+
+ENUM PIN_FLD_INV_TERMS {
+
+	ID = 138;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUSES
+#=======================================
+
+ARRAY PIN_FLD_STATUSES {
+
+	ID = 144;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILENAME
+#=======================================
+
+STRING PIN_FLD_FILENAME {
+
+	ID = 500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SENT
+#=======================================
+
+STRING PIN_FLD_SENT {
+
+	ID = 849;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge/invoice
+#=======================================
+
+STORABLE CLASS /event/billing/charge/invoice {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when an invoice is generated for accounts that have the invoice billing type.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_INV_INFO {
+
+		DESCR = "Array detailing the invoice related information. Array element id is not significant. Only one array element may be present.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			DESCR = "Same as PIN_FLD_ADDRESS in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			DESCR = "Same as PIN_FLD_CITY in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			DESCR = "Same as PIN_FLD_COUNTRY in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DELIVERY_DESCR {
+
+			DESCR = "Same as PIN_FLD_DELIVERY_DESCR in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DELIVERY_PREFER {
+
+			DESCR = "Same as PIN_FLD_DELIVERY_PREFER in /payinfo/invoice.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_INV_INSTR {
+
+			DESCR = "Same as PIN_FLD_INV_INSTR in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_INV_TERMS {
+
+			DESCR = "Same as PIN_FLD_INV_TERMS in /payinfo/invoice.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Same as PIN_FLD_NAME in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATE {
+
+			DESCR = "Same as PIN_FLD_STATE in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 90;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_STATUSES {
+
+			DESCR = "Status information related to the invoice. Array element id is not significant. Only one array element will be present.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FILENAME {
+
+				DESCR = "Full name of the file (including the path) which holds the formatted invoice. This is used by the PCM_OP_BILL_VIEW_INVOICE opcode to locate the invoice.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_SENT {
+
+				DESCR = "Reserved for future use.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_STATUS {
+
+				DESCR = "Reserved for future use.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Type of the invoice. Currently the only valid value is Real (1) as opposed to Virtual invoices (statements) generated for non-invoice accounts.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			DESCR = "Same as PIN_FLD_ZIP in /payinfo/invoice.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/charge/invoice
+#=======================================
+
+STORABLE CLASS /event/billing/charge/invoice IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_INV_INFO {
+
+		SQL_TABLE = "event_billing_charge_inv_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ADDRESS {
+
+			SQL_COLUMN = "address";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		STRING PIN_FLD_COUNTRY {
+
+			SQL_COLUMN = "country";
+		}
+
+		STRING PIN_FLD_DELIVERY_DESCR {
+
+			SQL_COLUMN = "delivery_descr";
+		}
+
+		ENUM PIN_FLD_DELIVERY_PREFER {
+
+			SQL_COLUMN = "delivery_prefer";
+		}
+
+		STRING PIN_FLD_INV_INSTR {
+
+			SQL_COLUMN = "inv_instr";
+		}
+
+		ENUM PIN_FLD_INV_TERMS {
+
+			SQL_COLUMN = "inv_terms";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		STRING PIN_FLD_STATE {
+
+			SQL_COLUMN = "state";
+		}
+
+		ARRAY PIN_FLD_STATUSES {
+
+			SQL_TABLE = "event_billing_chrg_inv_stats_t";
+			SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FILENAME {
+
+				SQL_COLUMN = "filename";
+			}
+
+			STRING PIN_FLD_SENT {
+
+				SQL_COLUMN = "sent";
+			}
+
+			ENUM PIN_FLD_STATUS {
+
+				SQL_COLUMN = "status";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		STRING PIN_FLD_ZIP {
+
+			SQL_COLUMN = "zip";
+		}
+
+	}
+
+}
+

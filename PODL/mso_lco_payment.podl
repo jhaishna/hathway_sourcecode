@@ -1,0 +1,854 @@
+
+#=======================================
+#  Field MSO_FLD_LCO_BLK_PYMT_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_BLK_PYMT_OBJ {
+
+	ID = 43062;
+	DESCR = "LCO Bulk Payment Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_LCO_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_OBJ {
+
+	ID = 40006;
+	DESCR = "LCO account Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PYMT_COLLECTION_T
+#=======================================
+
+TIMESTAMP MSO_FLD_PYMT_COLLECTION_T {
+
+	ID = 43050;
+	DESCR = "Payment Collection Time";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PYMT_PROCESSING_T
+#=======================================
+
+TIMESTAMP MSO_FLD_PYMT_PROCESSING_T {
+
+	ID = 43051;
+	DESCR = "Payment Processing Time";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PYMT_STATUS
+#=======================================
+
+ENUM MSO_FLD_PYMT_STATUS {
+
+	ID = 43052;
+	DESCR = "Payment Status (0 - Open, 1 - Closed)";
+}
+
+
+#=======================================
+#  Field MSO_FLD_RECEIPT_OBJ
+#=======================================
+
+POID MSO_FLD_RECEIPT_OBJ {
+
+	ID = 43053;
+	DESCR = "Link to mso_receipt object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_SERVICE_TYPE
+#=======================================
+
+ENUM MSO_FLD_SERVICE_TYPE {
+
+	ID = 43058;
+	DESCR = "Service Type (0-BB, 1-CATV)";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+	ID = 932;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_CODE
+#=======================================
+
+STRING PIN_FLD_BANK_CODE {
+
+	ID = 930;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BANK_NAME
+#=======================================
+
+STRING PIN_FLD_BANK_NAME {
+
+	ID = 1061;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BRANCH_NO
+#=======================================
+
+STRING PIN_FLD_BRANCH_NO {
+
+	ID = 1055;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHECK_NO
+#=======================================
+
+STRING PIN_FLD_CHECK_NO {
+
+	ID = 931;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ERROR_CODE
+#=======================================
+
+STRING PIN_FLD_ERROR_CODE {
+
+	ID = 7391;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ERROR_DESCR
+#=======================================
+
+STRING PIN_FLD_ERROR_DESCR {
+
+	ID = 7392;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IP_ADDRESS
+#=======================================
+
+STRING PIN_FLD_IP_ADDRESS {
+
+	ID = 1653;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPE
+#=======================================
+
+ENUM PIN_FLD_PAY_TYPE {
+
+	ID = 7852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REFERENCE_ID
+#=======================================
+
+STRING PIN_FLD_REFERENCE_ID {
+
+	ID = 6302;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_payment
+#=======================================
+
+STORABLE CLASS /mso_lco_payment {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "LCO Payment Object";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID MSO_FLD_LCO_BLK_PYMT_OBJ {
+
+		DESCR = "LCO Bulk Payment Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_LCO_OBJ {
+
+		DESCR = "LCO account Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_PYMT_COLLECTION_T {
+
+		DESCR = "Payment Collection Time";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_PYMT_PROCESSING_T {
+
+		DESCR = "Payment Processing Time";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_PYMT_STATUS {
+
+		DESCR = "Payment Status (0 - Open, 1 - Completed, 3 - Rejected)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_RECEIPT_OBJ {
+
+		DESCR = "Link to mso_receipt object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_SERVICE_TYPE {
+
+		DESCR = "Service Type (0-BB, 1-CATV)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		DESCR = "Account Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		DESCR = "Payment Amount";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+		DESCR = "Bank Account Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BANK_CODE {
+
+		DESCR = "Bank MICR Code";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BANK_NAME {
+
+		DESCR = "bank_name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BRANCH_NO {
+
+		DESCR = "branch name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CHECK_NO {
+
+		DESCR = "Check No";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "descr";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Payment Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "To Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ERROR_CODE {
+
+		DESCR = "Error Code";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ERROR_DESCR {
+
+		DESCR = "Error Description";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_IP_ADDRESS {
+
+		DESCR = "Gateway Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_PAY_TYPE {
+
+		DESCR = "Payment Type (10011 - Cash, 10012 - Check)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_REFERENCE_ID {
+
+		DESCR = "Receipt No for Cash/ Check No for Check Payment types";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "From Date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "User ID of the session (CSR/ Payment Clerk/Collection Agent)";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_payment
+#=======================================
+
+STORABLE CLASS /mso_lco_payment IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_lco_payment_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID MSO_FLD_LCO_BLK_PYMT_OBJ {
+
+		SQL_COLUMN = "blk_pymt_obj";
+	}
+
+	POID MSO_FLD_LCO_OBJ {
+
+		SQL_COLUMN = "lco_obj";
+	}
+
+	TIMESTAMP MSO_FLD_PYMT_COLLECTION_T {
+
+		SQL_COLUMN = "pymt_coll_t";
+	}
+
+	TIMESTAMP MSO_FLD_PYMT_PROCESSING_T {
+
+		SQL_COLUMN = "pymt_proc_t";
+	}
+
+	ENUM MSO_FLD_PYMT_STATUS {
+
+		SQL_COLUMN = "pymt_status";
+	}
+
+	POID MSO_FLD_RECEIPT_OBJ {
+
+		SQL_COLUMN = "rcpt_obj";
+	}
+
+	ENUM MSO_FLD_SERVICE_TYPE {
+
+		SQL_COLUMN = "srvc_type";
+	}
+
+	STRING PIN_FLD_ACCOUNT_NO {
+
+		SQL_COLUMN = "account_no";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	DECIMAL PIN_FLD_AMOUNT {
+
+		SQL_COLUMN = "amount";
+	}
+
+	STRING PIN_FLD_BANK_ACCOUNT_NO {
+
+		SQL_COLUMN = "bank_acct_no";
+	}
+
+	STRING PIN_FLD_BANK_CODE {
+
+		SQL_COLUMN = "bank_code";
+	}
+
+	STRING PIN_FLD_BANK_NAME {
+
+		SQL_COLUMN = "bank_name";
+	}
+
+	STRING PIN_FLD_BRANCH_NO {
+
+		SQL_COLUMN = "branch_name";
+	}
+
+	STRING PIN_FLD_CHECK_NO {
+
+		SQL_COLUMN = "check_no";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "pymt_date";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "to_date";
+	}
+
+	STRING PIN_FLD_ERROR_CODE {
+
+		SQL_COLUMN = "err_code";
+	}
+
+	STRING PIN_FLD_ERROR_DESCR {
+
+		SQL_COLUMN = "err_descr";
+	}
+
+	STRING PIN_FLD_IP_ADDRESS {
+
+		SQL_COLUMN = "gateway";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	ENUM PIN_FLD_PAY_TYPE {
+
+		SQL_COLUMN = "pay_type";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_REFERENCE_ID {
+
+		SQL_COLUMN = "ref_id";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "from_date";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "user_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

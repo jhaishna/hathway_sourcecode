@@ -1,0 +1,452 @@
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID {
+
+	ID = 40011;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CAS_SUBSCRIBER_ID
+#=======================================
+
+STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+	ID = 40070;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CA_ID
+#=======================================
+
+STRING MSO_FLD_CA_ID {
+
+	ID = 40037;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_NODE
+#=======================================
+
+STRING MSO_FLD_NETWORK_NODE {
+
+	ID = 40000;
+}
+
+
+#=======================================
+#  Field MSO_FLD_REGION_KEY
+#=======================================
+
+STRING MSO_FLD_REGION_KEY {
+
+	ID = 40069;
+}
+
+
+#=======================================
+#  Field MSO_FLD_STB_OBJ
+#=======================================
+
+POID MSO_FLD_STB_OBJ {
+
+	ID = 42008;
+	DESCR = "STB associated to VC";
+}
+
+
+#=======================================
+#  Field MSO_FLD_VC_OBJ
+#=======================================
+
+POID MSO_FLD_VC_OBJ {
+
+	ID = 42003;
+	DESCR = "VC Card associated to STB";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_DEVICE_TYPE {
+
+	ID = 5553;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_ID
+#=======================================
+
+INT PIN_FLD_STATE_ID {
+
+	ID = 5552;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_catv_preactivated_svc
+#=======================================
+
+STORABLE CLASS /mso_catv_preactivated_svc {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_BOUQUET_ID {
+
+		DESCR = "Bearer technology for BB service";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+		DESCR = "CAS_SUBSCRIBER_ID";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CA_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_NETWORK_NODE {
+
+		DESCR = "The network node under which the BB device is getting connected. MUM24Online:ANDHERIEAST1:Area1:street1";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_REGION_KEY {
+
+		DESCR = "IND+ ZIPCODE";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_STB_OBJ {
+
+		DESCR = "STB associated to VC";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_VC_OBJ {
+
+		DESCR = "VC Card associated to STB";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Admin user account object.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DEVICE_TYPE {
+
+		DESCR = "STB device type";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STATE_ID {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "0-NEW, 1-ASSIGNED\n";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_catv_preactivated_svc
+#=======================================
+
+STORABLE CLASS /mso_catv_preactivated_svc IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_catv_preactivated_svc_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_BOUQUET_ID {
+
+		SQL_COLUMN = "BOUQUET_ID";
+	}
+
+	STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+		SQL_COLUMN = "CAS_SUBSCRIBER_ID";
+	}
+
+	STRING MSO_FLD_CA_ID {
+
+		SQL_COLUMN = "CA_ID";
+	}
+
+	STRING MSO_FLD_NETWORK_NODE {
+
+		SQL_COLUMN = "Network_node";
+	}
+
+	STRING MSO_FLD_REGION_KEY {
+
+		SQL_COLUMN = "REGION_KEY";
+	}
+
+	POID MSO_FLD_STB_OBJ {
+
+		SQL_COLUMN = "STB_OBJ";
+	}
+
+	POID MSO_FLD_VC_OBJ {
+
+		SQL_COLUMN = "VC_OBJ";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DEVICE_TYPE {
+
+		SQL_COLUMN = "DEVICE_TYPE";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	INT PIN_FLD_STATE_ID {
+
+		SQL_COLUMN = "STATE_ID";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "STATUS";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

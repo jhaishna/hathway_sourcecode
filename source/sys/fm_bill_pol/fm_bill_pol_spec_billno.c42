@@ -1,0 +1,351 @@
+/*
+ *
+ *      Copyright (c) 1999 - 2007 Oracle. All rights reserved.
+ *
+ *      This material is the confidential property of Oracle Corporation or its
+ *      licensors and may be used, reproduced, stored or transmitted only in
+ *      accordance with a valid Oracle license or sublicense agreement.
+ *
+ */
+
+#ifndef lint
+static  char    Sccs_id[] = "@(#)%Portal Version: fm_bill_pol_spec_billno.c:RWSmod7.3.1Int:1:2007-Sep-07 06:26:05 %";
+#endif
+
+#include <stdio.h>
+#include <string.h>
+#include "pcm.h"
+#include "ops/bill.h"
+#include "cm_fm.h"
+#include "pin_errs.h"
+#include "pin_bill.h"
+#include "pin_cust.h"
+#include "pinlog.h"
+#include "pin_os.h"
+#include "ops/ar.h"
+#include "mso_ops_flds.h"
+
+EXPORT_OP void
+op_bill_pol_spec_billno(
+	cm_nap_connection_t	*connp,
+	u_int			opcode,
+	u_int			flags,
+	pin_flist_t		*in_flistp,
+	pin_flist_t		**ret_flistpp,
+	pin_errbuf_t		*ebufp);
+
+static void
+fm_bill_pol_spec_billno(
+	cm_nap_connection_t	*connp,
+	pcm_context_t		*ctxp,
+	u_int			flags,
+	pin_flist_t		*in_flistp,
+	pin_flist_t		**out_flistpp,
+        pin_errbuf_t		*ebufp);
+	
+static int64
+mso_fm_bill_pol_spec_billno_get_charge_type(
+	cm_nap_connection_t	*connp,
+	pcm_context_t		*ctxp,
+	pin_flist_t		*in_flistp,
+	pin_errbuf_t		*ebufp);
+
+int32 gettoken(char str[]);
+ 
+/*******************************************************************
+ * Main routine for the PCM_OP_BILL_POL_PREP_BILLNO  command
+ *******************************************************************/
+void
+op_bill_pol_spec_billno(
+	cm_nap_connection_t	*connp,
+	u_int			opcode,
+	u_int			flags,
+	pin_flist_t		*in_flistp,
+	pin_flist_t		**ret_flistpp,
+	pin_errbuf_t		*ebufp)
+{
+	pcm_context_t		*ctxp = connp->dm_ctx;
+	pin_flist_t		*r_flistp = NULL;
+
+	/***********************************************************
+	 * Null out results until we have some.
+	 ***********************************************************/
+	*ret_flistpp = NULL;
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	/***********************************************************
+	 * Insanity check.
+	 ***********************************************************/
+	if (opcode != PCM_OP_BILL_POL_SPEC_BILLNO) {
+		pin_set_err(ebufp, PIN_ERRLOC_FM,
+			PIN_ERRCLASS_SYSTEM_DETERMINATE,
+			PIN_ERR_BAD_OPCODE, 0, 0, opcode);
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"bad opcode in op_bill_pol_spec_billno", ebufp);
+		return;
+	}
+
+	/***********************************************************
+	 * Debug: What did we get?
+	 ***********************************************************/
+	PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+		"op_bill_pol_spec_billno input flist", in_flistp);
+
+	/***********************************************************
+	 * Call main function to do it
+	 ***********************************************************/
+	fm_bill_pol_spec_billno(connp, ctxp, flags, in_flistp, &r_flistp, ebufp);
+
+	/***********************************************************
+	 * Results.
+	 ***********************************************************/
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		*ret_flistpp = (pin_flist_t *)NULL;
+		PIN_FLIST_DESTROY(r_flistp, NULL);
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"op_bill_pol_spec_billno error", ebufp);
+	} else {
+		*ret_flistpp = r_flistp;
+		PIN_ERRBUF_CLEAR(ebufp);
+		PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG,
+			"op_bill_pol_spec_billno return flist", r_flistp);
+	}
+
+	return;
+}
+
+/*******************************************************************
+ * fm_bill_pol_spec_billno()
+ *
+ *	Prep the billno for the given bill obj.
+ *
+ *******************************************************************/
+static void
+fm_bill_pol_spec_billno(
+	cm_nap_connection_t	*connp,
+	pcm_context_t		*ctxp,
+	u_int			flags,
+	pin_flist_t		*in_flistp,
+	pin_flist_t		**out_flistpp,
+        pin_errbuf_t		*ebufp)
+{
+	pin_flist_t	*b_flistp = NULL;
+	poid_t		*pdp = NULL;
+	void            *vp = NULL;
+
+	int64		poid_db;
+	int64		poid_id;
+	char		billno[60];
+	int32		charge_type = -1;	
+	char		*bill_no = NULL;
+	char		new_bill_no[2*BUFSIZ]="";
+
+
+	if (PIN_ERRBUF_IS_ERR(ebufp))
+		return;
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	b_flistp = PIN_FLIST_COPY(in_flistp, ebufp);
+
+	/***********************************************************
+	 * We don't need a bill_no if the bill type is subordinate.
+	 ***********************************************************/
+	vp = PIN_FLIST_FLD_GET(b_flistp, PIN_FLD_PAY_TYPE, 0, ebufp);
+
+	if (vp != (void *)NULL) {
+		PIN_FLIST_FLD_DROP(b_flistp, PIN_FLD_PAY_TYPE, ebufp);
+	}
+
+	/***********************************************************
+	 * Set the BILL_NO field according to poid.
+	 ***********************************************************/
+        vp = PIN_FLIST_FLD_GET(b_flistp, PIN_FLD_BILL_NO, 1, ebufp);
+
+	bill_no = PIN_FLIST_FLD_GET (in_flistp, PIN_FLD_BILL_NO, 0, ebufp);
+	charge_type = mso_fm_bill_pol_spec_billno_get_charge_type(connp, ctxp, in_flistp, ebufp);
+	
+	if ((vp == (void *)NULL) || (strlen((char *)vp) <= 0)) {
+
+		pdp = (poid_t *)PIN_FLIST_FLD_GET(in_flistp, 
+			PIN_FLD_POID, 0, ebufp);
+
+		poid_db = PIN_POID_GET_DB(pdp);
+		poid_id = PIN_POID_GET_ID(pdp);
+
+		sprintf(billno, "%u.%u.%u.%u-%llu",
+		(u_int)((poid_db & (u_int64)MASKUPPER) >> 48),
+		(u_int)((poid_db & (u_int64)MASKSECOND) >> 32),
+		(u_int)((poid_db & (u_int64)MASKTHIRD) >> 16),
+		(u_int)(poid_db & (u_int64)0xFFFF), poid_id);
+
+		PIN_FLIST_FLD_SET(b_flistp, PIN_FLD_BILL_NO, 
+			(void *)billno, ebufp);
+	}
+	if(charge_type == 1) {
+		sprintf(new_bill_no, "%s%s", "HW-", bill_no);
+		PIN_FLIST_FLD_SET(b_flistp, PIN_FLD_BILL_NO, (void *)new_bill_no, ebufp);
+	}
+    else if(charge_type == 3) {
+		sprintf(new_bill_no, "%s%s", "DEPOSIT-", bill_no);
+		PIN_FLIST_FLD_SET(b_flistp, PIN_FLD_BILL_NO, (void *)new_bill_no, ebufp);
+	}
+	if(charge_type == 4) {
+		sprintf(new_bill_no, "%s%s", "DN-", bill_no);
+		PIN_FLIST_FLD_SET(b_flistp, PIN_FLD_BILL_NO, (void *)new_bill_no, ebufp);
+	}
+
+	*out_flistpp = b_flistp;
+
+	/***********************************************************
+	 * Error?
+	 ***********************************************************/
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"fm_bill_pol_spec_billno error", ebufp);
+	}
+
+	return;
+}
+
+static int64
+mso_fm_bill_pol_spec_billno_get_charge_type(
+	cm_nap_connection_t	*connp,
+	pcm_context_t		*ctxp,
+	pin_flist_t		*in_flistp,
+	pin_errbuf_t		*ebufp)
+{
+
+	int64			include_children = 0;
+	char			*service_type = NULL;
+	int32			status = PIN_ITEM_STATUS_OPEN;
+
+	pin_flist_t		*b_flistp = NULL;
+	pin_flist_t		*billinfo_out_flist = NULL;
+	pin_flist_t		*get_bill_item_out_flist = NULL;
+	pin_flist_t		*res_flistp = NULL;
+	pin_flist_t		*mso_billnow_iflistp = NULL;
+	pin_cookie_t		r_cookie = NULL;
+	int			r_elemid = 0;
+	char			*item_type = NULL;
+	char			*charge_type = NULL;
+	void			*i_pdp = NULL;
+	cm_op_info_t		*v_coip = NULL;
+
+	if (PIN_ERRBUF_IS_ERR(ebufp))
+		return;
+	PIN_ERRBUF_CLEAR(ebufp);
+
+	PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "mso_fm_bill_pol_spec_billno_get_charge_type start");
+	
+
+	fm_mso_read_billinfo(ctxp, (poid_t*)PIN_FLIST_FLD_GET(in_flistp, PIN_FLD_BILLINFO_OBJ,
+		0, ebufp), &billinfo_out_flist, ebufp);
+	service_type = (char*)PIN_FLIST_FLD_GET(billinfo_out_flist, PIN_FLD_BILLINFO_ID, 1, ebufp );
+
+	if (PIN_ERRBUF_IS_ERR(ebufp)) {
+		PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"mso_fm_bill_pol_spec_billno_get_charge_type: error reading billinfo", ebufp);
+		goto cleanup;
+	}
+	if (service_type != NULL && (strcmp(service_type, "BB") == 0 || strcmp(service_type, "CATV") == 0)){
+		/***************************************************
+		 * Developer: Sudhish Jugran
+		 * Changes: Blocked the pending item search and 
+		 *	implimented the below logic.
+		 *	- If the ancestor opcode is MSO_OP_BILL_MAKE_BILL_NOW
+		 *	then fetch the input flist of that opcode and get the
+		 * 	charge type.
+		 ***************************************************/
+
+		/*b_flistp = PIN_FLIST_CREATE(ebufp);
+		PIN_FLIST_FLD_COPY(in_flistp, PIN_FLD_POID, b_flistp, PIN_FLD_BILL_OBJ, ebufp);
+		PIN_FLIST_FLD_COPY(in_flistp, PIN_FLD_ACCOUNT_OBJ, b_flistp, PIN_FLD_POID, ebufp);
+		PIN_FLIST_FLD_COPY(billinfo_out_flist, PIN_FLD_AR_BILLINFO_OBJ, b_flistp, PIN_FLD_AR_BILLINFO_OBJ, ebufp);
+		PIN_FLIST_FLD_COPY(in_flistp, PIN_FLD_BILLINFO_OBJ, b_flistp, PIN_FLD_BILLINFO_OBJ, ebufp);
+		PIN_FLIST_FLD_SET (b_flistp, PIN_FLD_INCLUDE_CHILDREN, (void *)&include_children, ebufp);
+		PIN_FLIST_FLD_SET (b_flistp, PIN_FLD_STATUS, (void *)&status, ebufp);
+
+		PIN_ERR_LOG_FLIST (PIN_ERR_LEVEL_DEBUG, "mso_fm_bill_pol_spec_billno_get_charge_type get_bill_items input flist",  b_flistp);
+		PCM_OP(ctxp, PCM_OP_AR_GET_BILL_ITEMS, 0, b_flistp, &get_bill_item_out_flist, ebufp);
+		if (PIN_ERRBUF_IS_ERR(ebufp) ) {
+			PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR,
+			"error in mso_fm_bill_pol_spec_billno_get_charge_type on getting bill items ", ebufp);
+			goto cleanup;
+		}*/
+		v_coip = connp->coip;
+		while( v_coip != NULL ){
+			if( v_coip->opcode == MSO_OP_BILL_MAKE_BILL_NOW ){
+				mso_billnow_iflistp = PIN_FLIST_COPY( v_coip->in_flistp, ebufp );
+				PIN_ERR_LOG_FLIST( PIN_ERR_LEVEL_DEBUG, "MSO_OP_BILL_MAKE_BILL_NOW input flist", mso_billnow_iflistp );
+				break;
+			}
+			else{
+				v_coip = v_coip->next;
+			}
+		}
+
+		PIN_ERR_LOG_FLIST (PIN_ERR_LEVEL_DEBUG, "mso_fm_bill_pol_spec_billno_get_charge_type search out flist",  mso_billnow_iflistp);
+		 
+		/*if(get_bill_item_out_flist && PIN_FLIST_ELEM_COUNT(get_bill_item_out_flist, PIN_FLD_ITEMS, ebufp) > 0) {		
+			while((res_flistp = PIN_FLIST_ELEM_GET_NEXT(get_bill_item_out_flist, PIN_FLD_ITEMS,&r_elemid,1,&r_cookie,ebufp)) != NULL) {
+				
+				//i_pdp = PIN_FLIST_FLD_GET(res_flistp, PIN_FLD_POID, 0, ebufp);
+				i_pdp = PIN_FLIST_FLD_GET(res_flistp, PIN_FLD_ITEM_OBJ, 0, ebufp );
+				item_type = (char *)PIN_POID_GET_TYPE(i_pdp);
+		
+				if(item_type && !strstr(item_type, "mso_hw_amc"))
+				{
+					if (item_type && (gettoken(item_type) == 1)){
+						PIN_FLIST_DESTROY_EX(&billinfo_out_flist, NULL);
+						PIN_FLIST_DESTROY_EX(&get_bill_item_out_flist, NULL);
+						return 1;
+					}
+				}
+
+			}
+		}*/
+		if( mso_billnow_iflistp ){
+			charge_type = PIN_FLIST_FLD_GET( mso_billnow_iflistp, MSO_FLD_CHARGE_TYPE, 0, ebufp );
+			PIN_FLIST_DESTROY_EX(&mso_billnow_iflistp, NULL );
+			PIN_FLIST_DESTROY_EX(&billinfo_out_flist, NULL);
+			if( charge_type && !strcmp( charge_type, "hardware" )){
+				return 1;
+			}
+            else if( charge_type && !strcmp( charge_type, "deposit" )){
+				return 3;
+			}
+            else if( charge_type && !strcmp( charge_type, "debit_note" )){
+				return 4;
+			}
+		}
+	}
+	
+cleanup:
+	PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "mso_fm_bill_pol_spec_billno_get_charge_type: end");
+	PIN_FLIST_DESTROY_EX(&billinfo_out_flist, NULL);
+	//PIN_FLIST_DESTROY_EX(&b_flistp, NULL);
+	//PIN_FLIST_DESTROY_EX(&get_bill_item_out_flist, NULL);
+	PIN_FLIST_DESTROY_EX(&mso_billnow_iflistp, NULL );
+
+	return 0;
+
+}
+
+int32 gettoken(char     str[])
+{
+        const   char s[2] = "_";
+        char    *token;
+
+        token = strtok(str, s);
+
+        while( token != NULL ){
+                if(strcmp(token,"hw") == 0){
+                        PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, token);
+                        return 1;
+                }
+                token = strtok(NULL, s);
+        }
+
+        return 0;
+}
+

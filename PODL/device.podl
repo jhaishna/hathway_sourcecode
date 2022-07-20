@@ -1,0 +1,1962 @@
+
+#=======================================
+#  Field MSO_FLD_CHANNEL_NAME
+#=======================================
+
+STRING MSO_FLD_CHANNEL_NAME {
+
+	ID = 40034;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CR_ADJ_DATE
+#=======================================
+
+TIMESTAMP MSO_FLD_CR_ADJ_DATE {
+
+	ID = 41129;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LICENSE_NO
+#=======================================
+
+STRING MSO_FLD_LICENSE_NO {
+
+	ID = 42636;
+	DESCR = "MSO License Number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_MAKE
+#=======================================
+
+STRING MSO_FLD_MAKE {
+
+	ID = 42201;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ORDER_OBJ
+#=======================================
+
+POID MSO_FLD_ORDER_OBJ {
+
+	ID = 42010;
+	DESCR = "Order linkage to device object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PRICE
+#=======================================
+
+DECIMAL MSO_FLD_PRICE {
+
+	ID = 42017;
+	DESCR = "Supplier Price of the item";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PROVISIONABLE_FLAG
+#=======================================
+
+ENUM MSO_FLD_PROVISIONABLE_FLAG {
+
+	ID = 42202;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SERIAL_NO
+#=======================================
+
+STRING MSO_FLD_SERIAL_NO {
+
+	ID = 42009;
+	DESCR = "Device Serial Number";
+}
+
+
+#=======================================
+#  Field MSO_FLD_VENDOR_WARRANTY_END
+#=======================================
+
+TIMESTAMP MSO_FLD_VENDOR_WARRANTY_END {
+
+	ID = 42189;
+}
+
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END
+#=======================================
+
+TIMESTAMP MSO_FLD_WARRANTY_END {
+
+	ID = 42004;
+	DESCR = "Populated during device assignment with actual date";
+}
+
+
+#=======================================
+#  Field MSO_FLD_WARRANTY_END_OFFSET
+#=======================================
+
+INT MSO_FLD_WARRANTY_END_OFFSET {
+
+	ID = 42005;
+	DESCR = "Offset in Months";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CATEGORY
+#=======================================
+
+STRING PIN_FLD_CATEGORY {
+
+	ID = 1202;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_STATUS
+#=======================================
+
+ENUM PIN_FLD_DELIVERY_STATUS {
+
+	ID = 7702;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_ID
+#=======================================
+
+STRING PIN_FLD_DEVICE_ID {
+
+	ID = 5551;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_DEVICE_TYPE {
+
+	ID = 5553;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GROUP_DETAILS
+#=======================================
+
+ARRAY PIN_FLD_GROUP_DETAILS {
+
+	ID = 9003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MANUFACTURER
+#=======================================
+
+STRING PIN_FLD_MANUFACTURER {
+
+	ID = 5563;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODEL
+#=======================================
+
+STRING PIN_FLD_MODEL {
+
+	ID = 5564;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN
+#=======================================
+
+ARRAY PIN_FLD_PLAN {
+
+	ID = 444;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PURCHASED_PLAN_OBJ
+#=======================================
+
+POID MSO_FLD_PURCHASED_PLAN_OBJ {
+
+	ID = 42163;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECEIPT_NO
+#=======================================
+
+STRING PIN_FLD_RECEIPT_NO {
+
+	ID = 929;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICES
+#=======================================
+
+ARRAY PIN_FLD_SERVICES {
+
+	ID = 122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SOURCE
+#=======================================
+
+STRING PIN_FLD_SOURCE {
+
+	ID = 5562;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_ID
+#=======================================
+
+INT PIN_FLD_STATE_ID {
+
+	ID = 5552;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_TO {
+
+	ID = 6430;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_DATA
+#=======================================
+
+ARRAY MSO_FLD_IP_DATA {
+
+	ID = 42203;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_ADDRS
+#=======================================
+
+STRING MSO_FLD_IP_ADDRS {
+
+	ID = 42204;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_MASK_VALUE
+#=======================================
+
+STRING MSO_FLD_IP_MASK_VALUE {
+
+	ID = 42207;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_POOL_NAME
+#=======================================
+
+STRING MSO_FLD_IP_POOL_NAME {
+
+	ID = 42206;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_VERSION
+#=======================================
+
+STRING MSO_FLD_IP_VERSION {
+
+	ID = 42205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SEGMENT_NAME
+#=======================================
+
+STRING PIN_FLD_SEGMENT_NAME {
+
+	ID = 1829;
+}
+
+
+#=======================================
+#  Field MSO_FLD_STB_DATA
+#=======================================
+
+ARRAY MSO_FLD_STB_DATA {
+
+	ID = 42000;
+	DESCR = "Array to hold STB related data";
+}
+
+
+#=======================================
+#  Field MSO_FLD_VC_OBJ
+#=======================================
+
+POID MSO_FLD_VC_OBJ {
+
+	ID = 42003;
+	DESCR = "VC Card associated to STB";
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWNER_OBJ
+#=======================================
+
+POID PIN_FLD_OWNER_OBJ {
+
+	ID = 7756;
+}
+
+
+#=======================================
+#  Field MSO_FLD_VC_DATA
+#=======================================
+
+ARRAY MSO_FLD_VC_DATA {
+
+	ID = 42006;
+	DESCR = "Array to hold STB related data";
+}
+
+
+#=======================================
+#  Field MSO_FLD_STB_OBJ
+#=======================================
+
+POID MSO_FLD_STB_OBJ {
+
+	ID = 42008;
+	DESCR = "STB associated to VC";
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_VOUCHER
+#=======================================
+
+SUBSTRUCT PIN_FLD_DEVICE_VOUCHER {
+
+	ID = 7607;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_CODE
+#=======================================
+
+STRING PIN_FLD_DEALER_CODE {
+
+	ID = 7602;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_NAME
+#=======================================
+
+STRING PIN_FLD_DEALER_NAME {
+
+	ID = 7601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXPIRATION_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+	ID = 5601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_CODE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+	ID = 7610;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_TYPE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+	ID = 7609;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VOUCHER_PIN
+#=======================================
+
+STRING PIN_FLD_VOUCHER_PIN {
+
+	ID = 7608;
+}
+
+
+#=======================================
+#  Storable Class /device
+#=======================================
+
+STORABLE CLASS /device {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Device object is the main entity in Device Management Framework. Each device object in database represents one physical device entity. Device object is brand aware object. It is a extendable object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CHANNEL_NAME {
+
+		LABEL = "scheme_name";
+		DESCR = "CATV device location update scheme name";
+		ORDER = 0;
+		LENGTH = 200;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_CR_ADJ_DATE {
+
+		DESCR = "device order shipment date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_LICENSE_NO {
+
+		DESCR = "MSO License Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_MAKE {
+
+		DESCR = "Make version of the Model";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_ORDER_OBJ {
+
+		DESCR = "Order linkage to device object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+    STRING MSO_FLD_ORDER_TYPE {
+
+        DESCR = "Regular / Reverse ";
+        ORDER = 0;
+        LENGTH = 255;
+        CREATE = Optional;
+        MODIFY = Writeable;
+        AUDITABLE = 0;
+        ENCRYPTABLE = 0;
+        SERIALIZABLE = 0;
+    }
+
+	DECIMAL MSO_FLD_PRICE {
+
+		DESCR = "Price";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_PROVISIONABLE_FLAG {
+
+		DESCR = "0-Not provisionable\n1-Provisionable";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_SERIAL_NO {
+
+		DESCR = "Device Serial Number";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_VENDOR_WARRANTY_END {
+
+		DESCR = "Vendor Warranty End time.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP MSO_FLD_WARRANTY_END {
+
+		DESCR = "Populated during device assignment with actual date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT MSO_FLD_WARRANTY_END_OFFSET {
+
+		DESCR = "Offset in Months";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CATEGORY {
+
+		DESCR = "NEW/REFURBISHED/REPAIRED";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_COUNT {
+
+		DESCR = "Counter to track how many times a device is being repaired";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_COUNTRY {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_DELIVERY_STATUS {
+
+		DESCR = "Device delivery status";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Description of the device instance.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DEVICE_ID {
+
+		DESCR = "Device object physical ID. It should be unique per device type and manufacturer. Device Management Framework doesn't enforce the uniqueness.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DEVICE_TYPE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "PIN_FLD_NAME";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_MANUFACTURER {
+
+		DESCR = "Device object manufacturer name.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_MODEL {
+
+		DESCR = "Device object model name.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+    STRING PIN_FLD_ORDER_ID {
+
+        DESCR = "work order number";
+        ORDER = 0;
+        LENGTH = 255;
+        CREATE = Optional;
+        MODIFY = Writeable;
+        AUDITABLE = 0;
+        ENCRYPTABLE = 0;
+        SERIALIZABLE = 0;
+    }
+
+	ARRAY PIN_FLD_PLAN {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_PURCHASED_PLAN_OBJ {
+
+			DESCR = "purchased plan obj";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "PLan type for the device: 1 - rental/deposit, 2 - outright, 3 - customer device";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_RECEIPT_NO {
+
+		DESCR = "to store challan no generated during generate challan to repair vendor";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		DESCR = "Array of service objects associated with the device instance.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "Link to the account object the service instance belongs to. This field is provided for easily searching the account the device is linked to.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "Link to a service object. It also allows for type only service poid for device pre-provisioning.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_SOURCE {
+
+		DESCR = "This field is used to track the device ownership.One device could be owned by service provider or subscriber.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STATE_ID {
+
+		DESCR = "Current state id of the device instance.The state id is defined in /config/dev_state object.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_VALID_TO {
+
+		LABEL = "scheme end date";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/ip
+#=======================================
+
+STORABLE CLASS /device/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_IP_DATA {
+
+		DESCR = "Array to hold Router related data.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_IP_ADDRS {
+
+			DESCR = "IP address";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_IP_MASK_VALUE {
+
+			DESCR = "IP Mask value";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_IP_POOL_NAME {
+
+			DESCR = "IP Pool Name";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_IP_VERSION {
+
+			DESCR = "IP version";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SEGMENT_NAME {
+
+			DESCR = "Reserved IP segment";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/ip/framed
+#=======================================
+
+STORABLE CLASS /device/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/ip/static
+#=======================================
+
+STORABLE CLASS /device/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+#=======================================
+#  Storable Class /device/modem
+#=======================================
+
+STORABLE CLASS /device/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/nat
+#=======================================
+
+STORABLE CLASS /device/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/ott
+#=======================================
+
+STORABLE CLASS /device/ott {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Storable class for OTT.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/router
+#=======================================
+
+STORABLE CLASS /device/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/router/cable
+#=======================================
+
+STORABLE CLASS /device/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/router/wifi
+#=======================================
+
+STORABLE CLASS /device/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/stb
+#=======================================
+
+STORABLE CLASS /device/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "STB specific data";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_STB_DATA {
+
+		DESCR = "Array to hold STB related data";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_VC_OBJ {
+
+			DESCR = "VC Card associated to STB";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			DESCR = "LCO account object, used for preactivated device.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/vc
+#=======================================
+
+STORABLE CLASS /device/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "VC specific data";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_VC_DATA {
+
+		DESCR = "Array to hold STB related data";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_STB_OBJ {
+
+			DESCR = "STB associated to VC";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			DESCR = "LCO account object, used for preactivate device.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/voucher
+#=======================================
+
+STORABLE CLASS /device/voucher {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Used to represent a unique Voucher Device. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DEVICE_VOUCHER {
+
+		DESCR = "Substruct containing information about this voucher device.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEALER_CODE {
+
+			DESCR = "Code of the service provoider ";
+			ORDER = 2;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DEALER_NAME {
+
+			DESCR = "Name of the service provider ";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Deal object which has the products to impact the balance";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			DESCR = "Expiration date of the voucher ";
+			ORDER = 6;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			DESCR = "Code associated with the recharge card ";
+			ORDER = 5;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			DESCR = "Type of the voucher card ";
+			ORDER = 4;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VOUCHER_PIN {
+
+			DESCR = "Voucher personal identification number.";
+			ORDER = 0;
+			LENGTH = 79;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 1;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device
+#=======================================
+
+STORABLE CLASS /device IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "device_t";
+	SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_CHANNEL_NAME {
+
+		SQL_COLUMN = "scheme_name";
+	}
+
+	TIMESTAMP MSO_FLD_CR_ADJ_DATE {
+
+		SQL_COLUMN = "shipment_date";
+	}
+
+	STRING MSO_FLD_LICENSE_NO {
+
+		SQL_COLUMN = "lot_number";
+	}
+
+	STRING MSO_FLD_MAKE {
+
+		SQL_COLUMN = "make";
+	}
+
+	POID MSO_FLD_ORDER_OBJ {
+
+		SQL_COLUMN = "order_obj";
+	}
+
+    STRING MSO_FLD_ORDER_TYPE {
+
+        SQL_COLUMN = "flow_type";
+    }
+
+	DECIMAL MSO_FLD_PRICE {
+
+		SQL_COLUMN = "price";
+	}
+
+	ENUM MSO_FLD_PROVISIONABLE_FLAG {
+
+		SQL_COLUMN = "provisionable_flag";
+	}
+
+	STRING MSO_FLD_SERIAL_NO {
+
+		SQL_COLUMN = "serial_no";
+	}
+
+	TIMESTAMP MSO_FLD_VENDOR_WARRANTY_END {
+
+		SQL_COLUMN = "vendor_warranty_end";
+	}
+
+	TIMESTAMP MSO_FLD_WARRANTY_END {
+
+		SQL_COLUMN = "WARRANTY_END";
+	}
+
+	INT MSO_FLD_WARRANTY_END_OFFSET {
+
+		SQL_COLUMN = "END_OFFSET";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_CATEGORY {
+
+		SQL_COLUMN = "CATEGORY";
+	}
+
+	INT PIN_FLD_COUNT {
+
+		SQL_COLUMN = "repair_counter";
+	}
+
+	STRING PIN_FLD_COUNTRY {
+
+		SQL_COLUMN = "origin_country";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ENUM PIN_FLD_DELIVERY_STATUS {
+
+		SQL_COLUMN = "delivery_status";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	STRING PIN_FLD_DEVICE_ID {
+
+		SQL_COLUMN = "device_id";
+	}
+
+	STRING PIN_FLD_DEVICE_TYPE {
+
+		SQL_COLUMN = "DEVICE_TYPE";
+	}
+
+	ARRAY PIN_FLD_GROUP_DETAILS {
+
+		SQL_TABLE = "MSO_DEVICE_PAIR_DETAILS_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "NAME";
+		}
+
+	}
+
+	STRING PIN_FLD_MANUFACTURER {
+
+		SQL_COLUMN = "manufacturer";
+	}
+
+	STRING PIN_FLD_MODEL {
+
+		SQL_COLUMN = "model";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+    STRING PIN_FLD_ORDER_ID {
+
+        SQL_COLUMN = "order_id";
+    }
+
+
+	ARRAY PIN_FLD_PLAN {
+
+		SQL_TABLE = "mso_device_plan_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_PURCHASED_PLAN_OBJ {
+
+			SQL_COLUMN = "PURCHASED_PLAN_OBJ";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "plan_type";
+		}
+
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_RECEIPT_NO {
+
+		SQL_COLUMN = "challan_no";
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		SQL_TABLE = "device_services_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+	STRING PIN_FLD_SOURCE {
+
+		SQL_COLUMN = "source";
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "warranty_start_t";
+	}
+
+	INT PIN_FLD_STATE_ID {
+
+		SQL_COLUMN = "state_id";
+	}
+
+	TIMESTAMP PIN_FLD_VALID_TO {
+
+		SQL_COLUMN = "scheme_end_date";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/ip
+#=======================================
+
+STORABLE CLASS /device/ip IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_IP_DATA {
+
+		SQL_TABLE = "MSO_DEVICE_IP_DATA_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_IP_ADDRS {
+
+			SQL_COLUMN = "IP_ADDRS";
+		}
+
+		STRING MSO_FLD_IP_MASK_VALUE {
+
+			SQL_COLUMN = "IP_MASK_VALUE";
+		}
+
+		STRING MSO_FLD_IP_POOL_NAME {
+
+			SQL_COLUMN = "IP_POOL_NAME";
+		}
+
+		STRING MSO_FLD_IP_VERSION {
+
+			SQL_COLUMN = "IP_VERSION";
+		}
+
+		STRING PIN_FLD_SEGMENT_NAME {
+
+			SQL_COLUMN = "IP_SEGMENT";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/ip/framed
+#=======================================
+
+STORABLE CLASS /device/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /device/ip/static
+#=======================================
+
+STORABLE CLASS /device/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+#=======================================
+#  Storable Class /device/modem
+#=======================================
+
+STORABLE CLASS /device/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /device/nat
+#=======================================
+
+STORABLE CLASS /device/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /device/ott
+#=======================================
+
+STORABLE CLASS /device/ott IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /device/router
+#=======================================
+
+STORABLE CLASS /device/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /device/router/cable
+#=======================================
+
+STORABLE CLASS /device/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /device/router/wifi
+#=======================================
+
+STORABLE CLASS /device/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /device/stb
+#=======================================
+
+STORABLE CLASS /device/stb IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_STB_DATA {
+
+		SQL_TABLE = "DEVICE_STB_DATA_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_VC_OBJ {
+
+			SQL_COLUMN = "VC_OBJ";
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			SQL_COLUMN = "OWNER_OBJ";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/vc
+#=======================================
+
+STORABLE CLASS /device/vc IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_VC_DATA {
+
+		SQL_TABLE = "DEVICE_VC_DATA_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID MSO_FLD_STB_OBJ {
+
+			SQL_COLUMN = "STB_OBJ";
+		}
+
+		POID PIN_FLD_OWNER_OBJ {
+
+			SQL_COLUMN = "OWNER_OBJ";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/voucher
+#=======================================
+
+STORABLE CLASS /device/voucher IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DEVICE_VOUCHER {
+
+		SQL_TABLE = "device_voucher_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEALER_CODE {
+
+			SQL_COLUMN = "dealer_code";
+		}
+
+		STRING PIN_FLD_DEALER_NAME {
+
+			SQL_COLUMN = "dealer_name";
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		TIMESTAMP PIN_FLD_EXPIRATION_T {
+
+			SQL_COLUMN = "expiration";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			SQL_COLUMN = "recharge_card_code";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			SQL_COLUMN = "recharge_card_type";
+		}
+
+		STRING PIN_FLD_VOUCHER_PIN {
+
+			SQL_COLUMN = "voucher_pin";
+		}
+
+	}
+
+}
+

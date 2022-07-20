@@ -1,0 +1,44 @@
+
+#=======================================
+#  Storable Class /config/template/group
+#=======================================
+
+STORABLE CLASS /config/template/group {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for /group object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/group/sharing
+#=======================================
+
+STORABLE CLASS /config/template/group/sharing {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class indicates that this template will be used for /group/sharing object validation.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/template/group
+#=======================================
+
+STORABLE CLASS /config/template/group IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/template/group/sharing
+#=======================================
+
+STORABLE CLASS /config/template/group/sharing IMPLEMENTATION ORACLE7 {
+
+}
+

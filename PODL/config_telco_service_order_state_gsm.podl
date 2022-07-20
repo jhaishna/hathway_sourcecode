@@ -1,0 +1,110 @@
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/data {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/data.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/fax {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/fax.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/sms {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/sms.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/telephony {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/telephony.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

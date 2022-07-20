@@ -1,0 +1,228 @@
+
+#=======================================
+#  Field MSO_FLD_SWAP_TAGGING
+#=======================================
+
+ARRAY MSO_FLD_SWAP_TAGGING {
+
+	ID = 43359;
+	DESCR = "This is for parent and child STB swap tagging life cycle event";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEW_VALUE
+#=======================================
+
+STRING PIN_FLD_NEW_VALUE {
+
+	ID = 8153;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_VALUE
+#=======================================
+
+STRING PIN_FLD_OLD_VALUE {
+
+	ID = 8154;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PREV_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_PREV_SERVICE_OBJ {
+
+	ID = 6318;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/swap_tagging
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/swap_tagging {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "This is Parent and child STB swap  service tagging life cycle event";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_SWAP_TAGGING {
+
+		DESCR = "This is for parent and child STB swap tagging life cycle event";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			DESCR = "account_no ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NEW_VALUE {
+
+			DESCR = "This holds the new parent device id after swap. Actually previously child device id in the same account.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OLD_VALUE {
+
+			DESCR = "This holds the previous parent device id before swap";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_POID {
+
+			DESCR = "stores account_obj";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PREV_SERVICE_OBJ {
+
+			DESCR = "This holds the previous parent service obj which is swapped to child";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "This holds the SERVICE POID of new parent which was previously a child connection";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/swap_tagging
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/swap_tagging IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_SWAP_TAGGING {
+
+		SQL_TABLE = "mso_evt_lc_stb_swap_tagging_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		STRING PIN_FLD_NEW_VALUE {
+
+			SQL_COLUMN = "new_parent_device_id";
+		}
+
+		STRING PIN_FLD_OLD_VALUE {
+
+			SQL_COLUMN = "old_parent_device_id";
+		}
+
+		POID PIN_FLD_POID {
+
+			SQL_COLUMN = "poid_id0";
+		}
+
+		POID PIN_FLD_PREV_SERVICE_OBJ {
+
+			SQL_COLUMN = "old_parent_service_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "new_parent_service_obj";
+		}
+
+	}
+
+}
+

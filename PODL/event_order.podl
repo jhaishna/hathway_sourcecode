@@ -1,0 +1,682 @@
+
+#=======================================
+#  Field PIN_FLD_ORDER_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_ORDER_INFO {
+
+	ID = 7501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_OBJ
+#=======================================
+
+POID PIN_FLD_ORDER_OBJ {
+
+	ID = 7500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUB_ORDER_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_SUB_ORDER_INFO {
+
+	ID = 7503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ATTRIBUTE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_ATTRIBUTE_INFO {
+
+	ID = 5567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_ID
+#=======================================
+
+STRING PIN_FLD_ORDER_ID {
+
+	ID = 943;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BRAND_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_BRAND_INFO {
+
+	ID = 1902;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEW_BRAND
+#=======================================
+
+POID PIN_FLD_NEW_BRAND {
+
+	ID = 5571;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_BRAND
+#=======================================
+
+POID PIN_FLD_OLD_BRAND {
+
+	ID = 5570;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_STATE_INFO {
+
+	ID = 5568;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEW_STATE
+#=======================================
+
+INT PIN_FLD_NEW_STATE {
+
+	ID = 5561;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_STATE
+#=======================================
+
+INT PIN_FLD_OLD_STATE {
+
+	ID = 5560;
+}
+
+
+#=======================================
+#  Storable Class /event/order
+#=======================================
+
+STORABLE CLASS /event/order {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Abstract class to indicate Order related event.when ever there is state change of order";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ORDER_INFO {
+
+		DESCR = "Substruct to hold order poids";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			DESCR = "The order object of the event.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/associate
+#=======================================
+
+STORABLE CLASS /event/order/associate {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when a suborder is associated with a master order.ThisObject is created by PCM_OP_ORDER_ASSOCIATE opcode";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SUB_ORDER_INFO {
+
+		DESCR = "The substruct to hold the sub order object info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			DESCR = "The poid of the sub order object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/attribute
+#=======================================
+
+STORABLE CLASS /event/order/attribute {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order attribute is changed.Can be extended to track changes in particular attributes";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ATTRIBUTE_INFO {
+
+		DESCR = "The substruct to hold the order attributes.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "Link to account object for which this object was created.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORDER_ID {
+
+			DESCR = "The physical id of the order object.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/brand
+#=======================================
+
+STORABLE CLASS /event/order/brand {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order brand is changedThe object is created by PCM_OP_ORDER_SET_BRAND opcode";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BRAND_INFO {
+
+		DESCR = "Substruct to hold the brand info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_NEW_BRAND {
+
+			DESCR = "The new brand of order";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OLD_BRAND {
+
+			DESCR = "The old brand of order";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/create
+#=======================================
+
+STORABLE CLASS /event/order/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order is createdThis object is created by PCM_OP_ORDER_CREATE opcode";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/order/delete
+#=======================================
+
+STORABLE CLASS /event/order/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an object is deletedThe object is created by PCM_OP_ORDER_DELETE";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/order/disassociate
+#=======================================
+
+STORABLE CLASS /event/order/disassociate {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when a sub order is disassociated from master orderMultiple events are generated when multiple sub orders aredisassociated from the same master order";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SUB_ORDER_INFO {
+
+		DESCR = "The substruct to hold the sub order object info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			DESCR = "The poid of the sub order object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/process
+#=======================================
+
+STORABLE CLASS /event/order/process {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order is processedThis object is created by PCM_OP_ORDER_PROCESS opcode";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/order/state
+#=======================================
+
+STORABLE CLASS /event/order/state {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order state is changedThe object is created by PCM_OP_ORDER_SET_STATE";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_STATE_INFO {
+
+		DESCR = "Order state information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_NEW_STATE {
+
+			DESCR = "The new state of order";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OLD_STATE {
+
+			DESCR = "The old state of order";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order
+#=======================================
+
+STORABLE CLASS /event/order IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ORDER_INFO {
+
+		SQL_TABLE = "event_order_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			SQL_COLUMN = "order_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/associate
+#=======================================
+
+STORABLE CLASS /event/order/associate IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SUB_ORDER_INFO {
+
+		SQL_TABLE = "event_order_associate_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			SQL_COLUMN = "order_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/attribute
+#=======================================
+
+STORABLE CLASS /event/order/attribute IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ATTRIBUTE_INFO {
+
+		SQL_TABLE = "event_order_attribute_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		STRING PIN_FLD_ORDER_ID {
+
+			SQL_COLUMN = "order_id";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/brand
+#=======================================
+
+STORABLE CLASS /event/order/brand IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_BRAND_INFO {
+
+		SQL_TABLE = "event_order_brand_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_NEW_BRAND {
+
+			SQL_COLUMN = "new_brand";
+		}
+
+		POID PIN_FLD_OLD_BRAND {
+
+			SQL_COLUMN = "old_brand";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/create
+#=======================================
+
+STORABLE CLASS /event/order/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/delete
+#=======================================
+
+STORABLE CLASS /event/order/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/disassociate
+#=======================================
+
+STORABLE CLASS /event/order/disassociate IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SUB_ORDER_INFO {
+
+		SQL_TABLE = "event_order_disassociate_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ORDER_OBJ {
+
+			SQL_COLUMN = "order_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/process
+#=======================================
+
+STORABLE CLASS /event/order/process IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/order/state
+#=======================================
+
+STORABLE CLASS /event/order/state IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_STATE_INFO {
+
+		SQL_TABLE = "event_order_state_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_NEW_STATE {
+
+			SQL_COLUMN = "new_state";
+		}
+
+		INT PIN_FLD_OLD_STATE {
+
+			SQL_COLUMN = "old_state";
+		}
+
+	}
+
+}
+

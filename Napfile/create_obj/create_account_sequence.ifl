@@ -1,0 +1,30 @@
+r << XX 1
+0     PIN_FLD_POID           POID [0] 0.0.0.1 /data/sequence -1 0
+0     PIN_FLD_ACCOUNT_OBJ    POID [0] 0.0.0.1 /account 1 0
+0     PIN_FLD_HEADER_NUM      INT [0] 0
+0     PIN_FLD_HEADER_STR      STR [0] ":-:IN"
+0     PIN_FLD_NAME            STR [0] "MSO_SEQUENCE_TYPE_BUS_USER_ACNT"
+0     PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+XX
+xop 1 0 1
+
+r << XX 1
+0     PIN_FLD_POID           POID [0] 0.0.0.1 /data/sequence -1 0
+0     PIN_FLD_ACCOUNT_OBJ    POID [0] 0.0.0.1 /account 1 0
+0     PIN_FLD_HEADER_NUM      INT [0] 0
+0     PIN_FLD_HEADER_STR      STR [0] ":-:BU"
+0     PIN_FLD_NAME            STR [0] "MSO_SEQUENCE_TYPE_BUS_UNIT_ACNT"
+0     PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+XX
+xop 1 0 1
+
+r << XX 1
+0     PIN_FLD_POID           POID [0] 0.0.0.1 /data/sequence -1 0
+0     PIN_FLD_ACCOUNT_OBJ    POID [0] 0.0.0.1 /account 1 0
+0     PIN_FLD_HEADER_NUM      INT [0] 0
+0     PIN_FLD_HEADER_STR      STR [0] ":-:CR"
+0     PIN_FLD_NAME            STR [0] "MSO_SEQUENCE_TYPE_END_CUST_ACNT"
+0     PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+XX
+xop 1 0 1
+

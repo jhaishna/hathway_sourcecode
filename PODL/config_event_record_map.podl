@@ -1,0 +1,120 @@
+
+#=======================================
+#  Field PIN_FLD_EVENT_MAP
+#=======================================
+
+ARRAY PIN_FLD_EVENT_MAP {
+
+	ID = 2248;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Storable Class /config/event_record_map
+#=======================================
+
+STORABLE CLASS /config/event_record_map {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to store the mapping between an event type and a flag value which indicates whether a given event-type event should be recorded in the Portal database. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MAP {
+
+		DESCR = "Store the mapping between an event type and a flag value which indicates whether a given event-type event should be recorded in the Portal database. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "The type of the event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Flag value to indicate whether to record this event or not 1(means record, default) 0 (means do not record) ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/event_record_map
+#=======================================
+
+STORABLE CLASS /config/event_record_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MAP {
+
+		SQL_TABLE = "config_event_record_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+	}
+
+}
+

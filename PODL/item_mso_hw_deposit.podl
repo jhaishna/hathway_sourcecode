@@ -1,0 +1,230 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Depost Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/cr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/huwr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/po
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/po {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Port Opening.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/cm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/cr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/huwr
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/nwifi
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/po
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/po IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+

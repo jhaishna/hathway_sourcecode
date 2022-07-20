@@ -1,0 +1,1165 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BASE_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_BASE_PRODUCT_OBJ {
+
+	ID = 9652;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWN_MAX
+#=======================================
+
+DECIMAL PIN_FLD_OWN_MAX {
+
+	ID = 239;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OWN_MIN
+#=======================================
+
+DECIMAL PIN_FLD_OWN_MIN {
+
+	ID = 238;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARTIAL
+#=======================================
+
+ENUM PIN_FLD_PARTIAL {
+
+	ID = 240;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTED
+#=======================================
+
+STRING PIN_FLD_PERMITTED {
+
+	ID = 249;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRIORITY
+#=======================================
+
+DECIMAL PIN_FLD_PRIORITY {
+
+	ID = 64;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVISIONING_TAG
+#=======================================
+
+STRING PIN_FLD_PROVISIONING_TAG {
+
+	ID = 272;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_MAX
+#=======================================
+
+DECIMAL PIN_FLD_PURCHASE_MAX {
+
+	ID = 237;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_MIN
+#=======================================
+
+DECIMAL PIN_FLD_PURCHASE_MIN {
+
+	ID = 236;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RUM_MAP
+#=======================================
+
+ARRAY PIN_FLD_RUM_MAP {
+
+	ID = 2243;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RUM_LIST
+#=======================================
+
+ARRAY PIN_FLD_RUM_LIST {
+
+	ID = 2255;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RUM_NAME
+#=======================================
+
+STRING PIN_FLD_RUM_NAME {
+
+	ID = 2211;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAILORMADE
+#=======================================
+
+INT PIN_FLD_TAILORMADE {
+
+	ID = 9651;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_SUPPLIER
+#=======================================
+
+INT PIN_FLD_TAX_SUPPLIER {
+
+	ID = 1521;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_MAP
+#=======================================
+
+ARRAY PIN_FLD_USAGE_MAP {
+
+	ID = 2210;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INCR_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_INCR_QUANTITY {
+
+	ID = 2207;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INCR_UNIT
+#=======================================
+
+ENUM PIN_FLD_INCR_UNIT {
+
+	ID = 2208;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIN_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_MIN_QUANTITY {
+
+	ID = 2205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIN_UNIT
+#=======================================
+
+ENUM PIN_FLD_MIN_UNIT {
+
+	ID = 2206;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PLAN_CODE
+#=======================================
+
+STRING PIN_FLD_RATE_PLAN_CODE {
+
+	ID = 9655;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PLAN_NAME
+#=======================================
+
+STRING PIN_FLD_RATE_PLAN_NAME {
+
+	ID = 2212;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PLAN_SELECTOR_OBJ
+#=======================================
+
+POID PIN_FLD_RATE_PLAN_SELECTOR_OBJ {
+
+	ID = 2213;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROUNDING_MODE
+#=======================================
+
+ENUM PIN_FLD_ROUNDING_MODE {
+
+	ID = 1627;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TIMEZONE_MODE
+#=======================================
+
+ENUM PIN_FLD_TIMEZONE_MODE {
+
+	ID = 2204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOD_MODE
+#=======================================
+
+ENUM PIN_FLD_TOD_MODE {
+
+	ID = 2203;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZONEMAP_NAME
+#=======================================
+
+STRING PIN_FLD_ZONEMAP_NAME {
+
+	ID = 1464;
+}
+
+
+#=======================================
+#  Storable Class /product
+#=======================================
+
+STORABLE CLASS /product {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "A product is a package of one or more rates. For example: (1) One-time signup, monthly and usage for a service. (2) A collection of prioritized usage rates for a service.   Products are created to package rates and deliver them to customers in a form that they can purchase and CSRs can manipulate. For ex, when a customer signs up for a plan, they purchase the products included in the plan. This might include products related to several different services. A CSR can adjust how a customer purchases a product.For ex, by giving a price discount. There are two types of products: one-time purchase and subscription.  One-time purchase products contain rates that are applied only once, for ex, a purchase fee. Material goods are typical items. The only record of these are the purchase events. Subscription products contain rates that are applied on an ongoing basis, for ex, usage and monthly charges. These are stored in the account's product list and are consulted when rating events.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to brand object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BASE_PRODUCT_OBJ {
+
+		DESCR = "Specifies the product obj from which the customized product is created. This will be present only for customized products.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CODE {
+
+		DESCR = "Unique code of the product.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Product description.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		DESCR = "Non-inclusive end time of the validity period for the product. If the value is 0, the product is always available for purchase.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Unique name of the product.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_OWN_MAX {
+
+		DESCR = "Maximum quantity that can be owned at any time. Test is inclusive - quantity must be <= max. A value of NULL means no maximum limit.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_OWN_MIN {
+
+		DESCR = "Minimum quantity that can be owned at any time.Test is non-inclusive - quantity must be > min. A value of NULL means no minimum limit.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_PARTIAL {
+
+		DESCR = "When nonzero, fractional quantities can be purchased and/or owned.  For example, if a product provides 30 hours of Internet access for , you can allow customers to purchase half-this product (0.5) which provides 15 hours for . ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PERMITTED {
+
+		DESCR = "Purchase level of the product. It can be one of 'single service' (a service type string) or 'all services' (/service) or 'all accounts and services' (NULL)  or 'all accounts and no services' (/account). Subtypes of a service are implicitly included.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_PRIORITY {
+
+		DESCR = "Priority of the product. Higher number indicates higher priority";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROVISIONING_TAG {
+
+		DESCR = "When the product is purchased or cancelled, the user-defined provisioning tag specified in this field is passed to the PCM_OP_BILL_POL_{PURCHASE,CANCEL}_PROD_PROVISIONING opcode which would provision the product.";
+		ORDER = 0;
+		LENGTH = 64;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_MAX {
+
+		DESCR = "Maximum quantity that can be purchased at a single time. Test is inclusive - quantity must be <= max. A value of NULL means no maximum limit.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_MIN {
+
+		DESCR = "Minimum quantity that can be purchased at a single time.Test is non-inclusive - quantity must be > min. A value of NULL means no minimum limit.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_RUM_MAP {
+
+		DESCR = "Array of entries defining lists of rums by which events will be rated whenever product is used for rating.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "The event for which RUM_LIST defines the list of rums used for rating.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_RUM_LIST {
+
+			DESCR = "List of rums used for rating a particular event whenever product is used for rating.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_RUM_NAME {
+
+				DESCR = "Specifies the name of a RUM.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		DESCR = "Inclusive absolute start time of the validity period for the product. If zero, the product is available for purchase immediately. See /deal to control the usage lifetime of the product.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_TAILORMADE {
+
+		DESCR = "Specifies whether the product is a tailor made product.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_TAX_SUPPLIER {
+
+		DESCR = "Record ID to the /config/tax_supplier object. NULL or 0 if there is no tax supplier specified and the default should be used. The charges related to this product are taxed using the information associated with this tax supplier. See /config/tax_supplier.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "Product type - Item (PIN_PROD_TYPE_ITEM - 601) or Subscription (PIN_PROD_TYPE_ONGOING - 602) or System (PIN_PROD_TYPE_SYSTEM - 603).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_USAGE_MAP {
+
+		DESCR = "Array of entries defining how rating should be performed for different events.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "Type of event that this entry specifies rating for. Unique within usage map. Subtypes are implicitly included.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Specify if this usage map is valid if the product is at certain status. Currently we have two flags: Inactivated flag PIN_PRICE_INACTIVATED(0x01), Cancelled flag PIN_PRICE_CANCELLED(0x02). By default, the two flags should not be set, which means that this usage map is not valid when the product status is inactivated or cancelled.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_INCR_QUANTITY {
+
+			DESCR = "Incremental value to round RUM Quantity to. RUM Quantity is always rounded to an integral multiple of the Incr Quantity.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_INCR_UNIT {
+
+			DESCR = "Units that INCR_QUANTITY is specified in.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MIN_QUANTITY {
+
+			DESCR = "Minimum value that the RUM quantity is rounded to. Value smaller than min_quantity is rounded to min_quantity.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_MIN_UNIT {
+
+			DESCR = "Unit min_quantity is expressed in. Value can be NONE(0), SECOND(1), MINUTE(2), HOUR(3) or DAY(4).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PLAN_CODE {
+
+			DESCR = "Unique rate_plan_code of the product.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PLAN_NAME {
+
+			DESCR = "Optional rate plan name. If the name is not NULL, we use it for this event type. Otherwise, we use the rate_plan_selector to find a rate plan.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_RATE_PLAN_SELECTOR_OBJ {
+
+			DESCR = "Poid of the rate plan selector object. Must be specified if no rate plan is specified.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_ROUNDING_MODE {
+
+			DESCR = "Specifies how RUM quantity is rounded. Value can be UP(0), Down(1), or Nearest(2).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RUM_NAME {
+
+			DESCR = "Specifies which RUM should be used to rate this event type. Must be a defined Candidate RUM for this event type.Subtypes are implicitly included.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TIMEZONE_MODE {
+
+			DESCR = "Timezone mode defines which timezone to use when apply TOD rates. Value can be EVENT(0), SERVER(1) or ACCOUNT(2).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TOD_MODE {
+
+			DESCR = "TOD mode defines how TOD rates are applied to the event. Value can be START_TIME(0), END_TIME(1) or TIMED(2).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ZONEMAP_NAME {
+
+		DESCR = "Name of the zone map that this product uses. If specified, all the zone values used in the rate plan selector that belongs to the product has to be from this zone map.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /product/system
+#=======================================
+
+STORABLE CLASS /product/system {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "Product of this type is considered as system product. ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /product
+#=======================================
+
+STORABLE CLASS /product IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "product_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	POID PIN_FLD_BASE_PRODUCT_OBJ {
+
+		SQL_COLUMN = "base_product_obj";
+	}
+
+	STRING PIN_FLD_CODE {
+
+		SQL_COLUMN = "code";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_END_T {
+
+		SQL_COLUMN = "end_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	DECIMAL PIN_FLD_OWN_MAX {
+
+		SQL_COLUMN = "own_max";
+	}
+
+	DECIMAL PIN_FLD_OWN_MIN {
+
+		SQL_COLUMN = "own_min";
+	}
+
+	ENUM PIN_FLD_PARTIAL {
+
+		SQL_COLUMN = "partial";
+	}
+
+	STRING PIN_FLD_PERMITTED {
+
+		SQL_COLUMN = "permitted";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	DECIMAL PIN_FLD_PRIORITY {
+
+		SQL_COLUMN = "priority";
+	}
+
+	STRING PIN_FLD_PROVISIONING_TAG {
+
+		SQL_COLUMN = "provisioning_tag";
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_MAX {
+
+		SQL_COLUMN = "purchase_max";
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_MIN {
+
+		SQL_COLUMN = "purchase_min";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ARRAY PIN_FLD_RUM_MAP {
+
+		SQL_TABLE = "product_rum_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		ARRAY PIN_FLD_RUM_LIST {
+
+			SQL_TABLE = "product_rum_list_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_RUM_NAME {
+
+				SQL_COLUMN = "rum_name";
+			}
+
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_START_T {
+
+		SQL_COLUMN = "start_t";
+	}
+
+	INT PIN_FLD_TAILORMADE {
+
+		SQL_COLUMN = "tailormade";
+	}
+
+	INT PIN_FLD_TAX_SUPPLIER {
+
+		SQL_COLUMN = "tax_supplier";
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "type";
+	}
+
+	ARRAY PIN_FLD_USAGE_MAP {
+
+		SQL_TABLE = "product_usage_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		DECIMAL PIN_FLD_INCR_QUANTITY {
+
+			SQL_COLUMN = "incr_quantity";
+		}
+
+		ENUM PIN_FLD_INCR_UNIT {
+
+			SQL_COLUMN = "incr_unit";
+		}
+
+		DECIMAL PIN_FLD_MIN_QUANTITY {
+
+			SQL_COLUMN = "min_quantity";
+		}
+
+		ENUM PIN_FLD_MIN_UNIT {
+
+			SQL_COLUMN = "min_unit";
+		}
+
+		STRING PIN_FLD_RATE_PLAN_CODE {
+
+			SQL_COLUMN = "rate_plan_code";
+		}
+
+		STRING PIN_FLD_RATE_PLAN_NAME {
+
+			SQL_COLUMN = "rate_plan_name";
+		}
+
+		POID PIN_FLD_RATE_PLAN_SELECTOR_OBJ {
+
+			SQL_COLUMN = "selector_obj";
+		}
+
+		ENUM PIN_FLD_ROUNDING_MODE {
+
+			SQL_COLUMN = "rounding_mode";
+		}
+
+		STRING PIN_FLD_RUM_NAME {
+
+			SQL_COLUMN = "rum_name";
+		}
+
+		ENUM PIN_FLD_TIMEZONE_MODE {
+
+			SQL_COLUMN = "timezone_mode";
+		}
+
+		ENUM PIN_FLD_TOD_MODE {
+
+			SQL_COLUMN = "tod_mode";
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+	STRING PIN_FLD_ZONEMAP_NAME {
+
+		SQL_COLUMN = "zonemap_name";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /product/system
+#=======================================
+
+STORABLE CLASS /product/system IMPLEMENTATION ORACLE7 {
+
+}
+

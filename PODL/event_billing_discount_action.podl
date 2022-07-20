@@ -1,0 +1,878 @@
+
+#=======================================
+#  Field PIN_FLD_ACTION_INFO
+#=======================================
+
+ARRAY PIN_FLD_ACTION_INFO {
+
+	ID = 1826;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_END_DETAILS
+#=======================================
+
+INT PIN_FLD_CYCLE_END_DETAILS {
+
+	ID = 9625;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+	ID = 267;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_START_DETAILS
+#=======================================
+
+INT PIN_FLD_CYCLE_START_DETAILS {
+
+	ID = 9622;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+	ID = 266;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DISCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_DISCOUNT_OBJ {
+
+	ID = 7780;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFFERING_OBJ
+#=======================================
+
+POID PIN_FLD_OFFERING_OBJ {
+
+	ID = 9056;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_END_DETAILS
+#=======================================
+
+INT PIN_FLD_PURCHASE_END_DETAILS {
+
+	ID = 9624;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PURCHASE_END_T {
+
+	ID = 264;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_START_DETAILS
+#=======================================
+
+INT PIN_FLD_PURCHASE_START_DETAILS {
+
+	ID = 9621;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PURCHASE_START_T {
+
+	ID = 263;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_END_DETAILS
+#=======================================
+
+INT PIN_FLD_USAGE_END_DETAILS {
+
+	ID = 9626;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_USAGE_END_T {
+
+	ID = 270;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_START_DETAILS
+#=======================================
+
+INT PIN_FLD_USAGE_START_DETAILS {
+
+	ID = 9623;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_USAGE_START_T {
+
+	ID = 269;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to indicate discount action related events. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTION_INFO {
+
+		DESCR = "Array of discount information. Array element id is significant: for purchase and cancel (1). for modify (0 - old and 1 - new). ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CREATED_T {
+
+			DESCR = "Time this discount was purchased. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CYCLE_END_DETAILS {
+
+			DESCR = "For the discounts, if cycle start is set for first usage this field will be encoded with with mode,unit and offset for relative end dates mode will be lower order 8 bits ,unit will be 4 bits and offset will be 20 bits,the possible mode values are never,relative to start date and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5, Accounting Cycles=8 and billing_cycle=9 ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+			DESCR = "Date to stop discounting cycle events with this discount instance. Discount can be active in account, but this discount instance will not be used for cycle events after this date ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CYCLE_START_DETAILS {
+
+			DESCR = "For the discounts, whose cycle start is set for first usage it will be encoded with mode(first usage),unit and offset mode will be lower order 8 bits , unit will be 4 bits and offset will be 20 bits,the possible mode values are first usage and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5, Accounting Cycles=8 and billing_cycle=9 ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+			DESCR = "Date to start discounting cycle events with this discount instance. Discount can be active in account, but thid discount instance will not be used for cycle events before this date. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Link to deal object that was purchased containing this discount.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			DESCR = "The /discount pricing object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "Effective time of modification of this discount on external system.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			DESCR = "The purchased_discount poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			DESCR = "Link to plan object that was purchased containing this discount. NULL means discount was purchased at deal level only.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PURCHASE_END_DETAILS {
+
+			DESCR = "For the discounts, if purchase start is set for first usage this field will be encoded with with mode,unit and offset for relative end dates mode will be lower order 8 bits ,unit will be 4 bits and offset will be 20 bits,the possible mode values are never,relative to start date and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5, Accounting Cycles=8 and billing_cycle=9 ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_PURCHASE_END_T {
+
+			DESCR = "Date when the discount is no longer valid for use. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PURCHASE_START_DETAILS {
+
+			DESCR = "For the discounts, whose usage start is set for first usage it will be encoded with mode(first usage),unit and offset mode will be lower order 8 bits , unit will be 4 bits and offset will be 20 bits,the possible mode values are first usage and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5, Accounting Cycles=8 and billing_cycle=9 ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_PURCHASE_START_T {
+
+			DESCR = "Date from which the discount is valid for use. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			DESCR = "Quantity of discount owned. Quantity is used in assessing purchase, cycle and cancellation event. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "Link to service object that owns this discount. NULL means the discount is owned by the account, not by a specific service object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Status of this discount. Allowed values are NOT_SET(0), ACTIVE(1), INACTIVE(2), CANCELLED(3). ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			DESCR = "Flags to indicate the status of the discount. The flags are bit ORed and are used to indicate whether or not purchase/cycle fees are overridable";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Disc type - item (PIN_DISC_TYPE_ITEM - 601) or subscription (PIN_DISC_TYPE_ONGOING - 602). System (PIN_DISC_TYPE_SYSTEM - 603). ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_USAGE_END_DETAILS {
+
+			DESCR = "For the discounts, if usage start is set for first usage this field will be encoded with with mode,unit and offset for relative end dates mode will be lower order 8 bits ,unit will be 4 bits and offset will be 20 bits,the possible mode values are never,relative to start date and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5, Accounting Cycles=8 and billing_cycle=9 ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			DESCR = "Date that this discount stops discounting usage events. Discount may remain active in account, but usage events will not be discounted using this instance after this date ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_USAGE_START_DETAILS {
+
+			DESCR = "For the discounts, whose usage start is set for first usage it will be encoded with mode(first usage),unit and offset mode will be lower order 8 bits , unit will be 4 bits and offset will be 20 bits,the possible mode values are first usage and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5, Accounting Cycles=8 and billing_cycle=9 ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			DESCR = "Date that this discount begins discounting usage events. Before this date, discount may be active in account but no usage events will be discounted using this instance ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/cancel
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/cancel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a discount is cancelled. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/modify
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a discount instance is modified. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/modify/status
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/modify/status {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a discount instance status is modified. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/purchase
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/purchase {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a discount is purchased. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/set_validity
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/set_validity {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " Event object created by SET_VALIDITY opcode, A usage event can trigger the setting  of the validity. The other details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		DESCR = "Array 0 element consists of the event which triggered the set_validity.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			DESCR = " The event object which triggered the set_validity";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACTION_INFO {
+
+		SQL_TABLE = "event_billing_disc_action_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CREATED_T {
+
+			SQL_COLUMN = "created_t";
+		}
+
+		INT PIN_FLD_CYCLE_END_DETAILS {
+
+			SQL_COLUMN = "cycle_end_details";
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+			SQL_COLUMN = "cycle_end_t";
+		}
+
+		INT PIN_FLD_CYCLE_START_DETAILS {
+
+			SQL_COLUMN = "cycle_start_details";
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+			SQL_COLUMN = "cycle_start_t";
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		POID PIN_FLD_DISCOUNT_OBJ {
+
+			SQL_COLUMN = "discount_obj";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			SQL_COLUMN = "offering_obj";
+		}
+
+		POID PIN_FLD_PLAN_OBJ {
+
+			SQL_COLUMN = "plan_obj";
+		}
+
+		INT PIN_FLD_PURCHASE_END_DETAILS {
+
+			SQL_COLUMN = "purchase_end_details";
+		}
+
+		TIMESTAMP PIN_FLD_PURCHASE_END_T {
+
+			SQL_COLUMN = "purchase_end_t";
+		}
+
+		INT PIN_FLD_PURCHASE_START_DETAILS {
+
+			SQL_COLUMN = "purchase_start_details";
+		}
+
+		TIMESTAMP PIN_FLD_PURCHASE_START_T {
+
+			SQL_COLUMN = "purchase_start_t";
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			SQL_COLUMN = "quantity";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			SQL_COLUMN = "status_flags";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+		INT PIN_FLD_USAGE_END_DETAILS {
+
+			SQL_COLUMN = "usage_end_details";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_END_T {
+
+			SQL_COLUMN = "usage_end_t";
+		}
+
+		INT PIN_FLD_USAGE_START_DETAILS {
+
+			SQL_COLUMN = "usage_start_details";
+		}
+
+		TIMESTAMP PIN_FLD_USAGE_START_T {
+
+			SQL_COLUMN = "usage_start_t";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/cancel
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/cancel IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/modify
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/modify IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/modify/status
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/modify/status IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/purchase
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/purchase IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/discount/action/set_validity
+#=======================================
+
+STORABLE CLASS /event/billing/discount/action/set_validity IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		SQL_TABLE = "event_bill_disc_act_setval_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			SQL_COLUMN = "event_obj";
+		}
+
+	}
+
+}
+

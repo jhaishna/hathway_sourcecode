@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_termination
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_termination {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso bulk termination";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_termination
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_termination IMPLEMENTATION ORACLE7 {
+
+}
+

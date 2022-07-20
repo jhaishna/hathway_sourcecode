@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/process_audit
+#=======================================
+
+STORABLE CLASS /event/process_audit {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "class to indicate process_audit events to be used  loading process_audit from UEL ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/process_audit
+#=======================================
+
+STORABLE CLASS /event/process_audit IMPLEMENTATION ORACLE7 {
+
+}
+

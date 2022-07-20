@@ -1,0 +1,747 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a annual cycle forward fee associated with a product is applied. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Annual Cycle Forward Hardware Annual Maintenance";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly AMC for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly AMC for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly AMC for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly AMC for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd/pre {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for Docsis 3.0 Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "annual additional ip rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware yearly rental for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Annual Cycle Forward Addon fixed duration";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_normal {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Addon Normal Annual event";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso_sb_alc_fdp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_pkg_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_pkg_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso_sb_pkg_fdp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_tod
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_tod {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly subscription for TOD plan.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cm/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/cr/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/crsoho/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/dcm/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/huwr/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nd/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/nwifi/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd/pre
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_amc/wlnd/pre IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_hw_rental/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_adn_normal IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_alc_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_pkg_fdp
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_pkg_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_tod
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_annual/mso_sb_tod IMPLEMENTATION ORACLE7 {
+
+}
+

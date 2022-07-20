@@ -1,0 +1,807 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRORATE_FIRST
+#=======================================
+
+ENUM PIN_FLD_PRORATE_FIRST {
+
+	ID = 254;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRORATE_LAST
+#=======================================
+
+ENUM PIN_FLD_PRORATE_LAST {
+
+	ID = 255;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY_TIERS
+#=======================================
+
+ARRAY PIN_FLD_QUANTITY_TIERS {
+
+	ID = 2217;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_IMPACTS
+#=======================================
+
+ARRAY PIN_FLD_BAL_IMPACTS {
+
+	ID = 256;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_DETAILS
+#=======================================
+
+INT PIN_FLD_END_DETAILS {
+
+	ID = 9630;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIXED_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_FIXED_AMOUNT {
+
+	ID = 2220;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ID
+#=======================================
+
+INT PIN_FLD_GL_ID {
+
+	ID = 840;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMPACT_CATEGORY
+#=======================================
+
+STRING PIN_FLD_IMPACT_CATEGORY {
+
+	ID = 1452;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCALED_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_SCALED_AMOUNT {
+
+	ID = 2221;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCALED_UNIT
+#=======================================
+
+ENUM PIN_FLD_SCALED_UNIT {
+
+	ID = 2222;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_DETAILS
+#=======================================
+
+INT PIN_FLD_START_DETAILS {
+
+	ID = 9629;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STEP_MAX
+#=======================================
+
+DECIMAL PIN_FLD_STEP_MAX {
+
+	ID = 2219;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STEP_MIN
+#=======================================
+
+DECIMAL PIN_FLD_STEP_MIN {
+
+	ID = 2218;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_RATE_PLAN_OBJ {
+
+	ID = 2214;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STEP_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_STEP_RESOURCE_ID {
+
+	ID = 2216;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STEP_TYPE
+#=======================================
+
+ENUM PIN_FLD_STEP_TYPE {
+
+	ID = 2215;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAILORMADE_DATA
+#=======================================
+
+STRING PIN_FLD_TAILORMADE_DATA {
+
+	ID = 9653;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /rate
+#=======================================
+
+STORABLE CLASS /rate {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "A rate defines how much to charge for an event. Rates define which resources in the account balance array get credited or debited. A rate can impact many resources.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Rate description.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_PRORATE_FIRST {
+
+		DESCR = "Prorating option for the first cycle the product is owned. You can charge for a whole month (701), prorate the charge based on the days left in the month (702), or not charge for the partial month (703). Used only for cycle fees rates.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_PRORATE_LAST {
+
+		DESCR = "Prorating option for the last cycle the product is owned. You can charge for a whole month (701), prorate the charge based on the days left in the month (702), or not charge for the partial month (703). Used only for cycle fees rates.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_QUANTITY_TIERS {
+
+		DESCR = "Array of quantity tiers belongs to the rate. Quantity tiers can not overlap.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_BAL_IMPACTS {
+
+			DESCR = "Array of balance operations. Multiple impacts can be defined on the same resource. Array element id is not significant.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_ELEMENT_ID {
+
+				DESCR = "Numeric value of the resource to be impacted.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_END_DETAILS {
+
+				DESCR = "Resource relative end time.Expressed as mode, unit and offset value. The lower 8 bits hold mode to indicate end never/absolue/relative, next 4 bits hold unit and next 20 bits hold offset which is relative to grant time.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			TIMESTAMP PIN_FLD_END_T {
+
+				DESCR = "Non inclusive end time of the validity period for the balance impact. If the value is 0, the balance impact does not expire.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_FIXED_AMOUNT {
+
+				DESCR = "Fixed Balance Amount - amount to increment independent of quantity.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_FLAGS {
+
+				DESCR = "Balance Impact Flags. Specifies whether the impact is proratable (0x2) and/or discountable (0x1) and/or sponsorable (0x4).";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_GL_ID {
+
+				DESCR = "GLID to be used when impacting the resource associated with this balance operation.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_IMPACT_CATEGORY {
+
+				DESCR = "Impact category. The balance operation is performed only if the impact category specified by the event's custom analysis module matches this field. See /config/impact_category definition.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_SCALED_AMOUNT {
+
+				DESCR = "Scaled Balance Amount - amount to imcrement per unit of quantity.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_SCALED_UNIT {
+
+				DESCR = "Unit scaled_amount is expressed in. Value can be NONE(0), SECOND(1), MINUTE(2), HOUR(3) or DAY(4).";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_START_DETAILS {
+
+				DESCR = "Resource relative start time. Expressed as mode, unit and offset. The lower 8 bits hold mode to indicate start first usage/immediately/absolue/relative,next 4 bits hold unit and next 20 bits hold offset which is relative to grant time.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			TIMESTAMP PIN_FLD_START_T {
+
+				DESCR = "Inclusive start time of the validity period for the balance impact. If the value is 0, the validity starts immediately.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		DECIMAL PIN_FLD_STEP_MAX {
+
+			DESCR = "Maximum quantity of event that can use this quantity tier. Test is non inclusive - quantity must be < max. A value PIN_NUM_MAX means no maximum limit.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_STEP_MIN {
+
+			DESCR = "Minimum quantity of event that can use this quantity tier. Test is inclusive - quantity must be >= min. A value PIN_NUM_MIN means no minimum limit.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	POID PIN_FLD_RATE_PLAN_OBJ {
+
+		DESCR = "Poid of the rate_plan object the rate object belongs to.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STEP_RESOURCE_ID {
+
+		DESCR = "Numeric value of the resource that quantity tiering steps on.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STEP_TYPE {
+
+		DESCR = "Specifies the type of quantity the quantity tiering steps on. Values can be TOTAL_QUANTITY_RATED(0), QUANTITY_RATED_PER_RATE(1) and RESOURCE_QUANTITY(2). If the value is RESOURCE_QUANTITY, step_resource need to be specified as well.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TAILORMADE_DATA {
+
+		DESCR = "To store resources along with percentage override. Eg: <USD,-10><MIN,-10>. This field will be populated for tailormade rate objects.";
+		ORDER = 0;
+		LENGTH = 1024;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		DESCR = "The type of the rate determines its applicability for the various rate stack passes. Values are Normal (0), Default (740) and Default-only (741). 'Normal' rates honor credit limits and 'Default' rates override credit limits. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /rate
+#=======================================
+
+STORABLE CLASS /rate IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "rate_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	ENUM PIN_FLD_PRORATE_FIRST {
+
+		SQL_COLUMN = "prorate_first";
+	}
+
+	ENUM PIN_FLD_PRORATE_LAST {
+
+		SQL_COLUMN = "prorate_last";
+	}
+
+	ARRAY PIN_FLD_QUANTITY_TIERS {
+
+		SQL_TABLE = "rate_quantity_tiers_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_BAL_IMPACTS {
+
+			SQL_TABLE = "rate_bal_impacts_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_ELEMENT_ID {
+
+				SQL_COLUMN = "element_id";
+			}
+
+			INT PIN_FLD_END_DETAILS {
+
+				SQL_COLUMN = "end_details";
+			}
+
+			TIMESTAMP PIN_FLD_END_T {
+
+				SQL_COLUMN = "end_t";
+			}
+
+			DECIMAL PIN_FLD_FIXED_AMOUNT {
+
+				SQL_COLUMN = "fix_amount";
+			}
+
+			INT PIN_FLD_FLAGS {
+
+				SQL_COLUMN = "flags";
+			}
+
+			INT PIN_FLD_GL_ID {
+
+				SQL_COLUMN = "gl_id";
+			}
+
+			STRING PIN_FLD_IMPACT_CATEGORY {
+
+				SQL_COLUMN = "impact_category";
+			}
+
+			DECIMAL PIN_FLD_SCALED_AMOUNT {
+
+				SQL_COLUMN = "scaled_amount";
+			}
+
+			ENUM PIN_FLD_SCALED_UNIT {
+
+				SQL_COLUMN = "scaled_unit";
+			}
+
+			INT PIN_FLD_START_DETAILS {
+
+				SQL_COLUMN = "start_details";
+			}
+
+			TIMESTAMP PIN_FLD_START_T {
+
+				SQL_COLUMN = "start_t";
+			}
+
+		}
+
+		DECIMAL PIN_FLD_STEP_MAX {
+
+			SQL_COLUMN = "step_max";
+		}
+
+		DECIMAL PIN_FLD_STEP_MIN {
+
+			SQL_COLUMN = "step_min";
+		}
+
+	}
+
+	POID PIN_FLD_RATE_PLAN_OBJ {
+
+		SQL_COLUMN = "rate_plan_obj";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	INT PIN_FLD_STEP_RESOURCE_ID {
+
+		SQL_COLUMN = "step_resource";
+	}
+
+	ENUM PIN_FLD_STEP_TYPE {
+
+		SQL_COLUMN = "step_type";
+	}
+
+	STRING PIN_FLD_TAILORMADE_DATA {
+
+		SQL_COLUMN = "tailormade_data";
+	}
+
+	ENUM PIN_FLD_TYPE {
+
+		SQL_COLUMN = "type";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

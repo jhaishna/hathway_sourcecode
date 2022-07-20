@@ -1,0 +1,251 @@
+
+#=======================================
+#  Field PIN_FLD_INCENTIVE
+#=======================================
+
+SUBSTRUCT PIN_FLD_INCENTIVE {
+
+	ID = 948;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_BILL_OBJ {
+
+	ID = 44;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHANNEL_ID
+#=======================================
+
+INT PIN_FLD_CHANNEL_ID {
+
+	ID = 944;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENT_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_CURRENT_TOTAL {
+
+	ID = 782;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_SEGMENT
+#=======================================
+
+INT PIN_FLD_CUSTOMER_SEGMENT {
+
+	ID = 759;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPE
+#=======================================
+
+ENUM PIN_FLD_PAY_TYPE {
+
+	ID = 7852;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PREVIOUS_TOTAL
+#=======================================
+
+DECIMAL PIN_FLD_PREVIOUS_TOTAL {
+
+	ID = 781;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_TRANS_ID {
+
+	ID = 189;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/incentive
+#=======================================
+
+STORABLE CLASS /event/billing/incentive {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class are used to store early payment  discount applied at billing time. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_INCENTIVE {
+
+		DESCR = "To hold early payment Incentive Information ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILL_OBJ {
+
+			DESCR = "Last bill object, source of   PIN_FLD_PREVIOUS_TOTAL. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			DESCR = "Payment channel.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CURRENT_TOTAL {
+
+			DESCR = "PIN_FLD_CURRENT_TOTAL from current bill  object ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CUSTOMER_SEGMENT {
+
+			DESCR = "Customer segment.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			DESCR = "Payment type.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PREVIOUS_TOTAL {
+
+			DESCR = "PIN_FLD_CURRENT_TOTAL from last bill object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			DESCR = "Same as PIN_FLD_TRANS_ID in the PIN_FLD_PAYMENT of /event/billing/payment for which the Incentive is granted.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/incentive
+#=======================================
+
+STORABLE CLASS /event/billing/incentive IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_INCENTIVE {
+
+		SQL_TABLE = "event_billing_incentive_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BILL_OBJ {
+
+			SQL_COLUMN = "bill_obj";
+		}
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			SQL_COLUMN = "channel_id";
+		}
+
+		DECIMAL PIN_FLD_CURRENT_TOTAL {
+
+			SQL_COLUMN = "current_total";
+		}
+
+		INT PIN_FLD_CUSTOMER_SEGMENT {
+
+			SQL_COLUMN = "customer_segment";
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			SQL_COLUMN = "pay_type";
+		}
+
+		DECIMAL PIN_FLD_PREVIOUS_TOTAL {
+
+			SQL_COLUMN = "previous_total";
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			SQL_COLUMN = "trans_id";
+		}
+
+	}
+
+}
+

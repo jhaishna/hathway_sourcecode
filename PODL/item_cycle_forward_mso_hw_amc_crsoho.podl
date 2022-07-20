@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+

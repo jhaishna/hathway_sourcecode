@@ -1,0 +1,31 @@
+LOAD DATA
+INFILE 'customer_data.xls'
+INTO TABLE HTW_BB_PLAN_REPORT_T
+fields terminated by '\t'
+TRAILING NULLCOLS
+(
+"PACKAGE CODE",
+"PLAN CODE",
+"PKG NAME",
+"Revised Name",
+"PAY TERM",
+"US",
+"DS",
+"CITY REG",
+"PRICE",
+"FREE UNITS",
+"LTD / UNLTD",
+"PLAN TYPE",
+"TECHNOLOGY",
+"PLAN CATEGORY",
+"FAIR USG LIMIT",
+"DOWN STREAM AFTER FUP",
+"Currency Charges per MB",
+"STATUS",
+"PP CODE",
+"Priority",
+"Remark",
+"NEW CODE1 (SERVICE CODE)",
+"NEW CODE3 (QUOTA CODE)"
+)
+

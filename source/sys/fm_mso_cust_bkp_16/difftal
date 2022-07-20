@@ -1,0 +1,641 @@
+72c72
+< #include "mso_ntf.h"
+---
+> 
+540,550d539
+< void
+< fm_mso_cust_change_item_refund_details(
+<         pcm_context_t           *ctxp,
+<         pin_flist_t             *inp_flistp,
+<         pin_errbuf_t            *ebufp);
+< 
+< void
+< fm_mso_cust_create_adjustment_data(
+<         pcm_context_t           *ctxp,
+<         pin_flist_t             *inp_flistp,
+<         pin_errbuf_t            *ebufp);
+670,677d658
+<     // Added for Net Balance Threshold Check functionality
+<     int32                   calc_flags = 5;
+<     int32                   allow_change_plan = 0;
+<     int32                   *netbal_chk_override_flag = NULL;
+<     int32                   sms_action_flag = 0;
+<     pin_flist_t             *bal_infop = NULL;
+<     poid_t                  *acct_pdp = NULL;
+< 
+795,796d775
+< 					PIN_FLIST_FLD_COPY(planlists_flistp, MSO_FLD_DISC_PERCENT, new_plan_flistp, MSO_FLD_DISC_PERCENT, ebufp);
+< 					PIN_FLIST_FLD_COPY(planlists_flistp, MSO_FLD_DISC_AMOUNT, new_plan_flistp, MSO_FLD_DISC_AMOUNT, ebufp);
+876c855
+< 			//fm_mso_trans_abort(ctxp, inp_pdp, ebufp);
+---
+> 			fm_mso_trans_abort(ctxp, inp_pdp, ebufp);
+974,1061c953,954
+<                 /* Fetch the Net Balance Check override flag from the Input Flist */
+<                 netbal_chk_override_flag = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_OVERRIDE_FLAGS, 1, ebufp);
+<                 acct_pdp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_ACCOUNT_OBJ, 1, ebufp);
+<                 srvc_pdp = PIN_FLIST_FLD_GET(i_flistp, PIN_FLD_SERVICE_OBJ, 1, ebufp);
+<       
+<                 /*******************************************************************************************
+<                  * Check if the Net Balance Check Override Flag is present in the Input flist
+<                  *******************************************************************************************/
+<                 if (srvc_pdp && strcmp(PIN_POID_GET_TYPE(srvc_pdp), MSO_BB) == 0) 
+<                 {     
+<                     PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Net Balance check is applicable for ISP Service");
+<       
+<                     if (netbal_chk_override_flag == NULL) 
+<                     {     
+<                         PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "Change Plan Input flist.", i_flistp);
+< 
+<                         PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Net Balance check Override is not applicable");
+< 
+<                         /*******************************************************************************************
+<                          * Calculate the net balance amount that customer has to have to allow Change plan.
+<                          *******************************************************************************************/
+<                         fm_mso_calc_net_balance(ctxp, acct_pdp, prog_name, ret_flistp, &calc_flags, &bal_infop, ebufp);
+< 
+<                         if (PIN_ERRBUF_IS_ERR(ebufp))
+<                         {
+<                             PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "Error in calculating the Net Balance of the account ", ebufp);
+<                             PIN_FLIST_DESTROY_EX(&bal_infop, NULL);
+<                             *r_flistpp = PIN_FLIST_CREATE(ebufp);
+<                             PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_POID, *r_flistpp, PIN_FLD_POID, ebufp );
+<                             PIN_FLIST_FLD_SET(*r_flistpp, PIN_FLD_STATUS, &status_uncommitted, ebufp);
+<                             PIN_FLIST_FLD_SET(*r_flistpp, PIN_FLD_ERROR_CODE, "51415", ebufp);
+<                             PIN_FLIST_FLD_SET(*r_flistpp, PIN_FLD_ERROR_DESCR, "Error in calculating the Net Balance of the account", ebufp);
+<                             return;
+<                         }
+<                         
+<                         if(bal_infop != NULL)
+<                         {
+<                             allow_change_plan = *(int32 *)PIN_FLIST_FLD_TAKE(bal_infop, PIN_FLD_STATUS, 0, ebufp);
+< 
+<                             if (allow_change_plan == 1)
+<                             {
+<                                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_ERROR, "Net Balance is with in the Threshold Limits. Change Plan is allowed");
+<                             }
+<                             else if (allow_change_plan == 0)
+<                             {
+<                                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_ERROR, "Net Balance is not with in the Threshold Limits. Change Plan is not allowed");
+< 
+<                                 *r_flistpp = PIN_FLIST_CREATE(ebufp);
+<                                 PIN_FLIST_FLD_COPY(i_flistp, PIN_FLD_POID, *r_flistpp, PIN_FLD_POID, ebufp);
+<                                 PIN_FLIST_FLD_SET(*r_flistpp, PIN_FLD_STATUS, &status_uncommitted, ebufp);
+<                                 PIN_FLIST_FLD_SET(*r_flistpp, PIN_FLD_ERROR_CODE, "51416", ebufp);
+<                                 PIN_FLIST_FLD_SET(*r_flistpp, PIN_FLD_ERROR_DESCR, "Change Plan is not allowed. Please make payment to proceed further.", ebufp);
+< 
+<                                 sms_action_flag = NTF_NET_BAL_THRSHLD_CHNG_PLAN;
+<                                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_ERROR, "Sending Change Plan SMS for Net Balance Threshold Error...");
+<                                 fm_mso_cust_netbal_thrshd_sms_notification(ctxp, acct_pdp, srvc_pdp, sms_action_flag, bal_infop, ebufp);
+<                                 return;
+<                             }
+<                         }
+<                     }
+<                     else if ((netbal_chk_override_flag != NULL) && (*netbal_chk_override_flag == 1))
+<                     {
+<                         PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_ERROR, "Net Balance check Override is applicable, existing process will apply...");
+<                         allow_change_plan = 1;
+<                     }
+<                 }
+<                 else if (srvc_pdp && strcmp(PIN_POID_GET_TYPE(srvc_pdp), MSO_CATV) == 0)
+<                 {
+<                     PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Net Balance check is not applicable for CATV Service, existing process will apply...");
+<                     allow_change_plan = 1;
+<                 }
+<             
+<                 if (allow_change_plan == 1)
+<                 {
+<                     PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,  "Updating the item/refund object");
+<                     fm_mso_cust_change_item_refund_details(ctxp, *r_flistpp, ebufp);
+< 
+<                     PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,  "Creating the refund adjustment data");
+<                     fm_mso_cust_create_adjustment_data(ctxp, *r_flistpp, ebufp);
+< 
+<                     PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,  "committing change plan");
+<                     fm_mso_trans_commit(ctxp, inp_pdp, ebufp);
+<                 }
+<                 else
+<                 {
+<                     // Abort Transaction
+<                     fm_mso_trans_abort(ctxp, inp_pdp, ebufp);
+<                 }
+---
+> 				PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,  "committing change plan");
+> 				fm_mso_trans_commit(ctxp, inp_pdp, ebufp);
+1341c1234
+<         company_type = 0;
+---
+>         company_type = 9;
+1580d1472
+<     pin_flist_t     *sort_fld_flistp = NULL;
+1613a1506
+> 
+1938,1943d1830
+<         sort_fld_flistp = PIN_FLIST_CREATE(ebufp);
+<         args_flistp = PIN_FLIST_ELEM_ADD(sort_fld_flistp,PIN_FLD_PLAN_LISTS, 0, ebufp );
+<         PIN_FLIST_FLD_SET(args_flistp, PIN_FLD_FLAGS, NULL, ebufp);
+<         PIN_FLIST_SORT(in_flist,sort_fld_flistp,1,ebufp);
+< 
+<         PIN_FLIST_DESTROY_EX(&sort_fld_flistp, ebufp);
+1952d1838
+<         PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "Modified loop debug flist ", planlists_flistp);
+2637,2638d2522
+<                             field_no = ebufp->field;
+<                             errorCode = ebufp->pin_err;
+2646,2653c2530
+<                             if (errorCode == PIN_ERR_BAD_VALUE && field_no == PIN_FLD_CURRENT_BAL)
+<                             {
+<                                 PIN_FLIST_FLD_SET(r_flistp, PIN_FLD_ERROR_DESCR, "ACCOUNT - Service change plan - There is no sufficient balance", ebufp);
+<                             }
+<                             else
+<                             {
+< 							    PIN_FLIST_FLD_SET(r_flistp, PIN_FLD_ERROR_DESCR, "ACCOUNT - Service change plan - PCM_OP_SUBSCRIPTION_SET_PRODUCT_STATUS error", ebufp);
+<                             }
+---
+> 							PIN_FLIST_FLD_SET(r_flistp, PIN_FLD_ERROR_DESCR, "ACCOUNT - Service change plan - PCM_OP_SUBSCRIPTION_SET_PRODUCT_STATUS error", ebufp);
+3419d3295
+<     char        *str_role = NULL;
+3562d3437
+<     PIN_FLIST_FLD_SET(bb_flistp, MSO_FLD_ROLES, NULL, ebufp );
+3587d3461
+<     str_role = PIN_FLIST_FLD_TAKE(bb_flistp, MSO_FLD_ROLES, 1, ebufp );
+4219c4093
+<                         if((*istal == 1) || (str_role && strstr(str_role,"-Static")))
+---
+>                         if(*istal == 1)
+4474c4348
+< if((cmts_id && istal && *istal==1) || (cmts_id && str_role && strstr(str_role,"-Static")))
+---
+> if(cmts_id && istal && *istal==1)
+4494,4495d4367
+<         pin_free(str_role);
+<         str_role= NULL;
+4509d4380
+<         PIN_FLIST_FLD_SET(network_flistp, MSO_FLD_ROLES, str_role, ebufp);
+4711c4582
+<                 if ((istal == NULL) || (str_role == NULL))
+---
+>                 if (istal == NULL)
+4713c4584
+<                 if((istal != NULL && *istal == 1) || (str_role && strstr(str_role, "-Static")))
+---
+>                 if(istal != NULL && *istal == 1)
+4741,4742c4612
+<         if((istal && istal != NULL) || (str_role && str_role != NULL))
+<         {
+---
+>         if(istal && istal != NULL){
+4745,4746d4614
+<                 pin_free(str_role);
+<                 str_role = NULL;
+8389d8256
+<     char        *str_role = NULL;
+8511,8512c8378
+<         str_role = PIN_FLIST_FLD_GET(i_flistp, MSO_FLD_ROLES, 1, ebufp);
+<         if((istal && *istal == 1) || (str_role && strstr(str_role,"-Static")))
+---
+>         if(istal && *istal == 1)
+8548c8414
+<                 if((istal && *istal == 1) || (str_role && strstr(str_role,"-Static")))
+---
+>                 if(istal && *istal == 1)
+10470,10908d10335
+< /*******************************************************************************
+<  * fm_mso_cust_change_item_refund_details()
+<  *
+<  * Inputs: flist with POID, SERVICE_OBJ are mandatory fields 
+< 
+<  * Output: void; ebuf set if errors encountered
+<  *
+<  * Description:
+<  * This function retrieves /item/refund object poid of the given account poid
+<  * and service poid and updates the Bill_obj to NULL. 
+<  ******************************************************************************/
+< 
+< void
+< fm_mso_cust_change_item_refund_details(
+<         pcm_context_t           *ctxp,
+<         pin_flist_t             *inp_flistp,
+<         pin_errbuf_t            *ebufp)
+< {
+<     pin_flist_t             *src_iflistp = NULL;
+<     pin_flist_t             *args_flistp = NULL;
+<     pin_flist_t             *result_flist = NULL;
+<     pin_flist_t             *src_oflistp = NULL;
+<     pin_flist_t             *write_iflistp = NULL;
+<     pin_flist_t             *write_oflistp = NULL;
+< 
+<     poid_t                  *s_pdp = NULL;
+<     poid_t                  *item_pdp = NULL;
+<     poid_t                  *serv_pdp = NULL;
+<     poid_t                  *act_pdp = NULL;
+<     poid_t                  *bill_pdp = NULL;
+< 
+< char                    *s_template = " select X from /item where F1 = V1 and F2 = V2 and item_t.poid_type = '/item/refund' and item_t.bill_obj_id0 <> 0 ";
+<     char                    *item_poid_str = NULL;
+< 
+<     int32                   buf_len = 80;
+<     int32                   flags = 256;
+<     int64                   db = 0;
+<     int64                   id = -1;
+<     int32                   item_status = 2;
+< 
+<     if (PIN_ERRBUF_IS_ERR(ebufp))
+<             return;
+<     PIN_ERRBUF_CLEAR(ebufp);
+< 
+<     PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_change_item_refund_details input flist", inp_flistp);
+< 
+<     act_pdp = (poid_t *)PIN_FLIST_FLD_GET(inp_flistp, PIN_FLD_POID, 0, ebufp);
+<     serv_pdp = (poid_t *)PIN_FLIST_FLD_GET(inp_flistp, PIN_FLD_SERVICE_OBJ, 0, ebufp);
+< 
+<     db = PIN_POID_GET_DB(act_pdp);
+<     src_iflistp = PIN_FLIST_CREATE(ebufp);
+<     s_pdp = PIN_POID_CREATE(db, "/search", id, ebufp);
+< 
+<     PIN_FLIST_FLD_PUT(src_iflistp, PIN_FLD_POID, s_pdp, ebufp);
+<     PIN_FLIST_FLD_SET(src_iflistp, PIN_FLD_FLAGS, &flags, ebufp);
+<     PIN_FLIST_FLD_SET(src_iflistp, PIN_FLD_TEMPLATE, s_template, ebufp);
+< 
+<     args_flistp = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_ARGS, 1, ebufp);
+<     PIN_FLIST_FLD_SET(args_flistp, PIN_FLD_ACCOUNT_OBJ, act_pdp, ebufp);
+< 
+<     args_flistp = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_ARGS, 2, ebufp);
+<     PIN_FLIST_FLD_SET(args_flistp, PIN_FLD_SERVICE_OBJ, serv_pdp, ebufp);
+< 
+<     result_flist = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_RESULTS, 0, ebufp);
+<     PIN_FLIST_FLD_SET(args_flistp, PIN_FLD_POID, NULL, ebufp);
+< 
+< PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_change_item_refund_details search input list", src_iflistp);
+<     PCM_OP(ctxp, PCM_OP_SEARCH, 0, src_iflistp, &src_oflistp, ebufp);
+<     PIN_FLIST_DESTROY_EX(&src_iflistp, NULL);
+< 
+<     if (PIN_ERRBUF_IS_ERR(ebufp))
+<     {
+<         PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "fm_mso_cust_change_item_refund_details - Error in calling SEARCH", ebufp);
+<         PIN_FLIST_DESTROY_EX(&src_oflistp, NULL);
+<     }
+< 
+<     PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_change_item_refund_details search output flist", src_oflistp);
+< 
+<     if (src_oflistp != NULL)
+<     {
+<         result_flist = PIN_FLIST_ELEM_GET(src_oflistp, PIN_FLD_RESULTS, PIN_ELEMID_ANY, 1, ebufp);
+<         PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_get_pp_type result_flist flist", result_flist);
+<         if (result_flist != NULL)
+<         {
+<             item_pdp = PIN_FLIST_FLD_GET(result_flist, PIN_FLD_POID, 1, ebufp);
+< 
+<             if (item_pdp && !(PIN_POID_IS_NULL(item_pdp)))
+<             {
+<                 PIN_POID_TO_STR(item_pdp, &item_poid_str, &buf_len, ebufp);
+<                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Printing Item Poid !");
+<                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, item_poid_str);
+< 
+<                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "Updating Bill Poid for the item !");
+<                 write_iflistp = PIN_FLIST_CREATE(ebufp);
+<                 PIN_FLIST_FLD_SET(write_iflistp, PIN_FLD_POID, item_pdp, ebufp);
+<                 PIN_FLIST_FLD_SET(write_iflistp, PIN_FLD_BILL_OBJ, bill_pdp, ebufp);
+<                 PIN_FLIST_FLD_SET(write_iflistp, PIN_FLD_STATUS, &item_status, ebufp);
+<                 PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_change_item_refund_details: Write Flds Input ", write_iflistp);
+<                 PCM_OP(ctxp, PCM_OP_WRITE_FLDS, 0, write_iflistp, &write_oflistp, ebufp);
+<                 PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_change_item_refund_details: Write Flds Output ", write_oflistp);
+< PIN_FLIST_DESTROY_EX(&write_iflistp, NULL);
+<                 PIN_FLIST_DESTROY_EX(&write_oflistp, NULL);
+< 
+<                 if (PIN_ERRBUF_IS_ERR(ebufp))
+<                 {
+<                     PIN_FLIST_DESTROY_EX(&write_iflistp, NULL);
+<                     PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "fm_mso_cust_change_item_refund_details - Error in calling WRITE_FLDS", ebufp);
+<                 }
+<             }
+<         }
+<     }
+< 
+<     PIN_FLIST_DESTROY_EX(&src_oflistp, NULL);
+< 
+<     return;
+< }
+< 
+< /*******************************************************************************
+<  * fm_mso_cust_create_adjustment_data()
+<  *
+<  * Inputs: flist with POID, SERVICE_OBJ are mandatory fields 
+< 
+<  * Output: void; ebuf set if errors encountered
+<  *
+<  * Description:
+<  * This function stores creates an entry mso_credit_charges_t for the given 
+<  * account poid and service poid.
+<  ******************************************************************************/
+< 
+< void
+< fm_mso_cust_create_adjustment_data(
+<         pcm_context_t           *ctxp,
+<         pin_flist_t             *inp_flistp,
+<         pin_errbuf_t            *ebufp)
+< {
+<     pin_flist_t             *create_iflist = NULL;
+<     pin_flist_t             *create_oflist = NULL;
+<     pin_flist_t             *writeflds_iflist = NULL;
+<     pin_flist_t             *writeflds_oflist = NULL;
+<     pin_flist_t             *acnt_info = NULL;
+<     pin_flist_t             *src_iflistp = NULL;
+<     pin_flist_t             *args_flistp = NULL;
+<     pin_flist_t             *result_flist = NULL;
+<     pin_flist_t             *src_oflistp = NULL;
+<     pin_flist_t             *tmp_flistp = NULL;
+<     pin_flist_t             *src_crdt_iflistp = NULL;
+<     pin_flist_t             *args_crdt_flistp = NULL;
+<     pin_flist_t             *res_crdt_flistp = NULL;
+<     pin_flist_t             *src_crdt_oflistp = NULL;
+< 
+<     poid_t                  *crdt_pdp = NULL;
+<     poid_t                  *serv_pdp = NULL;
+<     poid_t                  *act_pdp = NULL;
+<     poid_t                  *s_pdp = NULL;
+<     poid_t                  *balgrp_pdp = NULL;
+<     poid_t                  *item_pdp = NULL;
+< 
+<     char                    *account_no = NULL;
+<     char                    *s_template = " select X from /event where F1 = V1 and F2 = V2 and F3 = V3 and F4 < V4 and (F5 >= V5  and F6 < V6) and event_t.item_obj_type = '/item/refund' ";
+<     char                    *s_template1 = " select X from /mso_credit_charges where F1 = V1 and F2 = V2 and (F3 >= V3  and F4 < V4) and F5 = V5 ";
+< 
+<     int64                   db = 0;
+<     int64                   id = -1;
+<     int64                   status = 0;
+<     int32                   flags = 256;
+<     int32                   resource_id = 356;
+<     int                     elem_base = 0;
+<     int                     elem_loop = 0;
+< 
+<     pin_decimal_t           *amount = NULL;
+<     pin_decimal_t           *total_amount = pbo_decimal_from_str("0", ebufp);
+<     pin_decimal_t           *zero = pbo_decimal_from_str("0", ebufp);
+< 
+<     time_t                  current_t = pin_virtual_time(NULL);
+<     time_t                  start_t;
+<     time_t                  end_t;
+< 
+<     struct tm               *timeeff;
+<     pin_cookie_t            cookie_base = NULL;
+<     pin_cookie_t            cookie_loop = NULL;
+< 
+<     if (PIN_ERRBUF_IS_ERR(ebufp))
+<             return;
+<     PIN_ERRBUF_CLEAR(ebufp);
+< 
+<     PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data input flist", inp_flistp);
+< 
+<     act_pdp = (poid_t *)PIN_FLIST_FLD_GET(inp_flistp, PIN_FLD_POID, 0, ebufp);
+<     fm_mso_get_account_info(ctxp, act_pdp, &acnt_info, ebufp);
+< 
+<     if(acnt_info != NULL)
+<     {
+<         account_no = PIN_FLIST_FLD_GET(acnt_info, PIN_FLD_ACCOUNT_NO, 0, ebufp);
+<     }
+<     serv_pdp = (poid_t *)PIN_FLIST_FLD_GET(inp_flistp, PIN_FLD_SERVICE_OBJ, 0, ebufp);
+< 
+<     /********************************************************************************************************************
+<     0 PIN_FLD_POID           POID [0] 0.0.0.1 /search -1 0
+<     0 PIN_FLD_FLAGS           INT [0] 256
+<     0 PIN_FLD_TEMPLATE        STR [0] " select X from /event where F1 = V1 and F2 = V2 and F3 = V3 and F4 < V4 and (F5 >= V5  and F6 < V6) and event_t.item_obj_type = '/item/refund' "
+<     0 PIN_FLD_ARGS          ARRAY [1] allocated 20, used 1
+<     1     PIN_FLD_ACCOUNT_OBJ    POID [0] 0.0.0.1 /account 23487332644
+<     0 PIN_FLD_ARGS          ARRAY [2] allocated 20, used 1
+<     1     PIN_FLD_SERVICE_OBJ    POID [0] 0.0.0.1 /service/catv 23487335332
+<     0 PIN_FLD_ARGS          ARRAY [3] allocated 20, used 2
+<     1    PIN_FLD_BAL_IMPACTS ARRAY [0] allocated 20, used 1
+<     2       PIN_FLD_RESOURCE_ID    INT [0] 356
+<     0 PIN_FLD_ARGS          ARRAY [4] allocated 20, used 2
+<     1    PIN_FLD_BAL_IMPACTS ARRAY [0] allocated 20, used 1
+<     2       PIN_FLD_AMOUNT    DECIMAL [0] 0.0
+<     0 PIN_FLD_ARGS          ARRAY [5] allocated 20, used 1
+<     1     PIN_FLD_CREATED_T    TSTAMP [0] (1584988200)
+<     0 PIN_FLD_ARGS          ARRAY [6] allocated 20, used 1
+<     1     PIN_FLD_CREATED_T    TSTAMP [0] (1585161000)
+<     0 PIN_FLD_RESULTS       ARRAY [*] allocated 20, used 6
+<     1     PIN_FLD_POID                  POID [0] NULL
+<     1     PIN_FLD_CREATED_T           TSTAMP [0] (0)
+<     1     PIN_FLD_ITEM_OBJ              POID [0] NULL
+<     1     PIN_FLD_BAL_IMPACTS ARRAY [*] allocated 20, used 2
+<     2       PIN_FLD_BAL_GRP_OBJ         POID [0] NULL
+<     2       PIN_FLD_RESOURCE_ID          INT [0] 0
+<     2       PIN_FLD_AMOUNT           DECIMAL [0] NULL   
+<     ********************************************************************************************************************/
+< 
+<     db = PIN_POID_GET_DB(act_pdp);
+<     src_iflistp = PIN_FLIST_CREATE(ebufp);
+<     s_pdp = PIN_POID_CREATE(db, "/search", id, ebufp);
+< 
+<     PIN_FLIST_FLD_PUT(src_iflistp, PIN_FLD_POID, s_pdp, ebufp);
+<     PIN_FLIST_FLD_SET(src_iflistp, PIN_FLD_FLAGS, &flags, ebufp);
+<     PIN_FLIST_FLD_SET(src_iflistp, PIN_FLD_TEMPLATE, s_template, ebufp);
+< 
+<     args_flistp = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_ARGS, 1, ebufp);
+<     PIN_FLIST_FLD_SET(args_flistp, PIN_FLD_ACCOUNT_OBJ, act_pdp, ebufp);
+< 
+<     args_flistp = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_ARGS, 2, ebufp);
+<     PIN_FLIST_FLD_SET(args_flistp, PIN_FLD_SERVICE_OBJ, serv_pdp, ebufp);
+< 
+<     args_flistp = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_ARGS, 3, ebufp);
+<     tmp_flistp = PIN_FLIST_ELEM_ADD(args_flistp, PIN_FLD_BAL_IMPACTS, 0, ebufp);
+<     PIN_FLIST_FLD_SET(tmp_flistp, PIN_FLD_RESOURCE_ID, &resource_id, ebufp);
+< 
+<     args_flistp = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_ARGS, 4, ebufp);
+<     tmp_flistp = PIN_FLIST_ELEM_ADD(args_flistp, PIN_FLD_BAL_IMPACTS, 0, ebufp);
+<     PIN_FLIST_FLD_SET(tmp_flistp, PIN_FLD_AMOUNT, zero, ebufp);
+< 
+<     timeeff = localtime(&current_t);
+<     timeeff->tm_mday = timeeff->tm_mday - 1;
+<     start_t = mktime (timeeff);
+< 
+<     args_flistp = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_ARGS, 5, ebufp);
+<     PIN_FLIST_FLD_SET(args_flistp, PIN_FLD_CREATED_T, &start_t, ebufp);
+< 
+<     timeeff = localtime(&current_t);
+<     timeeff->tm_mday = timeeff->tm_mday + 1;
+<     end_t = mktime (timeeff);
+< 
+<     args_flistp = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_ARGS, 6, ebufp);
+<     PIN_FLIST_FLD_SET(args_flistp, PIN_FLD_CREATED_T, &end_t, ebufp);
+< 
+<     result_flist = PIN_FLIST_ELEM_ADD(src_iflistp, PIN_FLD_RESULTS, PIN_ELEMID_ANY, ebufp);
+<     PIN_FLIST_FLD_SET(result_flist, PIN_FLD_POID, NULL, ebufp);
+<     PIN_FLIST_FLD_SET(result_flist, PIN_FLD_CREATED_T, NULL, ebufp);
+<     PIN_FLIST_FLD_SET(result_flist, PIN_FLD_ITEM_OBJ, NULL, ebufp);
+< 
+<     tmp_flistp = PIN_FLIST_ELEM_ADD(result_flist, PIN_FLD_BAL_IMPACTS, PIN_ELEMID_ANY, ebufp);
+<     PIN_FLIST_FLD_SET(tmp_flistp, PIN_FLD_BAL_GRP_OBJ, NULL, ebufp);
+<     PIN_FLIST_FLD_SET(tmp_flistp, PIN_FLD_RESOURCE_ID, 0, ebufp);
+<     PIN_FLIST_FLD_SET(tmp_flistp, PIN_FLD_AMOUNT,  zero, ebufp);
+< 
+<     PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data search input list", src_iflistp);
+<     PCM_OP(ctxp, PCM_OP_SEARCH, 0, src_iflistp, &src_oflistp, ebufp);
+<     PIN_FLIST_DESTROY_EX(&src_iflistp, NULL);
+< 
+<     if (PIN_ERRBUF_IS_ERR(ebufp))
+<     {
+<         PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "fm_mso_cust_create_adjustment_data - Error in calling SEARCH", ebufp);
+<         PIN_FLIST_DESTROY_EX(&src_oflistp, NULL);
+<     }
+< 
+<     PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data search output flist", src_oflistp);
+< 
+<     if (src_oflistp != NULL)
+<     {
+<         PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,  "Search results not null ");
+<         while ((result_flist = PIN_FLIST_ELEM_GET_NEXT(src_oflistp, PIN_FLD_RESULTS, &elem_base, 1, &cookie_base, ebufp )) != NULL)
+<         {
+<             item_pdp = PIN_FLIST_FLD_GET(result_flist, PIN_FLD_ITEM_OBJ, 1, ebufp);
+< 
+<             elem_loop = 0;
+<             cookie_loop = NULL;
+< 
+<             while ((tmp_flistp = PIN_FLIST_ELEM_GET_NEXT(result_flist, PIN_FLD_BAL_IMPACTS, &elem_loop, 1, &cookie_loop, ebufp )) != NULL)
+<             {
+<                 balgrp_pdp = PIN_FLIST_FLD_GET(tmp_flistp, PIN_FLD_BAL_GRP_OBJ, 1, ebufp);
+<                 resource_id = *(int32 *)PIN_FLIST_FLD_GET(tmp_flistp, PIN_FLD_RESOURCE_ID, 1, ebufp);
+< 
+<                 if(resource_id == 356)
+<                 {
+<                     amount = PIN_FLIST_FLD_GET(tmp_flistp, PIN_FLD_AMOUNT, 0, ebufp);
+<                     total_amount = pbo_decimal_add(total_amount, amount, ebufp);
+<                 }
+<             }
+<         }
+<         if (!pbo_decimal_is_null(total_amount, ebufp) && pbo_decimal_compare(total_amount, zero, ebufp) < 0 )
+<         {
+<             /*********************************************************************************************
+<              *  0 PIN_FLD_POID           POID [0] 0.0.0.1 /search -1 0
+<              *  0 PIN_FLD_FLAGS           INT [0] 256
+<              *  0 PIN_FLD_TEMPLATE        STR [0] " select X from /mso_credit_charges where F1 = V1 and F2 = V2 and (F3 >= V3  and F4 < V4) and F5 = V5 "
+<              *  0 PIN_FLD_ARGS          ARRAY [1] allocated 20, used 1
+<              *  0      PIN_FLD_ACCOUNT_OBJ    POID [0] 0.0.0.1 /account 23487332644
+<              *  0 PIN_FLD_ARGS          ARRAY [2] allocated 20, used 1
+<              *  1     PIN_FLD_SERVICE_OBJ    POID [0] 0.0.0.1 /service/catv 23487335332
+<              *  0 PIN_FLD_ARGS          ARRAY [3] allocated 20, used 1
+<              *  1     PIN_FLD_START_T    TSTAMP [0] (1585009800)
+<              *  0 PIN_FLD_ARGS          ARRAY [4] allocated 20, used 1
+<              *  1     PIN_FLD_START_T    TSTAMP [0] (1585182600)
+<              *  0 PIN_FLD_ARGS          ARRAY [5] allocated 20, used 1
+<              *  1     PIN_FLD_STATUS     ENUM [0] 0
+<              *  0 PIN_FLD_RESULTS       ARRAY [0] allocated 20, used 3   
+<              *  1   PIN_FLD_POID          POID [0] 0.0.0.1 /mso_credit_charges 3343434343434 0
+<              *  1   PIN_FLD_AMOUNT     DECIMAL [0] -100
+<              *********************************************************************************************/
+< 
+<             src_crdt_iflistp = PIN_FLIST_CREATE(ebufp);
+<             s_pdp = PIN_POID_CREATE(db, "/search", id, ebufp);
+< 
+<             PIN_FLIST_FLD_PUT(src_crdt_iflistp, PIN_FLD_POID, s_pdp, ebufp);
+<             PIN_FLIST_FLD_SET(src_crdt_iflistp, PIN_FLD_FLAGS, &flags, ebufp);
+<             PIN_FLIST_FLD_SET(src_crdt_iflistp, PIN_FLD_TEMPLATE, s_template1, ebufp);
+< 
+<             args_crdt_flistp = PIN_FLIST_ELEM_ADD(src_crdt_iflistp, PIN_FLD_ARGS, 1, ebufp);
+<             PIN_FLIST_FLD_SET(args_crdt_flistp, PIN_FLD_ACCOUNT_OBJ, act_pdp, ebufp);
+< 
+<             args_crdt_flistp = PIN_FLIST_ELEM_ADD(src_crdt_iflistp, PIN_FLD_ARGS, 2, ebufp);
+<             PIN_FLIST_FLD_SET(args_crdt_flistp, PIN_FLD_SERVICE_OBJ, serv_pdp, ebufp);
+< 
+<             timeeff = localtime(&current_t);
+<             timeeff->tm_mday = timeeff->tm_mday - 1;
+<             start_t = mktime (timeeff);
+<             args_crdt_flistp = PIN_FLIST_ELEM_ADD(src_crdt_iflistp, PIN_FLD_ARGS, 3, ebufp);
+<             PIN_FLIST_FLD_SET(args_crdt_flistp, PIN_FLD_START_T, &start_t, ebufp);
+< 
+<             timeeff = localtime(&current_t);
+<             timeeff->tm_mday = timeeff->tm_mday + 1;
+<             end_t = mktime (timeeff);
+< 
+<             args_crdt_flistp = PIN_FLIST_ELEM_ADD(src_crdt_iflistp, PIN_FLD_ARGS, 4, ebufp);
+<             PIN_FLIST_FLD_SET(args_crdt_flistp, PIN_FLD_START_T, &end_t, ebufp);
+< 
+<             args_crdt_flistp = PIN_FLIST_ELEM_ADD(src_crdt_iflistp, PIN_FLD_ARGS, 5, ebufp);
+<             PIN_FLIST_FLD_SET(args_crdt_flistp, PIN_FLD_STATUS, &status, ebufp);
+< 
+<             res_crdt_flistp = PIN_FLIST_ELEM_ADD(src_crdt_iflistp, PIN_FLD_RESULTS, 0, ebufp);
+<             PIN_FLIST_FLD_SET(res_crdt_flistp, PIN_FLD_POID, NULL, ebufp);
+<             PIN_FLIST_FLD_SET(res_crdt_flistp, PIN_FLD_AMOUNT, zero, ebufp);
+< 
+<             PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data mso_credit_charges search input list", src_crdt_iflistp);
+<             PCM_OP(ctxp, PCM_OP_SEARCH, 0, src_crdt_iflistp, &src_crdt_oflistp, ebufp);
+<             PIN_FLIST_DESTROY_EX(&src_crdt_iflistp, NULL);
+< 
+<             if (PIN_ERRBUF_IS_ERR(ebufp))
+<             {
+<                 PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "fm_mso_cust_create_adjustment_data - Error in calling SEARCH", ebufp);
+<                 PIN_FLIST_DESTROY_EX(&src_crdt_oflistp, NULL);
+<             }
+< 
+<             PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data mso_credit_charges search output flist", src_crdt_oflistp);
+<             if (src_crdt_oflistp != NULL)
+<             {
+<                 PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,  "mso_credit_charges Search results not null ");
+<                 res_crdt_flistp = PIN_FLIST_ELEM_GET(src_crdt_oflistp, PIN_FLD_RESULTS, 0, 1, ebufp );
+< 
+<                 if (res_crdt_flistp != NULL)
+<                 {
+<                     PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data res_crdt_flistp flist", res_crdt_flistp);
+<                     crdt_pdp = PIN_FLIST_FLD_GET(res_crdt_flistp, PIN_FLD_POID, 1, ebufp);
+< 
+<                     if (!PIN_POID_IS_NULL(crdt_pdp))
+<                     {
+<                         writeflds_iflist = PIN_FLIST_CREATE(ebufp);
+<                         PIN_FLIST_FLD_PUT(writeflds_iflist, PIN_FLD_POID, crdt_pdp, ebufp);
+<                         PIN_FLIST_FLD_SET(writeflds_iflist, PIN_FLD_AMOUNT, total_amount, ebufp);
+<                         PIN_FLIST_FLD_SET(writeflds_iflist, PIN_FLD_START_T, &current_t, ebufp);
+< 
+<                         PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data Write Flds input list", writeflds_iflist);
+<                         PCM_OP(ctxp, PCM_OP_WRITE_FLDS, 0, writeflds_iflist, &writeflds_oflist, ebufp);
+<                         PIN_FLIST_DESTROY_EX(&writeflds_iflist, NULL);
+< 
+<                         if (PIN_ERRBUF_IS_ERR(ebufp))
+<                         {
+<                             PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "fm_mso_cust_create_adjustment_data - Error in Updating Object", ebufp);
+<                             PIN_FLIST_DESTROY_EX(&writeflds_oflist, NULL);
+<                         }
+< 
+<                         PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data Write Flds output flist", writeflds_oflist);
+<                         PIN_FLIST_DESTROY_EX(&writeflds_oflist, NULL);
+<                     }
+<                 }
+<                 else
+<                 {
+<                     PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG,  "Creating mso_credit_charges object");
+<                     create_iflist = PIN_FLIST_CREATE(ebufp);
+<                     crdt_pdp = PIN_POID_CREATE(db, "/mso_credit_charges", id, ebufp);
+< 
+<                     PIN_FLIST_FLD_PUT(create_iflist, PIN_FLD_POID, crdt_pdp, ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_ACCOUNT_NO, account_no, ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_ACCOUNT_OBJ, act_pdp, ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_SERVICE_OBJ, serv_pdp, ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_BAL_GRP_OBJ, balgrp_pdp, ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_AMOUNT, total_amount, ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_STATUS, &status, ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_START_T, &current_t, ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_DESCR, "Change Plan Refunds", ebufp);
+<                     PIN_FLIST_FLD_SET(create_iflist, PIN_FLD_ITEM_OBJ, item_pdp, ebufp);
+< 
+<                     PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data Create Object input list", create_iflist);
+<                     PCM_OP(ctxp, PCM_OP_CREATE_OBJ, 0, create_iflist, &create_oflist, ebufp);
+<                     PIN_FLIST_DESTROY_EX(&create_iflist, NULL);
+< 
+<                     if (PIN_ERRBUF_IS_ERR(ebufp))
+<                     {
+<                         PIN_ERR_LOG_EBUF(PIN_ERR_LEVEL_ERROR, "fm_mso_cust_create_adjustment_data - Error in creating Object", ebufp);
+<                         PIN_FLIST_DESTROY_EX(&create_oflist, NULL);
+<                     }
+< 
+<                     PIN_ERR_LOG_FLIST(PIN_ERR_LEVEL_DEBUG, "fm_mso_cust_create_adjustment_data Create Object output flist", create_oflist);
+<                     PIN_FLIST_DESTROY_EX(&create_oflist, NULL);
+<                 }
+<             }
+< 
+<             PIN_FLIST_DESTROY_EX(&src_crdt_iflistp, NULL);
+<         }
+<     }
+< 
+<     PIN_FLIST_DESTROY_EX(&src_oflistp, NULL);
+<     return;
+< }

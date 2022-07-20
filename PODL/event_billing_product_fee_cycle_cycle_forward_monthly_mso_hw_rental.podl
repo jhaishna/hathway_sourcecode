@@ -1,0 +1,230 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "monthly hardware rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for Docsis 3.0 Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "monthly additional ip rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware monthly rental for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_monthly/mso_hw_rental/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+

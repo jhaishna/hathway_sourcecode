@@ -1,0 +1,110 @@
+E Tue Dec 29 16:55:31 2020  dev-brm-upg  <no name>:7878  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7878): no pin.conf file in . or /etc 2
+E Tue Dec 29 16:55:31 2020  dev-brm-upg  <no name>:7878  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7878): no pin.conf file in . or /etc 2
+E Tue Dec 29 16:55:31 2020  dev-brm-upg  <no name>:7878  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7878): no pin.conf file in . or /etc 2
+E Tue Dec 29 16:55:31 2020  dev-brm-upg  <no name>:7878  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7878): no pin.conf file in . or /etc 2
+E Tue Dec 29 16:55:31 2020  dev-brm-upg  <no name>:7878  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7878): no pin.conf file in . or /etc 2
+E Tue Dec 29 16:55:31 2020  dev-brm-upg  testnap:7878  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7878): no pin.conf file in . or /etc 2
+E Tue Dec 29 16:55:31 2020  dev-brm-upg  testnap:7878  pcm_conn.c(9):236 2:<machine>:<program>:0:0:0:0:0::::
+	pcm_connect: bad/no login_type in pin.conf, err 30
+E Tue Dec 29 16:55:31 2020  dev-brm-upg  testnap:7878  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7878): no pin.conf file in . or /etc 2
+E Wed May 26 14:42:23 2021  dev-brm-upg.hathway.net  <no name>:7936  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7936): no pin.conf file in . or /etc 2
+E Wed May 26 14:42:23 2021  dev-brm-upg.hathway.net  <no name>:7936  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7936): no pin.conf file in . or /etc 2
+E Wed May 26 14:42:23 2021  dev-brm-upg.hathway.net  <no name>:7936  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(7936): no pin.conf file in . or /etc 2
+E Wed May 26 14:42:23 2021  dev-brm-upg.hathway.net  <no name>:7936  pin_deploy_pcm.c:302 2:<machine>:<program>:0:0:0:0:0::::
+	Unable to read userid from pin.conf
+E Wed May 26 14:42:23 2021  dev-brm-upg.hathway.net  <no name>:7936  pcm.c(65):448 2:<machine>:<program>:0:0:0:0:0::::
+	Bad context in pcm_op
+E Wed May 26 14:42:23 2021  dev-brm-upg.hathway.net  <no name>:7936  pin_deploy_pcm.c:101 2:<machine>:<program>:0:0:0:0:0::::
+	PCM error
+	<location=PIN_ERRLOC_PCM:1 class=PIN_ERRCLASS_SYSTEM_DETERMINATE:1 errno=PIN_ERR_BAD_ARG:4>
+	<field num=0:0,0 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Wed May 26 14:42:23 2021  dev-brm-upg.hathway.net  <no name>:7936  pin_deploy_import.c:1049 2:<machine>:<program>:0:0:0:0:0::::
+	Unable to retreive fields from Infranet
+E Wed May 26 14:42:23 2021  dev-brm-upg.hathway.net  <no name>:7936  pin_deploy_import.c:229 2:<machine>:<program>:0:0:0:0:0::::
+	Errors Detected...nothing committed
+E Wed May 26 14:45:15 2021  dev-brm-upg.hathway.net  <no name>:8193  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(8193): no pin.conf file in . or /etc 2
+E Wed May 26 14:45:15 2021  dev-brm-upg.hathway.net  <no name>:8193  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(8193): no pin.conf file in . or /etc 2
+E Wed May 26 14:45:15 2021  dev-brm-upg.hathway.net  <no name>:8193  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(8193): no pin.conf file in . or /etc 2
+E Wed May 26 14:45:15 2021  dev-brm-upg.hathway.net  <no name>:8193  pin_deploy_pcm.c:302 2:<machine>:<program>:0:0:0:0:0::::
+	Unable to read userid from pin.conf
+E Wed May 26 14:45:15 2021  dev-brm-upg.hathway.net  <no name>:8193  pcm.c(65):448 2:<machine>:<program>:0:0:0:0:0::::
+	Bad context in pcm_op
+E Wed May 26 14:45:15 2021  dev-brm-upg.hathway.net  <no name>:8193  pin_deploy_pcm.c:101 2:<machine>:<program>:0:0:0:0:0::::
+	PCM error
+	<location=PIN_ERRLOC_PCM:1 class=PIN_ERRCLASS_SYSTEM_DETERMINATE:1 errno=PIN_ERR_BAD_ARG:4>
+	<field num=0:0,0 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Wed May 26 14:45:15 2021  dev-brm-upg.hathway.net  <no name>:8193  pin_deploy_import.c:1049 2:<machine>:<program>:0:0:0:0:0::::
+	Unable to retreive fields from Infranet
+E Wed May 26 14:45:15 2021  dev-brm-upg.hathway.net  <no name>:8193  pin_deploy_import.c:229 2:<machine>:<program>:0:0:0:0:0::::
+	Errors Detected...nothing committed
+E Wed May 26 14:46:04 2021  dev-brm-upg.hathway.net  <no name>:8247  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(8247): no pin.conf file in . or /etc 2
+E Wed May 26 14:46:04 2021  dev-brm-upg.hathway.net  <no name>:8247  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(8247): no pin.conf file in . or /etc 2
+E Wed May 26 14:46:04 2021  dev-brm-upg.hathway.net  <no name>:8247  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(8247): no pin.conf file in . or /etc 2
+E Wed May 26 14:46:04 2021  dev-brm-upg.hathway.net  <no name>:8247  pin_deploy_pcm.c:302 2:<machine>:<program>:0:0:0:0:0::::
+	Unable to read userid from pin.conf
+E Wed May 26 14:46:04 2021  dev-brm-upg.hathway.net  <no name>:8247  pcm.c(65):448 2:<machine>:<program>:0:0:0:0:0::::
+	Bad context in pcm_op
+E Wed May 26 14:46:04 2021  dev-brm-upg.hathway.net  <no name>:8247  pin_deploy_pcm.c:101 2:<machine>:<program>:0:0:0:0:0::::
+	PCM error
+	<location=PIN_ERRLOC_PCM:1 class=PIN_ERRCLASS_SYSTEM_DETERMINATE:1 errno=PIN_ERR_BAD_ARG:4>
+	<field num=0:0,0 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Wed May 26 14:46:04 2021  dev-brm-upg.hathway.net  <no name>:8247  pin_deploy_import.c:1049 2:<machine>:<program>:0:0:0:0:0::::
+	Unable to retreive fields from Infranet
+E Wed May 26 14:46:04 2021  dev-brm-upg.hathway.net  <no name>:8247  pin_deploy_import.c:229 2:<machine>:<program>:0:0:0:0:0::::
+	Errors Detected...nothing committed
+E Tue Aug  3 11:36:09 2021  dev-brm-upg.hathway.net  <no name>:45914  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(45914): no pin.conf file in . or /etc 2
+E Tue Aug  3 11:36:09 2021  dev-brm-upg.hathway.net  <no name>:45914  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(45914): no pin.conf file in . or /etc 2
+E Tue Aug  3 11:36:09 2021  dev-brm-upg.hathway.net  <no name>:45914  pin_deploy_pcm.c:302 2:<machine>:<program>:0:0:0:0:0::::
+	Unable to read userid from pin.conf
+E Tue Aug  3 11:36:09 2021  dev-brm-upg.hathway.net  <no name>:45914  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(45914): no pin.conf file in . or /etc 2
+E Tue Aug  3 11:36:09 2021  dev-brm-upg.hathway.net  <no name>:45914  pcm.c(65):448 2:<machine>:<program>:0:0:0:0:0::::
+	Bad context in pcm_op
+E Tue Aug  3 11:36:09 2021  dev-brm-upg.hathway.net  <no name>:45914  pin_deploy_pcm.c:101 2:<machine>:<program>:0:0:0:0:0::::
+	PCM error
+	<location=PIN_ERRLOC_PCM:1 class=PIN_ERRCLASS_SYSTEM_DETERMINATE:1 errno=PIN_ERR_BAD_ARG:4>
+	<field num=0:0,0 recid=0 reserved=0 reserved2=0 time(sec:usec)=0:0>
+	<facility=0 msg_id=0 version=0>
+E Tue Aug  3 11:36:09 2021  dev-brm-upg.hathway.net  <no name>:45914  pin_deploy_export.c:218 2:<machine>:<program>:0:0:0:0:0::::
+	ERROR attempting to read fields from DD
+E Tue Aug  3 11:36:30 2021  dev-brm-upg.hathway.net  <no name>:46042  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(46042): no pin.conf file in . or /etc 2
+E Tue Aug  3 11:36:30 2021  dev-brm-upg.hathway.net  <no name>:46042  pin_deploy.c:177 2:<machine>:<program>:0:0:0:0:0::::
+	Invalid Command line args
+E Tue Aug  3 20:31:45 2021  dev-brm-upg.hathway.net  <no name>:16382  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(16382): no pin.conf file in . or /etc 2
+E Tue Aug  3 20:31:45 2021  dev-brm-upg.hathway.net  <no name>:16382  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(16382): no pin.conf file in . or /etc 2
+E Tue Aug  3 20:31:45 2021  dev-brm-upg.hathway.net  <no name>:16382  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(16382): no pin.conf file in . or /etc 2
+E Tue Aug  3 20:31:45 2021  dev-brm-upg.hathway.net  <no name>:16382  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(16382): no pin.conf file in . or /etc 2
+E Tue Aug  3 20:31:45 2021  dev-brm-upg.hathway.net  <no name>:16382  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(16382): no pin.conf file in . or /etc 2
+E Tue Aug  3 20:31:45 2021  dev-brm-upg.hathway.net  testnap:16382  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(16382): no pin.conf file in . or /etc 2
+E Tue Aug  3 20:31:45 2021  dev-brm-upg.hathway.net  testnap:16382  pcm_conn.c(9):236 2:<machine>:<program>:0:0:0:0:0::::
+	pcm_connect: bad/no login_type in pin.conf, err 30
+E Tue Aug  3 20:31:45 2021  dev-brm-upg.hathway.net  testnap:16382  pin_conf.c(46):764 2:<machine>:<program>:0:0:0:0:0::::
+	(16382): no pin.conf file in . or /etc 2

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_installation/normal
+#=======================================
+
+STORABLE CLASS /item/mso_installation/normal {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Normal Device Installation";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_installation/normal
+#=======================================
+
+STORABLE CLASS /item/mso_installation/normal IMPLEMENTATION ORACLE7 {
+
+}
+

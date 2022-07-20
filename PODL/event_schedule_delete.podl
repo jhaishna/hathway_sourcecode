@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/schedule/delete
+#=======================================
+
+STORABLE CLASS /event/schedule/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event is created when a schedule object is deleted.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/delete
+#=======================================
+
+STORABLE CLASS /event/schedule/delete IMPLEMENTATION ORACLE7 {
+
+}
+

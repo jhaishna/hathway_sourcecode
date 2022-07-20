@@ -1,0 +1,155 @@
+
+#=======================================
+#  Field PIN_FLD_IP_ADDRESSES
+#=======================================
+
+ARRAY PIN_FLD_IP_ADDRESSES {
+
+	ID = 1652;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IP_ADDRESS
+#=======================================
+
+STRING PIN_FLD_IP_ADDRESS {
+
+	ID = 1653;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_BROADBAND
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_BROADBAND {
+
+	ID = 1651;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_OBJ
+#=======================================
+
+POID PIN_FLD_EVENT_OBJ {
+
+	ID = 42;
+}
+
+
+#=======================================
+#  Storable Class /service/broadband
+#=======================================
+
+STORABLE CLASS /service/broadband {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This service object provides a identity to a broadband user. Events associated with this service are typically aggregated to perform rating on cumulative usage. See /event/aggregation.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_IP_ADDRESSES {
+
+		DESCR = "Array of IP addresses associated with this service. Array element id is not significant. An IP address with host id equal to 0 refers to the whole network.  For example, 156.151.0.0 refers to the B class network with network id 156.151.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_IP_ADDRESS {
+
+			DESCR = "IP address string with a header which indicates the type of the IP address: header|address. For example, 'ip|156.151.10.10' or 'ipv6|FEDC:BA98:7654:3210:FEDC:BA98:7654:3210'.";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_BROADBAND {
+
+		DESCR = "Substruct holding miscellaneous information related to this service.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			DESCR = "Link to the event that holds the usage of the leaseline service for current billing period.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/broadband
+#=======================================
+
+STORABLE CLASS /service/broadband IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_IP_ADDRESSES {
+
+		SQL_TABLE = "service_broadband_ipaddrs_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_IP_ADDRESS {
+
+			SQL_COLUMN = "ip_address";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_BROADBAND {
+
+		SQL_TABLE = "service_broadband_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_EVENT_OBJ {
+
+			SQL_COLUMN = "event_obj";
+		}
+
+	}
+
+}
+

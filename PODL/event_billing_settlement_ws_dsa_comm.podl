@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/dsa_comm
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/dsa_comm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/ws/dsa_comm
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/ws/dsa_comm IMPLEMENTATION ORACLE7 {
+
+}
+

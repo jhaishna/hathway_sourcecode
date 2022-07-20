@@ -1,0 +1,117 @@
+--
+--	@(#)%Portal Version: create_dd.source:BillingVelocityInt:4:2006-Sep-14 18:49:48 %
+--
+-- Copyright (c) 1996, 2018, Oracle and/or its affiliates. All rights reserved.
+--     
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+-- Create sequences
+create sequence obj_ids start with 1000;
+create sequence poid_ids2 start with 10000;
+
+-- /dd/fields ARRAY PIN_FLD_FIELD
+create table dd_fields_t (
+	obj_id0			int,
+	rec_id			int,
+	----
+	field_name		varchar2(255),	-- PIN_FLD_FIELD_NAME
+	field_num		int,		-- PIN_FLD_FIELD_NUM
+	field_type		int,		-- PIN_FLD_FIELD_TYPE
+	descr			varchar2(1023),	-- PIN_FLD_DESCR
+	status			int		-- PIN_FLD_DESCR
+) $PIN_CONF_SM_INFO{'/dd/fields.PIN_FLD_FIELD'};
+
+-- /dd/objects ARRAY PIN_FLD_OBJ_DESC
+create table dd_objects_t (
+	obj_id0			int,
+	name			varchar2(255),	-- PIN_FLD_NAME
+	mod_t			number,		-- PIN_FLD_MOD_T
+	state			int,		-- PIN_FLD_STATE
+	permission		int,		-- PIN_FLD_PERMISSION
+	label			varchar2(255),	-- PIN_FLD_LABEL
+	descr			varchar2(1023),	-- PIN_FLD_DESCR
+	sm_info			varchar2(1023),	-- PIN_FLD_SM_INFO
+	seq_start		int,		-- PIN_FLD_SEQ_START
+	read_access		varchar2(1),	-- PIN_FLD_READ_ACCESS
+	write_access		varchar2(1),	-- PIN_FLD_WRITE_ACCESS
+	create_access		varchar2(1),	-- PIN_FLD_CREATE_ACCESS
+	audit_flag		int,		-- PIN_FLD_AUDIT_FLAG
+	audit_scheme		int,		-- PIN_FLD_AUDIT_SCHEME
+	virtual_flag		int,		-- PIN_FLD_VIRTUAL_FLAG
+	au_sm_info		varchar2(1023),	-- PIN_FLD_AU_SM_INFO
+	is_partitioned		int,		-- PIN_FLD_IS_PARTITIONED
+	partition_mode          int,            -- PIN_FLD_PARTITION_MODE
+	residency_type          int,   		-- PIN_FLD_RESIDENCY_TYPE
+	event_type		varchar2(40)	default 'NONE' 	-- PIN_FLD_EVENT_TYPE
+) $PIN_CONF_SM_INFO{'/dd/objects.PIN_FLD_OBJ_DESC'};
+
+-- /dd/objects ARRAY PIN_FLD_OBJ_ELEM
+create table dd_objects_fields_t (
+	obj_id0			int,
+	rec_id			int,
+	----
+	parent_element_id	int,		-- PIN_FLD_PARENT_ELEMENT_ID
+	field_name		varchar2(255),	-- PIN_FLD_FIELD_NAME
+	field_type		int,		-- PIN_FLD_FIELD_TYPE
+	label			varchar2(255),	-- PIN_FLD_LABEL
+	descr			varchar2(1023),	-- PIN_FLD_DESCR
+	state			int,		-- PIN_FLD_STATE
+	permission		int,		-- PIN_FLD_PERMISSION
+	field_order		int,		-- PIN_FLD_ORDER
+	length			int,		-- PIN_FLD_LENGTH
+	sm_item_name		varchar2(255),	-- PIN_FLD_SM_ITEM_NAME
+	sm_item_vw_name		varchar2(255),	-- PIN_FLD_SM_ITEM_VW_NAME
+	sm_info			varchar2(1023),	-- PIN_FLD_SM_INFO
+	auditable		int,		-- PIN_FLD_AUDIT
+	queryable_on_audit	int,		-- PIN_FLD_QUERYABLE_ON_AUDIT
+	ignore_on_audit		int,		-- PIN_FLD_IGNORE_ON_AUDIT
+	encryptable		int,		-- PIN_FLD_ENCRYPT
+	serializable		int		-- PIN_FLD_SERIALIZABLE
+) $PIN_CONF_SM_INFO{'/dd/objects.PIN_FLD_OBJ_ELEM'};
+
+-- New table for storing encrypted-Aes keys
+-- cryptkey_t
+create table cryptkey_t (
+	crypt_scheme 		varchar2(10),	-- to store scheme name
+	crypt_key_id 		int,		-- to store key_id
+	crypt_key 		varchar2(255)	-- to store actual key
+) $PIN_CONF_SM_INFO{'/cryptkey'};
+
+-- New table for storing the converted table information
+create table aes_crypt_details_t (
+                table_name            varchar2(32),
+                field_name            varchar2(32),
+                old_size              int,
+                new_size              int
+) $PIN_CONF_SM_INFO{'/aes_crypt_details'};
+
+-- /dd/types ARRAY PIN_FLD_TYPES
+create table dd_types_t (
+	obj_id0			int,
+	name	        	varchar2(255),  -- PIN_FLD_TYPENAME_OBJ
+	descr			varchar2(1023),	-- PIN_FLD_DESCR
+	status			int		-- PIN_FLD_STATUS
+) $PIN_CONF_SM_INFO{'/dd/fields.PIN_FLD_TYPES'};
+
+-- /dd
+create unique index i_dd_objects__id on dd_objects_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_dd_objects_fields__id on dd_objects_fields_t ( obj_id0, rec_id, parent_element_id, field_name)
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_MED;
+
+create unique index i_dd_fields__id on dd_fields_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_dd_types__name on dd_types_t ( name )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+-- crypt
+create unique index i_cryptkey__scheme on cryptkey_t ( crypt_scheme, crypt_key_id )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_aes_crypt_details__dtls on aes_crypt_details_t ( table_name, field_name )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;

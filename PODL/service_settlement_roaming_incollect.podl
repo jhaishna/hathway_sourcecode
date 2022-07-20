@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /service/settlement/roaming/incollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/incollect {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service Roaming Settlement (Incollect) Object. Use to track the settlement info for the roaming partners (incollect usage)";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/incollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/incollect IMPLEMENTATION ORACLE7 {
+
+}
+

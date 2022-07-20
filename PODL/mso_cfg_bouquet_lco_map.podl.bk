@@ -1,0 +1,478 @@
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CODES 
+#=======================================
+
+ARRAY PIN_FLD_SERVICE_CODES {
+
+	ID = 6420; 
+}
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID {
+
+        ID = 40011;
+}
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID_HD
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID_HD {
+
+        ID = 40087;
+}
+
+#=======================================
+#  Field PIN_FLD_SERVICE_AREA_CODE 
+#=======================================
+
+STRING PIN_FLD_SERVICE_AREA_CODE {
+
+        ID = 3059;
+}
+
+#=======================================
+#  Field PIN_FLD_CATEGORY_ID 
+#=======================================
+
+INT PIN_FLD_CATEGORY_ID {
+
+        ID = 5802; 
+}
+
+#=======================================
+#  Field PIN_FLD_CATEGORY_VERSION 
+#=======================================
+
+INT PIN_FLD_CATEGORY_VERSION {
+
+        ID = 5807;
+}
+
+#=======================================
+#  Field PIN_FLD_REASON_ID 
+#=======================================
+
+INT PIN_FLD_REASON_ID {
+
+        ID = 7432;
+}
+
+#=======================================
+#  Field PIN_FLD_REASON_DOMAIN_ID 
+#=======================================
+
+INT PIN_FLD_REASON_DOMAIN_ID {
+
+        ID = 7431;
+}
+
+#=======================================
+#  Field MSO_FLD_NETWORK_NODE
+#=======================================
+
+STRING MSO_FLD_NETWORK_NODE {
+
+	ID = 40000;
+}
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+#=======================================
+#  Field MSO_FLD_POPULATION_ID 
+#=======================================
+
+STRING MSO_FLD_POPULATION_ID {
+
+        ID = 42030;
+}
+
+#=======================================
+#  Storable Class /mso_cfg_bouquet_lco_map
+#=======================================
+
+STORABLE CLASS /mso_cfg_bouquet_lco_map {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "CATV LCO level bouquet ID mapping class";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_CODES {
+
+		DESCR = "Array to hold BOUQUET_ID and NETWORK_NODE for provisioning";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			DESCR = "Network Nodes : NDS, CISCO, VM, JVM, NDS1, CISCO1, JVM1, GOSPEL, NAGRA";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_BOUQUET_ID {
+
+                	DESCR = "SD box bouquet ID";
+                	ORDER = 0;
+                	LENGTH = 60;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+
+		STRING MSO_FLD_BOUQUET_ID_HD {
+
+                	DESCR = "HD box bouquet ID";
+                	ORDER = 0;
+                	LENGTH = 60;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+
+		STRING MSO_FLD_POPULATION_ID {
+
+                	DESCR = "LCO and N/W level population ID";
+                	ORDER = 0;
+                	LENGTH = 60;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+
+		INT PIN_FLD_CATEGORY_ID {
+
+			DESCR = " Bouquet Segment Category";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CATEGORY_VERSION {
+
+			DESCR = " Bouquet Segment Sub Category";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_REASON_ID {
+
+                	DESCR = "Network Segment Category";
+                	ORDER = 0;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+
+		INT PIN_FLD_REASON_DOMAIN_ID {
+
+                	DESCR = "Network Segment Sub Category";
+                	ORDER = 0;
+                	CREATE = Optional;
+                	MODIFY = Writeable;
+                	AUDITABLE = 0;
+                	ENCRYPTABLE = 0;
+                	SERIALIZABLE = 0;
+        	}
+	}
+
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_SERVICE_AREA_CODE {
+
+               	DESCR = "Gospel AREA ID";
+               	ORDER = 0;
+               	LENGTH = 60;
+               	CREATE = Optional;
+               	MODIFY = Writeable;
+               	AUDITABLE = 0;
+               	ENCRYPTABLE = 0;
+               	SERIALIZABLE = 0;
+       	}
+
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		DESCR = "Loader program name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_bouquet_lco_map
+#=======================================
+
+STORABLE CLASS /mso_cfg_bouquet_lco_map IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_bouquet_lco_map_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_CODES {
+
+		SQL_TABLE = "mso_cfg_bouquet_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			SQL_COLUMN = "network_node";
+		}
+
+		STRING MSO_FLD_BOUQUET_ID {
+
+			SQL_COLUMN = "bouquet_id";
+		}
+
+		STRING MSO_FLD_BOUQUET_ID_HD {
+
+			SQL_COLUMN = "bouquet_id_hd";
+		}
+
+		INT PIN_FLD_CATEGORY_ID {
+
+			SQL_COLUMN = "boq_segment_cat";
+		}
+
+		INT PIN_FLD_CATEGORY_VERSION {
+
+			SQL_COLUMN = "boq_segment_sub_cat";
+		}
+
+		INT PIN_FLD_REASON_ID {
+
+			SQL_COLUMN = "nw_segment_cat";
+		}
+
+		INT PIN_FLD_REASON_DOMAIN_ID {
+
+			SQL_COLUMN = "nw_segment_sub_cat";
+		}
+
+		STRING MSO_FLD_POPULATION_ID {
+
+			SQL_COLUMN = "pop_id";
+		}
+
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_SERVICE_AREA_CODE {
+
+		SQL_COLUMN = "AREA_ID";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

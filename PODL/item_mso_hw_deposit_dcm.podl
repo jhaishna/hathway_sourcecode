@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_deposit/dcm
+#=======================================
+
+STORABLE CLASS /item/mso_hw_deposit/dcm IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,462 @@
+
+#=======================================
+#  Field MSO_FLD_UPDATE_ADDRESS
+#=======================================
+
+ARRAY MSO_FLD_UPDATE_ADDRESS {
+
+	ID = 41173;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAMEINFO
+#=======================================
+
+ARRAY PIN_FLD_NAMEINFO {
+
+	ID = 156;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ADDRESS_NODE
+#=======================================
+
+STRING MSO_FLD_ADDRESS_NODE {
+
+	ID = 41174;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AREA_CODE
+#=======================================
+
+STRING MSO_FLD_AREA_CODE {
+
+	ID = 40084;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AREA_NAME
+#=======================================
+
+STRING MSO_FLD_AREA_NAME {
+
+	ID = 41116;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BUILDING_NAME
+#=======================================
+
+STRING MSO_FLD_BUILDING_NAME {
+
+	ID = 41119;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LANDMARK
+#=======================================
+
+STRING MSO_FLD_LANDMARK {
+
+	ID = 41120;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LOCATION_NAME
+#=======================================
+
+STRING MSO_FLD_LOCATION_NAME {
+
+	ID = 41117;
+}
+
+
+#=======================================
+#  Field MSO_FLD_STREET_NAME
+#=======================================
+
+STRING MSO_FLD_STREET_NAME {
+
+	ID = 41118;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/update_address
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/update_address {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_UPDATE_ADDRESS {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_NAMEINFO {
+
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING MSO_FLD_ADDRESS_NODE {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING MSO_FLD_AREA_CODE {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING MSO_FLD_AREA_NAME {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING MSO_FLD_BUILDING_NAME {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING MSO_FLD_LANDMARK {
+
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING MSO_FLD_LOCATION_NAME {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING MSO_FLD_STREET_NAME {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_ADDRESS {
+
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_CITY {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_COUNTRY {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_STATE {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_ZIP {
+
+				ORDER = 0;
+				LENGTH = 60;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/update_address
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/update_address IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_UPDATE_ADDRESS {
+
+		SQL_TABLE = "mso_evt_lc_update_address_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		ARRAY PIN_FLD_NAMEINFO {
+
+			SQL_TABLE = "mso_evt_lc_nameinfo_address_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING MSO_FLD_ADDRESS_NODE {
+
+				SQL_COLUMN = "address_node";
+			}
+
+			STRING MSO_FLD_AREA_CODE {
+
+				SQL_COLUMN = "area_code";
+			}
+
+			STRING MSO_FLD_AREA_NAME {
+
+				SQL_COLUMN = "area_name";
+			}
+
+			STRING MSO_FLD_BUILDING_NAME {
+
+				SQL_COLUMN = "building_name";
+			}
+
+			STRING MSO_FLD_LANDMARK {
+
+				SQL_COLUMN = "landmark";
+			}
+
+			STRING MSO_FLD_LOCATION_NAME {
+
+				SQL_COLUMN = "location_name";
+			}
+
+			STRING MSO_FLD_STREET_NAME {
+
+				SQL_COLUMN = "street_name";
+			}
+
+			STRING PIN_FLD_ADDRESS {
+
+				SQL_COLUMN = "address";
+			}
+
+			STRING PIN_FLD_CITY {
+
+				SQL_COLUMN = "city";
+			}
+
+			STRING PIN_FLD_COUNTRY {
+
+				SQL_COLUMN = "country";
+			}
+
+			STRING PIN_FLD_STATE {
+
+				SQL_COLUMN = "state";
+			}
+
+			STRING PIN_FLD_ZIP {
+
+				SQL_COLUMN = "zip";
+			}
+
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

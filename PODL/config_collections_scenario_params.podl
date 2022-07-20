@@ -1,0 +1,345 @@
+
+#=======================================
+#  Field PIN_FLD_PARAMS
+#=======================================
+
+ARRAY PIN_FLD_PARAMS {
+
+	ID = 5775;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLASS_NAME
+#=======================================
+
+STRING PIN_FLD_CLASS_NAME {
+
+	ID = 9885;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_NAME
+#=======================================
+
+STRING PIN_FLD_PARAM_NAME {
+
+	ID = 5776;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VERSION
+#=======================================
+
+INT PIN_FLD_STR_VERSION {
+
+	ID = 1892;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUES
+#=======================================
+
+ARRAY PIN_FLD_VALUES {
+
+	ID = 9501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Storable Class /config/collections/scenario_params
+#=======================================
+
+STORABLE CLASS /config/collections/scenario_params {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This object is used to hold the additional attribute information for scenario assignment/replacement";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PARAMS {
+
+		DESCR = "This array is used to hold the configuration data for the additional parameters that are used to evaluate assignment/replacement of collections scenario. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CLASS_NAME {
+
+			DESCR = "The class object to be referenced. For example: /account. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "The field name in the class. For example: account_type. Make sure the name is same as in the object. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			DESCR = "The name of the parameter.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "String ID of the parameter name. Used for localization.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			DESCR = "The version of the localized string within domain.Used for localization.";
+			ORDER = 3;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "The type of the parameter: STR: 1, INT: 2, ENUM: 3, DECIMAL: 4, TIMESTAMP: 5. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_VALUES {
+
+			DESCR = "The array which will hold the permitted set of values for the particular parameter. ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "The name";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_STRING_ID {
+
+				DESCR = "String ID of the parameter name. Used for localization.";
+				ORDER = 2;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_STR_VERSION {
+
+				DESCR = "The version of the localized string within domain.Used for localization.";
+				ORDER = 3;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				DESCR = "The value";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/collections/scenario_params
+#=======================================
+
+STORABLE CLASS /config/collections/scenario_params IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PARAMS {
+
+		SQL_TABLE = "config_coll_scenario_params_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CLASS_NAME {
+
+			SQL_COLUMN = "class_name";
+		}
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "field_name";
+		}
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			SQL_COLUMN = "param_name";
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "param_string_id";
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			SQL_COLUMN = "string_version";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "param_type";
+		}
+
+		ARRAY PIN_FLD_VALUES {
+
+			SQL_TABLE = "conf_coll_scen_params_values_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+			INT PIN_FLD_STRING_ID {
+
+				SQL_COLUMN = "name_string_id";
+			}
+
+			INT PIN_FLD_STR_VERSION {
+
+				SQL_COLUMN = "string_version";
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "value";
+			}
+
+		}
+
+	}
+
+}
+

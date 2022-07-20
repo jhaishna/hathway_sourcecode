@@ -1,0 +1,2283 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ERROR_CODE
+#=======================================
+
+STRING PIN_FLD_ERROR_CODE {
+
+	ID = 7391;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ERROR_DESCR
+#=======================================
+
+STRING PIN_FLD_ERROR_DESCR {
+
+	ID = 7392;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INPUT_FLIST
+#=======================================
+
+BUF PIN_FLD_INPUT_FLIST {
+
+	ID = 1853;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_ID
+#=======================================
+
+STRING PIN_FLD_ORDER_ID {
+
+	ID = 943;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_OBJ
+#=======================================
+
+POID PIN_FLD_ORDER_OBJ {
+
+	ID = 7500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job
+#=======================================
+
+STORABLE CLASS /mso_mta_job {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ERROR_CODE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ERROR_DESCR {
+
+		ORDER = 0;
+		LENGTH = 150;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	BUF PIN_FLD_INPUT_FLIST {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_OPCODE {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ORDER_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "to identify which user has submitted";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_act_adj
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_act_adj {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mta bulk_act_adj class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_add_mb_gb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_add_mb_gb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_add_plan
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_add_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk mta to add plan";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_bill_adj
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_bill_adj {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso bulk_bill_adj mta class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_bill_hold
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_bill_hold {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_change_bouquet_id
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_change_bouquet_id {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk change bouquet id class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_change_plan
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_change_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk change plan mta class type";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_check_bounce
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_check_bounce {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco1_bmail
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco1_bmail {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco1_osd
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco1_osd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco1_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco1_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco_bmail
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco_bmail {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco_osd
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco_osd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cmts_change
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cmts_change {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk cmts change class type";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_crdr_note
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_crdr_note {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_create_account {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bulk Account Creation";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_crf
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_crf {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_email_pk
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_email_pk {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk email mta for PK";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_extend_validity
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_extend_validity {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_hierarchy
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_hierarchy {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_modify_gst_info
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_modify_gst_info {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_nds_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_nds_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk nds retrack";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_osd_pk
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_osd_pk {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk osd mta for PK";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_reconnection
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_reconnection {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso bulk reconnection utility";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_refund_load
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_refund_load {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_refund_rev_load
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_refund_rev_load {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_remove_plan {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk remove plan mta";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_renew
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_renew {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_repush
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_repush {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk repush order";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk retrack mta for PK";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_set_personnel_bit
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_set_personnel_bit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "set personnel bit ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_suspension
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_suspension {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso bulk bulk_suspension";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_swap_cpe
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_swap_cpe {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_termination
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_termination {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso bulk termination";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_topup
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_topup {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_update_gst_info
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_update_gst_info {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_writeoff_cpe
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_writeoff_cpe {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/catv_preactivation
+#=======================================
+
+STORABLE CLASS /mso_mta_job/catv_preactivation {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/grv_uploader
+#=======================================
+
+STORABLE CLASS /mso_mta_job/grv_uploader {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "STB location update";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/router {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/router/cable {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/router/wifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/stb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job
+#=======================================
+
+STORABLE CLASS /mso_mta_job IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_mta_job_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_ERROR_CODE {
+
+		SQL_COLUMN = "error_code";
+	}
+
+	STRING PIN_FLD_ERROR_DESCR {
+
+		SQL_COLUMN = "error_descr";
+	}
+
+	BUF PIN_FLD_INPUT_FLIST {
+
+		SQL_TABLE = "mso_mta_flist_buf_t";
+		SQL_COLUMN = "input_flist";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	INT PIN_FLD_OPCODE {
+
+		SQL_COLUMN = "opcode";
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		SQL_COLUMN = "task_order_id";
+	}
+
+	POID PIN_FLD_ORDER_OBJ {
+
+		SQL_COLUMN = "task_order_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "Program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "user_id";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/vc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_act_adj
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_act_adj IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_add_mb_gb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_add_mb_gb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_add_plan
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_add_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_bill_adj
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_bill_adj IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_bill_hold
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_bill_hold IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_change_bouquet_id
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_change_bouquet_id IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_change_plan
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_change_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_check_bounce
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_check_bounce IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco1_bmail
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco1_bmail IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco1_osd
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco1_osd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco1_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco1_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco_bmail
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco_bmail IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco_osd
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco_osd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cisco_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cisco_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_cmts_change
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_cmts_change IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_crdr_note
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_crdr_note IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_create_account IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_crf
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_crf IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_email_pk
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_email_pk IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_extend_validity
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_extend_validity IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_hierarchy
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_hierarchy IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_modify_gst_info
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_modify_gst_info IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_nds_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_nds_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_osd_pk
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_osd_pk IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_reconnection
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_reconnection IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_refund_load
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_refund_load IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_refund_rev_load
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_refund_rev_load IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_remove_plan
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_remove_plan IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_renew
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_renew IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_repush
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_repush IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_retrack IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_set_personnel_bit
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_set_personnel_bit IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_suspension
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_suspension IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_swap_cpe
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_swap_cpe IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_termination
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_termination IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_topup
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_topup IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_update_gst_info
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_update_gst_info IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_writeoff_cpe
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_writeoff_cpe IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/catv_preactivation
+#=======================================
+
+STORABLE CLASS /mso_mta_job/catv_preactivation IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/device/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/device/vc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/grv_uploader
+#=======================================
+
+STORABLE CLASS /mso_mta_job/grv_uploader IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/location_update/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/location_update/vc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/modem
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/modem IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/nat
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/router
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/router IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/router/cable
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/router/cable IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/router/wifi
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/router/wifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/stb
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/stb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/state_change/vc
+#=======================================
+
+STORABLE CLASS /mso_mta_job/state_change/vc IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is generated when an /group/sharing/charges object for an account/service is created. The details are in the base subclass. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/group/sharing/charges/create
+#=======================================
+
+STORABLE CLASS /event/group/sharing/charges/create IMPLEMENTATION ORACLE7 {
+
+}
+

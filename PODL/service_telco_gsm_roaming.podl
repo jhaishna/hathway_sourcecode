@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /service/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service telco gsm Roaming Object. Use to track the roaming gsm service for roaming subscribers";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/telco/gsm/roaming
+#=======================================
+
+STORABLE CLASS /service/telco/gsm/roaming IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/wlnd
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+

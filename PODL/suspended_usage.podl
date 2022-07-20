@@ -1,0 +1,859 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTIONS
+#=======================================
+
+ARRAY PIN_FLD_ACTIONS {
+
+	ID = 7717;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_OBJ
+#=======================================
+
+POID PIN_FLD_ACTION_OBJ {
+
+	ID = 8156;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXT_INFO_STR
+#=======================================
+
+STRING PIN_FLD_EXT_INFO_STR {
+
+	ID = 8183;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION_STR
+#=======================================
+
+STRING PIN_FLD_ACTION_STR {
+
+	ID = 8188;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BATCH_ID
+#=======================================
+
+STRING PIN_FLD_BATCH_ID {
+
+	ID = 933;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EDITED
+#=======================================
+
+ENUM PIN_FLD_EDITED {
+
+	ID = 8178;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EDR
+#=======================================
+
+BUF PIN_FLD_EDR {
+
+	ID = 8157;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILENAME
+#=======================================
+
+STRING PIN_FLD_FILENAME {
+
+	ID = 500;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_RECYCLES
+#=======================================
+
+INT PIN_FLD_NUM_RECYCLES {
+
+	ID = 8159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PIPELINE_CATEGORY
+#=======================================
+
+STRING PIN_FLD_PIPELINE_CATEGORY {
+
+	ID = 8185;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PIPELINE_ERROR_CODE
+#=======================================
+
+INT PIN_FLD_PIPELINE_ERROR_CODE {
+
+	ID = 8164;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PIPELINE_NAME
+#=======================================
+
+STRING PIN_FLD_PIPELINE_NAME {
+
+	ID = 8158;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECORD_TYPE
+#=======================================
+
+STRING PIN_FLD_RECORD_TYPE {
+
+	ID = 8168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECYCLE_KEY
+#=======================================
+
+STRING PIN_FLD_RECYCLE_KEY {
+
+	ID = 8184;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECYCLE_OBJ
+#=======================================
+
+POID PIN_FLD_RECYCLE_OBJ {
+
+	ID = 8160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECYCLE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_RECYCLE_T {
+
+	ID = 8161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CODE
+#=======================================
+
+STRING PIN_FLD_SERVICE_CODE {
+
+	ID = 8169;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENDED_FROM_BATCH_ID
+#=======================================
+
+STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+	ID = 9027;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_REASON
+#=======================================
+
+ENUM PIN_FLD_SUSPENSE_REASON {
+
+	ID = 8162;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_SUBREASON
+#=======================================
+
+ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+	ID = 8163;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEST_ERROR_CODE
+#=======================================
+
+INT PIN_FLD_TEST_ERROR_CODE {
+
+	ID = 8167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEST_SUSPENSE_REASON
+#=======================================
+
+ENUM PIN_FLD_TEST_SUSPENSE_REASON {
+
+	ID = 8165;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEST_SUSPENSE_SUBREASON
+#=======================================
+
+ENUM PIN_FLD_TEST_SUSPENSE_SUBREASON {
+
+	ID = 8166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TIMEZONE_OFFSET
+#=======================================
+
+INT PIN_FLD_TIMEZONE_OFFSET {
+
+	ID = 5234;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /suspended_usage
+#=======================================
+
+STORABLE CLASS /suspended_usage {
+
+	SEQ_START = "0";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Data for a suspended EDR.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the /account object which this suspended_usage object is created.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_ACTIONS {
+
+		DESCR = "Actions performed on a suspended EDR.";
+		ORDER = 2;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACTION_OBJ {
+
+			DESCR = "Link to object recording action.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EXT_INFO_STR {
+
+			DESCR = "Flist string indicating the position of the queryable field value in the /suspended_usage object.";
+			ORDER = 2;
+			LENGTH = 512;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_ACTION_STR {
+
+		DESCR = "String for keeping action object string for bulk actions";
+		ORDER = 2;
+		LENGTH = 4000;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BATCH_ID {
+
+		DESCR = "Original batch id related to this suspended_usage object.";
+		ORDER = 2;
+		LENGTH = 80;
+		CREATE = Optional;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_EDITED {
+
+		DESCR = "Flag to indicate if this object has been edited since last recycled or since first created if never been recycled.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	BUF PIN_FLD_EDR {
+
+		DESCR = "EDR represented as an flist string (in compact form).";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_FILENAME {
+
+		DESCR = "Name of input file containing EDR.";
+		ORDER = 2;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_NUM_RECYCLES {
+
+		DESCR = "Number of times EDR has been recycled.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PIPELINE_CATEGORY {
+
+		DESCR = "Pipeline category where the EDR was suspended";
+		ORDER = 2;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_PIPELINE_ERROR_CODE {
+
+		DESCR = "Pipeline error code.";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PIPELINE_NAME {
+
+		DESCR = "Name of pipeline (from pipeline registry) which processed the EDR.";
+		ORDER = 2;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_RECORD_TYPE {
+
+		DESCR = "Record type from EDR.";
+		ORDER = 2;
+		LENGTH = 3;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_RECYCLE_KEY {
+
+		DESCR = "Key for selecting EDRs to be recycled";
+		ORDER = 2;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_RECYCLE_OBJ {
+
+		DESCR = "While recycling, contains link to action object for the recycling.";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_RECYCLE_T {
+
+		DESCR = "Date and time when EDR was last recycled.";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_SERVICE_CODE {
+
+		DESCR = "Service code from EDR";
+		ORDER = 2;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Current state of the suspended EDR.";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+		DESCR = "Batch Id from which EDR was suspended";
+		ORDER = 2;
+		LENGTH = 80;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_SUSPENSE_REASON {
+
+		DESCR = "Code for reason why EDR was suspended.";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+		DESCR = "Code for further qualification of reason EDR was suspended.";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_TEST_ERROR_CODE {
+
+		DESCR = "After test recycling, pipeline error code that would result from actual recycling.";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TEST_SUSPENSE_REASON {
+
+		DESCR = "After test recycling, suspense reason that would result from actual recycling.";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TEST_SUSPENSE_SUBREASON {
+
+		DESCR = "After test recycling, suspense sub-reason that would result from actual recycling.";
+		ORDER = 2;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_TIMEZONE_OFFSET {
+
+		DESCR = "UTC Offset in Seconds";
+		ORDER = 2;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /suspended_usage
+#=======================================
+
+STORABLE CLASS /suspended_usage IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "suspended_usage_t";
+	SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ARRAY PIN_FLD_ACTIONS {
+
+		SQL_TABLE = "susp_usage_actions_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_ACTION_OBJ {
+
+			SQL_COLUMN = "action_obj";
+		}
+
+		STRING PIN_FLD_EXT_INFO_STR {
+
+			SQL_COLUMN = "ext_info_str";
+		}
+
+	}
+
+	STRING PIN_FLD_ACTION_STR {
+
+		SQL_COLUMN = "action_str";
+	}
+
+	STRING PIN_FLD_BATCH_ID {
+
+		SQL_COLUMN = "batch_id";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ENUM PIN_FLD_EDITED {
+
+		SQL_COLUMN = "edited";
+	}
+
+	BUF PIN_FLD_EDR {
+
+		SQL_TABLE = "susp_usage_edr_buf";
+		SQL_COLUMN = "edr";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+	}
+
+	STRING PIN_FLD_FILENAME {
+
+		SQL_COLUMN = "filename";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	INT PIN_FLD_NUM_RECYCLES {
+
+		SQL_COLUMN = "num_recycles";
+	}
+
+	STRING PIN_FLD_PIPELINE_CATEGORY {
+
+		SQL_COLUMN = "pipeline_category";
+	}
+
+	INT PIN_FLD_PIPELINE_ERROR_CODE {
+
+		SQL_COLUMN = "error_code";
+	}
+
+	STRING PIN_FLD_PIPELINE_NAME {
+
+		SQL_COLUMN = "pipeline_name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_RECORD_TYPE {
+
+		SQL_COLUMN = "record_type";
+	}
+
+	STRING PIN_FLD_RECYCLE_KEY {
+
+		SQL_COLUMN = "recycle_key";
+	}
+
+	POID PIN_FLD_RECYCLE_OBJ {
+
+		SQL_COLUMN = "recycle_obj";
+	}
+
+	TIMESTAMP PIN_FLD_RECYCLE_T {
+
+		SQL_COLUMN = "recycle_t";
+	}
+
+	STRING PIN_FLD_SERVICE_CODE {
+
+		SQL_COLUMN = "service_code";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	STRING PIN_FLD_SUSPENDED_FROM_BATCH_ID {
+
+		SQL_COLUMN = "suspended_from_batch_id";
+	}
+
+	ENUM PIN_FLD_SUSPENSE_REASON {
+
+		SQL_COLUMN = "suspense_reason";
+	}
+
+	ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+		SQL_COLUMN = "suspense_subreason";
+	}
+
+	INT PIN_FLD_TEST_ERROR_CODE {
+
+		SQL_COLUMN = "test_error_code";
+	}
+
+	ENUM PIN_FLD_TEST_SUSPENSE_REASON {
+
+		SQL_COLUMN = "test_susp_reason";
+	}
+
+	ENUM PIN_FLD_TEST_SUSPENSE_SUBREASON {
+
+		SQL_COLUMN = "test_susp_subreason";
+	}
+
+	INT PIN_FLD_TIMEZONE_OFFSET {
+
+		SQL_COLUMN = "timezone_offset";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

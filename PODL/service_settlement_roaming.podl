@@ -1,0 +1,66 @@
+
+#=======================================
+#  Storable Class /service/settlement/roaming
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service Roaming Settlement Object. Use to track the settlement info for the roaming partners";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/incollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/incollect {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service Roaming Settlement (Incollect) Object. Use to track the settlement info for the roaming partners (incollect usage)";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/outcollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/outcollect {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Service Roaming Settlement (Outcollect) Object. Use to track the settlement info for the roaming partners (OutCollect usage)";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/incollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/incollect IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /service/settlement/roaming/outcollect
+#=======================================
+
+STORABLE CLASS /service/settlement/roaming/outcollect IMPLEMENTATION ORACLE7 {
+
+}
+

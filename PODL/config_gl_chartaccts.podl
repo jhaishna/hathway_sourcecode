@@ -1,0 +1,262 @@
+
+#=======================================
+#  Field PIN_FLD_GL_CHARTACCTS
+#=======================================
+
+ARRAY PIN_FLD_GL_CHARTACCTS {
+
+	ID = 1834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COA_ID
+#=======================================
+
+STRING PIN_FLD_COA_ID {
+
+	ID = 1833;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COA_NAME
+#=======================================
+
+STRING PIN_FLD_COA_NAME {
+
+	ID = 1835;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_COA_ACCTS
+#=======================================
+
+ARRAY PIN_FLD_GL_COA_ACCTS {
+
+	ID = 1836;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_CODE
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_CODE {
+
+	ID = 1837;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /config/gl_chartaccts
+#=======================================
+
+STORABLE CLASS /config/gl_chartaccts {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A single configuration object of this class defines the General Ledger (GL) Chart of Accounts (COA) used in the  customer's financial system. This object contains information  such as the accounts used in the COA, the type and the  status of these accounts. This information is used to  validate the accounts defined each GLID in a given  gl_segment. The /config/gl_chartaccts object is loaded  using the load_pin_gl_chartaccts utility. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GL_CHARTACCTS {
+
+		DESCR = "Array of valid gl_chartaccts in the system. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_COA_ID {
+
+			DESCR = "Chart Of Accounts ID, for this COA.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_COA_NAME {
+
+			DESCR = "Name of the GL Chart Of Accounts.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_GL_COA_ACCTS {
+
+			DESCR = "GL accounts used by the customer's used for validation.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACCOUNT_CODE {
+
+				DESCR = "Actual account code used by the customer for tracking Gl impacts.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_DESCR {
+
+				DESCR = "Description of the GL acct.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_STATUS {
+
+				DESCR = "Denotes whether GL account is active(1) or inactive(0).";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Type field allows you to specify what kind of account it is - asset(16),expense(1),revenue(8),liability(2),equity(4).";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/gl_chartaccts
+#=======================================
+
+STORABLE CLASS /config/gl_chartaccts IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GL_CHARTACCTS {
+
+		SQL_TABLE = "config_gl_chartaccts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_COA_ID {
+
+			SQL_COLUMN = "coa_id";
+		}
+
+		STRING PIN_FLD_COA_NAME {
+
+			SQL_COLUMN = "coa_name";
+		}
+
+		ARRAY PIN_FLD_GL_COA_ACCTS {
+
+			SQL_TABLE = "config_gl_coa_accts_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACCOUNT_CODE {
+
+				SQL_COLUMN = "acct_code";
+			}
+
+			STRING PIN_FLD_DESCR {
+
+				SQL_COLUMN = "descr";
+			}
+
+			ENUM PIN_FLD_STATUS {
+
+				SQL_COLUMN = "status";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+	}
+
+}
+

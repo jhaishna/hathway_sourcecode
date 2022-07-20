@@ -1,0 +1,182 @@
+
+#=======================================
+#  Field PIN_FLD_PAIR
+#=======================================
+
+ARRAY PIN_FLD_PAIR {
+
+	ID = 432;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAIR_KEY
+#=======================================
+
+STRING PIN_FLD_PAIR_KEY {
+
+	ID = 433;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAIR_VALUE
+#=======================================
+
+STRING PIN_FLD_PAIR_VALUE {
+
+	ID = 9352;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_TEMPLATE_ARRAY {
+
+	ID = 9351;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_OBJ
+#=======================================
+
+POID PIN_FLD_TEMPLATE_OBJ {
+
+	ID = 7705;
+}
+
+
+#=======================================
+#  Storable Class /config/business_profile
+#=======================================
+
+STORABLE CLASS /config/business_profile {
+
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "This new configuration object is used to store a complete description of all the iscript rules/templates in a specific business profile";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAIR {
+
+		DESCR = "Key value pair array used to store instance data for business profiles";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAIR_KEY {
+
+			DESCR = "Key used for value lookup.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PAIR_VALUE {
+
+			DESCR = "Value data stored in a string format.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_TEMPLATE_ARRAY {
+
+		DESCR = "Array containing pointers to each template required to validate the profile.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_TEMPLATE_OBJ {
+
+			DESCR = "Template object (of type /config/template/billinfo or /config/template/service /config/template/balance_group).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/business_profile
+#=======================================
+
+STORABLE CLASS /config/business_profile IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAIR {
+
+		SQL_TABLE = "config_bus_profile_key_value_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PAIR_KEY {
+
+			SQL_COLUMN = "pair_key";
+		}
+
+		STRING PIN_FLD_PAIR_VALUE {
+
+			SQL_COLUMN = "pair_value";
+		}
+
+	}
+
+	ARRAY PIN_FLD_TEMPLATE_ARRAY {
+
+		SQL_TABLE = "config_bus_profile_template_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_TEMPLATE_OBJ {
+
+			SQL_COLUMN = "template_obj";
+		}
+
+	}
+
+}
+

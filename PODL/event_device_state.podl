@@ -1,0 +1,120 @@
+
+#=======================================
+#  Field PIN_FLD_STATE_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_STATE_INFO {
+
+	ID = 5568;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEW_STATE
+#=======================================
+
+INT PIN_FLD_NEW_STATE {
+
+	ID = 5561;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_STATE
+#=======================================
+
+INT PIN_FLD_OLD_STATE {
+
+	ID = 5560;
+}
+
+
+#=======================================
+#  Storable Class /event/device/state
+#=======================================
+
+STORABLE CLASS /event/device/state {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to indicate changing device state event.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_STATE_INFO {
+
+		DESCR = "Substruct that hold the state transition event. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_NEW_STATE {
+
+			DESCR = "The new state after the transition.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OLD_STATE {
+
+			DESCR = "The old state before the transition.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/device/state
+#=======================================
+
+STORABLE CLASS /event/device/state IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_STATE_INFO {
+
+		SQL_TABLE = "event_device_state_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_NEW_STATE {
+
+			SQL_COLUMN = "device_new_state";
+		}
+
+		INT PIN_FLD_OLD_STATE {
+
+			SQL_COLUMN = "device_old_state";
+		}
+
+	}
+
+}
+

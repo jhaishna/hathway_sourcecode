@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /mso_task/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_create_account {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bulk Account Creation";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_create_account
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_create_account IMPLEMENTATION ORACLE7 {
+
+}
+

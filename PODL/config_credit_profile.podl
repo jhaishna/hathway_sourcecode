@@ -1,0 +1,172 @@
+
+#=======================================
+#  Field PIN_FLD_PROFILES
+#=======================================
+
+ARRAY PIN_FLD_PROFILES {
+
+	ID = 110;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_FLOOR
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+	ID = 833;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_LIMIT
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+	ID = 200;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_THRESHOLDS
+#=======================================
+
+INT PIN_FLD_CREDIT_THRESHOLDS {
+
+	ID = 832;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_THRESHOLDS_FIXED
+#=======================================
+
+STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+	ID = 871;
+}
+
+
+#=======================================
+#  Storable Class /config/credit_profile
+#=======================================
+
+STORABLE CLASS /config/credit_profile {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Global";
+	DESCR = "The credit_profile is the collection of all existing credit limits, credit floors, and credit thresholds combinations.  Credit profiles are stored in this config object and referenced from each balance group in order to save memory space for balances.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROFILES {
+
+		DESCR = "The credit profiles array. Holds all credit limits, credit floors, and credit thresholds for all resources in the whole system.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+			DESCR = "Baseline for calculating percentage for threshold triggers. Credit limit minus credit floor is 100% of measured range. Credit floor does NOT enforce any limits on current balance.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+			DESCR = "Limit for this resource. Current balance cannot exceed this limit unless affected by a 'limit override' rate or manually adjusted by a CSR. During normal rating, resource will only be consumed until credit limit is reached.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CREDIT_THRESHOLDS {
+
+			DESCR = "Bit flags for triggering when resource balance crosses a boundary when increasing or decreasing in value. Bits 0 (LSB) thru 20 represent 5% increments of the range from credit_floor to credit_limit. A notification event /event/notification/threshold is generatedwhen the threshold is crossed by an increasing balance. An /event/notification/threshold_below notification event is generated when the threshold is crossed by a decreasing balance.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+			DESCR = "List of separated threshold amounts (in ascending order) for triggering when the resource balance crosses a boundary when increasing or decreasing in value. The delimiter is defined by the first character in the string.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/credit_profile
+#=======================================
+
+STORABLE CLASS /config/credit_profile IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROFILES {
+
+		SQL_TABLE = "cfg_credit_profile_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+			SQL_COLUMN = "credit_floor";
+		}
+
+		DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+			SQL_COLUMN = "credit_limit";
+		}
+
+		INT PIN_FLD_CREDIT_THRESHOLDS {
+
+			SQL_COLUMN = "credit_thresholds";
+		}
+
+		STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+			SQL_COLUMN = "credit_thresholds_fixed";
+		}
+
+	}
+
+}
+

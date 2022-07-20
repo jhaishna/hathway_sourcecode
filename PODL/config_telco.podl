@@ -1,0 +1,1617 @@
+
+#=======================================
+#  Field PIN_FLD_PROD_PROVISIONING_TAGS
+#=======================================
+
+ARRAY PIN_FLD_PROD_PROVISIONING_TAGS {
+
+	ID = 273;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DATE_CHANGE_IMPACT
+#=======================================
+
+ENUM PIN_FLD_DATE_CHANGE_IMPACT {
+
+	ID = 6405;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXT_RA
+#=======================================
+
+ARRAY PIN_FLD_EXT_RA {
+
+	ID = 6410;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LABEL
+#=======================================
+
+STRING PIN_FLD_LABEL {
+
+	ID = 601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE_DESC_ID
+#=======================================
+
+INT PIN_FLD_LOCALE_DESC_ID {
+
+	ID = 2391;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEED_PROVISIONING
+#=======================================
+
+ENUM PIN_FLD_NEED_PROVISIONING {
+
+	ID = 6413;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVISIONING_TAG
+#=======================================
+
+STRING PIN_FLD_PROVISIONING_TAG {
+
+	ID = 272;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_EXTENSIONS
+#=======================================
+
+ARRAY PIN_FLD_SERVICE_EXTENSIONS {
+
+	ID = 8003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TELCO_FEATURES
+#=======================================
+
+ARRAY PIN_FLD_TELCO_FEATURES {
+
+	ID = 8001;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICES
+#=======================================
+
+ARRAY PIN_FLD_DEVICES {
+
+	ID = 5558;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION
+#=======================================
+
+STRING PIN_FLD_ACTION {
+
+	ID = 83;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVISIONING_INFO
+#=======================================
+
+ARRAY PIN_FLD_PROVISIONING_INFO {
+
+	ID = 7376;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICES
+#=======================================
+
+ARRAY PIN_FLD_SERVICES {
+
+	ID = 122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJ_ELEM
+#=======================================
+
+ARRAY PIN_FLD_OBJ_ELEM {
+
+	ID = 545;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NUM
+#=======================================
+
+ENUM PIN_FLD_FIELD_NUM {
+
+	ID = 89;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_TYPE
+#=======================================
+
+INT PIN_FLD_FIELD_TYPE {
+
+	ID = 509;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_ORDER_STATES
+#=======================================
+
+ARRAY PIN_FLD_SERVICE_ORDER_STATES {
+
+	ID = 7456;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_STATES
+#=======================================
+
+ARRAY PIN_FLD_NEXT_STATES {
+
+	ID = 5556;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_ID
+#=======================================
+
+INT PIN_FLD_STATE_ID {
+
+	ID = 5552;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE_TYPE
+#=======================================
+
+ENUM PIN_FLD_STATE_TYPE {
+
+	ID = 5555;
+}
+
+
+#=======================================
+#  Storable Class /config/telco
+#=======================================
+
+STORABLE CLASS /config/telco {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This configuration class is a base class that maps provisioning tag names and values for all the /service/telco storable sub classes.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROD_PROVISIONING_TAGS {
+
+		DESCR = "Array of Provisioning tags.  Each element in this array represents a different provisioning tag.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DATE_CHANGE_IMPACT {
+
+			DESCR = "Indicates if product change should trigger provisioning or not";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description of Provisioning Tag";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_EXT_RA {
+
+			DESCR = "Array of ERA name for the current provisioning tag ";
+			ORDER = 4;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_LABEL {
+
+				DESCR = "ERA label name which stores ERA type ";
+				ORDER = 4;
+				LENGTH = 64;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_LOCALE_DESC_ID {
+
+				DESCR = "String ID for description of the extended rating attribute feature. ";
+				ORDER = 3;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "ERA name, for example F&F.. Integrate DB key ";
+				ORDER = 0;
+				LENGTH = 64;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_NEED_PROVISIONING {
+
+				DESCR = "Indicates if this ERA has a provisioning impact or not";
+				ORDER = 2;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_STRING_ID {
+
+				DESCR = "String ID for ERA name. Key to local display name ";
+				ORDER = 1;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_PROVISIONING_TAG {
+
+			DESCR = "Provisioning Tag name";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_SERVICE_EXTENSIONS {
+
+			DESCR = "Array of Service Extenstions.  For example, It can be used to put GSM Bearer Service in case of GSM Service. ";
+			ORDER = 5;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Service Extension Name";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				DESCR = "Service Extension Value";
+				ORDER = 1;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ARRAY PIN_FLD_TELCO_FEATURES {
+
+			DESCR = "List of features for the current product";
+			ORDER = 3;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Feature name, ie CFU, CB, etc,.";
+				ORDER = 0;
+				LENGTH = 64;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/broadband
+#=======================================
+
+STORABLE CLASS /config/telco/broadband {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Type only class for  Broadband";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/gsm {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/data {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/data storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/fax {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/fax storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/sms {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/sms storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/telephony {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This configuration class maps provisioning tag names and values for the /service/telco/gsm/telephony storable sub classes.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/provisioning
+#=======================================
+
+STORABLE CLASS /config/telco/provisioning {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores information that maps relationships between a service or a device and a provisioning service order.Objects in this class determine which fields are read from the /service/telco and /device objects when a service order is created. Only one object of this type exists in a Portal database.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DEVICES {
+
+		DESCR = "Each array element specifies the provisioning configuration for a type of service order and a device status type";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			DESCR = "The type of provisioning action/service order. The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate)  ";
+			ORDER = 0;
+			LENGTH = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Link to device field list Array of object describing the field needed in the service order from the device object";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PROVISIONING_INFO {
+
+			DESCR = "Each array element specifies the provisioning configuration of a device for a type of service order and a device type";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACTION {
+
+				DESCR = "The type of provisioning action to be included in the SO for this device. The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate), I(Ignore), C(Change)";
+				ORDER = 0;
+				LENGTH = 2;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_OBJECT {
+
+				DESCR = "Link to device field list Array of object describing the field needed in the service order from this device object";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_TYPE_STR {
+
+				DESCR = "The device type: ";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ARRAY PIN_FLD_SERVICES {
+
+			DESCR = "Specifies the provisioning configuration of a service for a type of service order and a device type";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACTION {
+
+				DESCR = "The type of provisioning action The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate), I(Ignore), C(Change) ";
+				ORDER = 0;
+				LENGTH = 2;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_OBJECT {
+
+				DESCR = "Link to service field list Array of object describing the field needed in the service order from the service object";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_TYPE_STR {
+
+				DESCR = "The service type:";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "The device status that triggered the SO";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			DESCR = "The device type, for example: /device/sim";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		DESCR = "Each array element specifies the provisioning configuration for a type of service order and a service type";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			DESCR = "The type of provisioning action/service order. The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate)  ";
+			ORDER = 0;
+			LENGTH = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_DEVICES {
+
+			DESCR = "Each array element specifies the provisioning configuration of a device for a type of service order and a service type";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACTION {
+
+				DESCR = "The type of provisioning action to be included in the SO for this device. The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate), I(Ignore), C(Change)";
+				ORDER = 0;
+				LENGTH = 2;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			POID PIN_FLD_OBJECT {
+
+				DESCR = "Link to device field list Array of object describing the field needed in the service order from this device object";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_TYPE_STR {
+
+				DESCR = "The device type: ";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Link to service field list Array of object describing the field needed in the service order from the service object";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			DESCR = "The service type: ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/provisioning/fieldlist
+#=======================================
+
+STORABLE CLASS /config/telco/provisioning/fieldlist {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Specifies fields to be included in service order from  /service/telco and /device objects.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OBJ_ELEM {
+
+		DESCR = "Array of object describing some fields  of an object";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			DESCR = "In case of array the element if -1 = all element id";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_FIELD_NUM {
+
+			DESCR = "The field number as in pin_flds.h.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FIELD_TYPE {
+
+			DESCR = "The type of field: Array, substruct, other.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "The field name in the SO";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Link to field list containing an Array or a substruct Link to a config.fieldlist object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "The possible field hard coded value.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Base class for specifying the valid state transitions and the policy opcodes to call for different state transition.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_ORDER_STATES {
+
+		DESCR = "Array of service order states. Each element describe the one state and all the states can be transited to. Opcode can be defined with each transition. That opcode will be called as a policy during the transition. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "State policy opcode flag. 0 by default.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_NEXT_STATES {
+
+			DESCR = "Array of next states can be transited from this state, including the opcode definition. There could be multiple array elements with the same next state ID to support calling multiple opcodes for the same transition. ";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_FLAGS {
+
+				DESCR = "Transition policy opcode flag. 0 by default.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_OPCODE {
+
+				DESCR = "Transition policy opcode number. This opcode is called before the state transition is done. ";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_STATE_ID {
+
+				DESCR = "The id of the end state of the transition. ";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "State policy opcode number. This policy will be executed after the transition is done.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			DESCR = "The id of the state. Out of the box values can be NEW(1), READY(2), PROCESSING(3), COMPLETED(4), FAILED(5). ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATE_TYPE {
+
+			DESCR = "The type of this state. All types are defined in pin_service_order.h file. Values can be RAW(0), INIT(1), NORMAL(2), END(3). ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/data {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/data.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/fax {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/fax.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/sms {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/sms.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/telephony {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/telephony.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco
+#=======================================
+
+STORABLE CLASS /config/telco IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROD_PROVISIONING_TAGS {
+
+		SQL_TABLE = "config_telco_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DATE_CHANGE_IMPACT {
+
+			SQL_COLUMN = "date_change_impact";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		ARRAY PIN_FLD_EXT_RA {
+
+			SQL_TABLE = "config_telco_ext_ra_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_LABEL {
+
+				SQL_COLUMN = "label";
+			}
+
+			INT PIN_FLD_LOCALE_DESC_ID {
+
+				SQL_COLUMN = "locale_desc_id";
+			}
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+			ENUM PIN_FLD_NEED_PROVISIONING {
+
+				SQL_COLUMN = "need_provisioning";
+			}
+
+			INT PIN_FLD_STRING_ID {
+
+				SQL_COLUMN = "string_id";
+			}
+
+		}
+
+		STRING PIN_FLD_PROVISIONING_TAG {
+
+			SQL_COLUMN = "provisioning_tag";
+		}
+
+		ARRAY PIN_FLD_SERVICE_EXTENSIONS {
+
+			SQL_TABLE = "config_telco_serv_extn_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "value";
+			}
+
+		}
+
+		ARRAY PIN_FLD_TELCO_FEATURES {
+
+			SQL_TABLE = "config_telco_features_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/broadband
+#=======================================
+
+STORABLE CLASS /config/telco/broadband IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/gsm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/provisioning
+#=======================================
+
+STORABLE CLASS /config/telco/provisioning IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DEVICES {
+
+		SQL_TABLE = "cfg_tlc_prov_dev_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			SQL_COLUMN = "action";
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+		ARRAY PIN_FLD_PROVISIONING_INFO {
+
+			SQL_TABLE = "cfg_tlc_prov_dev_prov_info_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACTION {
+
+				SQL_COLUMN = "action";
+			}
+
+			POID PIN_FLD_OBJECT {
+
+				SQL_COLUMN = "object";
+			}
+
+			STRING PIN_FLD_TYPE_STR {
+
+				SQL_COLUMN = "type_str";
+			}
+
+		}
+
+		ARRAY PIN_FLD_SERVICES {
+
+			SQL_TABLE = "cfg_tlc_prov_dev_serv_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACTION {
+
+				SQL_COLUMN = "action";
+			}
+
+			POID PIN_FLD_OBJECT {
+
+				SQL_COLUMN = "object";
+			}
+
+			STRING PIN_FLD_TYPE_STR {
+
+				SQL_COLUMN = "type_str";
+			}
+
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			SQL_COLUMN = "type_str";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		SQL_TABLE = "cfg_tlc_prov_serv_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			SQL_COLUMN = "action";
+		}
+
+		ARRAY PIN_FLD_DEVICES {
+
+			SQL_TABLE = "cfg_tlc_prov_serv_dev_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACTION {
+
+				SQL_COLUMN = "action";
+			}
+
+			POID PIN_FLD_OBJECT {
+
+				SQL_COLUMN = "object";
+			}
+
+			STRING PIN_FLD_TYPE_STR {
+
+				SQL_COLUMN = "type_str";
+			}
+
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			SQL_COLUMN = "type_str";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/provisioning/fieldlist
+#=======================================
+
+STORABLE CLASS /config/telco/provisioning/fieldlist IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OBJ_ELEM {
+
+		SQL_TABLE = "cfg_tlc_prov_flist_obj_elem_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			SQL_COLUMN = "element_id";
+		}
+
+		ENUM PIN_FLD_FIELD_NUM {
+
+			SQL_COLUMN = "field_num";
+		}
+
+		INT PIN_FLD_FIELD_TYPE {
+
+			SQL_COLUMN = "field_type";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_ORDER_STATES {
+
+		SQL_TABLE = "cfg_tlc_svc_order_stts_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		ARRAY PIN_FLD_NEXT_STATES {
+
+			SQL_TABLE = "cfg_tlc_svc_order_nxt_stts_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_FLAGS {
+
+				SQL_COLUMN = "flags";
+			}
+
+			INT PIN_FLD_OPCODE {
+
+				SQL_COLUMN = "opcode";
+			}
+
+			INT PIN_FLD_STATE_ID {
+
+				SQL_COLUMN = "state_id";
+			}
+
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		INT PIN_FLD_STATE_ID {
+
+			SQL_COLUMN = "state_id";
+		}
+
+		ENUM PIN_FLD_STATE_TYPE {
+
+			SQL_COLUMN = "state_type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/data
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/fax
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/telephony
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

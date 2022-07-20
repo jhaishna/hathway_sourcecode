@@ -1,0 +1,178 @@
+
+#=======================================
+#  Field PIN_FLD_REMIT_FLDS
+#=======================================
+
+ARRAY PIN_FLD_REMIT_FLDS {
+
+	ID = 1020;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_BASE_TYPE
+#=======================================
+
+STRING PIN_FLD_REMIT_BASE_TYPE {
+
+	ID = 1024;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_CRITERIA
+#=======================================
+
+STRING PIN_FLD_REMIT_CRITERIA {
+
+	ID = 1021;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_FLD_NO
+#=======================================
+
+INT PIN_FLD_REMIT_FLD_NO {
+
+	ID = 1032;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REMIT_SUBSTRUCT_NO
+#=======================================
+
+INT PIN_FLD_REMIT_SUBSTRUCT_NO {
+
+	ID = 1031;
+}
+
+
+#=======================================
+#  Storable Class /config/remittance_flds
+#=======================================
+
+STORABLE CLASS /config/remittance_flds {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to define the remittance fields/attributes to be used in specifying the remittance criteria. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_REMIT_FLDS {
+
+		LABEL = "Remittance fields definition";
+		DESCR = "Array of fields to be used in remittance. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_REMIT_BASE_TYPE {
+
+			LABEL = "REMIT_BASE_TYPE";
+			DESCR = "The base type for the field defined in the remittance criteria. As of now these are the only values supported - RESERVED, EVENT, ACCOUNT and PROFILE.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_REMIT_CRITERIA {
+
+			LABEL = "REMIT_CRITERIA";
+			DESCR = "The remittance criteria string.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_REMIT_FLD_NO {
+
+			LABEL = "REMIT_FLD";
+			DESCR = "The actual field as it exists in the data dictionary. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_REMIT_SUBSTRUCT_NO {
+
+			LABEL = "REMIT_SUBSTRUCT";
+			DESCR = "The number of the substruct within which the attribute is located. This has to be a valid substruct defined in the data dictionary. NONE if it is not a substruct, arrays are not supported.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/remittance_flds
+#=======================================
+
+STORABLE CLASS /config/remittance_flds IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_REMIT_FLDS {
+
+		SQL_TABLE = "config_remittance_flds_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_REMIT_BASE_TYPE {
+
+			SQL_COLUMN = "remit_base_type";
+		}
+
+		STRING PIN_FLD_REMIT_CRITERIA {
+
+			SQL_COLUMN = "remit_criteria";
+		}
+
+		INT PIN_FLD_REMIT_FLD_NO {
+
+			SQL_COLUMN = "remit_fld";
+		}
+
+		INT PIN_FLD_REMIT_SUBSTRUCT_NO {
+
+			SQL_COLUMN = "remit_substruct";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,8 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "KA_SP_RESIDENTIAL_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+XX
+xop 1 0 1

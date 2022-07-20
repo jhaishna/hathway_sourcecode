@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/lcupdate
+#=======================================
+
+STORABLE CLASS /event/billing/lcupdate {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event represents event associated with linecounter update . ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/lcupdate
+#=======================================
+
+STORABLE CLASS /event/billing/lcupdate IMPLEMENTATION ORACLE7 {
+
+}
+

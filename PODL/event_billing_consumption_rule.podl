@@ -1,0 +1,120 @@
+
+#=======================================
+#  Field PIN_FLD_RULES
+#=======================================
+
+ARRAY PIN_FLD_RULES {
+
+	ID = 5779;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONSUMPTION_RULE
+#=======================================
+
+ENUM PIN_FLD_CONSUMPTION_RULE {
+
+	ID = 7770;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ELEMENT_ID
+#=======================================
+
+INT PIN_FLD_ELEMENT_ID {
+
+	ID = 65;
+}
+
+
+#=======================================
+#  Storable Class /event/billing/consumption_rule
+#=======================================
+
+STORABLE CLASS /event/billing/consumption_rule {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the account consumption rule.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RULES {
+
+		DESCR = "Array describing the consumption rule.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_CONSUMPTION_RULE {
+
+			DESCR = "Consumption Rule value associated with a resource.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			DESCR = "Resource id for which the consumption rule is being set.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/consumption_rule
+#=======================================
+
+STORABLE CLASS /event/billing/consumption_rule IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RULES {
+
+		SQL_TABLE = "event_billing_con_rule_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_CONSUMPTION_RULE {
+
+			SQL_COLUMN = "consumption_rule";
+		}
+
+		INT PIN_FLD_ELEMENT_ID {
+
+			SQL_COLUMN = "element_id";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,563 @@
+
+#=======================================
+#  Field MSO_FLD_IP_END_RANGE
+#=======================================
+
+STRING MSO_FLD_IP_END_RANGE {
+
+	ID = 42210;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_POOL_NAME
+#=======================================
+
+STRING MSO_FLD_IP_POOL_NAME {
+
+	ID = 42206;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_START_RANGE
+#=======================================
+
+STRING MSO_FLD_IP_START_RANGE {
+
+	ID = 42209;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_VERSION
+#=======================================
+
+STRING MSO_FLD_IP_VERSION {
+
+	ID = 42205;
+}
+
+
+#=======================================
+#  Field MSO_FLD_REF_NO
+#=======================================
+
+STRING MSO_FLD_REF_NO {
+
+	ID = 42208;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DATA_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_DATA_ARRAY {
+
+	ID = 3006;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_DATE
+#=======================================
+
+TIMESTAMP PIN_FLD_ORDER_DATE {
+
+	ID = 6053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORDER_ID
+#=======================================
+
+STRING PIN_FLD_ORDER_ID {
+
+	ID = 943;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_ip_order
+#=======================================
+
+STORABLE CLASS /mso_ip_order {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "IP Order Class";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_IP_END_RANGE {
+
+		DESCR = "End range of the IP";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_IP_POOL_NAME {
+
+		DESCR = "IP Pool Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_IP_START_RANGE {
+
+		DESCR = "Start range of the IP ";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_IP_VERSION {
+
+		DESCR = "IP version";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_REF_NO {
+
+		DESCR = "Order reference no";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_DATA_ARRAY {
+
+		DESCR = "IP range details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_IP_END_RANGE {
+
+			DESCR = "End range of the IP";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_IP_START_RANGE {
+
+			DESCR = "Start range of the IP ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_IP_VERSION {
+
+			DESCR = "IP version";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ORDER_DATE {
+
+			DESCR = "IP creation date";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_ORDER_DATE {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		DESCR = "Order ID";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_ip_order/ip
+#=======================================
+
+STORABLE CLASS /mso_ip_order/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_ip_order/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_ip_order/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_ip_order/ip/static
+#=======================================
+
+STORABLE CLASS /mso_ip_order/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_ip_order
+#=======================================
+
+STORABLE CLASS /mso_ip_order IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "MSO_BCC_IP_ORDER_T";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_IP_END_RANGE {
+
+		SQL_COLUMN = "end_range";
+	}
+
+	STRING MSO_FLD_IP_POOL_NAME {
+
+		SQL_COLUMN = "IP_POOL_NAME";
+	}
+
+	STRING MSO_FLD_IP_START_RANGE {
+
+		SQL_COLUMN = "start_range";
+	}
+
+	STRING MSO_FLD_IP_VERSION {
+
+		SQL_COLUMN = "ip_version";
+	}
+
+	STRING MSO_FLD_REF_NO {
+
+		SQL_COLUMN = "ref_no";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ARRAY PIN_FLD_DATA_ARRAY {
+
+		SQL_TABLE = "mso_ip_range_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_IP_END_RANGE {
+
+			SQL_COLUMN = "ip_end_range";
+		}
+
+		STRING MSO_FLD_IP_START_RANGE {
+
+			SQL_COLUMN = "ip_start_range";
+		}
+
+		STRING MSO_FLD_IP_VERSION {
+
+			SQL_COLUMN = "ip_version";
+		}
+
+		TIMESTAMP PIN_FLD_ORDER_DATE {
+
+			SQL_COLUMN = "order_date";
+		}
+
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	TIMESTAMP PIN_FLD_ORDER_DATE {
+
+		SQL_COLUMN = "order_date";
+	}
+
+	STRING PIN_FLD_ORDER_ID {
+
+		SQL_COLUMN = "order_id";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_ip_order/ip
+#=======================================
+
+STORABLE CLASS /mso_ip_order/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_ip_order/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_ip_order/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_ip_order/ip/static
+#=======================================
+
+STORABLE CLASS /mso_ip_order/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+

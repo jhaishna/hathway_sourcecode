@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dpop {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward popular package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dpop IMPLEMENTATION ORACLE7 {
+
+}
+

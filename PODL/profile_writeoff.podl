@@ -1,0 +1,119 @@
+
+#=======================================
+#  Field PIN_FLD_WRITEOFF_INFO
+#=======================================
+
+ARRAY PIN_FLD_WRITEOFF_INFO {
+
+	ID = 2431;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Storable Class /profile/writeoff
+#=======================================
+
+STORABLE CLASS /profile/writeoff {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Profile containing additional write-off information.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WRITEOFF_INFO {
+
+		DESCR = "Array containing additional write-off information. Only one array element will be present. The array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Flag determining the writeoff state on account. Written-off (1), Write-off-reversed (2).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			DESCR = "Item object of Write-off";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/writeoff
+#=======================================
+
+STORABLE CLASS /profile/writeoff IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_WRITEOFF_INFO {
+
+		SQL_TABLE = "profile_writeoff_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			SQL_COLUMN = "item_obj";
+		}
+
+	}
+
+}
+

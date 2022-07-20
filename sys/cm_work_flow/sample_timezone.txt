@@ -1,0 +1,84 @@
+#************************************************************************
+# This is the sample file for adding custom time zones
+#
+# Each entry in this file will denote one time zone.
+# User can add multiple time zones by making multiple entries in this
+# file
+# Each time zone entry will have the following 13 fields.
+# tzone,rawOffset,startMonth,startDay,startDayOfWeek,startTime,endMonth,endDay,endDayOfWeek,endTime,dstSavings,startMode,endMode 
+# Note on the fields
+# Field       	Data Type        			Description
+#-------------------------------------------------------------------------
+# tzone       	string         	time zone name 
+# rawOffset	integer        	Number of seconds ahead or behind GMT(+/-)
+#				positive values indicate ahead of GMT
+#                              	-ve values indicate behind GMT 	
+# startMonth  	integer        	Start month when Day light Saving starts 
+#                              	If DST is not observed value must be set to 0 
+#                              	Possible values for the months:
+#        			JANUARY  = 1
+#        			FEBRUARY = 2
+# 				MARCH    = 3
+#        			APRIL    = 4
+#				MAY      = 5
+#				JUNE     = 6
+#				JULY     = 7
+#				AUGUST   = 8
+#				SEPTEMBER = 9
+#				OCTOBER  = 10
+#				NOVEMBER = 11
+#				DECEMBER = 12
+# startDay	integer		This signifies whether Day light saving 
+#				time(DST) is observed or not.
+#				The day from which DST is observed 
+#                              	Possible values are 
+#                              	0 - If DST is not observed
+# startDayOfWeek integer	Start Day of week when DST starts.
+#				If DST is not observed value must be set to 0
+#				Possible values for the Days of week.
+#				SUNDAY    = 1
+#				MONDAY    = 2
+#				TUESDAY   = 3
+#				WEDNESDAY = 4
+#				THURSDAY  = 5
+#				FRIDAY    = 6
+#				SATURDAY  = 7
+# startTime	integer		Start Time when DST starts.(Values in seconds).
+#				If DST is not observed value must be set to 0
+#				Possible values is (0 to 86400)
+# endMonth	integer		End month when Day light Saving ends.
+#				If DST is not observed value must be set to 0
+#				Values same as startMonth
+# endDay	integer		This signifies whether Day light saving is 
+#				observed or not.
+#				Possible values same as startDay
+#				If DST is not observed value must be set to 0
+# endDayOfWeek	integer		End Day of week when DST Ends.
+#				If DST is not observed value must be set to 0
+#				Possible values same as startDayOfWeek
+# endTime	integer		End Time when DST ends.(Values in seconds)
+#				If DST is not observed value must be set to 0
+#				Possible values same as startTime
+# dstSavings	integer		What is the DST saving time.
+#				If DST is not observed value must be set to 0	
+# startMode	integer		Set this value to 0
+# endMode	integer		Set this value to 0
+#
+#-----------------------------------------------------------------------
+#Sample 1: America/Panama is 5hours behind GMT and no DST is observed
+#America/Panama,-18000,0,0,0,0,0,0,0,0,0,0,0
+#Sample 2: Asia/Calcutta is 5.5 hours ahead of GMT and no DST is 
+#	   observed
+#Asia/Calcutta,19800,0,0,0,0,0,0,0,0,0,0,0
+#Sample 3: Australia/Sydney is 10 hours ahead of GMT and 1 hour DST 
+#	   is observed from 2.00 A.M last Sunday of October till 
+#	   3.00 A.M last Sunday of March
+#Australia/Sydney,36000,10,-1,1,7200,3,-1,1,10800,3600,0,0 
+#Sample 4:Pacific/Auckland is 12 hours ahead of GMT and 1 hour DST 
+#	  is observed from  2.00 A.M first Sunday of October till 
+#	  3.00 A.M first Sunday on or after 15 March
+#Pacific/Auckland,43200,10,1,-1,7200,3,15,-1,10800,3600,0,0
+#Significance of signs in the parametrs startMonth,startDay,startDayOfWeek
+# 4,1,-1 - This is interpreted as first SUNDAY in APRIL after the 1st.
+# 10,-1,1 - This is interpreted as the last SUNDAY in OCTOBER
+#************************************************************************

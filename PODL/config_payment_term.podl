@@ -1,0 +1,93 @@
+
+#=======================================
+#  Field PIN_FLD_PAYMENT_TERMS
+#=======================================
+
+ARRAY PIN_FLD_PAYMENT_TERMS {
+
+	ID = 1330;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Storable Class /config/payment_term
+#=======================================
+
+STORABLE CLASS /config/payment_term {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to define payment terms. Element Id will correspond to payment term Id and serve as a link to payment term in /payinfo object. Desc field will contain description of payment term.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAYMENT_TERMS {
+
+		DESCR = "Array of payment terms";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description of payment term.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/payment_term
+#=======================================
+
+STORABLE CLASS /config/payment_term IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PAYMENT_TERMS {
+
+		SQL_TABLE = "config_payment_term_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "payment_term_desc";
+		}
+
+	}
+
+}
+

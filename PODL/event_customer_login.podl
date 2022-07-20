@@ -1,0 +1,157 @@
+
+#=======================================
+#  Field PIN_FLD_LOGINS
+#=======================================
+
+ARRAY PIN_FLD_LOGINS {
+
+	ID = 117;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ALIAS_LIST
+#=======================================
+
+ARRAY PIN_FLD_ALIAS_LIST {
+
+	ID = 527;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN
+#=======================================
+
+STRING PIN_FLD_LOGIN {
+
+	ID = 92;
+}
+
+
+#=======================================
+#  Storable Class /event/customer/login
+#=======================================
+
+STORABLE CLASS /event/customer/login {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the login information for services. This event is created by PCM_OP_CUST_SET_LOGIN opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOGINS {
+
+		DESCR = "Array of old and new values. Array element ids are significant - old (0) and new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_ALIAS_LIST {
+
+			DESCR = "Alias List. List of aliases that also identify this user/service. Examples are: Caller ID, or MAC address. Element id not significant. The name must be globally unique per service-type";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Associated alias name.";
+				ORDER = 0;
+				LENGTH = 128;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			DESCR = "Same as PIN_FLD_LOGIN in /service.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/login
+#=======================================
+
+STORABLE CLASS /event/customer/login IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_LOGINS {
+
+		SQL_TABLE = "event_customer_login_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_ALIAS_LIST {
+
+			SQL_TABLE = "event_customer_login_alias_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			SQL_COLUMN = "login";
+		}
+
+	}
+
+}
+

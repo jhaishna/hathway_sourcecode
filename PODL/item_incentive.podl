@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/incentive
+#=======================================
+
+STORABLE CLASS /item/incentive {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent incentive . These are created when incentive is provided to account  for early payment.See also /event/billing/incentive.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/incentive
+#=======================================
+
+STORABLE CLASS /item/incentive IMPLEMENTATION ORACLE7 {
+
+}
+

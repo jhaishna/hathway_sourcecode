@@ -1,0 +1,138 @@
+
+#=======================================
+#  Storable Class /event/billing/adjustment
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to capture adjustment events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/account
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/account {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture account level adjustment.  This event belong to the adjustment item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/event
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/event {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture an adjustment made to an event.  This event belong to the adjustment item.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/event/deferred
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/event/deferred {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created to capture an adjustment made to a deferred event.  This event belongs to the adjustment item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/item
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/item {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture adjustment made to an item.This event belongs to the adjustment item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/tax_event
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/tax_event {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created to capture an adjustment made to an event that involved taxes. This event belongs to the adjustment item. An events is created for each /event/billing/cycle/tax event being adjusted.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/account
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/account IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/event
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/event IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/event/deferred
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/event/deferred IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/item
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/item IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/tax_event
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/tax_event IMPLEMENTATION ORACLE7 {
+
+}
+

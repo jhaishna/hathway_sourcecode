@@ -1,0 +1,342 @@
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID {
+
+	ID = 40011;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID_HD
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID_HD {
+
+	ID = 40087;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID_HD_HEX
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID_HD_HEX {
+
+	ID = 40088;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID_HEX
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID_HEX {
+
+	ID = 40086;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CITY_CODE
+#=======================================
+
+STRING MSO_FLD_CITY_CODE {
+
+	ID = 40083;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DEVICE_TYPE
+#=======================================
+
+ENUM MSO_FLD_DEVICE_TYPE {
+
+	ID = 42023;
+}
+
+#=======================================
+#  Field MSO_FLD_POPULATION_ID 
+#=======================================
+
+STRING MSO_FLD_POPULATION_ID {
+
+	ID = 42030;
+}
+
+INT	PIN_FLD_CARRIER_ID {
+	ID = 2522;
+}
+#=======================================
+#  Storable Class /mso_cfg_bouquet_city_map
+#=======================================
+
+STORABLE CLASS /mso_cfg_bouquet_city_map {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bouquet_id city map";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_BOUQUET_ID {
+
+		DESCR = "Bearer technology for BB service";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HD {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HD_HEX {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HEX {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CITY_CODE {
+
+		ORDER = 0;
+		LENGTH = 20;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_DEVICE_TYPE {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CITY {
+
+		ORDER = 0;
+		LENGTH = 100;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_POPULATION_ID {
+
+		DESCR = "City wise population ID";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CARRIER_ID {
+		
+		DESCR = "Network Provider ID. Hathway 0 and Jio 1";
+                ORDER = 0;
+                CREATE = Optional;
+                MODIFY = Writeable;
+                AUDITABLE = 0;
+                ENCRYPTABLE = 0;
+                SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_bouquet_city_map
+#=======================================
+
+STORABLE CLASS /mso_cfg_bouquet_city_map IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_bouquet_city_map_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_BOUQUET_ID {
+
+		SQL_COLUMN = "bouquet_id";
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HD {
+
+		SQL_COLUMN = "bouquet_id_hd";
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HD_HEX {
+
+		SQL_COLUMN = "bouquet_id_hd_hex";
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HEX {
+
+		SQL_COLUMN = "bouquet_id_hex";
+	}
+
+	STRING MSO_FLD_CITY_CODE {
+
+		SQL_COLUMN = "city_code";
+	}
+
+	ENUM MSO_FLD_DEVICE_TYPE {
+
+		SQL_COLUMN = "device_type";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_CITY {
+
+		SQL_COLUMN = "city";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+	STRING MSO_FLD_POPULATION_ID {
+
+		SQL_COLUMN = "population_id";
+	}
+	
+	INT PIN_FLD_CARRIER_ID {
+	
+		SQL_COLUMN = "carrier_id";
+	}
+
+}
+

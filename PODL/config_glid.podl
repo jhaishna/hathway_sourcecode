@@ -1,0 +1,288 @@
+
+#=======================================
+#  Field PIN_FLD_GL_IDS
+#=======================================
+
+ARRAY PIN_FLD_GL_IDS {
+
+	ID = 839;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ACCTS
+#=======================================
+
+ARRAY PIN_FLD_GL_ACCTS {
+
+	ID = 837;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ATTRIBUTE
+#=======================================
+
+INT PIN_FLD_ATTRIBUTE {
+
+	ID = 513;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_AR_ACCT
+#=======================================
+
+STRING PIN_FLD_GL_AR_ACCT {
+
+	ID = 835;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_OFFSET_ACCT
+#=======================================
+
+STRING PIN_FLD_GL_OFFSET_ACCT {
+
+	ID = 836;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CODE
+#=======================================
+
+STRING PIN_FLD_TAX_CODE {
+
+	ID = 536;
+}
+
+
+#=======================================
+#  Storable Class /config/glid
+#=======================================
+
+STORABLE CLASS /config/glid {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A single configuration object of this class defines the General Ledger Ids (GLIDs) in an Infranet system. GLIDs are numeric tags that get assigned to all A/R impacts affecting any customer account. This config object defines the valid GLIDs in the system and how they are mapped to sets of G/L Accounts. A GLID always maps to one G/L Account that is 'A/R' and one G/L Account that is the 'offset' or 'Non-A/R' account. The offset account may be cash, revenue, etc. By defining GLIDs for all the different types of Revenue, A/R and Cash you wish to track, simple mappings can be set up so Infranet can provide ready-to-load G/L Reports that fully track all the financial transactions that have occurred. Each GLID maps to different sets of G/L Account Numbers for different cirumstances (billed vs. unbilled, revenue vs. discount, etc.). The /config/glid object is typically loaded using the load_pin_glid utility. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GL_IDS {
+
+		DESCR = "Array of valid GLIDs in the system. The numeric GLID is the index of the array element.GLID values has to be assigned according to following rules:1. GLID from 0 to 1000000 - are reserved for Portal use.2. GLID 0 - is journalized, but it is excluded from GL reports.This value is considered as undefined and should not be present in production system.3. GLID from 1 to 99 - are excluded from journalizing and GL reports.4. GLID from 100 - are journalized and included in GL reports.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description of the GLID. This is displayed in the Pricing Tool.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Reserved for future use.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_GL_ACCTS {
+
+			DESCR = "Array of G/L account pairs that this GLID maps to - one pair per combination of the type and attribute parameters.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_ATTRIBUTE {
+
+				DESCR = "Attribute field allows you to specify different G/L Account pairs for different types of G/L Reports. Possible values are gross, net, discount, tax.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_GL_AR_ACCT {
+
+				DESCR = "The A/R account for this GLID, type & attribute. This name will likely match the name of a corresponding external G/L account. This G/L Account is impacted with the actual balance impact of the event (an event costing  will ADD  to this account).";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_GL_OFFSET_ACCT {
+
+				DESCR = "The Offset account for this GLID, type & attribute. This name will likely match the name of a corresponding external G/L account. This G/L Account receives the negative of the cost of the event (an event costing  will SUBTRACT  from this account)";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Type field allows you to specify different G/L Account pairs for different types of G/L Reports. Possible values are billed, unbilled, billed_earned, billed_unearned, prev_billed_earned, unbilled_earned,  unbilled_unearned.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_TAX_CODE {
+
+			DESCR = "This field is used to map a certain type of tax to a GLID. Since tax is not calculated via the price list, the GLID must be assigned explicitly for all taxes. If the tax code for taxes charged equals this value, then this GLID is assigned.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/glid
+#=======================================
+
+STORABLE CLASS /config/glid IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_GL_IDS {
+
+		SQL_TABLE = "config_glid_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		ARRAY PIN_FLD_GL_ACCTS {
+
+			SQL_TABLE = "config_glid_accts_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_ATTRIBUTE {
+
+				SQL_COLUMN = "attribute";
+			}
+
+			STRING PIN_FLD_GL_AR_ACCT {
+
+				SQL_COLUMN = "gl_ar_acct";
+			}
+
+			STRING PIN_FLD_GL_OFFSET_ACCT {
+
+				SQL_COLUMN = "gl_offset_acct";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		STRING PIN_FLD_TAX_CODE {
+
+			SQL_COLUMN = "tax_code";
+		}
+
+	}
+
+}
+

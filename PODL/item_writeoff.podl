@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/writeoff
+#=======================================
+
+STORABLE CLASS /item/writeoff {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent writeoffs.  These are created when writeoffs are made on account or bill or item level.  See also /event/billing/writeoff. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/writeoff
+#=======================================
+
+STORABLE CLASS /item/writeoff IMPLEMENTATION ORACLE7 {
+
+}
+

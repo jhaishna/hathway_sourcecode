@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/writeoff/account
+#=======================================
+
+STORABLE CLASS /event/billing/writeoff/account {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created to capture writeoff item for the account level writeoff.  This events belong to the writeoff items.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/writeoff/account
+#=======================================
+
+STORABLE CLASS /event/billing/writeoff/account IMPLEMENTATION ORACLE7 {
+
+}
+

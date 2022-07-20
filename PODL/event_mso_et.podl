@@ -1,0 +1,274 @@
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHARGED_FROM_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CHARGED_FROM_T {
+
+	ID = 2348;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHARGED_TO_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CHARGED_TO_T {
+
+	ID = 2349;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_FEE_FLAGS
+#=======================================
+
+INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+	ID = 864;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFFERING_OBJ
+#=======================================
+
+POID PIN_FLD_OFFERING_OBJ {
+
+	ID = 9056;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCALE
+#=======================================
+
+DECIMAL PIN_FLD_SCALE {
+
+	ID = 71;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX
+#=======================================
+
+DECIMAL PIN_FLD_TAX {
+
+	ID = 530;
+}
+
+
+#=======================================
+#  Storable Class /event/mso_et
+#=======================================
+
+STORABLE CLASS /event/mso_et {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Custom event for ET";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		DESCR = "Array to store ET event's custom data";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "subscription charge amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CHARGED_FROM_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CHARGED_TO_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+			DESCR = "Flag to determine whether any +ve subscription charge applied in bill cycle or not";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "FDP active flag to determine whether any FDF is active or not.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			DESCR = "offering_obj";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_SCALE {
+
+			DESCR = "no of months";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_TAX {
+
+			DESCR = "accumulated tax amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/mso_et
+#=======================================
+
+STORABLE CLASS /event/mso_et IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENTS {
+
+		SQL_TABLE = "mso_et_events_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		TIMESTAMP PIN_FLD_CHARGED_FROM_T {
+
+			SQL_COLUMN = "charged_from_t";
+		}
+
+		TIMESTAMP PIN_FLD_CHARGED_TO_T {
+
+			SQL_COLUMN = "charged_to_t";
+		}
+
+		INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+			SQL_COLUMN = "cycle_fee_flags";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			SQL_COLUMN = "offering_obj";
+		}
+
+		DECIMAL PIN_FLD_SCALE {
+
+			SQL_COLUMN = "scale";
+		}
+
+		DECIMAL PIN_FLD_TAX {
+
+			SQL_COLUMN = "tax";
+		}
+
+	}
+
+}
+

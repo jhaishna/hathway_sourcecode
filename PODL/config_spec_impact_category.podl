@@ -1,0 +1,146 @@
+
+#=======================================
+#  Field PIN_FLD_IMPACT_CATEGORIES
+#=======================================
+
+ARRAY PIN_FLD_IMPACT_CATEGORIES {
+
+	ID = 1451;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Storable Class /config/spec_impact_category
+#=======================================
+
+STORABLE CLASS /config/spec_impact_category {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to set up the dynamic custom attribute analysis module (opcode) on a per-event type basis. Before rating an event, the configured opcode is invoked to determine the appropriate impact category to be used when applying the balance impacts. This configuration is loaded using the load_pin_spec_impact_category command line utility. There are two special types of impact categories - default ('default') and global  ('*'). Default is used to indicate that no impact category is explicitly assigned. The global impact category is always applied in addition to other impact categories. See also /config/spec_rates definition.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_IMPACT_CATEGORIES {
+
+		DESCR = "An array of custom attribute analysis module mappings. Array element id is not significant. The first array element whose PIN_FLD_TYPE_STR matches the incoming event type is selected.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			DESCR = "Opcode flags to be passed when invoking the opcode. It is recommended that this be set to zero.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "The opcode to be invoked to perform the custom attribute analysis for the event type. A template policy opcode PCM_OP_ACT_POL_SPEC_IMPACT_CATEGORY is supplied with Infranet.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			DESCR = "Type of the event for which custom event analysis is performed. When the incoming event matches this field, the analysis opcode is invoked. This can be an arbitrary regular expression.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/spec_impact_category
+#=======================================
+
+STORABLE CLASS /config/spec_impact_category IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_IMPACT_CATEGORIES {
+
+		SQL_TABLE = "config_spec_impact_category_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "flags";
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			SQL_COLUMN = "type_str";
+		}
+
+	}
+
+}
+

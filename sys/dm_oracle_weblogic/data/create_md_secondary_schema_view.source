@@ -1,0 +1,320 @@
+--
+-- @(#)$Id: create_md_secondary_schema_view.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:40:50 nishahan Exp $ 
+--
+-- Copyright (c) 1999, 2014, Oracle and/or its affiliates. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+-- sql file to setup secondary schema
+-- 
+
+set serveroutput on;
+CREATE or REPLACE PROCEDURE create_a_view(
+	tname IN VARCHAR2,
+	p_schema IN VARCHAR2
+)
+AS
+	cursor subquery_cur is
+	SELECT column_name, table_name
+	FROM user_tab_columns@md_primary
+	WHERE table_name = UPPER(tname);
+
+	t_name subquery_cur%ROWTYPE;
+	cid int;
+	view_count int;
+	table_count int;
+	snapshot_count int;
+	curr_db_no varchar2(10);
+	select_string varchar2(2048);
+	col_str varchar2(1024);
+	col_name varchar2(1024);
+	view_column varchar2(1024);
+
+BEGIN 
+        select TO_CHAR(POID_DB) into curr_db_no         
+	from account_t where poid_id0 = 1;
+
+
+
+        select count(table_name) into snapshot_count  
+	from user_snapshots where table_name = UPPER(tname);
+	if snapshot_count > 0 then
+		cid := DBMS_SQL.OPEN_CURSOR;
+                DBMS_SQL.PARSE (cid,
+                        'DROP snapshot ' || tname,
+                        dbms_sql.native);
+                DBMS_SQL.CLOSE_CURSOR(cid);
+        end if;
+
+        select count(table_name) into table_count  
+	from user_tables where table_name = UPPER(tname);
+	if table_count > 0 then
+		cid := DBMS_SQL.OPEN_CURSOR;
+                DBMS_SQL.PARSE (cid,
+                        'DROP table ' || tname,
+                        dbms_sql.native);
+                DBMS_SQL.CLOSE_CURSOR(cid);
+        end if;
+
+	select count(view_name) into view_count  
+	from user_views where view_name = UPPER(tname);
+        if view_count > 0 then
+		cid := DBMS_SQL.OPEN_CURSOR;
+                DBMS_SQL.PARSE (cid,
+                        'DROP view ' || tname,
+                        dbms_sql.native);
+                DBMS_SQL.CLOSE_CURSOR(cid);
+	end if;
+
+	select_string := 'SELECT ';
+	col_str := '';
+	FOR t_name IN subquery_cur
+	LOOP
+		select_string := select_string || col_str ;
+		col_name := t_name.column_name ;
+		view_column := t_name.column_name ;
+
+		if t_name.table_name like 'UNIQUENESS%' then
+			view_column := t_name.column_name ; 	    --No fixup for UNIQUENESS
+		else if col_name = 'ACCOUNT_OBJ_DB' then
+			view_column := '( CASE ACCOUNT_OBJ_ID0 ' ||  
+			 	' WHEN 1 THEN ' || curr_db_no ||     --Fixup for root account
+				' ELSE ACCOUNT_OBJ_DB ' ||	     --No fixup for non root acct
+				' END ) ' ||
+				' AS ' || t_name.column_name;
+		else if col_name = 'REMIT_ACCOUNT_OBJ_DB' then
+			view_column := '( CASE REMIT_ACCOUNT_OBJ_ID0 ' ||  
+			 	' WHEN 1 THEN ' || curr_db_no ||     --Fixup for root account
+				' ELSE REMIT_ACCOUNT_OBJ_DB ' ||     --No fixup for non root acct
+				' END ) ' ||
+				' AS ' || t_name.column_name;
+		else if col_name = 'POID_VAL_DB' and 
+			t_name.table_name = 'CONFIG_ACH_T' then
+			view_column := t_name.column_name ;	    --no fixup ever
+		else if (col_name like '%_DB' ) then
+			view_column := 'CAST(( CASE ' || t_name.column_name || 
+				' WHEN 0 THEN ' || t_name.column_name ||  --no fixup for null poid
+				' ELSE ' || curr_db_no || 		  --fixup for non-null poid
+				' END ) AS NUMBER(38))' ||
+				' AS ' || t_name.column_name;
+		end if;
+		end if;
+		end if;
+		end if;
+		end if;
+		col_str := view_column || ',';
+	END LOOP;
+
+	select_string := select_string || view_column ||
+                ' FROM ' || p_schema || '.' || tname ;
+
+        cid := DBMS_SQL.OPEN_CURSOR;
+        DBMS_SQL.PARSE (cid,
+                'CREATE VIEW ' ||
+		tname ||' AS ' || 
+		select_string, 
+                dbms_sql.native);
+        DBMS_SQL.CLOSE_CURSOR(cid);
+
+END;
+/
+
+-- Validate dd_objects_t against the primary table.
+CREATE or REPLACE PROCEDURE validate_dd_objects(
+parent_schema IN VARCHAR2
+) AS
+  -- Variable
+  v_current_schema VARCHAR2(255);
+BEGIN
+
+  BEGIN
+    -- Take a backup of the dd
+    EXECUTE IMMEDIATE 'CREATE TABLE dd_objects_t_bak AS SELECT * FROM dd_objects_t';
+    EXECUTE IMMEDIATE 'CREATE TABLE dd_objects_fields_t_bak AS SELECT * FROM dd_objects_fields_t';
+  EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE(' '); -- Do nothing.
+  END;
+
+  -- Get the current schema user
+  v_current_schema := USER;
+
+  -- The 3 temp tables below are created inorder to get a mapping for the obj_id0, rec_id, parent_element_id for the Data Dictionary Table DD_OBJECTS_FIELDS_T.
+  -- Create Temporary Data Table 1
+  -- This table creates a mapping for the DD_OBJECTS_FIELDS_T columns OBJ_ID0 and REC_ID for the MAIN Table and the 1st Level ARRAY of all storable classes.
+  EXECUTE IMMEDIATE 'CREATE TABLE temp_update_dd_01 AS (' ||
+		'SELECT ' || v_current_schema || '.dd_objects_fields_t.obj_id0 obj_id0_s, ' || v_current_schema || '.dd_objects_fields_t.rec_id rec_id_s, ' ||
+       		parent_schema || '.dd_objects_fields_t.obj_id0 obj_id0_p, ' || parent_schema || '.dd_objects_fields_t.rec_id rec_id_p ' ||
+		'FROM ' || v_current_schema || '.dd_objects_t INNER JOIN ' ||
+  		parent_schema || '.dd_objects_t ON ' || v_current_schema || '.dd_objects_t.name = ' || parent_schema || '.dd_objects_t.name ' ||
+                'INNER JOIN ' || v_current_schema || '.dd_objects_fields_t ON ' ||
+    		v_current_schema || '.dd_objects_t.obj_id0 = ' || v_current_schema || '.dd_objects_fields_t.obj_id0 AND ' ||
+    		v_current_schema || '.dd_objects_fields_t.rec_id != 0 AND ' ||
+    		v_current_schema || '.dd_objects_fields_t.parent_element_id = 0 ' ||
+		'INNER JOIN ' || 
+		parent_schema || '.dd_objects_fields_t ON ' ||
+    		parent_schema || '.dd_objects_t.obj_id0 = ' || parent_schema || '.dd_objects_fields_t.obj_id0 AND ' ||
+                parent_schema || '.dd_objects_fields_t.parent_element_id = 0 and ' ||
+    		v_current_schema || '.dd_objects_fields_t.field_name = ' || parent_schema || '.dd_objects_fields_t.field_name)';
+
+  -- Create Temporary Data Table 2
+  -- This table creates a mapping for the DD_OBJECTS_FIELDS_T columns OBJ_ID0, REC_ID and PARENT_ELEMENT_ID for the MAIN Table and the 2nd Level ARRAY of all storable classes.
+  EXECUTE IMMEDIATE 'CREATE TABLE temp_update_dd_02 AS (' ||
+		'SELECT ' || v_current_schema || '.dd_objects_fields_t.obj_id0 obj_id0_s, ' || v_current_schema || '.dd_objects_fields_t.rec_id rec_id_s, ' ||
+		v_current_schema || '.dd_objects_fields_t.parent_element_id p_id_s, '||
+       		parent_schema || '.dd_objects_fields_t.obj_id0 obj_id0_p, ' || parent_schema || '.dd_objects_fields_t.rec_id rec_id_p, ' ||
+		parent_schema || '.dd_objects_fields_t.parent_element_id p_id_p '|| 
+		'FROM ' ||
+  		v_current_schema || '.dd_objects_fields_t ' ||
+		'INNER JOIN ' ||
+  		'temp_update_dd_01 ON ' || 
+    		v_current_schema || '.dd_objects_fields_t.obj_id0 = temp_update_dd_01.obj_id0_s AND ' ||
+    		v_current_schema || '.dd_objects_fields_t.rec_id != 0 AND ' ||
+    		v_current_schema || '.dd_objects_fields_t.parent_element_id = temp_update_dd_01.rec_id_s ' ||
+		'INNER JOIN ' || parent_schema || '.dd_objects_fields_t ON ' ||
+    		parent_schema || '.dd_objects_fields_t.obj_id0 = temp_update_dd_01.obj_id0_p AND ' ||
+    		parent_schema || '.dd_objects_fields_t.parent_element_id = temp_update_dd_01.rec_id_p AND ' ||
+    		v_current_schema || '.dd_objects_fields_t.field_name = ' || parent_schema || '.dd_objects_fields_t.field_name)';
+	
+  -- Create Temporary Data Table 3
+  EXECUTE IMMEDIATE 'CREATE TABLE temp_update_dd_03 AS SELECT * FROM temp_update_dd_01 ' ||
+		'UNION ' ||
+		'SELECT obj_id0_s, rec_id_s, obj_id0_p, rec_id_p from temp_update_dd_02';
+	
+  -- Update Secondary DD_OBJECTS_FIELDS_T table.
+  EXECUTE IMMEDIATE 'UPDATE dd_objects_fields_t SET (obj_id0, rec_id) = ' ||
+		'(SELECT obj_id0_p, rec_id_p FROM temp_update_dd_03 WHERE obj_id0_s = obj_id0 ' ||
+		'AND rec_id_s = rec_id) WHERE parent_element_id = 0';
+  EXECUTE IMMEDIATE 'UPDATE dd_objects_fields_t SET (obj_id0, parent_element_id) = ' ||
+		'(SELECT obj_id0_p, rec_id_p FROM temp_update_dd_03 WHERE obj_id0_s = obj_id0 ' ||
+		'AND rec_id_s = parent_element_id) WHERE rec_id = 0';
+  EXECUTE IMMEDIATE 'UPDATE dd_objects_fields_t SET (obj_id0, rec_id, parent_element_id) = ' ||
+		'(SELECT obj_id0_p, rec_id_p, p_id_p FROM temp_update_dd_02 WHERE obj_id0_s = obj_id0 ' ||
+		'AND rec_id_s = rec_id AND p_id_s = parent_element_id) WHERE rec_id != 0 AND parent_element_id != 0';
+	
+  -- Update Secondary DD_OBJECTS_T table.
+  EXECUTE IMMEDIATE 'UPDATE ' || v_current_schema || '.dd_objects_t SET (obj_id0) = ' ||
+		'(SELECT ' || parent_schema || '.dd_objects_t.obj_id0 FROM ' ||
+		parent_schema || '.dd_objects_t WHERE ' || parent_schema || '.dd_objects_t.name = ' || v_current_schema || '.dd_objects_t.name)';
+
+  EXECUTE IMMEDIATE 'DROP TABLE temp_update_dd_01';
+  EXECUTE IMMEDIATE 'DROP TABLE temp_update_dd_02';
+  EXECUTE IMMEDIATE 'DROP TABLE temp_update_dd_03';
+
+  COMMIT;
+
+EXCEPTION
+WHEN OTHERS THEN
+	DBMS_OUTPUT.PUT_LINE('ERROR -- validate_dd_objects failed');
+	DBMS_OUTPUT.PUT_LINE(SQLERRM);
+	RAISE; 
+END;
+/
+
+-- Validate dd_fields_t against the primary table.
+CREATE or REPLACE PROCEDURE validate_dd_fields(
+parent_schema In VARCHAR2
+) AS
+  -- Cursor
+  CURSOR dd_fields_records IS SELECT field_num, field_name, field_type FROM dd_fields_t;
+BEGIN
+
+  BEGIN
+    -- Take a backup of the dd
+    EXECUTE IMMEDIATE 'CREATE TABLE dd_fields_t_bak AS SELECT * FROM dd_fields_t';
+  EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE(' '); -- Do nothing.
+  END;
+
+  -- Delete the data from secondary.
+  EXECUTE IMMEDIATE 'DELETE FROM dd_fields_t';
+
+  -- Insert into secondary from primary.
+  EXECUTE IMMEDIATE 'INSERT INTO dd_fields_t SELECT * FROM ' || parent_schema || '.dd_fields_t';
+
+  COMMIT;
+
+EXCEPTION
+WHEN OTHERS THEN
+	DBMS_OUTPUT.PUT_LINE('ERROR -- validate_dd_fields failed');
+	DBMS_OUTPUT.PUT_LINE(SQLERRM);
+	RAISE; 
+END;
+/
+
+-- Validate dd_types_t against the primary table.
+CREATE or REPLACE PROCEDURE validate_dd_types(
+parent_schema IN VARCHAR2
+) AS
+  -- Cursor
+  CURSOR dd_types_records IS SELECT obj_id0, name FROM dd_types_t;
+BEGIN
+
+  BEGIN
+    -- Take a backup of the dd
+    EXECUTE IMMEDIATE 'CREATE TABLE dd_types_t_bak AS SELECT * FROM dd_types_t';
+  EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE(' '); -- Do nothing.
+  END;
+
+  -- Delete the data from secondary.
+  EXECUTE IMMEDIATE 'DELETE FROM dd_types_t';
+
+  -- Insert into secondary from primary.
+  EXECUTE IMMEDIATE 'INSERT INTO dd_types_t SELECT * FROM ' || parent_schema || '.dd_types_t';
+
+  COMMIT;
+
+EXCEPTION
+WHEN OTHERS THEN
+	DBMS_OUTPUT.PUT_LINE('ERROR -- validate_dd_types failed');
+	DBMS_OUTPUT.PUT_LINE(SQLERRM);
+	RAISE; 
+END;
+/
+
+CREATE or REPLACE PROCEDURE validate_dd(
+parent_schema In VARCHAR2
+) AS
+BEGIN
+  validate_dd_types(parent_schema);
+  validate_dd_fields(parent_schema);
+  validate_dd_objects(parent_schema);
+EXCEPTION
+WHEN OTHERS THEN
+	DBMS_OUTPUT.PUT_LINE('ERROR -- validate_dd failed');
+	DBMS_OUTPUT.PUT_LINE(SQLERRM);
+	RAISE; 
+END;
+/
+
+-- Go through the tables and call create_view for each table
+CREATE or REPLACE PROCEDURE create_views(
+parent_schema IN VARCHAR2
+) AS
+	cursor global_table_name_cur is 
+	SELECT distinct table_name FROM md_static_objects_t@md_primary;
+
+	global_table_name global_table_name_cur%ROWTYPE; 
+	tname varchar2(64);
+BEGIN
+	dbms_output.enable();
+
+	FOR global_table_name in global_table_name_cur 
+	LOOP
+		tname := global_table_name.table_name;
+		dbms_output.put_line('create view');
+		dbms_output.put_line(tname);
+
+		create_a_view(tname, parent_schema);
+	END LOOP;
+
+	-- Validate Data Dictionary entries.
+	validate_dd(parent_schema);
+END;
+/

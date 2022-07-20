@@ -1,0 +1,598 @@
+
+#=======================================
+#  Field PIN_FLD_DIALUP
+#=======================================
+
+SUBSTRUCT PIN_FLD_DIALUP {
+
+	ID = 416;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ANI
+#=======================================
+
+STRING PIN_FLD_ANI {
+
+	ID = 419;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_IN
+#=======================================
+
+INT PIN_FLD_BYTES_IN {
+
+	ID = 421;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_OUT
+#=======================================
+
+INT PIN_FLD_BYTES_OUT {
+
+	ID = 422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DNIS
+#=======================================
+
+STRING PIN_FLD_DNIS {
+
+	ID = 420;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IPADDR
+#=======================================
+
+BINSTR PIN_FLD_IPADDR {
+
+	ID = 75;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN
+#=======================================
+
+STRING PIN_FLD_LOGIN {
+
+	ID = 92;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK
+#=======================================
+
+STRING PIN_FLD_NETWORK {
+
+	ID = 74;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACKETS_IN
+#=======================================
+
+INT PIN_FLD_PACKETS_IN {
+
+	ID = 423;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACKETS_OUT
+#=======================================
+
+INT PIN_FLD_PACKETS_OUT {
+
+	ID = 424;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPEED
+#=======================================
+
+INT PIN_FLD_SPEED {
+
+	ID = 76;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMINATE_CAUSE
+#=======================================
+
+ENUM PIN_FLD_TERMINATE_CAUSE {
+
+	ID = 427;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMSERV_ID
+#=======================================
+
+STRING PIN_FLD_TERMSERV_ID {
+
+	ID = 417;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMSERV_PORT
+#=======================================
+
+STRING PIN_FLD_TERMSERV_PORT {
+
+	ID = 418;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TIMEZONE
+#=======================================
+
+INT PIN_FLD_TIMEZONE {
+
+	ID = 73;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TIMEZONE_ID
+#=======================================
+
+STRING PIN_FLD_TIMEZONE_ID {
+
+	ID = 2250;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_TRANS_ID {
+
+	ID = 189;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UNITS
+#=======================================
+
+ENUM PIN_FLD_UNITS {
+
+	ID = 1207;
+}
+
+
+#=======================================
+#  Storable Class /event/session/dialup
+#=======================================
+
+STORABLE CLASS /event/session/dialup {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Records data from a dialup session.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DIALUP {
+
+		DESCR = "Substruct containing information about the dial-ip session.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ANI {
+
+			DESCR = "Calling phone number.";
+			ORDER = 0;
+			LENGTH = 25;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BYTES_IN {
+
+			DESCR = "Bytes transferred to terminal server during the session.  This value is scaled based upon the value stored in PIN_FLD_UNITS.  If PIN_FLD_UNITS doesn't exist, then BYTES is assumed.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BYTES_OUT {
+
+			DESCR = "Bytes transferred to the user during the session.  This value is scaled based upon the value stored in PIN_FLD_UNITS.  If PIN_FLD_UNITS doesn't exist, then BYTES is assumed.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Free form description field.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DNIS {
+
+			DESCR = "Called phone number.";
+			ORDER = 0;
+			LENGTH = 25;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BINSTR PIN_FLD_IPADDR {
+
+			DESCR = "IP Address assigned to client for this session.";
+			ORDER = 0;
+			LENGTH = 160;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			DESCR = "Login specified by the client.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			DESCR = "Network id.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PACKETS_IN {
+
+			DESCR = "Packets transferred to terminal server during the session.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PACKETS_OUT {
+
+			DESCR = "Packets transferred to the user during the session.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SPEED {
+
+			DESCR = "Baud rate of the line.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Infranet status code explaining how the session was logged out. This is NOT the NAS status code. See pin_term.h. The valid values are:  NOT_SET for open sessions (0), OK (1), ORPHAN (2), NAS_RESET (3), FORCED (4).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			DESCR = "Session termination reason code from the Network Authentication Server (NAS). See pin_term.h for possible values like USER_REQUEST, LOST_CARRIER etc.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TERMSERV_ID {
+
+			DESCR = "Terminal server id - uniquely identifies the NAS. Usually the decimal dotted notation IP address of the NAS.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TERMSERV_PORT {
+
+			DESCR = "Terminal server port - physical port number of the NAS into which the user dialed in. This is not the udp port the radius requests travel across.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TIMEZONE {
+
+			DESCR = "Timezone of the terminal server expressed as number of seconds to the west of the UTC.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TIMEZONE_ID {
+
+			DESCR = "TimeZone ID associated with the session as a String.";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			DESCR = "Unique transaction id received from NAS. Converted to character string if necessary.";
+			ORDER = 0;
+			LENGTH = 32;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Connection Type - ISDN, async, etc.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_UNITS {
+
+			DESCR = "Units of transfer for PIN_FLD_BYTES_IN and PIN_FLD_BYTES_OUT. Possible values are:  Bytes (11), KiloBytes (12), MegaBytes (13), GigaBytes (14).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/session/dialup
+#=======================================
+
+STORABLE CLASS /event/session/dialup IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_DIALUP {
+
+		SQL_TABLE = "event_session_dialup_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ANI {
+
+			SQL_COLUMN = "ani";
+		}
+
+		INT PIN_FLD_BYTES_IN {
+
+			SQL_COLUMN = "bytes_in";
+		}
+
+		INT PIN_FLD_BYTES_OUT {
+
+			SQL_COLUMN = "bytes_out";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		STRING PIN_FLD_DNIS {
+
+			SQL_COLUMN = "dnis";
+		}
+
+		BINSTR PIN_FLD_IPADDR {
+
+			SQL_COLUMN = "ipaddr";
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			SQL_COLUMN = "login";
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			SQL_COLUMN = "network";
+		}
+
+		INT PIN_FLD_PACKETS_IN {
+
+			SQL_COLUMN = "packets_in";
+		}
+
+		INT PIN_FLD_PACKETS_OUT {
+
+			SQL_COLUMN = "packets_out";
+		}
+
+		INT PIN_FLD_SPEED {
+
+			SQL_COLUMN = "speed";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			SQL_COLUMN = "term_cause";
+		}
+
+		STRING PIN_FLD_TERMSERV_ID {
+
+			SQL_COLUMN = "termserv_id";
+		}
+
+		STRING PIN_FLD_TERMSERV_PORT {
+
+			SQL_COLUMN = "termserv_port";
+		}
+
+		INT PIN_FLD_TIMEZONE {
+
+			SQL_COLUMN = "timezone";
+		}
+
+		STRING PIN_FLD_TIMEZONE_ID {
+
+			SQL_COLUMN = "timezone_id";
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			SQL_COLUMN = "trans_id";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+		ENUM PIN_FLD_UNITS {
+
+			SQL_COLUMN = "units";
+		}
+
+	}
+
+}
+

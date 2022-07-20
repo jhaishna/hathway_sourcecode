@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/order/delete
+#=======================================
+
+STORABLE CLASS /event/order/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an object is deletedThe object is created by PCM_OP_ORDER_DELETE";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/order/delete
+#=======================================
+
+STORABLE CLASS /event/order/delete IMPLEMENTATION ORACLE7 {
+
+}
+

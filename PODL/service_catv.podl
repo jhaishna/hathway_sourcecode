@@ -1,0 +1,395 @@
+
+#=======================================
+#  Field MSO_FLD_CATV_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_CATV_INFO {
+
+	ID = 40009;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AGREEMENT_NO
+#=======================================
+
+STRING MSO_FLD_AGREEMENT_NO {
+
+	ID = 40007;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID {
+
+	ID = 40011;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CARF_RECEIVED
+#=======================================
+
+ENUM MSO_FLD_CARF_RECEIVED {
+
+	ID = 40065;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CAS_SUBSCRIBER_ID
+#=======================================
+
+STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+	ID = 40070;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LEGACY_AGR_NO
+#=======================================
+
+STRING MSO_FLD_LEGACY_AGR_NO {
+
+	ID = 40066;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NETWORK_NODE
+#=======================================
+
+STRING MSO_FLD_NETWORK_NODE {
+
+	ID = 40000;
+}
+
+
+#=======================================
+#  Field MSO_FLD_REGION_KEY
+#=======================================
+
+STRING MSO_FLD_REGION_KEY {
+
+	ID = 40069;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SALESMAN_OBJ
+#=======================================
+
+POID MSO_FLD_SALESMAN_OBJ {
+
+	ID = 40002;
+	DESCR = "Sales man account poid to be stored in system for reference";
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONN_TYPE
+#=======================================
+
+ENUM PIN_FLD_CONN_TYPE {
+
+	ID = 2915;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PERSONAL_BIT_INFO
+#=======================================
+
+ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+	ID = 40067;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_NAME
+#=======================================
+
+STRING PIN_FLD_PARAM_NAME {
+
+	ID = 5776;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAM_VALUE
+#=======================================
+
+STRING PIN_FLD_PARAM_VALUE {
+
+	ID = 5778;
+}
+
+
+#=======================================
+#  Storable Class /service/catv
+#=======================================
+
+STORABLE CLASS /service/catv {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO Cable Service";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CATV_INFO {
+
+		DESCR = "Table to hold custom catv service provisioning information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			DESCR = "Agreemnt no";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_BOUQUET_ID {
+
+			DESCR = "Bearer technology for BB service";
+			ORDER = 0;
+			LENGTH = 200;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_CARF_RECEIVED {
+
+			DESCR = "Customer Requisition/Acquisition Form received\n0: not received\n1: received";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+			DESCR = "Unique CAS subscriber id received from provisioning system";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_LEGACY_AGR_NO {
+
+			DESCR = "Legacy agreement no";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			DESCR = "The network node under which the BB device is getting connected. MUM24Online:ANDHERIEAST1:Area1:street1";
+			ORDER = 0;
+			LENGTH = 200;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_REGION_KEY {
+
+			DESCR = "ZIP code to be populated in this";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			DESCR = "Sales man account poid to be stored in system for reference";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_CONN_TYPE {
+
+			DESCR = "0-Main TV, 1- Additional TV";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+		DESCR = "For storing personal bit of  a customer";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			DESCR = "Personal bit parameter name like bit no";
+			ORDER = 0;
+			LENGTH = 200;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_PARAM_VALUE {
+
+			DESCR = "Bit value to set";
+			ORDER = 0;
+			LENGTH = 300;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/catv
+#=======================================
+
+STORABLE CLASS /service/catv IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CATV_INFO {
+
+		SQL_TABLE = "service_catv_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_AGREEMENT_NO {
+
+			SQL_COLUMN = "agreement_no";
+		}
+
+		STRING MSO_FLD_BOUQUET_ID {
+
+			SQL_COLUMN = "bouquet_id";
+		}
+
+		ENUM MSO_FLD_CARF_RECEIVED {
+
+			SQL_COLUMN = "crf_flag";
+		}
+
+		STRING MSO_FLD_CAS_SUBSCRIBER_ID {
+
+			SQL_COLUMN = "cas_subscriber_id";
+		}
+
+		STRING MSO_FLD_LEGACY_AGR_NO {
+
+			SQL_COLUMN = "legacy_agr_no";
+		}
+
+		STRING MSO_FLD_NETWORK_NODE {
+
+			SQL_COLUMN = "network_node";
+		}
+
+		STRING MSO_FLD_REGION_KEY {
+
+			SQL_COLUMN = "region_key";
+		}
+
+		POID MSO_FLD_SALESMAN_OBJ {
+
+			SQL_COLUMN = "salesman_obj";
+		}
+
+		ENUM PIN_FLD_CONN_TYPE {
+
+			SQL_COLUMN = "conn_type";
+		}
+
+	}
+
+	ARRAY MSO_FLD_PERSONAL_BIT_INFO {
+
+		SQL_TABLE = "mso_personal_bit_info_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PARAM_NAME {
+
+			SQL_COLUMN = "param_name";
+		}
+
+		STRING PIN_FLD_PARAM_VALUE {
+
+			SQL_COLUMN = "param_value";
+		}
+
+	}
+
+}
+

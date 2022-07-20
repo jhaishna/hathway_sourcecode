@@ -1,0 +1,121 @@
+
+SQL*Loader: Release 11.2.0.4.0 - Production on Mon Jun 22 15:24:58 2015
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   ctl_file_sud.ctl
+Data File:      ../bb_plan_report.csv
+  Bad File:     bb_plan_report.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table TMP_BB_PROD_INFO_SUD, loaded from every logical record.
+Insert option in effect for this table: INSERT
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+PLAN_NAME                           FIRST     *   ,       CHARACTER            
+PLAN_DESCR                           NEXT     *   ,       CHARACTER            
+PLAN_ID                              NEXT     *   ,       CHARACTER            
+DEAL_NAME                            NEXT     *   ,       CHARACTER            
+DEAL_DESCR                           NEXT     *   ,       CHARACTER            
+DEAL_ID                              NEXT     *   ,       CHARACTER            
+PRODUCT_NAME                         NEXT     *   ,       CHARACTER            
+PRODUCT_DESCR                        NEXT     *   ,       CHARACTER            
+PRODUCT_ID                           NEXT     *   ,       CHARACTER            
+EVENT_TYPE                           NEXT     *   ,       CHARACTER            
+GRANT_SCALED_AMOUNT                  NEXT     *   ,       CHARACTER            
+GRANT_FIXED_AMOUNT                   NEXT     *   ,       CHARACTER            
+GRANT_UNIT                           NEXT     *   ,       CHARACTER            
+VALIDITY_OFFSET_VALUE                NEXT     *   ,       CHARACTER            
+VALIDITY_OFFSET_UNIT                 NEXT     *   ,       CHARACTER            
+GRANT_PRORATE_FIRST                  NEXT     *   ,       CHARACTER            
+GRANT_PRORATE_LAST                   NEXT     *   ,       CHARACTER            
+USAGE_RATE                           NEXT     *   ,       CHARACTER            
+USAGE_UNIT                           NEXT     *   ,       CHARACTER            
+FIXED_AMOUNT                         NEXT     *   ,       CHARACTER            
+SCALED_AMOUNT                        NEXT     *   ,       CHARACTER            
+SB_PRORATE_FIRST                     NEXT     *   ,       CHARACTER            
+SB_PRORATE_LAST                      NEXT     *   ,       CHARACTER            
+PROVISIONING_TAG                     NEXT     *   ,       CHARACTER            
+PRIORITY                             NEXT     *   ,       CHARACTER            
+TAX_CODE                             NEXT     *   ,       CHARACTER            
+TAX_WHEN                             NEXT     *   ,       CHARACTER            
+CITY_NAME                            NEXT     *   ,       CHARACTER            
+BILL_WHEN                            NEXT     *   ,       CHARACTER            
+
+value used for ROWS parameter changed from 64 to 34
+Record 8: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 1: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column GRANT_SCALED_AMOUNT.
+ORA-01722: invalid number
+
+Record 103: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 101: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column TAX_CODE.
+ORA-12899: value too large for column "PIN"."TMP_BB_PROD_INFO_SUD"."TAX_CODE" (actual: 16, maximum: 15)
+
+Record 383: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 554: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 658: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 721: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 907: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 908: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 909: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 976: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 1026: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 1534: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 1544: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column GRANT_SCALED_AMOUNT.
+ORA-01722: invalid number
+
+Record 1680: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 1819: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 1915: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 2165: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 2190: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+Record 2233: Rejected - Error on table TMP_BB_PROD_INFO_SUD, column BILL_WHEN.
+Column not found before end of logical record (use TRAILING NULLCOLS)
+
+Table TMP_BB_PROD_INFO_SUD:
+  2236 Rows successfully loaded.
+  21 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 254388 bytes(34 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:          2257
+Total logical records rejected:        21
+Total logical records discarded:        0
+
+Run began on Mon Jun 22 15:24:58 2015
+Run ended on Mon Jun 22 15:24:59 2015
+
+Elapsed time was:     00:00:00.49
+CPU time was:         00:00:00.10

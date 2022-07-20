@@ -1,0 +1,511 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OBJ
+#=======================================
+
+POID PIN_FLD_BILL_OBJ {
+
+	ID = 44;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FORMATS
+#=======================================
+
+ARRAY PIN_FLD_FORMATS {
+
+	ID = 1129;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BUFFER
+#=======================================
+
+BUF PIN_FLD_BUFFER {
+
+	ID = 34;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HEADER_NUM
+#=======================================
+
+INT PIN_FLD_HEADER_NUM {
+
+	ID = 33;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HEADER_STR
+#=======================================
+
+STRING PIN_FLD_HEADER_STR {
+
+	ID = 32;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INV_SIZE
+#=======================================
+
+DECIMAL PIN_FLD_INV_SIZE {
+
+	ID = 974;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE
+#=======================================
+
+STRING PIN_FLD_LOCALE {
+
+	ID = 109;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE_STR
+#=======================================
+
+STRING PIN_FLD_TYPE_STR {
+
+	ID = 499;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOICE_DETAIL_NUM
+#=======================================
+
+INT PIN_FLD_INVOICE_DETAIL_NUM {
+
+	ID = 1558;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOICE_DETAIL_TOTAL
+#=======================================
+
+INT PIN_FLD_INVOICE_DETAIL_TOTAL {
+
+	ID = 1559;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOICE_OBJ
+#=======================================
+
+POID PIN_FLD_INVOICE_OBJ {
+
+	ID = 47;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /invoice_detail
+#=======================================
+
+STORABLE CLASS /invoice_detail {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This object contains the event details for a large invoice.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_BILL_OBJ {
+
+		DESCR = "Link to bill object for which the invoice is created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_FORMATS {
+
+		DESCR = "This array contains a chunk of the generated invoice object in the format in which the main invoice object buffer is generated. The Position of this chunk in the total number of generated /invoice_detail objects would be identified by the field PIN_FLD_INVOICE_DETAIL_NUM on the /invoice_detail object. The total number of chunks would be identified by PIN_FLD_INVOICE_DETAIL_TOTAL on the /invoice_detail object.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_BUFFER {
+
+			DESCR = "This holds the content of an invoice in a specific format.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			DESCR = "This is the time the status becomes effective.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_HEADER_NUM {
+
+			DESCR = "A generic user-definable header number field for each format";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_HEADER_STR {
+
+			DESCR = "A generic user definable header string field for each format";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_INV_SIZE {
+
+			DESCR = "Invoice Size in KB";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LOCALE {
+
+			DESCR = "This holds the preferred locale for invoice. It is used by applicatios. It may be used to drive UI in self-care web pages. The format is Windows NT 3-letter locale code (ISO 639 two letter language and one letter sublanguage). For example for US English the value is ENU.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			DESCR = "Invoice file format type string in mime, Default: text/pin_flist ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	INT PIN_FLD_INVOICE_DETAIL_NUM {
+
+		DESCR = "The number which specifies this objects position in the list of /invoice_detail objects for an invoice for example 1 of 3, 2 of 3 etc..";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_INVOICE_DETAIL_TOTAL {
+
+		DESCR = "The number which specifies the total number of /invoice_detail corresponding to the /invoice .";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_INVOICE_OBJ {
+
+		DESCR = "Link to invoice object for which the invoice_detail is created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /invoice_detail
+#=======================================
+
+STORABLE CLASS /invoice_detail IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "invoice_detail_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	POID PIN_FLD_BILL_OBJ {
+
+		SQL_COLUMN = "bill_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	ARRAY PIN_FLD_FORMATS {
+
+		SQL_TABLE = "invoice_detail_formats_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		BUF PIN_FLD_BUFFER {
+
+			SQL_TABLE = "invoice_detail_formats_buf_t";
+			SQL_COLUMN = "buffer";
+		}
+
+		TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+			SQL_COLUMN = "effective_t";
+		}
+
+		INT PIN_FLD_HEADER_NUM {
+
+			SQL_COLUMN = "header_num_arr";
+		}
+
+		STRING PIN_FLD_HEADER_STR {
+
+			SQL_COLUMN = "header_str_arr";
+		}
+
+		DECIMAL PIN_FLD_INV_SIZE {
+
+			SQL_COLUMN = "inv_size";
+		}
+
+		STRING PIN_FLD_LOCALE {
+
+			SQL_COLUMN = "locale";
+		}
+
+		STRING PIN_FLD_TYPE_STR {
+
+			SQL_COLUMN = "type_str";
+		}
+
+	}
+
+	INT PIN_FLD_INVOICE_DETAIL_NUM {
+
+		SQL_COLUMN = "invoice_detail_num";
+	}
+
+	INT PIN_FLD_INVOICE_DETAIL_TOTAL {
+
+		SQL_COLUMN = "invoice_detail_total";
+	}
+
+	POID PIN_FLD_INVOICE_OBJ {
+
+		SQL_COLUMN = "invoice_obj";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

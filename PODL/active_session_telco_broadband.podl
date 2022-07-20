@@ -1,0 +1,290 @@
+
+#=======================================
+#  Field PIN_FLD_SESSION_INFO
+#=======================================
+
+ARRAY PIN_FLD_SESSION_INFO {
+
+	ID = 2369;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BYTES_DOWNLINK_BEF_FUP
+#=======================================
+
+DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+	ID = 46016;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BYTES_UPLINK_BEF_FUP
+#=======================================
+
+DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+	ID = 46015;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_DOWNLINK
+#=======================================
+
+DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+	ID = 428;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_UPLINK
+#=======================================
+
+DECIMAL PIN_FLD_BYTES_UPLINK {
+
+	ID = 429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DURATION_SECONDS
+#=======================================
+
+INT PIN_FLD_DURATION_SECONDS {
+
+	ID = 5249;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USER_NAME
+#=======================================
+
+STRING PIN_FLD_USER_NAME {
+
+	ID = 9164;
+}
+
+
+#=======================================
+#  Storable Class /active_session/telco/broadband
+#=======================================
+
+STORABLE CLASS /active_session/telco/broadband {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SESSION_INFO {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_BYTES_UPLINK {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DURATION_SECONDS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_USER_NAME {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /active_session/telco/broadband
+#=======================================
+
+STORABLE CLASS /active_session/telco/broadband IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SESSION_INFO {
+
+		SQL_TABLE = "bb_session_info";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_BYTES_DOWNLINK_BEF_FUP {
+
+			SQL_COLUMN = "rated_bytes_downlink";
+		}
+
+		DECIMAL MSO_FLD_BYTES_UPLINK_BEF_FUP {
+
+			SQL_COLUMN = "rated_bytes_uplink";
+		}
+
+		DECIMAL PIN_FLD_BYTES_DOWNLINK {
+
+			SQL_COLUMN = "bytes_downlink";
+		}
+
+		DECIMAL PIN_FLD_BYTES_UPLINK {
+
+			SQL_COLUMN = "bytes_uplink";
+		}
+
+		INT PIN_FLD_DURATION_SECONDS {
+
+			SQL_COLUMN = "duation";
+		}
+
+		INT PIN_FLD_FLAGS {
+
+			SQL_COLUMN = "issplitted";
+		}
+
+		DECIMAL PIN_FLD_QUANTITY {
+
+			SQL_COLUMN = "rated_quantity";
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			SQL_COLUMN = "start_t";
+		}
+
+		STRING PIN_FLD_USER_NAME {
+
+			SQL_COLUMN = "user_name";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/customer/billinfo/create
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/create
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/create IMPLEMENTATION ORACLE7 {
+
+}
+

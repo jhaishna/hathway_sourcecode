@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Half yearly rental for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_semiannual/mso_hw_rental/cm IMPLEMENTATION ORACLE7 {
+
+}
+

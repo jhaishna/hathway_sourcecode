@@ -1,0 +1,621 @@
+
+#=======================================
+#  Field PIN_FLD_CALL
+#=======================================
+
+SUBSTRUCT PIN_FLD_CALL {
+
+	ID = 1561;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ANI
+#=======================================
+
+STRING PIN_FLD_ANI {
+
+	ID = 419;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_IN
+#=======================================
+
+INT PIN_FLD_BYTES_IN {
+
+	ID = 421;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BYTES_OUT
+#=======================================
+
+INT PIN_FLD_BYTES_OUT {
+
+	ID = 422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COS
+#=======================================
+
+INT PIN_FLD_COS {
+
+	ID = 1579;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESTINATION_GW
+#=======================================
+
+STRING PIN_FLD_DESTINATION_GW {
+
+	ID = 1563;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DNIS
+#=======================================
+
+STRING PIN_FLD_DNIS {
+
+	ID = 420;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN
+#=======================================
+
+STRING PIN_FLD_LOGIN {
+
+	ID = 92;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK
+#=======================================
+
+STRING PIN_FLD_NETWORK {
+
+	ID = 74;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ORIGIN_GW
+#=======================================
+
+STRING PIN_FLD_ORIGIN_GW {
+
+	ID = 1562;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACKETS_IN
+#=======================================
+
+INT PIN_FLD_PACKETS_IN {
+
+	ID = 423;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACKETS_OUT
+#=======================================
+
+INT PIN_FLD_PACKETS_OUT {
+
+	ID = 424;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QOS
+#=======================================
+
+ENUM PIN_FLD_QOS {
+
+	ID = 1564;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMINATE_CAUSE
+#=======================================
+
+ENUM PIN_FLD_TERMINATE_CAUSE {
+
+	ID = 427;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMSERV_ID
+#=======================================
+
+STRING PIN_FLD_TERMSERV_ID {
+
+	ID = 417;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TERMSERV_PORT
+#=======================================
+
+STRING PIN_FLD_TERMSERV_PORT {
+
+	ID = 418;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TIMEZONE
+#=======================================
+
+INT PIN_FLD_TIMEZONE {
+
+	ID = 73;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRANS_ID
+#=======================================
+
+STRING PIN_FLD_TRANS_ID {
+
+	ID = 189;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Storable Class /event/session/ipt
+#=======================================
+
+STORABLE CLASS /event/session/ipt {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Session event created record a session activity by a user when he/she starts an IPT event. It is updated and rated when session ends.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/session/ipt/call
+#=======================================
+
+STORABLE CLASS /event/session/ipt/call {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Session event created to record an IPT call event. The session is created when user starts an IPT call session, and is updated and rated when the IPT call session ends. The infranet configuration will specify which policy opcode will be called to rate this specific event type.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CALL {
+
+		DESCR = "Substruct containing information about this IPT call session.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ANI {
+
+			DESCR = "Originating address of the call, can be either a phone number or an IP address. If it is a phone number, a country code will always be attached. If it is an IP address, it will be in the decimal dotted notation.";
+			ORDER = 0;
+			LENGTH = 25;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BYTES_IN {
+
+			DESCR = "Bytes transferred to server during the session.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BYTES_OUT {
+
+			DESCR = "Bytes transferred to user during the session.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_COS {
+
+			DESCR = "Class of Service as in Basic, Enhanced, Premium, expressed as a number.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Free form description field";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DESTINATION_GW {
+
+			DESCR = "Terminating gateway id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_DNIS {
+
+			DESCR = "Destination address of the call, can be either a phone number or an IP address. IP address will be in the decimal dotted notation format.";
+			ORDER = 0;
+			LENGTH = 25;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			DESCR = "Service login of the account that generates this event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			DESCR = "Network id";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ORIGIN_GW {
+
+			DESCR = "Originating gateway id.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PACKETS_IN {
+
+			DESCR = "Packets transferred to the server during the session.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PACKETS_OUT {
+
+			DESCR = "Packets transferred to the user during the session.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_QOS {
+
+			DESCR = "Quality of service for this event object. Not used for now.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Infranet status code specifying how the session was logged out. The valid values are: NOT_SET for open sessions (0), OK (1), ORPHAN (2), NAS_RESET (3), FORCED (4). See pin_term.h for details.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			DESCR = "Session termination code from NAS. Possible values are: DEFAULT (0), USER_REQUEST (1), LOST_CARRIER (2), etc. See pin_term.h for details.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TERMSERV_ID {
+
+			DESCR = "Terminal server id. Uniquely identifies the NAS. Usually it is represented as the decimal dotted notation IP address of the NAS.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TERMSERV_PORT {
+
+			DESCR = "Terminal server port number. The physical port number of the NAS into which the user dialed in.";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_TIMEZONE {
+
+			DESCR = "Time zone of the terminal server expressed as number of seconds to the west of the UTC.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			DESCR = "Unique transaction id received from NAS. Converted to character string if necessary.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Type of the event -- ISDN, async etc.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/session/ipt
+#=======================================
+
+STORABLE CLASS /event/session/ipt IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/session/ipt/call
+#=======================================
+
+STORABLE CLASS /event/session/ipt/call IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_CALL {
+
+		SQL_TABLE = "event_session_ipt_call_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ANI {
+
+			SQL_COLUMN = "ani";
+		}
+
+		INT PIN_FLD_BYTES_IN {
+
+			SQL_COLUMN = "bytes_in";
+		}
+
+		INT PIN_FLD_BYTES_OUT {
+
+			SQL_COLUMN = "bytes_out";
+		}
+
+		INT PIN_FLD_COS {
+
+			SQL_COLUMN = "cos";
+		}
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "descr";
+		}
+
+		STRING PIN_FLD_DESTINATION_GW {
+
+			SQL_COLUMN = "destination_gw";
+		}
+
+		STRING PIN_FLD_DNIS {
+
+			SQL_COLUMN = "dnis";
+		}
+
+		STRING PIN_FLD_LOGIN {
+
+			SQL_COLUMN = "login";
+		}
+
+		STRING PIN_FLD_NETWORK {
+
+			SQL_COLUMN = "network";
+		}
+
+		STRING PIN_FLD_ORIGIN_GW {
+
+			SQL_COLUMN = "origin_gw";
+		}
+
+		INT PIN_FLD_PACKETS_IN {
+
+			SQL_COLUMN = "packets_in";
+		}
+
+		INT PIN_FLD_PACKETS_OUT {
+
+			SQL_COLUMN = "packets_out";
+		}
+
+		ENUM PIN_FLD_QOS {
+
+			SQL_COLUMN = "qos";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		ENUM PIN_FLD_TERMINATE_CAUSE {
+
+			SQL_COLUMN = "term_cause";
+		}
+
+		STRING PIN_FLD_TERMSERV_ID {
+
+			SQL_COLUMN = "termserv_id";
+		}
+
+		STRING PIN_FLD_TERMSERV_PORT {
+
+			SQL_COLUMN = "termserv_port";
+		}
+
+		INT PIN_FLD_TIMEZONE {
+
+			SQL_COLUMN = "timezone";
+		}
+
+		STRING PIN_FLD_TRANS_ID {
+
+			SQL_COLUMN = "trans_id";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+}
+

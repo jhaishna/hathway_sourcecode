@@ -1,0 +1,167 @@
+
+#=======================================
+#  Field MSO_FLD_MODIFY_PAYINFO
+#=======================================
+
+ARRAY MSO_FLD_MODIFY_PAYINFO {
+
+	ID = 41194;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TDS_RECV
+#=======================================
+
+ENUM MSO_FLD_TDS_RECV {
+
+	ID = 41147;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DELIVERY_PREFER
+#=======================================
+
+ENUM PIN_FLD_DELIVERY_PREFER {
+
+	ID = 884;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INDICATOR
+#=======================================
+
+INT PIN_FLD_INDICATOR {
+
+	ID = 958;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/modify_payinfo
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/modify_payinfo {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_PAYINFO {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_TDS_RECV {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_DELIVERY_PREFER {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_INDICATOR {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/modify_payinfo
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/modify_payinfo IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_PAYINFO {
+
+		SQL_TABLE = "mso_evt_lc_modify_payinfo_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_TDS_RECV {
+
+			SQL_COLUMN = "tds_recv";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		ENUM PIN_FLD_DELIVERY_PREFER {
+
+			SQL_COLUMN = "delivery_prefer";
+		}
+
+		INT PIN_FLD_INDICATOR {
+
+			SQL_COLUMN = "indicator";
+		}
+
+	}
+
+}
+

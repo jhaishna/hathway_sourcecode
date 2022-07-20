@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/order/create
+#=======================================
+
+STORABLE CLASS /event/order/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "AncestralLineage";
+	DESCR = "Created when an order is createdThis object is created by PCM_OP_ORDER_CREATE opcode";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/order/create
+#=======================================
+
+STORABLE CLASS /event/order/create IMPLEMENTATION ORACLE7 {
+
+}
+

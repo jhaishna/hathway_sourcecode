@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/mso_refund_debit
+#=======================================
+
+STORABLE CLASS /event/billing/mso_refund_debit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Pre-Rated Event for storing refund debit amount";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/mso_refund_debit
+#=======================================
+
+STORABLE CLASS /event/billing/mso_refund_debit IMPLEMENTATION ORACLE7 {
+
+}
+

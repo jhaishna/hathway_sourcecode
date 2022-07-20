@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/payment/mso_deposit
+#=======================================
+
+STORABLE CLASS /item/payment/mso_deposit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO Deposit ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_deposit
+#=======================================
+
+STORABLE CLASS /item/payment/mso_deposit IMPLEMENTATION ORACLE7 {
+
+}
+

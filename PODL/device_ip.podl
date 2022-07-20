@@ -1,0 +1,242 @@
+
+#=======================================
+#  Field MSO_FLD_IP_DATA
+#=======================================
+
+ARRAY MSO_FLD_IP_DATA {
+
+	ID = 42203;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_ADDRS
+#=======================================
+
+STRING MSO_FLD_IP_ADDRS {
+
+	ID = 42204;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_MASK_VALUE
+#=======================================
+
+STRING MSO_FLD_IP_MASK_VALUE {
+
+	ID = 42207;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_POOL_NAME
+#=======================================
+
+STRING MSO_FLD_IP_POOL_NAME {
+
+	ID = 42206;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IP_VERSION
+#=======================================
+
+STRING MSO_FLD_IP_VERSION {
+
+	ID = 42205;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SEGMENT_NAME
+#=======================================
+
+STRING PIN_FLD_SEGMENT_NAME {
+
+	ID = 1829;
+}
+
+
+#=======================================
+#  Storable Class /device/ip
+#=======================================
+
+STORABLE CLASS /device/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_IP_DATA {
+
+		DESCR = "Array to hold Router related data.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_IP_ADDRS {
+
+			DESCR = "IP address";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_IP_MASK_VALUE {
+
+			DESCR = "IP Mask value";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_IP_POOL_NAME {
+
+			DESCR = "IP Pool Name";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_IP_VERSION {
+
+			DESCR = "IP version";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SEGMENT_NAME {
+
+			DESCR = "Reserved IP segment";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/ip/framed
+#=======================================
+
+STORABLE CLASS /device/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/ip/static
+#=======================================
+
+STORABLE CLASS /device/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /device/ip
+#=======================================
+
+STORABLE CLASS /device/ip IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_IP_DATA {
+
+		SQL_TABLE = "MSO_DEVICE_IP_DATA_T";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_IP_ADDRS {
+
+			SQL_COLUMN = "IP_ADDRS";
+		}
+
+		STRING MSO_FLD_IP_MASK_VALUE {
+
+			SQL_COLUMN = "IP_MASK_VALUE";
+		}
+
+		STRING MSO_FLD_IP_POOL_NAME {
+
+			SQL_COLUMN = "IP_POOL_NAME";
+		}
+
+		STRING MSO_FLD_IP_VERSION {
+
+			SQL_COLUMN = "IP_VERSION";
+		}
+
+		STRING PIN_FLD_SEGMENT_NAME {
+
+			SQL_COLUMN = "IP_SEGMENT";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /device/ip/framed
+#=======================================
+
+STORABLE CLASS /device/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /device/ip/static
+#=======================================
+
+STORABLE CLASS /device/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+

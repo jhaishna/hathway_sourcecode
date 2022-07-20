@@ -1,0 +1,263 @@
+
+#=======================================
+#  Field PIN_FLD_EVENT_MAP
+#=======================================
+
+ARRAY PIN_FLD_EVENT_MAP {
+
+	ID = 2248;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RETRIEVE_EDR_FIELD
+#=======================================
+
+STRING PIN_FLD_RETRIEVE_EDR_FIELD {
+
+	ID = 7763;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RETRIEVE_FIELD
+#=======================================
+
+STRING PIN_FLD_RETRIEVE_FIELD {
+
+	ID = 7761;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UPDATE_EDR_FIELD
+#=======================================
+
+STRING PIN_FLD_UPDATE_EDR_FIELD {
+
+	ID = 7764;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UPDATE_FIELD
+#=======================================
+
+STRING PIN_FLD_UPDATE_FIELD {
+
+	ID = 7762;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Storable Class /config/sub_bal_contributor
+#=======================================
+
+STORABLE CLASS /config/sub_bal_contributor {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to specify the per resource, per event type, the contributor configuration for retrieving and updating sub-balances.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MAP {
+
+		DESCR = "Each array element specifies the configuration for one resource.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENTS {
+
+			DESCR = "Configuration per event type.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				DESCR = "The type of the event.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_RETRIEVE_EDR_FIELD {
+
+				DESCR = "The description of the field name of the retrieving contributorthis is here for potential usage for IntegRate.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_RETRIEVE_FIELD {
+
+				DESCR = "The description of the field name of the retrieving contributor";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_UPDATE_EDR_FIELD {
+
+				DESCR = "The description of the field name of the updating contributorthis is here for potential usage for IntegRate.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_UPDATE_FIELD {
+
+				DESCR = "The description of the field name of the updating contributor";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			DESCR = "Numeric value of the resource that is impacted.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/sub_bal_contributor
+#=======================================
+
+STORABLE CLASS /config/sub_bal_contributor IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MAP {
+
+		SQL_TABLE = "cfg_sub_bal_contrib_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENTS {
+
+			SQL_TABLE = "cfg_evt_contrib_flds_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				SQL_COLUMN = "event_type";
+			}
+
+			STRING PIN_FLD_RETRIEVE_EDR_FIELD {
+
+				SQL_COLUMN = "retrv_edr_fld";
+			}
+
+			STRING PIN_FLD_RETRIEVE_FIELD {
+
+				SQL_COLUMN = "retrv_fld";
+			}
+
+			STRING PIN_FLD_UPDATE_EDR_FIELD {
+
+				SQL_COLUMN = "upd_edr_fld";
+			}
+
+			STRING PIN_FLD_UPDATE_FIELD {
+
+				SQL_COLUMN = "upd_fld";
+			}
+
+		}
+
+		INT PIN_FLD_RESOURCE_ID {
+
+			SQL_COLUMN = "res_id";
+		}
+
+	}
+
+}
+

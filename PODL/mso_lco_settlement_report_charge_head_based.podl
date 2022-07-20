@@ -1,0 +1,122 @@
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+	ID = 43324;
+	DESCR = "Charge Head Based Commission";
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD
+#=======================================
+
+STRING MSO_FLD_CHARGE_HEAD {
+
+	ID = 43301;
+	DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+}
+
+
+#=======================================
+#  Field MSO_FLD_PRICE
+#=======================================
+
+DECIMAL MSO_FLD_PRICE {
+
+	ID = 42017;
+	DESCR = "Supplier Price of the item";
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report/charge_head_based
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report/charge_head_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Charge Head Based Wholesale Settlement Commission";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		DESCR = "Charge Head Based Commission";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_PRICE {
+
+			DESCR = "Charge Head Amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_lco_settlement_report/charge_head_based
+#=======================================
+
+STORABLE CLASS /mso_lco_settlement_report/charge_head_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		SQL_TABLE = "mso_lco_sett_rpt_charge_head_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			SQL_COLUMN = "charge_head";
+		}
+
+		DECIMAL MSO_FLD_PRICE {
+
+			SQL_COLUMN = "Amount";
+		}
+
+	}
+
+}
+

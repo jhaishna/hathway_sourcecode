@@ -1,0 +1,267 @@
+
+#=======================================
+#  Field PIN_FLD_OPCODES
+#=======================================
+
+ARRAY PIN_FLD_OPCODES {
+
+	ID = 886;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MODE
+#=======================================
+
+ENUM PIN_FLD_MODE {
+
+	ID = 1576;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OPCODE
+#=======================================
+
+INT PIN_FLD_OPCODE {
+
+	ID = 368;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAMS
+#=======================================
+
+ARRAY PIN_FLD_PARAMS {
+
+	ID = 5775;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTEDS
+#=======================================
+
+ARRAY PIN_FLD_PERMITTEDS {
+
+	ID = 241;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTED
+#=======================================
+
+STRING PIN_FLD_PERMITTED {
+
+	ID = 249;
+}
+
+
+#=======================================
+#  Storable Class /config/provisioning_tag
+#=======================================
+
+STORABLE CLASS /config/provisioning_tag {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Config object used to configure product/discount provisioning tags.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OPCODES {
+
+		DESCR = "An array to hold the list of opcodes to be called when a product/discount is purchased or cancelled or both.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_MODE {
+
+			DESCR = "Indicates if the opcode is to be during purchase, cancel or both. Values are: (0) on purchase, (1) on cancel, (2) on both purchase and cancel. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			DESCR = "Opcode number that is called.";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PARAMS {
+
+			DESCR = "Array of input data for the opcode.";
+			ORDER = 2;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				DESCR = "Field Name";
+				ORDER = 0;
+				LENGTH = 512;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				DESCR = "Value of the field";
+				ORDER = 0;
+				LENGTH = 64;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		DESCR = "Array of permitted types.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PERMITTED {
+
+			DESCR = "The type of permitted service or account.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/provisioning_tag
+#=======================================
+
+STORABLE CLASS /config/provisioning_tag IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_OPCODES {
+
+		SQL_TABLE = "config_provtag_opcodes_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_MODE {
+
+			SQL_COLUMN = "op_mode";
+		}
+
+		INT PIN_FLD_OPCODE {
+
+			SQL_COLUMN = "opcode";
+		}
+
+		ARRAY PIN_FLD_PARAMS {
+
+			SQL_TABLE = "config_provtag_params_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_FIELD_NAME {
+
+				SQL_COLUMN = "field_name";
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "value";
+			}
+
+		}
+
+	}
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		SQL_TABLE = "config_provtag_permitteds_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PERMITTED {
+
+			SQL_COLUMN = "permitted";
+		}
+
+	}
+
+}
+

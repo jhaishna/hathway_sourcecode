@@ -1,0 +1,144 @@
+
+#=======================================
+#  Field PIN_FLD_STATES
+#=======================================
+
+ARRAY PIN_FLD_STATES {
+
+	ID = 8047;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LIFECYCLE_STATE
+#=======================================
+
+INT PIN_FLD_LIFECYCLE_STATE {
+
+	ID = 8052;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Storable Class /config/service_state_map
+#=======================================
+
+STORABLE CLASS /config/service_state_map {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " This class will contain the mapping between STATUS, STATUS_FLAGS and LIFECYCLE_STATE of service object. The index of this array element would be the value of LIFECYCLE_STATE.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_STATES {
+
+		DESCR = " Array for the mapping between status , status_flag  and lifecycle_state";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_LIFECYCLE_STATE {
+
+			DESCR = "Lifecycle state of a service  See pin_cust.h for possible values.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Status of the service. Values are active (10100), inactive (10102) and closed (10103). Typically user access to services is blocked unless active (policy controlled).";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			DESCR = "System and user-defined modifier flags to track the reasons for the service being inactive. See pin_cust.h for possible values.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/service_state_map
+#=======================================
+
+STORABLE CLASS /config/service_state_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_STATES {
+
+		SQL_TABLE = "config_lifecycle_states_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_LIFECYCLE_STATE {
+
+			SQL_COLUMN = "lifecycle_state";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			SQL_COLUMN = "status_flags";
+		}
+
+	}
+
+}
+

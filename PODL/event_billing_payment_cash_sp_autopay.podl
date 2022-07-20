@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/payment/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash/sp_autopay {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "SP LCO Autopay Type";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/payment/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/payment/cash/sp_autopay IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,4 @@
+javac PricingUtility.java ProvCmtsMap.java
+jar -cvf msopricingutility.jar *.class
+cp msopricingutility.jar ../../../apps/mso_pricing_utility
+cp *.class ../../../apps/mso_pricing_utility

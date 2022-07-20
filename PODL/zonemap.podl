@@ -1,0 +1,350 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZONEMAP_DATA_DERIVED
+#=======================================
+
+BUF PIN_FLD_ZONEMAP_DATA_DERIVED {
+
+	ID = 1463;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZONEMAP_DATA_RAW
+#=======================================
+
+BUF PIN_FLD_ZONEMAP_DATA_RAW {
+
+	ID = 1462;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZONEMAP_DATA_TYPE
+#=======================================
+
+ENUM PIN_FLD_ZONEMAP_DATA_TYPE {
+
+	ID = 1459;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZONEMAP_SEARCH_TYPE
+#=======================================
+
+ENUM PIN_FLD_ZONEMAP_SEARCH_TYPE {
+
+	ID = 1458;
+}
+
+
+#=======================================
+#  Storable Class /zonemap
+#=======================================
+
+STORABLE CLASS /zonemap {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "Object to store information of zones and data contained in zones. A zone can be a geographical location and can have sub-zones. For example, phone numbers and IP addresses can be grouped into zones and zones can form hierarchies. Zonemap is used by the rate plan selector of a product.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the account object that owns this zonemap.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "A brief description of the zonemap object.";
+		ORDER = 0;
+		LENGTH = 1024;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Unique name for this zone map. Used to associate the zone map with a certain product.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	BUF PIN_FLD_ZONEMAP_DATA_DERIVED {
+
+		DESCR = "Internal representation of zone map data. The original zone map hierarchy is pre-compiled and re-organized centering around the data so that the search for zone lineage based on a given string will be efficient.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	BUF PIN_FLD_ZONEMAP_DATA_RAW {
+
+		DESCR = "Field that stores the zone map data in a buffer in a format dictated by the PIN_FLD_DATA_TYPE field. When the data is extracted from the buffer, it will be in either flist or well-formed XML format.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_ZONEMAP_DATA_TYPE {
+
+		DESCR = "Indicators of the zone map data storage schema. For example, value of PIN_ZONEMAP_DATA_FLIST(default) indicates that the zone map is stored as a buffered flist. Value of PIN_ZONEMAP_DATA_XML indicates that the zone map data is stored as a XML document.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_ZONEMAP_SEARCH_TYPE {
+
+		DESCR = "Field that specifies the search criteria of the data in the zone map. PIN_ZONEMAP_PREFIX specifies prefix search; PIN_ZONEMAP_EXACT specifies whole string match.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /zonemap
+#=======================================
+
+STORABLE CLASS /zonemap IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "zonemap_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+	BUF PIN_FLD_ZONEMAP_DATA_DERIVED {
+
+		SQL_TABLE = "zonemap_data_derived_t";
+		SQL_COLUMN = "zonemap_derived_buffer";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+	}
+
+	BUF PIN_FLD_ZONEMAP_DATA_RAW {
+
+		SQL_TABLE = "zonemap_data_raw_t";
+		SQL_COLUMN = "zonemap_raw_buffer";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+	}
+
+	ENUM PIN_FLD_ZONEMAP_DATA_TYPE {
+
+		SQL_COLUMN = "zonemap_data_type";
+	}
+
+	ENUM PIN_FLD_ZONEMAP_SEARCH_TYPE {
+
+		SQL_COLUMN = "zonemap_search_type";
+	}
+
+}
+

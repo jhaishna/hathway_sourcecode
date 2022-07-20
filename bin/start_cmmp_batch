@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+#	@(#) % %
+#
+# Copyright (c) 1996, 2017, Oracle and/or its affiliates. All rights reserved.
+#      
+#       This material is the confidential property of Oracle Corporation or its
+#       licensors and may be used, reproduced, stored or transmitted only in
+#       accordance with a valid Oracle license or sublicense agreement.
+#
+
+#
+# start_cmmp_batch
+#
+#
+VERSION=7.5
+PATH=/usr/bin:/bin
+
+PINDIR=/home/pin/Thirdparty/BRM12/BRM
+LOGDIR=/home/pin/Thirdparty/BRM12/BRM/var/cmmp_batch
+
+CM=${PINDIR}/mso/bin/cmmp_batch
+
+CMDIR=${PINDIR}/mso/sys/cmmp_batch
+CMLOG=${LOGDIR}/cmmp_batch.log
+CMPID=${LOGDIR}/cmmp_batch.pid
+
+if [ -r ${CMPID} ]; then
+  /bin/ps -f -p `cat ${CMPID}` | grep ${CM} > /dev/null
+  if [ $? -eq 0 ]; then
+        echo "ERROR: cmmp_batch is already running"
+        exit 1
+  fi
+fi
+
+if [ ! -x ${CM} ]; then
+	echo "HELP: executable \"${CM}\" not found!"
+	exit 1
+fi       
+
+if [ \( ! -r  ${CMDIR}/pin.conf \) -a \( ! -r /etc/pin.conf \)  -a \( ! -r ${PINDIR}/config/pin.conf \) ]; then
+        echo "HELP: no pin.conf for cmmp_batch in \"${CMDIR}\" or /etc!"
+        exit 1
+fi       
+
+if [ ! -d  ${LOGDIR} ]; then
+	mkdir -p ${LOGDIR}
+	if [ $? -ne 0 ]; then
+		echo "HELP: problem making LOGDIR \"${LOGDIR}\"!"
+		exit 1
+	fi
+fi       
+
+# XXX ought to save old log file, or check for > some-size...
+( cd ${CMDIR} ;
+  echo "started ${CM} at..." >> ${CMLOG}
+  date >> ${CMLOG}
+  ${CM} >> ${CMLOG} 2>&1 &
+  echo $! > ${CMPID} ;
+  chmod 640 ${CMLOG} ;
+  chmod 640 ${CMPID} )
+
+# get rc from cmmp_batch startup
+exit $?

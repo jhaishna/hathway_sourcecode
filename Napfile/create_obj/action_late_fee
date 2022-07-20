@@ -1,0 +1,27 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /config/collections/action/custom/late_fee 523758 0
+0 PIN_FLD_CREATED_T               TSTAMP [0] (1464982321) 04/06/2016 01:02:01:000 AM
+0 PIN_FLD_MOD_T                   TSTAMP [0] (1464982321) 04/06/2016 01:02:01:000 AM
+0 PIN_FLD_READ_ACCESS                STR [0] "L"
+0 PIN_FLD_WRITE_ACCESS               STR [0] "L"
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_DESCR                      STR [0] ""
+0 PIN_FLD_HOSTNAME                   STR [0] "-"
+0 PIN_FLD_NAME                       STR [0] "Collection Actions"
+0 PIN_FLD_PROGRAM_NAME               STR [0] "-"
+0 PIN_FLD_VALUE                      STR [0] ""
+0 PIN_FLD_VERSION                    STR [0] ""
+0 PIN_FLD_LATE_FEE_INFO        SUBSTRUCT [0] allocated 4, used 4
+1     PIN_FLD_AMOUNT             DECIMAL [0] 0
+1     PIN_FLD_CURRENCY               INT [0] 356
+1     PIN_FLD_OPTIONS               ENUM [0] 0
+1     PIN_FLD_PERCENT            DECIMAL [0] 12
+0 PIN_FLD_CONFIG_ACTION_INFO   SUBSTRUCT [0] allocated 6, used 6
+1     PIN_FLD_ACTION_DESCR           STR [0] "Applying Late Fee"
+1     PIN_FLD_ACTION_NAME            STR [0] "LATE_Fee"
+1     PIN_FLD_ACTION_TYPE            STR [0] "late_fee"
+1     PIN_FLD_OPCODE                 INT [0] 3884
+1     PIN_FLD_TEMPLATE_OBJ          POID [0] 0.0.0.0  0 0
+1     PIN_FLD_TARGET_ACTION         ENUM [0] 0
+XX
+xop 1 0 1

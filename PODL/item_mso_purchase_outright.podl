@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_purchase_outright
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_outright {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for  mso purchase outright";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_purchase_outright
+#=======================================
+
+STORABLE CLASS /item/mso_purchase_outright IMPLEMENTATION ORACLE7 {
+
+}
+

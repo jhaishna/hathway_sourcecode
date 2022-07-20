@@ -1,0 +1,501 @@
+
+#=======================================
+#  Field PIN_FLD_BILLINFO
+#=======================================
+
+ARRAY PIN_FLD_BILLINFO {
+
+	ID = 126;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_CYCLE_DOM
+#=======================================
+
+INT PIN_FLD_ACTG_CYCLE_DOM {
+
+	ID = 752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_FUTURE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+	ID = 757;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_LAST_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTG_LAST_T {
+
+	ID = 756;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTG_NEXT_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+	ID = 755;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_ACTGCYCLES_LEFT
+#=======================================
+
+INT PIN_FLD_BILL_ACTGCYCLES_LEFT {
+
+	ID = 141;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_WHEN
+#=======================================
+
+INT PIN_FLD_BILL_WHEN {
+
+	ID = 131;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FUTURE_BILL_T
+#=======================================
+
+TIMESTAMP PIN_FLD_FUTURE_BILL_T {
+
+	ID = 7904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_BILL_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+	ID = 140;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_BILL_T
+#=======================================
+
+TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+	ID = 132;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARENT_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+	ID = 7909;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAY_TYPE
+#=======================================
+
+ENUM PIN_FLD_PAY_TYPE {
+
+	ID = 7852;
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object. This event is created by the PCM_OP_CUST_SET_BILLINFO opcode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BILLINFO {
+
+		DESCR = "Array of old and new values. Array element ids are significant: PIN_ELEMID_OLD - old (0), and PIN_ELEMID_NEW - new (1).";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			DESCR = "Day-of-month that monthly cycle begins for this billinfo. Cycle fees, folds and deferred taxation are synchronized to this day of the month. Legal values are 1-31. Additional restrictions be enforced using the PCM_OP_CUST_POL_PREP_ACTGINFO policy. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+			DESCR = "Date for when next monthly cycle (cycle after the current one) will end. Generally, this equates to the 2nd next occurance of actg day-of-month. If the customer changes the day-of-month, this field is used to synchronize to the new cycle.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_LAST_T {
+
+			DESCR = "Date that current monthly cycle began (and last monthly cycle ended).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+			DESCR = "Date that current monthly cycle ends (and next monthly cycle begins). Monthly billing gets triggered based on this field. If an event associated with this billinfo arrives with an end time beyond this date, the monthly billing is triggered automatically.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "Link to the default Balance Group object for this billinfo.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			DESCR = "POID of the Billinfo Object.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_ACTGCYCLES_LEFT {
+
+			DESCR = "Number of monthly cycles remaining until the current billing cycle ends. Billing cycles are always a multiple of monthly cycles; this field counts down each month until billing is run.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			DESCR = "Frequency for billing, stored as number of monthly cycles in each billing cycle (monthly billing = 1, bi-monthly = 2, quarterly = 3, annual = 12).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "Primary currency for this billinfo. Stored as the resource ID of the currency (ISO 4217 standard). All A/R for the billinfo is tracked in the primary currency.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_FUTURE_BILL_T {
+
+			DESCR = "Date that the future billing cycle ends.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+			DESCR = "Date that the current billing cycle started and the previous billing cycle ended.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+			DESCR = "Date that the current billing cycle ends.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+			DESCR = "This is a link to the billinfo which is one level up in the hierarchy (but this object not necessarily being the subordinate). If the given billinfo is not a child, then this field will be NULL.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			DESCR = "Pay type, like PIN_PAY_TYPE_INVOICE - invoice (10001), PIN_PAY_TYPE_CC - credit card (10003), PIN_PAY_TYPE_DD - direct debit (10005), or PIN_PAY_TYPE_SUBORD - subordinate (10007).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/create
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/delete
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/modify
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Audit trail event to track changes to the billinfo object.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_BILLINFO {
+
+		SQL_TABLE = "event_customer_billinfo_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ACTG_CYCLE_DOM {
+
+			SQL_COLUMN = "actg_cycle_dom";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_FUTURE_T {
+
+			SQL_COLUMN = "actg_future_t";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_LAST_T {
+
+			SQL_COLUMN = "actg_last_t";
+		}
+
+		TIMESTAMP PIN_FLD_ACTG_NEXT_T {
+
+			SQL_COLUMN = "actg_next_t";
+		}
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			SQL_COLUMN = "billinfo_obj";
+		}
+
+		INT PIN_FLD_BILL_ACTGCYCLES_LEFT {
+
+			SQL_COLUMN = "bill_actgcycles_left";
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			SQL_COLUMN = "bill_when";
+		}
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+		TIMESTAMP PIN_FLD_FUTURE_BILL_T {
+
+			SQL_COLUMN = "future_bill_t";
+		}
+
+		TIMESTAMP PIN_FLD_LAST_BILL_T {
+
+			SQL_COLUMN = "last_bill_t";
+		}
+
+		TIMESTAMP PIN_FLD_NEXT_BILL_T {
+
+			SQL_COLUMN = "next_bill_t";
+		}
+
+		POID PIN_FLD_PARENT_BILLINFO_OBJ {
+
+			SQL_COLUMN = "parent_billinfo_obj";
+		}
+
+		ENUM PIN_FLD_PAY_TYPE {
+
+			SQL_COLUMN = "pay_type";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/create
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/delete
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/customer/billinfo/modify
+#=======================================
+
+STORABLE CLASS /event/customer/billinfo/modify IMPLEMENTATION ORACLE7 {
+
+}
+

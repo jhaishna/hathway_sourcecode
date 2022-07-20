@@ -1,0 +1,199 @@
+
+#=======================================
+#  Field PIN_FLD_MOST_CALLED_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+	ID = 7461;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CRITERION
+#=======================================
+
+STRING PIN_FLD_CRITERION {
+
+	ID = 2301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_IMPACT_CATEGORY
+#=======================================
+
+STRING PIN_FLD_IMPACT_CATEGORY {
+
+	ID = 1452;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFFERING_OBJ
+#=======================================
+
+POID PIN_FLD_OFFERING_OBJ {
+
+	ID = 9056;
+}
+
+
+#=======================================
+#  Storable Class /profile/mostcalled
+#=======================================
+
+STORABLE CLASS /profile/mostcalled {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class are used by pre_rating policy  for Dynamic Friends & Family feature. A /profile/mostcalled object is created when purchasing a discount with a mostcalled event type in the usage map.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+		DESCR = "Substruct with details on the most called profile.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			DESCR = "This is number of most called no.s to be considered while determining the most called numbers. For example, if this is set to 3, 3 most called no.s will be considered.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CRITERION {
+
+			DESCR = "criterion based on which the mostcalled numbers are ranked. Can be duration, cost or occurrences ";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "event_type to be considered while searching for the most called numbers ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_IMPACT_CATEGORY {
+
+			DESCR = "impact_category to be considered while searching for the most called numbers ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			DESCR = "The offering_obj of the discount ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/mostcalled
+#=======================================
+
+STORABLE CLASS /profile/mostcalled IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_MOST_CALLED_INFO {
+
+		SQL_TABLE = "profile_mostcalled_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_COUNT {
+
+			SQL_COLUMN = "count";
+		}
+
+		STRING PIN_FLD_CRITERION {
+
+			SQL_COLUMN = "criterion";
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		STRING PIN_FLD_IMPACT_CATEGORY {
+
+			SQL_COLUMN = "impact_category";
+		}
+
+		POID PIN_FLD_OFFERING_OBJ {
+
+			SQL_COLUMN = "offering_obj";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,173 @@
+
+#=======================================
+#  Field PIN_FLD_PERMITTED_SERVICE_TYPES
+#=======================================
+
+ARRAY PIN_FLD_PERMITTED_SERVICE_TYPES {
+
+	ID = 8027;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONFIG_TYPE_PROV_DTLS
+#=======================================
+
+STRING PIN_FLD_CONFIG_TYPE_PROV_DTLS {
+
+	ID = 8029;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONFIG_TYPE_SVC_ORDER_STATE
+#=======================================
+
+STRING PIN_FLD_CONFIG_TYPE_SVC_ORDER_STATE {
+
+	ID = 8030;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROVISIONING_MODE
+#=======================================
+
+ENUM PIN_FLD_PROVISIONING_MODE {
+
+	ID = 8031;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Storable Class /config/service_framework/permitted_service_types
+#=======================================
+
+STORABLE CLASS /config/service_framework/permitted_service_types {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This configuration class is used to configure the set of non-telco services to be supported by TCF, along with the configuration type details.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PERMITTED_SERVICE_TYPES {
+
+		DESCR = "Array of Permitted service types in TCF.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CONFIG_TYPE_PROV_DTLS {
+
+			DESCR = "Configuration object type where Provisioning details are defined.Provisioning details attributes that needs to be added to output service order. Example: /config/telco/provisioning/ip ";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CONFIG_TYPE_SVC_ORDER_STATE {
+
+			DESCR = "Configuration type where service order state is defined.  Example: /config/telco/service_order_state/ip";
+			ORDER = 2;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_PROVISIONING_MODE {
+
+			DESCR = "Provisioning mode to be supported for the given service type. 0 - Queued mode, 1 - Confirmed mode. By defult Provisioning mode is Queued mode. ";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service type. Example : /service/ip";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/service_framework/permitted_service_types
+#=======================================
+
+STORABLE CLASS /config/service_framework/permitted_service_types IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PERMITTED_SERVICE_TYPES {
+
+		SQL_TABLE = "config_svcfw_perm_svc_types_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CONFIG_TYPE_PROV_DTLS {
+
+			SQL_COLUMN = "config_type_prov_dtls";
+		}
+
+		STRING PIN_FLD_CONFIG_TYPE_SVC_ORDER_STATE {
+
+			SQL_COLUMN = "config_type_svc_order_state";
+		}
+
+		ENUM PIN_FLD_PROVISIONING_MODE {
+
+			SQL_COLUMN = "provisioning_mode";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "service_type";
+		}
+
+	}
+
+}
+

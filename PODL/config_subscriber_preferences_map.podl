@@ -1,0 +1,259 @@
+
+#=======================================
+#  Field PIN_FLD_SUBSCRIBER_PREFERENCES
+#=======================================
+
+ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+	ID = 8032;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEFAULT
+#=======================================
+
+STRING PIN_FLD_DEFAULT {
+
+	ID = 8034;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBSCRIBER_PREFERENCE_ID
+#=======================================
+
+INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+	ID = 8033;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUES
+#=======================================
+
+ARRAY PIN_FLD_VALUES {
+
+	ID = 9501;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Storable Class /config/subscriber_preferences_map
+#=======================================
+
+STORABLE CLASS /config/subscriber_preferences_map {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = " This class will contain the mapping between the preference  name to the id. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+		DESCR = "Structure of telco aaa configurable parameters";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEFAULT {
+
+			DESCR = "Default value of the Preference to show in customer center.";
+			ORDER = 5;
+			LENGTH = 256;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name of the Preference.";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "String ID of the Preference. Used for localization.";
+			ORDER = 2;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+			DESCR = "ID of the Preference.";
+			ORDER = 1;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Type of value the preference can hold. If the value is ENUM then the Values array will hold the List of Values for this preferenceValues are: (1) STR, (2) INT, (3) ENUM, (4) DECIMAL, (5) TSTAMP, ";
+			ORDER = 3;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_VALUES {
+
+			DESCR = "Default values the preference can take. The values are present only if TYPE is ENUM";
+			ORDER = 4;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_VALUE {
+
+				DESCR = "Default value of the Preference.";
+				ORDER = 0;
+				LENGTH = 256;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/subscriber_preferences_map
+#=======================================
+
+STORABLE CLASS /config/subscriber_preferences_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUBSCRIBER_PREFERENCES {
+
+		SQL_TABLE = "config_pref_map_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DEFAULT {
+
+			SQL_COLUMN = "default_value";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "string_id";
+		}
+
+		INT PIN_FLD_SUBSCRIBER_PREFERENCE_ID {
+
+			SQL_COLUMN = "preference_id";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+		ARRAY PIN_FLD_VALUES {
+
+			SQL_TABLE = "preference_values_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "value";
+			}
+
+		}
+
+	}
+
+}
+

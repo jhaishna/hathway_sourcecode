@@ -1,0 +1,261 @@
+
+#=======================================
+#  Field PIN_FLD_EVENT_MAP
+#=======================================
+
+ARRAY PIN_FLD_EVENT_MAP {
+
+	ID = 2248;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENTS
+#=======================================
+
+ARRAY PIN_FLD_EVENTS {
+
+	ID = 503;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_DESCR
+#=======================================
+
+STRING PIN_FLD_EVENT_DESCR {
+
+	ID = 56;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INDICATOR
+#=======================================
+
+INT PIN_FLD_INDICATOR {
+
+	ID = 958;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UNIT
+#=======================================
+
+ENUM PIN_FLD_UNIT {
+
+	ID = 2235;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTED
+#=======================================
+
+STRING PIN_FLD_PERMITTED {
+
+	ID = 249;
+}
+
+
+#=======================================
+#  Storable Class /config/event_map
+#=======================================
+
+STORABLE CLASS /config/event_map {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to specify the mapping relationship between purchase leveland event types.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MAP {
+
+		DESCR = "Each array element specifies the mapping relationshipbetween one purchase level and multiple event types.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENTS {
+
+			DESCR = "Array of event types mapped to thepurchase level.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_COUNT {
+
+				DESCR = "Frequency/count of accounting cyclesof cycle events";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_EVENT_DESCR {
+
+				DESCR = "The description of the typeof the event.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				DESCR = "The type of the event.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_INDICATOR {
+
+				DESCR = "Time reference point indicator whether to use the start_t or end_t to  accumulate the sub-balances for this event type; 0 means start_t, which is default, 1 means end_t";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_UNIT {
+
+				DESCR = "Unit of Measure for Cycle forward events. Days/Weeks/Months/Years.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_PERMITTED {
+
+			DESCR = "The purchase level that we specifythe type of events.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/event_map
+#=======================================
+
+STORABLE CLASS /config/event_map IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EVENT_MAP {
+
+		SQL_TABLE = "config_event_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_EVENTS {
+
+			SQL_TABLE = "config_permitted_events_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			INT PIN_FLD_COUNT {
+
+				SQL_COLUMN = "event_count";
+			}
+
+			STRING PIN_FLD_EVENT_DESCR {
+
+				SQL_COLUMN = "event_descr";
+			}
+
+			STRING PIN_FLD_EVENT_TYPE {
+
+				SQL_COLUMN = "event_type";
+			}
+
+			INT PIN_FLD_INDICATOR {
+
+				SQL_COLUMN = "time_indicator";
+			}
+
+			ENUM PIN_FLD_UNIT {
+
+				SQL_COLUMN = "unit";
+			}
+
+		}
+
+		STRING PIN_FLD_PERMITTED {
+
+			SQL_COLUMN = "permitted";
+		}
+
+	}
+
+}
+

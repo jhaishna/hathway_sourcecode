@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/control_rollover
+#=======================================
+
+STORABLE CLASS /event/audit/control_rollover {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Class to audit controlled rollovers.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/control_rollover
+#=======================================
+
+STORABLE CLASS /event/audit/control_rollover IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/monthly IMPLEMENTATION ORACLE7 {
+
+}
+

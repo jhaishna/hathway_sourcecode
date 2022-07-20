@@ -1,0 +1,463 @@
+
+#=======================================
+#  Field PIN_FLD_LOCK_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+	ID = 24;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCK_STATUS
+#=======================================
+
+ENUM PIN_FLD_LOCK_STATUS {
+
+	ID = 9882;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN_ATTEMPTS
+#=======================================
+
+INT PIN_FLD_LOGIN_ATTEMPTS {
+
+	ID = 9881;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PERMITTEDS
+#=======================================
+
+ARRAY PIN_FLD_PERMITTEDS {
+
+	ID = 241;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION
+#=======================================
+
+STRING PIN_FLD_ACTION {
+
+	ID = 83;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAXIMUM
+#=======================================
+
+DECIMAL PIN_FLD_MAXIMUM {
+
+	ID = 87;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MINIMUM
+#=======================================
+
+DECIMAL PIN_FLD_MINIMUM {
+
+	ID = 86;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ROLE
+#=======================================
+
+ARRAY PIN_FLD_ROLE {
+
+	ID = 334;
+}
+
+
+#=======================================
+#  Field PIN_FLD_APPLICATION
+#=======================================
+
+STRING PIN_FLD_APPLICATION {
+
+	ID = 333;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_PROFILE_OBJ {
+
+	ID = 111;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_ADMINCLIENT
+#=======================================
+
+SUBSTRUCT PIN_FLD_SERVICE_ADMINCLIENT {
+
+	ID = 331;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE
+#=======================================
+
+INT PIN_FLD_PROFILE {
+
+	ID = 96;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USER_PREFS
+#=======================================
+
+BUF PIN_FLD_USER_PREFS {
+
+	ID = 332;
+}
+
+
+#=======================================
+#  Storable Class /service/admin_client
+#=======================================
+
+STORABLE CLASS /service/admin_client {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Admin Client Service information. Used to authenticate various Infranet administration tool users connecting to the system. This class also lets you limit CSRs to certain types of activities by creating individual service objects for every CSR with different permissions. For example, you might want to allow only some of your CSRs to handle refunds. Permissions are currently enforced only by the Infranet Administrator application. Note: Some tasks can't be controlled by permissions. For example, any CSR account can change any account login. See the Administrator Help for a list of the tasks that can be assigned permissions.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+		DESCR = "Substruct containing login attempts and lock status info";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_LOCK_STATUS {
+
+			LABEL = "LOCK_STATUS";
+			DESCR = "The status of the login service. If value is 1 Service locked, 0 - normal";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_LOGIN_ATTEMPTS {
+
+			LABEL = "LOGIN_ATTEMPTS";
+			DESCR = "The number of incorrect login attempts";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		DESCR = "Array of permissions (ACL like) information. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			DESCR = "Name of the action being restricted. Note that the Infranet Administrator GUI comes pre-built with the types of activities on which you set permissions. See the Infrant Administrator document.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MAXIMUM {
+
+			DESCR = "Upper bound for numeric values associated with the action. Applicable only for certain types of activities. For example, you can set the maximum amount of refund a CSR can give.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MINIMUM {
+
+			DESCR = "Lower  bound for numeric values associated with the action. Applicable only for certain types of activities. For example, you can set the minimum amount of refund a CSR can give.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			DESCR = "Type/level of permission being granted. Possible values are NONE (0), READONLY (1), READWRITE (2), WRITEONLY (3).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_ROLE {
+
+		DESCR = "Array of application roles.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_APPLICATION {
+
+			DESCR = "The name of the application thepermissioning strings apply to. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			DESCR = "POID of the Role objectcontaining permissioning strings. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_ADMINCLIENT {
+
+		DESCR = "Substruct to hold data specific to the admin_client service.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "A short description about the role";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_PROFILE {
+
+			DESCR = "This field is used to identify the /service/admin_client objects representing role. The default value for this should be set to NULL during account creation The value is set to 1 for /service/admin_client objects representing role.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		BUF PIN_FLD_USER_PREFS {
+
+			DESCR = "User preference information for applications. Data is stored as ascii key-value pairs, seperated by equals symbols and terminated by a newline.  The data is significant only to the client application.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/admin_client
+#=======================================
+
+STORABLE CLASS /service/admin_client IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LOCK_INFO {
+
+		SQL_TABLE = "admsvc_lockinfo_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_LOCK_STATUS {
+
+			SQL_COLUMN = "lock_status";
+		}
+
+		INT PIN_FLD_LOGIN_ATTEMPTS {
+
+			SQL_COLUMN = "login_atmpts";
+		}
+
+	}
+
+	ARRAY PIN_FLD_PERMITTEDS {
+
+		SQL_TABLE = "service_admin_permitteds_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			SQL_COLUMN = "action";
+		}
+
+		DECIMAL PIN_FLD_MAXIMUM {
+
+			SQL_COLUMN = "maximum";
+		}
+
+		DECIMAL PIN_FLD_MINIMUM {
+
+			SQL_COLUMN = "minimum";
+		}
+
+		ENUM PIN_FLD_TYPE {
+
+			SQL_COLUMN = "type";
+		}
+
+	}
+
+	ARRAY PIN_FLD_ROLE {
+
+		SQL_TABLE = "service_admin_role_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_APPLICATION {
+
+			SQL_COLUMN = "application";
+		}
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			SQL_COLUMN = "profile_obj";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_SERVICE_ADMINCLIENT {
+
+		SQL_TABLE = "service_adminclient_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "role_desc";
+		}
+
+		INT PIN_FLD_PROFILE {
+
+			SQL_COLUMN = "profile";
+		}
+
+		BUF PIN_FLD_USER_PREFS {
+
+			SQL_TABLE = "admin_client_user_prefs_buf";
+			SQL_COLUMN = "user_prefs";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+		}
+
+	}
+
+}
+

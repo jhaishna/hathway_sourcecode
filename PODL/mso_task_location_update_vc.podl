@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_task/location_update/vc
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/vc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/location_update/vc
+#=======================================
+
+STORABLE CLASS /mso_task/location_update/vc IMPLEMENTATION ORACLE7 {
+
+}
+

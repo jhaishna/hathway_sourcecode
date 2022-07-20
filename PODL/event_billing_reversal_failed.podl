@@ -1,0 +1,24 @@
+
+#=======================================
+#  Storable Class /event/billing/reversal/failed
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/failed {
+
+	LABEL = "Failed Payment Reversal";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event created when a failed payment reversal is made.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/failed
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/failed IMPLEMENTATION ORACLE7 {
+
+}
+

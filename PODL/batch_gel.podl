@@ -1,0 +1,576 @@
+
+#=======================================
+#  Field PIN_FLD_GEL_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_GEL_INFO {
+
+	ID = 2352;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ERROR_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_ERROR_FILE_NAME {
+
+	ID = 2355;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FILTER_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_FILTER_FILE_NAME {
+
+	ID = 5302;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INPUT_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_INPUT_FILE_NAME {
+
+	ID = 2353;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_RETRIES
+#=======================================
+
+INT PIN_FLD_NUM_RETRIES {
+
+	ID = 2360;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_TOTAL_RECORDS
+#=======================================
+
+INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+	ID = 2359;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUCCESS_FILE_NAME
+#=======================================
+
+STRING PIN_FLD_SUCCESS_FILE_NAME {
+
+	ID = 2354;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TEMPLATE_NAME
+#=======================================
+
+STRING PIN_FLD_TEMPLATE_NAME {
+
+	ID = 2365;
+}
+
+
+#=======================================
+#  Field PIN_FLD_HEADER_INFO
+#=======================================
+
+ARRAY PIN_FLD_HEADER_INFO {
+
+	ID = 2367;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIELD_NAME
+#=======================================
+
+STRING PIN_FLD_FIELD_NAME {
+
+	ID = 508;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SESSION_STATS
+#=======================================
+
+ARRAY PIN_FLD_SESSION_STATS {
+
+	ID = 5301;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_LOADED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_LAST_LOADED_T {
+
+	ID = 2356;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_FAILED
+#=======================================
+
+INT PIN_FLD_NUM_FAILED {
+
+	ID = 2358;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_FILTERED
+#=======================================
+
+INT PIN_FLD_NUM_FILTERED {
+
+	ID = 2370;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_SUCCEEDED
+#=======================================
+
+INT PIN_FLD_NUM_SUCCEEDED {
+
+	ID = 2357;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRAILER_INFO
+#=======================================
+
+ARRAY PIN_FLD_TRAILER_INFO {
+
+	ID = 2368;
+}
+
+
+#=======================================
+#  Storable Class /batch/gel
+#=======================================
+
+STORABLE CLASS /batch/gel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass for storing data on each load session of Generic Event Loader. The session object of the events loaded for this session is the sameas the POID of this object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GEL_INFO {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ERROR_FILE_NAME {
+
+			DESCR = "Name of the error log file created with full path";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_FILTER_FILE_NAME {
+
+			DESCR = "Name of the filter log file created with full path";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_INPUT_FILE_NAME {
+
+			DESCR = "Name of the event log file imported with full path";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_RETRIES {
+
+			DESCR = "Number of attempts to load this file";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+			DESCR = "Total number of records read in from the file";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SUCCESS_FILE_NAME {
+
+			DESCR = "Name of the success log file created with full path";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_TEMPLATE_NAME {
+
+			DESCR = "The template used for parsing the file";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_HEADER_INFO {
+
+		DESCR = "Array of header field names and values for the loaded file";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "Name of the field ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Value of the field in the header ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SESSION_STATS {
+
+		DESCR = "Array for holding the session information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_LAST_LOADED_T {
+
+			DESCR = "Timestamp of when the file was last loaded";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_FAILED {
+
+			DESCR = "Number of records failed to load";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_FILTERED {
+
+			DESCR = "Number of records filtered out";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_SUCCEEDED {
+
+			DESCR = "Number of records successfully loaded";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Current load status of UEL. Possible values are: FIELD_PARSE_ERROR = 1  ACCT_FORMAT_ERROR = 2  LOAD_FORMAT_ERROR = 3  PREV_PARSE_ERROR = 4  TOO_MANY_LOAD_ERRORS = 5  COMMAND_LINE_ARG_ERROR = 10  FILE_NOT_FOUND_ERROR = 11  ACCT_OPCODE_ERROR = 100  LOAD_OPCODE_ERROR = 101 ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_TRAILER_INFO {
+
+		DESCR = "Array of trailer field names and values for the loaded file";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			DESCR = "Name of the field ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Value of the field in the trailer ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /batch/gel
+#=======================================
+
+STORABLE CLASS /batch/gel IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_GEL_INFO {
+
+		SQL_TABLE = "batch_gel_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ERROR_FILE_NAME {
+
+			SQL_COLUMN = "error_file_name";
+		}
+
+		STRING PIN_FLD_FILTER_FILE_NAME {
+
+			SQL_COLUMN = "filter_file_name";
+		}
+
+		STRING PIN_FLD_INPUT_FILE_NAME {
+
+			SQL_COLUMN = "input_file_name";
+		}
+
+		INT PIN_FLD_NUM_RETRIES {
+
+			SQL_COLUMN = "num_retries";
+		}
+
+		INT PIN_FLD_NUM_TOTAL_RECORDS {
+
+			SQL_COLUMN = "num_total_records";
+		}
+
+		STRING PIN_FLD_SUCCESS_FILE_NAME {
+
+			SQL_COLUMN = "success_file_name";
+		}
+
+		STRING PIN_FLD_TEMPLATE_NAME {
+
+			SQL_COLUMN = "template_name";
+		}
+
+	}
+
+	ARRAY PIN_FLD_HEADER_INFO {
+
+		SQL_TABLE = "batch_gel_header_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "header_field_name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "header_field_value";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SESSION_STATS {
+
+		SQL_TABLE = "batch_gel_session_stat_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_LAST_LOADED_T {
+
+			SQL_COLUMN = "last_loaded_t";
+		}
+
+		INT PIN_FLD_NUM_FAILED {
+
+			SQL_COLUMN = "num_failed";
+		}
+
+		INT PIN_FLD_NUM_FILTERED {
+
+			SQL_COLUMN = "num_filtered";
+		}
+
+		INT PIN_FLD_NUM_SUCCEEDED {
+
+			SQL_COLUMN = "num_succeeded";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+	ARRAY PIN_FLD_TRAILER_INFO {
+
+		SQL_TABLE = "batch_gel_trailer_t";
+		SQL_STORAGE = "tablespace pin00 initrans 2 storage (initial 500k next 500k maxextents unlimited pctincrease 0 freelists 2 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_FIELD_NAME {
+
+			SQL_COLUMN = "trailer_field_name";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "trailer_field_value";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_late_fee
+#=======================================
+
+STORABLE CLASS /item/mso_late_fee {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Late Fee";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_late_fee
+#=======================================
+
+STORABLE CLASS /item/mso_late_fee IMPLEMENTATION ORACLE7 {
+
+}
+

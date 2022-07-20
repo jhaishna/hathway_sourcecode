@@ -1,0 +1,147 @@
+
+#=======================================
+#  Field PIN_FLD_ITEM_TAGS
+#=======================================
+
+ARRAY PIN_FLD_ITEM_TAGS {
+
+	ID = 2004;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_TAG
+#=======================================
+
+STRING PIN_FLD_ITEM_TAG {
+
+	ID = 2005;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_TYPE
+#=======================================
+
+STRING PIN_FLD_SERVICE_TYPE {
+
+	ID = 1454;
+}
+
+
+#=======================================
+#  Storable Class /config/item_tags
+#=======================================
+
+STORABLE CLASS /config/item_tags {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "The object defined by this class determines the item tags that is associated with an event and a service";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ITEM_TAGS {
+
+		DESCR = "Array of configurable item tags for different event types. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "Event type. A string where you can also use '*' as the wild card at the end of string.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ITEM_TAG {
+
+			DESCR = "Item tag string.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			DESCR = "Service/Account type string regular expression that allows you to set up wildcards.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/item_tags
+#=======================================
+
+STORABLE CLASS /config/item_tags IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ITEM_TAGS {
+
+		SQL_TABLE = "config_item_tags_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		STRING PIN_FLD_ITEM_TAG {
+
+			SQL_COLUMN = "item_tag";
+		}
+
+		STRING PIN_FLD_SERVICE_TYPE {
+
+			SQL_COLUMN = "service_type";
+		}
+
+	}
+
+}
+

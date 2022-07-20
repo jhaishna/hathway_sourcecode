@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/schedule/create
+#=======================================
+
+STORABLE CLASS /event/schedule/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event is created when a schedule object is created.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/create
+#=======================================
+
+STORABLE CLASS /event/schedule/create IMPLEMENTATION ORACLE7 {
+
+}
+

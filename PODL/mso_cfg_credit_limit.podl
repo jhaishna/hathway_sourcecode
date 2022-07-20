@@ -1,0 +1,686 @@
+
+#=======================================
+#  Field MSO_FLD_CITIES
+#=======================================
+
+ARRAY MSO_FLD_CITIES {
+
+	ID = 46021;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CREDIT_PROFILE
+#=======================================
+
+ARRAY MSO_FLD_CREDIT_PROFILE {
+
+	ID = 46011;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_FLOOR
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+	ID = 833;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_LIMIT
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+	ID = 200;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_DL_SPEED {
+
+	ID = 42098;
+}
+
+
+#=======================================
+#  Field MSO_FLD_FUP_DL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_FUP_DL_SPEED {
+
+	ID = 42240;
+}
+
+
+#=======================================
+#  Field MSO_FLD_FUP_UL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_FUP_UL_SPEED {
+
+	ID = 42241;
+}
+
+
+#=======================================
+#  Field MSO_FLD_QUOTA_CODE
+#=======================================
+
+STRING MSO_FLD_QUOTA_CODE {
+
+	ID = 42122;
+}
+
+
+#=======================================
+#  Field MSO_FLD_RATIO
+#=======================================
+
+STRING MSO_FLD_RATIO {
+
+	ID = 40041;
+}
+
+
+#=======================================
+#  Field MSO_FLD_UL_SPEED
+#=======================================
+
+DECIMAL MSO_FLD_UL_SPEED {
+
+	ID = 42099;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT_ORIG
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+	ID = 1621;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_WHEN
+#=======================================
+
+INT PIN_FLD_BILL_WHEN {
+
+	ID = 131;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHARGE_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CHARGE_AMT {
+
+	ID = 9697;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_FEE_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CYCLE_FEE_AMT {
+
+	ID = 863;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_FEE_AMT
+#=======================================
+
+DECIMAL PIN_FLD_PURCHASE_FEE_AMT {
+
+	ID = 862;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_CODE
+#=======================================
+
+STRING PIN_FLD_SERVICE_CODE {
+
+	ID = 8169;
+}
+
+
+#=======================================
+#  Field MSO_FLD_PLAN_NAME
+#=======================================
+
+STRING MSO_FLD_PLAN_NAME {
+
+	ID = 43005;
+	DESCR = "Hardware Plan Name";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_credit_limit
+#=======================================
+
+STORABLE CLASS /mso_cfg_credit_limit {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "To store currency and non-currency credit limit for a plan.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CITIES {
+
+		DESCR = "Array to hold information specific to cities.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY MSO_FLD_CREDIT_PROFILE {
+
+			DESCR = "Array to store credit limit and floor.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		DECIMAL MSO_FLD_DL_SPEED {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_FUP_DL_SPEED {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_FUP_UL_SPEED {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_QUOTA_CODE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING MSO_FLD_RATIO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_UL_SPEED {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CHARGE_AMT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CITY {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CYCLE_FEE_AMT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PURCHASE_FEE_AMT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_CODE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING MSO_FLD_PLAN_NAME {
+
+		DESCR = "Hardware Plan Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_credit_limit
+#=======================================
+
+STORABLE CLASS /mso_cfg_credit_limit IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_credit_limit_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CITIES {
+
+		SQL_TABLE = "mso_cfg_credit_limit_cities_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY MSO_FLD_CREDIT_PROFILE {
+
+			SQL_TABLE = "mso_cfg_credit_profile_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+				SQL_COLUMN = "credit_floor";
+			}
+
+			DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+				SQL_COLUMN = "credit_limit";
+			}
+
+		}
+
+		DECIMAL MSO_FLD_DL_SPEED {
+
+			SQL_COLUMN = "DL_SPEED";
+		}
+
+		DECIMAL MSO_FLD_FUP_DL_SPEED {
+
+			SQL_COLUMN = "FUP_DL_SPEED";
+		}
+
+		DECIMAL MSO_FLD_FUP_UL_SPEED {
+
+			SQL_COLUMN = "FUP_UL_SPEED";
+		}
+
+		STRING MSO_FLD_QUOTA_CODE {
+
+			SQL_COLUMN = "QUOTA_CODE";
+		}
+
+		STRING MSO_FLD_RATIO {
+
+			SQL_COLUMN = "RATIO";
+		}
+
+		DECIMAL MSO_FLD_UL_SPEED {
+
+			SQL_COLUMN = "UL_SPEED";
+		}
+
+		DECIMAL PIN_FLD_AMOUNT_ORIG {
+
+			SQL_COLUMN = "amount_orig";
+		}
+
+		INT PIN_FLD_BILL_WHEN {
+
+			SQL_COLUMN = "payterm";
+		}
+
+		DECIMAL PIN_FLD_CHARGE_AMT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		STRING PIN_FLD_CITY {
+
+			SQL_COLUMN = "city";
+		}
+
+		DECIMAL PIN_FLD_CYCLE_FEE_AMT {
+
+			SQL_COLUMN = "cycle_fee_amt";
+		}
+
+		DECIMAL PIN_FLD_PURCHASE_FEE_AMT {
+
+			SQL_COLUMN = "purchase_fee_amt";
+		}
+
+		STRING PIN_FLD_SERVICE_CODE {
+
+			SQL_COLUMN = "SERVICE_CODE";
+		}
+
+	}
+
+	STRING MSO_FLD_PLAN_NAME {
+
+		SQL_COLUMN = "plan_name";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		SQL_COLUMN = "plan_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

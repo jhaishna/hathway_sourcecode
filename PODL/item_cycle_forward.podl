@@ -1,0 +1,1679 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward
+#=======================================
+
+STORABLE CLASS /item/cycle_forward {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent cycle_forward items.  These items are created from cycle_forward fee generated events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_et
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_et {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward mso et";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_grant
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_grant {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Grant item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Annual Maintenance Charge";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/cm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/cr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for DOCSIS 3.0 Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/huwr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nat
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nat {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nwifi
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/wlnd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward AMC for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward hardware Rental";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/cm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Cable Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/huwr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Huawei Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward item for Additional IP.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/nd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/nwifi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for New Wifi Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/wlnd {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for Wireless Nat Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_add_mb_gb
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_add_mb_gb {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Additional MB/GB.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_adn_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_adn_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Annual Addon fixed Duration Package Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_adn_normal {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward addon normal";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso_sb_alc_fdp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_fta {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward ala-carte fta";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_paid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_paid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward ala-carte paid";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Subscription for DOCSIS 2.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Subscription for DOCSIS 2.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half yearly Subscription for DOCSIS 2.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for DOCSIS 2.0 Postpaid Plans.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Subscription for DOCSIS 3.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bimonthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly Subscription for DOCSIS 3.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for DOCSIS 3.0 Postpaid Plans.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Prepaid subscription items for FIBER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bi-Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Fiber Postpaid Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fup_topup
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fup_topup {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for FUP Topup.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Normal Prepaid Subscription for various duration mode.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Subscrription for Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bimonthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly Normal Prepaid Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Normal Subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half yearly Subscription for Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm_postpaid {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription Charges for Normal Postpaid Plans.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_bst
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_bst {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward basic service tier package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dpop {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward popular package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dprp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dprp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward premium package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dstp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dstp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle forward digital starter package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_fdp {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso_sb_pkg_fdp";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_tod
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_tod {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "TOD plan subscription item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_tod/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_tod/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly TOD subscription item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_ssp_monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_ssp_monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Special Site Plan item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward
+#=======================================
+
+STORABLE CLASS /item/cycle_forward IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_et
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_et IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_grant
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_grant IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/cm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/cr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/huwr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nat
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nat IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/nwifi
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_amc/wlnd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_amc/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/cm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/cm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/cr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/cr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/crsoho
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/dcm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/huwr IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/ip
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/nd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/nd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/nwifi
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/nwifi IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/wlnd
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/wlnd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_add_mb_gb
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_add_mb_gb IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_adn_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_adn_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_adn_normal IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_fta
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_fta IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_alc_paid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_alc_paid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc2_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc2_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fup_topup
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fup_topup IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm_postpaid
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm_postpaid IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_bst
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_bst IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dpop
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dpop IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dprp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dprp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_dstp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_dstp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_pkg_fdp
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_pkg_fdp IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_tod
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_tod IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_tod/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_tod/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_ssp_monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_ssp_monthly IMPLEMENTATION ORACLE7 {
+
+}
+

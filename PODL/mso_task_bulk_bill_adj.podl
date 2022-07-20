@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_task/bulk_bill_adj
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_bill_adj {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_bill_adj
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_bill_adj IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /item/Entertainment_Tax {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Entertainment_Tax";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/Entertainment_Tax
+#=======================================
+
+STORABLE CLASS /item/Entertainment_Tax IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,68 @@
+
+#=======================================
+#  Storable Class /item/settlement
+#=======================================
+
+STORABLE CLASS /item/settlement {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent settlements.  ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/roaming
+#=======================================
+
+STORABLE CLASS /item/settlement/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Settlement Item Object. Use to settle roaming or inter carrier exchange";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/ws
+#=======================================
+
+STORABLE CLASS /item/settlement/ws {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/settlement
+#=======================================
+
+STORABLE CLASS /item/settlement IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/roaming
+#=======================================
+
+STORABLE CLASS /item/settlement/roaming IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/settlement/ws
+#=======================================
+
+STORABLE CLASS /item/settlement/ws IMPLEMENTATION ORACLE7 {
+
+}
+

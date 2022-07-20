@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward_arrear
+#=======================================
+
+STORABLE CLASS /item/cycle_forward_arrear {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent cycle_forward_arrear items.  These items are created from cycle_forward_arrear fee generated events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward_arrear
+#=======================================
+
+STORABLE CLASS /item/cycle_forward_arrear IMPLEMENTATION ORACLE7 {
+
+}
+

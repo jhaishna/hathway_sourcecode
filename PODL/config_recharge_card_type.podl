@@ -1,0 +1,208 @@
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARDS
+#=======================================
+
+ARRAY PIN_FLD_RECHARGE_CARDS {
+
+	ID = 7618;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALERS
+#=======================================
+
+ARRAY PIN_FLD_DEALERS {
+
+	ID = 7616;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_CODE
+#=======================================
+
+STRING PIN_FLD_DEALER_CODE {
+
+	ID = 7602;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALER_NAME
+#=======================================
+
+STRING PIN_FLD_DEALER_NAME {
+
+	ID = 7601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_CODE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+	ID = 7610;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECHARGE_CARD_TYPE
+#=======================================
+
+STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+	ID = 7609;
+}
+
+
+#=======================================
+#  Storable Class /config/recharge_card_type
+#=======================================
+
+STORABLE CLASS /config/recharge_card_type {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Global";
+	DESCR = "Stores the voucher card type information ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RECHARGE_CARDS {
+
+		DESCR = "Array containing the voucher recharge card types.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_DEALERS {
+
+			DESCR = "Array containing the dealers";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_DEALER_CODE {
+
+				DESCR = "The code of the dealer.";
+				ORDER = 1;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_DEALER_NAME {
+
+				DESCR = "Name of the dealer.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			DESCR = "Code associated with the recharge card ";
+			ORDER = 2;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			DESCR = "Type of the voucher card ";
+			ORDER = 1;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/recharge_card_type
+#=======================================
+
+STORABLE CLASS /config/recharge_card_type IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RECHARGE_CARDS {
+
+		SQL_TABLE = "config_recharge_card_type_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_DEALERS {
+
+			SQL_TABLE = "config_recharge_dealers_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_DEALER_CODE {
+
+				SQL_COLUMN = "dealer_code";
+			}
+
+			STRING PIN_FLD_DEALER_NAME {
+
+				SQL_COLUMN = "dealer_name";
+			}
+
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_CODE {
+
+			SQL_COLUMN = "recharge_card_code";
+		}
+
+		STRING PIN_FLD_RECHARGE_CARD_TYPE {
+
+			SQL_COLUMN = "recharge_card_type";
+		}
+
+	}
+
+}
+

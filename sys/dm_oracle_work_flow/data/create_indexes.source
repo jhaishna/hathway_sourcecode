@@ -1,0 +1,2984 @@
+--
+--	@(#)$Id: create_indexes.source /cgbubrm_mainbrm.portalbase/11 2018/09/11 13:08:01 pzhou Exp $
+--
+-- Copyright (c) 1996, 2018, Oracle and/or its affiliates. All rights reserved.
+--     
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+-- SOURCE OF sql file to create the indexes for the PIN database
+-- DEFINES FOR:
+--	$PIN_CONF_TBLSPACEX	-- for tablespace to put all these in
+--	$PIN_CONF_STORAGE_SMALL	-- for storage phrase
+
+----------------------------
+-- begin "automatic" indices
+
+-- /account
+create unique index i_account__id on account_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+create unique index i_account_no__id on account_t ( account_no )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+create unique index i_acct_internal_notes__id on account_internal_notes_buf
+	(  obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+create unique index i_account_nameinfo__id on account_nameinfo_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+create index i_account_phones__id on account_phones_t
+	( obj_id0, rec_id2 )
+	$PIN_CONF_TBLSPACEX5
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+-- /active_session
+create unique index i_active_session__id on active_session_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/active_session.INDEX_CLAUSE'} ;
+
+create index i_active_session_id__id on active_session_t
+        ( active_session_id )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/active_session.INDEX_CLAUSE'} ;
+
+create unique index i_actsn_reslst__id on active_session_resv_list_t
+        ( reservation_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/active_session.INDEX_CLAUSE'} ;
+
+create unique index i_actsn_resv_list__id on active_session_resv_list_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/active_session.INDEX_CLAUSE'} ;
+
+-- /reservation_list
+create unique index i_reservation_list__id on reservation_list_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/reservation_list.INDEX_CLAUSE'} ;
+
+create index i_reservation_list_balgrp__id on reservation_list_t
+        ( bal_grp_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/reservation_list.INDEX_CLAUSE'} ;
+
+create unique index i_reservation_list_bal__id on reserved_balances_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/reservation_list.INDEX_CLAUSE'} ;
+
+create unique index i_active_res__id on active_reservations_t
+	( reservation_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/reservation_list.INDEX_CLAUSE'} ;
+
+-- /admin_action
+create unique index i_admin_action__id on admin_action_t
+        ( poid_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/admin_action.INDEX_CLAUSE'} ;
+
+-- /best_pricing
+create unique index i_best_pricing__id on best_pricing_t
+        ( poid_id0 )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/best_pricing.INDEX_CLAUSE'} ;
+create unique index i_best_pricing_deals__id on best_pricing_deals_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/best_pricing.INDEX_CLAUSE'} ;
+create unique index i_best_pricing_conds__id on best_pricing_conditions_t
+        ( obj_id0, rec_id2, rec_id )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/best_pricing.INDEX_CLAUSE'} ;
+
+-- /billinfo
+create unique index i_billinfo__id on billinfo_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/billinfo.INDEX_CLAUSE'} ;
+create index i_billinfo_act__id on billinfo_t ( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/billinfo.INDEX_CLAUSE'} ;
+create index i_billinfo_next__id on billinfo_t ( actg_next_t )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/billinfo.INDEX_CLAUSE'} ;
+create index i_billinfo_ab_st__id on billinfo_t
+	( actual_last_bill_t, status )
+        $PIN_CONF_TBLSPACEX2
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/billinfo.INDEX_CLAUSE'} ;
+create index i_billinfo_parent_billinfo__id on billinfo_t ( parent_billinfo_obj_id0 )
+	$PIN_CONF_TBLSPACEX2
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/billinfo.INDEX_CLAUSE'} ;
+create index i_ar_billinfo_obj__id on billinfo_t ( ar_billinfo_obj_id0 )
+        $PIN_CONF_TBLSPACEX2
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/billinfo.INDEX_CLAUSE'} ;
+
+-- /audit_account_products
+create unique index i_audit_account_products__id on audit_account_products_t (poid_id0)
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/audit_account_products.INDEX_CLAUSE'} ;
+
+create index i_audit_account_products_a__id on audit_account_products_t
+	(account_obj_id0, effective_start_t, effective_end_t )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/audit_account_products.INDEX_CLAUSE'} ;
+
+-- /ordered_balgrp
+create unique index i_ordered_balgroup__id on ordered_balgroup_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+create unique index i_ordered_balgroup_acct_svc_id on ordered_balgroup_t (account_obj_id0, service_obj_id0 )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+create index i_ordered_balgroup_svc_id on ordered_balgroup_t ( service_obj_id0 )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+create unique index i_ordered_groups__id on ordered_groups_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+create unique index i_ordered_groups_obj_grp__id on ordered_groups_t
+        ( obj_id0, group_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/ordered_balgrp.INDEX_CLAUSE'} ;
+
+-- /job
+create unique index i_job__id on job_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX16
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/job.INDEX_CLAUSE'} ;
+
+create index i_job__tracking_id on job_t ( tracking_id)
+        $PIN_CONF_TBLSPACEX16
+        $PIN_CONF_STORAGE_MED
+        $PIN_CONF_PARTITION_INFO{'/job.INDEX_CLAUSE'} ;
+
+-- /job_batch
+create unique index i_job_batch__id on job_batch_t ( job_obj_id0, batch_num )
+	$PIN_CONF_TBLSPACEX16
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+create unique index i_job_batch_poid__id on job_batch_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX16
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+create index i_job_batch_accounts__id on job_batch_accounts_t
+	( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX16
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+create index i_job_batch_accts_obj__id on job_batch_accounts_t
+	( obj_id0  )
+	$PIN_CONF_TBLSPACEX16
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+-- /job/rerate -- SUBSTRUCT  PIN_FLD_REQUEST_INFO
+create index i_job_rerate__id on job_rerate_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX16
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job.INDEX_CLAUSE'} ;
+
+-- /job_batch/rerate -- ARRAY  PIN_FLD_RERATE_ACCOUNTS
+create index i_job_batch_rerate_accts__id on job_batch_rerate_accts_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX16
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+create index i_job_btch_rr_acts_actobj__id on job_batch_rerate_accts_t ( account_obj_id0 )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+-- /job_batch/rerate -- ARRAY  PIN_FLD_RERATE_SRVC
+create index i_job_btch_rr_acts_srvc__id on job_batch_rerate_srvc_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+-- /job_batch/rerate -- ARRAY  PIN_FLD_RERATE_EVNT
+create index i_job_btch_rr_acts_evnt__id on job_batch_rerate_evnt_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+
+-- /job_batch/rerate -- ARRAY  PIN_FLD_RERATE_PROD
+create index i_job_btch_rr_acts_prod__id on job_batch_rerate_prod_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX14
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+
+-- /job_batch/rerate -- ARRAY  PIN_FLD_RERATE_DISC
+create index i_job_btch_rr_acts_disc__id on job_batch_rerate_disc_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+
+-- /job_batch/rerate -- ARRAY  PIN_FLD_RERATE_DEAL
+create index i_job_btch_rr_acts_deal__id on job_batch_rerate_deal_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX16
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+-- /job_batch/rerate -- BUF  PIN_FLD_RERATE_REQUEST
+create unique index i_job_batch_rerate_request__id on rerate_request_buf_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX16
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/job_batch.INDEX_CLAUSE'} ;
+
+-- /journal
+create unique index i_journal__id on journal_t (poid_id0)
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/journal.INDEX_CLAUSE'} ;
+
+create index i_journal_report__id on journal_t
+        (item_obj_id0, gl_id, resource_id, earned_start_t, earned_end_t, tax_code, tax_locales, tax_supplier)
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/journal.INDEX_CLAUSE'} ;
+
+--   index on contract_obj_id0, contract_start_t and contract_end_t for journal
+--
+create index i_journal_contract__id on journal_t ( contract_obj_id0, contract_start_t, contract_end_t )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/journal.INDEX_CLAUSE'} ;
+
+-- /ledger_report
+create unique index i_ledger_report__id on ledger_report_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/ledger_report.INDEX_CLAUSE'} ;
+
+create unique index i_ledger_report_accts__id on ledger_report_accts_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/ledger_report.INDEX_CLAUSE'} ;
+
+create unique index i_ledger_report_gl_segs__id on ledger_report_gl_segments_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/ledger_report.INDEX_CLAUSE'} ;
+
+create unique index i_ledger_report_acct_grps__id on ledger_report_account_groups_t 
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/ledger_report.INDEX_CLAUSE'} ;
+
+create unique index i_ledger_report_total_grps__id on ledger_report_total_groups_t 
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/ledger_report.INDEX_CLAUSE'} ;
+
+-- /batch
+create unique index i_batch__id on batch_t
+        ( poid_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/batch.INDEX_CLAUSE'} ;
+
+create index i_batch__status_descr on batch_t
+        ( status, descr, poid_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/batch.INDEX_CLAUSE'} ;
+
+-- /batch/gel
+create unique index i_batch_gel__id on batch_gel_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/batch.INDEX_CLAUSE'} ;
+
+-- /batch/handler
+create unique index i_batch_handler__id on batch_handler_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/batch.INDEX_CLAUSE'} ;
+
+-- /batch/occurrence
+create unique index i_batch_occurrence__id on batch_occurrence_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/batch.INDEX_CLAUSE'} ;
+
+-- /bill
+create unique index i_bill__id on bill_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/bill.INDEX_CLAUSE'} ;
+
+create index i_bill_no__id on bill_t ( bill_no )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/bill.INDEX_CLAUSE'} ;
+
+create index i_bill_parent__id on bill_t ( parent_id0 )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/bill.INDEX_CLAUSE'} ;
+
+create unique index i_bill_invoices__id on bill_invoices_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/bill.INDEX_CLAUSE'} ;
+
+-- /bulkacct
+create unique index i_bulkacct__id on bulkacct_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/bulkacct.INDEX_CLAUSE'} ;
+
+-- /channel_event
+create unique index i_channel_event__id on channel_event_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/channel_event.INDEX_CLAUSE'} ;
+
+create index i_channel_event_status__id on channel_event_t ( status )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/channel_event.INDEX_CLAUSE'} ;
+
+-- /config
+create unique index i_config__id on config_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create unique index i_config_beid_balances__id on config_beid_balances_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/business_profile
+create unique index i_config_bus_prof_pair__id on config_bus_profile_key_value_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create unique index i_config_bus_prof_template__id on config_bus_profile_template_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/credit_profile
+create unique index i_config_credit_profile_id on cfg_credit_profile_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/credit/termcause
+create unique index i_config_credit_termcauses_id on config_credit_termcauses_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/currency/emu
+create unique index i_config_cur_emu_members__id on config_currency_emu_members_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/currency/conversionrates
+create unique index i_config_cur_rates_times__id on config_cur_rates_timeframes_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/currency/supportedcombinations
+create unique index i_config_cur_supportdcomb__id on config_cur_supportedcomb_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/device_state
+create unique index i_config_device_states__id on config_device_states_t 
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/device_permit_map
+create unique index i_config_device_permit_map__id on config_device_permit_map_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/gel/template
+create unique index i_config_gel_template__id on config_gel_template_t
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/invoice_templates
+create unique index i_config_inv_temp__id on config_inv_temp_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/notify
+create unique index i_config_notify_events__id on config_notify_events_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/adjustment/event
+create unique index i_config_adjustment_events__id on config_adjustment_events_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/spec_rates
+create unique index i_config_spec_rates__id on config_spec_rates_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/impact_category
+create index i_config_imp_categories__id on config_impact_categories_t
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/glid
+create unique index i_config_glid__id on config_glid_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX4 $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create index i_config_glid_accts__id on config_glid_accts_t
+	( obj_id0, rec_id2, type )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/verify
+create unique index i_config_verify_checks__id on config_verify_checks_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX5
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/distribution
+create unique index i_config_distribution__id on config_distribution_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/pin_webd
+create unique index i_config_webd_permitteds__id on config_webd_permitteds_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create index i_config_payment_paytypes__id on config_payment_pay_types_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/paymenttool
+create index i_conf_pymnttool_paytypes__id on config_pymttool_pay_types_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/map_glid
+create index i_config_map_glid__id on config_map_glid_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/fld_validate
+create index i_config_fld_valid_doms__id on config_fld_validate_domains_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/fld_validate
+create index i_config_fld_valid_fmts__id on config_fld_validate_formats_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/locales_map
+create index i_config_locls__id on config_locales_map_t 
+	( obj_id0, rec_id)
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/locales_map
+create index i_config_locls_codeset__id on config_locales_codeset_t 
+	( obj_id0, rec_id2 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/locales_validate
+create index i_config_locls_valid__id on config_locales_validate_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/locales_validate
+create index i_config_locls_valid_spcs__id on config_locales_valid_spec_t
+	( obj_id0, rec_id2 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/rum
+create unique index i_config_rum_map__id on config_rum_map_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/usage_map
+create unique index i_config_usage_map__id on config_usage_map_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/event_map
+create unique index i_config_event_map__id on config_event_map_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/event_record_map
+create unique index i_config_event_record_map__id on config_event_record_map_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/calendar
+create unique index i_config_calendar__id on config_calendar_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/payment_term
+create unique index i_config_payment_term__id on config_payment_term_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/billing_segment
+create unique index i_config_dom_map__id on config_dom_map_t
+	(obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create unique index i_config_billing_segment__id on config_billing_segment_t
+        (obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/suppression
+create unique index i_config_suppression__id on config_suppression_t 
+        ( obj_id0, rec_id ) 
+        $PIN_CONF_TBLSPACEX1 
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/customer_segment
+create unique index i_config_customer_segment__id on config_customer_segment_t  
+        ( obj_id0, rec_id ) 
+        $PIN_CONF_TBLSPACEX9  
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/template
+create unique index i_config_template_pair__id on config_template_key_value_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/item_type
+create index i_config_item_type__id on config_item_types_t
+                (item_type)
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create unique index i_config_template_info__id on config_template_info_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+--create unique index i_config_template_iscript__id on config_template_iscript_buf ( obj_id0 )
+--        $PIN_CONF_TBLSPACEX9
+--        $PIN_CONF_STORAGE_SMALL
+--	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /data
+create unique index i_data__id on data_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/data.INDEX_CLAUSE'} ;
+create unique index i_data_buffer__id on data_buffer_buf ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/data.INDEX_CLAUSE'} ;
+
+-- /deal
+create unique index i_deal__id on deal_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/deal.INDEX_CLAUSE'} ;
+
+create unique index i_deal_products__id on deal_products_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/deal.INDEX_CLAUSE'} ;
+
+create unique index i_deal_discounts__id on deal_discounts_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/deal.INDEX_CLAUSE'} ;
+
+create unique index i_deal__name on deal_t ( name, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/deal.INDEX_CLAUSE'} ;
+
+create unique index i_deal__code on deal_t ( code, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/deal.INDEX_CLAUSE'} ;
+
+-- /device
+create unique index i_device__id on device_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/device.INDEX_CLAUSE'} ;
+
+create  index i_device__name on device_t ( device_id )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/device.INDEX_CLAUSE'} ;
+
+create index i_device_obj__id  on device_services_t 
+	( obj_id0)
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/device.INDEX_CLAUSE'} ;
+
+create index i_device_services__id  on device_services_t 
+	( service_obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/device.INDEX_CLAUSE'} ;
+
+create index i_device_accounts__id  on device_services_t 
+	( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/device.INDEX_CLAUSE'} ;
+
+-- /discount
+create unique index i_discount__id on discount_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/discount.INDEX_CLAUSE'} ;
+
+create unique index i_discount__name on discount_t ( name, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/discount.INDEX_CLAUSE'} ;
+
+create unique index i_discount__code on discount_t ( code, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/discount.INDEX_CLAUSE'} ;
+
+create unique index i_discount_usage_map__id on discount_usage_map_t 
+      ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/discount.INDEX_CLAUSE'} ;
+
+-- /job_template
+create unique index i_job_template__id on job_template_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_SMALL
+        $PIN_CONF_PARTITION_INFO{'/job_template.INDEX_CLAUSE'} ;
+
+-- /edr_field_mapping
+create unique index i_edr_field_mapping__id on edr_field_mapping_t
+        ( poid_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/edr_field_mapping.INDEX_CLAUSE'} ;
+
+create index i_edr_fld_map_buf__id on edr_fld_map_buf_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/edr_field_mapping.INDEX_CLAUSE'} ;
+
+-- all indexes on event tables are local partitioned, there are prefixed and non-prefixed 
+--       local indexes
+-- global indexes would be too slow in partition maintenance operations
+
+-- when defining a unique index where partitioning key (here it is obj_id0)
+-- 	 is not a subset of the index key, one needs to tag obj_id0 to the 
+--	 index key to make local partition possible (Oracle8i does not support
+--       unique local index that partitioning key is not a subset of 
+--	 the index key)
+
+-- /event
+-- NOTE: subtables do NOT have rec_id, experience says it is slower.
+create unique index i_event__id on event_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_bal_impacts__id on event_bal_impacts_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX14
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_bi_account_obj__id on event_bal_impacts_t
+        ( account_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_bi_item_obj__id on event_bal_impacts_t
+        ( item_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_bi_bal_grp__id on event_bal_impacts_t
+        ( bal_grp_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event.PIN_FLD_SUB_BAL_IMPACTS
+create index i_event_sub_bal_imp__id on event_sub_bal_imp_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event.PIN_FLD_SUB_BAL_IMPACTS.PIN_FLD_SUB_BALANCES
+create index i_event_sub_bals__id on event_sub_bals_t ( obj_id0, rec_id2 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_item_obj__id on event_t ( item_obj_id0)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_jurisdictions__id on event_tax_jurisdictions_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_payment_batch__id on event_payment_batch_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_reversal_batch__id on event_reversal_batch_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_refund_batch__id on event_refund_batch_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_rum_map__id on event_rum_map_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_batchid__id on event_payment_batch_t ( batch_id )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_lockboxid__id on event_payment_batch_t ( lockbox_id )
+        $PIN_CONF_TBLSPACEX4
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_submtrid__id on event_payment_batch_t ( submitter_id )
+        $PIN_CONF_TBLSPACEX3
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_batchid__id on event_refund_batch_t ( batch_id )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_lockboxid__id on event_refund_batch_t ( lockbox_id )
+        $PIN_CONF_TBLSPACEX4
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_submtrid__id on event_refund_batch_t ( submitter_id )
+        $PIN_CONF_TBLSPACEX3
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_payment_cc__id on event_billing_payment_cc_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX2
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_payment_dd__id on event_billing_payment_dd_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX2
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_refund_cc__id on event_billing_refund_cc_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX2
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_refund_dd__id on event_billing_refund_dd_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX2
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_reversal_cc__id on event_billing_reversal_cc_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_reversal_dd__id on event_billing_reversal_dd_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_payment_check__id on event_billing_payment_check_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_reversal_check__id on event_billing_reversal_check_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX4
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_refund_check__id on event_billing_refund_check_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_chk_billno__id on event_billing_payment_check_t ( bill_no )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_chk_checkno__id on event_billing_payment_check_t ( check_no )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_chk_bacctno__id on event_billing_payment_check_t ( bank_account_no )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_chk_bankcode__id on event_billing_payment_check_t ( bank_code )
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_payment_cash__id on event_billing_payment_cash_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_cash_billno__id on event_billing_payment_cash_t ( bill_no )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_pmt_cash_recptno__id on event_billing_payment_cash_t ( receipt_no )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_payment_payord__id on event_billing_payment_payord_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_payment_post__id on event_billing_payment_post_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_payment_wtran__id on event_billing_payment_wtran_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_chk_billno__id on event_billing_refund_check_t ( bill_no )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_chk_checkno__id on event_billing_refund_check_t ( check_no )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_chk_bacctno__id on event_billing_refund_check_t ( bank_account_no )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_chk_bankcode__id on event_billing_refund_check_t ( bank_code )
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_refund_cash__id on event_billing_refund_cash_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_cash_billno__id on event_billing_refund_cash_t ( bill_no )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_ref_cash_recptno__id on event_billing_refund_cash_t ( receipt_no )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_refund_payord__id on event_billing_refund_payord_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_refund_post__id on event_billing_refund_post_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_refund_wtran__id on event_billing_refund_wtran_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_reversal_pordr__id on event_billing_reversal_pordr_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX4
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_reversal_post__id on event_billing_reversal_post_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX4
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_reversal_wtran__id on event_billing_reversal_wtran_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX4
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_billing_tax_cycles__id on event_billing_tax_cycles_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_billing_taxes__id on event_billing_taxes_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/suppression
+create unique index i_event_bill_suppress__id on event_billing_suppression_t 
+        ( obj_id0 ) 
+        $PIN_CONF_TBLSPACEX1 
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/activity/reg
+create unique index i_event_activity_reg__id on event_activity_reg_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX4
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/activity/verify
+create unique index i_event_activity_verify__id on event_activity_verify_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/audit
+create index i_event_audit__id on event_audit_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_audit_object__id on event_audit_t
+        ( object_id0 )
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/best_pricing
+
+create unique index i_event_bill_bp__id on event_bill_bp_t
+	( obj_id0 )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_bill_bp_base_deal__id on event_bill_bp_base_dealinfo_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_bill_bp_base_bi__id on event_bill_bp_base_bal_imp_t 
+	( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_bill_bp_best_deal__id on event_bill_bp_best_dealinfo_t 
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_bill_bp_best_bi__id on event_bill_bp_best_bal_imp_t 
+	( obj_id0, rec_id, rec_id2 )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/cycle
+create unique index i_event_billing_cycle__id on event_billing_cycle_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/cycle/fold
+create unique index i_event_billing_cycle_fold__id on event_billing_cycle_fold_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/charge
+create unique index i_event_billing_charge__id on event_billing_charge_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_billing_charge__trnsid on event_billing_charge_t ( trans_id )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create index i_event_billing_charge__result on event_billing_charge_t (result,pay_type )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/charge/cc array PIN_FLD_CC_INFO
+create unique index i_event_billing_charge_cc__id on event_billing_charge_cc_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/charge/dd array PIN_FLD_DD_INFO
+create unique index i_event_billing_charge_dd__id on event_billing_charge_dd_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/charge/invoice array PIN_FLD_INV_INFO
+create unique index i_event_billing_charge_inv__id on event_billing_charge_inv_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/payment SUBSTRUCT PIN_FLD_PAYMENT
+create unique index i_event_billing_payment__id on event_billing_payment_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/payment SUBSTRUCT PIN_FLD_PAYMENT
+create unique index i_event_payment_trans__id on event_billing_payment_t
+        ( trans_id, obj_id0, command )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/payment SUBSTRUCT PIN_FLD_PAYMENT
+create index i_event_payment_sub_trans__id on event_billing_payment_t
+        ( sub_trans_id, obj_id0 )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/refund SUBSTRUCT PIN_FLD_REFUND
+create unique index i_event_billing_refund__id on event_billing_refund_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/refund SUBSTRUCT PIN_FLD_REFUND
+create unique index i_event_refund_trans__id on event_billing_refund_t
+        ( command, trans_id, obj_id0 )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/reversal SUBSTRUCT PIN_FLD_PAYMENT
+create unique index i_event_billing_reversal__id on event_billing_reversal_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/reversal SUBSTRUCT PIN_FLD_PAYMENT
+create unique index i_event_reversal_ptrans__id on event_billing_reversal_t
+        ( payment_trans_id, obj_id0 )
+        $PIN_CONF_TBLSPACEX2
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/validation SUBSTRUCT PIN_FLD_VALIDATION
+create unique index i_event_billing_valid__id on event_billing_valid_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/validation/cc ARRAY PIN_FLD_CC_INFO
+create index i_event_billing_valid_cc__debn on event_billing_valid_cc_t ( debit_num )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/validation/dd ARRAY PIN_FLD_DD_INFO
+create unique index i_event_billing_valid_dd__id on event_billing_valid_dd_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_billing_valid_cc__id on event_billing_valid_cc_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/item/transfer BUFFER PIN_FLD_BUFFER
+create unique index i_event_item_transfer_buf__id on event_item_transfer_buf_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/deal
+create unique index i_event_billing_deal_info__id on event_billing_deal_info_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/invoice
+create unique index i_event_inv_activities__id on event_inv_activities_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_inv_invoice_info__id on event_inv_invoice_info_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_inv_nameinfo__id on event_inv_nameinfo_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/item
+create unique index i_event_item_transfer__id on event_item_transfer_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/limit
+create unique index i_event_billing_limit__id on event_billing_limit_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/sub_bal_validity
+create unique index i_evt_billing_sb_validity__id on event_billing_sb_validity_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/control_rerate
+create index i_event_control_rerate__id on event_control_rerate_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/ordered_balgrp
+create unique index i_event_billing_ord_groups__id on event_billing_ordered_groups_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/group/sharing
+create unique index i_event_grp_share_members__id on event_group_share_members_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/group/sharing/discounts
+create unique index i_event_grp_share_disc__id on event_group_share_discounts_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/group/sharing/charges
+create unique index i_event_grp_share_charges__id on event_group_share_charges_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/group/sharing/profiles
+create unique index i_event_grp_share_profiles__id on event_group_share_profiles_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/discount
+create index i_event_billing_discount__id on event_billing_discount_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/discount/action
+create unique index i_event_billing_disc_actn__id on event_billing_disc_action_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/product
+create index i_event_billing_product__id on event_billing_product_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/product
+create index i_event_billing_prod_obj__id on event_billing_product_t ( offering_obj_id0,obj_id0 )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/product/action
+create unique index i_event_billing_prod_actn__id on event_billing_product_action_t ( obj_id0 , rec_id )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/product/fee/cycle
+create unique index i_event_product_fee_cycle__id on event_product_fee_cycle_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+create unique index i_event_product_fee_disc__id on event_product_fee_discounts_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/customer/actginfo
+create unique index i_event_customer_actginfo__id on event_customer_actginfo_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/customer/billinfo
+create unique index i_event_customer_billinfo__id on event_customer_billinfo_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/customer/locale
+create unique index i_event_customer_locale__id on event_customer_locale_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/customer/login
+create unique index i_event_customer_login__id on event_customer_login_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/customer/login/alias
+create index i_event_cust_lgn_als__id on event_customer_login_alias_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/customer/nameinfo
+create unique index i_event_customer_nameinfo__id on event_customer_nameinfo_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/customer/password
+create unique index i_event_customer_password__id on event_customer_password_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/customer/status
+create unique index i_event_customer_statuses__id on event_customer_statuses_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX5
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/device
+create unique index i_event_device__id on event_device_t
+        ( obj_id0, device_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/device/state
+create unique index i_event_device_state__id on event_device_state_t
+        ( obj_id0)
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/device/associate
+create unique index i_event_device_asct__id on event_device_asct_t
+        (obj_id0)
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/device/disassociate
+create unique index i_event_device_disasct__id on event_device_disasct_t
+        (obj_id0)
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/device/attribute
+create unique index i_event_device_attr__id on event_device_attr_t
+        (obj_id0)
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/device/brand
+create unique index i_event_device_brand__id on event_device_brand_t
+        (obj_id0)
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/device/replace
+create unique index i_event_device_replace__id on event_device_replace_t
+        (obj_id0)
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/group/member
+create unique index i_event_group_members__id on event_group_members_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX4
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/group/parent
+create unique index i_event_group_parent__id on event_group_parent_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX3
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/session/dialup
+create unique index i_event_session_dialup__id on event_session_dialup_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/session/ipt/call
+create unique index i_event_session_ipt_call__id on event_session_ipt_call_t
+        ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /fold
+create unique index i_fold__id on fold_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX8
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/fold.INDEX_CLAUSE'} ;
+
+create unique index i_fold_bal_impacts__id on fold_bal_impacts_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/fold.INDEX_CLAUSE'} ;
+
+-- /group
+create unique index i_group__id on group_t ( poid_id0, type_str )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create index i_group_parent__id on group_t ( parent_id0 )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create index i_group_acct__id on group_t ( account_obj_id0 )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_LARGE
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_billing_members__id on group_billing_members_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_billing_mem_list__id on group_billing_members_t ( object_id0, obj_id0 )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_planlist_members__id on group_planlist_members_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_sponsor_members__id on group_sponsor_members_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create index i_group_sponsor_mems_obj__id on group_sponsor_members_t ( object_id0 )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_sponsor__id on group_sponsor_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_permitteds__id on group_permitteds_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX15
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+-- /group.sharing
+create unique index i_group_sharing_members__id on group_sharing_members_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_sharing_discount__id on group_sharing_discounts_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_sharing_charges__id on group_sharing_charges_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX14 
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+create unique index i_group_sharing_profiles__id on group_sharing_profiles_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX14 
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/group.INDEX_CLAUSE'} ;
+
+-- /invoice
+create unique index i_invoice__id on invoice_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/invoice.INDEX_CLAUSE'} ;
+
+create index i_invoice_bill_no__id on invoice_t ( bill_no )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/invoice.INDEX_CLAUSE'} ;
+
+create index i_invoice_bill__id on invoice_t ( bill_obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/invoice.INDEX_CLAUSE'} ;
+
+
+create index i_invoice_bills__id on invoice_bills_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/invoice.INDEX_CLAUSE'} ;
+
+create index i_invoice_bills_arbillinfo__id on invoice_bills_t ( ar_billinfo_obj_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/invoice.INDEX_CLAUSE'} ;
+
+create index i_invoice_formats__id on invoice_formats_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/invoice.INDEX_CLAUSE'} ;
+
+create index i_invoice_statuses__id on invoice_statuses_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/invoice.INDEX_CLAUSE'} ;
+
+create index i_invoice_formats_buf__id on invoice_formats_buf_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/invoice.INDEX_CLAUSE'} ;
+
+-- /item
+create unique index i_item__id on item_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+-- /newsfeed
+create unique index i_newsfeed__id on newsfeed_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/newsfeed.INDEX_CLAUSE'} ;
+
+-- /newsfeed
+create index i_newsfeed_account_obj__id on newsfeed_t ( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/newsfeed.INDEX_CLAUSE'} ;
+
+-- /newsfeed
+create index i_newsfeed_billinfo_obj__id on newsfeed_t ( billinfo_obj_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/newsfeed.INDEX_CLAUSE'} ;
+
+-- /note
+create unique index i_note__id on note_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_LARGE
+	$PIN_CONF_PARTITION_INFO{'/note.INDEX_CLAUSE'} ;
+
+-- /note
+create index i_note_account_obj_id on note_t ( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_LARGE
+	$PIN_CONF_PARTITION_INFO{'/note.INDEX_CLAUSE'} ;
+
+-- /payinfo
+create unique index i_payinfo__id on payinfo_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/payinfo.INDEX_CLAUSE'} ;
+
+create index i_payinfo_acctobj__id on payinfo_t ( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/payinfo.INDEX_CLAUSE'} ;
+
+-- /payinfo/invoice
+create index i_payinfo_inv__id on payinfo_inv_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/payinfo.INDEX_CLAUSE'} ;
+
+-- /payinfo/cc
+create index i_payinfo_cc__id on payinfo_cc_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/payinfo.INDEX_CLAUSE'} ;
+
+create index i_payinfo_cc__debit_num on payinfo_cc_t ( debit_num )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/payinfo.INDEX_CLAUSE'} ;
+
+-- /payinfo/dd
+create index i_payinfo_dd__id on payinfo_dd_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/payinfo.INDEX_CLAUSE'} ;
+
+create index i_payinfo_dd__debit_num on payinfo_dd_t ( debit_num )
+        $PIN_CONF_TBLSPACEX11
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/payinfo.INDEX_CLAUSE'} ;
+
+-- /opcode
+create unique index i_opcode__id on opcode_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/opcode.INDEX_CLAUSE'} ;
+
+-- /offer_profile
+create unique index i_offer_profile__name on offer_profile_t ( name, account_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_SMALL
+        $PIN_CONF_PARTITION_INFO{'/offer_profile.INDEX_CLAUSE'} ;
+        
+create unique index i_offer_profile__code on offer_profile_t ( code, account_obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_SMALL
+        $PIN_CONF_PARTITION_INFO{'/offer_profile.INDEX_CLAUSE'} ;
+-- /plan
+create unique index i_plan__id on plan_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/plan.INDEX_CLAUSE'} ;
+
+create unique index i_plan__name on plan_t ( name, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/plan.INDEX_CLAUSE'} ;
+
+create unique index i_plan__code on plan_t ( code, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/plan.INDEX_CLAUSE'} ;
+
+create unique index i_plan_services__id on plan_services_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/plan.INDEX_CLAUSE'} ;
+
+-- /pop
+create unique index i_pop__id on pop_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/pop.INDEX_CLAUSE'} ;
+
+create unique index i_pop_anis__id on pop_anis_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/pop.INDEX_CLAUSE'} ;
+
+-- /product
+create unique index i_product__id on product_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/product.INDEX_CLAUSE'} ;
+
+create unique index i_product_usage_map__id on product_usage_map_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/product.INDEX_CLAUSE'} ;
+
+-- /profile
+create unique index i_profile__id on profile_t 
+	( poid_id0 )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile
+create index i_profile_account_obj_id on profile_t 
+	( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile
+create index i_profile_service_obj_id on profile_t
+       ( service_obj_id0 )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile/acct_extrating (Account ERAs' data)
+create unique index i_profile_acct_era_data__id on profile_acct_extrating_data_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile/serv_extrating (service ERA's)
+create unique index i_profile_serv_extrating__id on profile_serv_extrating_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+create unique index i_profile_serv_era_data__id on profile_serv_extrating_data_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile/customer_care
+create unique index i_profile_cust_care__id on profile_customer_care_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile/ldap
+create unique index i_profile_ldap__id on profile_ldap_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /purchased_discount
+create unique index i_purchased_discount__id on purchased_discount_t
+      ( poid_id0 )
+      $PIN_CONF_TBLSPACEX3
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/purchased_discount.INDEX_CLAUSE'} ;
+
+create index i_purchased_discount_act__id on purchased_discount_t 
+      ( account_obj_id0, service_obj_id0 )					
+      $PIN_CONF_TBLSPACEX7        				
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/purchased_discount.INDEX_CLAUSE'} ;
+
+-- /purchased_product
+create unique index i_purchased_product__id on purchased_product_t
+      ( poid_id0 )
+      $PIN_CONF_TBLSPACEX3
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/purchased_product.INDEX_CLAUSE'} ;
+
+create index i_purchased_product_act__id on purchased_product_t
+      ( account_obj_id0, service_obj_id0 )                            
+      $PIN_CONF_TBLSPACEX4  					
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/purchased_product.INDEX_CLAUSE'} ;
+
+create unique index i_purch_prod_cycle_fees__id on purchased_product_cycle_fees_t
+      ( obj_id0, rec_id )
+      $PIN_CONF_TBLSPACEX4
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/purchased_product.INDEX_CLAUSE'} ;
+
+create index i_au_purchased_prod_parent__id on au_purchased_product_t
+      ( au_parent_obj_id0 )
+      $PIN_CONF_TBLSPACEX4
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/au_purchased_product.INDEX_CLAUSE'} ;
+
+create index i_au_purch_product__acct_id on au_purchased_product_t
+      ( account_obj_id0 )
+      $PIN_CONF_TBLSPACEX4
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/au_purchased_product.INDEX_CLAUSE'} ;
+
+create unique index i_au_purchased_product__id on au_purchased_product_t
+      ( poid_id0 )
+      $PIN_CONF_TBLSPACEX4
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/au_purchased_product.INDEX_CLAUSE'} ;
+
+create index i_au_purch_disc__acct_id on au_purchased_discount_t
+      ( account_obj_id0 )
+      $PIN_CONF_TBLSPACEX4
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/au_purchased_discount.INDEX_CLAUSE'} ;
+
+create unique index i_au_purchased_discount__id on au_purchased_discount_t
+      ( poid_id0 )
+      $PIN_CONF_TBLSPACEX4
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/au_purchased_discount.INDEX_CLAUSE'} ;
+
+create index i_au_purchased_disc_parent__id on au_purchased_discount_t
+      ( au_parent_obj_id0 )
+      $PIN_CONF_TBLSPACEX4
+      $PIN_CONF_STORAGE_MED
+      $PIN_CONF_PARTITION_INFO{'/au_purchased_discount.INDEX_CLAUSE'} ;
+
+-- /rate
+create unique index i_rate__id on rate_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/rate.INDEX_CLAUSE'} ;
+
+create index i_rate_rate_plan__id on rate_t ( rate_plan_obj_id0 )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/rate.INDEX_CLAUSE'} ;
+
+create index i_rate_bal_impacts__id on rate_bal_impacts_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX5
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate.INDEX_CLAUSE'} ;
+
+create unique index i_rate_quantity_tiers__id on rate_quantity_tiers_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate.INDEX_CLAUSE'} ;
+
+-- /rate_plan
+create unique index i_rate_plan__id on rate_plan_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate_plan.INDEX_CLAUSE'} ;
+
+create index i_rate_plan_prod__id on rate_plan_t ( product_obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate_plan.INDEX_CLAUSE'} ;
+
+create unique index i_rate_tiers__id on rate_tiers_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate_plan.INDEX_CLAUSE'} ;
+
+create unique index i_date_ranges__id on date_ranges_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate_plan.INDEX_CLAUSE'} ;
+
+create unique index i_day_ranges__id on day_ranges_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate_plan.INDEX_CLAUSE'} ;
+
+create unique index i_tod_ranges__id on tod_ranges_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate_plan.INDEX_CLAUSE'} ;
+
+-- /rate_plan_selector
+create unique index i_rate_plan_selector__id on rate_plan_selector_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate_plan_selector.INDEX_CLAUSE'} ;
+
+create unique index i_selector__id on selector_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rate_plan_selector.INDEX_CLAUSE'} ;
+
+-- /rollover
+create unique index i_rollover__id on rollover_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/rollover.INDEX_CLAUSE'} ;
+
+-- /search
+create unique index i_search__id on search_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/search.INDEX_CLAUSE'} ;
+
+-- /service
+create unique index i_service__id on service_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX8
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create index i_service_bg__id on service_t ( bal_grp_obj_id0 )
+	$PIN_CONF_TBLSPACEX8
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_admin_permitteds__id on service_admin_permitteds_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_admin_role__id on service_admin_role_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_ip__id on service_ip_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_ip_args__id on service_ip_args_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_broadband__id on service_broadband_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_ssg_args__id on service_ssg_args_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_ssg_services__id on service_ssg_services_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_email__id on service_email_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_admsvc_lockinfo__id on admsvc_lockinfo_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_pcmsvc_lockinfo__id on pcmsvc_lockinfo_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED
+        $PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- /sponsorship
+
+create unique index i_sponsorship_id on sponsorship_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/sponsorship.INDEX_CLAUSE'} ;
+
+create unique index i_sponsorship__name on sponsorship_t ( name, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/sponsorship.INDEX_CLAUSE'} ;
+
+create unique index i_sponsorship__code on sponsorship_t ( code, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/sponsorship.INDEX_CLAUSE'} ;
+
+create unique index i_sponsorship_usage_map__id on sponsorship_usage_map_t 
+     ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/sponsorship.INDEX_CLAUSE'} ;
+
+-- /tmp_unprocessed_events
+create unique index i_tmp_unprocessed_events__id on tmp_unprocessed_events_t 
+	( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/tmp_unprocessed_events.INDEX_CLAUSE'} ;
+
+create unique index i_unpr_events_seselst__id on tmp_unprocessed_events_t 
+	( session_obj_id0, element_id, start_poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/tmp_unprocessed_events.INDEX_CLAUSE'} ;
+
+create index i_unpr_events_st_end__id on tmp_unprocessed_events_t
+        ( start_poid_id0, end_poid_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_SMALL
+        $PIN_CONF_PARTITION_INFO{'/tmp_unprocessed_events.INDEX_CLAUSE'} ;
+
+create index i_unpr_events_start__id on tmp_unprocessed_events_t
+        ( start_poid_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_SMALL
+        $PIN_CONF_PARTITION_INFO{'/tmp_unprocessed_events.INDEX_CLAUSE'} ;
+
+create index i_unpr_events_end__id on tmp_unprocessed_events_t
+        ( end_poid_id0 )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_SMALL
+        $PIN_CONF_PARTITION_INFO{'/tmp_unprocessed_events.INDEX_CLAUSE'} ;
+
+-- /tmp_events_to_process_t
+create unique index i_tmp_events_to_process__id on tmp_events_to_process_t 
+	( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/tmp_events_to_process.INDEX_CLAUSE'} ;
+
+create index i_tmp_events_to_process__ac on tmp_events_to_process_t
+	( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/tmp_events_to_process.INDEX_CLAUSE'} ;
+
+-- /tmp_journals_to_process_t
+create unique index i_tmp_journals_to_process__id on tmp_journals_to_process_t 
+	( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/tmp_journals_to_process.INDEX_CLAUSE'} ;
+
+create index i_tmp_journals_to_process__ac on tmp_journals_to_process_t
+	( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/tmp_journals_to_process.INDEX_CLAUSE'} ;
+
+create index i_tmp_journals_to_process__ar on tmp_journals_to_process_t
+        ( ar_billinfo_obj_id0 )
+        $PIN_CONF_TBLSPACEX12
+        $PIN_CONF_STORAGE_MED
+        $PIN_CONF_PARTITION_INFO{'/tmp_journals_to_process.INDEX_CLAUSE'} ;
+
+-- Telephony indexes
+
+create unique index i_service_filter_det__id on service_tel_filter_details_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+create index i_service_filter__id on service_tel_filter_list_t
+	( obj_id0, rec_id2 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+create unique index i_service_redirect__id on service_tel_redirect_list_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+create unique index i_service_speed_dial__id on service_tel_speed_dial_list_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+create unique index i_service_telephony__id on service_telephony_t 
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+create unique index i_service_tel_args__id on service_tel_args_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+------------------------------------------------------------
+-- begin hand-crafted indices
+
+-- /account
+-- index on the name ???
+create index i_account__name on account_t ( name )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+-- /account
+create index i_account_nameinfo__canname on account_nameinfo_t ( last_canon )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+-- /bill
+-- end time
+create index i_bill__end_t on bill_t ( end_t )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/bill.INDEX_CLAUSE'} ;
+
+create index i_bill__acctobj_end_t on bill_t
+	( account_obj_id0, end_t )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/bill.INDEX_CLAUSE'} ;
+
+-- /history_bills
+create unique index i_history_bills__id on history_bills_t 
+	( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/history_bills.INDEX_CLAUSE'} ;
+
+create index i_history_bills_no__id on history_bills_t 
+	( bill_obj_id0, bill_no )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/history_bills.INDEX_CLAUSE'} ;
+
+-- /config/currency/conversionrates
+create index i_config_rates_start_t__id on config_cur_rates_timeframes_t
+	( start_t )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create index i_config_rates_end_t__id on config_cur_rates_timeframes_t
+	( end_t )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create index i_config_cur_rates_src__id on config_cur_conv_rates_t
+	( currency_src )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create index i_config_cur_rates_dst__id on config_cur_conv_rates_t
+	( currency_dst )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/currency/supportedcombinations
+create index i_config_cur_supportcomb__id on config_cur_supportedcomb_t
+	( currency )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create index i_config_cur_suprt_seccur__id on config_cur_supported_seccur_t
+	( currency_secondary )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /config/currency/emu
+create index i_config_cur_emu__id on config_currency_emu_members_t
+	( currency )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /event
+-- for billing/invoicing
+create index i_event__acctobj_end_t on event_t
+	( account_obj_id0, end_t )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- for billing/invoicing
+create index i_event__servobj_end_t on event_t
+	( service_obj_id0, end_t )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/session/dialup (status, termserv_id & termserv_port)
+-- for terminal server FM
+create index i_event_session_dialup__termid on event_session_dialup_t
+	( status, termserv_id, termserv_port )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- termserv_id AND termserv_port AND login AND NAS_transaction_id for FM_TERM
+create index i_event_session_dialup__sessid on event_session_dialup_t
+	( termserv_id, termserv_port, login, trans_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/session/ipt/call (termserv_id & status) for fm_ipt
+create index i_event_ipt_call__termid on event_session_ipt_call_t
+	( status, termserv_id )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/session/ipt/call (trans_id) for fm_ipt
+create index i_event_ipt_call__transid on event_session_ipt_call_t
+	( trans_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- ipaddr (for IP -> who programs).
+create index i_event_session_dialup__ipaddr on event_session_dialup_t
+	( ipaddr )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- event_no
+create index i_event_event__no on event_t ( event_no )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_LARGE_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/corrective_bill
+create unique index i_event_cb__id on event_corrective_bill_t 
+        ( obj_id0 ) 
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_IND ;
+
+create index i_event_cb_bill__id on event_corrective_bill_t
+        ( ar_bill_obj_id0, bill_no )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /item
+create index i_item_account_obj__id on item_t
+	( account_obj_id0)
+	$PIN_CONF_TBLSPACEX5
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+create index i_item_bnfo_obj__id on item_t
+	( billinfo_obj_id0)
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+create index i_item_ar_bnfo_obj__id on item_t
+	( ar_billinfo_obj_id0)
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+create index i_item_bill_obj__id on item_t
+	( bill_obj_id0, status)
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+create index i_item_ar_bill_obj__id on item_t
+	( ar_bill_obj_id0, status)
+	$PIN_CONF_TBLSPACEX8
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+create index i_item_bal_grp__id on item_t
+	( bal_grp_obj_id0)
+	$PIN_CONF_TBLSPACEX8
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+create unique index i_item_no__id on item_t ( item_no, poid_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+create index i_item_glseg_eff__id on item_t ( gl_segment, effective_t )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+create index i_item_ar_item_obj__id on item_t ( ar_item_obj_id0, status )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_INFO{'/item.INDEX_CLAUSE'} ;
+
+-- /message
+create unique index i_message__id on message_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/message.INDEX_CLAUSE'} ;
+
+create index i_message_acct_obj__id on message_t
+        ( account_obj_id0)
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/message.INDEX_CLAUSE'} ;
+
+create index i_message_bill_obj__id on message_t
+        ( bill_obj_id0)
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/message.INDEX_CLAUSE'} ;
+
+create index i_message_end_t on message_t ( end_t )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/message.INDEX_CLAUSE'} ;
+
+create index i_message_start_t on message_t ( start_t )
+	$PIN_CONF_TBLSPACEX7
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/message.INDEX_CLAUSE'} ;
+
+-- /service
+-- index on login
+create index i_service__login on service_t ( login )
+	$PIN_CONF_TBLSPACEX11
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+-- /Stop those validation problems
+--
+-- This index removed because it adversely affects infranet
+-- performance. However, there is a race condition that results in 
+-- accounts with duplicate logins being created. This index is the
+-- only real way to stop that.a
+--
+--create unique index i_service__login_type on service_t
+--	( login, poid_type )
+--	$PIN_CONF_TBLSPACEX11
+--	$PIN_CONF_STORAGE_MED ;
+
+-- /service
+-- index on alias
+create unique index i_service_alias_list__id on service_alias_list_t 
+	( obj_id0, name )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create index i_service_alias_list__name on service_alias_list_t 
+	( name )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- index on transfer_list
+create unique index i_service_transfer_list__id on service_transfer_list_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- index on account obj 
+create index i_service_transfer_list__acct on service_transfer_list_t
+	( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- index on account object
+create index i_service__acctobj on service_t ( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create index i_service__subsobj on service_t ( subscription_obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_vpdn_args__id on service_vpdn_args_t
+	(obj_id0, rec_id)
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- index on opcode object
+create unique index i_opcode__name on opcode_t ( name )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/opcode.INDEX_CLAUSE'} ;
+
+-- /remittance_info
+create unique index i_remit_info_poid_id0__id on remit_info_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/remittance_info.INDEX_CLAUSE'} ;
+
+create index i_remit_info_created_t__id on remit_info_t ( created_t )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/remittance_info.INDEX_CLAUSE'} ;
+
+create index i_remit_info_item_obj__id on remit_info_t (item_obj_id0)
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/remittance_info.INDEX_CLAUSE'} ;
+
+create unique index i_remit_info_obj_id0__id on remit_info_detail_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/remittance_info.INDEX_CLAUSE'} ;
+
+create index i_remit_info_prov_prod__id on remit_info_detail_t
+	( provider_id_id0, product_obj_id0 )
+	$PIN_CONF_TBLSPACEX2
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/remittance_info.INDEX_CLAUSE'} ;
+
+-- /remittance_calculation
+create unique index i_remit_calc_end_t__id on remit_calc_t 
+	( account_obj_id0, end_t )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/remittance_calculation.INDEX_CLAUSE'} ;
+
+-- /service/providers
+create unique index i_service_provider__id on service_provider_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX3
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_provider_prod__id on service_provider_products_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX4
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create index i_service_prov__prodname on service_provider_products_t ( product_name )
+	$PIN_CONF_TBLSPACEX5
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- /product (for remittance and for tmp)
+create unique index i_product__name on product_t ( name, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/product.INDEX_CLAUSE'} ;
+
+create unique index i_product__code on product_t ( code, account_obj_id0 )
+	$PIN_CONF_TBLSPACEX6
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/product.INDEX_CLAUSE'} ;
+
+-- /schedule
+create unique index i_schedule_poid__id on schedule_t( poid_id0 )
+        $PIN_CONF_TBLSPACEX8
+        $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/schedule.INDEX_CLAUSE'} ;
+create unique index i_schedule__id on schedule_t ( account_obj_id0, poid_id0 )
+	$PIN_CONF_TBLSPACEX9
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/schedule.INDEX_CLAUSE'} ;
+create unique index i_schedule_input_flist__id on schedule_input_flist_buf ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/schedule.INDEX_CLAUSE'} ;
+
+-- /schedule/device
+create unique index i_schedule_device_info__id on schedule_device_info_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/schedule.INDEX_CLAUSE'} ;
+create index i_schedule_device_info__dev_id on schedule_device_info_t ( device_obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/schedule.INDEX_CLAUSE'} ;
+
+-- Email indexes
+create unique index i_service_email_aliases__id on service_email_aliases_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+-- Email indexes
+create unique index i_service_email_attributes__id on service_email_attributes_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- /uniqueness
+create unique index i_uniqueness__id on uniqueness_t
+       ( poid_id0 )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/uniqueness.INDEX_CLAUSE'} ;
+
+-- /Stop those validation problems
+create unique index i_uniqueness__login_type on uniqueness_t
+	( login, type )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/uniqueness.INDEX_CLAUSE'} ;
+
+create index i_uniqueness__login on uniqueness_t
+	( login )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/uniqueness.INDEX_CLAUSE'} ;
+
+-- /unique_account_no
+create unique index i_unique_account_no__id on unique_acct_no_t
+       ( poid_id0 )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/uniqueness.INDEX_CLAUSE'} ;
+
+-- /stop the possibility of two accounts with the same acct_no
+create unique index i_unique_acount_no__account_no on unique_acct_no_t
+       ( account_no )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/uniqueness.INDEX_CLAUSE'} ;
+
+-- /strings
+-- localized strings
+create index i_strings__id on strings_t ( string_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_LARGE
+	$PIN_CONF_PARTITION_INFO{'/strings.INDEX_CLAUSE'} ;
+
+-- /zonemap
+create unique index i_zonemap__id on zonemap_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/zonemap.INDEX_CLAUSE'} ;
+
+-- /zonemap buffer
+create unique index i_zonemap_data_raw__id on zonemap_data_raw_t 
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_LARGE
+	$PIN_CONF_PARTITION_INFO{'/zonemap.INDEX_CLAUSE'} ;
+
+-- /zonemap buffer
+create unique index i_zonemap_data_derived__id on zonemap_data_derived_t 
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_LARGE
+	$PIN_CONF_PARTITION_INFO{'/zonemap.INDEX_CLAUSE'} ;
+
+-- /config/country_currency_map and array table
+create unique index i_conf_ctry_curr_arr__id on
+       config_ctry_cur_arr_t (obj_id0, rec_id, rec_id2)
+       $PIN_CONF_TBLSPACEX9
+       $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create unique index i_conf_ctry_curr_map_id on 
+       config_ctry_cur_map_t (obj_id0, rec_id)
+       $PIN_CONF_TBLSPACEX9
+       $PIN_CONF_STORAGE_SMALL
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /event/billing
+create index i_event_billing_misc__id on event_billing_misc_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX6
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /balance_group
+create unique index i_balance_group__id on bal_grp_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+create index i_bal_grp_acct__id on bal_grp_t ( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+create index i_bal_grp_billinfo__id on bal_grp_t ( billinfo_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+-- /balance_group.PIN_FLD_BALANCES
+create unique index i_bal_grp_bals__id on bal_grp_bals_t ( obj_id0, rec_id  )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+-- /balance_group.PIN_FLD_BALANCES.PIN_FLD_SUB_BALANCES
+create unique index i_bal_grp_sub_bals__id on bal_grp_sub_bals_t ( obj_id0, rec_id2, rec_id  )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+create index i_bal_grp_sub_bals_valid_id on bal_grp_sub_bals_t ( obj_id0, valid_to )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/balance_group.INDEX_CLAUSE'} ;
+
+-- /topup
+create unique index i_top_bill_grp__id on topup_t ( billinfo_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/topup.INDEX_CLAUSE'} ;
+
+create unique index i_top_act_bill__id on topup_t ( account_obj_id0, billinfo_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/topup.INDEX_CLAUSE'} ;
+
+-- /monitor_queue
+create unique index i_monitor_queue__id on monitor_queue_t ( poid_id0, status )
+        $PIN_CONF_TBLSPACEX15
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/monitor_queue.INDEX_CLAUSE'} ;
+
+-- /profile.event_ordering
+create index i_profile_event_ordr_obj__id on profile_event_ordering_t
+	( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile.event_ordering
+create index i_profile_event_ordr_blgr__id on profile_event_ordering_t
+	( bal_grp_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile/subscriber_preferences
+create index i_profile_subs_pref__id on profile_subscriber_prefs_t
+        ( OBJ_ID0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_LARGE_INS;
+
+-- /user_activity
+create unique index i_user_activity_act__id on user_activity_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/user_activity.INDEX_CLAUSE'} ;
+
+-- /process_audit/batch_payment
+create index i_proc_aud_batch_payment__id on proc_aud_batch_payment_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX35
+        $PIN_CONF_STORAGE_MED_INS ;
+
+create index i_batch_payment_filename__id on proc_aud_batch_payment_t ( lower(batch_file_name ))
+        $PIN_CONF_TBLSPACEX35
+        $PIN_CONF_STORAGE_MED_INS ;
+
+create index i_proc_aud_pocess_end__id on proc_aud_t ( process_end )
+        $PIN_CONF_TBLSPACEX35
+        $PIN_CONF_STORAGE_MED_INS ;
+
+create index i_batch_payment_failed__id on proc_aud_t ( DECODE(failrecords,0,null,failrecords) )
+        $PIN_CONF_TBLSPACEX35
+        $PIN_CONF_STORAGE_MED_INS ;
+
+-- /rev_rec_schedule
+create unique index i_rev_rec_schd_poid__id on rev_rec_schedule_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create unique index i_rev_rec_schd_code__id on rev_rec_schedule_t ( code )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rev_rec_schd_periods__id on rev_rec_schedule_periods_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rev_rec_schd_milestone__id on rev_rec_schedule_milestones_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+-- /journal_master
+create unique index i_journal_master_poid__id on journal_master_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/journal_master.INDEX_CLAUSE'} ;
+
+create index i_journal_master_event__id on journal_master_t ( event_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/journal_master.INDEX_CLAUSE'} ;
+
+create index i_journal_bal_imp_obj__id on  journal_bal_impacts_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/journal_master.INDEX_CLAUSE'} ;
+
+create index i_jnl_bal_imp_estart_due_t__id on journal_bal_impacts_t ( earned_start_t, milestone_due_t )
+	$PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/journal_master.INDEX_CLAUSE'} ;
+
+-- /config/rev_rec_schedule
+create  index i_rrec_schd_extinfo_obj__id on cfg_rev_rec_sched_ext_info_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rrec_schd_extinfo_code__id on cfg_rev_rec_sched_ext_info_t ( code )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rrec_schd_periods_obj_id on  cfg_rev_rec_sched_periods_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rrec_schd_mstone_obj__id on cfg_rev_rec_sched_milestones_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_event_act_mtone_info__id on  evt_act_mstone_info_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_IND;
+
+create index i_event_act_mstone_evt__id on evt_act_mstone_events_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_IND;
+
+create index i_tmp_ar_itm_rollup__id on tmp_ar_item_to_roll_up_t ( poid_id0)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_tmp_ar_itm_rollup__status on tmp_ar_item_to_roll_up_t ( status)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+        $PIN_CONF_PARTITION_IND;
+
+create unique index i_subscription_terms__id on subscription_terms_t ( poid_id0 ) 
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_rev_distrib__id on revenue_distribution_t ( poid_id0 ) 
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rev_distrib_sc__id on revenue_distribution_t 
+	( subscriber_contract_obj_id0, contract_start_t, contract_end_t ) 
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_revenues_prod_t__id on revenues_prod_t ( obj_id0 ) 
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_revenue_details__id on revenue_details_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create unique index i_subscriber_contract__id on subscriber_contract_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_sub_cntr_acct_pkg__id on subscriber_contract_t 
+	( account_obj_id0, package_id, contract_start_t, contract_end_t )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create unique index i_his_subscriber_contract__id on history_subscriber_contract_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_his_sub_cntr_acct_pkg__id on history_subscriber_contract_t 
+	( account_obj_id0, package_id, contract_start_t, contract_end_t )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create unique index i_revenue_product__id on revenue_product_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_revenue_product_acct__id on revenue_product_t ( account_obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_revenue_product_sc__id on revenue_product_t 
+	( subscriber_contract_obj_id0, contract_start_t, contract_end_t )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rev_product_del__id on rev_prod_deliverable_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rev_event__id on revenue_event_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rev_event_bal_impt__id on revenue_event_bal_impacts_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_rev_event_del__id on rev_event_deliverable_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+-- partitioned 
+create index i_evt_act_ssp_ms__id on event_act_ssp_milestone_info_t ( obj_id0 ) 
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_LARGE
+        $PIN_CONF_PARTITION_IND;
+
+-- partitioned 
+create index i_evt_product_fee_penalty__id on event_product_fee_penalty_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_LARGE
+        $PIN_CONF_PARTITION_IND;
+
+-- partitioned
+create index i_evt_contract_cancel__id on event_contract_cancel_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_LARGE
+        $PIN_CONF_PARTITION_IND;
+
+-- partitioned
+create index i_evt_contract_start__id on event_contract_start_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_LARGE
+        $PIN_CONF_PARTITION_IND;
+
+-- partitioned
+create index i_evt_contract_modify__id on event_contract_modify_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_LARGE
+        $PIN_CONF_PARTITION_IND;
+
+-- partitioned
+create index i_evt_contract_renew__id on event_contract_renew_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_LARGE
+        $PIN_CONF_PARTITION_IND;
+
+-- partitioned
+create index i_evt_contract__id on event_contract_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_LARGE
+        $PIN_CONF_PARTITION_IND;
+
+create unique index i_deliverable__id on deliverable_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_deliverable_product__id on deliverable_product_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_service_entitlements__id on service_entitlements_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_entitlement__id on entitlement_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_allowance__id on allowance_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_recurring_allowance__id on recurring_allowance_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_feature__id on feature_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_revenue_basis_item__id on revenue_basis_item_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_rate_rbi_info__id on rate_rbi_info_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_note_data__id on note_data_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create unique index i_associated_bus_profile__id on associated_bus_profile_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_ass_bus_profile_templates__id on ass_bus_profile_templates_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED;
+
+create index i_cfg_prov_taxes_rec__id on config_prov_taxes_t ( obj_id0, rec_id)
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_cfg_prov_tax_info__id on config_prov_tax_info_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_cfg_prov_tax_code_effect__id on config_prov_tax_info_t ( tax_code, effective_t )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;
+
+create index i_cfg_prov_tax_jur_rec__id on config_prov_tax_jur_t ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_SMALL;

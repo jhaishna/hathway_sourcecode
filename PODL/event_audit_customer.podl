@@ -1,0 +1,161 @@
+
+#=======================================
+#  Storable Class /event/audit/customer
+#=======================================
+
+STORABLE CLASS /event/audit/customer {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to customer.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/account
+#=======================================
+
+STORABLE CLASS /event/audit/customer/account {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to account info. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to customer payinfo. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo/cc
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo/cc {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to customer cc info. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo/dd
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo/dd {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to customer dd info. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo/invoice
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo/invoice {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to customer invoice info. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/topup
+#=======================================
+
+STORABLE CLASS /event/audit/customer/topup {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to topup. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer
+#=======================================
+
+STORABLE CLASS /event/audit/customer IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/account
+#=======================================
+
+STORABLE CLASS /event/audit/customer/account IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo/cc
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo/cc IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo/dd
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo/dd IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo/invoice
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo/invoice IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/topup
+#=======================================
+
+STORABLE CLASS /event/audit/customer/topup IMPLEMENTATION ORACLE7 {
+
+}
+

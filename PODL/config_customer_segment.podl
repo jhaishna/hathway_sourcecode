@@ -1,0 +1,93 @@
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_SEGMENTS
+#=======================================
+
+ARRAY PIN_FLD_CUSTOMER_SEGMENTS {
+
+	ID = 8326;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Storable Class /config/customer_segment
+#=======================================
+
+STORABLE CLASS /config/customer_segment {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to define Customer Segments. A customer segment is a user-defined customer description such as early bill payer, reliable bill payer or delinquent bill payer that can be used to group accounts according to customer billing and payment practices. The customer segments can be used to charge payment fees, provide payment incentives and suppress bills.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CUSTOMER_SEGMENTS {
+
+		DESCR = "The array to define Customer segments. The element-id is significant and will correspond to a customer segment value in the system. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			DESCR = "Description of Customer segment.";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/customer_segment
+#=======================================
+
+STORABLE CLASS /config/customer_segment IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CUSTOMER_SEGMENTS {
+
+		SQL_TABLE = "config_customer_segment_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DESCR {
+
+			SQL_COLUMN = "cust_seg_desc";
+		}
+
+	}
+
+}
+

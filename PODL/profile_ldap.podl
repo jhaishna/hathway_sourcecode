@@ -1,0 +1,94 @@
+
+#=======================================
+#  Field PIN_FLD_LDAP_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_LDAP_INFO {
+
+	ID = 1422;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DN
+#=======================================
+
+STRING PIN_FLD_DN {
+
+	ID = 1257;
+}
+
+
+#=======================================
+#  Storable Class /profile/ldap
+#=======================================
+
+STORABLE CLASS /profile/ldap {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects are this class are used by Infranet Ldap Manager component. A /profile/ldap object is created,if necessary, when registering new users in Infranet who may already have an entry in the external system (Ldap) or when the user wants to control the id to be used for the new user in the external system. These external systems use a LDAP-compliant directory server. The information stored in this profile isused when exporting this new user from Infranet to the external system. This information is used in the PCM_OP_REPL_POL_PUSH opcode when invoking DM_LDAP operations.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LDAP_INFO {
+
+		DESCR = "Substruct with details on the user's LDAP profile.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DN {
+
+			DESCR = "The distinguished name (DN) of the entry to be created (or used if it already exists) when exporting the new user from Infranet into the external system LDAP directory server via DM_LDAP. ";
+			ORDER = 0;
+			LENGTH = 1023;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/ldap
+#=======================================
+
+STORABLE CLASS /profile/ldap IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_LDAP_INFO {
+
+		SQL_TABLE = "profile_ldap_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_DN {
+
+			SQL_COLUMN = "dn";
+		}
+
+	}
+
+}
+

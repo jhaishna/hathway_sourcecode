@@ -1,0 +1,103 @@
+#**********************************************************************
+#
+# @(#)plans_file 1.9 96/09/11
+#
+#	Copyright 1996 Portal Information Network, Inc.
+#
+#	This material is the exclusive property and trade secret of
+#	Portal Information Network, Inc.   No part may be reproduced, 
+#	disclosed, stored in a retrieval system, or otherwise
+#	transmitted in any form or by any means, electronic,
+#	mechanical, photocopying, optical, magnetic, chemical,
+#	biological, or otherwise, without prior written permission
+#	of Portal Information Network, Inc.
+#
+#***********************************************************************
+#
+#
+#  Price Plans File
+#
+#  This configuration file will contain the various price plans with
+#  their description text, account poid type, acct level deal and
+#  array of offers with their corresponding service types and deals
+#  to purchase for each one.
+#
+#  For now, nothing should be missing.  All parameters need to be present.
+#  If you need to ignore a particular parameter, then just assign
+#  nothing to it like this:
+#
+#  DEAL =
+#
+#  The parameters should also appear in this same order 
+#
+#  There should be one of these files for each group of price plans
+#  that need to be presented to the use.  These files should all be
+#  located in a directory.  The pin.conf parameter:
+#
+#        - fm_cust_pol      plans_dir   <path>
+#
+#  should indicate the location of this directory.  Each plans file should
+#  be named according to the PIN_FLD_AAC_SOURCE value used to get the
+#  price plans with the PCM_OP_CUST_POL_GET_PLANS fm call.  For example,
+#  with meccad the AAC_SOURCE field value is normally the ip addr and port
+#  of where the meccad deamon is running.  So if meccad was running at
+#  machine/port 156.151.1.11.1700, then there would be a file with that
+#  name in the designated plans_dir directory.
+#
+#**********************************************************************
+
+#======================================================================
+#
+#  Syntax
+#
+#    NAME    = <price_plan_name>
+#    DESCR   = <text>   (or may use optional include file)
+#    ACCT    = <acct_poid_type_string>
+#    DEAL    = <acct_deal_string>
+#    LIMIT   = <element_id> : <amount>  (credit limits - may have more
+#                                        than one line of these)
+#
+#    OFFER   = <offer_name> : <service_poid_type> : <service_deal_string>
+#                                       (may have more than one)
+#
+#  Example
+#
+#    NAME     =  Standard
+#    DESCR    =  This is the standard plan
+#    ACCT     =  /account
+#    DEAL     =  Account level deal
+#    LIMIT    =  1 : 25.0
+#    OFFER    =  standard_ip       : /service/ip      : Deal 1
+#    OFFER    =  standard_email    : /service/email   : Deal 2
+#    
+#======================================================================
+
+#===============================================
+#  Standard Price Plan
+#===============================================
+
+NAME     =  Standard
+DESCR    =  This is the standard plan
+ACCT     =  /account
+DEAL     =  
+
+LIMIT    =  1 : 100.00
+
+OFFER    =  standard_ip       : /service/ip      : IP Basic
+OFFER    =  standard_email    : /service/email   : Email Promotion
+
+
+#===============================================
+#  Premium Price Plan
+#===============================================
+
+NAME     =  Premium
+DESCR    =  This is premium plan
+ACCT     =  /account
+DEAL     =  
+
+LIMIT    =  1 : 100.00
+
+OFFER    =  premium_ip       : /service/ip      : IP Basic
+OFFER    =  premium_email    : /service/email   : Email Promotion
+

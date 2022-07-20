@@ -1,0 +1,184 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3 {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Yearly Subscription for DOCSIS 3.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/bimonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Bimonthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/monthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quadmonthly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quadmonthly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quarterly {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Subscription for DOCSIS 3.0 device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half Yearly Subscription for DOCSIS 3.0 Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3 IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/annual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/bimonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/bimonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/monthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/monthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quadmonthly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quadmonthly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/quarterly
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/quarterly IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_dc3/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_dc3/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+

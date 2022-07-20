@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/semiannual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Half yearly Subscription for Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_norm/semiannual
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_norm/semiannual IMPLEMENTATION ORACLE7 {
+
+}
+

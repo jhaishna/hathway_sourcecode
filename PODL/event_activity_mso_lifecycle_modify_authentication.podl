@@ -1,0 +1,167 @@
+
+#=======================================
+#  Field MSO_FLD_MODIFY_AUTHENTICATION
+#=======================================
+
+ARRAY MSO_FLD_MODIFY_AUTHENTICATION {
+
+	ID = 41185;
+}
+
+
+#=======================================
+#  Field MSO_FLD_IS1CLICK_FLAG
+#=======================================
+
+ENUM MSO_FLD_IS1CLICK_FLAG {
+
+	ID = 41110;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ISTAL_FLAG
+#=======================================
+
+ENUM MSO_FLD_ISTAL_FLAG {
+
+	ID = 41109;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/modify_authentication
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/modify_authentication {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_AUTHENTICATION {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_IS1CLICK_FLAG {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM MSO_FLD_ISTAL_FLAG {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/modify_authentication
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/modify_authentication IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_AUTHENTICATION {
+
+		SQL_TABLE = "mso_evt_lc_modify_auth_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM MSO_FLD_IS1CLICK_FLAG {
+
+			SQL_COLUMN = "is1click_flag";
+		}
+
+		ENUM MSO_FLD_ISTAL_FLAG {
+
+			SQL_COLUMN = "istal_flag";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+	}
+
+}
+

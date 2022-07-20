@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_norm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Quarterly Subscription Fee for FDP Normal Device.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_norm
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_quarterly_fdp/mso_sb_norm IMPLEMENTATION ORACLE7 {
+
+}
+

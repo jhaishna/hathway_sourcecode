@@ -1,0 +1,328 @@
+
+#=======================================
+#  Field PIN_FLD_PROMISE_TO_PAY_INFO
+#=======================================
+
+SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+	ID = 7740;
+}
+
+
+#=======================================
+#  Field PIN_FLD_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_AMOUNT {
+
+	ID = 57;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_BILLINFO_OBJ {
+
+	ID = 7752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DAYS
+#=======================================
+
+INT PIN_FLD_DAYS {
+
+	ID = 6204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INVOKE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_INVOKE_T {
+
+	ID = 1403;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MILESTONE_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_MILESTONE_AMOUNT {
+
+	ID = 7742;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MILESTONE_INTERVAL
+#=======================================
+
+INT PIN_FLD_MILESTONE_INTERVAL {
+
+	ID = 7743;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NUM_MILESTONES
+#=======================================
+
+INT PIN_FLD_NUM_MILESTONES {
+
+	ID = 7741;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERDUE_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_OVERDUE_AMOUNT {
+
+	ID = 7730;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PAYINFO_OBJ
+#=======================================
+
+POID PIN_FLD_PAYINFO_OBJ {
+
+	ID = 901;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SCENARIO_OBJ
+#=======================================
+
+POID PIN_FLD_SCENARIO_OBJ {
+
+	ID = 7700;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/collections/promise_to_pay
+#=======================================
+
+STORABLE CLASS /event/activity/collections/promise_to_pay {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Subclass of /event/activity/collections to represent promise to pay activity. It holds all the parameter information provided while invoking promise to pay. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+		DESCR = "Contains the promise to pay information. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			DESCR = "The total amount for which promise is made. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			DESCR = "Link to the billinfo object under collections for which promise to pay is invoked. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_DAYS {
+
+			DESCR = "Total number of days within which total promised amount will be paid. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_INVOKE_T {
+
+			DESCR = "Time when promise to pay is effective (first milestone date). ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MILESTONE_AMOUNT {
+
+			DESCR = "Amount that will be paid in each milestone. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_MILESTONE_INTERVAL {
+
+			DESCR = "Number of days between each milestone. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_NUM_MILESTONES {
+
+			DESCR = "Number of milestones using which the total promised amount will be paid. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_OVERDUE_AMOUNT {
+
+			DESCR = "The total overdue amount. If promise amount is not specified, then this will be taken as total promise amount. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			DESCR = "Link to the /payinfo/cc or /payinfo/dd object. If NULL only validation is done, otherwise the promised amount is auto-collected. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SCENARIO_OBJ {
+
+			DESCR = "Link to the collections scenario object under which promise to pay is invoked for the billinfo. ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/collections/promise_to_pay
+#=======================================
+
+STORABLE CLASS /event/activity/collections/promise_to_pay IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_PROMISE_TO_PAY_INFO {
+
+		SQL_TABLE = "event_act_coll_prmstopay_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_AMOUNT {
+
+			SQL_COLUMN = "amount";
+		}
+
+		POID PIN_FLD_BILLINFO_OBJ {
+
+			SQL_COLUMN = "billinfo_obj";
+		}
+
+		INT PIN_FLD_DAYS {
+
+			SQL_COLUMN = "days";
+		}
+
+		TIMESTAMP PIN_FLD_INVOKE_T {
+
+			SQL_COLUMN = "invoke_t";
+		}
+
+		DECIMAL PIN_FLD_MILESTONE_AMOUNT {
+
+			SQL_COLUMN = "milestone_amount";
+		}
+
+		INT PIN_FLD_MILESTONE_INTERVAL {
+
+			SQL_COLUMN = "milestone_interval";
+		}
+
+		INT PIN_FLD_NUM_MILESTONES {
+
+			SQL_COLUMN = "num_milestones";
+		}
+
+		DECIMAL PIN_FLD_OVERDUE_AMOUNT {
+
+			SQL_COLUMN = "overdue_amount";
+		}
+
+		POID PIN_FLD_PAYINFO_OBJ {
+
+			SQL_COLUMN = "payinfo_obj";
+		}
+
+		POID PIN_FLD_SCENARIO_OBJ {
+
+			SQL_COLUMN = "scenario_obj";
+		}
+
+	}
+
+}
+

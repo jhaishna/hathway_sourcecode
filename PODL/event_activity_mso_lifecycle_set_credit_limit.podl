@@ -1,0 +1,142 @@
+
+#=======================================
+#  Field MSO_FLD_MODIFY_CREDIT_LIMIT
+#=======================================
+
+ARRAY MSO_FLD_MODIFY_CREDIT_LIMIT {
+
+	ID = 41180;
+}
+
+
+#=======================================
+#  Field MSO_FLD_FLOOR
+#=======================================
+
+DECIMAL MSO_FLD_FLOOR {
+
+	ID = 41181;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LIMIT
+#=======================================
+
+DECIMAL MSO_FLD_LIMIT {
+
+	ID = 40040;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_NO
+#=======================================
+
+STRING PIN_FLD_ACCOUNT_NO {
+
+	ID = 106;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/set_credit_limit
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/set_credit_limit {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_CREDIT_LIMIT {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_FLOOR {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_LIMIT {
+
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/set_credit_limit
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/set_credit_limit IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_MODIFY_CREDIT_LIMIT {
+
+		SQL_TABLE = "mso_evt_lc_modify_cr_limit_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL MSO_FLD_FLOOR {
+
+			SQL_COLUMN = "floor";
+		}
+
+		DECIMAL MSO_FLD_LIMIT {
+
+			SQL_COLUMN = "limit";
+		}
+
+		STRING PIN_FLD_ACCOUNT_NO {
+
+			SQL_COLUMN = "account_no";
+		}
+
+	}
+
+}
+

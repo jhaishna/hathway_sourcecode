@@ -1,0 +1,119 @@
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_REASONS
+#=======================================
+
+ARRAY PIN_FLD_SUSPENSE_REASONS {
+
+	ID = 8176;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_REASON
+#=======================================
+
+ENUM PIN_FLD_SUSPENSE_REASON {
+
+	ID = 8162;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUSPENSE_SUBREASON
+#=======================================
+
+ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+	ID = 8163;
+}
+
+
+#=======================================
+#  Storable Class /config/suspense_reason_code
+#=======================================
+
+STORABLE CLASS /config/suspense_reason_code {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to set up the mapping of the suspense error code and the suspense reason code.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUSPENSE_REASONS {
+
+		DESCR = "Array of suspense reasons. Each element in this array represents a different error code and element id is the error code.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_SUSPENSE_REASON {
+
+			DESCR = "User defined suspense reason code.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+			DESCR = "User defined suspense subreason code.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/suspense_reason_code
+#=======================================
+
+STORABLE CLASS /config/suspense_reason_code IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SUSPENSE_REASONS {
+
+		SQL_TABLE = "cfg_susp_reason_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_SUSPENSE_REASON {
+
+			SQL_COLUMN = "suspense_reason";
+		}
+
+		ENUM PIN_FLD_SUSPENSE_SUBREASON {
+
+			SQL_COLUMN = "suspense_subreason";
+		}
+
+	}
+
+}
+

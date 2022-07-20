@@ -1,0 +1,67 @@
+--
+--	@(#)%Portal Version: create_event_essential_partition.source:BillingVelocityInt:2:2006-Sep-14 18:48:08 %
+--
+-- Copyright (c) 1996, 2010, Oracle and/or its affiliates. 
+-- All rights reserved. 
+--     
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+--
+
+
+-- create the partitioned event essentials object for storing serialized data of 
+-- event_sub_bal_imp_t table
+create table event_essentials_t (
+	obj_id0			number(38) not null,
+	balances_small		varchar2(4000),	
+	balances_large		clob,		
+	account_obj_id0		number(38),
+	end_t			number(38)) $PIN_CONF_STORAGE_LARGE_INS
+	lob (balances_large) store as ( chunk 4096 )
+partition by range (OBJ_ID0)
+(
+	partition partition_historic values less than (35184372088832) $PIN_CONF_TBLSPACE6
+	lob (balances_large) store as ($PIN_CONF_TBLSPACE7),
+	partition partition_last values less than (MAXVALUE) $PIN_CONF_TBLSPACE6
+	lob (balances_large) store as ($PIN_CONF_TBLSPACE7)
+); 
+
+
+-- create index on obj_id0
+create unique index i_event_essentials__id on event_essentials_t ( obj_id0 ) $PIN_CONF_TBLSPACEX14 $PIN_CONF_STORAGE_MED_INS
+	local ( partition partition_historic, partition partition_last );
+
+-- Drop the serialized tables
+drop table event_monitor_impacts_t;
+drop table event_sub_bal_imp_t;
+drop table event_sub_bals_t;
+drop table event_monitor_sub_bal_imp_t;
+drop table event_monitor_sub_bals_t;
+
+-- update the dd_objects_fields_t table 
+update dd_objects_fields_t set sm_item_name='event_essentials_t'
+	where 
+		field_name='PIN_FLD_SUB_BAL_IMPACTS' AND
+	      	sm_item_name='event_sub_bal_imp_t';
+
+update dd_objects_fields_t set sm_item_name='event_essentials_t'
+	where 
+		field_name='PIN_FLD_SUB_BALANCES' AND
+	      	sm_item_name='event_sub_bals_t';
+
+update dd_objects_fields_t set sm_item_name='event_essentials_t'
+	where 
+		field_name='PIN_FLD_MONITOR_IMPACTS' AND
+	      	sm_item_name='event_monitor_impacts_t';
+
+update dd_objects_fields_t set sm_item_name='event_essentials_t'
+	where 
+		field_name='PIN_FLD_MONITOR_SUB_BAL_IMPACTS' AND
+	      	sm_item_name='event_monitor_sub_bal_imp_t';
+
+update dd_objects_fields_t set sm_item_name='event_essentials_t'
+	where 
+		field_name='PIN_FLD_SUB_BALANCES' AND
+	      	sm_item_name='event_monitor_sub_bals_t';

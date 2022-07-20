@@ -1,0 +1,124 @@
+--
+--	@(#) % %
+--
+--      Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+--     
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+-- sql file to drop Infranet Snapshots;
+
+set serveroutput on;
+
+DECLARE
+	tname	varchar2(40);
+	tcount	number;
+	cid	int;
+
+BEGIN
+	select count(*) into tcount from user_tables where table_name like
+		'DD_OBJECTS_FIELDS_T';	
+	if tcount = 0 then
+		cid := DBMS_SQL.OPEN_CURSOR;
+		DBMS_SQL.PARSE (cid,
+			'CREATE TABLE DD_OBJECTS_FIELDS_T ' ||
+			'(PARENT_ELEMENT_ID int, SM_ITEM_NAME VARCHAR2(255))',
+			dbms_sql.v7);
+		DBMS_SQL.CLOSE_CURSOR(cid);
+	end if;
+END;
+/
+--------------------------------------------------------------------------
+-- DROP THE SNAPSHOT LOGS 
+--------------------------------------------------------------------------
+
+DECLARE
+
+	cursor c1 is 
+	SELECT distinct master 
+	FROM dd_objects_fields_t, USER_SNAPSHOTS where
+	UPPER(sm_item_name ) like  '%' || master || '%';
+
+	cursor c2 is 
+	SELECT distinct master 
+	FROM dd_objects_fields_t, USER_SNAPSHOT_LOGS where
+	UPPER(sm_item_name ) like '%' || master || '%';
+
+	tname 	c1%ROWTYPE;
+	lname 	c2%ROWTYPE;
+	t_name 	varchar2(255);
+	l_name 	varchar2(255);
+	snapshot_count	number(38) := 0;
+	cid		int :=0;
+BEGIN
+
+
+--	drop existing multi-dB snapshot LOGS
+-- 
+	FOR lname in c2
+	LOOP
+		dbms_output.enable(10000);
+		dbms_output.put_line(lname.master);
+		l_name := lname.master;
+		select count(*) into snapshot_count from 
+		user_snapshot_LOGS where master LIKE '%' ||  UPPER(l_name) || '%';
+		if snapshot_count > 0 then
+			dbms_output.put_line('dropping SNAPSHOT LOG on ' || 
+				l_name || '...');
+			cid := DBMS_SQL.OPEN_CURSOR;
+			DBMS_SQL.PARSE (cid,
+				'DROP   SNAPSHOT LOG ON ' || 
+				l_name,
+				dbms_sql.v7);
+			DBMS_SQL.CLOSE_CURSOR(cid);
+		else
+			dbms_output.put_line('No snapshot logs Found');
+		end if;
+	END LOOP;
+
+
+--	drop existing multi-dB snapshots
+-- 
+	FOR tname in c1
+	LOOP
+		dbms_output.enable(10000);
+		dbms_output.put_line(tname.master);
+		t_name := tname.master;
+		select count(*) into snapshot_count from 
+		user_snapshots where master LIKE '%' ||  UPPER(t_name) || '%';
+		if snapshot_count > 0 then
+			dbms_output.put_line('dropping SNAPSHOT ' || 
+				t_name || '...');
+			cid := DBMS_SQL.OPEN_CURSOR;
+			DBMS_SQL.PARSE (cid,
+				'DROP   SNAPSHOT ' || 
+				t_name,
+				dbms_sql.v7);
+			DBMS_SQL.CLOSE_CURSOR(cid);
+		else
+			dbms_output.put_line('No snapshots Found');
+		end if;
+	END LOOP;
+
+END;
+/
+
+DECLARE
+	tcount	number;
+	cid	int;
+
+BEGIN
+	select count(*) into tcount from user_tab_columns where table_name like
+		'DD_OBJECTS_FIELDS_T';	
+	if tcount = 2 then
+		cid := DBMS_SQL.OPEN_CURSOR;
+		DBMS_SQL.PARSE (cid,
+			'DROP TABLE DD_OBJECTS_FIELDS_T ',
+			dbms_sql.v7);
+		DBMS_SQL.CLOSE_CURSOR(cid);
+	end if;
+END;
+/

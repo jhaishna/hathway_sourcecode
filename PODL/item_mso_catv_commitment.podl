@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_catv_commitment
+#=======================================
+
+STORABLE CLASS /item/mso_catv_commitment {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "MSO CATV Min. Commitment Item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_catv_commitment
+#=======================================
+
+STORABLE CLASS /item/mso_catv_commitment IMPLEMENTATION ORACLE7 {
+
+}
+

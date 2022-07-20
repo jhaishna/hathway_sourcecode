@@ -1,0 +1,146 @@
+
+#=======================================
+#  Field PIN_FLD_EXT_RA
+#=======================================
+
+ARRAY PIN_FLD_EXT_RA {
+
+	ID = 6410;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE_DESC_ID
+#=======================================
+
+INT PIN_FLD_LOCALE_DESC_ID {
+
+	ID = 2391;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Storable Class /config/account_era
+#=======================================
+
+STORABLE CLASS /config/account_era {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object describing allowed account extended rating attributes, like: Birthday, SLA...";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EXT_RA {
+
+		DESCR = "Array containing the list of allowed account extended rating attributes";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_LOCALE_DESC_ID {
+
+			DESCR = "String ID for description of the extended rating attribute feature. Key to local description. ";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name of the extended rating attribute feature ie Special_day, Corporate Agreement... Integrate DB key ";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			DESCR = "String ID for name of the extended rating attribute feature ie Special_day, Corporate Agreement... Key to local display name. ";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/account_era
+#=======================================
+
+STORABLE CLASS /config/account_era IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_EXT_RA {
+
+		SQL_TABLE = "config_account_era_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_LOCALE_DESC_ID {
+
+			SQL_COLUMN = "locale_desc_id";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "string_id";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,202 @@
+
+#=======================================
+#  Field PIN_FLD_PROVIDER_PRODUCTS
+#=======================================
+
+ARRAY PIN_FLD_PROVIDER_PRODUCTS {
+
+	ID = 1005;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROD_NAME
+#=======================================
+
+STRING PIN_FLD_PROD_NAME {
+
+	ID = 253;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_AMOUNT
+#=======================================
+
+STRING PIN_FLD_RATE_PER_AMOUNT {
+
+	ID = 1004;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_AMOUNT_CYCLE
+#=======================================
+
+STRING PIN_FLD_RATE_PER_AMOUNT_CYCLE {
+
+	ID = 1007;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_EVENT
+#=======================================
+
+STRING PIN_FLD_RATE_PER_EVENT {
+
+	ID = 1003;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_PER_EVENT_CYCLE
+#=======================================
+
+STRING PIN_FLD_RATE_PER_EVENT_CYCLE {
+
+	ID = 1006;
+}
+
+
+#=======================================
+#  Storable Class /service/provider_prod
+#=======================================
+
+STORABLE CLASS /service/provider_prod {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Identity for an account acting as a supplier or vendor of various products. When others use these products, the ISP remits this account a fraction of the charges.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROVIDER_PRODUCTS {
+
+		DESCR = "Array of products supplied by the provider. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PROD_NAME {
+
+			DESCR = "Product name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_AMOUNT {
+
+			DESCR = "Rate category to be used when remitting a percent of the purchase amount to the vendor.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_AMOUNT_CYCLE {
+
+			DESCR = "Rate category to be used when remitting a percent of the cycle fees to the vendor for every event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT {
+
+			DESCR = "Rate category to be used when remitting a fixed amount to the vendor for every product purchase.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT_CYCLE {
+
+			DESCR = "Rate category to be used when remitting a fixed amount to the vendor for every cycle fees event.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /service/provider_prod
+#=======================================
+
+STORABLE CLASS /service/provider_prod IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_PROVIDER_PRODUCTS {
+
+		SQL_TABLE = "service_provider_products_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_PROD_NAME {
+
+			SQL_COLUMN = "product_name";
+		}
+
+		STRING PIN_FLD_RATE_PER_AMOUNT {
+
+			SQL_COLUMN = "rate_per_amount";
+		}
+
+		STRING PIN_FLD_RATE_PER_AMOUNT_CYCLE {
+
+			SQL_COLUMN = "rate_per_amount_cycle";
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT {
+
+			SQL_COLUMN = "rate_per_event";
+		}
+
+		STRING PIN_FLD_RATE_PER_EVENT_CYCLE {
+
+			SQL_COLUMN = "rate_per_event_cycle";
+		}
+
+	}
+
+}
+

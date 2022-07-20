@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco1_retrack
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco1_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/bulk_cisco1_retrack
+#=======================================
+
+STORABLE CLASS /mso_task/bulk_cisco1_retrack IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,48 @@
+--
+-- @(#)create_md_grant_schema.source 1 01/21/05
+--
+-- Copyright (c) 1999, 2014, Oracle and/or its affiliates. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+-- sql file to setup secondary schema
+-- 
+
+set serveroutput on;
+
+DECLARE 
+	cursor global_table_name_cur is 
+	SELECT table_name FROM md_static_objects_t$DB_LINK;
+	
+	global_table_name global_table_name_cur%ROWTYPE;
+	cid int := 0;
+BEGIN
+--	dbms_output.put_line('grant all on ');
+	FOR global_table_name in global_table_name_cur 
+	LOOP
+--		dbms_output.enable(10000);
+--		dbms_output.put_line(global_table_name.table_name);
+
+		cid := DBMS_SQL.OPEN_CURSOR;
+
+		DBMS_SQL.PARSE (cid,
+			'GRANT ALL ON ' ||
+			global_table_name.table_name ||
+			' to '||
+			' $GRANT_OWNER_LIST',
+			dbms_sql.v7);
+		DBMS_SQL.CLOSE_CURSOR(cid);
+
+	END LOOP;
+
+	-- Grant permission for the DD Tables.
+        EXECUTE IMMEDIATE 'GRANT ALL ON DD_OBJECTS_T TO $GRANT_OWNER_LIST';
+        EXECUTE IMMEDIATE 'GRANT ALL ON DD_TYPES_T TO $GRANT_OWNER_LIST';
+        EXECUTE IMMEDIATE 'GRANT ALL ON DD_OBJECTS_FIELDS_T TO $GRANT_OWNER_LIST';
+        EXECUTE IMMEDIATE 'GRANT ALL ON DD_FIELDS_T TO $GRANT_OWNER_LIST';
+
+END;
+/

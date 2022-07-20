@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/adjustment/event/deferred
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/event/deferred {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created to capture an adjustment made to a deferred event.  This event belongs to the adjustment item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/adjustment/event/deferred
+#=======================================
+
+STORABLE CLASS /event/billing/adjustment/event/deferred IMPLEMENTATION ORACLE7 {
+
+}
+

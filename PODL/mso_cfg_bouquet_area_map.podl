@@ -1,0 +1,389 @@
+
+#=======================================
+#  Field MSO_FLD_AREA
+#=======================================
+
+STRING MSO_FLD_AREA {
+
+	ID = 40068;
+}
+
+
+#=======================================
+#  Field MSO_FLD_AREA_CODE
+#=======================================
+
+STRING MSO_FLD_AREA_CODE {
+
+	ID = 40084;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID {
+
+	ID = 40011;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID_HD
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID_HD {
+
+	ID = 40087;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID_HD_HEX
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID_HD_HEX {
+
+	ID = 40088;
+}
+
+
+#=======================================
+#  Field MSO_FLD_BOUQUET_ID_HEX
+#=======================================
+
+STRING MSO_FLD_BOUQUET_ID_HEX {
+
+	ID = 40086;
+}
+
+
+#=======================================
+#  Field MSO_FLD_DEVICE_TYPE
+#=======================================
+
+ENUM MSO_FLD_DEVICE_TYPE {
+
+	ID = 42023;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+INT     PIN_FLD_CARRIER_ID {
+
+        ID = 2522;
+}
+
+#=======================================
+#  Storable Class /mso_cfg_bouquet_area_map
+#=======================================
+
+STORABLE CLASS /mso_cfg_bouquet_area_map {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_AREA {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_AREA_CODE {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_BOUQUET_ID {
+
+		DESCR = "Bearer technology for BB service";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HD {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HD_HEX {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HEX {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM MSO_FLD_DEVICE_TYPE {
+
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CARRIER_ID {
+
+                DESCR = "Network Provider ID. Hathway 0 and Jio 1";
+                ORDER = 0;
+                CREATE = Optional;
+                MODIFY = Writeable;
+                AUDITABLE = 0;
+                ENCRYPTABLE = 0;
+                SERIALIZABLE = 0;
+
+        }
+
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_bouquet_area_map
+#=======================================
+
+STORABLE CLASS /mso_cfg_bouquet_area_map IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_bouquet_area_map_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	STRING MSO_FLD_AREA {
+
+		SQL_COLUMN = "area";
+	}
+
+	STRING MSO_FLD_AREA_CODE {
+
+		SQL_COLUMN = "area_code";
+	}
+
+	STRING MSO_FLD_BOUQUET_ID {
+
+		SQL_COLUMN = "bouquet_id";
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HD {
+
+		SQL_COLUMN = "bouquet_id_hd";
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HD_HEX {
+
+		SQL_COLUMN = "bouquet_id_hd_hex";
+	}
+
+	STRING MSO_FLD_BOUQUET_ID_HEX {
+
+		SQL_COLUMN = "bouquet_id_hex";
+	}
+
+	ENUM MSO_FLD_DEVICE_TYPE {
+
+		SQL_COLUMN = "device_type";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+	INT PIN_FLD_CARRIER_ID {
+
+                SQL_COLUMN = "carrier_id";
+        }
+
+}
+

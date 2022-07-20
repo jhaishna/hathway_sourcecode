@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_suspension
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_suspension {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "mso bulk bulk_suspension";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_suspension
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_suspension IMPLEMENTATION ORACLE7 {
+
+}
+

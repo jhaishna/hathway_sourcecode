@@ -1,0 +1,287 @@
+
+#=======================================
+#  Field PIN_FLD_DATA_ARRAY
+#=======================================
+
+ARRAY PIN_FLD_DATA_ARRAY {
+
+	ID = 3006;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_FROM
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_FROM {
+
+	ID = 6429;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_TO
+#=======================================
+
+TIMESTAMP PIN_FLD_VALID_TO {
+
+	ID = 6430;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EXTRATING
+#=======================================
+
+SUBSTRUCT PIN_FLD_EXTRATING {
+
+	ID = 6409;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LABEL
+#=======================================
+
+STRING PIN_FLD_LABEL {
+
+	ID = 601;
+}
+
+
+#=======================================
+#  Field PIN_FLD_REFERENCE_COUNT
+#=======================================
+
+INT PIN_FLD_REFERENCE_COUNT {
+
+	ID = 6431;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Storable Class /profile/serv_extrating
+#=======================================
+
+STORABLE CLASS /profile/serv_extrating {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The /profile/serv_extrating class is used to hold extended service rating attributes. These attributes are used to associate custom information with a service object. The object supports an array of name/value pairs with both valid_from and valid_to contraints.  These attributes are currently used to store data related to Friends and Family discounting. Use extended service rating attributes to hold any custom data field associated with a service object.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DATA_ARRAY {
+
+		DESCR = "Array containing the ERA values, like a list of friends and family phone numbers.";
+		ORDER = 1;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "A name for the tuple.  Eg: Mom, Portal";
+			ORDER = 0;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			DESCR = "if present, indicate the valid date range";
+			ORDER = 3;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			DESCR = "if present, indicate the valid date range";
+			ORDER = 2;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			DESCR = "Tuple value.  Eg: 011-33-54980-5555, 1-408-572-2000";
+			ORDER = 1;
+			LENGTH = 64;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_EXTRATING {
+
+		DESCR = "Substruct to hold extended rating attributes information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LABEL {
+
+			DESCR = "This field contains ERA label name.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_REFERENCE_COUNT {
+
+			DESCR = " A number which keeps the reference count. In  case of purchase increments the counter and  in case of cancel decrements the counter";
+			ORDER = 1;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Provisioning status when relevant. Values are: Processing, Failed, Complete";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /profile/serv_extrating
+#=======================================
+
+STORABLE CLASS /profile/serv_extrating IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_DATA_ARRAY {
+
+		SQL_TABLE = "profile_serv_extrating_data_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_FROM {
+
+			SQL_COLUMN = "valid_from";
+		}
+
+		TIMESTAMP PIN_FLD_VALID_TO {
+
+			SQL_COLUMN = "valid_to";
+		}
+
+		STRING PIN_FLD_VALUE {
+
+			SQL_COLUMN = "value";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_EXTRATING {
+
+		SQL_TABLE = "profile_serv_extrating_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LABEL {
+
+			SQL_COLUMN = "label";
+		}
+
+		INT PIN_FLD_REFERENCE_COUNT {
+
+			SQL_COLUMN = "reference_count";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+	}
+
+}
+

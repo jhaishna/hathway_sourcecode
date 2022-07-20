@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/VAT
+#=======================================
+
+STORABLE CLASS /item/VAT {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "VAT";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/VAT
+#=======================================
+
+STORABLE CLASS /item/VAT IMPLEMENTATION ORACLE7 {
+
+}
+

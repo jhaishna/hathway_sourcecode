@@ -1,0 +1,800 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D530-C2509_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D530-C2509_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D530-C2509_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D530-C2509_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D530-C2509_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D530-C2509_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D530-C2509_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D530-C2509_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D433-C2073_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D433-C2073_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D433-C2073_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D433-C2073_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D433-C2073_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D433-C2073_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D433-C2073_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D433-C2073_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D383-C1793_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D383-C1793_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D383-C1793_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D383-C1793_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D383-C1793_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D383-C1793_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D383-C1793_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D383-C1793_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D387-C1824_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D387-C1824_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D387-C1824_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D387-C1824_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D387-C1824_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D387-C1824_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D387-C1824_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D387-C1824_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D323-C1479_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D323-C1479_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D323-C1479_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D323-C1479_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D323-C1479_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D323-C1479_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D323-C1479_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D323-C1479_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D234-C1056_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D234-C1056_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D234-C1056_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D234-C1056_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D234-C1056_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D234-C1056_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D234-C1056_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D234-C1056_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D233-C2377_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D233-C2377_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D233-C2377_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D233-C2377_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D233-C2377_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D233-C2377_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D233-C2377_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D233-C2377_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_30_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C819_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C819_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C819_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C819_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C819_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C819_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C819_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C819_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C1907_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C1907_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C1907_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C1907_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C1907_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C1907_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C1907_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C1907_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_15_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C190_M_PP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C190_M_PP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C190_M_PP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C190_M_PP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C190_M_SP_RES_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C190_M_SP_RES_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C190_M_SP_COM_MAIN"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_et_mapping -1 0
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_NAME                       STR [0] "MH-D27-C190_M_SP_COM_ADDI"
+0 PIN_FLD_TAX_CODE                   STR [0] "ET_F_45_0"
+0 MSO_FLD_SERVICE_TYPE                 ENUM [0] 1
+0 PIN_FLD_TAXPKG_TYPE               ENUM [0] 1
+XX
+xop 1 0 1
+

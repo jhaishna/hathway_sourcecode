@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/sp_autopay {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/reversal/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/reversal/cash/sp_autopay IMPLEMENTATION ORACLE7 {
+
+}
+

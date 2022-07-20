@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/sms {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that stores the service order state transitions for /service/telco/gsm/sms.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/telco/service_order_state/gsm/sms
+#=======================================
+
+STORABLE CLASS /config/telco/service_order_state/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+

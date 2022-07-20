@@ -1,0 +1,118 @@
+
+#=======================================
+#  Field PIN_FLD_CUSTOMER_SEGMENTS
+#=======================================
+
+ARRAY PIN_FLD_CUSTOMER_SEGMENTS {
+
+	ID = 8326;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MAX_SUPPRESSED_CYCLES
+#=======================================
+
+INT PIN_FLD_MAX_SUPPRESSED_CYCLES {
+
+	ID = 8327;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIN_BILL_AMOUNT
+#=======================================
+
+DECIMAL PIN_FLD_MIN_BILL_AMOUNT {
+
+	ID = 8328;
+}
+
+
+#=======================================
+#  Storable Class /config/suppression
+#=======================================
+
+STORABLE CLASS /config/suppression {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Suppression info tracks the balance threshold and maximum number of allowed consecutive bill suppressions allowed for each customer segment.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CUSTOMER_SEGMENTS {
+
+		DESCR = "Each entry in the customer segment array will link the suppression information to a specific customer segment corresponding to the element id to the array. The element id of the array entry can be used as an enumerated value to specify the  customer segment.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_MAX_SUPPRESSED_CYCLES {
+
+			DESCR = "Configured maximum consecutive bill cycles alowed to be Suppressed.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_MIN_BILL_AMOUNT {
+
+			DESCR = "Threshold value corresponding to current bills balance. If the balance of the bill is below the threshold the bill should be  Suppress. ";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/suppression
+#=======================================
+
+STORABLE CLASS /config/suppression IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CUSTOMER_SEGMENTS {
+
+		SQL_TABLE = "config_suppression_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_MAX_SUPPRESSED_CYCLES {
+
+			SQL_COLUMN = "max_suppressed_bill_cycles";
+		}
+
+		DECIMAL PIN_FLD_MIN_BILL_AMOUNT {
+
+			SQL_COLUMN = "min_bill_amount";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /data/sequence_lock
+#=======================================
+
+STORABLE CLASS /data/sequence_lock {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Reserved for internal use only.  Each object for this storable-class correlates to the database mechanism for allocating new poid_id0 values.  It is specifically used to support retrieving a range of poid_id0 values; it uses the object with the 'name' of the database sequence to hold a lock on the record when making alterations to the sequence.  Consequently, there should be one object for each poid_id0-generating sequence in the database which supports range retrieval.";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /data/sequence_lock
+#=======================================
+
+STORABLE CLASS /data/sequence_lock IMPLEMENTATION ORACLE7 {
+
+}
+

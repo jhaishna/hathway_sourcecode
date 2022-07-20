@@ -1,0 +1,45 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_arrear_annual
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_arrear_annual {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_arrear_annual/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_arrear_annual/mso_sb_adn_normal {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event extended for the Addon package";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_arrear_annual
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_arrear_annual IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_arrear_annual/mso_sb_adn_normal
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_arrear_annual/mso_sb_adn_normal IMPLEMENTATION ORACLE7 {
+
+}
+

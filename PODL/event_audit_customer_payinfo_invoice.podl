@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo/invoice
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo/invoice {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to customer invoice info. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/customer/payinfo/invoice
+#=======================================
+
+STORABLE CLASS /event/audit/customer/payinfo/invoice IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/huwr {
+
+	LABEL = " ";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/huwr
+#=======================================
+
+STORABLE CLASS /event/billing/product/fee/cycle/cycle_forward_quadmonthly/mso_hw_rental/huwr IMPLEMENTATION ORACLE7 {
+
+}
+

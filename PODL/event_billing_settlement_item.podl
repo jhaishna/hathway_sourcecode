@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/settlement/item
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/item {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when a settlement item is created.  The details of the settlement are recorded in the PIN_FLD_BALANCES array of the base /event class.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/settlement/item
+#=======================================
+
+STORABLE CLASS /event/billing/settlement/item IMPLEMENTATION ORACLE7 {
+
+}
+

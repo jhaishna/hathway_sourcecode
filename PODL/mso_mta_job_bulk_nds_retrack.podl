@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_nds_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_nds_retrack {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk nds retrack";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_nds_retrack
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_nds_retrack IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/usage
+#=======================================
+
+STORABLE CLASS /item/usage {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "item object usage.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/usage
+#=======================================
+
+STORABLE CLASS /item/usage IMPLEMENTATION ORACLE7 {
+
+}
+

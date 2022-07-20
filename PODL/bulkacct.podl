@@ -1,0 +1,854 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ADDRESS
+#=======================================
+
+STRING PIN_FLD_ADDRESS {
+
+	ID = 166;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_OPERAND
+#=======================================
+
+DECIMAL PIN_FLD_BAL_OPERAND {
+
+	ID = 235;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BULKACCT_EFILE
+#=======================================
+
+STRING PIN_FLD_BULKACCT_EFILE {
+
+	ID = 2371;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BULKACCT_SFILE
+#=======================================
+
+STRING PIN_FLD_BULKACCT_SFILE {
+
+	ID = 2372;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BULKACCT_SLP
+#=======================================
+
+STRING PIN_FLD_BULKACCT_SLP {
+
+	ID = 2373;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CLOSE_WHEN_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+	ID = 149;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNTRY
+#=======================================
+
+STRING PIN_FLD_COUNTRY {
+
+	ID = 170;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FIRST_NAME
+#=======================================
+
+STRING PIN_FLD_FIRST_NAME {
+
+	ID = 159;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LAST_NAME
+#=======================================
+
+STRING PIN_FLD_LAST_NAME {
+
+	ID = 161;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN_PREFIX
+#=======================================
+
+STRING PIN_FLD_LOGIN_PREFIX {
+
+	ID = 2374;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOGIN_SUFFIX
+#=======================================
+
+STRING PIN_FLD_LOGIN_SUFFIX {
+
+	ID = 2375;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MIDDLE_NAME
+#=======================================
+
+STRING PIN_FLD_MIDDLE_NAME {
+
+	ID = 160;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PASSWD_PATTERN
+#=======================================
+
+STRING PIN_FLD_PASSWD_PATTERN {
+
+	ID = 2376;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RESOURCE_ID
+#=======================================
+
+INT PIN_FLD_RESOURCE_ID {
+
+	ID = 834;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_SEQ
+#=======================================
+
+INT PIN_FLD_START_SEQ {
+
+	ID = 2377;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TRACKING_ID
+#=======================================
+
+STRING PIN_FLD_TRACKING_ID {
+
+	ID = 900;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USERID
+#=======================================
+
+POID PIN_FLD_USERID {
+
+	ID = 63;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ZIP
+#=======================================
+
+STRING PIN_FLD_ZIP {
+
+	ID = 169;
+}
+
+
+#=======================================
+#  Storable Class /bulkacct
+#=======================================
+
+STORABLE CLASS /bulkacct {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The bulkacct object represents a set of account and related objects that are created and possibly updated as a named set.  The bulkacct object contains information about who created the batch and when, as well as the initial values provided during account creation for each account in the batch. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ADDRESS {
+
+		DESCR = "Street address of contact. Multiple lines can be stored with newline separator.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_BAL_OPERAND {
+
+		DESCR = "The balance of credit for each account, specified in units as described in PIN_FLD_RESOURCE_ID.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BULKACCT_EFILE {
+
+		DESCR = "Name of file containing information about accounts not successfully created.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BULKACCT_SFILE {
+
+		DESCR = "Name of file containing information about accounts successfully created.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_BULKACCT_SLP {
+
+		DESCR = "This provides the Java class file name for the service login provider that generates service login IDs and passwords.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CITY {
+
+		DESCR = "City portion of contact's address.";
+		ORDER = 0;
+		LENGTH = 90;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+		DESCR = "Date that the accounts in this batch should be automatically closed. Used to schedule account closure in advance. 0 means do not auto-close.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_COUNT {
+
+		DESCR = "The number of accounts in this batch.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_COUNTRY {
+
+		DESCR = "Country portion of contact's address.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_FIRST_NAME {
+
+		DESCR = "First name of contact.";
+		ORDER = 0;
+		LENGTH = 90;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "1 = Accounts in this batch are currently being modified by user specified in PIN_FLD_USERID.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LAST_NAME {
+
+		DESCR = "Last name of contact.";
+		ORDER = 0;
+		LENGTH = 90;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LOGIN_PREFIX {
+
+		DESCR = "The optional prefix to the service login IDs that are generated for the accounts in this batch.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_LOGIN_SUFFIX {
+
+		DESCR = "The optional suffix to the service login IDs that are generated for the accounts in this batch.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_MIDDLE_NAME {
+
+		DESCR = "Middle name of contact.";
+		ORDER = 0;
+		LENGTH = 90;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "The name of the batch as known to its creator.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PASSWD_PATTERN {
+
+		DESCR = "The password pattern for generated service login IDs.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		DESCR = "Link to plan object that was purchased containing this product.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_RESOURCE_ID {
+
+		DESCR = "Numeric value of the resource that is impacted.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_START_SEQ {
+
+		DESCR = "The first number to be used for the middle portion of the service login IDs for this batch.  This number is incremented for each successive account.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_STATE {
+
+		DESCR = "State or Province portion of contact's address.";
+		ORDER = 0;
+		LENGTH = 90;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of the accounts in this batch. Legal values are ACTIVE (10100), INACTIVE (10102), and CLOSED (10103). Only active products are assessed cycle fees and participate in usage rating.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TRACKING_ID {
+
+		DESCR = "The Tracking ID associated with the accounts in this batch.  This value is kept in /account/PIN_FLD_AAC_VENDOR.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_USERID {
+
+		DESCR = "The user currently modifying or that last modified this object and the accounts in this batch.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_ZIP {
+
+		DESCR = "Zip code or postal code portion of contact's address.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /bulkacct
+#=======================================
+
+STORABLE CLASS /bulkacct IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "bulkacct_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_ADDRESS {
+
+		SQL_COLUMN = "address";
+	}
+
+	DECIMAL PIN_FLD_BAL_OPERAND {
+
+		SQL_COLUMN = "bal_operand";
+	}
+
+	STRING PIN_FLD_BULKACCT_EFILE {
+
+		SQL_COLUMN = "bulkacct_efile";
+	}
+
+	STRING PIN_FLD_BULKACCT_SFILE {
+
+		SQL_COLUMN = "bulkacct_sfile";
+	}
+
+	STRING PIN_FLD_BULKACCT_SLP {
+
+		SQL_COLUMN = "bulkacct_slp";
+	}
+
+	STRING PIN_FLD_CITY {
+
+		SQL_COLUMN = "city";
+	}
+
+	TIMESTAMP PIN_FLD_CLOSE_WHEN_T {
+
+		SQL_COLUMN = "close_when_t";
+	}
+
+	INT PIN_FLD_COUNT {
+
+		SQL_COLUMN = "count";
+	}
+
+	STRING PIN_FLD_COUNTRY {
+
+		SQL_COLUMN = "country";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	STRING PIN_FLD_FIRST_NAME {
+
+		SQL_COLUMN = "first_name";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "flags";
+	}
+
+	STRING PIN_FLD_LAST_NAME {
+
+		SQL_COLUMN = "last_name";
+	}
+
+	STRING PIN_FLD_LOGIN_PREFIX {
+
+		SQL_COLUMN = "login_prefix";
+	}
+
+	STRING PIN_FLD_LOGIN_SUFFIX {
+
+		SQL_COLUMN = "login_suffix";
+	}
+
+	STRING PIN_FLD_MIDDLE_NAME {
+
+		SQL_COLUMN = "middle_name";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	STRING PIN_FLD_PASSWD_PATTERN {
+
+		SQL_COLUMN = "passwd_pattern";
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		SQL_COLUMN = "plan_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	INT PIN_FLD_RESOURCE_ID {
+
+		SQL_COLUMN = "resource_id";
+	}
+
+	INT PIN_FLD_START_SEQ {
+
+		SQL_COLUMN = "start_seq";
+	}
+
+	STRING PIN_FLD_STATE {
+
+		SQL_COLUMN = "state";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	STRING PIN_FLD_TRACKING_ID {
+
+		SQL_COLUMN = "tracking_id";
+	}
+
+	POID PIN_FLD_USERID {
+
+		SQL_COLUMN = "userid";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+	STRING PIN_FLD_ZIP {
+
+		SQL_COLUMN = "zip";
+	}
+
+}
+

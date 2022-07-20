@@ -1,0 +1,223 @@
+
+#=======================================
+#  Field PIN_FLD_ARCHIVING_STATE
+#=======================================
+
+SUBSTRUCT PIN_FLD_ARCHIVING_STATE {
+
+	ID = 1756;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVE_PREPARE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_ARCHIVE_PREPARE_T {
+
+	ID = 1761;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVE_ROWS_DELETED
+#=======================================
+
+INT PIN_FLD_ARCHIVE_ROWS_DELETED {
+
+	ID = 1757;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVE_ROWS_TO_BACKUP
+#=======================================
+
+INT PIN_FLD_ARCHIVE_ROWS_TO_BACKUP {
+
+	ID = 1759;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVE_ROWS_TO_PUSH
+#=======================================
+
+INT PIN_FLD_ARCHIVE_ROWS_TO_PUSH {
+
+	ID = 1760;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVING_ID
+#=======================================
+
+INT PIN_FLD_ARCHIVING_ID {
+
+	ID = 1758;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Storable Class /data/archiving
+#=======================================
+
+STORABLE CLASS /data/archiving {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "data object for data archiving state information";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ARCHIVING_STATE {
+
+		DESCR = "Substruct to store the current archiving session information";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_ARCHIVE_PREPARE_T {
+
+			DESCR = "Time the current session's prepare operation was done.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ARCHIVE_ROWS_DELETED {
+
+			DESCR = "Tells whether any rows have been deleted from the database. Abort operation cannot be performed after row(s) deletion.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ARCHIVE_ROWS_TO_BACKUP {
+
+			DESCR = "Number of instances marked for backup by the prepare operation.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ARCHIVE_ROWS_TO_PUSH {
+
+			DESCR = "Number of instances marked for push by the prepare operation.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_ARCHIVING_ID {
+
+			DESCR = "Archiving session id. It is unique for every archiving session";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "archiving state";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /data/archiving
+#=======================================
+
+STORABLE CLASS /data/archiving IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ARCHIVING_STATE {
+
+		SQL_TABLE = "data_archiving_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_ARCHIVE_PREPARE_T {
+
+			SQL_COLUMN = "prepare_t";
+		}
+
+		INT PIN_FLD_ARCHIVE_ROWS_DELETED {
+
+			SQL_COLUMN = "rows_deleted";
+		}
+
+		INT PIN_FLD_ARCHIVE_ROWS_TO_BACKUP {
+
+			SQL_COLUMN = "rows_to_backup";
+		}
+
+		INT PIN_FLD_ARCHIVE_ROWS_TO_PUSH {
+
+			SQL_COLUMN = "rows_to_push";
+		}
+
+		INT PIN_FLD_ARCHIVING_ID {
+
+			SQL_COLUMN = "archiving_id";
+		}
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "state";
+		}
+
+	}
+
+}
+

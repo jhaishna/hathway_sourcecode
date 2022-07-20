@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!--<ItemTypeConfiguration xmlns="http://www.portal.com/PortalXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.portal.com/PortalXMLSchema /home/pin/opt/portal/7.5/xsd/config_item_types.xsd">-->
+<ItemTypeConfiguration xmlns="http://www.portal.com/PortalXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.portal.com/PortalXMLSchema /home/pin/opt/portal/7.5/xsd/config_item_types.xsd">
+<!-- Types for Broadband -->
+	<!-- Installation items -->
+   <ItemTypeElement>
+      <ItemTag>mso_installation_normal</ItemTag>
+      <ItemDescription>Registration Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_installation/normal</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_installation_wireless</ItemTag>
+      <ItemDescription>Registration Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_installation/wireless</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_installation_normal_activation</ItemTag>
+      <ItemDescription>Activation Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_installation/normalact</ItemType>
+   </ItemTypeElement>	
+   <ItemTypeElement>
+      <ItemTag>mso_netflix_payment</ItemTag>
+      <ItemDescription>Netflix Payment</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/payment/netflix</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_netflix_reversal</ItemTag>
+      <ItemDescription>Netflix Reversal</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/payment/reversal/netflix</ItemType>
+   </ItemTypeElement>
+	
+
+   <!-- Hardware Deposit items -->
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_cm</ItemTag>
+      <ItemDescription>Cable Modem deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/cm</ItemType>
+   </ItemTypeElement>   
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_cr</ItemTag>
+      <ItemDescription>Cable Router deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/cr</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_huwr</ItemTag>
+      <ItemDescription>Huawei Router deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/huwr</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_nd</ItemTag>
+      <ItemDescription>Nat Device deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/nd</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_wlnd</ItemTag>
+      <ItemDescription>Wireless Nat Device deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/wlnd</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_nwifi</ItemTag>
+      <ItemDescription>New Wifi Device deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/nwifi</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_crsoho</ItemTag>
+      <ItemDescription>Cisco Soho Router deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/crsoho</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_dcm</ItemTag>
+      <ItemDescription>Docsis 3.0 Cable Modem deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/cm</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_dep_po</ItemTag>
+      <ItemDescription>Port Opening depoist</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_deposit/po</ItemType>
+   </ItemTypeElement>
+	<!-- Outright items -->
+   <ItemTypeElement>
+      <ItemTag>mso_hw_outright_cm</ItemTag>
+      <ItemDescription>Outright sale(cable modem)</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_outright/cm</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_outright_cr</ItemTag>
+      <ItemDescription>Outright sale(cable router)</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_outright/cr</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_outright_huwr</ItemTag>
+      <ItemDescription>Outright sale(Huawei router)</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_outright/huwr</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_outright_crsoho</ItemTag>
+      <ItemDescription>Outright sale(Cisco soho router)</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_outright/crsoho</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_outright_nd</ItemTag>
+      <ItemDescription>Outright sale(NAT Device)</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_outright/nd</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_outright_wlnd</ItemTag>
+      <ItemDescription>Outright sale(Wireless NAT Device)</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_outright/wlnd</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_outright_nwifi</ItemTag>
+      <ItemDescription>Outright sale(WIFI Router)</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_outright/nwifi</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_outright_dcm</ItemTag>
+      <ItemDescription>Outright sale(Docsis 3.0 cable modem)</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_hw_outright/dcm</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_rental_cm</ItemTag>
+      <ItemDescription>Rental Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/cm</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_rental_cr</ItemTag>
+      <ItemDescription>Rental Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/cr</ItemType>
+   </ItemTypeElement>
+	<ItemTypeElement>
+      <ItemTag>mso_hw_rental_huwr</ItemTag>
+      <ItemDescription>Rental Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/huwr</ItemType>
+   </ItemTypeElement>
+	<ItemTypeElement>
+      <ItemTag>mso_hw_rental_crsoho</ItemTag>
+      <ItemDescription>Rental Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/crsoho</ItemType>
+   </ItemTypeElement>
+	<ItemTypeElement>
+      <ItemTag>mso_hw_rental_nd</ItemTag>
+      <ItemDescription>Rental Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/nd</ItemType>
+   </ItemTypeElement>
+	<ItemTypeElement>
+      <ItemTag>mso_hw_rental_wlnd</ItemTag>
+      <ItemDescription>Rental Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/wlnd</ItemType>
+   </ItemTypeElement>
+	<ItemTypeElement>
+      <ItemTag>mso_hw_rental_nwifi</ItemTag>
+      <ItemDescription>Rental Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/nwifi</ItemType>
+   </ItemTypeElement>
+	<ItemTypeElement>
+      <ItemTag>mso_hw_rental_dcm</ItemTag>
+      <ItemDescription>Rental Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/dcm</ItemType>
+   </ItemTypeElement>
+   <!-- AMC Items -->
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc_cm</ItemTag>
+      <ItemDescription>CPE Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_amc/cm</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc_cr</ItemTag>
+      <ItemDescription>CPE Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_amc/cr</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc_huwr</ItemTag>
+      <ItemDescription>CPE Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_amc/huwr</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc_nd</ItemTag>
+      <ItemDescription>CPE Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_amc/nat</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc_wlnd</ItemTag>
+      <ItemDescription>CPE Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_amc/wlnd</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc_nwifi</ItemTag>
+      <ItemDescription>CPE Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_amc/nwifi</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc_crsoho</ItemTag>
+      <ItemDescription>CPE Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_amc/crsoho</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc_dcm</ItemTag>
+      <ItemDescription>CPE Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_amc/dcm</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_additional_ip</ItemTag>
+      <ItemDescription>ADDITIONAL_IP_CHARGE</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_hw_rental/ip</ItemType>
+   </ItemTypeElement>
+   <!-- Subscription and Usage Items -->
+	<ItemTypeElement>
+      <ItemTag>mso_gr</ItemTag>
+      <ItemDescription>Monthly Normal Prepaid Grants</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_grant</ItemType>
+   </ItemTypeElement>
+	<ItemTypeElement>
+      <ItemTag>mso_usage</ItemTag>
+      <ItemDescription>usage Items</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_usage</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_norm_postpaid_mtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_norm_postpaid</ItemType>
+   </ItemTypeElement>
+	<ItemTypeElement>
+      <ItemTag>mso_sb_norm_mtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_norm/monthly</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_norm_qtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_norm/quarterly</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_norm_hlfy</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_norm/semiannual</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_norm_yrly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_norm/annual</ItemType>
+   </ItemTypeElement>  
+   <ItemTypeElement>
+      <ItemTag>mso_sb_norm_bimtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_norm/bimonthly</ItemType>
+   </ItemTypeElement>  
+   <ItemTypeElement>
+      <ItemTag>mso_sb_norm_qdmtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_norm/quadmonthly</ItemType>
+   </ItemTypeElement>  
+   
+	<ItemTypeElement>
+      <ItemTag>mso_sb_dc2_postpaid_mtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc2_postpaid</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc2_mtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc2/monthly</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc2_qtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc2/quarterly</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc2_hlfy</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc2/semiannual</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc2_yrly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc2/annual</ItemType>
+   </ItemTypeElement>   
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc2_bimtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc2/bimonthly</ItemType>
+   </ItemTypeElement>  
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc2_qdmtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc2/quadmonthly</ItemType>
+   </ItemTypeElement>  
+
+	<ItemTypeElement>
+      <ItemTag>mso_sb_dc3_postpaid_mtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc3_postpaid</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc3_mtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc3/monthly</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc3_qtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc3/quarterly</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc3_hlfy</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc3/semiannual</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc3_yrly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc3/annual</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc3_bimtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc3/bimonthly</ItemType>
+   </ItemTypeElement>  
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc3_qdmtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc3/quadmonthly</ItemType>
+   </ItemTypeElement>  
+
+	<ItemTypeElement>
+      <ItemTag>mso_sb_fib_postpaid_mtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fib_postpaid</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_fib_mtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fib/monthly</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_fib_qtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fib/quarterly</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_fib_hlfy</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fib/semiannual</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_fib_yrly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fib/annual</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_fib_bimtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fib/bimonthly</ItemType>
+   </ItemTypeElement>  
+   <ItemTypeElement>
+      <ItemTag>mso_sb_fib_qdmtly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fib/quadmonthly</ItemType>
+   </ItemTypeElement>  
+
+	<ItemTypeElement>
+      <ItemTag>mso_sb_tod</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_tod/monthly</ItemType>
+   </ItemTypeElement>
+
+   <ItemTypeElement>
+      <ItemTag>mso_gr_tod</ItemTag>
+      <ItemDescription>TOD Grants</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_gr_tod/monthly</ItemType>
+   </ItemTypeElement>
+
+   <ItemTypeElement>
+      <ItemTag>mso_sb_fup_topup</ItemTag>
+      <ItemDescription>FU_SUBSCRIPTION_CHARGES</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fup_topup</ItemType>
+   </ItemTypeElement>
+
+   <ItemTypeElement>
+      <ItemTag>mso_sb_add_mb_gb</ItemTag>
+      <ItemDescription>PURCHASE_USAGE_CHARGES</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_add_mb_gb</ItemType>
+   </ItemTypeElement>
+
+   <ItemTypeElement>
+      <ItemTag>mso_sb_ssp_monthly</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_ssp_monthly</ItemType>
+   </ItemTypeElement>
+
+
+   <!-- Miscellaneous items -->
+
+	<ItemTypeElement>
+      <ItemTag>mso_ip_addi</ItemTag>
+      <ItemDescription>ADDITIONAL_IP_CHARGE</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_ip_addi</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_domain_host</ItemTag>
+      <ItemDescription>Domain Hosting Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_domain_host</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_cable_shift</ItemTag>
+      <ItemDescription>Cable Shifting Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_cable_shift</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_email_addi</ItemTag>
+      <ItemDescription>Additional Email ID Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_email_addi</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_space_addi</ItemTag>
+      <ItemDescription>Additional Storage Space Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_space_addi</ItemType>
+   </ItemTypeElement>   
+
+
+<!-- Wholesale Settlement Items-Start -->
+   <ItemTypeElement>
+      <ItemTag>mso_hathway_share</ItemTag>
+      <ItemDescription>Wholesale Hathway Share</ItemDescription>
+      <ItemType precreate="true" type="cumulative" sub_type = "recurring">/item/mso_hathway_share</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_commission_share</ItemTag>
+      <ItemDescription>LCO Commission Share</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/mso_commission_share</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_dsa_commission</ItemTag>
+      <ItemDescription>DSA Commssion</ItemDescription>
+      <ItemType precreate="false" type="individual" sub_type = "recurring">/item/mso_dsa_commission</ItemType>
+   </ItemTypeElement>
+
+<!-- Wholesale Settlement Items-End -->
+
+<!-- End of Types for Broadband -->
+   <ItemTypeElement>
+      <ItemTag>mso_sb_adn_fdp</ItemTag>
+      <ItemDescription>Cycle Forward Addon fixed Duration Package Item</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_adn_fdp</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_et</ItemTag>
+      <ItemDescription>Entertainment tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/mso_et</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_amc</ItemTag>
+      <ItemDescription>Cycle Arrear Annual Maintenance Charge</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_hw_amc</ItemType>
+   </ItemTypeElement>
+<!--HD Plans-->
+   <ItemTypeElement>
+      <ItemTag>mso_sb_pkg_fdp</ItemTag>
+      <ItemDescription>Cycle Forward Package fixed Duration Package Item</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_pkg_fdp</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_alc_fdp</ItemTag>
+      <ItemDescription>Cycle Forward Ala-carte fixed Duration Package Item</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_alc_fdp</ItemType>
+   </ItemTypeElement>
+<!--HD Plans-->
+   <ItemTypeElement>
+      <ItemTag>mso_sb_pkg_bst</ItemTag>
+      <ItemDescription>Cycle Arrear Package Basic Service Tier</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_sb_pkg_bst</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_pkg_dstp</ItemTag>
+      <ItemDescription>Cycle Arrear Package Digital Starter Package</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_sb_pkg_dstp</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_pkg_dpop</ItemTag>
+      <ItemDescription>Cycle Arrear Package Digital Popular Package</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_sb_pkg_dpop</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_pkg_dprp</ItemTag>
+      <ItemDescription>Cycle Arrear Package Digital Premium Package</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_sb_pkg_dprp</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_alc_paid</ItemTag>
+      <ItemDescription>Cycle Arrear Ala-Carte Paid</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_sb_alc_paid</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_alc_fta</ItemTag>
+      <ItemDescription>Cycle Arrear Ala-Carte Free to Air</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_sb_alc_fta</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_adn_normal</ItemTag>
+      <ItemDescription>Cycle Arrear Addon Normal</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_sb_adn_normal</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cycle_arrear</ItemTag>
+      <ItemDescription>Cycle arrear</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_rental</ItemTag>
+      <ItemDescription>Cycle Arrear Hardware Rental</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear/mso_hw_rental</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cycle_forward_arrear</ItemTag>
+      <ItemDescription>Cycle forward arrear</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward_arrear</ItemType>
+   </ItemTypeElement>
+   <!-- new add !-->
+   <ItemTypeElement>
+      <ItemTag>cfw_mso_hw_rental</ItemTag>
+      <ItemDescription>Cycle Forward Hardware Rental</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_hw_rental</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cfw_mso_hw_amc</ItemTag>
+      <ItemDescription>Cycle Forward Hardware AMC</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_hw_amc</ItemType>
+   </ItemTypeElement>
+      <ItemTypeElement>
+      <ItemTag>cfw_mso_sb_pkg_bst</ItemTag>
+      <ItemDescription>Cycle Forward Basic Service Tier</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_pkg_bst</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cfw_mso_sb_pkg_dstp</ItemTag>
+      <ItemDescription>Cycle Forward Digital Starter Package</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_pkg_dstp</ItemType>
+   </ItemTypeElement>
+    <ItemTypeElement>
+      <ItemTag>cfw_mso_sb_pkg_dpop</ItemTag>
+      <ItemDescription>Cycle Forward Digital Popular Package</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_pkg_dpop</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cfw_mso_sb_pkg_dprp</ItemTag>
+      <ItemDescription>Cycle Forward Digital Premium Package</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_pkg_dprp</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cfw_mso_sb_alc_paid</ItemTag>
+      <ItemDescription>Cycle Forward Ala-carte Paid</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_alc_paid</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+   <ItemTag>cfw_mso_sb_adn_normal</ItemTag>
+      <ItemDescription>Cycle Forward Add-on normal</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_adn_normal</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+   <ItemTag>cfw_mso_sb_alc_fta</ItemTag>
+      <ItemDescription>Cycle Forward Ala-carte fta</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_sb_alc_fta</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+   <ItemTag>cfw_mso_et</ItemTag>
+      <ItemDescription>Cycle Forward Entertainment tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward/mso_et</ItemType>
+   </ItemTypeElement>
+
+  <!-- end new add !-->
+   <ItemTypeElement>
+      <ItemTag>cycle_forward</ItemTag>
+      <ItemDescription>Cycle forward</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>remittance</ItemTag>
+      <ItemDescription>Remittance</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "remitt">/item/remittance</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>incentive</ItemTag>
+      <ItemDescription>Incentive</ItemDescription>
+      <ItemType precreate="false" type="individual">/item/incentive</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cycle_tax</ItemTag>
+      <ItemDescription>Cycle Tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_tax</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>roaming_settlement</ItemTag>
+      <ItemDescription>Roaming Settlement</ItemDescription>
+      <ItemType precreate="true" type="cumulative">/item/settlement/roaming</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_vat</ItemTag>
+      <ItemDescription>VAT</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/VAT</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_st</ItemTag>
+      <ItemDescription>Hardware Service Tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/HW_Service_Tax</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_edu_cess</ItemTag>
+      <ItemDescription>Hardware Education Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/HW_Education_Cess</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_shecess</ItemTag>
+      <ItemDescription>Hardware Secondary Higher Education Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/HW_Secondary_Higher_Education_Cess</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_swachh_cess</ItemTag>
+      <ItemDescription>Hardware Swachh Bharat Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/HW_Swachh_Bharat_Cess</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_hw_krish_cess</ItemTag>
+      <ItemDescription>Hardware Krish Kalyan Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/HW_Krish_Kalyan_Cess</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_st</ItemTag>
+      <ItemDescription>Service Tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/Service_Tax</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_edu_cess</ItemTag>
+      <ItemDescription>Education Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/Education_Cess</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_shecess</ItemTag>
+      <ItemDescription>Secondary Higher Education Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/Secondary_Higher_Education_Cess</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_swachh_cess</ItemTag>
+      <ItemDescription>Swachh Bharat Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/Swachh_Bharat_Cess</ItemType>
+   </ItemTypeElement>
+    <ItemTypeElement>
+      <ItemTag>mso_krish_cess</ItemTag>
+      <ItemDescription>Krish Kalyan Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/Krish_Kalyan_Cess</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_usg_st</ItemTag>
+      <ItemDescription>Usage Service Tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/Usg_Service_Tax</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_usg_swachh_cess</ItemTag>
+      <ItemDescription>Usage Swachh Bharat Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/Usg_Swachh_Bharat_Cess</ItemType>
+   </ItemTypeElement>
+    <ItemTypeElement>
+      <ItemTag>mso_usg_krish_cess</ItemTag>
+      <ItemDescription>Usage Krish Kalyan Cess</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/Usg_Krish_Kalyan_Cess</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_deposit</ItemTag>
+      <ItemDescription>MSO Deposit</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/payment/mso_deposit</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_min_commitment</ItemTag>
+      <ItemDescription>MSO Minimum Commitment Correction</ItemDescription>
+      <ItemType precreate="false" type="individual">/item/mso_catv_commitment</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_settlement_ws</ItemTag>
+      <ItemDescription>Wholesale settlement</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/settlement/ws</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_late_fee</ItemTag>
+      <ItemDescription>Late Payment Fee Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_late_fee</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_cr_dr_note</ItemTag>
+      <ItemDescription>CR DR Note</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_cr_dr_note</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_refund_credit</ItemTag>
+      <ItemDescription>Credit Refund</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_refund_credit</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_refund_debit</ItemTag>
+      <ItemDescription>Debit Refund</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_refund_debit</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_penalty</ItemTag>
+      <ItemDescription>Cheque Bounce Penalty</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_penalty/bank</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>non_recurring_charges</ItemTag>
+      <ItemDescription>Non Recuring charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/mso_non_recurring_charges</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_fib_nine</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_fib/nine_months</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc2_nine</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc2/nine_months</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_sb_dc3_nine</ItemTag>
+      <ItemDescription>Subscription Charges</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_forward/mso_sb_dc3/nine_months</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_gst</ItemTag>
+      <ItemDescription>Global Service Tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/gst</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>mso_usg_gst</ItemTag>
+      <ItemDescription>Usage Global Service Tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/usg_gst</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>	
+      <ItemTag>mso_hw_gst</ItemTag>
+      <ItemDescription>Global Service Tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/hw_gst</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>bal_trf</ItemTag>
+      <ItemDescription>BAL_TRF</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/bal_transfer</ItemType>
+   </ItemTypeElement>
+</ItemTypeConfiguration>

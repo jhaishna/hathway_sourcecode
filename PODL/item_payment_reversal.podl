@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/payment/reversal
+#=======================================
+
+STORABLE CLASS /item/payment/reversal {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "These item objects represent payment reversals.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/reversal
+#=======================================
+
+STORABLE CLASS /item/payment/reversal IMPLEMENTATION ORACLE7 {
+
+}
+

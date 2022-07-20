@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/dcm {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Cycle Forward Hardware Rental for DOCSIS 3.0 Modem.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_hw_rental/dcm
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_hw_rental/dcm IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/delayed/session/telco/roaming
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco/roaming {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Delayed session events for Roaming usage. Use to store roaming usage against roaming partner's portal account ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/delayed/session/telco/roaming
+#=======================================
+
+STORABLE CLASS /event/delayed/session/telco/roaming IMPLEMENTATION ORACLE7 {
+
+}
+

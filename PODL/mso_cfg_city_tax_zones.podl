@@ -1,0 +1,441 @@
+
+#=======================================
+#  Field MSO_FLD_CITY_TYPE
+#=======================================
+
+ENUM MSO_FLD_CITY_TYPE {
+
+	ID = 43105;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ET_ZONES
+#=======================================
+
+ARRAY MSO_FLD_ET_ZONES {
+
+	ID = 43102;
+}
+
+
+#=======================================
+#  Field MSO_FLD_ET_ZONE_CODE
+#=======================================
+
+STRING MSO_FLD_ET_ZONE_CODE {
+
+	ID = 43106;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAXES
+#=======================================
+
+ARRAY PIN_FLD_TAXES {
+
+	ID = 528;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CODE
+#=======================================
+
+STRING PIN_FLD_TAX_CODE {
+
+	ID = 536;
+}
+
+
+#=======================================
+#  Field MSO_FLD_TAX_PAYER_TYPE
+#=======================================
+
+ENUM MSO_FLD_TAX_PAYER_TYPE {
+
+	ID = 43104;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROGRAM_NAME
+#=======================================
+
+STRING PIN_FLD_PROGRAM_NAME {
+
+	ID = 67;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATE
+#=======================================
+
+STRING PIN_FLD_STATE {
+
+	ID = 168;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_city_tax_zones
+#=======================================
+
+STORABLE CLASS /mso_cfg_city_tax_zones {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "For storing city level ET zones";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_CITY_TYPE {
+
+		DESCR = "0-Municipal Corporation, 1-Grampanchyat, 2- Nagar Parishad,";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY MSO_FLD_ET_ZONES {
+
+		DESCR = "Array index meaning-  00-Primary point & residential, 01-Primary point Commercial, 00-Secondary point residential, 11-Secondary point Commercial";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_ET_ZONE_CODE {
+
+			DESCR = "Tax code prefix before  ADDL / MAIN";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_TAXES {
+
+			DESCR = "0- MainTV(default), 1-Additional TV\n";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_TAX_CODE {
+
+				DESCR = "Tax code applicable for this zones . MSO_FLD_ET_ZONE_CODE + “_MAIN” for Main TV/default\nMSO_FLD_ET_ZONE_CODE + “_ADDL for additional TV\n";
+				ORDER = 0;
+				LENGTH = 100;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+	ENUM MSO_FLD_TAX_PAYER_TYPE {
+
+		DESCR = "0-MSO,  1-LCO";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CITY {
+
+		DESCR = "City value same as in location master data.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		DESCR = "Loader program name";
+		ORDER = 0;
+		LENGTH = 100;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_STATE {
+
+		DESCR = "State value same as in location master data.";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_city_tax_zones
+#=======================================
+
+STORABLE CLASS /mso_cfg_city_tax_zones IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_city_tax_zones_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_CITY_TYPE {
+
+		SQL_COLUMN = "city_type";
+	}
+
+	ARRAY MSO_FLD_ET_ZONES {
+
+		SQL_TABLE = "mso_cfg_city_et_zones_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_ET_ZONE_CODE {
+
+			SQL_COLUMN = "et_zone_code";
+		}
+
+		ARRAY PIN_FLD_TAXES {
+
+			SQL_TABLE = "mso_cfg_city_et_zones_taxes_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_TAX_CODE {
+
+				SQL_COLUMN = "tax_code";
+			}
+
+		}
+
+	}
+
+	ENUM MSO_FLD_TAX_PAYER_TYPE {
+
+		SQL_COLUMN = "tax_payer_type";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_CITY {
+
+		SQL_COLUMN = "city";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PROGRAM_NAME {
+
+		SQL_COLUMN = "program_name";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_STATE {
+
+		SQL_COLUMN = "state";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

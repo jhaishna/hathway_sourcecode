@@ -1,0 +1,14 @@
+E Mon Dec 12 15:25:47 2016  prod-brm.hathway.com  <no name>:14323  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(14323): no pin.conf file in . or /etc 2
+E Mon Dec 12 15:25:47 2016  prod-brm.hathway.com  <no name>:14323  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(14323): no pin.conf file in . or /etc 2
+E Mon Dec 12 15:25:47 2016  prod-brm.hathway.com  <no name>:14323  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(14323): no pin.conf file in . or /etc 2
+E Mon Dec 12 15:25:47 2016  prod-brm.hathway.com  <no name>:14323  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(14323): no pin.conf file in . or /etc 2
+E Mon Dec 12 15:25:47 2016  prod-brm.hathway.com  <no name>:14323  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(14323): no pin.conf file in . or /etc 2
+E Mon Dec 12 15:25:47 2016  prod-brm.hathway.com  testnap:14323  pin_conf.c(39):535 1:<machine>:<program>:0:0:0:0:0
+	(14323): no pin.conf file in . or /etc 2
+E Mon Dec 12 15:25:47 2016  prod-brm.hathway.com  testnap:14323  pcm_conn.c(6):233 1:<machine>:<program>:0:0:0:0:0
+	pcm_connect: bad/no login_type in pin.conf, err 30

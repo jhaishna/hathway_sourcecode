@@ -1,0 +1,198 @@
+
+#=======================================
+#  Field PIN_FLD_ARCHIVABLE_OBJ_TYPES
+#=======================================
+
+ARRAY PIN_FLD_ARCHIVABLE_OBJ_TYPES {
+
+	ID = 1751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVE_AGING
+#=======================================
+
+INT PIN_FLD_ARCHIVE_AGING {
+
+	ID = 1752;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVE_OPERATION
+#=======================================
+
+ENUM PIN_FLD_ARCHIVE_OPERATION {
+
+	ID = 1753;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ARCHIVE_TABLEMAP
+#=======================================
+
+ARRAY PIN_FLD_ARCHIVE_TABLEMAP {
+
+	ID = 1754;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Storable Class /config/pin_archive
+#=======================================
+
+STORABLE CLASS /config/pin_archive {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object for data archiving configuration information This object stores the object types, the database tables affected by the object types, the aging criteria and the type of archive operation (push or backup)";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARCHIVABLE_OBJ_TYPES {
+
+		DESCR = "Array to store archivable object types and attirbutes";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ARCHIVE_AGING {
+
+			DESCR = "Aging criteria (in days). The items which are closed for these many days will be archived";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_ARCHIVE_OPERATION {
+
+			DESCR = "The archivng operation. BACKUP and PUSH are  the two valid archiving operations";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_ARCHIVE_TABLEMAP {
+
+			DESCR = "Array to store the database tables affected by the archivable object types.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "The database tables affected by the object type ";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "The object type which need to be archived";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/pin_archive
+#=======================================
+
+STORABLE CLASS /config/pin_archive IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ARCHIVABLE_OBJ_TYPES {
+
+		SQL_TABLE = "config_archive_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_ARCHIVE_AGING {
+
+			SQL_COLUMN = "aging";
+		}
+
+		ENUM PIN_FLD_ARCHIVE_OPERATION {
+
+			SQL_COLUMN = "operation";
+		}
+
+		ARRAY PIN_FLD_ARCHIVE_TABLEMAP {
+
+			SQL_TABLE = "config_archive_tablemap_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "tablename";
+			}
+
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "object_type";
+		}
+
+	}
+
+}
+

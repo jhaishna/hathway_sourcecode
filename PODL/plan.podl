@@ -1,0 +1,935 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_INFO
+#=======================================
+
+ARRAY PIN_FLD_BAL_INFO {
+
+	ID = 7789;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LIMIT
+#=======================================
+
+ARRAY PIN_FLD_LIMIT {
+
+	ID = 116;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_FLOOR
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+	ID = 833;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_LIMIT
+#=======================================
+
+DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+	ID = 200;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_THRESHOLDS
+#=======================================
+
+INT PIN_FLD_CREDIT_THRESHOLDS {
+
+	ID = 832;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREDIT_THRESHOLDS_FIXED
+#=======================================
+
+STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+	ID = 871;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RULES
+#=======================================
+
+ARRAY PIN_FLD_RULES {
+
+	ID = 5779;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CONSUMPTION_RULE
+#=======================================
+
+ENUM PIN_FLD_CONSUMPTION_RULE {
+
+	ID = 7770;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICES
+#=======================================
+
+ARRAY PIN_FLD_SERVICES {
+
+	ID = 122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_INFO_INDEX
+#=======================================
+
+INT PIN_FLD_BAL_INFO_INDEX {
+
+	ID = 472;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEALS
+#=======================================
+
+ARRAY PIN_FLD_DEALS {
+
+	ID = 247;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_ID
+#=======================================
+
+STRING PIN_FLD_SERVICE_ID {
+
+	ID = 8256;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SUBSCRIPTION_INDEX
+#=======================================
+
+INT PIN_FLD_SUBSCRIPTION_INDEX {
+
+	ID = 473;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /plan
+#=======================================
+
+STORABLE CLASS /plan {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "A plan packages what you are offering the customer (the service) with how you are charging them for it (the deal). The charge details are themselves defined in the products. It serves as a template for new or existing customer accounts.  For example, you might offer one service with two different ways of charging for it, each defined in a separate deal. When you create the plan, you choose which of the deals to include in the plan. In almost all cases, plans include services. By including services in plans, the customer creates their service login name and password when they register. The only time you might not include a service in a plan is if the plan contains only account-level products and deals. Plans further simplify the choices presented to customers. Typically, plans are used to register new customers. However, they can also be used to add services and deals to existing accounts.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_BAL_INFO {
+
+		DESCR = "Array of balance group info set-up as part of this plan when creating accounts. The resource limits will be specified using the PIN_FLD_LIMIT array.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_LIMIT {
+
+			DESCR = "Array of credit limits to be set-up as part of this plan when creating accounts. The resource for which the credit limit is to be assigned is used as the array element id.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+				DESCR = "Baseline for calculating percentage for threshold triggers. See PIN_FLD_CREDIT_FLOOR in the PIN_FLD_PROFILES of /config/credit_profile.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+				DESCR = "The maximum amount of this resource that a customer can owe. By default, the limit is set to 0. If you don't want a limit for the resource, but you want to use the resource, set a credit limit that can't be reached, for example, 1000000.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			INT PIN_FLD_CREDIT_THRESHOLDS {
+
+				DESCR = "Percentage threshold value.Bit flags for triggering when resource balance crosses a boundary when increasing in value. See PIN_FLD_CREDIT_THRESHOLDS in the PIN_FLD_PROFILES of /config/credit_profile.";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+				DESCR = "Fixed threshold value when resource balance crosses a boundary when increasing in value. See PIN_FLD_CREDIT_THRESHOLDS_FIXED in the PIN_FLD_PROFILES of /config/credit_profile.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Label for the balance group.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_RULES {
+
+			DESCR = "Array of consumption rules. The resource for which the consumption rule is to be assigned is used as the array element id.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			ENUM PIN_FLD_CONSUMPTION_RULE {
+
+				DESCR = "Consumption rule to be applied on the resource. Possible values are EST(1), LST(2), EET(3), LET(4), ESTLET(5), ESTEET(6), LSTEET(7), LSTLET(8), EETEST(9), EETLST(10), LETEST(11), LETLST(12).";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+	}
+
+	STRING PIN_FLD_CODE {
+
+		DESCR = "Code of the plan object. Assumed to be unique across all plans by the Pricing Tool. Relevant if PDC is enabled";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_DEAL_OBJ {
+
+		DESCR = "Link to the deal object with 'account only, no services' purchase level to set-up account level products. See PIN_FLD_PERMITTED in /deal. Note that there can be only one account-level deal offered in a single plan.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		DESCR = "Plan description.";
+		ORDER = 0;
+		LENGTH = 1023;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "Bitwise-ORed flags. Currently, used to force creation of the on-demand bill at the time of the account creation. Can be set by the CSR in the Pricing tool. See pin_price.h.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_LIMIT {
+
+		DESCR = "Array of credit limits to be set-up as part of this plan when creating accounts. The resource for which the credit limit is to be assigned is used as the array element id.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+			DESCR = "Baseline for calculating percentage for threshold triggers. See PIN_FLD_CREDIT_FLOOR in the PIN_FLD_PROFILES of /config/credit_profile.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+			DESCR = "The maximum amount of this resource that a customer can owe. By default, the limit is set to 0. If you don't want a limit for the resource, but you want to use the resource, set a credit limit that can't be reached, for example, 1000000.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_CREDIT_THRESHOLDS {
+
+			DESCR = "Percentage threshold value. Bit flags for triggering when resource balance crosses a boundary when increasing in value. See PIN_FLD_CREDIT_THRESHOLDS in the PIN_FLD_PROFILES of /config/credit_profile.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+			DESCR = "Fixed threshold value when resource balance crosses a boundary when increasing in value. See PIN_FLD_CREDIT_THRESHOLDS_FIXED in the PIN_FLD_PROFILES of /config/credit_profile.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		DESCR = "Name of the plan object. Assumed to be unique across all plans by the Pricing Tool.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_RULES {
+
+		DESCR = "Array of consumption rules. The resource for which the consumption rule is to be assigned is used as the array element id.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_CONSUMPTION_RULE {
+
+			DESCR = "Consumption rule to be applied on the resource. Possible values are EST(1), LST(2), EET(3), LET(4), ESTLET(5), ESTEET(6), LSTEET(7), LSTLET(8), EETEST(9), EETLST(10), LETEST(11), LETLST(12).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		DESCR = "Array of service specific information.These services need to be set up when the plan is purchased. There may be multiple elements for each service if many deals related to that service are being packaged together. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BAL_INFO_INDEX {
+
+			DESCR = "The index of the balance group which is to be assigned to the service. A value of 0 in this field indicates that the service is assigned the default balance group for the account. Other values will point to an array element in the PIN_FLD_BAL_INFO array indicating that a new balance group will be created for this service. If one or more services point to the same array index, it means that these services are to share the same balance group.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_DEALS {
+
+			DESCR = "List of optional/required deals for each service type.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_DEAL_OBJ {
+
+				DESCR = "Member of the deal set for a particular service.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Denotes if the deal is optional or required.1 = Required,0 = Optional.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 1;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			DESCR = "Link to the service-level deal object to be purchased.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_SERVICE_ID {
+
+			DESCR = "User defined name for the service. The Pricing Tool relies on this name being unique across all services defined in the plan. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "Partial poid of service object to create. The 'type' and 'database' sub-fields are used in the creation.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_SUBSCRIPTION_INDEX {
+
+			DESCR = "The index of the subscription service which is to be assigned to the service. This index will point to an array element in the PIN_FLD_SERVICES array. The current service will then become the member service of the subscription service. If one or more services point to the same array index, it means that these services are the member services of the same subscription service. If this field is ommited then this service is not a member service. Any subscription service can not be a member service of other subscription service.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /plan
+#=======================================
+
+STORABLE CLASS /plan IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "plan_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	ARRAY PIN_FLD_BAL_INFO {
+
+		SQL_TABLE = "bal_info_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_LIMIT {
+
+			SQL_TABLE = "bal_info_limit_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+				SQL_COLUMN = "credit_floor";
+			}
+
+			DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+				SQL_COLUMN = "credit_limit";
+			}
+
+			INT PIN_FLD_CREDIT_THRESHOLDS {
+
+				SQL_COLUMN = "credit_thresholds";
+			}
+
+			STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+				SQL_COLUMN = "credit_thresholds_fixed";
+			}
+
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		ARRAY PIN_FLD_RULES {
+
+			SQL_TABLE = "bal_info_consumption_rules_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			ENUM PIN_FLD_CONSUMPTION_RULE {
+
+				SQL_COLUMN = "consumption_rule";
+			}
+
+		}
+
+	}
+
+	STRING PIN_FLD_CODE {
+
+		SQL_COLUMN = "code";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	POID PIN_FLD_DEAL_OBJ {
+
+		SQL_COLUMN = "deal_obj";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "flags";
+	}
+
+	ARRAY PIN_FLD_LIMIT {
+
+		SQL_TABLE = "plan_limit_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		DECIMAL PIN_FLD_CREDIT_FLOOR {
+
+			SQL_COLUMN = "credit_floor";
+		}
+
+		DECIMAL PIN_FLD_CREDIT_LIMIT {
+
+			SQL_COLUMN = "credit_limit";
+		}
+
+		INT PIN_FLD_CREDIT_THRESHOLDS {
+
+			SQL_COLUMN = "credit_thresholds";
+		}
+
+		STRING PIN_FLD_CREDIT_THRESHOLDS_FIXED {
+
+			SQL_COLUMN = "credit_thresholds_fixed";
+		}
+
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	ARRAY PIN_FLD_RULES {
+
+		SQL_TABLE = "plan_consumption_rules_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_CONSUMPTION_RULE {
+
+			SQL_COLUMN = "consumption_rule";
+		}
+
+	}
+
+	ARRAY PIN_FLD_SERVICES {
+
+		SQL_TABLE = "plan_services_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 200k next 200k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_BAL_INFO_INDEX {
+
+			SQL_COLUMN = "bal_info_index";
+		}
+
+		ARRAY PIN_FLD_DEALS {
+
+			SQL_TABLE = "plan_services_deals_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			POID PIN_FLD_DEAL_OBJ {
+
+				SQL_COLUMN = "deal_obj";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "type";
+			}
+
+		}
+
+		POID PIN_FLD_DEAL_OBJ {
+
+			SQL_COLUMN = "deal_obj";
+		}
+
+		STRING PIN_FLD_SERVICE_ID {
+
+			SQL_COLUMN = "service_id";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		INT PIN_FLD_SUBSCRIPTION_INDEX {
+
+			SQL_COLUMN = "subscription_index";
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

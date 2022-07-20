@@ -1,0 +1,21 @@
+
+#=======================================
+#  Storable Class /mso_task/modem
+#=======================================
+
+STORABLE CLASS /mso_task/modem {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /mso_task/modem
+#=======================================
+
+STORABLE CLASS /mso_task/modem IMPLEMENTATION ORACLE7 {
+
+}
+

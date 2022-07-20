@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/suppression/bill
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/bill {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "The event is created to capture the event while a bill is manually suppressed ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/suppression/bill
+#=======================================
+
+STORABLE CLASS /event/audit/suppression/bill IMPLEMENTATION ORACLE7 {
+
+}
+

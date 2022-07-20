@@ -1,0 +1,235 @@
+
+#=======================================
+#  Field PIN_FLD_THRESHOLDS
+#=======================================
+
+ARRAY PIN_FLD_THRESHOLDS {
+
+	ID = 9030;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LOCALE
+#=======================================
+
+STRING PIN_FLD_LOCALE {
+
+	ID = 109;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RECIPIENTS
+#=======================================
+
+ARRAY PIN_FLD_RECIPIENTS {
+
+	ID = 481;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EMAIL_ADDR
+#=======================================
+
+STRING PIN_FLD_EMAIL_ADDR {
+
+	ID = 171;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TYPE
+#=======================================
+
+ENUM PIN_FLD_TYPE {
+
+	ID = 53;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SENDER
+#=======================================
+
+STRING PIN_FLD_SENDER {
+
+	ID = 480;
+}
+
+
+#=======================================
+#  Storable Class /config/ra_alerts
+#=======================================
+
+STORABLE CLASS /config/ra_alerts {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores alert info";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_THRESHOLDS {
+
+		DESCR = "Threshold Details";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LOCALE {
+
+			DESCR = "Locale Name";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Alert Name";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_RECIPIENTS {
+
+			DESCR = "Receipients Info";
+			ORDER = 1;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EMAIL_ADDR {
+
+				DESCR = "Receipents Email Address";
+				ORDER = 2;
+				LENGTH = 80;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				DESCR = "Email Type";
+				ORDER = 2;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_SENDER {
+
+			DESCR = "Sender Details";
+			ORDER = 1;
+			LENGTH = 80;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/ra_alerts
+#=======================================
+
+STORABLE CLASS /config/ra_alerts IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_THRESHOLDS {
+
+		SQL_TABLE = "config_ra_alerts_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LOCALE {
+
+			SQL_COLUMN = "locale_name";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "alert_name";
+		}
+
+		ARRAY PIN_FLD_RECIPIENTS {
+
+			SQL_TABLE = "config_ra_alerts_rec_t";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_EMAIL_ADDR {
+
+				SQL_COLUMN = "email_address";
+			}
+
+			ENUM PIN_FLD_TYPE {
+
+				SQL_COLUMN = "mail_type";
+			}
+
+		}
+
+		STRING PIN_FLD_SENDER {
+
+			SQL_COLUMN = "sender_name";
+		}
+
+	}
+
+}
+

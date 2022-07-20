@@ -1,0 +1,539 @@
+
+#=======================================
+#  Field PIN_FLD_SVC_ORDER
+#=======================================
+
+SUBSTRUCT PIN_FLD_SVC_ORDER {
+
+	ID = 5651;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_MSG
+#=======================================
+
+STRING PIN_FLD_STATUS_MSG {
+
+	ID = 150;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_ORDER_INFO
+#=======================================
+
+ARRAY PIN_FLD_SERVICE_ORDER_INFO {
+
+	ID = 5951;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACTION
+#=======================================
+
+STRING PIN_FLD_ACTION {
+
+	ID = 83;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PARAMS
+#=======================================
+
+ARRAY PIN_FLD_PARAMS {
+
+	ID = 5775;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALUE
+#=======================================
+
+STRING PIN_FLD_VALUE {
+
+	ID = 502;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to record service order data. This data is required by the network to provision services.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SVC_ORDER {
+
+		DESCR = "Generic fields of provisioning service order events.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_STATUS {
+
+			DESCR = "Status of service order. Possible values are (pre-append PIN_FLD_SVC_ORDER_STATUS_): 1: NEW  2: READY  3: PROCESSING  4: COMPLETED  5: FAILED ";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			DESCR = "Status flags of service order.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_STATUS_MSG {
+
+			DESCR = "Status message for service order.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Stores information required by the network to provision the device or service. Created when a device or telco service requires provisioning. Subclasses of this class, such as /event/provisioning/service_order/telco/gsm, contain provisioning information for a particular type of service.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_ORDER_INFO {
+
+		DESCR = "Array to hold provisioning for Services, Devices, Profiles etc..";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			DESCR = "Action to be performed. The possible values are : A(Activate),D(Deactivate),S(Suspend) C(Change),R(Reactivate), I(Ignore). ";
+			ORDER = 0;
+			LENGTH = 30;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name of the Object to be Provisioned.For Services: MOBTEL, MOBFAX, MOBDATA, etc… For Profile: Home Cell, Home Region, etc… ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ARRAY PIN_FLD_PARAMS {
+
+			DESCR = "Information needed for Provisioning.";
+			ORDER = 3;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACTION {
+
+				DESCR = "Action to be performed.";
+				ORDER = 0;
+				LENGTH = 30;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_NAME {
+
+				DESCR = "Name of the Parameter,  For Services:CF1,CB1 etc..,  For Devices : IMSI,KI etc..";
+				ORDER = 0;
+				LENGTH = 90;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_STATUS {
+
+				DESCR = "Provisioning Status values: SUCCESS(0), FAILED(1), PROVISIONIONG(2), PRE_PROVISIONING(3).";
+				ORDER = 0;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_STATUS_MSG {
+
+				DESCR = "Brief message for Status. ";
+				ORDER = 0;
+				LENGTH = 1023;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				DESCR = "Value of the Parameter corresponding to the Field name in the PIN_FLD_NAME. ";
+				ORDER = 0;
+				LENGTH = 90;
+				CREATE = Optional;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		POID PIN_FLD_POID {
+
+			DESCR = "The Poid of the Service, Device or Provisioning Object.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event object created for Services that need Provisioning. This object is created by PCM_OP_TELCO_PROV_CREATE_SVC_ORDER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/data {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event object created for Services that need Provisioning. This object is created by PCM_OP_TELCO_PROV_CREATE_SVC_ORDER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/fax {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event object created for Services that need Provisioning. This object is created by PCM_OP_TELCO_PROV_CREATE_SVC_ORDER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/sms {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event object created for Services that need Provisioning. This object is created by PCM_OP_TELCO_PROV_CREATE_SVC_ORDER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/telephony {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Event object created for Services that need Provisioning. This object is created by PCM_OP_TELCO_PROV_CREATE_SVC_ORDER.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_SVC_ORDER {
+
+		SQL_TABLE = "event_prov_svc_order_t";
+		SQL_STORAGE = "tablespace pin00 initrans 4 storage (initial 750k next 750k maxextents unlimited pctincrease 0 freelists 4 ) partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_STATUS {
+
+			SQL_COLUMN = "status";
+		}
+
+		INT PIN_FLD_STATUS_FLAGS {
+
+			SQL_COLUMN = "status_flags";
+		}
+
+		STRING PIN_FLD_STATUS_MSG {
+
+			SQL_COLUMN = "status_msg";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICE_ORDER_INFO {
+
+		SQL_TABLE = "event_prov_serv_order_tlc_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ACTION {
+
+			SQL_COLUMN = "action";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		ARRAY PIN_FLD_PARAMS {
+
+			SQL_TABLE = "event_prov_order_tlc_param_t";
+			SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_ACTION {
+
+				SQL_COLUMN = "action";
+			}
+
+			STRING PIN_FLD_NAME {
+
+				SQL_COLUMN = "name";
+			}
+
+			ENUM PIN_FLD_STATUS {
+
+				SQL_COLUMN = "status";
+			}
+
+			STRING PIN_FLD_STATUS_MSG {
+
+				SQL_COLUMN = "status_msg";
+			}
+
+			STRING PIN_FLD_VALUE {
+
+				SQL_COLUMN = "value";
+			}
+
+		}
+
+		POID PIN_FLD_POID {
+
+			SQL_COLUMN = "poid";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/data
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/data IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/fax
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/fax IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/sms
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/sms IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/provisioning/service_order/telco/gsm/telephony
+#=======================================
+
+STORABLE CLASS /event/provisioning/service_order/telco/gsm/telephony IMPLEMENTATION ORACLE7 {
+
+}
+

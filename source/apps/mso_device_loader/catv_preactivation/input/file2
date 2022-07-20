@@ -1,0 +1,14 @@
+##########################################################
+#       comment should start with a hash
+#       device loading must have header record
+#       header record must start with "Header,"
+#       Empty lines doesn't bother
+############################################################
+Header,SP code 1,sup code 2,1-32232377,po_code 1,20131031,
+
+0.0.0.1-121266,112013000013,1120130000000013,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+0.0.0.1-12126,112013000011,1120130000000011,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+0.0.0.1-121266,11201300001,1120130000000011,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+0.0.0.1-121266,112013000011,112013000000001,NDS,PVR,ALL-CHANNELS,IND+600006,BOUQUET_ID1
+
+

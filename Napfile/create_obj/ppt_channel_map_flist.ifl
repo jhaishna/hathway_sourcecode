@@ -1,0 +1,813 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /mso_cfg_catv_pt_channel_map -1 0
+0 PIN_FLD_PROGRAM_NAME               STR [0] "Channel Map"
+0 PIN_FLD_PROVISIONING_TAG           STR [0] "PKG_DPR_MUMBAI"
+0 MSO_FLD_PKG_TYPE		     ENUM [0] 0
+0 MSO_FLD_NDS_CA_ID                  STR [0] "252"
+0 MSO_FLD_PK_CA_ID                       STR [0] "MUM_PPT"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [0]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Plus"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "1"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [1]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Life Ok"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "3"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [2]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "CHANNEL V"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "7"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [3]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sony"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "5"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [4]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SAB TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "6"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [5]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "2"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [6]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Smile"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "11"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [7]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "COLORS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "4"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [8]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sahara One"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "8"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [9]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "BINDASS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "13"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [10]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "9X"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "12"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [11]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "STAR CJ ALIVE"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "9"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [12]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Utsav"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "10"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [13]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD National"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "30"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [14]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "KILOMETER 0 MUMBAI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "25"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [15]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Home Shop 18"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "16"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [16]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Food Food"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "15"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [17]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Big Magic"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "646"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [18]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zoom"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "307"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [19]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ASIANET TELESHOP"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "18"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [20]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "UTV Stars"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "14"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [21]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "FIRANGI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "19"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [22]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Gold"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "100"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [23]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Enter 10"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "115"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [24]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Movies OK"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "101"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [25]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Set Max"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "102"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [26]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Cinema"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "103"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [27]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sahara Filmy"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "113"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [28]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "UTV Movies"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "105"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [29]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "UTV Action"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "106"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [30]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Action"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "110"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [31]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Classic"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "108"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [32]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Premier"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "109"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [33]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "B4U Movies"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "104"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [34]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Cinema Tv"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "116"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [35]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "CAMPUS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "120"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [36]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "UTSAV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "121"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [37]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "HITZ ENTERTAINMENT"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "122"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [38]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "BLACK & WHITE"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "124"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [39]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "202"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [40]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Business"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "241"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [41]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "News 24"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "203"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [42]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "7 SEA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "249"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [43]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ABP News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "205"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [44]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "P7 NEWS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "207"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [45]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Channel One"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "231"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [46]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "News Nation"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "210"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [47]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "India News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "208"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [48]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "India TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "206"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [49]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "IBN 7"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "201"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [50]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NDTV India"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "200"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [51]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Aaj Tak"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "204"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [52]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TEZ"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "219"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [53]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "CNBC AWAAZ"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "240"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [54]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "News xpress"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "216"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [55]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "227"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [56]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "LOKSABHA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "230"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [57]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD RAJYA SABHA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "229"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [58]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD India"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "228"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [59]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Lemon TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "232"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [60]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star World"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "50"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [61]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AXN INDIA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "52"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [62]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "FX"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "53"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [63]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Fox Crime"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "55"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [64]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "MEN 7"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "56"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [65]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Comedy Central"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "51"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [66]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ZEE CAFE"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "54"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [67]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ITV GRANNADA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "71"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [68]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "BIG CBS LOVE"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "64"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [69]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Australia Network"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "72"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [70]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Movies"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "125"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [71]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Movies Action"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "128"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [72]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "HBO"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "126"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [73]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "WB"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "131"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [74]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Studio"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "129"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [75]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "PIX"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "127"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [76]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Movies Now"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "130"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [77]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "UTV WORLD MOVIES"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "138"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [78]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "MGM CHANNEL"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "139"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [79]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ET Now"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "276"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [80]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NEWS X"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "253"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [81]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "CNN IBN"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "251"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [82]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TIME NOW"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "252"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [83]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NDTV 24X7"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "250"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [84]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "CNBC TV 18"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "275"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [85]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NDTV Profit"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "277"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [86]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "BBC WORLD"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "262"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [87]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "CNN INTERNATIONAL"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "261"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [88]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Headlines Today"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "254"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [89]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "BLOOMBERG TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "279"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [90]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AL JAZEERA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "263"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [91]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Russia Today"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "855"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [92]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Nepal 1"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "864"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [93]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Cartoon Network"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "403"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [94]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Pogo"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "401"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [95]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Animax"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "409"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [96]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Discovery Kids"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "402"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [97]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Baby TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "414"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [98]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Hungama"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "404"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [99]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DISNEY CHANNEL"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "405"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [100]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DISNEY XD"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "406"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [101]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NICKELODEAN"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "400"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [102]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NICK JUNIOR"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "410"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [103]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DISNEY JUNIOR"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "408"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [104]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sonic"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "407"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [105]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Sports"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "164"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [106]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sports Kool"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "162"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [107]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Sports"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "152"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [108]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Cricket"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "153"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [109]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Ten Cricket"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "156"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [110]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sony SIX"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "150"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [111]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ESPN"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "151"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [112]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Ten Sports"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "157"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [113]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Ten Action"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "158"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [114]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "STAR SPORTS 2"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "154"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [115]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Neo Prime"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "161"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [116]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Neo Sports"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "160"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [117]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "HISTORY TV18"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "452"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [118]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Discovery"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "451"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [119]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NATIONAL GEOGRAPHIC"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "450"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [120]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "BIG Thrill"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "458"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [121]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "BIG CBS PRIME"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "459"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [122]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Discovery Science"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "453"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [123]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Animal Planet"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "454"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [124]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Nat Geo Wild"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "456"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [125]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NAT GEO ADVENTURE"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "457"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [126]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD GYANDARSHAN"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "473"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [127]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD GYANDARSHAN 2"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "474"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [128]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD BHARTI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "475"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [129]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "FASHION TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "807"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [130]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "CARE WORLD TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "808"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [131]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TLC"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "803"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [132]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Fox Traveller"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "802"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [133]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TRAVEL TRENDZ"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "806"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [134]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Travel Xp"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "816"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [135]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Trendz"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "805"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [136]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "EXPLORE"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "817"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [137]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NDTV Good Times"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "801"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [138]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Discovery Turbo"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "804"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [139]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "E 24"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "305"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [140]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Hathway Music"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "300"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [141]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "M TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "301"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [142]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sony Mix"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "302"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [143]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ZEE MUSIC"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "304"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [144]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "9X MUSIC"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "308"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [145]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "9x Jalwa"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "313"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [146]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Mastii"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "310"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [147]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Music India"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "309"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [148]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "M TUNES"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "314"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [149]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETC"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "306"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [150]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Insync"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "315"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [151]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "B4U Music"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "303"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [152]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Music Express"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "316"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [153]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "RCK Tv"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "332"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [154]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Clubbing Tv"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "333"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [155]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SPARK BIG CBS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "335"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [156]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Juke Box"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "336"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [157]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "VH 1"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "330"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [158]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "9XO"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "331"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [159]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NAT GEO MUSIC"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "334"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [160]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Arihant"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "840"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [161]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AASTHA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "826"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [162]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AASTHA BHAJAN"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "843"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [163]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AV Win TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "830"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [164]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ZAINABIA CHANNEL"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "831"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [165]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DARSHAN 24"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "827"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [166]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Daystar"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "849"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [167]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Peace Of Mind"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "838"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [168]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DIVYA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "844"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [169]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "GOD TV ASIA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "846"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [170]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Lord Buddha"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "854"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [171]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "PARAS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "842"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [172]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SADHANA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "834"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [173]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SANSKAR "
+1     MSO_FLD_CHANNEL_ID                 STR [0] "825"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [174]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SHUBHSANDESH"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "835"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [175]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Jagran"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "828"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [176]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Salaam"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "829"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [177]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Pravah"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "500"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [178]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Marathi"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "501"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [179]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV Marathi"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "502"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [180]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ABP Majha"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "528"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [181]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "IBN Lokmat"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "525"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [182]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Talkies"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "515"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [183]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ZEE 24 TAAS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "526"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [184]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "9X JHAKAAS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "520"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [185]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Mast Marathi"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "516"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [186]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SAAM MARATHI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "510"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [187]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TV9 MAHARASHTRA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "527"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [188]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV Gujarati"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "530"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [189]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "V TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "539"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [190]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TV9 GUJRAT"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "536"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [191]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Bangla"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "792"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [192]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Chandana"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "609"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [193]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Kashir"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "695"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [194]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Malayalam"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "771"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [195]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Oriya"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "796"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [196]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Podhigai"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "564"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [197]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Punjabi"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "658"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [198]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD SAHYADRI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "513"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [199]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Saptagiri"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "719"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [200]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD Urdu"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "596"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [201]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DD GUJRATI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "531"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [202]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "JAI MAHARASHTRA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "529"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [203]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "O TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "798"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [204]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "MBC"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "799"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [205]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV Oriya"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "795"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [206]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV URDU"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "591"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [207]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NE TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "699"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [208]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV  BANGLA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "785"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [209]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Star Jalsa"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "780"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [210]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Bangla"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "782"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [211]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Rupashi Bangla"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "789"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [212]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AAKASH BANGLA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "787"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [213]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ABP ANANDA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "793"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [214]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV Bihar"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "681"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [215]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV UP"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "691"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [216]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV MP"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "686"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [217]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV Rajasthan"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "683"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [218]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Zee Punjabi"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "656"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [219]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "BIG SPARK PUNJABI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "670"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [220]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "PTC CHAKADE"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "669"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [221]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "MH 1"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "661"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [222]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SHRADHA MH1"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "663"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [223]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "PTC News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "666"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [224]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "PTC Punjabi"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "653"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [225]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETC Punjabi"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "651"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [226]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Get Punjabi"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "654"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [227]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "STAR VIJAY"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "550"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [228]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Jaya TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "558"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [229]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "KALAIGNAR"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "560"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [230]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Makkal Tv"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "562"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [231]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "PUTHIYA THAILAIMURAI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "563"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [232]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sri Sankara"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "589"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [233]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Raj TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "556"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [234]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Jaya Max"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "571"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [235]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TAMILAN TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "578"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [236]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Asianet"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "761"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [237]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Asianet News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "775"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [238]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Kairali People"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "778"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [239]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AMRITA TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "768"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [240]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Manorama News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "672"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [241]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "KAIRALI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "767"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [242]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV Kannada"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "603"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [243]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TV 9 KANNADA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "608"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [244]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Asianet Suvarna"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "601"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [245]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SUVARNA NEWS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "626"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [246]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV TELUGU"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "705"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [247]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "ETV2"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "726"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [248]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "TV9 TELUGU"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "728"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [249]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "MAA TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "701"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [250]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SVBC TTD"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "759"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [251]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "NTV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "727"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [252]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "T News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "729"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [253]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Mahaa News"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "731"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [254]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "SAKSHI TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "735"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [255]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "MAHUAA"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "644"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [256]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DANGAL TV"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "647"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [257]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DABANGG"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "643"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [258]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "Sangeet Bhojpuri"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "648"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [259]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "RADIO VIVID BHARTI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "890"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [260]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "3 ABN"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "891"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [261]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "CVC"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "892"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [262]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AIR MARATHI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "893"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [263]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "AIR GUJRATI"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "894"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [264]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DW M"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "895"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [265]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DW 2"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "896"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [266]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "DW1"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "897"
+0 MSO_FLD_CATV_CHANNELS                ARRAY [267]
+1     MSO_FLD_CHANNEL_NAME               STR [0] "RFI FRANCAIS"
+1     MSO_FLD_CHANNEL_ID                 STR [0] "898"
+XX
+xop 1 0 1

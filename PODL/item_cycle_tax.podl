@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_tax
+#=======================================
+
+STORABLE CLASS /item/cycle_tax {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Objects of this class represent tax items.  These items are created from various events that have a balance (currency) impact for tax. This item type includes amounts from tax inclusive adjustments, disputes and settlements generated events and tax events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_tax
+#=======================================
+
+STORABLE CLASS /item/cycle_tax IMPLEMENTATION ORACLE7 {
+
+}
+

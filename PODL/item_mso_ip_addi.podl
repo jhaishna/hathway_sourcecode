@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_ip_addi
+#=======================================
+
+STORABLE CLASS /item/mso_ip_addi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Additional IP Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_ip_addi
+#=======================================
+
+STORABLE CLASS /item/mso_ip_addi IMPLEMENTATION ORACLE7 {
+
+}
+

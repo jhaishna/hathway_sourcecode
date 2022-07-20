@@ -1,0 +1,119 @@
+--
+-- @(#)create_md_triggers.source 5  10/13/2004
+--
+--     Copyright (c) 2003-2006 Oracle. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+--
+--SOURCE OF sql file to create the triggers for secondary in multidb environment
+
+create or replace PROCEDURE a_trigger(
+		tab_name IN VARCHAR2
+	) AS
+        cursor c1 is
+        select
+                column_name, table_name
+        from
+        user_tab_columns\@md_primary
+                where table_name = UPPER(tab_name);
+	t_name		c1\%ROWTYPE;
+	col_name	varchar2(1024);
+	trigger_body	varchar2(4096);
+	trigger_name	varchar2(1024);
+	trigger_string	varchar2(8192);		
+	curr_db_no	varchar2(10);
+	cid		int	:=0;
+BEGIN
+	dbms_output.enable(200000);
+
+	curr_db_no := '$poid_db_no';
+	col_name := '';
+	trigger_body := NULL;
+	
+	FOR t_name IN c1
+	LOOP
+		col_name := t_name.column_name;
+		if col_name = 'ACCOUNT_OBJ_DB' then
+                        trigger_body := trigger_body ||
+                                'if :new.ACCOUNT_OBJ_ID0 = 1 then '||
+                                ':new.account_obj_db := ' ||
+                                curr_db_no || ';' ||
+                                'end if;';
+		else if col_name = 'REMIT_ACCOUNT_OBJ_DB' then
+                        trigger_body := trigger_body ||
+                                'if :new.REMIT_ACCOUNT_OBJ_ID0 = 1 then '||
+                                ':new.remit_account_obj_db := ' ||
+                                curr_db_no || ';' ||
+                                'end if;';
+		else if col_name = 'POID_VAL_DB' and 
+			t_name.table_name = 'CONFIG_ACH_T' then
+                        trigger_body := NULL;
+		else if col_name like '\%_DB' then
+			trigger_body := trigger_body ||
+					'if :new.' ||col_name ||
+					' != 0 then '||
+					':new.' || col_name || 
+					':= ' || 
+					curr_db_no || ';' ||
+					'end if;';
+		end if;
+		end if;
+		end if;
+		end if;
+	END LOOP;	
+	trigger_name := tab_name;
+	if (trigger_body IS NOT NULL ) then 
+		trigger_body := 
+			'BEGIN ' ||
+			trigger_body ||
+			' END ;' ; 
+		trigger_string :=
+			'CREATE OR REPLACE TRIGGER ' ||
+			trigger_name ||
+			' BEFORE UPDATE OR INSERT ON ' ||
+			tab_name ||
+			' FOR EACH ROW ' || 
+			trigger_body ;
+--		dbms_output.put_line(trigger_name);
+--		dbms_output.put_line(trigger_body);
+		cid := DBMS_SQL.OPEN_CURSOR;
+		DBMS_SQL.PARSE (cid,
+				trigger_string,
+				dbms_sql.v7); 
+		DBMS_SQL.CLOSE_CURSOR(cid);
+	end if;		
+EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+                RAISE_APPLICATION_ERROR (-20963,
+                'FATAL ERROR - Please Contact Customer Support!!!');
+END;
+/
+
+
+
+create or replace PROCEDURE create_triggers
+AS
+	cursor c1 is
+        SELECT distinct table_name 
+        FROM MD_STATIC_OBJECTS_T\@md_primary 
+	WHERE refresh_group != 'UNIQUENESS';
+
+        tname   c1\%ROWTYPE;
+        t_name  varchar2(255);
+	trigger_string varchar2(4096);
+BEGIN
+	FOR tname in c1
+	LOOP
+		a_trigger(tname.table_name);
+	END LOOP;
+	commit;
+	FOR tname in c1
+	LOOP
+		dbms_snapshot.refresh(tname.table_name,'C');
+	END LOOP;
+END;
+/

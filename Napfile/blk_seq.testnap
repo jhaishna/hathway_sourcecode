@@ -1,0 +1,11 @@
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /data/sequence -1 
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM      INT [0] 1
+0 PIN_FLD_HEADER_STR      STR [0] ":-:BLK"
+0 PIN_FLD_NAME            STR [0] "MSO_BLK_ACNT_CREATION_SEQUENCE"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+XX
+xop PCM_OP_CREATE_OBJ 0 1
+

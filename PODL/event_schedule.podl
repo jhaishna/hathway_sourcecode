@@ -1,0 +1,115 @@
+
+#=======================================
+#  Storable Class /event/schedule
+#=======================================
+
+STORABLE CLASS /event/schedule {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Abstract class to capture schedule events.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/create
+#=======================================
+
+STORABLE CLASS /event/schedule/create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event is created when a schedule object is created.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/delete
+#=======================================
+
+STORABLE CLASS /event/schedule/delete {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event is created when a schedule object is deleted.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/execute
+#=======================================
+
+STORABLE CLASS /event/schedule/execute {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event is created when a schedule object is executed.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/modify
+#=======================================
+
+STORABLE CLASS /event/schedule/modify {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Event is created when a schedule object is modified.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/schedule
+#=======================================
+
+STORABLE CLASS /event/schedule IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/create
+#=======================================
+
+STORABLE CLASS /event/schedule/create IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/delete
+#=======================================
+
+STORABLE CLASS /event/schedule/delete IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/execute
+#=======================================
+
+STORABLE CLASS /event/schedule/execute IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/schedule/modify
+#=======================================
+
+STORABLE CLASS /event/schedule/modify IMPLEMENTATION ORACLE7 {
+
+}
+

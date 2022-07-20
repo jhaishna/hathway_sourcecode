@@ -1,0 +1,20 @@
+#!/bin/sh
+#source .bash_profile
+user="$1"
+pass="$2"
+SID="$3"
+location="$4"
+#rm $location/execution_logs
+sqlplus -S $user/$pass@$SID <<EOF
+set termout off
+set feedback off
+set echo off
+set linesize 50
+set pagesize 30000
+SET MARKUP HTML ON SPOOL ON PREFORMAT OFF ENTMAP ON
+spool $location/MSO_BOX_TREND_RELATED.xls
+EXECUTE MSO_BOX_TREND_RELATED;
+SELECT SALES_HEAD_P,SALES_MANAGER_P,LCO_CODE_P,LCO_NAME,LCO_LOCATION,DT_CODE_P,DT_NAME,LCO_COUNT_STB_GIVEN,LCO_ACT_SER_ACTIVE_30_COUNT,LCO_ACT_SER_ACTIVE_60_COUNT,LCO_ACT_SER_ACTIVE_90_COUNT,LCO_ACT_SER_ACTIVE_120_COUNT,LCO_ACT_SER_ACTIVE_150_COUNT,LCO_ACT_SER_ACTIVE_180_COUNT from MSO_BOX_TREND_RELATED_T;
+ exit;
+spool off;
+EOF

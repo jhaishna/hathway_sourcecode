@@ -1,0 +1,668 @@
+
+#=======================================
+#  Field PIN_FLD_SERVICES
+#=======================================
+
+ARRAY PIN_FLD_SERVICES {
+
+	ID = 122;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_POID_LIST
+#=======================================
+
+STRING PIN_FLD_ITEM_POID_LIST {
+
+	ID = 964;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEXT_ITEM_POID_LIST
+#=======================================
+
+STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+	ID = 155;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_TO_SERVICE_OBJ {
+
+	ID = 9077;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT
+#=======================================
+
+SUBSTRUCT PIN_FLD_ACCOUNT {
+
+	ID = 9051;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FROM_OBJ
+#=======================================
+
+POID PIN_FLD_FROM_OBJ {
+
+	ID = 8253;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_OBJ
+#=======================================
+
+POID PIN_FLD_TO_OBJ {
+
+	ID = 8254;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BALANCE_GROUPS
+#=======================================
+
+ARRAY PIN_FLD_BALANCE_GROUPS {
+
+	ID = 9052;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_BAL_GRP_OBJ {
+
+	ID = 7751;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FROM_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_FROM_BILLINFO_OBJ {
+
+	ID = 9053;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_BAL_GRP_OBJ
+#=======================================
+
+POID PIN_FLD_TO_BAL_GRP_OBJ {
+
+	ID = 9072;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_BILLINFO_OBJ
+#=======================================
+
+POID PIN_FLD_TO_BILLINFO_OBJ {
+
+	ID = 9054;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICES
+#=======================================
+
+ARRAY PIN_FLD_DEVICES {
+
+	ID = 5558;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEVICE_OBJ
+#=======================================
+
+POID PIN_FLD_DEVICE_OBJ {
+
+	ID = 5559;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILES
+#=======================================
+
+ARRAY PIN_FLD_PROFILES {
+
+	ID = 110;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_PROFILE_OBJ {
+
+	ID = 111;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TO_PROFILE_OBJ
+#=======================================
+
+POID PIN_FLD_TO_PROFILE_OBJ {
+
+	ID = 9078;
+}
+
+
+#=======================================
+#  Storable Class /event/audit/subscription
+#=======================================
+
+STORABLE CLASS /event/audit/subscription {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICES {
+
+		DESCR = "Array of services that are transferred.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ITEM_POID_LIST {
+
+			DESCR = "The old item poid list before the transfer.";
+			ORDER = 0;
+			LENGTH = 4000;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+			DESCR = "The old next item poid list before the transfer.";
+			ORDER = 0;
+			LENGTH = 4000;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "The /service poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_SERVICE_OBJ {
+
+			DESCR = "The target /service poid incase of cross schema transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/subscription/cancel
+#=======================================
+
+STORABLE CLASS /event/audit/subscription/cancel {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/subscription/transfer
+#=======================================
+
+STORABLE CLASS /event/audit/subscription/transfer {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Class to categorize all changes to transfer line/subscription.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ACCOUNT {
+
+		DESCR = "Substruct of account poids.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_FROM_OBJ {
+
+			DESCR = "The old /account poid before the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_OBJ {
+
+			DESCR = "The new /account poid after the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_BALANCE_GROUPS {
+
+		DESCR = "Array of balance groups that are transferred.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			DESCR = "The /balance_group poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_FROM_BILLINFO_OBJ {
+
+			DESCR = "The old /billinfo poid before the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_BAL_GRP_OBJ {
+
+			DESCR = "The target /balance_group poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_BILLINFO_OBJ {
+
+			DESCR = "The new /billinfo poid before the transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_DEVICES {
+
+		DESCR = "Array of devices that are transferred.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEVICE_OBJ {
+
+			DESCR = "The /device poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "The /service poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_SERVICE_OBJ {
+
+			DESCR = "The target /service poid incase of cross schema transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_PROFILES {
+
+		DESCR = "Array of profiles that are transferred.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			DESCR = "The /profile poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			DESCR = "The /service poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_PROFILE_OBJ {
+
+			DESCR = "The target /profile poid.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_TO_SERVICE_OBJ {
+
+			DESCR = "The target /service poid incase of cross schema transfer.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/subscription
+#=======================================
+
+STORABLE CLASS /event/audit/subscription IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_SERVICES {
+
+		SQL_TABLE = "event_audit_services_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_ITEM_POID_LIST {
+
+			SQL_COLUMN = "item_poid_list";
+		}
+
+		STRING PIN_FLD_NEXT_ITEM_POID_LIST {
+
+			SQL_COLUMN = "next_item_poid_list";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		POID PIN_FLD_TO_SERVICE_OBJ {
+
+			SQL_COLUMN = "target_service_obj";
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/subscription/cancel
+#=======================================
+
+STORABLE CLASS /event/audit/subscription/cancel IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /event/audit/subscription/transfer
+#=======================================
+
+STORABLE CLASS /event/audit/subscription/transfer IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT PIN_FLD_ACCOUNT {
+
+		SQL_TABLE = "event_audit_account_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_FROM_OBJ {
+
+			SQL_COLUMN = "from_obj";
+		}
+
+		POID PIN_FLD_TO_OBJ {
+
+			SQL_COLUMN = "to_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_BALANCE_GROUPS {
+
+		SQL_TABLE = "event_audit_balgrps_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "bal_grp_obj";
+		}
+
+		POID PIN_FLD_FROM_BILLINFO_OBJ {
+
+			SQL_COLUMN = "from_billinfo_obj";
+		}
+
+		POID PIN_FLD_TO_BAL_GRP_OBJ {
+
+			SQL_COLUMN = "target_bal_grp_obj";
+		}
+
+		POID PIN_FLD_TO_BILLINFO_OBJ {
+
+			SQL_COLUMN = "to_billinfo_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_DEVICES {
+
+		SQL_TABLE = "event_audit_devices_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_DEVICE_OBJ {
+
+			SQL_COLUMN = "device_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		POID PIN_FLD_TO_SERVICE_OBJ {
+
+			SQL_COLUMN = "target_service_obj";
+		}
+
+	}
+
+	ARRAY PIN_FLD_PROFILES {
+
+		SQL_TABLE = "event_audit_profiles_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_PROFILE_OBJ {
+
+			SQL_COLUMN = "profile_obj";
+		}
+
+		POID PIN_FLD_SERVICE_OBJ {
+
+			SQL_COLUMN = "service_obj";
+		}
+
+		POID PIN_FLD_TO_PROFILE_OBJ {
+
+			SQL_COLUMN = "target_profile_obj";
+		}
+
+		POID PIN_FLD_TO_SERVICE_OBJ {
+
+			SQL_COLUMN = "target_service_obj";
+		}
+
+	}
+
+}
+

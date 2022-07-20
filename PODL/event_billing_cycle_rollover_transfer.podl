@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover_transfer
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover_transfer {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "This event is created when  a rollover is transferred. The details are recorded in the base classes. ";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/cycle/rollover_transfer
+#=======================================
+
+STORABLE CLASS /event/billing/cycle/rollover_transfer IMPLEMENTATION ORACLE7 {
+
+}
+

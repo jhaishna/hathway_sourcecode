@@ -1,0 +1,90 @@
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 74470694 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 4956933250 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 121479628 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 38901680 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 91807403 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 3075601 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 143902134 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 2873108005 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 7340437655 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+
+r << XX 1
+0 PIN_FLD_POID   POID [0] 0.0.0.1 /account 4553809112 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Rohan Activation"
+0 PIN_FLD_STATUSES      ARRAY [0] allocated 20, used 2
+1     PIN_FLD_STATUS         ENUM [0] 10100
+1     PIN_FLD_STATUS_FLAGS    INT [0] 0
+XX
+xop PCM_OP_CUST_SET_STATUS 0 1
+

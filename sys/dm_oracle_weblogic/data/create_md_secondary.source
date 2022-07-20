@@ -1,0 +1,82 @@
+--
+-- @(#)$Id: create_md_secondary.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:40:45 nishahan Exp $
+--
+-- Copyright (c) 1999, 2015, Oracle and/or its affiliates. All rights reserved.
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+-- sql file to start replication of data replication of service to secondary
+-- databases.
+
+set serveroutput on;
+
+-- set residency_type property for /uniqueness object to label it as remote database object
+update dd_objects_t set residency_type=101 where name in ('/uniqueness', '/au_uniqueness', '/unique_account_no', '/au_unique_account_no', '/config/credit_profile');
+commit;
+
+-- update residency_type property for all global objects, except /uniqueness objects.
+update dd_objects_t set residency_type=8 where (name LIKE '/config%'  OR
+                                        name LIKE '/deal%'              OR
+					name LIKE '/au_deal%'           OR
+					name LIKE '/plan%'              OR
+					name LIKE '/au_plan%'           OR
+					name LIKE '/product%'           OR
+					name LIKE '/au_product%'        OR
+					name LIKE '/rate%'              OR
+					name LIKE '/au_rate%'           OR
+					name LIKE '/rollover%'          OR
+					name LIKE '/au_rollover%'       OR
+					name LIKE '/sponsorship%'       OR
+					name LIKE '/au_sponsorship%'    OR
+					name LIKE '/discount%'          OR
+					name LIKE '/au_discount%'       OR
+					name LIKE '/zone%'              OR
+					name LIKE '/transition%'        OR
+					name LIKE '/au_transition%'     OR
+					name LIKE '/dependency%'        OR
+					name LIKE '/au_dependency%'     OR
+					name LIKE '/fold%'              OR
+					name LIKE '/strings%'           OR
+					name LIKE '/channel'            OR
+					name LIKE '/search%'            OR
+					name LIKE '/edr_field_mapping%' OR 
+					name LIKE '/offer_profile%'   ) AND
+					name NOT LIKE '/config/credit_profile';
+commit;
+
+DECLARE
+	snapshot_count int;
+	link_count int;
+	service_name varchar2(100);
+	cid int;
+BEGIN
+--------------------------------------------------------------------------
+-- DATABASE LINK TO PRIMARY
+--------------------------------------------------------------------------
+	dbms_output.put_line('\n');
+
+	select count(db_link) into link_count from user_db_links 
+		where db_link = '$DB_LINK' OR
+			db_link like '$DB_LINK.%';
+
+	if link_count = 0 then
+		dbms_output.put_line('DATABASE LINK $DB_LINK does not exist');
+	else
+		dbms_output.put_line('dropping DATABASE LINK $DB_LINK...');
+
+		-- PARSE AND IMMEDIATELY EXECUTE DDL STATEMENT
+		cid := DBMS_SQL.OPEN_CURSOR;
+		DBMS_SQL.PARSE (cid,
+			'DROP DATABASE LINK $DB_LINK',
+			dbms_sql.v7);
+		DBMS_SQL.CLOSE_CURSOR(cid);
+	end if;
+	dbms_output.put_line('creating DATABASE LINK $DB_LINK...');
+END;
+/
+
+CREATE DATABASE LINK $DB_LINK 
+	CONNECT TO $PIN_MD_PRIMARY_OWNER 
+	IDENTIFIED by $PIN_MD_PRIMARY_PASSWD 
+	USING '$PIN_MD_DBNAME';

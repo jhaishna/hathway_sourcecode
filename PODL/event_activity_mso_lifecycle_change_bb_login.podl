@@ -1,0 +1,118 @@
+
+#=======================================
+#  Field MSO_FLD_CHANGE_BB_LOGIN
+#=======================================
+
+ARRAY MSO_FLD_CHANGE_BB_LOGIN {
+
+	ID = 41206;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NEW_VALUE
+#=======================================
+
+STRING PIN_FLD_NEW_VALUE {
+
+	ID = 8153;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OLD_VALUE
+#=======================================
+
+STRING PIN_FLD_OLD_VALUE {
+
+	ID = 8154;
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/change_bb_login
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/change_bb_login {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Historic";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CHANGE_BB_LOGIN {
+
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NEW_VALUE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_OLD_VALUE {
+
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /event/activity/mso_lifecycle/change_bb_login
+#=======================================
+
+STORABLE CLASS /event/activity/mso_lifecycle/change_bb_login IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY MSO_FLD_CHANGE_BB_LOGIN {
+
+		SQL_TABLE = "mso_evt_lc_change_bb_login_t";
+		SQL_STORAGE = " partition by range (obj_id0) (partition partition_historic values less than (35184372088832), partition partition_last values less than (MAXVALUE))";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NEW_VALUE {
+
+			SQL_COLUMN = "new_login";
+		}
+
+		STRING PIN_FLD_OLD_VALUE {
+
+			SQL_COLUMN = "old_login";
+		}
+
+	}
+
+}
+

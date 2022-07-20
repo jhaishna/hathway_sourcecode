@@ -1,0 +1,93 @@
+
+#=======================================
+#  Field PIN_FLD_CURRENCY_EMU_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_CURRENCY_EMU_MEMBERS {
+
+	ID = 1617;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Storable Class /config/currency/emu
+#=======================================
+
+STORABLE CLASS /config/currency/emu {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "This singleton configuration object holds the list of EMU currencies.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CURRENCY_EMU_MEMBERS {
+
+		DESCR = "Array of EMU currencies. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			DESCR = "EMU currency code.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/currency/emu
+#=======================================
+
+STORABLE CLASS /config/currency/emu IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CURRENCY_EMU_MEMBERS {
+
+		SQL_TABLE = "config_currency_emu_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CURRENCY {
+
+			SQL_COLUMN = "currency";
+		}
+
+	}
+
+}
+

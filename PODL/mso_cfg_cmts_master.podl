@@ -1,0 +1,584 @@
+
+#=======================================
+#  Field MSO_FLD_BB_TECHNOLOGY
+#=======================================
+
+ENUM MSO_FLD_BB_TECHNOLOGY {
+
+	ID = 40042;
+}
+
+#=======================================
+#  Field PIN_FLD_CARRIER_ID
+#=======================================
+
+INT PIN_FLD_CARRIER_ID {
+
+	ID = 2522;
+}
+
+#=======================================
+#  Field MSO_FLD_CLASS_CM
+#=======================================
+
+STRING MSO_FLD_CLASS_CM {
+
+	ID = 42227;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CLASS_CR
+#=======================================
+
+STRING MSO_FLD_CLASS_CR {
+
+	ID = 42228;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CMTS_ID
+#=======================================
+
+STRING MSO_FLD_CMTS_ID {
+
+	ID = 42221;
+}
+
+
+#=======================================
+#  Field MSO_FLD_CMTS_IP_ADDRESS
+#=======================================
+
+STRING MSO_FLD_CMTS_IP_ADDRESS {
+
+	ID = 42222;
+}
+
+
+#=======================================
+#  Field MSO_FLD_LCO_OBJ
+#=======================================
+
+POID MSO_FLD_LCO_OBJ {
+
+	ID = 40006;
+	DESCR = "LCO account Object";
+}
+
+
+#=======================================
+#  Field MSO_FLD_NE_ID
+#=======================================
+
+STRING MSO_FLD_NE_ID {
+
+	ID = 42223;
+}
+
+
+#=======================================
+#  Field MSO_FLD_NE_IP_ADDRESS
+#=======================================
+
+STRING MSO_FLD_NE_IP_ADDRESS {
+
+	ID = 42224;
+}
+
+
+#=======================================
+#  Field MSO_FLD_OTHER_NE_ID
+#=======================================
+
+STRING MSO_FLD_OTHER_NE_ID {
+
+	ID = 42225;
+}
+
+
+#=======================================
+#  Field MSO_FLD_OTHER_NE_IP_ADDRESS
+#=======================================
+
+STRING MSO_FLD_OTHER_NE_IP_ADDRESS {
+
+	ID = 42226;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SCP_CM
+#=======================================
+
+STRING MSO_FLD_SCP_CM {
+
+	ID = 42229;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SCP_CR
+#=======================================
+
+STRING MSO_FLD_SCP_CR {
+
+	ID = 42230;
+}
+
+
+#=======================================
+#  Field MSO_FLD_SUSPEND_POLICY
+#=======================================
+
+STRING MSO_FLD_SUSPEND_POLICY {
+
+	ID = 42231;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CITY
+#=======================================
+
+STRING PIN_FLD_CITY {
+
+	ID = 167;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_cmts_master
+#=======================================
+
+STORABLE CLASS /mso_cfg_cmts_master {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "To store network end point related data";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_BB_TECHNOLOGY {
+
+		DESCR = "0-DOCSIS,1-ETHERNET,2-Fiber";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+	
+	INT PIN_FLD_CARRIER_ID {
+
+		DESCR = "Network Provider ID";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CLASS_CM {
+
+		DESCR = "Cable Modem Class Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CLASS_CR {
+
+		DESCR = "Cable Router Class Name";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CMTS_ID {
+
+		DESCR = "CMTS/NAS/Router Unique identifier";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_CMTS_IP_ADDRESS {
+
+		DESCR = "CMTS IP addres";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID MSO_FLD_LCO_OBJ {
+
+		DESCR = "LCO account Object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_NE_ID {
+
+		DESCR = "Network Element ID For Docsis, Ethernet, 24online, ekite AAA & mqnsure";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_NE_IP_ADDRESS {
+
+		DESCR = "IP address or hostname of Network Element";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_OTHER_NE_ID {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_OTHER_NE_IP_ADDRESS {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_SCP_CM {
+
+		DESCR = "Cable Modem SCP";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_SCP_CR {
+
+		DESCR = "Cable Router SCP";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING MSO_FLD_SUSPEND_POLICY {
+
+		DESCR = "Suspend policy";
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CITY {
+
+		ORDER = 0;
+		LENGTH = 60;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_cfg_cmts_master
+#=======================================
+
+STORABLE CLASS /mso_cfg_cmts_master IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "mso_cfg_cmts_master_t";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ENUM MSO_FLD_BB_TECHNOLOGY {
+
+		SQL_COLUMN = "technology";
+	}
+	
+	INT PIN_FLD_CARRIER_ID {
+
+		SQL_COLUMN = "carrier_id";
+	}
+
+	STRING MSO_FLD_CLASS_CM {
+
+		SQL_COLUMN = "class_cm";
+	}
+
+	STRING MSO_FLD_CLASS_CR {
+
+		SQL_COLUMN = "class_cr";
+	}
+
+	STRING MSO_FLD_CMTS_ID {
+
+		SQL_COLUMN = "cmts_id";
+	}
+
+	STRING MSO_FLD_CMTS_IP_ADDRESS {
+
+		SQL_COLUMN = "cmts_ip_address";
+	}
+
+	POID MSO_FLD_LCO_OBJ {
+
+		SQL_COLUMN = "lco_obj";
+	}
+
+	STRING MSO_FLD_NE_ID {
+
+		SQL_COLUMN = "ne_id";
+	}
+
+	STRING MSO_FLD_NE_IP_ADDRESS {
+
+		SQL_COLUMN = "ne_ip_address";
+	}
+
+	STRING MSO_FLD_OTHER_NE_ID {
+
+		SQL_COLUMN = "other_ne_id";
+	}
+
+	STRING MSO_FLD_OTHER_NE_IP_ADDRESS {
+
+		SQL_COLUMN = "other_ne_ip_address";
+	}
+
+	STRING MSO_FLD_SCP_CM {
+
+		SQL_COLUMN = "scp_cm";
+	}
+
+	STRING MSO_FLD_SCP_CR {
+
+		SQL_COLUMN = "scp_cr";
+	}
+
+	STRING MSO_FLD_SUSPEND_POLICY {
+
+		SQL_COLUMN = "suspend_policy";
+	}
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	STRING PIN_FLD_CITY {
+
+		SQL_COLUMN = "city";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

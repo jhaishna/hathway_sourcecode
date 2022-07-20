@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/cr
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/cr {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Deposit for Cable Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/payment/mso_hw_deposit/cr
+#=======================================
+
+STORABLE CLASS /item/payment/mso_hw_deposit/cr IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,2421 @@
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3181799 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3180263 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 5103345510 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 5103342822 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794364055 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794362519 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 883652548 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 883652644 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511277892 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511279428 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510448079 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510445103 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510799993 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510797689 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3180402 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3180786 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3178538 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3181610 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510355316 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510358388 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510853444 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510850756 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511278872 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511277336 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511101693 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511103229 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511280760 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511283832 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 357380092 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 357377026 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360924277 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360925813 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 361318055 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 361318823 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360885961 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360883657 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 372035681 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 372038753 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 372088807 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 372085783 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794431287 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794428599 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794339456 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794337920 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1011081180 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1011078204 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010989195 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010987659 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510824337 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510822801 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 376962271 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 376960735 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 377114273 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 377111969 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 733179708 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 733177020 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 399058671 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 399059439 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 404516618 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 404513930 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 883590830 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 883591598 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510448524 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510446988 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510367149 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510364269 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510389156 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510390692 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510311515 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510312283 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510414594 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510413058 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510789940 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510793012 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510389337 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510390105 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3180873 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3179337 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3178922 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3181994 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3180170 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3180938 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510376830 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510378366 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510481640 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510479336 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510857859 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510856323 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510814771 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510816307 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510470478 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510473550 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511273769 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511275305 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511274935 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511273399 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511231540 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511234612 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511313428 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511316500 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511902220 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511900684 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511188744 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511187208 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2314902617 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2314901081 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2860650515 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2860653587 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 357055612 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 357054076 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 728947321 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 728945017 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794459127 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794456079 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794464143 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794461263 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010978583 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010975895 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 5027094721 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 5027097793 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511234574 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511233038 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511616133 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511613829 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 377426972 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 377428508 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 371935804 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 371933500 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 393525174 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 393525366 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 393589736 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 393592808 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 883266110 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 883269182 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 883723708 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 883722172 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 886201899 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 886199595 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1153321937 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1153318961 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1153309902 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1153308366 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510331811 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510333347 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510300254 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510297950 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510392921 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510394457 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510446410 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510447946 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3211142 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3209798 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510388887 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510390423 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510436555 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510434251 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510389815 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510388279 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510488258 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510486722 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510382471 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510379591 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510575599 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510574063 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511203352 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511206424 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511475598 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511474062 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511461840 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511464912 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2314860229 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2314860997 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 352780808 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 352783880 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 361448346 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 361451418 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363102317 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363105389 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363295468 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363298540 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794330291 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794331827 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794437129 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794437897 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794384943 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794382639 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010844813 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010846349 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 799343815 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 799345351 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 729078572 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 729075884 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363571978 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363569290 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 891827632 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 891829168 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511195877 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511197413 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511887389 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511890461 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510326019 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510323331 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510342797 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510345869 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510404861 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510407933 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510364162 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510365698 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510811441 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510811825 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510474182 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510477254 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2942301274 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2942302810 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3180937 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3179401 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510804202 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510801898 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510431023 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510429487 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510482354 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510485426 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510382838 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510381302 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510818913 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510820449 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510464302 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510461614 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511151423 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511151807 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511461384 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511464456 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2314850324 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2314853396 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 5056678453 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 5056676149 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2409181689 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2409184761 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 356140929 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 356141121 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 356888537 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 356885561 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360871817 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360872009 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360907546 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360910618 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 361302705 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 361300401 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360765896 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360764360 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 729069908 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 729068372 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1011035059 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1011032179 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010705267 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010708339 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 799477603 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 799474915 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3964847442 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3964848978 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1011046217 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1011046601 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 372035088 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 372032784 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 376373583 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 376376655 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 883757042 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 883753994 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 886211600 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 886213136 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1153438787 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1153440323 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510374486 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510372950 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510443234 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510441698 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510799387 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510797851 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3182410 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3179722 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3181433 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3178745 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3208537 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3207897 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510443914 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510441034 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510478920 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510480456 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510476755 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510473779 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510354694 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510352006 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510820481 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510818177 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510375496 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510378568 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510860041 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510861577 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511063157 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511060853 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511282746 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511281210 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 352798586 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 352798970 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 354244354 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 354244738 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 354619174 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 354616486 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 361460913 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 361462449 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 362592270 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 362590734 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 362767761 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 362769297 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363205212 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363208284 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363297180 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363295644 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 729031827 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 729033363 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 709975058 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 709973522 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 729085390 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 729086926 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 729131187 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 729129651 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794366186 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794369258 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794193499 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794191195 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010677484 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010678252 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510401471 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510403007 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510472086 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510470550 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511078475 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511076171 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 376860696 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 376863768 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363808773 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363807237 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 371874541 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 371872237 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 392441984 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 392445056 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 398706796 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 398705260 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 398723931 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 398721243 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 895033374 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 895036446 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511304938 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511302634 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510480542 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510478238 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510337951 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510336415 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510343100 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510346172 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510411346 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510409810 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510346365 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510344061 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510472093 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510470557 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510839078 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510842150 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510479988 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510478452 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510889498 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510887962 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511177919 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511175615 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511262447 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511260911 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 352641232 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 352644304 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 356862003 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 356860467 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2172624296 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2172622760 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2521234077 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2521231773 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363658888 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363656584 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 361331936 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 361330400 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360896580 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360895044 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 361295779 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 361292899 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 361352914 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 361350610 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 697985928 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 697983048 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794186709 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794189781 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010956964 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010954660 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010979858 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010981394 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1011013739 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1011012203 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010757393 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010754705 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1011022600 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1011019912 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010980804 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010980900 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2106916100 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2106914564 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 5069742747 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 5069745819 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 398708524 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 398705836 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511114677 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511114869 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510323425 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510324961 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3181617 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3180081 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510827469 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510829005 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510791806 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510789502 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511108631 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511111703 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511464017 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511462481 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 356982427 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 356980123 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 357033935 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 357034031 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 356856612 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 356859684 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360823793 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360820745 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360894333 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360891645 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360921070 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360921118 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360884721 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360883185 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 362308288 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 362311360 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363520227 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363523299 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 714439440 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 714436752 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 728979652 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 728978116 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 729008510 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 729006974 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010997894 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010995590 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1011024736 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1011027808 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2106736483 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2106733795 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3195501 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3198573 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 5133620802 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 5133621570 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 376922958 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 376926030 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511091475 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511089939 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511288164 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511286628 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511266216 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511266408 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510311779 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510312163 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1506414226 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1506411922 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510183862 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510186934 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510440047 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510438511 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510355775 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510358847 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510484174 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510482638 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3179729 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3181265 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3180617 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3179081 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 3182154 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 3179850 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2143137629 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2143134941 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510273734 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510276806 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510827406 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510828942 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510354311 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510352775 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1510462174 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1510465246 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511201605 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511198917 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511230067 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511227763 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511458799 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511458847 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511451226 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511448922 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1511240344 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1511243416 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 2314981430 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 2314984502 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 352446883 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 352445347 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 356070132 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 356073204 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 356935813 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 356934277 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 357299201 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 357300737 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360354147 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360357219 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 360837376 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 360840448 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 363592298 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 363589994 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 729051290 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 729054362 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794442506 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794439818 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794338461 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794339997 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 794443194 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 794441658 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010850528 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010848224 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+
+r << XX 1
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /account 1010707427 0
+0 PIN_FLD_PROGRAM_NAME    STR [0] "Changing DOM"
+0 PIN_FLD_BILLINFO      ARRAY [0] allocated 20, used 2
+1 PIN_FLD_POID           POID [0] 0.0.0.1 /billinfo 1010704403 0
+1     PIN_FLD_ACTG_FUTURE_DOM   INT [0] 1
+XX
+xop PCM_OP_CUST_SET_BILLINFO 0 1
+

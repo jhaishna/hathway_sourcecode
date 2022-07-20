@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/billing/refund/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/refund/cash/sp_autopay {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "SP LCOs Payment Refund";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/billing/refund/cash/sp_autopay
+#=======================================
+
+STORABLE CLASS /event/billing/refund/cash/sp_autopay IMPLEMENTATION ORACLE7 {
+
+}
+

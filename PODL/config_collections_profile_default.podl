@@ -1,0 +1,22 @@
+
+#=======================================
+#  Storable Class /config/collections/profile/default
+#=======================================
+
+STORABLE CLASS /config/collections/profile/default {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Contains defininition for default collection profiles that can be globally seen. ";
+	IS_PARTITIONED = "0";
+}
+
+
+#=======================================
+#  Storable Class /config/collections/profile/default
+#=======================================
+
+STORABLE CLASS /config/collections/profile/default IMPLEMENTATION ORACLE7 {
+
+}
+

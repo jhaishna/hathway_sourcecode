@@ -1,0 +1,94 @@
+
+#=======================================
+#  Field PIN_FLD_NETWORK_ELEMENT_INFO
+#=======================================
+
+ARRAY PIN_FLD_NETWORK_ELEMENT_INFO {
+
+	ID = 5719;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NETWORK_ELEMENT
+#=======================================
+
+STRING PIN_FLD_NETWORK_ELEMENT {
+
+	ID = 5701;
+}
+
+
+#=======================================
+#  Storable Class /config/network_element
+#=======================================
+
+STORABLE CLASS /config/network_element {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of thisclass is used to set up the network element. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_NETWORK_ELEMENT_INFO {
+
+		DESCR = "Array of the network element. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NETWORK_ELEMENT {
+
+			DESCR = "Name of the network element.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/network_element
+#=======================================
+
+STORABLE CLASS /config/network_element IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_NETWORK_ELEMENT_INFO {
+
+		SQL_TABLE = "config_network_element_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_NETWORK_ELEMENT {
+
+			SQL_COLUMN = "network_element";
+		}
+
+	}
+
+}
+

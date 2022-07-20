@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/nine_months {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Monthly item";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/cycle_forward/mso_sb_fib/nine_months
+#=======================================
+
+STORABLE CLASS /item/cycle_forward/mso_sb_fib/nine_months IMPLEMENTATION ORACLE7 {
+
+}
+

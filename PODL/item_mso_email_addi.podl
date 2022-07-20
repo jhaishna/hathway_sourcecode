@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_email_addi
+#=======================================
+
+STORABLE CLASS /item/mso_email_addi {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Additional Email Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_email_addi
+#=======================================
+
+STORABLE CLASS /item/mso_email_addi IMPLEMENTATION ORACLE7 {
+
+}
+

@@ -1,0 +1,66 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/framed {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/static {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/framed
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/framed IMPLEMENTATION ORACLE7 {
+
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/attribute_update/ip/static
+#=======================================
+
+STORABLE CLASS /mso_mta_job/attribute_update/ip/static IMPLEMENTATION ORACLE7 {
+
+}
+

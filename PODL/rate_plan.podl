@@ -1,0 +1,1171 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_BILL_OFFSET
+#=======================================
+
+INT PIN_FLD_BILL_OFFSET {
+
+	ID = 228;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CURRENCY
+#=======================================
+
+INT PIN_FLD_CURRENCY {
+
+	ID = 128;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_FEE_FLAGS
+#=======================================
+
+INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+	ID = 864;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DATE_RANGES
+#=======================================
+
+ARRAY PIN_FLD_DATE_RANGES {
+
+	ID = 2226;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_END_T {
+
+	ID = 62;
+}
+
+
+#=======================================
+#  Field PIN_FLD_LINEAGE
+#=======================================
+
+STRING PIN_FLD_LINEAGE {
+
+	ID = 1900;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_OBJ
+#=======================================
+
+POID PIN_FLD_RATE_OBJ {
+
+	ID = 243;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_END_OFFSET
+#=======================================
+
+INT PIN_FLD_RELATIVE_END_OFFSET {
+
+	ID = 2228;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_END_UNIT
+#=======================================
+
+ENUM PIN_FLD_RELATIVE_END_UNIT {
+
+	ID = 2230;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_START_OFFSET
+#=======================================
+
+INT PIN_FLD_RELATIVE_START_OFFSET {
+
+	ID = 2227;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RELATIVE_START_UNIT
+#=======================================
+
+ENUM PIN_FLD_RELATIVE_START_UNIT {
+
+	ID = 2229;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_START_T {
+
+	ID = 61;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DAY_RANGES
+#=======================================
+
+ARRAY PIN_FLD_DAY_RANGES {
+
+	ID = 2231;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_DOM
+#=======================================
+
+INT PIN_FLD_VALID_DOM {
+
+	ID = 80;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_DOW
+#=======================================
+
+INT PIN_FLD_VALID_DOW {
+
+	ID = 79;
+}
+
+
+#=======================================
+#  Field PIN_FLD_VALID_MOY
+#=======================================
+
+INT PIN_FLD_VALID_MOY {
+
+	ID = 82;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OFFSET_UNIT
+#=======================================
+
+ENUM PIN_FLD_OFFSET_UNIT {
+
+	ID = 229;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_PRODUCT_OBJ {
+
+	ID = 244;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RATE_TIERS
+#=======================================
+
+ARRAY PIN_FLD_RATE_TIERS {
+
+	ID = 2224;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DATE_RANGE_TYPE
+#=======================================
+
+ENUM PIN_FLD_DATE_RANGE_TYPE {
+
+	ID = 2225;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRIORITY
+#=======================================
+
+DECIMAL PIN_FLD_PRIORITY {
+
+	ID = 64;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_CODE
+#=======================================
+
+STRING PIN_FLD_TAX_CODE {
+
+	ID = 536;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TAX_WHEN
+#=======================================
+
+ENUM PIN_FLD_TAX_WHEN {
+
+	ID = 537;
+}
+
+
+#=======================================
+#  Field PIN_FLD_TOD_RANGES
+#=======================================
+
+ARRAY PIN_FLD_TOD_RANGES {
+
+	ID = 2232;
+}
+
+
+#=======================================
+#  Field PIN_FLD_END_OFFSET
+#=======================================
+
+INT PIN_FLD_END_OFFSET {
+
+	ID = 2234;
+}
+
+
+#=======================================
+#  Field PIN_FLD_START_OFFSET
+#=======================================
+
+INT PIN_FLD_START_OFFSET {
+
+	ID = 2233;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /rate_plan
+#=======================================
+
+STORABLE CLASS /rate_plan {
+
+	SEQ_START = "1";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "Rate plan defines the ordering in which rates are applied. What type of date, day and TOD ranges are used, etc.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to account object for which this object was created.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_BILL_OFFSET {
+
+		LABEL = "BillOffset";
+		DESCR = "Specifies the offset (in days or months) to bill in advance.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_CODE {
+
+		LABEL = "Code";
+		DESCR = "Code of the rate_plan object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		LABEL = "Currency";
+		DESCR = "The currency resource that this rate plan impacts. All the rate objects in the rate plan can only impact this currency resource and non-currency resources. No other currency resources can be impacted by this rate plan.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+		LABEL = "CycleFeeFlags";
+		DESCR = "This flag indicates whether the monthly/yearly cycle forwards should be aligned or not. Default is aligned (0). Other cycle forwards are never aligned to the accounting/billing cycles. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_DATE_RANGES {
+
+		LABEL = "DateRanges";
+		DESCR = "Array of date ranges. Lineage field is used to specify which rate tier the date range belongs to. Date ranges belongs to the same rate tier can't overlap. If non-contiguous date ranges are defined for the same rate tier, user confirmation is required.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			LABEL = "EndT";
+			DESCR = "Non-inclusive end time of the validity period for the rate. If the value is 0, the rate does not expire.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LINEAGE {
+
+			LABEL = "Lineage";
+			DESCR = "The array indexes of its ancestors separated by ','.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			LABEL = "Name";
+			DESCR = "Name of this date range. Must be unique within the same rate tier. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_RATE_OBJ {
+
+			LABEL = "RateObj";
+			DESCR = "Optional rate object. If not null, this rate object is valid for the entire date range. Therefore, there is no need to specify day ranges.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RELATIVE_END_OFFSET {
+
+			LABEL = "RelativeEndOffset";
+			DESCR = "Offset value from product purchase for end of relative date range. Non-inclusive. If zero, the rate does not expire.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RELATIVE_END_UNIT {
+
+			LABEL = "RelativeEndUnit";
+			DESCR = "Unit PIN_FLD_RELATIVE_END_OFFSET is expressed in. Value can be SECOND(1), MINUTE(2), HOUR(3) or DAY(4).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_RELATIVE_START_OFFSET {
+
+			LABEL = "RelativeStartOffset";
+			DESCR = "Offset value from product purchase for start of relative date range. Inclusive. If zero, the rate is valid immediately.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_RELATIVE_START_UNIT {
+
+			LABEL = "RelativeStartUnit";
+			DESCR = "Unit PIN_FLD_RELATIVE_START_OFFSET is expressed in. Value can be SECOND(1), MINUTE(2), HOUR(3) or DAY(4).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			LABEL = "StartT";
+			DESCR = "Inclusive start time of the validity period for the rate. If zero, the rate is valid immediately.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	ARRAY PIN_FLD_DAY_RANGES {
+
+		LABEL = "DayRanges";
+		DESCR = "Array of day ranges. Lineage field is used to specify which date range the day range belongs to. Days are included in a day range only if they qualify under all criteria. Data ranges belongs to the same date range can't overlap.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LINEAGE {
+
+			LABEL = "Lineage";
+			DESCR = "The array indexes of its ancestors separated by ','.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			LABEL = "Name";
+			DESCR = "Name of this day range. Must be unique within the same date range. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_RATE_OBJ {
+
+			LABEL = "RateObj";
+			DESCR = "Optional rate object. If not null, this rate object is valid for the entire day range. Therefore, there is no need to specify tod ranges.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_VALID_DOM {
+
+			LABEL = "ValidDom";
+			DESCR = "Valid days-of-month flags. Each bit set is a day that rate object is valid. Bit 0 (LSB) = 1st, bit 1 = 2nd, etc. If entire field is zero, then rate is valid all days of the month.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_VALID_DOW {
+
+			LABEL = "ValidDow";
+			DESCR = "Valid days-of-week flags. Each bit set is a day that rate object is valid. Bit 0 (LSB) = Sunday, bit 1 = Monday, etc. If entire field is zero, then rate is valid all days of the week.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_VALID_MOY {
+
+			LABEL = "ValidMoy";
+			DESCR = "Valid months-of-year flags. Each bit set is a month that rate object is valid. Bit 0 (LSB) = January, bit 1 = February, etc. If entire field is zero, then rate is valid all months of the year.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_EVENT_TYPE {
+
+		LABEL = "EventType";
+		DESCR = "Type of event that this rate_plan specifies rating for. Subtypes are implicitly included.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NAME {
+
+		LABEL = "Name";
+		DESCR = "Name of the rate_plan object.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_OFFSET_UNIT {
+
+		LABEL = "OffsetUnit";
+		DESCR = "Specifies the unit of measure (days or months) of the field PIN_FLD_BILL_OFFSET.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		LABEL = "ProductObj";
+		DESCR = "Product object that this rate plan object belongs to. Combined with currency, it must be unique within a product.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_RATE_TIERS {
+
+		LABEL = "RateTiers";
+		DESCR = "Rate tier groups the rates in a structured format. ";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DATE_RANGE_TYPE {
+
+			LABEL = "DateRangeType";
+			DESCR = "Specify which type of the date ranges are used in this tier. Value can be ABSOLUTE(0), RELATIVE(1).";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			LABEL = "Name";
+			DESCR = "Name of this rate tier. Must be unique within this rate plan.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL PIN_FLD_PRIORITY {
+
+			LABEL = "Priority";
+			DESCR = "Priority of the rate tier. Higher number indicates higher priority.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_RATE_OBJ {
+
+			LABEL = "RateObj";
+			DESCR = "Optional rate object. If not null, this rate object is valid for all time. Therefore, there is no need to specify date ranges.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_TAX_CODE {
+
+		LABEL = "TaxCode";
+		DESCR = "Identifier used by the tax engine to calculate tax for this rate. Used only when the rate has currency balance impacts.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_TAX_WHEN {
+
+		LABEL = "TaxWhen";
+		DESCR = "Specifies when to apply taxes on the rate charges - no taxes (0), or tax when the event occurs (1), or defer to the end of the accounting or billing cycle (2). You can control deferred taxing using the CM pin.conf entry 'cycle_tax_interval'.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_TOD_RANGES {
+
+		LABEL = "TodRanges";
+		DESCR = "Array of valid daily time ranges for the rate object. If no entries are present, valid range is entire day. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_END_OFFSET {
+
+			LABEL = "EndOffset";
+			DESCR = "Valid end offset - seconds from beginning of day (non-inclusive). Value less than start offset implies that TOD range wraps around midnight. If end offset is zero, valid range lasts through end of day.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_LINEAGE {
+
+			LABEL = "Lineage";
+			DESCR = "The array indexes of its ancestors separated by ','.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			LABEL = "Name";
+			DESCR = "Name of this tod range. Must be unique within the same day range. ";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_RATE_OBJ {
+
+			LABEL = "RateObj";
+			DESCR = "Pointer to the rate object that is valid during the specified period. By storing the rate plan as a tree of validity ranges, we traverse the tree and locate one rate object that applies, so no searching is required.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_START_OFFSET {
+
+			LABEL = "StartOffset";
+			DESCR = "Valid start offset - seconds from beginning of day (inclusive).";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /rate_plan
+#=======================================
+
+STORABLE CLASS /rate_plan IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "rate_plan_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	INT PIN_FLD_BILL_OFFSET {
+
+		SQL_COLUMN = "bill_offset";
+	}
+
+	STRING PIN_FLD_CODE {
+
+		SQL_COLUMN = "code";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	INT PIN_FLD_CURRENCY {
+
+		SQL_COLUMN = "currency";
+	}
+
+	INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+		SQL_COLUMN = "cycle_fee_flags";
+	}
+
+	ARRAY PIN_FLD_DATE_RANGES {
+
+		SQL_TABLE = "date_ranges_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_END_T {
+
+			SQL_COLUMN = "end_t";
+		}
+
+		STRING PIN_FLD_LINEAGE {
+
+			SQL_COLUMN = "lineage";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		POID PIN_FLD_RATE_OBJ {
+
+			SQL_COLUMN = "rate_obj";
+		}
+
+		INT PIN_FLD_RELATIVE_END_OFFSET {
+
+			SQL_COLUMN = "end_offset";
+		}
+
+		ENUM PIN_FLD_RELATIVE_END_UNIT {
+
+			SQL_COLUMN = "rel_end_unit";
+		}
+
+		INT PIN_FLD_RELATIVE_START_OFFSET {
+
+			SQL_COLUMN = "start_offset";
+		}
+
+		ENUM PIN_FLD_RELATIVE_START_UNIT {
+
+			SQL_COLUMN = "rel_start_unit";
+		}
+
+		TIMESTAMP PIN_FLD_START_T {
+
+			SQL_COLUMN = "start_t";
+		}
+
+	}
+
+	ARRAY PIN_FLD_DAY_RANGES {
+
+		SQL_TABLE = "day_ranges_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_LINEAGE {
+
+			SQL_COLUMN = "lineage";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		POID PIN_FLD_RATE_OBJ {
+
+			SQL_COLUMN = "rate_obj";
+		}
+
+		INT PIN_FLD_VALID_DOM {
+
+			SQL_COLUMN = "valid_dom";
+		}
+
+		INT PIN_FLD_VALID_DOW {
+
+			SQL_COLUMN = "valid_dow";
+		}
+
+		INT PIN_FLD_VALID_MOY {
+
+			SQL_COLUMN = "valid_moy";
+		}
+
+	}
+
+	STRING PIN_FLD_EVENT_TYPE {
+
+		SQL_COLUMN = "event_type";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NAME {
+
+		SQL_COLUMN = "name";
+	}
+
+	ENUM PIN_FLD_OFFSET_UNIT {
+
+		SQL_COLUMN = "offset_unit";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		SQL_COLUMN = "product_obj";
+	}
+
+	ARRAY PIN_FLD_RATE_TIERS {
+
+		SQL_TABLE = "rate_tiers_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ENUM PIN_FLD_DATE_RANGE_TYPE {
+
+			SQL_COLUMN = "date_range_type";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		DECIMAL PIN_FLD_PRIORITY {
+
+			SQL_COLUMN = "priority";
+		}
+
+		POID PIN_FLD_RATE_OBJ {
+
+			SQL_COLUMN = "rate_obj";
+		}
+
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	STRING PIN_FLD_TAX_CODE {
+
+		SQL_COLUMN = "tax_code";
+	}
+
+	ENUM PIN_FLD_TAX_WHEN {
+
+		SQL_COLUMN = "tax_when";
+	}
+
+	ARRAY PIN_FLD_TOD_RANGES {
+
+		SQL_TABLE = "tod_ranges_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_END_OFFSET {
+
+			SQL_COLUMN = "end_offset";
+		}
+
+		STRING PIN_FLD_LINEAGE {
+
+			SQL_COLUMN = "lineage";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		POID PIN_FLD_RATE_OBJ {
+
+			SQL_COLUMN = "rate_obj";
+		}
+
+		INT PIN_FLD_START_OFFSET {
+
+			SQL_COLUMN = "start_offset";
+		}
+
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

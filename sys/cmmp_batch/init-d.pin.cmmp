@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+#	@(#) % %
+#
+#       Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+#      
+#       This material is the confidential property of Oracle Corporation or its
+#       licensors and may be used, reproduced, stored or transmitted only in
+#       accordance with a valid Oracle license or sublicense agreement.
+#
+
+#
+# /etc/init.d/pin.cmmp
+#
+# used to start/stop the CM (or CMMP) via init(1m).
+# ought to be linked to:
+#	/etc/rc2.d/S97pin.cmmp
+#	/etc/rc2.d/K03pin.cmmp
+# (ie after pretty much everything else - especially
+#  after the DM if running on same machine)
+#
+PATH=/usr/bin:/bin
+
+VERSION=7.5
+
+DIR=/home/pin/Thirdparty/BRM12/BRM/bin
+
+CM=cmmp
+START_CM=${DIR}/start_${CM}
+STOP_CM=${DIR}/stop_${CM}
+
+case $1 in
+'start')
+	if [ ! -x ${START_CM} ]; then
+		echo "$0: HELP: no executable ${START_CM} !"
+		exit 1
+	fi       
+	${START_CM}
+	rc=$?
+	;;
+'stop')
+	if [ ! -x ${STOP_CM} ]; then
+		echo "$0: HELP: no executable ${STOP_CM} !"
+		exit 1
+	fi       
+	${STOP_CM}
+	rc=$?
+	;;
+*)
+	echo "usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+exit ${rc}

@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_non_recurring_charges
+#=======================================
+
+STORABLE CLASS /item/mso_non_recurring_charges {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Item for Late Fee";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_non_recurring_charges
+#=======================================
+
+STORABLE CLASS /item/mso_non_recurring_charges IMPLEMENTATION ORACLE7 {
+
+}
+

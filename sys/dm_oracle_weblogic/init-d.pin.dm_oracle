@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+#	@(#) % %
+#
+#       Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+#      
+#       This material is the confidential property of Oracle Corporation or its
+#       licensors and may be used, reproduced, stored or transmitted only in
+#       accordance with a valid Oracle license or sublicense agreement.
+#
+
+#
+# /etc/init.d/pin.dm_oracle
+#
+# used to start/stop the DM via init(1m).
+# ought to be linked to:
+#	/etc/rc2.d/S96pin.dm_oracle
+#	/etc/rc2.d/K04pin.dm_oracle
+# (ie after pretty much everything else - especially
+#  after the database if running on same machine)
+#
+PATH=/usr/bin:/bin
+
+VERSION=7.5
+
+DIR=/home/pin/Thirdparty/BRM12/BRM/bin
+
+DM=dm_oracle
+START_DM=${DIR}/start_${DM}
+STOP_DM=${DIR}/stop_${DM}
+
+case $1 in
+'start')
+	if [ ! -x ${START_DM} ]; then
+		echo "$0: HELP: no executable ${START_DM} !"
+		exit 1
+	fi       
+	${START_DM}
+	rc=$?
+	;;
+'stop')
+	if [ ! -x ${STOP_DM} ]; then
+		echo "$0: HELP: no executable ${STOP_DM} !"
+		exit 1
+	fi       
+	${STOP_DM}
+	rc=$?
+	;;
+*)
+	echo "usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+exit ${rc}

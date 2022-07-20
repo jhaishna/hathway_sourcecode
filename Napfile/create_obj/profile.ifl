@@ -1,0 +1,19 @@
+r << XX 1
+0 PIN_FLD_POID                      POID [0] 0.0.0.1 /config/collections/profile 519805 1
+0 PIN_FLD_CREATED_T               TSTAMP [0] (1464991860) 04/06/2016 03:41:00:000 AM
+0 PIN_FLD_MOD_T                   TSTAMP [0] (1464991871) 04/06/2016 03:41:11:000 AM
+0 PIN_FLD_READ_ACCESS                STR [0] "L"
+0 PIN_FLD_WRITE_ACCESS               STR [0] "L"
+0 PIN_FLD_ACCOUNT_OBJ               POID [0] 0.0.0.1 /account 1 0
+0 PIN_FLD_DESCR                      STR [0] ""
+0 PIN_FLD_HOSTNAME                   STR [0] "-"
+0 PIN_FLD_NAME                       STR [0] "Collection Profiles"
+0 PIN_FLD_PROGRAM_NAME               STR [0] "-"
+0 PIN_FLD_VALUE                      STR [0] ""
+0 PIN_FLD_VERSION                    STR [0] ""
+0 PIN_FLD_PROFILE_INFO         SUBSTRUCT [0] allocated 3, used 3
+1     PIN_FLD_CURRENCY               INT [0] 356
+1     PIN_FLD_PROFILE_DESCR          STR [0] "MSO_CATV"
+1     PIN_FLD_PROFILE_NAME           STR [0] "MSO_CATV"
+XX
+xop 1 0 1

@@ -1,0 +1,177 @@
+
+#=======================================
+#  Field PIN_FLD_CHOICES
+#=======================================
+
+ARRAY PIN_FLD_CHOICES {
+
+	ID = 85;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Field PIN_FLD_GL_ID
+#=======================================
+
+INT PIN_FLD_GL_ID {
+
+	ID = 840;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STRING_ID
+#=======================================
+
+INT PIN_FLD_STRING_ID {
+
+	ID = 1891;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STR_VERSION
+#=======================================
+
+INT PIN_FLD_STR_VERSION {
+
+	ID = 1892;
+}
+
+
+#=======================================
+#  Storable Class /config/map_glid
+#=======================================
+
+STORABLE CLASS /config/map_glid {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used by the PCM_OP_ACT_POL_SPEC_GLID policy opcode to determine and/or override the GLIDs to be used balance impacts in the pre-rated and partially-rated events. A pre-defined set of mappings provided in init_objects.source file is used when installing Portal.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHOICES {
+
+		LABEL = "GLID code map configuration";
+		DESCR = "Array of event type to GLID mappings. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			LABEL = "Event type";
+			DESCR = "The event type string.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_GL_ID {
+
+			LABEL = "GL_ID";
+			DESCR = "The GLID numeric code. See /config/glid definition.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			LABEL = "Reason code str ID";
+			DESCR = "The string ID within the String Version. It identifies the reason code to which this G/L ID has been assigned.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			LABEL = "Reason code str ver";
+			DESCR = "The version of the localized string within domain: Reason Codes-Credit Reasons or Reason Codes-Debit Reasons.";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/map_glid
+#=======================================
+
+STORABLE CLASS /config/map_glid IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_CHOICES {
+
+		SQL_TABLE = "config_map_glid_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+		INT PIN_FLD_GL_ID {
+
+			SQL_COLUMN = "glid";
+		}
+
+		INT PIN_FLD_STRING_ID {
+
+			SQL_COLUMN = "reason_code_str_id";
+		}
+
+		INT PIN_FLD_STR_VERSION {
+
+			SQL_COLUMN = "reason_code_str_ver";
+		}
+
+	}
+
+}
+

@@ -1,0 +1,173 @@
+
+#=======================================
+#  Field PIN_FLD_ACH_INFO
+#=======================================
+
+ARRAY PIN_FLD_ACH_INFO {
+
+	ID = 7853;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHANNEL_ID
+#=======================================
+
+INT PIN_FLD_CHANNEL_ID {
+
+	ID = 944;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MERCHANT
+#=======================================
+
+STRING PIN_FLD_MERCHANT {
+
+	ID = 90;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NAME
+#=======================================
+
+STRING PIN_FLD_NAME {
+
+	ID = 17;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID_VAL
+#=======================================
+
+POID PIN_FLD_POID_VAL {
+
+	ID = 1125;
+}
+
+
+#=======================================
+#  Storable Class /config/ach
+#=======================================
+
+STORABLE CLASS /config/ach {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "Config object that holds an array of clearing houses.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACH_INFO {
+
+		DESCR = "Array of supported Clearing Houses.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			DESCR = "Identifies the channel from which payment is received.Value must match with payment channel id configured in /strings object so that channel id can be translated to a specific channel name";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_MERCHANT {
+
+			DESCR = "Identifies merchant to receive payments from account. Value must match configured choices in payment subsystem so merchant can be translated to a specific recipient for deposits. Typically a merchant name is associated with one currency.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		STRING PIN_FLD_NAME {
+
+			DESCR = "Name of the Clearing House.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_POID_VAL {
+
+			DESCR = "This is a routing poid. The DB number will route the call to the correct clearing house dm interface.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/ach
+#=======================================
+
+STORABLE CLASS /config/ach IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_ACH_INFO {
+
+		SQL_TABLE = "config_ach_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		INT PIN_FLD_CHANNEL_ID {
+
+			SQL_COLUMN = "channel_id";
+		}
+
+		STRING PIN_FLD_MERCHANT {
+
+			SQL_COLUMN = "merchant";
+		}
+
+		STRING PIN_FLD_NAME {
+
+			SQL_COLUMN = "name";
+		}
+
+		POID PIN_FLD_POID_VAL {
+
+			SQL_COLUMN = "poid_val";
+		}
+
+	}
+
+}
+

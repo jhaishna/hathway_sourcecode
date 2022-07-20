@@ -1,0 +1,209 @@
+
+#=======================================
+#  Field PIN_FLD_RUM_MAP
+#=======================================
+
+ARRAY PIN_FLD_RUM_MAP {
+
+	ID = 2243;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CANDIDATE_RUMS
+#=======================================
+
+ARRAY PIN_FLD_CANDIDATE_RUMS {
+
+	ID = 2241;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY_EXPR
+#=======================================
+
+STRING PIN_FLD_QUANTITY_EXPR {
+
+	ID = 2242;
+}
+
+
+#=======================================
+#  Field PIN_FLD_RUM_NAME
+#=======================================
+
+STRING PIN_FLD_RUM_NAME {
+
+	ID = 2211;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UNIT
+#=======================================
+
+ENUM PIN_FLD_UNIT {
+
+	ID = 2235;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EVENT_TYPE
+#=======================================
+
+STRING PIN_FLD_EVENT_TYPE {
+
+	ID = 904;
+}
+
+
+#=======================================
+#  Storable Class /config/rum
+#=======================================
+
+STORABLE CLASS /config/rum {
+
+	READ_ACCESS = "Global";
+	WRITE_ACCESS = "Self";
+	DESCR = "A singleton configuration object of this class is used to specify the valid candidate RUMs for each event type. A event subclass inherits the candidate RUMs definition of its parent classes.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RUM_MAP {
+
+		DESCR = "Each array element specifies the candidate RUMs for one event type.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CANDIDATE_RUMS {
+
+			DESCR = "Array of candidate RUMs.";
+			ORDER = 0;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_QUANTITY_EXPR {
+
+				DESCR = "Expression for calculating the quantity.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			STRING PIN_FLD_RUM_NAME {
+
+				DESCR = "Name of this candidate RUM.";
+				ORDER = 0;
+				LENGTH = 255;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+			ENUM PIN_FLD_UNIT {
+
+				DESCR = "Unit that the quantity is expressed in.";
+				ORDER = 0;
+				CREATE = Required;
+				MODIFY = Writeable;
+				AUDITABLE = 0;
+				ENCRYPTABLE = 0;
+				SERIALIZABLE = 0;
+			}
+
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			DESCR = "The type of the event that we specify canddiate RUMs for.";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /config/rum
+#=======================================
+
+STORABLE CLASS /config/rum IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_RUM_MAP {
+
+		SQL_TABLE = "config_rum_map_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		ARRAY PIN_FLD_CANDIDATE_RUMS {
+
+			SQL_TABLE = "config_candidate_rums_t";
+			SQL_STORAGE = "tablespace pin00 storage (initial 100k next 100k maxextents unlimited pctincrease 0 ) ";
+
+			#===================
+			#  Fields 
+			#===================
+
+			STRING PIN_FLD_QUANTITY_EXPR {
+
+				SQL_COLUMN = "quantity_expr";
+			}
+
+			STRING PIN_FLD_RUM_NAME {
+
+				SQL_COLUMN = "rum_name";
+			}
+
+			ENUM PIN_FLD_UNIT {
+
+				SQL_COLUMN = "unit";
+			}
+
+		}
+
+		STRING PIN_FLD_EVENT_TYPE {
+
+			SQL_COLUMN = "event_type";
+		}
+
+	}
+
+}
+

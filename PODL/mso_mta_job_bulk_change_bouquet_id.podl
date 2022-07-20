@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_change_bouquet_id
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_change_bouquet_id {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "bulk change bouquet id class";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /mso_mta_job/bulk_change_bouquet_id
+#=======================================
+
+STORABLE CLASS /mso_mta_job/bulk_change_bouquet_id IMPLEMENTATION ORACLE7 {
+
+}
+

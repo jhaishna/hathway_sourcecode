@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_domain_host
+#=======================================
+
+STORABLE CLASS /item/mso_domain_host {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Domain Hosting Item.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_domain_host
+#=======================================
+
+STORABLE CLASS /item/mso_domain_host IMPLEMENTATION ORACLE7 {
+
+}
+

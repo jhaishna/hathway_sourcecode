@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/price/product_create
+#=======================================
+
+STORABLE CLASS /event/audit/price/product_create {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to product create.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/price/product_create
+#=======================================
+
+STORABLE CLASS /event/audit/price/product_create IMPLEMENTATION ORACLE7 {
+
+}
+

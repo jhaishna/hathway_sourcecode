@@ -1,0 +1,1369 @@
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CREATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CREATED_T {
+
+	ID = 19;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_DISCOUNT
+#=======================================
+
+DECIMAL PIN_FLD_CYCLE_DISCOUNT {
+
+	ID = 268;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_DISC_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CYCLE_DISC_AMT {
+
+	ID = 858;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_END_DETAILS
+#=======================================
+
+INT PIN_FLD_CYCLE_END_DETAILS {
+
+	ID = 9625;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+	ID = 267;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_FEES
+#=======================================
+
+ARRAY PIN_FLD_CYCLE_FEES {
+
+	ID = 2345;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHARGED_FROM_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CHARGED_FROM_T {
+
+	ID = 2348;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CHARGED_TO_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CHARGED_TO_T {
+
+	ID = 2349;
+}
+
+
+#=======================================
+#  Field PIN_FLD_COUNT
+#=======================================
+
+INT PIN_FLD_COUNT {
+
+	ID = 496;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_FEE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_FEE_END_T {
+
+	ID = 2347;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_FEE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_FEE_START_T {
+
+	ID = 2346;
+}
+
+
+#=======================================
+#  Field PIN_FLD_UNIT
+#=======================================
+
+ENUM PIN_FLD_UNIT {
+
+	ID = 2235;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_FEE_AMT
+#=======================================
+
+DECIMAL PIN_FLD_CYCLE_FEE_AMT {
+
+	ID = 863;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_FEE_FLAGS
+#=======================================
+
+INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+	ID = 864;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_START_DETAILS
+#=======================================
+
+INT PIN_FLD_CYCLE_START_DETAILS {
+
+	ID = 9622;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CYCLE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+	ID = 266;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DEAL_OBJ
+#=======================================
+
+POID PIN_FLD_DEAL_OBJ {
+
+	ID = 245;
+}
+
+
+#=======================================
+#  Field PIN_FLD_DESCR
+#=======================================
+
+STRING PIN_FLD_DESCR {
+
+	ID = 54;
+}
+
+
+#=======================================
+#  Field PIN_FLD_EFFECTIVE_T
+#=======================================
+
+TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+	ID = 791;
+}
+
+
+#=======================================
+#  Field PIN_FLD_FLAGS
+#=======================================
+
+INT PIN_FLD_FLAGS {
+
+	ID = 52;
+}
+
+
+#=======================================
+#  Field PIN_FLD_INSTANTIATED_T
+#=======================================
+
+TIMESTAMP PIN_FLD_INSTANTIATED_T {
+
+	ID = 9069;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MMC_TYPE
+#=======================================
+
+INT PIN_FLD_MMC_TYPE {
+
+	ID = 859;
+}
+
+
+#=======================================
+#  Field PIN_FLD_MOD_T
+#=======================================
+
+TIMESTAMP PIN_FLD_MOD_T {
+
+	ID = 20;
+}
+
+
+#=======================================
+#  Field PIN_FLD_NODE_LOCATION
+#=======================================
+
+STRING PIN_FLD_NODE_LOCATION {
+
+	ID = 1825;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT_CACHE_TYPE
+#=======================================
+
+ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+	ID = 567;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OVERRIDDEN_OBJ
+#=======================================
+
+POID PIN_FLD_OVERRIDDEN_OBJ {
+
+	ID = 9597;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PACKAGE_ID
+#=======================================
+
+INT PIN_FLD_PACKAGE_ID {
+
+	ID = 9055;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_OBJ
+#=======================================
+
+POID PIN_FLD_PLAN_OBJ {
+
+	ID = 246;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRICE_LIST_NAME
+#=======================================
+
+STRING PIN_FLD_PRICE_LIST_NAME {
+
+	ID = 9076;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PRODUCT_OBJ
+#=======================================
+
+POID PIN_FLD_PRODUCT_OBJ {
+
+	ID = 244;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_DISCOUNT
+#=======================================
+
+DECIMAL PIN_FLD_PURCHASE_DISCOUNT {
+
+	ID = 265;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_DISC_AMT
+#=======================================
+
+DECIMAL PIN_FLD_PURCHASE_DISC_AMT {
+
+	ID = 857;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_END_DETAILS
+#=======================================
+
+INT PIN_FLD_PURCHASE_END_DETAILS {
+
+	ID = 9624;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PURCHASE_END_T {
+
+	ID = 264;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_FEE_AMT
+#=======================================
+
+DECIMAL PIN_FLD_PURCHASE_FEE_AMT {
+
+	ID = 862;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_START_DETAILS
+#=======================================
+
+INT PIN_FLD_PURCHASE_START_DETAILS {
+
+	ID = 9621;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PURCHASE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_PURCHASE_START_T {
+
+	ID = 263;
+}
+
+
+#=======================================
+#  Field PIN_FLD_QUANTITY
+#=======================================
+
+DECIMAL PIN_FLD_QUANTITY {
+
+	ID = 58;
+}
+
+
+#=======================================
+#  Field PIN_FLD_READ_ACCESS
+#=======================================
+
+STRING PIN_FLD_READ_ACCESS {
+
+	ID = 1903;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SERVICE_OBJ
+#=======================================
+
+POID PIN_FLD_SERVICE_OBJ {
+
+	ID = 41;
+}
+
+
+#=======================================
+#  Field PIN_FLD_SPONSOR_OBJ
+#=======================================
+
+POID PIN_FLD_SPONSOR_OBJ {
+
+	ID = 1204;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS
+#=======================================
+
+ENUM PIN_FLD_STATUS {
+
+	ID = 145;
+}
+
+
+#=======================================
+#  Field PIN_FLD_STATUS_FLAGS
+#=======================================
+
+INT PIN_FLD_STATUS_FLAGS {
+
+	ID = 146;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_DISCOUNT
+#=======================================
+
+DECIMAL PIN_FLD_USAGE_DISCOUNT {
+
+	ID = 271;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_END_DETAILS
+#=======================================
+
+INT PIN_FLD_USAGE_END_DETAILS {
+
+	ID = 9626;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_END_T
+#=======================================
+
+TIMESTAMP PIN_FLD_USAGE_END_T {
+
+	ID = 270;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_START_DETAILS
+#=======================================
+
+INT PIN_FLD_USAGE_START_DETAILS {
+
+	ID = 9623;
+}
+
+
+#=======================================
+#  Field PIN_FLD_USAGE_START_T
+#=======================================
+
+TIMESTAMP PIN_FLD_USAGE_START_T {
+
+	ID = 269;
+}
+
+
+#=======================================
+#  Field PIN_FLD_WRITE_ACCESS
+#=======================================
+
+STRING PIN_FLD_WRITE_ACCESS {
+
+	ID = 1904;
+}
+
+
+#=======================================
+#  Storable Class /purchased_product
+#=======================================
+
+STORABLE CLASS /purchased_product {
+
+	SEQ_START = "1000";
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "BrandLineage";
+	DESCR = "Object contains information about the subscription products owned by the account. This includes account level products as well as service level products.";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		DESCR = "Link to the /account object.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Not_Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CYCLE_DISCOUNT {
+
+		DESCR = "Percentage discount for cycle fees. Stored as fractional discount between 0 and 1.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_CYCLE_DISC_AMT {
+
+		DESCR = "Fixed amount discount for cycle fees. Amount is in primary currency of account. Amount is subtracted from cycle fee event but discount will at most reduce cost of cycle fee to zero.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CYCLE_END_DETAILS {
+
+		DESCR = "For the products, if cycle start is set for first usage this field will be encoded with with mode, unit and offset. For relative end dates mode will be lower order 8 bits, unit will be 4 bits and offset will be 20 bits. The possible mode values are never, relative to start date and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5 and Accounting Cycles=8. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+		DESCR = "Date to stop charging cycle fees for product. Product remains active in account but cycle fees are waived after this date. Zero means do not stop charging cycle fees.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ARRAY PIN_FLD_CYCLE_FEES {
+
+		DESCR = "Array of cycle fees dates for each rate plan";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CHARGED_FROM_T {
+
+			DESCR = "Start date that the cycle fee should be charged.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CHARGED_TO_T {
+
+			DESCR = "End date that the cycle fee should be charged.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		INT PIN_FLD_COUNT {
+
+			DESCR = "Frequency/count of accounting cycles of cycle events";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_FEE_END_T {
+
+			DESCR = "End date of the cycle, similar to actg_next_t for montly cycles";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_FEE_START_T {
+
+			DESCR = "Start date of the cycle, similar to actg_last_t for montly cycles";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		ENUM PIN_FLD_UNIT {
+
+			DESCR = "Unit of Measure for Cycle forward events. Days/Weeks/Months/Years.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	DECIMAL PIN_FLD_CYCLE_FEE_AMT {
+
+		DESCR = "Cycle fee (both forward and arrears) be applied for this product. Amount specified here will override the price specified in the /rate object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+		DESCR = "Internal flags for tracking cycle forward fees. Each cycle forward category has its own bit. Initially all flags will be zero. As soon as some of the cycle forward category will be applied for the first time the corresponding flag will be set to 1.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_CYCLE_START_DETAILS {
+
+		DESCR = "For the products whose cycle start is set for first usage it will be encoded with mode(first usage), unit and offset. Mode will be lower order 8 bits , unit will be 4 bits and offset will be 20 bits. The possible mode values are first usage and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5 and Accounting Cycles=8.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+		DESCR = "Date to start charging cycle fees for product. Product can be active in account but cycle fees are waived until this date.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_DEAL_OBJ {
+
+		DESCR = "Link to deal object that was purchased containing this product.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		DESCR = "Effective time of modification of this product instance.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		DESCR = "Internal state flags for tracking delayed fees that have been charged.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_INSTANTIATED_T {
+
+		DESCR = "For the products that have the first usage attribute for Purchase, this field will be set with actual purchase time and will be used to filter the products for events prior to their subscription (for backdated/future dated scenarios).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_MMC_TYPE {
+
+		DESCR = "Only kept for backward compatibility. Type of multi-month cycle currently in progress. Legal values are None (0), Monthly (1), Bimonthly (2), Quarterly (3), Semiannual (6), Annual (12).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_NODE_LOCATION {
+
+		DESCR = "Only used for backward compatibility. Of the form deal-id~prod-id, where deal id & prod-id are two unique string identifiers formed using Hostname#PID/TID #Date-TimeStamp.Millisecond-timestamp. The field uniquely identifies a product instance in an account. ";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		DESCR = "Stores the cache residency distinction value for an object instance. Possible values are DEFAULT(0), REALTIME(1) and BATCH(2).";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_OVERRIDDEN_OBJ {
+
+		DESCR = "Poid of base purchased product.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_PACKAGE_ID {
+
+		DESCR = "This field is common for all product/discount instances purchased as part of deal or plan purchase. In case of deal purchase, all products/discounts within the  deal will have the same package id. In case of plan purchase, all the products/discounts within the plan, will share the same package id.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		DESCR = "Link to plan object that was purchased containing this product. NULL means product was purchased at deal level only. If the product is associated with any promotion, this field will refer to purchased bundle object.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_POID {
+
+		ORDER = 0;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_PRICE_LIST_NAME {
+
+		DESCR = "Price list name associated with this offering.";
+		ORDER = 0;
+		LENGTH = 255;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		DESCR = "Link to product object that is represented by this element.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_DISCOUNT {
+
+		DESCR = "Percentage discount for purchase and cancellation fees. Stored as fractional discount between 0 and 1.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_DISC_AMT {
+
+		DESCR = "Fixed amount discount for purchase and cancellation fees. Amount is in primary currency of account. Amount is subtracted from event but discount will at most reduce cost of cycle fee to zero.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_PURCHASE_END_DETAILS {
+
+		DESCR = "For the products, if purchase start is set for first usage this field will be encoded with with mode, unit and offset. For relative end dates mode will be lower order 8 bits, unit will be 4 bits and offset will be 20 bits. The possible mode values are never, relative to start date and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5 and Accounting Cycles=8. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_PURCHASE_END_T {
+
+		DESCR = "Date when the product is no longer valid for use. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_FEE_AMT {
+
+		DESCR = "Purchase fee be applied for this product. Amount specified here will override the price specified in the /rate object";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_PURCHASE_START_DETAILS {
+
+		DESCR = "For the products whose purchase start is set for first usage it will be encoded with mode(first usage), unit and offset. Mode will be lower order 8 bits , unit will be 4 bits and offset will be 20 bits. The possible mode values are first usage and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5 and Accounting Cycles=8. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_PURCHASE_START_T {
+
+		DESCR = "Date when the product is valid for use. Purchase fees are applied on this date.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_QUANTITY {
+
+		DESCR = "Quantity of product owned. Quantity is used in assessing purchase, cycle and cancellation fees.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		DESCR = "Link to service object that owns this product. NULL means the product is owned by the account, not by a specific service object.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	POID PIN_FLD_SPONSOR_OBJ {
+
+		DESCR = "Link to sponsorship group for this product. NULL means product is not sponsored.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		DESCR = "Status of this product. Legal values are NOT_SET(0), ACTIVE(1), INACTIVE(2), CANCELLED(3). Only active products are assessed for cycle fees and participate in usage rating. For delayed usage events, Cancelled products are also considered.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_STATUS_FLAGS {
+
+		DESCR = "Modifier flags for product status. Used to track states of PENDING during provisioning workflow. Flags are customer-definable.";
+		ORDER = 0;
+		CREATE = Required;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	DECIMAL PIN_FLD_USAGE_DISCOUNT {
+
+		DESCR = "Percentage discount for usage events rated by this product. Stored as fractional discount between 0 and 1. There is no fixed amount discount for usage because different types of usage may be rated by one product.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_USAGE_END_DETAILS {
+
+		DESCR = "For the discounts, if usage start is set for first usage this field will be encoded with with mode, unit and offset. For relative end dates mode will be lower order 8 bits, unit will be 4 bits and offset will be 20 bits. The possible mode values are never, relative to start date and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5 and Accounting Cycles=8. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_USAGE_END_T {
+
+		DESCR = "Date that this product stops rating usage events. Product may remain active in account, but usage rates from this product will not be used past this date.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	INT PIN_FLD_USAGE_START_DETAILS {
+
+		DESCR = "For the products whose usage start is set for first usage it will be encoded with mode(first usage), unit and offset mode will be lower order 8 bits , unit will be 4 bits and offset will be 20 bits,the possible mode values are first usage and unit can be Seconds=1, Minutes=2, Hours=3, Days=4, Months=5 and Accounting Cycles=8. ";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	TIMESTAMP PIN_FLD_USAGE_START_T {
+
+		DESCR = "Date that this product begins rating usage events. Before this date, product may be active in account but no usage rates from the product will be used to rate usage events.";
+		ORDER = 0;
+		CREATE = Optional;
+		MODIFY = Writeable;
+		AUDITABLE = 1;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		ORDER = 0;
+		LENGTH = 1;
+		CREATE = System;
+		MODIFY = System;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /purchased_product
+#=======================================
+
+STORABLE CLASS /purchased_product IMPLEMENTATION ORACLE7 {
+
+	SQL_TABLE = "purchased_product_t";
+	SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+	#===================
+	#  Fields 
+	#===================
+
+	POID PIN_FLD_ACCOUNT_OBJ {
+
+		SQL_COLUMN = "account_obj";
+	}
+
+	TIMESTAMP PIN_FLD_CREATED_T {
+
+		SQL_COLUMN = "created_t";
+	}
+
+	DECIMAL PIN_FLD_CYCLE_DISCOUNT {
+
+		SQL_COLUMN = "cycle_discount";
+	}
+
+	DECIMAL PIN_FLD_CYCLE_DISC_AMT {
+
+		SQL_COLUMN = "cycle_disc_amt";
+	}
+
+	INT PIN_FLD_CYCLE_END_DETAILS {
+
+		SQL_COLUMN = "cycle_end_details";
+	}
+
+	TIMESTAMP PIN_FLD_CYCLE_END_T {
+
+		SQL_COLUMN = "cycle_end_t";
+	}
+
+	ARRAY PIN_FLD_CYCLE_FEES {
+
+		SQL_TABLE = "purchased_product_cycle_fees_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		TIMESTAMP PIN_FLD_CHARGED_FROM_T {
+
+			SQL_COLUMN = "charged_from_t";
+		}
+
+		TIMESTAMP PIN_FLD_CHARGED_TO_T {
+
+			SQL_COLUMN = "charged_to_t";
+		}
+
+		INT PIN_FLD_COUNT {
+
+			SQL_COLUMN = "count";
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_FEE_END_T {
+
+			SQL_COLUMN = "cycle_fee_end_t";
+		}
+
+		TIMESTAMP PIN_FLD_CYCLE_FEE_START_T {
+
+			SQL_COLUMN = "cycle_fee_start_t";
+		}
+
+		ENUM PIN_FLD_UNIT {
+
+			SQL_COLUMN = "unit";
+		}
+
+	}
+
+	DECIMAL PIN_FLD_CYCLE_FEE_AMT {
+
+		SQL_COLUMN = "cycle_fee_amt";
+	}
+
+	INT PIN_FLD_CYCLE_FEE_FLAGS {
+
+		SQL_COLUMN = "cycle_fee_flags";
+	}
+
+	INT PIN_FLD_CYCLE_START_DETAILS {
+
+		SQL_COLUMN = "cycle_start_details";
+	}
+
+	TIMESTAMP PIN_FLD_CYCLE_START_T {
+
+		SQL_COLUMN = "cycle_start_t";
+	}
+
+	POID PIN_FLD_DEAL_OBJ {
+
+		SQL_COLUMN = "deal_obj";
+	}
+
+	STRING PIN_FLD_DESCR {
+
+		SQL_COLUMN = "descr";
+	}
+
+	TIMESTAMP PIN_FLD_EFFECTIVE_T {
+
+		SQL_COLUMN = "effective_t";
+	}
+
+	INT PIN_FLD_FLAGS {
+
+		SQL_COLUMN = "flags";
+	}
+
+	TIMESTAMP PIN_FLD_INSTANTIATED_T {
+
+		SQL_COLUMN = "instantiated_t";
+	}
+
+	INT PIN_FLD_MMC_TYPE {
+
+		SQL_COLUMN = "mmc_type";
+	}
+
+	TIMESTAMP PIN_FLD_MOD_T {
+
+		SQL_COLUMN = "mod_t";
+	}
+
+	STRING PIN_FLD_NODE_LOCATION {
+
+		SQL_COLUMN = "node_location";
+	}
+
+	ENUM PIN_FLD_OBJECT_CACHE_TYPE {
+
+		SQL_COLUMN = "object_cache_type";
+	}
+
+	POID PIN_FLD_OVERRIDDEN_OBJ {
+
+		SQL_COLUMN = "overridden_obj";
+	}
+
+	INT PIN_FLD_PACKAGE_ID {
+
+		SQL_COLUMN = "package_id";
+	}
+
+	POID PIN_FLD_PLAN_OBJ {
+
+		SQL_COLUMN = "plan_obj";
+	}
+
+	POID PIN_FLD_POID {
+
+		SQL_COLUMN = "poid";
+	}
+
+	STRING PIN_FLD_PRICE_LIST_NAME {
+
+		SQL_COLUMN = "price_list_name";
+	}
+
+	POID PIN_FLD_PRODUCT_OBJ {
+
+		SQL_COLUMN = "product_obj";
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_DISCOUNT {
+
+		SQL_COLUMN = "purchase_discount";
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_DISC_AMT {
+
+		SQL_COLUMN = "purchase_disc_amt";
+	}
+
+	INT PIN_FLD_PURCHASE_END_DETAILS {
+
+		SQL_COLUMN = "purchase_end_details";
+	}
+
+	TIMESTAMP PIN_FLD_PURCHASE_END_T {
+
+		SQL_COLUMN = "purchase_end_t";
+	}
+
+	DECIMAL PIN_FLD_PURCHASE_FEE_AMT {
+
+		SQL_COLUMN = "purchase_fee_amt";
+	}
+
+	INT PIN_FLD_PURCHASE_START_DETAILS {
+
+		SQL_COLUMN = "purchase_start_details";
+	}
+
+	TIMESTAMP PIN_FLD_PURCHASE_START_T {
+
+		SQL_COLUMN = "purchase_start_t";
+	}
+
+	DECIMAL PIN_FLD_QUANTITY {
+
+		SQL_COLUMN = "quantity";
+	}
+
+	STRING PIN_FLD_READ_ACCESS {
+
+		SQL_COLUMN = "read_access";
+	}
+
+	POID PIN_FLD_SERVICE_OBJ {
+
+		SQL_COLUMN = "service_obj";
+	}
+
+	POID PIN_FLD_SPONSOR_OBJ {
+
+		SQL_COLUMN = "sponsor_obj";
+	}
+
+	ENUM PIN_FLD_STATUS {
+
+		SQL_COLUMN = "status";
+	}
+
+	INT PIN_FLD_STATUS_FLAGS {
+
+		SQL_COLUMN = "status_flags";
+	}
+
+	DECIMAL PIN_FLD_USAGE_DISCOUNT {
+
+		SQL_COLUMN = "usage_discount";
+	}
+
+	INT PIN_FLD_USAGE_END_DETAILS {
+
+		SQL_COLUMN = "usage_end_details";
+	}
+
+	TIMESTAMP PIN_FLD_USAGE_END_T {
+
+		SQL_COLUMN = "usage_end_t";
+	}
+
+	INT PIN_FLD_USAGE_START_DETAILS {
+
+		SQL_COLUMN = "usage_start_details";
+	}
+
+	TIMESTAMP PIN_FLD_USAGE_START_T {
+
+		SQL_COLUMN = "usage_start_t";
+	}
+
+	STRING PIN_FLD_WRITE_ACCESS {
+
+		SQL_COLUMN = "write_access";
+	}
+
+}
+

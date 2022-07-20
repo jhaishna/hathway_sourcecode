@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_et
+#=======================================
+
+STORABLE CLASS /item/mso_et {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Custom item for ET";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_et
+#=======================================
+
+STORABLE CLASS /item/mso_et IMPLEMENTATION ORACLE7 {
+
+}
+

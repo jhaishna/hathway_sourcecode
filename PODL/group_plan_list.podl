@@ -1,0 +1,155 @@
+
+#=======================================
+#  Field PIN_FLD_MEMBERS
+#=======================================
+
+ARRAY PIN_FLD_MEMBERS {
+
+	ID = 119;
+}
+
+
+#=======================================
+#  Field PIN_FLD_OBJECT
+#=======================================
+
+POID PIN_FLD_OBJECT {
+
+	ID = 46;
+}
+
+
+#=======================================
+#  Field PIN_FLD_PLAN_LIST_CODE
+#=======================================
+
+SUBSTRUCT PIN_FLD_PLAN_LIST_CODE {
+
+	ID = 280;
+}
+
+
+#=======================================
+#  Field PIN_FLD_CODE
+#=======================================
+
+STRING PIN_FLD_CODE {
+
+	ID = 25;
+}
+
+
+#=======================================
+#  Storable Class /group/plan_list
+#=======================================
+
+STORABLE CLASS /group/plan_list {
+
+	LABEL = "Group object for Plan lists";
+	READ_ACCESS = "Brand";
+	WRITE_ACCESS = "Self";
+	DESCR = "A plan list is a set of plans that you offer your customers when they register for an account. A plan list is set up using /group/plan_list objects. A plan isn't available to your customers until you add it to your plan list.  The plan list doesn't have to include all of your plans. You can create plans and not include them in a plan list until you need them. Or, you can offer one set of plans to one group of potential customers, and another group of plans to another group.  When you create a plan list, you designate which plans are available at customer registration, and which plans can be purchased only after registration.  PIN_FLD_NAME is used to name the plan lists. Also, PIN_FLD_TYPE_STR can be 'new' or 'addon'.   Plan lists are created using the Pricing Tool or the load_plan_lists command line utility. The policy opcode PCM_OP_CUST_POL_GET_PLANS uses the plan lists. ";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		DESCR = "Array of plans in this plan list. Array element id is not significant.";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			DESCR = "Link to the plan object, that is part of this plan list.";
+			ORDER = 0;
+			CREATE = Required;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_PLAN_LIST_CODE {
+
+		DESCR = "This will hold the plan list code";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CODE {
+
+			DESCR = "Code that is used to identify the object";
+			ORDER = 0;
+			LENGTH = 255;
+			CREATE = Required;
+			MODIFY = Not_Writeable;
+			AUDITABLE = 1;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /group/plan_list
+#=======================================
+
+STORABLE CLASS /group/plan_list IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	ARRAY PIN_FLD_MEMBERS {
+
+		SQL_TABLE = "group_planlist_members_t";
+		SQL_STORAGE = "tablespace pin00 storage (initial 500k next 500k maxextents unlimited pctincrease 0 ) ";
+
+		#===================
+		#  Fields 
+		#===================
+
+		POID PIN_FLD_OBJECT {
+
+			SQL_COLUMN = "object";
+		}
+
+	}
+
+	SUBSTRUCT PIN_FLD_PLAN_LIST_CODE {
+
+		SQL_TABLE = "group_planlist_code_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING PIN_FLD_CODE {
+
+			SQL_COLUMN = "code";
+		}
+
+	}
+
+}
+

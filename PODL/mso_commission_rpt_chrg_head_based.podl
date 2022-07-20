@@ -1,0 +1,227 @@
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD_INFO
+#=======================================
+
+SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+	ID = 43324;
+	DESCR = "Charge Head Based Commission";
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD
+#=======================================
+
+STRING MSO_FLD_CHARGE_HEAD {
+
+	ID = 43301;
+	DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+}
+
+
+#=======================================
+#  Field MSO_FLD_CHARGE_HEAD_TOTAL
+#=======================================
+
+DECIMAL MSO_FLD_CHARGE_HEAD_TOTAL {
+
+	ID = 43342;
+	DESCR = "Charge Head Total";
+}
+
+
+#=======================================
+#  Field MSO_FLD_COLLECTION_AMT
+#=======================================
+
+DECIMAL MSO_FLD_COLLECTION_AMT {
+
+	ID = 43343;
+	DESCR = "Collection Amount";
+}
+
+
+#=======================================
+#  Field PIN_FLD_ACCOUNT_OBJ
+#=======================================
+
+POID PIN_FLD_ACCOUNT_OBJ {
+
+	ID = 40;
+}
+
+
+#=======================================
+#  Field PIN_FLD_ITEM_OBJ
+#=======================================
+
+POID PIN_FLD_ITEM_OBJ {
+
+	ID = 107;
+}
+
+
+#=======================================
+#  Field PIN_FLD_POID
+#=======================================
+
+POID PIN_FLD_POID {
+
+	ID = 16;
+}
+
+
+#=======================================
+#  Storable Class /mso_commission_rpt/chrg_head_based
+#=======================================
+
+STORABLE CLASS /mso_commission_rpt/chrg_head_based {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Charge Head Based Wholesale Settlement Commission";
+	IS_PARTITIONED = "0";
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		DESCR = "Charge Head Based Commission";
+		ORDER = 0;
+		AUDITABLE = 0;
+		ENCRYPTABLE = 0;
+		SERIALIZABLE = 0;
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			DESCR = "Charge Head. For example, /item/cycle_forward, /item/mso_cycle_forward_monthly, etc ";
+			ORDER = 0;
+			LENGTH = 60;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_CHARGE_HEAD_TOTAL {
+
+			DESCR = "Charge Head Total";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		DECIMAL MSO_FLD_COLLECTION_AMT {
+
+			DESCR = "Collection Amount";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			DESCR = "charge account obj";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			DESCR = "Item Object";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+		POID PIN_FLD_POID {
+
+			DESCR = "actual charge item";
+			ORDER = 0;
+			CREATE = Optional;
+			MODIFY = Writeable;
+			AUDITABLE = 0;
+			ENCRYPTABLE = 0;
+			SERIALIZABLE = 0;
+		}
+
+	}
+
+}
+
+
+#=======================================
+#  Storable Class /mso_commission_rpt/chrg_head_based
+#=======================================
+
+STORABLE CLASS /mso_commission_rpt/chrg_head_based IMPLEMENTATION ORACLE7 {
+
+
+	#===================
+	#  Fields 
+	#===================
+
+	SUBSTRUCT MSO_FLD_CHARGE_HEAD_INFO {
+
+		SQL_TABLE = "mso_comm_rpt_chrg_head_based_t";
+
+		#===================
+		#  Fields 
+		#===================
+
+		STRING MSO_FLD_CHARGE_HEAD {
+
+			SQL_COLUMN = "charge_head";
+		}
+
+		DECIMAL MSO_FLD_CHARGE_HEAD_TOTAL {
+
+			SQL_COLUMN = "chrg_head_total";
+		}
+
+		DECIMAL MSO_FLD_COLLECTION_AMT {
+
+			SQL_COLUMN = "collection_amt";
+		}
+
+		POID PIN_FLD_ACCOUNT_OBJ {
+
+			SQL_COLUMN = "account_obj";
+		}
+
+		POID PIN_FLD_ITEM_OBJ {
+
+			SQL_COLUMN = "item_obj";
+		}
+
+		POID PIN_FLD_POID {
+
+			SQL_COLUMN = "charge_item_obj";
+		}
+
+	}
+
+}
+

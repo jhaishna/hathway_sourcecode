@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/crsoho {
+
+	READ_ACCESS = "Self";
+	WRITE_ACCESS = "Self";
+	DESCR = "Hardware Outright for Cisco Soho Router.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /item/mso_hw_outright/crsoho
+#=======================================
+
+STORABLE CLASS /item/mso_hw_outright/crsoho IMPLEMENTATION ORACLE7 {
+
+}
+

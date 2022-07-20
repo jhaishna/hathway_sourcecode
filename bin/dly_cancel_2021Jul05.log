@@ -1,0 +1,201 @@
+
+Session altered.
+
+Elapsed: 00:00:00.00
+
+STARTDT
+-------------------
+05-07-2021 16:39.06
+
+Elapsed: 00:00:00.01
+
+DEN_FLAG   HW_FLAG    DSN_FLAG
+---------- ---------- ----------
+Y	   Y	      Y
+
+Elapsed: 00:00:00.00
+DROP TABLE dly_can_pan_india
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.00
+
+Table created.
+
+Elapsed: 00:00:20.91
+DROP INDEX tmp_ind_ser2
+           *
+ERROR at line 1:
+ORA-01418: specified index does not exist
+
+
+Elapsed: 00:00:00.00
+
+Index created.
+
+Elapsed: 00:00:04.86
+DROP TABLE dly_can_pan_fin
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.01
+
+Table created.
+
+Elapsed: 00:00:08.99
+DROP TABLE dly_can_pan_fin2
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.00
+
+Table created.
+
+Elapsed: 00:00:13.51
+DROP TABLE hw_base_pack
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.01
+
+Table created.
+
+Elapsed: 00:00:07.86
+DROP TABLE den_base_pack
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.01
+
+Table created.
+
+Elapsed: 00:00:06.22
+DROP TABLE dsn_base_pack
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.01
+
+Table created.
+
+Elapsed: 00:00:01.53
+DROP TABLE  others_base_pack
+*
+ERROR at line 1:
+ORA-04098: trigger 'PIN1.DROP_STATEMENT_CAP_TRIGGER' is invalid and failed
+re-validation
+
+
+Elapsed: 00:00:00.01
+
+Table created.
+
+Elapsed: 00:00:26.31
+	    ROHAN.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                  *
+ERROR at line 3:
+ORA-02289: sequence does not exist
+
+
+Elapsed: 00:00:00.00
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+STARTDT1
+-------------------
+05-07-2021 16:40.36
+
+Elapsed: 00:00:00.00
+	    ROHAN.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                  *
+ERROR at line 3:
+ORA-02289: sequence does not exist
+
+
+Elapsed: 00:00:00.01
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+	    ROHAN.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                  *
+ERROR at line 3:
+ORA-02289: sequence does not exist
+
+
+Elapsed: 00:00:00.00
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+STARTDT1
+-------------------
+05-07-2021 16:40.36
+
+Elapsed: 00:00:00.00
+	    ROHAN.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                  *
+ERROR at line 3:
+ORA-02289: sequence does not exist
+
+
+Elapsed: 00:00:00.00
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+	    ROHAN.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                  *
+ERROR at line 3:
+ORA-02289: sequence does not exist
+
+
+Elapsed: 00:00:00.00
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+STARTDT1
+-------------------
+05-07-2021 16:40.36
+
+Elapsed: 00:00:00.00
+	    ROHAN.SER_ASSIGN_MTA_SEQ.NEXTVAL,
+                  *
+ERROR at line 3:
+ORA-02289: sequence does not exist
+
+
+Elapsed: 00:00:00.00
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+ENDDT
+-------------------
+05-07-2021 16:40.36
+
+Elapsed: 00:00:00.00

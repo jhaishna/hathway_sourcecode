@@ -1,0 +1,72 @@
+
+SQL*Loader: Release 11.2.0.4.0 - Production on Sat Jun 13 12:57:54 2015
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   ctl_file_1.ctl
+Data File:      customer_data.xls
+  Bad File:     customer_data.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table HTW_BB_PLAN_REPORT_T, loaded from every logical record.
+Insert option in effect for this table: INSERT
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+"PACKAGE CODE"                      FIRST     *  WHT      CHARACTER            
+"PLAN CODE"                          NEXT     *  WHT      CHARACTER            
+"PKG NAME"                           NEXT     *  WHT      CHARACTER            
+"Revised Name"                       NEXT     *  WHT      CHARACTER            
+"PAY TERM"                           NEXT     *  WHT      CHARACTER            
+"US"                                 NEXT     *  WHT      CHARACTER            
+"DS"                                 NEXT     *  WHT      CHARACTER            
+"CITY REG"                           NEXT     *  WHT      CHARACTER            
+"PRICE"                              NEXT     *  WHT      CHARACTER            
+"FREE UNITS"                         NEXT     *  WHT      CHARACTER            
+"LTD / UNLTD"                        NEXT     *  WHT      CHARACTER            
+"PLAN TYPE"                          NEXT     *  WHT      CHARACTER            
+"TECHNOLOGY"                         NEXT     *  WHT      CHARACTER            
+"PLAN CATEGORY"                      NEXT     *  WHT      CHARACTER            
+"FAIR USG LIMIT"                     NEXT     *  WHT      CHARACTER            
+"DOWN STREAM AFTER FUP"              NEXT     *  WHT      CHARACTER            
+"Currency Charges per MB"            NEXT     *  WHT      CHARACTER            
+"STATUS"                             NEXT     *  WHT      CHARACTER            
+"PP CODE"                            NEXT     *  WHT      CHARACTER            
+"Priority"                           NEXT     *  WHT      CHARACTER            
+"Remark"                             NEXT     *  WHT      CHARACTER            
+"NEW CODE1 (SERVICE CODE)"           NEXT     *  WHT      CHARACTER            
+"NEW CODE3 (QUOTA CODE)"             NEXT     *  WHT      CHARACTER            
+
+value used for ROWS parameter changed from 64 to 43
+Record 23: Discarded - all columns null.
+
+Table HTW_BB_PLAN_REPORT_T:
+  22 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  1 Row not loaded because all fields were null.
+
+
+Space allocated for bind array:                 255162 bytes(43 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:            23
+Total logical records rejected:         0
+Total logical records discarded:        1
+
+Run began on Sat Jun 13 12:57:54 2015
+Run ended on Sat Jun 13 12:57:54 2015
+
+Elapsed time was:     00:00:00.06
+CPU time was:         00:00:00.01

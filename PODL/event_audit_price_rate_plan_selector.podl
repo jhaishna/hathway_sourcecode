@@ -1,0 +1,23 @@
+
+#=======================================
+#  Storable Class /event/audit/price/rate_plan_selector
+#=======================================
+
+STORABLE CLASS /event/audit/price/rate_plan_selector {
+
+	READ_ACCESS = "BrandLineage";
+	WRITE_ACCESS = "Self";
+	DESCR = "Class to categorize all changes to rate_plan_selector.";
+	IS_PARTITIONED = "1";
+	PARTITION_MODE = "Finite";
+}
+
+
+#=======================================
+#  Storable Class /event/audit/price/rate_plan_selector
+#=======================================
+
+STORABLE CLASS /event/audit/price/rate_plan_selector IMPLEMENTATION ORACLE7 {
+
+}
+
